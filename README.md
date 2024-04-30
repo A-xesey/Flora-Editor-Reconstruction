@@ -4,7 +4,17 @@ This mod is an attempt to reconstruction the Flora Editor and make it usable.
   * Added and reconstructed skinpaint for Flora Editor.
 
 # How to enter the editor and work in the editor
-First you need to get into the editor. This command can be entered in the game shortcut, in Steam properties, etc:
+First, you need to add the following codes to the game Config folder.
+
+In the Properties.txt file:
+ property FragmentCompilation  0x05fb85a3           bool
+
+In the ConfigManager.txt file:
+ boolProp FragmentCompilation true
+
+Thanks to this, plants will be displayed correctly in coloring mode and on the creation thumbnail, and the game will also correctly save their sprites.
+
+After that you need to go to the editor. This command can be entered in the game shortcut, in Steam properties, etc:
 -state:FloraEditor
 You can also get to the flora editor by going to some other editor, for example, the creature editor, and then open the sporopedia in the editor and double-click on any plant to get to the flora editor.
 In order to change the length of the trunks, you need to add two connected trunks on top of the body, then, holding down the "Ctrl" button, raise the first trunk above the body until the trunks disappear. Then do any action (for example, add a fragment or change the color of a plant) and cancel it.
