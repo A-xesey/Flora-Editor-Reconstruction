@@ -1,0 +1,43 @@
+int32s palettePagePartItemColumns
+	0
+	1
+	2
+	0
+	1
+	2
+	0
+	1
+	2
+	0
+	1
+	2
+end
+int32s palettePagePartItemRows
+	0
+	0
+	0
+	1
+	1
+	1
+	2
+	2
+	2
+	3
+	3
+	3
+end
+keys palettePagePartItems
+	skinPaint_script~!fe_skinpaint_floradetail_blank
+	skinPaint_script~!fe_skinpaint_floradetail_sideWash
+	skinPaint_script~!fe_skinpaint_floradetail_zebra
+	skinPaint_script~!fe_skinpaint_floradetail_polkadot
+	skinPaint_script~!fe_skinpaint_floradetail_cow
+	skinPaint_script~!fe_skinpaint_floradetail_halftoneLimbs
+	skinPaint_script~!fe_skinpaint_floradetail_amigurumi
+	skinPaint_script~!fe_skinpaint_floradetail_clydesdale
+	skinPaint_script~!fe_skinpaint_floradetail_banded
+	skinPaint_script~!fe_skinpaint_floradetail_meltLimbs
+	skinPaint_script~!fe_skinpaint_floradetail_meltTopside
+	skinPaint_script~!fe_skinpaint_floradetail_mantellaTopside
+end
+key palettePagePartParentPage FE_TextureGroup_Detail_01

@@ -1,0 +1,23 @@
+key parent editor_rigblock~!GlobalRigblockTemplate.prop
+string16 description "unknown plant rig block"
+colorRGBA modelColor (0.7727895, 0.8045455, 0.6786166, 1)
+bool modelCanBeParentless false
+bool modelHasBallConnector false
+bool modelHasSocketConnector false
+bool modelIsAllowedOutOfBounds true
+float modelMaxBallConnectorScale 3
+key modelMeshLOD0 builtins!box
+key modelMeshLowRes builtins!box
+float modelMinBallConnectorScale 0.4
+bool modelOrientToSurfaces true
+bool modelOrientWhenSnapped false
+key modelRigBlockType plant!0xFFFFFFFF
+float modelSellBackFactor 1
+string8 modelSoundMorphX "creature_x"
+string8 modelSoundMorphY "creature_y"
+string8 modelSoundMorphZ "creature_z"
+string8 modelSoundRotation "creature_rotate"
+string8 modelSoundScale "creature_size"
+float modelSymmetrySnapDelta 0.03
+bool modelUseDummyBlocks true
+bool modelHideDeformHandles true

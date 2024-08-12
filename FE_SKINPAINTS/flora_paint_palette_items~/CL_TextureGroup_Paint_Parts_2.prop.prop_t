@@ -1,0 +1,43 @@
+int32s palettePagePartItemColumns
+	0
+	1
+	2
+	0
+	1
+	2
+	0
+	1
+	2
+	0
+	1
+	2
+end
+int32s palettePagePartItemRows
+	0
+	0
+	0
+	1
+	1
+	1
+	2
+	2
+	2
+	3
+	3
+	3
+end
+keys palettePagePartItems
+	skinPaint_script~!cl_skinpaint_cell_graniteHalftone
+	skinPaint_script~!cl_skinpaint_cell_cowLeather
+	skinPaint_script~!cl_skinpaint_cell_giraffe
+	skinPaint_script~!cl_skinpaint_cell_platesLarge
+	skinPaint_script~!cl_skinpaint_cell_platesSmall
+	skinPaint_script~!cl_skinpaint_cell_stripes
+	skinPaint_script~!cl_skinpaint_cell_melt
+	skinPaint_script~!cl_skinpaint_cell_mesh
+	skinPaint_script~!cl_skinpaint_cell_glassCreases
+	skinPaint_script~!cl_skinpaint_cell_vgcatsBackStripe
+	skinPaint_script~!cl_skinpaint_cell_doubleDots
+	skinPaint_script~!cl_skinpaint_cell_spottedLizardo
+end
+key palettePagePartParentPage CL_TextureGroup_Paint_2

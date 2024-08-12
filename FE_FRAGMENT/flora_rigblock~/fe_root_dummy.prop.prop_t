@@ -1,0 +1,20 @@
+key parent PlantEditorTemplates!PlantRootTemplate
+bboxs modelBoundingBox
+	(-0.1680063, -0.1680063, -0.1680063) (0.1680063, 0.1680063, 0.1680063)
+end
+texts blockName
+	(PlantRigblocks!0x00000056) "fe_root_dummy"
+end
+string16 description "fe_root_dummy"
+int32 modelCapabilitySpine 1
+float modelMaxScale 2
+bool modelHasSocketConnector false
+bool modelUseSkin true
+key modelMeshHull editor_rigblock~!ce_null_block.rw4
+#key modelMeshLOD0 editor_rigblock~!ce_null_block.rw4
+key modelMeshLOD0 editor_rigblock~!MissingBlock.rw4
+float modelScale 0.3
+key skinpaintDiffuseTexture skinPaint_texture~!fe_roots_01__diffuse.rw4
+key skinpaintSpecBumpTexture skinPaint_texture~!fe_roots_01__specBump.rw4
+key skinpaintTintMaskTexture skinPaint_texture~!fe_roots_01__tintMask.rw4
+bool modelIsVertebra true

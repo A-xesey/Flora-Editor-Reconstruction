@@ -1,0 +1,16 @@
+key parent palette_config~!TemplatePaletteCategoryParts.prop
+keys paletteCategoryIconList
+	editors_flora~!button-leaves-norm.png
+	editors_flora~!0xffffffff.0xffffffff
+	editors_flora~!button-leaves-hl.png
+	editors_flora~!button-leaves-act.png
+	editors_flora~!button-leaves-on-norm.png
+	editors_flora~!0xffffffff.0xffffffff
+	editors_flora~!button-leaves-on-hl.png
+	editors_flora~!button-leaves-on-act.png
+	editors_flora~!button-leaves-norm.png
+end
+texts paletteCategoryName
+	(fe!0xa3908858) "Leaves"
+end
+uint32 paletteCategorySequenceNumber 300

@@ -1,0 +1,10 @@
+key parent AssetBrowserFilter!FloraTemplate.prop
+keys browserFilterChildrenFilters
+	FloraSmall
+	FloraMedium
+	FloraLarge
+end
+key browserFilterMakeNewEditor FloraEditorSetup
+texts browserFilterName
+	(sporepedia!0x0002000e) "Flora"
+end

@@ -1,0 +1,10 @@
+key parent PlantEditorTemplates!PlantFruitTemplate
+texts blockName
+	(ModRigblocks!0x00000020) "fruit 01"
+end
+key modelMeshHull modelFruitStormed1-Hull.rw4
+key modelMeshLOD0 FloraParts_rigblocks!modelFruitStormed1.rw4
+vector3 modelRotationBallHandleOffset (0, -0.5, 0)
+key skinpaintDiffuseTexture skinPaint_texture~!modelFruitStormed1_D.rw4
+key skinpaintSpecBumpTexture skinPaint_texture~!modelFruitStormed1_B.rw4
+key skinpaintTintMaskTexture skinPaint_texture~!modelFruitStormed1_M.rw4

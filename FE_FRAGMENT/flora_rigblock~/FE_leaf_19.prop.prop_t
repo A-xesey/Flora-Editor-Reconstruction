@@ -1,0 +1,10 @@
+key parent PlantEditorTemplates!PlantLeafTemplate
+texts blockName
+	(PlantRigblocks!0x00000132) "FE_leaf_19"
+end
+string16 description "FE_leaf_19"
+float modelMaxScale 1.75
+key modelMeshHull editor_rigblock~!None
+key modelMeshLOD0 editor_rigblock~!FE_leaf_19.rw4
+float modelMinScale 0.5
+vector3 modelRotationBallHandleOffset (0, -1.75, -0.1)

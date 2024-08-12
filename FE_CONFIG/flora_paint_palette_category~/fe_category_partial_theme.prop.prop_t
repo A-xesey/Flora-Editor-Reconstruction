@@ -1,0 +1,16 @@
+key parent palette_config~!0x7E35C190.prop
+keys paletteCategoryIconList
+	editors_flora~!button-paintbuddyPT-norm.png
+	editors_flora~!0xffffffff.0xffffffff
+	editors_flora~!button-paintbuddyPT-hl.png
+	editors_flora~!button-paintbuddyPT-act.png
+	editors_flora~!button-paintbuddyPT-on-norm.png
+	editors_flora~!0xffffffff.0xffffffff
+	editors_flora~!button-paintbuddyPT-on-hl.png
+	editors_flora~!button-paintbuddyPT-on-act.png
+	editors_flora~!button-paintbuddyPT-norm.png
+end
+texts paletteCategoryName
+	(ce_paint!0xf357d3ad) "Partial Themes"
+end
+uint32 paletteCategorySequenceNumber 300

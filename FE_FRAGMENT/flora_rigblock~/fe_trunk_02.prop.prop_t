@@ -1,0 +1,14 @@
+key parent PlantEditorTemplates!PlantBranchTemplate_MOD
+texts blockName
+	(PlantRigblocks!0x00000130) "fe_trunk_02"
+end
+string16 description "02: 700-1500"
+bool modelHasSocketConnector true
+float modelMaxScale 5
+vector3 modelMaxSocketConnectorOffset (0, -3.7, 0)
+key modelMeshLOD0 editor_rigblock~!fe_trunk_02.rw4
+float modelMinScale 0.3
+vector3 modelMinSocketConnectorOffset (0, -1.4, 0)
+key skinpaintDiffuseTexture skinPaint_texture~!fe_trunk_02__diffuse.rw4
+key skinpaintSpecBumpTexture skinPaint_texture~!fe_trunk_02__specBump.rw4
+key skinpaintTintMaskTexture skinPaint_texture~!fe_trunk_02__tintMask.rw4

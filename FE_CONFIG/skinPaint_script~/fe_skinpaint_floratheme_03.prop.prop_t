@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "Stacked2 L"
+colorRGBs paintThemeColor1s
+	(0.576469,0.349020,0.262742)
+	(0.321566,0.443134,0.443134)
+	(0.674510,0.905882,0.658824)
+end
+keys paintThemePaints
+	skinpaint_florabase_zebroid
+	skinpaint_floracoat_platesSmall
+	skinpaint_floradetail_blank
+end

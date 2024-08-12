@@ -1,0 +1,13 @@
+key parent verbtrays!0x150E3222
+bool verbIconShowLevel false
+keys verbIcons
+	vehicle_header
+end
+texts verbTrayDescription
+	(fe_02!0x00000004) "Speed Description(PLACEHOLDER)"
+end
+key verbTrayIconID 0xCEEFB113
+texts verbTrayName
+	(fe_02!0x00000003) "Speed (PLACEHOLDER)"
+end
+bool verbTrayShowVerbIconWhenCollapsed true

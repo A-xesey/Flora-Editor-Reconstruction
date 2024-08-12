@@ -1,0 +1,41 @@
+int32s palettePagePartItemColumns
+	0
+	0
+	0
+	0
+	1
+	1
+	1
+	1
+	2
+	2
+end
+int32s palettePagePartItemRows
+	0
+	1
+	2
+	3
+	0
+	1
+	2
+	3
+	1
+	2
+end
+keys palettePagePartItems
+	#flora_rigblock~!fe_fruit_01
+	#flora_rigblock~!fe_fruit_02
+	#flora_rigblock~!fe_fruit_03
+	#flora_rigblock~!pe_eye_01
+	FloraParts_modifications!Fruit_Normal_01
+	FloraParts_modifications!foodpile_fruit_02
+	FloraParts_modifications!modelFruitStormed1
+	FloraParts_modifications!0xFB0DA613
+	FloraParts_modifications!Fruit_stinky_01
+	FloraParts_modifications!Fruit_Super_01
+	FloraParts_modifications!0xDD8CC7C6
+	FloraParts_modifications!0xEA3B59B3
+	FloraParts_modifications!genericfruit_01
+	FloraParts_modifications!0xB0A82020
+end
+key palettePagePartParentPage fe_page_fruit_02

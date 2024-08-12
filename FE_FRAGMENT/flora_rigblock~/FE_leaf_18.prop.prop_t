@@ -1,0 +1,12 @@
+key parent PlantEditorTemplates!PlantLeafTemplate
+texts blockName
+	(PlantRigblocks!0x00000097) "FE_leaf_18"
+end
+string16 description "18: 780"
+float modelMaxScale 7
+key modelMeshLOD0 editor_rigblock~!FE_leaf_18.rw4
+float modelMinScale 0.5
+vector3 modelRotationBallHandleOffset (0, -1.75, -0.1)
+key skinpaintDiffuseTexture skinPaint_texture~!FE_leaf_18__diffuse.rw4
+key skinpaintSpecBumpTexture skinPaint_texture~!FE_leaf_18__specBump.rw4
+key skinpaintTintMaskTexture skinPaint_texture~!FE_leaf_18__tintMask.rw4

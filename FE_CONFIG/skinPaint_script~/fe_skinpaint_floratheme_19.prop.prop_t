@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "layers2 L"
+colorRGBs paintThemeColor1s
+	(0.803922,0.698037,0.474510)
+	(0.317647,0.443136,0.141176)
+	(0.560783,0.905882,0.537253)
+end
+keys paintThemePaints
+	skinpaint_florabase_valueGradientDark
+	skinpaint_floracoat_zebra
+	skinpaint_floradetail_cow
+end

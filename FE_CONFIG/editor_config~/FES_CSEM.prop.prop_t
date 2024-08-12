@@ -1,0 +1,21 @@
+key parent editor_config~!GlobalTemplate.prop
+keys editorEnabledManipulators
+	#cSPEditorManipulationPlanarInterpenetration
+	cSPEditorManipulationInterpenetration
+	#cSPEditorManipulationLimb
+	cSPEditorManipulationPinning
+	cSPEditorManipulationStackingSimple
+	cSPEditorManipulationBoneRotation
+	cSPEditorManipulationRotationHandle
+	cSPEditorManipulationDeformHandle
+	
+	cSPEditorManipulationSpine
+end
+keys editorStartupModel
+	###flora_editorModel~!PaintBuddy1.flr #for Thumbpaint
+	#palette_editorModel~!FE_branch_assemblage_01_branch.flr
+	#building_editorModel~!FE_branch_assemblage_01_mod_branch.flr
+	#building_editorModel~!2.bld #OKEROOP
+	flora_editorModel~!RootFIX.flr
+end
+bool editorUseSymmetry false #true

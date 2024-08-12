@@ -1,0 +1,23 @@
+# MUSCLES #
+0x00000001 Limb_Fr_Sh_back
+0x00000002 Limb_Fr_Sh_back1
+0x00000003 Limb_Fr_Sh_clump
+0x00000004 Limb_Fr_Sh_clump1
+0x00000005 Limb_Fr_Sh_spike
+0x00000006 Limb_Fr_Sh_thigh
+0x00000007 Limb_Fr_Sh_thigh1
+0x00000008 limb_rigid
+0x00000009 limb_rigid_large
+0x00000010 limb_rigid_small
+
+# FRUITS #
+0x00000011 Coconut
+0x00000012 Fruit (poison)
+0x00000013 Fruit (super)
+0x00000014 Fruit (RED)
+0x00000015 Fruit (pile)
+0x00000016 Fruit
+0x00000017 Fruit (stinky)
+0x00000018 Fruit (super-duper)
+0x00000019 Fruit (generic)
+0x00000020 Fruit (BLU)

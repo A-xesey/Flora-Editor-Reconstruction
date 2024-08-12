@@ -1,0 +1,26 @@
+key parent PlantEditorTemplates!PlantRigblockTemplate.prop
+string16 description "unknown plant root"
+int32 modelBakeLevel 1
+bool modelCanBeParentless true
+keys modelHandleKeys
+	DeformAxisLeft
+	DeformAxisForward
+	DeformAxisUp
+end
+keys modelHandlePlacementTypesTemplate
+	DeformAxisLeft!PreserveOrientation
+	DeformAxisForward!PreserveOrientation
+	DeformAxisUp!PreserveOrientation
+end
+string8s modelHandleStretchSounds
+	"creature_x"
+	"creature_y"
+	"creature_z"
+end
+bool modelHasSocketConnector true
+bool modelIsAllowedOutOfBounds false
+bool modelIsPlantRoot true
+bool modelOrientToSurfaces false
+key modelRigBlockType plant!root
+bool modelSnapToCenterOfEditor true
+bool modelUseHullForBBox true

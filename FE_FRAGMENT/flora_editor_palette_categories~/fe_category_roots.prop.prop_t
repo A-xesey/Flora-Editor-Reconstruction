@@ -1,0 +1,16 @@
+key parent palette_config~!TemplatePaletteCategoryParts.prop
+keys paletteCategoryIconList
+	editors_flora~!button-roots-norm.png
+	editors_flora~!0xffffffff.0xffffffff
+	editors_flora~!button-roots-hl.png
+	editors_flora~!button-roots-act.png
+	editors_flora~!button-roots-on-norm.png
+	editors_flora~!0xffffffff.0xffffffff
+	editors_flora~!button-roots-on-hl.png
+	editors_flora~!button-roots-on-act.png
+	editors_flora~!button-roots-norm.png
+end
+texts paletteCategoryName
+	(fe_02!0x00000002) "Виктор Корнеплод"
+end
+uint32 paletteCategorySequenceNumber 100

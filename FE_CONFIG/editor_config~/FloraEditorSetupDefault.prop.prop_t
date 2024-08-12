@@ -1,0 +1,55 @@
+key parent editor_config~!GlobalTemplate.prop
+string16 description "Flora Editor Setup"
+string16 editorAssembledContentDirectory "Content/AssembledContent/Plants"
+float editorBoundSize 4
+key editorCameraUI EditorCameraFloraUI.prop
+texts editorDefaultModelName
+	(fe!0x04d93065) "Untitled Plant"
+end
+uint32s editorDefaultSkinPaintScripts
+	hash(skinpaint_florabase_blankMatte)
+	hash(skinpaint_floracoat_blank)
+	hash(skinpaint_floradetail_blank)
+end
+bool editorDisableAnimations true
+keys editorEnabledManipulators
+	cSPEditorManipulationInterpenetration
+	cSPEditorManipulationPinning
+	cSPEditorManipulationStackingSimple
+	cSPEditorManipulationBoneRotation
+	cSPEditorManipulationRotationHandle
+	cSPEditorManipulationDeformHandle
+end
+bool editorInitSpine false
+key editorLight FloraEditor
+float editorMaxHeight 2.25
+float editorMinHeight 0
+uint32 editorModelTranslationOptions 38
+keys editorModelTypes
+	PlantSmall
+	PlantMedium
+	PlantLarge
+end
+texts editorName
+	(fe!0x04d94893) "Plant"
+end
+key editorPaintModeLight creatureeditorpaintmode
+key editorPaintPalette palette_definition~!0x00000015.prop
+key editorPaintSwatchModel flora_editorModel~!PaintBuddy.flr
+key editorPartsPalette palette_definition~!0x00000014.prop
+key editorPedestalModel fe_editor_background_sporepedia
+key editorSaveDirectory 0x90368EA0!0xFFFFFFFF
+key editorSaveExtension 0xFFFFFFFF.flr
+bool editorShowBoneLengthHandles true
+float editorSkinResolutionHighQuality 0.21
+float editorSkinResolutionRealtime 0.21
+key editorSwatchBackgroundModel fe_editor_background_sporepedia
+key editorSwatchCameraUI EditorCameraFloraUI.prop
+bool editorTranslateModelOnSave true
+bool editorUseAnimWorld true
+bool editorUseShadows true
+bool editorUseSkin true
+bool editorUseSpine true
+bool editorUseSymmetry false
+key editorVertebraModel flora_rigblock~!pe_vertebra.prop
+float editorVertebraWidth 20

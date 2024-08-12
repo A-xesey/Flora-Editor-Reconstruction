@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "skinpaint_florabase_valueGradientLight"
+colorRGBs paintThemeColor1s
+	(0.364706, 0.403921, 0.196078)
+	(0, 0, 0)
+	(0, 0, 0)
+end
+keys paintThemePaints
+	skinpaint_florabase_valueGradientLight
+	animations~
+	animations~
+end

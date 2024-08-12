@@ -1,0 +1,9 @@
+key parent PlantEditorTemplates!PlantCapTemplate
+texts blockName
+	(PlantRigblocks!0x00000070) "fe_cap_03a"
+end
+string16 description "03: 170"
+int32 modelCapabilityFruit 1
+key modelMeshHull editor_rigblock~!None
+key modelMeshLOD0 editor_rigblock~!fe_cap.rw4
+vector3 modelRotationBallHandleOffset (0, -0.65, 0)

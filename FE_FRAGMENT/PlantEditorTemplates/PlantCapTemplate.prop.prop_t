@@ -1,0 +1,24 @@
+key parent PlantEditorTemplates!PlantRigblockTemplate.prop
+string16 description "unknown plant cap"
+int32 modelBakeLevel 1
+keys modelHandleKeys
+	DeformAxisLeft
+	DeformAxisForward
+	DeformAxisUp
+end
+keys modelHandlePlacementTypesTemplate
+	DeformAxisLeft!PreserveOrientation
+	DeformAxisForward!PreserveOrientation
+	DeformAxisUp!PreserveOrientation
+end
+string8s modelHandleStretchSounds
+	"creature_x"
+	"creature_y"
+	"creature_z"
+end
+bool modelHasRotationBallHandle true
+bool modelOrientToSurfaces true
+key modelPinningType PinningGeometry!PinningNormal
+key modelRigBlockType plant!cap
+key modelRotationRingYAxis ui_rotateringcreature
+bool modelUseInBaseCollisionCalc false

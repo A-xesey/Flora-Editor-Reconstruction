@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "mesa1 L"
+colorRGBs paintThemeColor1s
+	(0.443134,0.313723,0.262742)
+	(0.447059,0.576469,0.262742)
+	(0.803922,0.627451,0.258823)
+end
+keys paintThemePaints
+	skinpaint_florabase_marble
+	skinpaint_floracoat_kidney
+	skinpaint_floradetail_sideWash
+end

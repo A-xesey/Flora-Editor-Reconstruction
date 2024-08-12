@@ -1,0 +1,11 @@
+key parent PlantEditorTemplates!PlantBranchTemplate
+texts blockName
+	(PlantRigblocks!0x00000019) "branch 02a"
+end
+string16 description "FE_branch_02a"
+int32 modelCapabilityLimb 1
+bool modelHasSocketConnector true
+vector3 modelMaxSocketConnectorOffset (0, -3.027, 0)
+key modelMeshLOD0 editor_rigblock~!fe_branch_02a.rw4
+vector3 modelMinSocketConnectorOffset (0, -0.342, 0)
+bool modelUseDummyBlocks true

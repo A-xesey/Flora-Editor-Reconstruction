@@ -1,0 +1,17 @@
+key parent palette_config~!TemplatePaletteCategoryPaint.prop
+keys paletteCategoryIconList
+	global_ui~!0x10A375AD.png
+	0xFFFFFFFF!0xFFFFFFFF.0xFFFFFFFF
+	global_ui~!0x9A0464DE.png
+	global_ui~!0x5E00A16E.png
+	global_ui~!0x6276BF51.png
+	0xFFFFFFFF!0xFFFFFFFF.0xFFFFFFFF
+	global_ui~!0x95045CBD.png
+	global_ui~!0x46D95497.png
+	global_ui~!0x10A375AD.png
+end
+key paletteCategoryLayoutFile 0x3FCA51EA
+texts paletteCategoryName
+	(cl_paint!0xbd699ecf) "Cell Paint"
+end
+uint32 paletteCategorySequenceNumber 100

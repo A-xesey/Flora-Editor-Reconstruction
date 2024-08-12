@@ -1,0 +1,7 @@
+bool browserAllowSortByAppPack true
+bool browserAllowSortByAuthor true
+bool browserAllowSortByDownloadTime true
+bool browserAllowSortByPublished false
+bool browserAllowSortByTime true
+key browserFilterMakeNewEditor FloraEditorSetup
+key browserDefaultSort SortByTitle

@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "skinpaint_florabase_auratus"
+colorRGBs paintThemeColor1s
+	(0.443137, 0.364706, 0.203921)
+	(0, 0, 0)
+	(0, 0, 0)
+end
+keys paintThemePaints
+	skinpaint_florabase_auratus
+	animations~
+	animations~
+end
