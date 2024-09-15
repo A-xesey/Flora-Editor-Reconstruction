@@ -1,0 +1,758 @@
+spore0006438f6347406662000775929eb9fea735ffffffffffffffffffffffffffffffff0000000ec178f8850dsporeautotestfffffffffffffffe08Avachras00006gaprop00<?xml version="1.0" encoding="UTF-8"?><sporemodel>
+  <properties>
+    <modeltype>PlantLarge</modeltype>
+    <skineffectseed1>1234</skineffectseed1>
+    <skineffectseed2>1234</skineffectseed2>
+    <skineffectseed3>1234</skineffectseed3>
+    <skincolor1>0.576469,0.349019,0.262744</skincolor1>
+    <skincolor2>0.972549,0.749019,0.262744</skincolor2>
+    <skincolor3>0.345097,0.694117,0.317647</skincolor3>
+    <zcorpscore>14</zcorpscore>
+  </properties>
+  <blocks count="35">
+    <blockref>
+      <blockid>flora_parts~, fe_root_dummy</blockid>
+      <transform>
+        <scale>1</scale>
+        <position>0.00133071,-8.60350e-5,0.600000</position>
+        <triangledirection>0,1,0</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>1,0,0</row0>
+          <row1>0,1,0</row1>
+          <row2>0,0,1</row2>
+        </orientation>
+      </transform>
+      <snapped>false</snapped>
+      <childlist count="2">
+        <childid>4</childid>
+        <childid>2</childid>
+      </childlist>
+    </blockref>
+    <blockref>
+      <blockid>Creature_parts~, ce_grasper_null</blockid>
+      <transform>
+        <basemusclescale>2</basemusclescale>
+        <scale>1</scale>
+        <position>-1.230672,-1.154638,0.0100002</position>
+        <triangledirection>0,-1.19209e-7,-1</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>1,0,0</row0>
+          <row1>0,-1.19209e-7,-1</row1>
+          <row2>0,1,-1.19209e-7</row2>
+        </orientation>
+      </transform>
+      <snapped>false</snapped>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, fe_trunk_02</blockid>
+      <transform>
+        <limbtype>2</limbtype>
+        <musclescale>0.5</musclescale>
+        <basemusclescale>3</basemusclescale>
+        <scale>1</scale>
+        <position>0.00133071,-8.60350e-5,0.600000</position>
+        <triangledirection>0,3.17863e-8,1</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>1,0,0</row0>
+          <row1>0,-1.19209e-7,-1</row1>
+          <row2>0,1,-1.19209e-7</row2>
+        </orientation>
+        <userorientation>
+          <userorientation_row0>1,0,0</userorientation_row0>
+          <userorientation_row1>0,-1,-8.74226e-8</userorientation_row1>
+          <userorientation_row2>0,8.74226e-8,-1</userorientation_row2>
+        </userorientation>
+      </transform>
+      <snapped>true</snapped>
+      <childlist count="1">
+        <childid>3</childid>
+      </childlist>
+      <handles count="3">
+        <weight channel="DeformAxisForward">0</weight>
+        <weight channel="DeformAxisLeft">0.629260</weight>
+        <weight channel="DeformAxisUp">0.500434</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>Creature_parts~, ce_grasper_null</blockid>
+      <transform>
+        <basemusclescale>1</basemusclescale>
+        <scale>1</scale>
+        <position>0.00133071,-8.60794e-5,-0.799998</position>
+        <triangledirection>0,-1.19209e-7,-1</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>1,0,0</row0>
+          <row1>0,-1.19209e-7,-1</row1>
+          <row2>0,1,-1.19209e-7</row2>
+        </orientation>
+      </transform>
+      <snapped>true</snapped>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, fe_muscle_branch_02</blockid>
+      <transform>
+        <limbtype>0</limbtype>
+        <musclescale>0.0999998</musclescale>
+        <basemusclescale>3</basemusclescale>
+        <scale>1</scale>
+        <position>0.00133071,-8.60350e-5,0.600000</position>
+        <triangledirection>0,0,-1</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>0.959130,0.282964,0</row0>
+          <row1>0,0,-1</row1>
+          <row2>-0.282964,0.959130,0</row2>
+        </orientation>
+      </transform>
+      <snapped>true</snapped>
+      <childlist count="4">
+        <childid>16</childid>
+        <childid>14</childid>
+        <childid>9</childid>
+        <childid>5</childid>
+      </childlist>
+      <handles count="1">
+        <weight channel="longer">0.162245</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, fe_muscle_branch_02</blockid>
+      <transform>
+        <limbtype>0</limbtype>
+        <musclescale>0.0999998</musclescale>
+        <basemusclescale>2.799998</basemusclescale>
+        <scale>1</scale>
+        <position>0.00133071,-8.60350e-5,1.852249</position>
+        <triangledirection>0.333623,-0.183068,0.924760</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>0.942036,0.0277514,-0.334361</row0>
+          <row1>0.333623,-0.183068,0.924760</row1>
+          <row2>-0.0355475,-0.982708,-0.181715</row2>
+        </orientation>
+      </transform>
+      <snapped>true</snapped>
+      <childlist count="1">
+        <childid>6</childid>
+      </childlist>
+      <handles count="1">
+        <weight channel="longer">0.162245</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, fe_muscle_branch_02</blockid>
+      <transform>
+        <limbtype>0</limbtype>
+        <musclescale>0.0999998</musclescale>
+        <basemusclescale>2.799998</basemusclescale>
+        <scale>1</scale>
+        <position>-0.416449,0.229161,0.694217</position>
+        <triangledirection>-0.181026,-0.971252,-0.154589</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>0.967891,-0.203816,0.147124</row0>
+          <row1>-0.181026,-0.971252,-0.154589</row1>
+          <row2>0.174403,0.122991,-0.976962</row2>
+        </orientation>
+      </transform>
+      <snapped>true</snapped>
+      <childlist count="2">
+        <childid>12</childid>
+        <childid>7</childid>
+      </childlist>
+      <handles count="1">
+        <weight channel="longer">0.162245</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, fe_muscle_branch_02</blockid>
+      <transform>
+        <limbtype>0</limbtype>
+        <musclescale>0.0999998</musclescale>
+        <basemusclescale>2.799998</basemusclescale>
+        <scale>1</scale>
+        <position>-0.189758,1.445411,0.887802</position>
+        <triangledirection>0,0,-1</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>0.962865,-0.269982,0</row0>
+          <row1>0,0,-1</row1>
+          <row2>0.269982,0.962865,0</row2>
+        </orientation>
+      </transform>
+      <snapped>true</snapped>
+      <childlist count="2">
+        <childid>11</childid>
+        <childid>8</childid>
+      </childlist>
+      <handles count="1">
+        <weight channel="longer">0.162245</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>Creature_parts~, ce_grasper_null</blockid>
+      <transform>
+        <basemusclescale>2.799998</basemusclescale>
+        <scale>1</scale>
+        <position>-0.189758,1.445411,2.140053</position>
+        <triangledirection>0,-1.19209e-7,-1</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>1,0,0</row0>
+          <row1>0,-1.19209e-7,-1</row1>
+          <row2>0,1,-1.19209e-7</row2>
+        </orientation>
+      </transform>
+      <snapped>true</snapped>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, fe_trunk_02</blockid>
+      <transform>
+        <limbtype>2</limbtype>
+        <musclescale>0.5</musclescale>
+        <basemusclescale>2.799998</basemusclescale>
+        <scale>1</scale>
+        <position>0.00133071,-8.60350e-5,1.852249</position>
+        <triangledirection>2.62268e-7,1.19209e-7,1</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>1,0,0</row0>
+          <row1>0,-1.19209e-7,-1</row1>
+          <row2>0,1,-1.19209e-7</row2>
+        </orientation>
+        <userorientation>
+          <userorientation_row0>-1,-2.62268e-7,0</userorientation_row0>
+          <userorientation_row1>2.62268e-7,-1,0</userorientation_row1>
+          <userorientation_row2>0,0,1</userorientation_row2>
+        </userorientation>
+      </transform>
+      <snapped>true</snapped>
+      <childlist count="1">
+        <childid>10</childid>
+      </childlist>
+      <handles count="3">
+        <weight channel="DeformAxisForward">1</weight>
+        <weight channel="DeformAxisLeft">0.538834</weight>
+        <weight channel="DeformAxisUp">1</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>Creature_parts~, ce_grasper_null</blockid>
+      <transform>
+        <basemusclescale>1</basemusclescale>
+        <scale>1</scale>
+        <position>0.00132974,-8.64760e-5,-1.847748</position>
+        <triangledirection>0,-1.19209e-7,-1</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>1,0,0</row0>
+          <row1>0,-1.19209e-7,-1</row1>
+          <row2>0,1,-1.19209e-7</row2>
+        </orientation>
+      </transform>
+      <snapped>true</snapped>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, FE_leaf_15</blockid>
+      <transform>
+        <scale>2,281881</scale>
+        <position>-0.152024,1.444656,2.532359</position>
+        <triangledirection>-0.246974,-0.162630,-0.955276</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>-0.0795751,0.996829,-9.22009e-8</row0>
+          <row1>-0.0521306,-0.00416159,-0.998631</row1>
+          <row2>-0.995464,-0.0794662,0.0522964</row2>
+        </orientation>
+        <userorientation>
+          <userorientation_row0>0.989332,0.145672,-7.45058e-9</userorientation_row0>
+          <userorientation_row1>-0.142462,0.967521,0.208820</userorientation_row1>
+          <userorientation_row2>0.0304195,-0.206592,0.977953</userorientation_row2>
+        </userorientation>
+      </transform>
+      <snapped>false</snapped>
+      <handles count="3">
+        <weight channel="DeformAxisForward">0</weight>
+        <weight channel="DeformAxisUp">0.620998</weight>
+        <weight channel="0x7c184950">0.937349</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, fe_trunk_02</blockid>
+      <transform>
+        <limbtype>2</limbtype>
+        <musclescale>0.5</musclescale>
+        <basemusclescale>2.799998</basemusclescale>
+        <scale>1</scale>
+        <position>-0.189758,1.445411,0.887802</position>
+        <triangledirection>0,-1.19209e-7,-1</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>1,0,0</row0>
+          <row1>0,-1.19209e-7,-1</row1>
+          <row2>0,1,-1.19209e-7</row2>
+        </orientation>
+      </transform>
+      <snapped>true</snapped>
+      <childlist count="2">
+        <childid>34</childid>
+        <childid>13</childid>
+      </childlist>
+      <handles count="3">
+        <weight channel="DeformAxisForward">0.517981</weight>
+        <weight channel="DeformAxisLeft">1</weight>
+        <weight channel="DeformAxisUp">0.628107</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>Creature_parts~, ce_grasper_null</blockid>
+      <transform>
+        <basemusclescale>1</basemusclescale>
+        <scale>1</scale>
+        <position>-0.189758,1.445412,3.479161</position>
+        <triangledirection>0,-1.19209e-7,-1</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>1,0,0</row0>
+          <row1>0,-1.19209e-7,-1</row1>
+          <row2>0,1,-1.19209e-7</row2>
+        </orientation>
+      </transform>
+      <snapped>true</snapped>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, fe_trunk_01</blockid>
+      <transform>
+        <limbtype>2</limbtype>
+        <musclescale>0.5</musclescale>
+        <basemusclescale>2.799998</basemusclescale>
+        <scale>1</scale>
+        <position>0.00133071,-8.60350e-5,1.852249</position>
+        <triangledirection>0,-1.19209e-7,-1</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>1,0,0</row0>
+          <row1>0,-1.19209e-7,-1</row1>
+          <row2>0,1,-1.19209e-7</row2>
+        </orientation>
+      </transform>
+      <snapped>true</snapped>
+      <childlist count="1">
+        <childid>15</childid>
+      </childlist>
+      <handles count="3">
+        <weight channel="DeformAxisLeft">1</weight>
+        <weight channel="DeformAxisForward">1</weight>
+        <weight channel="DeformBoneLength">1</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>Creature_parts~, ce_grasper_null</blockid>
+      <transform>
+        <basemusclescale>1</basemusclescale>
+        <scale>1</scale>
+        <position>0.00133071,-8.55582e-5,5.852250</position>
+        <triangledirection>0,-1.19209e-7,-1</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>1,0,0</row0>
+          <row1>0,-1.19209e-7,-1</row1>
+          <row2>0,1,-1.19209e-7</row2>
+        </orientation>
+      </transform>
+      <snapped>true</snapped>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, fe_muscle_branch_02</blockid>
+      <transform>
+        <limbtype>0</limbtype>
+        <musclescale>0.0999998</musclescale>
+        <basemusclescale>2.799998</basemusclescale>
+        <scale>1</scale>
+        <position>0.00133071,-8.60350e-5,1.852249</position>
+        <triangledirection>0.0544506,0.464466,-0.883915</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>0.995818,-0.0902888,0.0139004</row0>
+          <row1>0.0544506,0.464466,-0.883915</row1>
+          <row2>0.0733514,0.880976,0.467440</row2>
+        </orientation>
+      </transform>
+      <snapped>true</snapped>
+      <childlist count="2">
+        <childid>31</childid>
+        <childid>17</childid>
+      </childlist>
+      <handles count="1">
+        <weight channel="longer">0.162245</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, fe_muscle_branch_02</blockid>
+      <transform>
+        <limbtype>0</limbtype>
+        <musclescale>0.0999998</musclescale>
+        <basemusclescale>2.799998</basemusclescale>
+        <scale>1</scale>
+        <position>-0.0668550,-0.581713,2.959133</position>
+        <triangledirection>0,-1.19209e-7,-1</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>1,0,0</row0>
+          <row1>0,-1.19209e-7,-1</row1>
+          <row2>0,1,-1.19209e-7</row2>
+        </orientation>
+      </transform>
+      <snapped>true</snapped>
+      <childlist count="1">
+        <childid>18</childid>
+      </childlist>
+      <handles count="1">
+        <weight channel="longer">0.162245</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, fe_muscle_branch_02</blockid>
+      <transform>
+        <limbtype>0</limbtype>
+        <musclescale>0.0999998</musclescale>
+        <basemusclescale>2.799998</basemusclescale>
+        <scale>1</scale>
+        <position>-0.0668550,-0.581713,4.211382</position>
+        <triangledirection>0,-1.19209e-7,-1</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>1,0,0</row0>
+          <row1>0,-1.19209e-7,-1</row1>
+          <row2>0,1,-1.19209e-7</row2>
+        </orientation>
+      </transform>
+      <snapped>true</snapped>
+      <childlist count="3">
+        <childid>29</childid>
+        <childid>27</childid>
+        <childid>19</childid>
+      </childlist>
+      <handles count="1">
+        <weight channel="longer">0.162245</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, fe_muscle_branch_02</blockid>
+      <transform>
+        <limbtype>0</limbtype>
+        <musclescale>0.0999998</musclescale>
+        <basemusclescale>2.799998</basemusclescale>
+        <scale>1</scale>
+        <position>-0.0668550,-0.581713,5.463632</position>
+        <triangledirection>0,-1.19209e-7,-1</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>1,0,0</row0>
+          <row1>0,-1.19209e-7,-1</row1>
+          <row2>0,1,-1.19209e-7</row2>
+        </orientation>
+      </transform>
+      <snapped>true</snapped>
+      <childlist count="8">
+        <childid>28</childid>
+        <childid>26</childid>
+        <childid>25</childid>
+        <childid>24</childid>
+        <childid>23</childid>
+        <childid>22</childid>
+        <childid>21</childid>
+        <childid>20</childid>
+      </childlist>
+      <handles count="1">
+        <weight channel="longer">0.162245</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>Creature_parts~, ce_grasper_null</blockid>
+      <transform>
+        <basemusclescale>2.799998</basemusclescale>
+        <scale>1</scale>
+        <position>-0.0668550,-0.581713,6.715883</position>
+        <triangledirection>0,-1.19209e-7,-1</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>1,0,0</row0>
+          <row1>0,-1.19209e-7,-1</row1>
+          <row2>0,1,-1.19209e-7</row2>
+        </orientation>
+      </transform>
+      <snapped>true</snapped>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, FE_leaf_15</blockid>
+      <transform>
+        <scale>3,320117</scale>
+        <position>-0.0303186,-0.572253,7.108147</position>
+        <triangledirection>-0.0490716,-0.0180814,-0.998631</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>-0.345744,0.938328,-6.89178e-8</row0>
+          <row1>-0.0490716,-0.0180814,-0.998631</row1>
+          <row2>-0.937044,-0.345271,0.0522968</row2>
+        </orientation>
+      </transform>
+      <snapped>false</snapped>
+      <childlist count="1">
+        <childid>33</childid>
+      </childlist>
+      <handles count="3">
+        <weight channel="DeformAxisForward">0</weight>
+        <weight channel="DeformAxisUp">0.529605</weight>
+        <weight channel="0x7c184950">0.914799</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, fe_cap_01a</blockid>
+      <transform>
+        <scale>1</scale>
+        <position>0.0929556,-0.00719871,5.871550</position>
+        <triangledirection>-0.267706,-0.962606,0.0414824</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>-0.963436,0.267937,-9.31322e-9</row0>
+          <row1>-0.267706,-0.962606,0.0414824</row1>
+          <row2>0.0111147,0.0399657,0.999139</row2>
+        </orientation>
+      </transform>
+      <snapped>false</snapped>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, fe_cap_01a</blockid>
+      <transform>
+        <scale>1</scale>
+        <position>-0.175218,-0.0155826,5.669321</position>
+        <triangledirection>0.184329,-0.971421,0.149541</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>-0.982469,-0.186425,-1.35973e-7</row0>
+          <row1>0.184329,-0.971421,0.149541</row1>
+          <row2>-0.0278783,0.146919,0.988755</row2>
+        </orientation>
+      </transform>
+      <snapped>false</snapped>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, fe_cap_01a</blockid>
+      <transform>
+        <scale>1</scale>
+        <position>-0.616218,-0.637852,5.574467</position>
+        <triangledirection>0.983566,0.0993719,0.150741</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>0.100520,-0.994935,-6.79865e-8</row0>
+          <row1>0.983565,0.0993719,0.150741</row1>
+          <row2>-0.149978,-0.0151527,0.988573</row2>
+        </orientation>
+      </transform>
+      <snapped>false</snapped>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, fe_cap_01a</blockid>
+      <transform>
+        <scale>1</scale>
+        <position>-0.441873,-0.958572,5.536524</position>
+        <triangledirection>0.702566,0.710314,0.0430440</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>0.710973,-0.703218,5.58793e-9</row0>
+          <row1>0.702566,0.710314,0.0430440</row1>
+          <row2>-0.0302693,-0.0306031,0.999073</row2>
+        </orientation>
+      </transform>
+      <snapped>false</snapped>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, fe_cap_01a</blockid>
+      <transform>
+        <scale>1</scale>
+        <position>0.0444335,-1.121268,5.554779</position>
+        <triangledirection>-0.195351,0.979650,0.0460632</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>0.980692,0.195558,9.31322e-10</row0>
+          <row1>-0.195351,0.979651,0.0460632</row1>
+          <row2>0.00900807,-0.0451738,0.998938</row2>
+        </orientation>
+      </transform>
+      <snapped>false</snapped>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, fe_cap_01a</blockid>
+      <transform>
+        <scale>1</scale>
+        <position>0.329352,-0.929149,5.474937</position>
+        <triangledirection>-0.735694,0.662820,-0.139368</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>0.669352,0.742944,-5.88595e-7</row0>
+          <row1>-0.735694,0.662820,-0.139368</row1>
+          <row2>-0.103542,0.0932868,0.990240</row2>
+        </orientation>
+      </transform>
+      <snapped>false</snapped>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, fe_cap_01a</blockid>
+      <transform>
+        <scale>1</scale>
+        <position>-0.543348,-0.233461,5.816211</position>
+        <triangledirection>0.803211,-0.586915,0.101890</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>-0.589985,-0.807413,2.60770e-8</row0>
+          <row1>0.803211,-0.586915,0.101890</row1>
+          <row2>-0.0822674,0.0601137,0.994795</row2>
+        </orientation>
+      </transform>
+      <snapped>false</snapped>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, fe_trunk_02</blockid>
+      <transform>
+        <limbtype>2</limbtype>
+        <musclescale>0.5</musclescale>
+        <basemusclescale>2.799998</basemusclescale>
+        <scale>1</scale>
+        <position>-0.0668550,-0.581713,5.463632</position>
+        <triangledirection>0,-1.19209e-7,-1</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>1,0,0</row0>
+          <row1>0,-1.19209e-7,-1</row1>
+          <row2>0,1,-1.19209e-7</row2>
+        </orientation>
+      </transform>
+      <snapped>true</snapped>
+      <childlist count="1">
+        <childid>30</childid>
+      </childlist>
+      <handles count="3">
+        <weight channel="DeformAxisForward">0.517981</weight>
+        <weight channel="DeformAxisLeft">1</weight>
+        <weight channel="DeformAxisUp">0.628107</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>Creature_parts~, ce_grasper_null</blockid>
+      <transform>
+        <basemusclescale>1</basemusclescale>
+        <scale>1</scale>
+        <position>-0.0668550,-0.581712,8.054991</position>
+        <triangledirection>0,-1.19209e-7,-1</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>1,0,0</row0>
+          <row1>0,-1.19209e-7,-1</row1>
+          <row2>0,1,-1.19209e-7</row2>
+        </orientation>
+      </transform>
+      <snapped>true</snapped>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, fe_trunk_02</blockid>
+      <transform>
+        <limbtype>2</limbtype>
+        <musclescale>0.5</musclescale>
+        <basemusclescale>2.799998</basemusclescale>
+        <scale>1</scale>
+        <position>-0.0668550,-0.581713,2.959133</position>
+        <triangledirection>2.62268e-7,1.19209e-7,1</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>1,0,0</row0>
+          <row1>0,-1.19209e-7,-1</row1>
+          <row2>0,1,-1.19209e-7</row2>
+        </orientation>
+        <userorientation>
+          <userorientation_row0>-1,-2.62268e-7,0</userorientation_row0>
+          <userorientation_row1>2.62268e-7,-1,0</userorientation_row1>
+          <userorientation_row2>0,0,1</userorientation_row2>
+        </userorientation>
+      </transform>
+      <snapped>true</snapped>
+      <childlist count="1">
+        <childid>32</childid>
+      </childlist>
+      <handles count="3">
+        <weight channel="DeformAxisForward">1</weight>
+        <weight channel="DeformAxisLeft">0.538834</weight>
+        <weight channel="DeformAxisUp">1</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>Creature_parts~, ce_grasper_null</blockid>
+      <transform>
+        <basemusclescale>1</basemusclescale>
+        <scale>1</scale>
+        <position>-0.0668560,-0.581714,-0.740867</position>
+        <triangledirection>0,-1.19209e-7,-1</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>1,0,0</row0>
+          <row1>0,-1.19209e-7,-1</row1>
+          <row2>0,1,-1.19209e-7</row2>
+        </orientation>
+      </transform>
+      <snapped>true</snapped>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, FE_leaf_16</blockid>
+      <transform>
+        <scale>2,116999</scale>
+        <position>0.110498,-0.530417,8.104403</position>
+        <triangledirection>0.0651543,0.0406717,-0.997045</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>0.370441,-0.928855,9.68575e-7</row0>
+          <row1>0.476301,0.189955,-0.858518</row1>
+          <row2>0.797439,0.318031,0.512782</row2>
+        </orientation>
+        <userorientation>
+          <userorientation_row0>0.999882,0.0152465,1.39698e-8</userorientation_row0>
+          <userorientation_row1>-0.0136432,0.894740,-0.446375</userorientation_row1>
+          <userorientation_row2>-0.00680573,0.446323,0.894845</userorientation_row2>
+        </userorientation>
+      </transform>
+      <snapped>false</snapped>
+      <handles count="3">
+        <weight channel="DeformAxisLeft">0.813947</weight>
+        <weight channel="DeformAxisForward">0</weight>
+        <weight channel="DeformAxisUp">0.940250</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, FE_leaf_16</blockid>
+      <transform>
+        <scale>2,116999</scale>
+        <position>-0.318967,1.673316,3.430633</position>
+        <triangledirection>0.0383437,-0.0927149,-0.994953</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>-0.0852335,-0.996361,2.04890e-8</row0>
+          <row1>0.268577,-0.0229754,-0.962984</row1>
+          <row2>0.959479,-0.0820785,0.269558</row2>
+        </orientation>
+        <userorientation>
+          <userorientation_row0>0.995620,-0.0804160,0.0476814</userorientation_row0>
+          <userorientation_row1>0.0891094,0.970553,-0.223798</userorientation_row1>
+          <userorientation_row2>-0.0282803,0.227066,0.973468</userorientation_row2>
+        </userorientation>
+      </transform>
+      <snapped>false</snapped>
+      <handles count="3">
+        <weight channel="DeformAxisLeft">0.813947</weight>
+        <weight channel="DeformAxisForward">0</weight>
+        <weight channel="DeformAxisUp">1</weight>
+      </handles>
+    </blockref>
+  </blocks></sporemodel>

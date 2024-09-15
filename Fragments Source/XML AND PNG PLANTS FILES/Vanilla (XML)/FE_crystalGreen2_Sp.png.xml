@@ -1,0 +1,493 @@
+spore0005438f634740666200710f3cd2d816b417ffffffffffffffff0000000ebfdb7e1106KChangfffffffffffffffe06Tussle0000000<?xml version="1.0" encoding="UTF-8"?><sporemodel>
+  <properties>
+    <modeltype>PlantSmall</modeltype>
+    <skineffectseed1>2218198848</skineffectseed1>
+    <skineffectseed2>2218198848</skineffectseed2>
+    <skineffectseed3>2218198848</skineffectseed3>
+    <skincolor1>0.282353,0.200000,0.168626</skincolor1>
+    <skincolor2>0.415685,0.576470,0.184313</skincolor2>
+    <skincolor3>0.905882,0.709803,0.290195</skincolor3>
+    <zcorpscore>28</zcorpscore>
+  </properties>
+  <blocks count="21">
+    <blockref>
+      <blockid>flora_parts~, fe_root_dummy</blockid>
+      <transform>
+        <scale>1</scale>
+        <position>0,0,0.600000</position>
+        <triangledirection>0,1,0</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>1,0,0</row0>
+          <row1>0,1,0</row1>
+          <row2>0,0,1</row2>
+        </orientation>
+      </transform>
+      <snapped>false</snapped>
+      <childlist count="2">
+        <childid>11</childid>
+        <childid>1</childid>
+      </childlist>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, FE_muscle_branch_04</blockid>
+      <transform>
+        <limbtype>0</limbtype>
+        <musclescale>0.425000</musclescale>
+        <basemusclescale>2.299999</basemusclescale>
+        <scale>1</scale>
+        <position>0,0,0.600000</position>
+        <triangledirection>0.00436399,0.0160359,0.999861</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>-0.0934408,0.995503,-0.0155582</row0>
+          <row1>0.00436399,0.0160359,0.999861</row1>
+          <row2>0.995615,0.0933600,-0.00584279</row2>
+        </orientation>
+      </transform>
+      <snapped>true</snapped>
+      <childlist count="17">
+        <childid>20</childid>
+        <childid>19</childid>
+        <childid>18</childid>
+        <childid>17</childid>
+        <childid>16</childid>
+        <childid>15</childid>
+        <childid>14</childid>
+        <childid>13</childid>
+        <childid>10</childid>
+        <childid>9</childid>
+        <childid>8</childid>
+        <childid>7</childid>
+        <childid>6</childid>
+        <childid>5</childid>
+        <childid>4</childid>
+        <childid>3</childid>
+        <childid>2</childid>
+      </childlist>
+      <handles count="1">
+        <weight channel="longer">0.107354</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>Creature_parts~, ce_grasper_null</blockid>
+      <transform>
+        <basemusclescale>0.800000</basemusclescale>
+        <scale>1</scale>
+        <position>-0.00396099,-0.0145569,-0.307629</position>
+        <triangledirection>0,0,-1</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>1,0,0</row0>
+          <row1>0,0,-1</row1>
+          <row2>0,1,0</row2>
+        </orientation>
+      </transform>
+      <snapped>true</snapped>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, FE_flatleaf_06</blockid>
+      <transform>
+        <scale>1,077880</scale>
+        <position>-0.145681,-0.286706,0.543112</position>
+        <triangledirection>0.596469,0.793038,0.123756</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>0.909740,-0.415178,-3.27825e-7</row0>
+          <row1>0.413564,0.906203,0.0880839</row1>
+          <row2>-0.0365702,-0.0801336,0.996113</row2>
+        </orientation>
+        <userorientation>
+          <userorientation_row0>0.973181,-0.215806,0.0796630</userorientation_row0>
+          <userorientation_row1>0.213379,0.976233,0.0379129</userorientation_row1>
+          <userorientation_row2>-0.0859510,-0.0198979,0.996101</userorientation_row2>
+        </userorientation>
+      </transform>
+      <snapped>false</snapped>
+      <handles count="1">
+        <weight channel="Leaf_bend">0.879469</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, FE_flatleaf_06</blockid>
+      <transform>
+        <scale>0,860706</scale>
+        <position>0.0418479,-0.308526,0.573467</position>
+        <triangledirection>-0.448337,0.892543,0.0485853</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>0.989050,0.147577,7.63684e-8</row0>
+          <row1>-0.147451,0.988204,0.0413620</row1>
+          <row2>0.00610401,-0.0409091,0.999144</row2>
+        </orientation>
+        <userorientation>
+          <userorientation_row0>0.919428,0.299138,0.255281</userorientation_row0>
+          <userorientation_row1>-0.311708,0.950132,0.00929399</userorientation_row1>
+          <userorientation_row2>-0.239770,-0.0881180,0.966822</userorientation_row2>
+        </userorientation>
+      </transform>
+      <snapped>false</snapped>
+      <handles count="1">
+        <weight channel="Leaf_bend">1</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, FE_flatleaf_06</blockid>
+      <transform>
+        <scale>0,860705</scale>
+        <position>0.316757,0.0102309,0.663403</position>
+        <triangledirection>-0.994000,-0.0611237,0.0907123</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>-0.00845023,0.999964,5.02914e-8</row0>
+          <row1>-0.977808,-0.00826299,-0.209337</row1>
+          <row2>-0.209330,-0.00176900,0.977843</row2>
+        </orientation>
+        <userorientation>
+          <userorientation_row0>0.996397,0.0699980,-0.0478579</userorientation_row0>
+          <userorientation_row1>-0.0527219,0.953457,0.296885</userorientation_row1>
+          <userorientation_row2>0.0664119,-0.293291,0.953713</userorientation_row2>
+        </userorientation>
+      </transform>
+      <snapped>false</snapped>
+      <handles count="1">
+        <weight channel="Leaf_bend">1</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, FE_flatleaf_06</blockid>
+      <transform>
+        <scale>1,161830</scale>
+        <position>0.264067,0.192927,0.526543</position>
+        <triangledirection>-0.668431,-0.718157,0.193517</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>-0.572452,0.819937,7.45058e-8</row0>
+          <row1>-0.802767,-0.560464,0.203575</row1>
+          <row2>0.166919,0.116537,0.979059</row2>
+        </orientation>
+        <userorientation>
+          <userorientation_row0>0.978510,0.206192,-0.00175799</userorientation_row0>
+          <userorientation_row1>-0.206199,0.978493,-0.00580199</userorientation_row1>
+          <userorientation_row2>0.000523999,0.00603899,0.999981</userorientation_row2>
+        </userorientation>
+      </transform>
+      <snapped>false</snapped>
+      <handles count="1">
+        <weight channel="Leaf_bend">0.914692</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, FE_flatleaf_06</blockid>
+      <transform>
+        <scale>0,927740</scale>
+        <position>0.0383979,0.324173,0.571240</position>
+        <triangledirection>-0.0377165,-0.998494,-0.0398466</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>-0.991167,0.132614,-2.30036e-7</row0>
+          <row1>-0.132399,-0.989560,0.0569339</row1>
+          <row2>0.00755002,0.0564311,0.998377</row2>
+        </orientation>
+        <userorientation>
+          <userorientation_row0>0.994135,0.0894330,-0.0608119</userorientation_row0>
+          <userorientation_row1>-0.0950310,0.990795,-0.0964129</userorientation_row1>
+          <userorientation_row2>0.0516289,0.101626,0.993482</userorientation_row2>
+        </userorientation>
+      </transform>
+      <snapped>false</snapped>
+      <handles count="1">
+        <weight channel="Leaf_bend">1</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, FE_flatleaf_06</blockid>
+      <transform>
+        <scale>1,161830</scale>
+        <position>-0.227050,0.228165,0.651798</position>
+        <triangledirection>0.664763,-0.724014,0.184094</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>-0.709369,-0.704837,-3.42726e-7</row0>
+          <row1>0.687160,-0.691578,-0.222551</row1>
+          <row2>0.156862,-0.157871,0.974920</row2>
+        </orientation>
+        <userorientation>
+          <userorientation_row0>0.998097,-0.0546219,0.0286069</userorientation_row0>
+          <userorientation_row1>0.0387500,0.916542,0.398056</userorientation_row1>
+          <userorientation_row2>-0.0479619,-0.396191,0.916914</userorientation_row2>
+        </userorientation>
+      </transform>
+      <snapped>false</snapped>
+      <handles count="1">
+        <weight channel="Leaf_bend">0.883628</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, FE_flatleaf_06</blockid>
+      <transform>
+        <scale>0,860705</scale>
+        <position>-0.303725,0.137975,0.554551</position>
+        <triangledirection>0.989415,-0.0435898,0.138414</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>-0.417455,-0.908697,-5.75557e-7</row0>
+          <row1>0.908669,-0.417442,0.00778899</row1>
+          <row2>-0.00707808,0.00325103,0.999969</row2>
+        </orientation>
+        <userorientation>
+          <userorientation_row0>0.927508,0.367051,0.0707340</userorientation_row0>
+          <userorientation_row1>-0.373427,0.918326,0.131265</userorientation_row1>
+          <userorientation_row2>-0.0167759,-0.148164,0.988821</userorientation_row2>
+        </userorientation>
+      </transform>
+      <snapped>false</snapped>
+      <handles count="1">
+        <weight channel="Leaf_bend">1</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, FE_flatleaf_06</blockid>
+      <transform>
+        <scale>1,161830</scale>
+        <position>0.271274,-0.147341,0.595471</position>
+        <triangledirection>-0.829175,0.508832,0.231427</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>0.494101,0.869404,-2.84751e-7</row0>
+          <row1>-0.869390,0.494093,-0.00572700</row1>
+          <row2>-0.00497893,0.00282996,0.999983</row2>
+        </orientation>
+        <userorientation>
+          <userorientation_row0>0.994726,-0.00853799,-0.102209</userorientation_row0>
+          <userorientation_row1>0.0326849,0.970962,0.236992</userorientation_row1>
+          <userorientation_row2>0.0972179,-0.239082,0.966120</userorientation_row2>
+        </userorientation>
+      </transform>
+      <snapped>false</snapped>
+      <handles count="1">
+        <weight channel="Leaf_bend">0.906082</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, FE_leaf_24</blockid>
+      <transform>
+        <scale>1,75</scale>
+        <position>0,0,0.600000</position>
+        <triangledirection>-0.253944,0.217105,-0.942537</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>1,0,0</row0>
+          <row1>0,9.99999e-7,-1</row1>
+          <row2>0,1,9.99999e-7</row2>
+        </orientation>
+        <userorientation>
+          <userorientation_row0>0.831837,0.0982970,0.546244</userorientation_row0>
+          <userorientation_row1>-0.253944,0.942538,0.217105</userorientation_row1>
+          <userorientation_row2>-0.493515,-0.319313,0.809001</userorientation_row2>
+        </userorientation>
+      </transform>
+      <snapped>true</snapped>
+      <childlist count="1">
+        <childid>12</childid>
+      </childlist>
+      <handles count="4">
+        <weight channel="bend">0.270099</weight>
+        <weight channel="flatten">0.531226</weight>
+        <weight channel="Length">0.334365</weight>
+        <weight channel="width">0.686818</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>Creature_parts~, ce_grasper_null</blockid>
+      <transform>
+        <basemusclescale>1</basemusclescale>
+        <scale>1</scale>
+        <position>0,0,0.600000</position>
+        <triangledirection>-0.253941,0.217104,-0.942538</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>0.831823,0.546268,-0.0982848</row0>
+          <row1>-0.253941,0.217104,-0.942538</row1>
+          <row2>-0.493541,0.808984,0.319313</row2>
+        </orientation>
+      </transform>
+      <snapped>true</snapped>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, fe_cap_01a</blockid>
+      <transform>
+        <scale>1</scale>
+        <position>-0.168044,0.289470,0.485353</position>
+        <triangledirection>0.481153,-0.867144,0.128649</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>-0.874411,-0.485185,1.37835e-7</row0>
+          <row1>0.481153,-0.867144,0.128649</row1>
+          <row2>-0.0624190,0.112493,0.991690</row2>
+        </orientation>
+      </transform>
+      <snapped>false</snapped>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, fe_cap_01a</blockid>
+      <transform>
+        <scale>1</scale>
+        <position>-0.298691,-0.0314079,0.381443</position>
+        <triangledirection>0.904098,0.408845,0.124299</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>0.176641,-0.984275,1.37835e-7</row0>
+          <row1>0.940668,0.168815,0.294352</row1>
+          <row2>-0.289724,-0.0519948,0.955696</row2>
+        </orientation>
+        <userorientation>
+          <userorientation_row0>0.940126,0.273614,0.203221</userorientation_row0>
+          <userorientation_row1>-0.242715,0.956065,-0.164405</userorientation_row1>
+          <userorientation_row2>-0.239276,0.105237,0.965232</userorientation_row2>
+        </userorientation>
+      </transform>
+      <snapped>false</snapped>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, fe_cap_01a</blockid>
+      <transform>
+        <scale>1</scale>
+        <position>0.313511,0.0414289,0.582751</position>
+        <triangledirection>-0.900960,0.0604200,0.429674</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>-0.107509,0.994204,-4.49828e-7</row0>
+          <row1>-0.993463,-0.107428,0.0385789</row1>
+          <row2>0.0383553,0.00414803,0.999255</row2>
+        </orientation>
+        <userorientation>
+          <userorientation_row0>0.979113,-0.194947,0.0577269</userorientation_row0>
+          <userorientation_row1>0.156930,0.905157,0.395049</userorientation_row1>
+          <userorientation_row2>-0.129267,-0.377739,0.916844</userorientation_row2>
+        </userorientation>
+      </transform>
+      <snapped>false</snapped>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, FE_leaf_24</blockid>
+      <transform>
+        <scale>1,077890</scale>
+        <position>-0.201403,0.0855980,0.823867</position>
+        <triangledirection>-0.0983119,-0.246429,-0.964161</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>-0.362664,-0.931919,3.84300e-5</row0>
+          <row1>0.634629,-0.247001,-0.732281</row1>
+          <row2>0.682436,-0.265547,0.681002</row2>
+        </orientation>
+        <userorientation>
+          <userorientation_row0>0.356608,0.562605,0.745859</userorientation_row0>
+          <userorientation_row1>0.265269,0.704514,-0.658249</userorientation_row1>
+          <userorientation_row2>-0.895802,0.432591,0.101993</userorientation_row2>
+        </userorientation>
+      </transform>
+      <snapped>false</snapped>
+      <handles count="4">
+        <weight channel="bend">0.424190</weight>
+        <weight channel="flatten">0.443902</weight>
+        <weight channel="Length">0.459142</weight>
+        <weight channel="width">0.686636</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, FE_leaf_24</blockid>
+      <transform>
+        <scale>1,296430</scale>
+        <position>-0.0822419,-0.0570619,0.887542</position>
+        <triangledirection>0.251549,0.0778779,-0.964706</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>0.617892,-0.786262,8.64267e-7</row0>
+          <row1>0.264279,0.207685,-0.941818</row1>
+          <row2>0.740516,0.581942,0.336121</row2>
+        </orientation>
+        <userorientation>
+          <userorientation_row0>-0.687292,0.132083,0.714269</userorientation_row0>
+          <userorientation_row1>0.0941970,0.991231,-0.0926609</userorientation_row1>
+          <userorientation_row2>-0.720245,0.00359699,-0.693709</userorientation_row2>
+        </userorientation>
+      </transform>
+      <snapped>false</snapped>
+      <handles count="4">
+        <weight channel="bend">0.471277</weight>
+        <weight channel="flatten">0.457326</weight>
+        <weight channel="Length">0.389584</weight>
+        <weight channel="width">0.687423</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, FE_flatleaf_06</blockid>
+      <transform>
+        <scale>0,637626</scale>
+        <position>-0.160249,-0.291150,0.775325</position>
+        <triangledirection>0.270601,0.954454,-0.125664</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>0.886510,-0.462708,-1.19209e-7</row0>
+          <row1>0.406045,0.777949,-0.479500</row1>
+          <row2>0.221869,0.425082,0.877541</row2>
+        </orientation>
+        <userorientation>
+          <userorientation_row0>0.961582,0.115570,0.249004</userorientation_row0>
+          <userorientation_row1>-0.201742,0.912649,0.355484</userorientation_row1>
+          <userorientation_row2>-0.186170,-0.392062,0.900903</userorientation_row2>
+        </userorientation>
+      </transform>
+      <snapped>false</snapped>
+      <handles count="1">
+        <weight channel="Leaf_bend">1</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, FE_flatleaf_06</blockid>
+      <transform>
+        <scale>0,637625</scale>
+        <position>0.205629,0.269763,0.787701</position>
+        <triangledirection>-0.796902,-0.574567,-0.186597</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>-0.783491,0.621403,-2.38418e-7</row0>
+          <row1>-0.537788,-0.678066,-0.501007</row1>
+          <row2>-0.311327,-0.392534,0.865442</row2>
+        </orientation>
+        <userorientation>
+          <userorientation_row0>0.962128,-0.234593,-0.138834</userorientation_row0>
+          <userorientation_row1>0.267327,0.911646,0.312145</userorientation_row1>
+          <userorientation_row2>0.0533409,-0.337439,0.939835</userorientation_row2>
+        </userorientation>
+      </transform>
+      <snapped>false</snapped>
+      <handles count="1">
+        <weight channel="Leaf_bend">1</weight>
+      </handles>
+    </blockref>
+    <blockref>
+      <blockid>flora_parts~, FE_flatleaf_06</blockid>
+      <transform>
+        <scale>0,637626</scale>
+        <position>-0.272371,0.204797,0.787491</position>
+        <triangledirection>0.821340,-0.564433,0.0825462</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>-0.591269,-0.806474,-2.08616e-7</row0>
+          <row1>0.692200,-0.507489,-0.513141</row1>
+          <row2>0.413834,-0.303404,0.858304</row2>
+        </orientation>
+        <userorientation>
+          <userorientation_row0>0.982474,-0.0828059,0.166989</userorientation_row0>
+          <userorientation_row1>-0.0304329,0.812617,0.582000</userorientation_row1>
+          <userorientation_row2>-0.183892,-0.576883,0.795856</userorientation_row2>
+        </userorientation>
+      </transform>
+      <snapped>false</snapped>
+      <handles count="1">
+        <weight channel="Leaf_bend">1</weight>
+      </handles>
+    </blockref>
+  </blocks></sporemodel>

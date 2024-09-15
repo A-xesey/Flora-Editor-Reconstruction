@@ -1,7 +1,0 @@
-string16 description "High-res baked flora"
-float LODFactor0 -1
-bool modelBakeComplete false
-float modelDetailThreshold 0.1
-float modelEffectRange 200
-key modelMeshLOD0 builtins!null
-bool modelUnderwaterNever true

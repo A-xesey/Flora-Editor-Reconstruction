@@ -1,0 +1,18 @@
+int32s palettePagePartItemColumns
+	0
+	0
+	0
+	0
+end
+int32s palettePagePartItemRows
+	0
+	1
+	2
+	3
+end
+keys palettePagePartItems
+	flora_rigblock~!fe_cap_01a
+	flora_rigblock~!fe_fruit_stem_01
+	flora_rigblock~!fe_creatureperch
+end
+key palettePagePartParentPage fe_page_fruit

@@ -1,6 +1,0 @@
-texts blockName
-	(PlantRigblocks!0x00000043) "FE_root_assemblage_04"
-end
-string16 description "root_04: 4730 L"
-key modelBlockAssemblyFile palette_editorModel~!FE_root_assemblage_04.crt
-key paletteItemType ItemBlockAssembly

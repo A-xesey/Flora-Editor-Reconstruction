@@ -1,9 +1,0 @@
-key parent PlantEditorTemplates!PlantLeafTemplate
-texts blockName
-	(PlantRigblocks!0x00000079) "fe_creatureperch"
-end
-string16 description "Creature Perch"
-int32 modelCapabilityPerch 1
-key modelMeshHull editor_rigblock~!None
-key modelMeshLOD0 editor_rigblock~!fe_creatureperch.rw4
-vector3 modelRotationBallHandleOffset (0, -1.75, -0.1)

@@ -1,0 +1,22 @@
+key parent editor_config~!GlobalTemplate.prop
+keys editorEnabledManipulators
+	#cSPEditorManipulationPlanarInterpenetration
+	cSPEditorManipulationInterpenetration
+	cSPEditorManipulationPinning
+	cSPEditorManipulationStackingSimple
+	cSPEditorManipulationBoneRotation
+	cSPEditorManipulationRotationHandle
+	cSPEditorManipulationDeformHandle
+	#cSPEditorManipulationLimb
+end
+keys editorStartupModel
+	###flora_editorModel~!PaintBuddy1.flr #for Thumbpaint
+	#palette_editorModel~!FE_branch_assemblage_01_branch.flr
+	#palette_editorModel~!FE_root_assemblage_04.crt
+	#building_editorModel~!FE_branch_assemblage_01_mod_branch.flr
+	#building_editorModel~!2.bld #OKEROOP
+	#flora_editorModel~!thumbfrag.flr
+	flora_editorModel~!RootFIX.flr
+end
+bool editorUseSymmetry false #true
+key editorNudgeHandleTuningFile HandleTuning!DefaultNudgeHandle

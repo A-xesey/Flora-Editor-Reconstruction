@@ -1,0 +1,92 @@
+key parent editor_config~!MineralTemplate.prop
+string16 description "Building Editor Setup"
+int32 ThumbnailEffect 0
+#float ThumbnailLowering 0.2
+##float ThumbnailImageScale 0.646
+#float ThumbnailImageScale 0.788
+float ThumbnailImageScale 0.935
+float ThumbnailLowering 0
+
+## 0KEPOOP
+##Width>Legnth
+#float ThumbnailLowering 0.4
+#float ThumbnailImageScale 0.59
+##L>W
+#float ThumbnailLowering 0.72
+#float ThumbnailImageScale 0.74
+##
+key editorBackgroundModel be_editor_base_mockup
+key editorBackgroundMusicPatch music_building_editor
+float editorBoundSize 20
+texts editorBudgetTooltip
+	(tooltips!0x064d2884) "Building Budget (PLACEHOLDER)"
+end
+key editorBuyItemEffectID EDT_currency_building_buyItem
+key editorCameraThumbnail EditorCameraGlobalPalette
+#key editorCameraThumbnail EditorCameraPaintSwatchPalette1
+key editorCameraUI EditorCameraBuildingUI
+int32 editorComplexityLimit 250
+uint32 editorCurrencyChar 9868
+key editorCurrencyIcon ufotools~!ve_be_currency.png
+int32 editorDefaultInitialBudget 50000
+texts editorDefaultModelName
+	"Name"
+end
+key editorDefaultPaintTheme skinPaint_script~!be_theme_default
+key editorDeformHandleTuningFile HandleTuning!BuildingDeformHandle
+keys editorEnabledManipulators
+	cSPEditorManipulationInterpenetration
+	cSPEditorManipulationPinning
+	cSPEditorManipulationStacking
+	cSPEditorManipulationDeformHandle
+	cSPEditorManipulationRotationHandle
+end
+key editorEscrowEffectID None
+key editorLight FloraEditor
+int32 editorMaxBudget 99999
+float editorMaxGeomScore 35
+float editorMaxHeight 40
+float editorMinHeight -1
+float editorMinPlayableDepth 0.5
+float editorMinPlayableHeightAboveGround 1
+float editorMinPlayableWidth 0.5
+uint32 editorModelTranslationOptions 38
+keys editorModelTypes
+	BuildingCityHall
+	BuildingHouse
+	BuildingFarm
+	BuildingIndustry
+	BuildingEntertainment
+end
+texts editorName
+	"Name"
+end
+key editorPaintPalette palette_definition~!0x00000029.prop
+key editorPaintSwatchModel building_editorModel~!buildingPaintSwatch.bld
+key editorPartsPalette palette_definition~!0x00000028.prop
+key editorPedestalModel animations~
+key editorRandomNameType kBuilding
+key editorSaveDirectory 0x011AC19A!0xFFFFFFFF
+key editorSaveExtension 0xFFFFFFFF.bld
+key editorSellItemEffectID EDT_currency_building_sellItem
+key editorSporepediaCanSwitchConfigID BLE_TemplateShopper_CanSwitch
+key editorSporepediaConfigID ble_TemplateShopper
+keys editorStartupModel
+	building_editorModel~!1.bld
+end
+bool editorInitSpine false
+bool editorShowBoneLengthHandles true
+bool editorTranslateModelOnSave true
+bool editorSubtractPartsCostOnLoad true
+key editorSwatchBackgroundModel be_editor_base_ui_style_background
+key editorSwatchBackgroundMusicPatch music_building_editor_shopping
+key editorSwatchCameraUI EditorCameraBuildingUI
+key editorSwatchPedestalModel be_editor_base_ui_style
+key editorTutorialPaintMode BLESporeGuidePaint
+key editorTutorialPartMode BLESporeGuidePart
+key editorTutorialPlayMode bleSporeguide
+bool editorUseSkin false
+bool editorUseSpine false
+bool editorUseShadows true
+bool editorUseSymmetry false
+uint32 editorViewableComplexityFlags 11

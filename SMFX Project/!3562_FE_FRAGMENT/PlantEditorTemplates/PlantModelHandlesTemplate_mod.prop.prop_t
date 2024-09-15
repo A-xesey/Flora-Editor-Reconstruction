@@ -1,0 +1,89 @@
+key parent PlantEditorTemplates!PlantRigblockTemplate_mod.prop
+keys modelHandleKeys
+	DeformAxisUp	#"creature_z"
+	DeformAxisUpB	#"creature_z"
+	Bend	#"creature_z"
+	Bend_vert	#"creature_z"
+	0x5E6F7E87	#"creature_z"
+	tweak_top_bottom	#"creature_z"
+	DeformBoneLength	#"creature_y"
+	DeformAxisForward	#"creature_y"
+	DeformAxisForwardB	#"creature_y"
+	DeformAxisFront	#"creature_y"
+	Stretch	#"creature_y"
+	leaf_bend	#"creature_y"
+	Length	#"creature_y"
+	Invert	#"creature_y"
+	EyeStretch	#"creature_x"
+	scale_horiz	#"creature_x"
+	DeformAxisBack	#"creature_x"
+	DeformAxisRight	#"creature_x"
+	DeformAxisLeft	#"creature_x"
+	WidthHeight	#"creature_x"
+	tweak_sideways	#"creature_x"
+	tweak_side	#"creature_x"
+	Flatten	#
+	Thicken	#
+	0x2697A2F2	#
+	0x7C184950	#
+	Width	#
+end
+keys modelHandlePlacementTypesTemplate
+	DeformBoneLength!PreserveOrientation
+	DeformAxisUp!PreserveOrientation
+	DeformAxisUpB!PreserveOrientation
+	Bend_vert!PreserveOrientation
+	Bend!PreserveOrientation
+	DeformBoneLength!PreserveOrientation
+	DeformAxisForward!PreserveOrientation
+	DeformAxisForwardB!PreserveOrientation
+	DeformAxisFront!PreserveOrientation
+	Stretch!PreserveOrientation
+	leaf_bend!PreserveOrientation
+	Length!PreserveOrientation
+	Invert!PreserveOrientation
+	EyeStretch!PreserveOrientation
+	scale_horiz!PreserveOrientation
+	DeformAxisBack!PreserveOrientation
+	DeformAxisRight!PreserveOrientation
+	DeformAxisLeft!PreserveOrientation
+	WidthHeight!PreserveOrientation
+	tweak_sideways!PreserveOrientation
+	Flatten!PreserveOrientation
+	Thicken!PreserveOrientation
+	tweak_top_bottom!PreserveOrientation
+	tweak_side!PreserveOrientation
+	0x5E6F7E87!PreserveOrientation
+	0x2697A2F2!PreserveOrientation
+	0x7C184950!PreserveOrientation
+	Width!PreserveOrientation
+end
+string8s modelHandleStretchSounds
+	"creature_z"
+	"creature_z"
+	"creature_z"
+	"creature_z"
+	"creature_z"
+	"creature_z"
+	"creature_y"
+	"creature_y"
+	"creature_y"
+	"creature_y"
+	"creature_y"
+	"creature_y"
+	"creature_y"
+	"creature_y"
+	"creature_x"
+	"creature_x"
+	"creature_x"
+	"creature_x"
+	"creature_x"
+	"creature_x"
+	"creature_x"
+	"creature_x"
+end
+string8 modelSoundMorphX "creature_x"
+string8 modelSoundMorphY "creature_y"
+string8 modelSoundMorphZ "creature_z"
+string8 modelSoundRotation "creature_rotate"
+string8 modelSoundScale "creature_size"

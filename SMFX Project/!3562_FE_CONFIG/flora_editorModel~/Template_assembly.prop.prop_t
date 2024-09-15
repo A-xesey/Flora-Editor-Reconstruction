@@ -1,0 +1,10 @@
+string16 description "Baked palette assembly"
+float LODFactor0 -1
+bool modelAmbientOcclusion false
+bool modelBakeComplete false
+int32 modelBakeQuality 2
+int32 modelBakeTextureDXT 550
+int32 modelBakeTextureSize 64 #4
+key modelMeshLOD0 loading_placeholder_creature
+
+float LODFactor1 -1

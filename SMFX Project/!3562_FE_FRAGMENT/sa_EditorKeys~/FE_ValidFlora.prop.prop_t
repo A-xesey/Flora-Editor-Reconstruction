@@ -1,0 +1,4 @@
+key parent palette_config~!TemplateManifest.prop
+keys validAdditionalManifestGroupIDs
+	fe_EditorKeys~!animations~
+end
