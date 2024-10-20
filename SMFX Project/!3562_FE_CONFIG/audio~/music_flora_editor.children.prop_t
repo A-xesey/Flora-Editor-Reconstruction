@@ -1,0 +1,9 @@
+key musicTemplate music_shopping_base
+keys addgroups
+	#SpaceboundSunbathing
+	SweetHomeworld
+	#ThrivingLike2005
+	#Wonder
+	##Ui_tree_loop
+	##interstellar_long
+end

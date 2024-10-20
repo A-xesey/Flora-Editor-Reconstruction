@@ -1,0 +1,16 @@
+key parent PlantEditorTemplates!PlantFruitTemplate_mod
+texts blockName
+	(ModRigblocks!0x00000025) "fe_fruit_stem_01"
+end
+colorRGBA modelColor (0.7727895, 0.8045455, 0.6786166, 1)
+keys modelEffect
+	fe_cap_fruit_editor
+end
+#float modelScale 1.75
+int32 modelCapabilityFruit 1
+key modelMeshHull modelFruitStormed1-Hull.rw4
+key modelMeshLOD0 FloraParts_rigblocks!fe_fruit_stem_grab.rw4 #FloraParts_rigblocks!fe_fruit_stem_eye.rw4
+vector3 modelRotationBallHandleOffset (0, -0.5, 0)
+key skinpaintDiffuseTexture skinPaint_texture~!ce_grasper_radial_01-symmetric__diffuse-mod.rw4
+key skinpaintSpecBumpTexture skinPaint_texture~!ce_grasper_radial_01-symmetric__specBump-mod.rw4
+key skinpaintTintMaskTexture skinPaint_texture~!ce_grasper_radial_01-symmetric__tintMask-mod.rw4

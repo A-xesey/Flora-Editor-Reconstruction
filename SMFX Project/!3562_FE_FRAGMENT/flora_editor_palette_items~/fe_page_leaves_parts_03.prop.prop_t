@@ -2,6 +2,9 @@ int32s palettePagePartItemColumns
 	0
 	1
 	2
+	3
+	0
+	1
 	0
 	1
 	2
@@ -18,8 +21,7 @@ int32s palettePagePartItemRows
 	0
 	0
 	0
-	1
-	1
+	0
 	1
 	1
 	2
@@ -29,11 +31,18 @@ int32s palettePagePartItemRows
 	3
 	3
 	3
+	3
+	4
+	4
+	4
 end
 keys palettePagePartItems
 	flora_rigblock~!FE_flatleaf_02
 	flora_rigblock~!FE_flatleaf_05
 	FloraParts_modifications!fe_leaf_12-mod
+	FloraParts_modifications!fe_leaf_04_branch
+	FloraParts_modifications!fe_underwater_flora
+	FloraParts_modifications!fe_underwater_flora2
 	FloraParts_modifications!FE_leaves_palm_01a_mod
 	flora_rigblock~!FE_leaves_palm_01a
 	flora_rigblock~!FE_leaves_palm_02a

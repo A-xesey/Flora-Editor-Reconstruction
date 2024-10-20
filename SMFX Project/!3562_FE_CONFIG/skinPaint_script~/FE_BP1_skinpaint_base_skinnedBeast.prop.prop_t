@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "BP1 Skinned Beast Base"
+colorRGBs paintThemeColor1s
+	(0.8, 0.25, 0.3)
+	(0, 0, 0)
+	(0, 0, 0)
+end
+keys paintThemePaints
+	FE_BP1_skinpaint_base_skinnedBeast
+	animations~
+	animations~
+end

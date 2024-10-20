@@ -1,0 +1,6 @@
+key parent palette_config~!templatecategorysub.prop
+key paletteCategoryParentCategory creature_editor_palette_categories~!fe_category_faunafication-creature
+texts paletteCategoryName
+	(fe!0x5cf1c706) "Details"
+end
+uint32 paletteCategorySequenceNumber 500

@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "Stitched Felt Coat"
+colorRGBs paintThemeColor1s
+	(0, 0, 0)
+	(0.949, 0.906, 0.427)
+	(0, 0, 0)
+end
+keys paintThemePaints
+	animations~
+	FE_BP1_skinpaint_coat_feltStitch
+	animations~
+end

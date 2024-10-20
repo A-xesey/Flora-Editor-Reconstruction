@@ -11,7 +11,7 @@
     <blockref>
       <blockid>0x40666000, 0xf80fc958</blockid>
       <transform>
-        <scale>0.300000</scale>
+        <scale>0.00003</scale>
         <position>0,0,0</position>
         <triangledirection>0,1,0</triangledirection>
         <trianglepickorigin>0,0,0</trianglepickorigin>
@@ -28,7 +28,7 @@
       </childlist>
     </blockref>
     <blockref>
-      <blockid>0x40666000, 0x6F9BBC38</blockid>
+      <blockid>0x521BE58B, 0x8dbd02b2</blockid>
       <transform>
         <scale>1</scale>
         <position>0,0,0</position>

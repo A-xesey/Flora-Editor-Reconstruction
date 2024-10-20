@@ -1,0 +1,12 @@
+key parent PlantEditorTemplates!PlantLeafTemplate_mod
+texts blockName
+	(ModRigblocks!0x00000027) "fe_fruit_stem_01"
+end
+string16 description "08: 1150"
+key modelMeshHull editor_rigblock~!None
+key modelMeshLOD0 FloraParts_rigblocks!fe_underwater_flora.rw4
+vector3 modelRotationBallHandleOffset (0, -5.75, -0.5)
+key skinpaintDiffuseTexture skinPaint_texture~!fe_underwater_flora__diffuse.rw4
+key skinpaintSpecBumpTexture skinPaint_texture~!fe_underwater_flora__specBump.rw4
+key skinpaintTintMaskTexture skinPaint_texture~!fe_underwater_flora__tintMask.rw4
+bool modelHideDeformHandles false

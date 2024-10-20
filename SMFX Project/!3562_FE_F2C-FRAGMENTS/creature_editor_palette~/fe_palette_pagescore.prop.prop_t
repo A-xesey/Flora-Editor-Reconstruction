@@ -1,0 +1,8 @@
+keys palettePalettePages
+	creature_editor_palette_pages~!fe_page_details
+	creature_editor_palette_pages~!fe_page_fruit
+	creature_editor_palette_pages~!fe_page_roots
+	creature_editor_palette_pages~!fe_page_trunks_02
+	creature_editor_palette_pages~!fe_page_leaves_01
+	creature_editor_palette_pages~!fe_page_leaves_02
+end

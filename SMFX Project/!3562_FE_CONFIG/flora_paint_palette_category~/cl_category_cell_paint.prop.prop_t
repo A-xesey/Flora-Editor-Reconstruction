@@ -14,4 +14,4 @@ key paletteCategoryLayoutFile 0x3FCA51EA
 texts paletteCategoryName
 	(cl_paint!0xbd699ecf) "Cell Paint"
 end
-uint32 paletteCategorySequenceNumber 100
+uint32 paletteCategorySequenceNumber 50

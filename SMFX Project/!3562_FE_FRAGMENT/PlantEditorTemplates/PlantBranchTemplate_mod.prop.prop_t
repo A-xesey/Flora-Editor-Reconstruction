@@ -3,17 +3,16 @@ string16 description "unknown plant branch"
 colorRGBA modelColor (1, 1, 1, 1)
 int32 modelBakeLevel 1
 int32 modelCapabilityLimb 1
+vector3 modelRotationBallHandleOffset (0, -1.75, -0.75)
 vector3 modelMaxSocketConnectorOffset (0, -4, 0)
 vector3 modelMinSocketConnectorOffset (0, -0.1, 0)
-bool modelHasBallConnector true
-bool modelHasRotationBallHandle false
-bool modelHasRotationRingHandle false
+bool modelHasBallConnector false
+bool modelHasRotationBallHandle true
+bool modelHasRotationRingHandle true
 bool modelHasSocketConnector true
 bool modelOrientToSurfaces true
 bool modelOrientWhenSnapped true
 key modelPinningType PinningGeometry!PinningNormal
 key modelRigBlockType plant!branch
-bool modelRotationRingXAxisAllowHidden false
-bool modelRotationRingYAxisAllowHidden false
-bool modelRotationRingZAxisAllowHidden false
+#bool modelRotationRingX Y ZAxisAllowHidden false
 

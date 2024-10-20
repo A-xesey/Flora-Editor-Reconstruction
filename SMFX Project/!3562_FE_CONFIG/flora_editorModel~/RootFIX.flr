@@ -12,7 +12,7 @@
       <blockid>0x40666000, 0xf80fc958</blockid>
       <transform>
         <scale>0.75</scale>
-        <position>0,0,0</position>
+        <position>0,0,0.6</position>
         <triangledirection>0,1,0</triangledirection>
         <trianglepickorigin>0,0,0</trianglepickorigin>
         <orientation>

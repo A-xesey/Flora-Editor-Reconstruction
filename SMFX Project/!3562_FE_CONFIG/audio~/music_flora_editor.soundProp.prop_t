@@ -1,6 +1,6 @@
 float fadeout 3.3
 float gain 0.3
-key musicTemplate patch_base
+key musicTemplate patch_editor_base
 uint32 polyphony 1
 keys samples
 	#SpaceboundSunbathing
@@ -8,6 +8,7 @@ keys samples
 	#ThrivingLike2005
 	#Wonder
 	##Ui_tree_loop
+	##interstellar_long
 end
 uint32 soundtype hash(patch)
 bool islooped true

@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "Frankenstein Monster Theme"
+colorRGBs paintThemeColor1s
+	(0.35, 0.45, 0.3)
+	(0.125, 0.125, 0.125)
+	(0.44, 0.42, 0.34)
+end
+keys paintThemePaints
+	FE_BP1_skinpaint_base_Frankenstein
+	FE_BP1_skinpaint_coat_Frankenstein
+	FE_BP1_skinpaint_detail_Frankenstein
+end

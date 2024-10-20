@@ -10,6 +10,8 @@ int32s palettePagePartItemColumns
 	2
 	2
 	2
+	3
+	3
 end
 int32s palettePagePartItemRows
 	0
@@ -23,12 +25,10 @@ int32s palettePagePartItemRows
 	1
 	2
 	3
+	0
+	1
 end
 keys palettePagePartItems
-	#flora_rigblock~!fe_fruit_01
-	#flora_rigblock~!fe_fruit_02
-	#flora_rigblock~!fe_fruit_03
-	#flora_rigblock~!pe_eye_01
 	FloraParts_modifications!Fruit_Normal_01_LOD1
 	FloraParts_modifications!Fruit_Normal_01
 	FloraParts_modifications!foodpile_fruit_02
@@ -40,5 +40,7 @@ keys palettePagePartItems
 	FloraParts_modifications!0xFB0DA613
 	FloraParts_modifications!genericfruit_01
 	FloraParts_modifications!0xB0A82020
+	FloraParts_modifications!foodpile_seaweed_01
+	FloraParts_modifications!cell_flora_clover2_L1
 end
 key palettePagePartParentPage fe_page_fruit_02

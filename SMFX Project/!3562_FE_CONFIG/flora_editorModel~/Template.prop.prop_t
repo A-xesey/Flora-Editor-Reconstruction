@@ -1,9 +1,9 @@
 key parent floraQualityControl~!high
 string16 description "Baked Flora"
 float LODFactor0 -1
-float LODFactor1 22.5
-float LODFactor2 7.5
-float LODFactor3 3.75
+float LODFactor1 -1 #15
+float LODFactor2 13 #5
+float LODFactor3 3
 bool modelAmbOccStreamMesh true
 key modelAmbOccTuningFile CSA_FloraAmbientOcclusion
 bool modelBakeComplete false

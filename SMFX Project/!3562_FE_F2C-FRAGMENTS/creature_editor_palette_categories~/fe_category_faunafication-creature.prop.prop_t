@@ -1,0 +1,17 @@
+#thx Vainglory
+key parent palette_config~!templatecategorywithsub.prop
+keys paletteCategoryIconList
+	ScenarioEditor!EDT_terra_flora-norm.png
+	ScenarioEditor!EDT_terra_flora-norm.png
+	ScenarioEditor!EDT_terra_flora-hl.png
+	ScenarioEditor!EDT_terra_flora-act.png
+	ScenarioEditor!EDT_terra_flora-on.png
+	ScenarioEditor!EDT_terra_flora-norm.png
+	ScenarioEditor!EDT_terra_flora-on-hl.png
+	ScenarioEditor!EDT_terra_flora-on.png
+	ScenarioEditor!EDT_terra_flora-norm.png
+end
+texts paletteCategoryName
+	(fe_02!0x00000003) "Califaunacation"
+end
+uint32 paletteCategorySequenceNumber 1000

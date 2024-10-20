@@ -1,71 +1,32 @@
-key parent editor_config~!FES_SE.prop
-string16 description "Flora Editor Setup"
-string16 editorAssembledContentDirectory "Content/AssembledContent/Plants"
-key editorBackgroundMusicPatch music_flora_editor #music_creature_editor
-bool editorAllowPublish false
-float editorBoundSize 15
-float editorMaxHeight 15
-float editorMinHeight -4
+key parent editor_config~!FloraEditorSetupMod.prop
+
 ##thumb fragments
 #int32 ThumbnailEffect 0
-#float ThumbnailImageScale 0.8
-#float ThumbnailLowering 0.4
+#float ThumbnailImageScale 0.7
+#float ThumbnailLowering 0.5
 #key editorCameraThumbnail EditorCameraGlobalPalette.prop
 #keys editorStartupModel
 	#flora_editorModel~!PaintBuddy.flr #for Thumbpaint
 	#flora_editorModel~!thumbfrag.flr
 #end
 ##
-key editorCameraUI CSA_EditorCameraFloraUI.prop
-bool editorSubtractPartsCostOnLoad true
-uint32s editorDefaultSkinPaintScripts
-	hash(skinpaint_florabase_blankMatte)
-	hash(skinpaint_floracoat_blank)
-	hash(skinpaint_floradetail_blank)
-end
-
-bool editorDisableAnimations true
+##Animation
+#bool editorDisableAnimations false
 #bool editorDisableCreatureAnimIK true 
 #float editorAnimationInterruptDistance 0
 #float editorCreatureIdleActivationTime 360000000
-
-bool editorInitSpine true
-key editorLight FloraEditor
-key editorShadowLight CSA_ShadowLightFloraEditor
-uint32 editorModelTranslationOptions 38
-uint32 editorCurrencyChar 9867
-keys editorModelTypes
-	PlantSmall
-	PlantMedium
-	PlantLarge
-end
-texts editorName
-	(fe!0x04d94893) "Plant"
-end
-texts editorNamePrompt
-	(fe!0x04D93065) "Naming Prompt (PLACEHOLDER)"
-end
-key editorPaintModeLight floraeditorpaintmode
-key editorPaintPalette palette_definition~!0x00000015.prop
-key editorPaintSwatchModel flora_editorModel~!PaintBuddy.flr
-key editorPartsPalette palette_definition~!0x00000014.prop
-key editorRandomNameType kCreature
-key editorSaveDirectory 0x90368EA0!0xFFFFFFFF
-bool editorShowBoneLengthHandles true
-bool editorShowVertebrae true
-key editorSwatchBackgroundMusicPatch music_flora_editor_shopping #music_creature_editor_shopping
-key editorSwatchPedestalModel fe_editor_background_sporepedia
-key editorSwatchBackgroundModel animations~
-key editorPedestalModel pe_editor_base_FE
-key editorSwatchCameraUI CSA_EditorCameraFloraUI
-key editorSporepediaCanSwitchConfigID FLR_TemplateShopper_CanSwitch
-key editorSporepediaConfigID FLR_TemplateShopper
-bool editorTranslateModelOnSave true
-bool editorUseAnimWorld true
-bool editorUseBoundsForDelete false
-bool editorUseShadows true
-bool editorUseSkin true
-bool editorUseSpine true
-key verbTrayCollection verbtrays!FLORA_VerbTrayCollection
-key verbTrayCollectionSporepediaLargeCard verbtrays!FLORA_VerbTrayCollection
-key verbTrayCollectionSporepediaSmallCard animations~
+##
+##Music & pedestal model
+#key editorBackgroundMusicPatch music_flora_editor
+#key editorSwatchBackgroundMusicPatch music_flora_editor_shopping
+#key editorPedestalModel FloraBack
+##
+## Startup Models
+#keys editorStartupModel
+	###flora_editorModel~!PaintBuddy1.flr #for Thumbpaint
+	#palette_editorModel~!FE_branch_assemblage_01_branch.flr
+	#palette_editorModel~!FE_branch_assemblage_02-.crt
+	#building_editorModel~!FE_branch_assemblage_01_mod_branch.flr
+	#building_editorModel~!2.bld #OKEROOP
+	#flora_editorModel~!thumbfrag.flr
+#end

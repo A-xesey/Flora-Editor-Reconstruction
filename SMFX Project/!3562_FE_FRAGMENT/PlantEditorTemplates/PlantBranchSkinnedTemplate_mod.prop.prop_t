@@ -1,7 +1,7 @@
 key parent PlantEditorTemplates!PlantBranchTemplate_MOD
 string16 description "unknown plant branch skinned"
 key modelRigBlockType plant!branch.skinned
-vector3 modelRotationBallHandleOffset (0, -1.75, -0.1)
 bool modelUseSkin true
+bool modelHasBallConnector true
 bool modelHideDeformHandles false
 float modelMaxBallConnectorScale 6

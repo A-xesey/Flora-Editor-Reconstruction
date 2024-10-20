@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "Armor Coat"
+colorRGBs paintThemeColor1s
+	(0, 0, 0)
+	(0.6, 0.35, 0.35)
+	(0, 0, 0)
+end
+keys paintThemePaints
+	animations~
+	FE_BP1_skinpaint_coat_armor
+	animations~
+end

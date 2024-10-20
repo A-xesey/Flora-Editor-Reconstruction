@@ -14,6 +14,7 @@ keys modelHandleKeys
 	leaf_bend	#"creature_y"
 	Length	#"creature_y"
 	Invert	#"creature_y"
+	Longer		#"creature y"
 	EyeStretch	#"creature_x"
 	scale_horiz	#"creature_x"
 	DeformAxisBack	#"creature_x"
@@ -42,6 +43,7 @@ keys modelHandlePlacementTypesTemplate
 	leaf_bend!PreserveOrientation
 	Length!PreserveOrientation
 	Invert!PreserveOrientation
+	Longer!PreserveOrientation
 	EyeStretch!PreserveOrientation
 	scale_horiz!PreserveOrientation
 	DeformAxisBack!PreserveOrientation
@@ -73,6 +75,7 @@ string8s modelHandleStretchSounds
 	"creature_y"
 	"creature_y"
 	"creature_y"
+	"creature y"
 	"creature_x"
 	"creature_x"
 	"creature_x"
