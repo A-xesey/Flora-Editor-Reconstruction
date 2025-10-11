@@ -1,0 +1,22 @@
+vertexFragment nationalBoundariesVS
+	input color texcoord0 position
+	output color -texcoords 1 float3
+
+	declareCode
+		extern uniform float4 worldCameraPosition;
+		extern uniform float4 materialColor;
+	endCode
+
+	code
+		const float kNationalBoundaryTextureStretch   = 10.0f;
+		const float kNationalBoundaryCameraMinHeight  = 670.0f;
+		const float kNationalBoundaryCameraFadeHeight = 40.0f;
+		Current.color.rgba = In.color.rgba * materialColor.rgba;
+		Current.color.a *= clamp(dot(normalize(Current.position.xyz), normalize(worldCameraPosition.xyz)) * 1.5f - 0.9f, 0.0f, 0.5f);
+		Current.color.a *= clamp((length(worldCameraPosition.xyz) - kNationalBoundaryCameraMinHeight) / kNationalBoundaryCameraFadeHeight, 0, 1);
+		Current.texcoord<t0> = In.texcoord0;
+		Current.texcoord<t0>.y *= 1.0f / kNationalBoundaryTextureStretch;
+		// rotate texture to match what is currently on disk...
+		Current.texcoord<t0>.xy = float2(Current.texcoord<t0>.y, 1 - Current.texcoord<t0>.x);
+	endCode
+end

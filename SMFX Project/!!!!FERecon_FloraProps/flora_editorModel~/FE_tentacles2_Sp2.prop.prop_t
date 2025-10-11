@@ -1,0 +1,25 @@
+key parent flora_editorModel~!Template.prop
+float floraImposterScale 0.94376
+bool modelBakeComplete true
+bboxs modelBoundingBox
+	(-0.674025, -0.590025, -0.220391) (0.641954, 0.646935, 1.887519)
+end
+float modelBoundingRadius 1.9026541
+int32 modelFloraType 1
+int32s modelMeshAnimSharing
+	0
+	0
+	0
+	0
+	0
+end
+key modelMeshLOD0 0xF68544B5!FE_tentacles2_Sp2.gmdl
+key modelMeshLOD1 0xF68544B5!FE_tentacles2_Sp2.gmdl
+key modelMeshLOD2 floraModels_LOD0~!FE_tentacles2_Sp2.gmdl
+key modelMeshLOD3 floraModels_LOD3~!FE_tentacles2_Sp2.gmdl
+bool modelPrebakedAssembledContent true
+key modelSprite0 flora_editorModelSpritesSide~!FE_tentacles2_Sp2.raster
+key modelSprite1 flora_editorModelSpritesTop~!FE_tentacles2_Sp2.raster
+float obstacleBaseCollisionRadius 0.072583
+float obstacleCanopyCollisionRadius 0.910069
+float obstacleCollisionHeight 2.081423

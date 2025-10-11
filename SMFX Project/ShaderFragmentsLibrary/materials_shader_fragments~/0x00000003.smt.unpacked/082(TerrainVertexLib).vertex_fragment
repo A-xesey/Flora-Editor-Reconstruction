@@ -1,0 +1,74 @@
+vertexFragment TerrainVertexLib
+	declareCode
+		extern uniform struct
+		{
+		float4 vSunDir;
+		float4 waterColor;
+		float4 innerParms;
+		float4 vCamPos;
+		float4 sphereParms;
+		float4 camParms;
+		float4 illumParms;
+		float4 fogParms;
+		float4 nightLightTint;
+		float4 nightLightColor;
+		float4 duskLightColor;
+		float4 dayLightColor;
+		float4 nightShadowColor;
+		float4 duskShadowColor;
+		float4 dayShadowColor;
+		float4 duskDawnStartEnd;
+		float4x4 viewTransform;
+		} terrainState;
+		extern uniform struct
+		{
+		float4x4 worldViewProjection;
+		float4 QuadFaceUVXform;
+		float4 QuadMorphValue;
+		float4 QuadFaceElemMap;
+		float4 QuadFaceSignMap;
+		float4 QuadFaceXForm[3];
+		} terrainTransform;
+
+		void GetTerrainFogStrength( float3 position, float3 normal, float atmoRadius, out float fogStrength, out float fogScale, out float term, out float4 eyeVec )
+		{
+		float4 vCamPos = terrainState.vCamPos;
+		float3 vNormCamToVert = position - vCamPos;
+		float cameraDistance = length( vNormCamToVert );
+		vNormCamToVert = vNormCamToVert/cameraDistance;
+		eyeVec.xyz = vNormCamToVert;
+		eyeVec.w = cameraDistance;
+		float b = dot( -vNormCamToVert, position.xyz );
+		float c = dot( position.xyz, position.xyz ) - atmoRadius*atmoRadius;
+		float d = b*b-c;
+		float minFogDistance = terrainState.fogParms.z;
+		float t = -b + sqrt(d);
+		float fogDist = max( t, 0 );
+		fogDist = min( t, cameraDistance );
+		fogDist = max( 0, fogDist-minFogDistance );
+		float density = terrainState.fogParms.x;
+		fogStrength = 1.0 - exp( density * fogDist );
+		term = GetInScatterTerminator( normal, terrainState.vSunDir.xyz, terrainState.vSunDir.w );
+		fogStrength *= term;
+		fogScale = terrainState.fogParms.y;
+		}
+		// Assumes camera is fully within atmosphere shell
+		void GetTerrainFogStrengthFast( float3 position, float3 normal, float atmoRadius, out float fogStrength, out float fogScale, out float term, out float4 eyeVec )
+		{
+		float4 vCamPos = terrainState.vCamPos;
+		float3 vNormCamToVert = position - vCamPos;
+		float cameraDistance = length( vNormCamToVert );
+		vNormCamToVert = vNormCamToVert/cameraDistance;
+		eyeVec.xyz = vNormCamToVert;
+		eyeVec.w = cameraDistance;
+		float minFogDistance = terrainState.fogParms.z;
+		float fogDist = cameraDistance;
+		fogDist = max( 0, fogDist-minFogDistance );
+		float density = terrainState.fogParms.x;
+		fogStrength = 1.0 - exp( density * fogDist );
+		term = GetInScatterTerminator( normal, terrainState.vSunDir.xyz, terrainState.vSunDir.w );
+		fogStrength *= term;
+		fogScale = terrainState.fogParms.y;
+		}
+	endCode
+end

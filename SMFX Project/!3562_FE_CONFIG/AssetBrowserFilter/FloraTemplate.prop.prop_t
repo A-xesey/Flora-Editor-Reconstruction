@@ -1,4 +1,4 @@
-bool browserAllowSortByAppPack true
+bool browserAllowSortByAppPack false
 bool browserAllowSortByAuthor true
 bool browserAllowSortByDownloadTime true
 bool browserAllowSortByPublished false

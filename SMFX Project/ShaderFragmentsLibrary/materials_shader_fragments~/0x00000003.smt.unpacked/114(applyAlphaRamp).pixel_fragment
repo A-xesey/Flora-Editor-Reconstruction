@@ -1,0 +1,9 @@
+pixelFragment applyAlphaRamp
+	samplers 2
+	texture alpharamptest -minFilter D3DTEXF_POINT -magFilter D3DTEXF_POINT -mipFilter D3DTEXF_POINT -addresses D3DTADDRESS_CLAMP D3DTADDRESS_CLAMP
+
+	code
+		Current.color.w = tex1D(Sampler<s0>,  In.texcoord0.x);
+		Current.color.rgb = In.texcoord0.xyz;
+	endCode
+end

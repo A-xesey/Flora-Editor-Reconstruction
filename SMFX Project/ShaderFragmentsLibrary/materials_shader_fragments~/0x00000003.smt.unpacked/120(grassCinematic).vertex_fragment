@@ -1,0 +1,14 @@
+vertexFragment grassCinematic
+	declareCode
+		extern uniform float4 customParams[2];
+		extern uniform float4 worldCameraPosition;
+	endCode
+
+	code
+		half fadeInStart    = customParams[0].w;
+		half fadeInEnd      = customParams[1].w;
+		half cameraDist     = length( Current.position.xyz - worldCameraPosition );
+		half fadeIn         = saturate( ( cameraDist - fadeInStart ) / ( fadeInEnd - fadeInStart ) );
+		Current.color.a     *= fadeIn;
+	endCode
+end

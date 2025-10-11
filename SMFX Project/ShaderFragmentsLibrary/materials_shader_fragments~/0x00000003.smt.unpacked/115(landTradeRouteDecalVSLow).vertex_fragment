@@ -1,0 +1,72 @@
+vertexFragment landTradeRouteDecalVSLow
+	input normal color texcoord0 position
+	output color position -texcoords 4 float4
+
+	declareCode
+		extern uniform struct
+		{
+		float4 vSunDir;
+		float4 waterColor;
+		float4 innerParms;
+		float4 vCamPos;
+		float4 sphereParms;
+		float4 camParms;
+		float4 illumParms;
+		float4 fogParms;
+		float4 nightLightTint;
+		float4 nightLightColor;
+		float4 duskLightColor;
+		float4 dayLightColor;
+		float4 nightShadowColor;
+		float4 duskShadowColor;
+		float4 dayShadowColor;
+		float4 duskDawnStartEnd;
+		float4x4 viewTransform;
+		} terrainState;
+		extern uniform struct
+		{
+		float4x4 worldViewProjection;
+		float4 QuadFaceUVXform;
+		float4 QuadMorphValue;
+		float4 QuadFaceElemMap;
+		float4 QuadFaceSignMap;
+		float4 QuadFaceXForm[3];
+		} terrainTransform;
+	endCode
+
+	code
+		// adjust the texture coordients
+		const float kLandTradeRouteDecalWidth            = 9.5f; // max = 12
+		const float kLandTradeRouteDecalTextureStretch   = 20.0f;
+		Current.texcoord<t0> = In.texcoord0;
+		Current.texcoord<t0>.x = ( Current.texcoord<t0>.x * 6 / kLandTradeRouteDecalWidth ) + 0.5;
+		Current.texcoord<t0>.y = Current.texcoord<t0>.y / kLandTradeRouteDecalTextureStretch;
+		// classic terrain lighting
+		float4 position = float4( In.position.xyz, 1 );
+		float4 clipPos = mul( position, terrainTransform.worldViewProjection );
+		float3 lightBlend, lightColor, shadowColor;
+		EvaluateVertexLighting(
+		normal.xyz,
+		terrainState.vSunDir.xyz,
+		terrainState.duskDawnStartEnd,
+		terrainState.dayLightColor.xyz,
+		terrainState.dayShadowColor.xyz,
+		terrainState.duskLightColor.xyz,
+		terrainState.duskShadowColor.xyz,
+		terrainState.nightLightColor.xyz,
+		terrainState.nightShadowColor.xyz,
+		lightBlend,
+		lightColor,
+		shadowColor );
+		Current.position            = clipPos;
+		Current.color               = In.color;
+		Current.texcoord<t2>        = terrainState.nightLightTint;
+		Current.texcoord<t2>.w      *= lightBlend.z;
+		// looks like lerp(shadowColor, lightColor, abs(dot(n,l))
+		// delta could be neg so store in tex coord
+		Current.texcoord<t3>.rgb            = (lightColor-shadowColor) * abs( dot( normal.xyz, terrainState.vSunDir.xyz ) );
+		Current.texcoord<t3>.a              = lightBlend.x; // unused
+		Current.texcoord<t1>.rgb = shadowColor;
+		Current.texcoord<t1>.a   = 0; // unused
+	endCode
+end

@@ -3,12 +3,14 @@ int32s palettePagePartItemColumns
 	1
 	2
 	3
+	0
 end
 int32s palettePagePartItemRows
 	0
 	0
 	0
 	0
+	1
 end
 keys palettePagePartItems
 	flora_rigblock~!fe_detail_01

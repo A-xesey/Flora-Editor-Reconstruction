@@ -1,0 +1,17 @@
+vertexFragment GetPlanetarySphereIntersectionDistance
+	declareCode
+		/////////////////////////////////////////////////////////////////////////////////////
+		// Basically, a ray-sphere test
+		// assumptions: center of spgere at origin, vTo point within sphere
+		/////////////////////////////////////////////////////////////////////////////////////
+		float GetPlanetarySphereIntersectionDistance( float3 vFrom, float3 vTo, float radius )
+		{
+		float3 vRayDir = normalize( vTo - vFrom );
+		float dp = dot( vRayDir, -vFrom );  // -vFrom is vector towards sphere center at 0,0,0
+		float b2 = dot( -vFrom, -vFrom ) - dp * dp;
+		float r2 = radius * radius;
+		float retval = ( dp - sqrt( r2 - b2 ) );
+		return retval;
+		}
+	endCode
+end

@@ -74,12 +74,18 @@
 0x00000065 fe_fruit_02
 0x00000066 fe_fruit_03
 0x00000067 fe_fruit_stem_01
-0x00000068 fe_cap_01a
-0x00000069 fe_cap_02a
-0x00000070 fe_cap_03a
-0x00000071 fe_cap_04a
-0x00000072 fe_cap_05a
-0x00000073 fe_cap_06a
+0x00000068 Fruit node
+0x00000069 Fruit node
+0x00000070 Fruit node
+0x00000071 Fruit node
+0x00000072 Fruit node
+0x00000073 Fruit node
+#0x00000068 fe_cap_01a
+#0x00000069 fe_cap_02a
+#0x00000070 fe_cap_03a
+#0x00000071 fe_cap_04a
+#0x00000072 fe_cap_05a
+#0x00000073 fe_cap_06a
 0x00000074 pe_eye_01
 
 # DETAILS #

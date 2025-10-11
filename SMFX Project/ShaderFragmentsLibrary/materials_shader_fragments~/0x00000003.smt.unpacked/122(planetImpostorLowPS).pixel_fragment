@@ -1,0 +1,37 @@
+pixelFragment planetImpostorLowPS
+	input -texcoords 2
+	output color
+	samplers 4
+
+	declareCode
+		extern uniform float4 ambient;
+		extern uniform float4x3 modelToWorld;
+	endCode
+
+	code
+		float  ambientDotOffset = 0.65;
+		float  oneOnOnePlusAmbientDotOffset = 1.0f / ( 1.0f + ambientDotOffset );
+		float  ambientDotOffsetOnOnePlusAmbientDotOffset = ambientDotOffset * oneOnOnePlusAmbientDotOffset;
+		float  ambient = 0.9;
+		float3 ambientTint = float3( 0.7, 0.3, 2.3 ) * 0.5 * ambient;
+		float  ambientLevel = 0.2;
+		float3 uvw = In.texcoord<t0>.xyz;
+		float3 L = In.texcoord<t1>.xyz;
+		float terminator = In.texcoord<t0>.w;
+		float4 diffuseColor = texCUBE( Sampler0, uvw.xyz );
+		float4 normalColor = texCUBE( Sampler2, uvw.xyz );
+		float3 N = normalColor.rgb - float3(.5,.5,.5);
+		float NDotL = dot( N, L );
+		float2 dotp;
+		dotp.x = NDotL;
+		// this multiply and and only serves to lighten up the dark side of the imposter,
+		// we could probably accomplish that to a satisfactory level by scaling the constant
+		// that we are doing a dot product with in calculating nightLum
+		dotp.y = -dotp.x; // * oneOnOnePlusAmbientDotOffset + ambientDotOffsetOnOnePlusAmbientDotOffset;
+		dotp = saturate( dotp );
+		float3 nightLight = dotp.y * diffuseColor;
+		float  nightLum = dot( nightLight, float3( 0.3, 0.59, 0.11 ) * 1.5 );
+		Current.color.rgb = ambientTint * nightLum + diffuseColor.xyz * ( dotp.x*terminator + ambientLevel );
+		Current.color.w = 1.0;
+	endCode
+end

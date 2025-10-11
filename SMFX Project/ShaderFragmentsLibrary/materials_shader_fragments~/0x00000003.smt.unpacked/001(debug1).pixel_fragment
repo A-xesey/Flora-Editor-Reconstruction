@@ -1,0 +1,7 @@
+pixelFragment debug1
+	output color
+
+	code
+		Current.color = float4(0, 1, 0, 1);
+	endCode
+end

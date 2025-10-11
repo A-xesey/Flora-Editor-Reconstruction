@@ -1,0 +1,11 @@
+pixelFragment effectInputAnimPF
+	input color -texcoords 2
+
+	code
+		half4   color           = In.color;
+		half2   tileUV1         = In.texcoord<t0>.xy;
+		half2   tileUV2         = In.texcoord<t0>.zw;
+		half    tileBlend       = In.texcoord<t1>.x;
+		half2   uv              = In.texcoord<t1>.zw;
+	endCode
+end

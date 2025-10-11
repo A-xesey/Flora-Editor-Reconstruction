@@ -1,0 +1,17 @@
+vertexFragment render_depthP
+	input position
+	output -texcoords 1 float3
+
+	declareCode
+		extern uniform float4 renderDepth;
+		extern uniform float4x3 modelToCamera;
+	endCode
+
+	code
+		float3 camPos = mul( Current.position, modelToCamera);
+		// NOTE: compiler bug on NVIDIA cards: clamp(x, 0, ...) here compiles
+		// to a mov_sat instruction. The max_limit is just dropped. (no, doesn't
+		// make a difference whether it's 256 or not.)
+		Current.texcoord<t0> = clamp(camPos.z, 0.001, renderDepth.x);
+	endCode
+end

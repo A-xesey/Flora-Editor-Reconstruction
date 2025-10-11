@@ -1,0 +1,12 @@
+pixelFragment showIdentityPS
+	input color position
+	output color
+
+	declareCode
+		extern uniform float4 identityColor;
+	endCode
+
+	code
+		Current.color.rgb = lerp(Current.color.rgb, identityColor.rgb, Current.color.a * identityColor.a);
+	endCode
+end

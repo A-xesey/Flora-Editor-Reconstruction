@@ -1,0 +1,12 @@
+pixelFragment tint
+	input color
+	output color
+
+	declareCode
+		extern uniform float4 tintParams;
+	endCode
+
+	code
+		Current.color *= tintParams;
+	endCode
+end

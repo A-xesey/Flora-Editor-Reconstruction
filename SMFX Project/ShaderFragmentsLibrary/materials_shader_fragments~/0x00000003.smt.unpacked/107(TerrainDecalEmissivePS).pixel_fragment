@@ -1,0 +1,25 @@
+pixelFragment TerrainDecalEmissivePS
+	input color position -texcoords 1
+	output color
+	samplers 3
+
+	declareCode
+		extern uniform struct
+		{
+		float4 DecalColorTint;
+		float4 dirScaleU;
+		float4 dirScaleV;
+		} decalState;
+	endCode
+
+	code
+		/////////////////////////////////////////////////////////////////////////////////////
+		// pixel shader Main: DecalEmissive
+		/////////////////////////////////////////////////////////////////////////////////////
+		half term = In.texcoord<t0>.z;
+		float2 decalUV      = In.texcoord<t0>.xy;
+		float4 decalColor   = tex2D(Sampler1, decalUV) * decalState.DecalColorTint * (1.0f-term);
+		Current.color.xyz = decalColor.xyz;
+		Current.color.w = 1.0f;
+	endCode
+end

@@ -1,0 +1,29 @@
+pixelFragment TerrainAboveSynthPSLow
+	input color position -texcoords 5
+	output color
+	samplers 5
+
+	code
+		half3 shadowColor       = In.color.rgb;
+		half3 lightVector       = In.texcoord<t0>.xyz;
+		half2 uv                = In.texcoord<t1>.xy;
+		half2 lightBlend        = In.texcoord<t1>.zw;
+		half2 detailUV          = In.texcoord<t2>.xy;
+		half3 nightLightTint    = In.texcoord<t3>.xyz;
+		half  nightLumBlend     = In.texcoord<t3>.w;
+		half3 lightColor        = In.texcoord<t4>.xyz;
+		half3 texNormal         = tex2D( Sampler0, uv ) - 0.5;
+		half4 simData           = tex2D( Sampler2, uv );
+		half2 detail            = tex2D( Sampler1, detailUV ).bg;
+		half4 diffuseColor      = simData * detail.r;
+		half lightStrength      = dot( texNormal.xyz, lightVector.xyz );
+		half finalLightStrength = abs( shadow * lightStrength );
+		lightColor              *= finalLightStrength;
+		lightColor              += shadowColor;
+		lightColor              *= diffuseColor;
+		half  nightLum          = dot( lightColor, half3(0.5,0.5,0.5) );
+		half3 nightColor        = nightLum*nightLightTint;
+		Current.color.rgb       = lerp( lightColor, nightColor, nightLumBlend );
+		Current.color.w         = 1.0f;
+	endCode
+end

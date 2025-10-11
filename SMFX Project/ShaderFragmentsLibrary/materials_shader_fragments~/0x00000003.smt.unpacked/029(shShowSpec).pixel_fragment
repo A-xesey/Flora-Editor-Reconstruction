@@ -1,0 +1,5 @@
+pixelFragment shShowSpec
+	code
+		Current.color.rgb = float3(specStrength, specE / kSpecExponentMaxValue, gloss);
+	endCode
+end

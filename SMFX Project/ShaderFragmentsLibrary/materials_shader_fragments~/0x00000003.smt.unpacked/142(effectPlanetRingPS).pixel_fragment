@@ -1,0 +1,21 @@
+pixelFragment effectPlanetRingPS
+	output color
+
+	declareCode
+		extern uniform half4 customParams[2];
+
+		extern uniform sampler map0 : register(s0);
+		extern uniform sampler map1 : register(s1);
+	endCode
+
+	code
+		half  ring0fade     = customParams[0].z;
+		half  ring1fade     = customParams[0].w;
+		half4 ring0		    = tex2D( map0, uv0 );
+		half4 ring1         = tex2D( map1, uv1 );
+		ring0.a             *= ring0fade;
+		ring1.a             *= ring1fade;
+		color               *= lerp( ring0, ring1, ring1.a );
+		Current.color       = color;
+	endCode
+end

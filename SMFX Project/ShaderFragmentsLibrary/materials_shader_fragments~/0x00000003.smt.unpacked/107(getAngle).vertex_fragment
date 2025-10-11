@@ -1,0 +1,15 @@
+vertexFragment getAngle
+	output -texcoords 1 float3
+
+	declareCode
+		extern uniform float4x3 modelToCamera;
+	endCode
+
+	code
+		float3 cameraSpaceNormal = mul(Current.normal.xyz, (float3x3)modelToCamera);
+		float3 cameraSpacePosition = mul(Current.position, modelToCamera).xyz;
+		float3 viewVector = normalize(-cameraSpacePosition);
+		float angle = saturate(-cameraSpaceNormal.z);
+		Current.texcoord<t0> = float3(angle, angle, angle);
+	endCode
+end

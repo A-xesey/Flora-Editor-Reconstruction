@@ -3,5 +3,5 @@ string16 description "unknown plant branch skinned"
 key modelRigBlockType plant!branch.skinned
 bool modelUseSkin true
 bool modelHasBallConnector true
-bool modelHideDeformHandles false
 float modelMaxBallConnectorScale 6
+#int32 modelComplexityScore 3

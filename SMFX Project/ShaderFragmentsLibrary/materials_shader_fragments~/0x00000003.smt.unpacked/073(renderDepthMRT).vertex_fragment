@@ -1,0 +1,14 @@
+vertexFragment renderDepthMRT
+	input position
+	output -texcoords 1 float1
+
+	declareCode
+		extern uniform float4 renderDepth;
+		extern uniform float4x3 modelToCamera;
+	endCode
+
+	code
+		float3 camPosForDepth = mul(Current.position, modelToCamera);
+		Current.texcoord<t0> = saturate(camPosForDepth.z / renderDepth.x);
+	endCode
+end

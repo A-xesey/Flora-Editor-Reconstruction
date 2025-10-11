@@ -1,0 +1,69 @@
+vertexFragment TerrainAboveSynthVSLow
+	input color texcoord0 position
+	output color position -texcoords 5 float4
+
+	declareCode
+		extern uniform struct
+		{
+		float4 vSunDir;
+		float4 waterColor;
+		float4 innerParms;
+		float4 vCamPos;
+		float4 sphereParms;
+		float4 camParms;
+		float4 illumParms;
+		float4 fogParms;
+		float4 nightLightTint;
+		float4 nightLightColor;
+		float4 duskLightColor;
+		float4 dayLightColor;
+		float4 nightShadowColor;
+		float4 duskShadowColor;
+		float4 dayShadowColor;
+		float4 duskDawnStartEnd;
+		float4x4 viewTransform;
+		} terrainState;
+		extern uniform struct
+		{
+		float4x4 worldViewProjection;
+		float4 QuadFaceUVXform;
+		float4 QuadMorphValue;
+		float4 QuadFaceElemMap;
+		float4 QuadFaceSignMap;
+		float4 QuadFaceXForm[3];
+		} terrainTransform;
+	endCode
+
+	code
+		const   float aboveScale    = 67;
+		float4 position =  landPosition;
+		float3 lightBlend, lightColor, shadowColor;
+		EvaluateVertexLighting(
+		normal.xyz,
+		terrainState.vSunDir.xyz,
+		terrainState.duskDawnStartEnd,
+		terrainState.dayLightColor.xyz,
+		terrainState.dayShadowColor.xyz,
+		terrainState.duskLightColor.xyz,
+		terrainState.duskShadowColor.xyz,
+		terrainState.nightLightColor.xyz,
+		terrainState.nightShadowColor.xyz,
+		lightBlend,
+		lightColor,
+		shadowColor );
+		// OUTPUT
+		Current.color.rgb           = shadowColor * 2.0;
+		Current.color.a             = 0;                                                        // unused
+		Current.position            = mul(position, terrainTransform.worldViewProjection);
+		Current.texcoord<t0>.xyz    = terrainState.vSunDir.zyx * 2.0;
+		Current.texcoord<t0>.w      = 0.0f;                                                     // unused
+		Current.texcoord<t1>.xy     = uv;
+		Current.texcoord<t1>.zw     = saturate( lightBlend.xz );
+		Current.texcoord<t2>.xy     = uv * aboveScale;
+		Current.texcoord<t2>.zw     = 0.0f;   // uv * terrainState.illumParms.w;                // unused
+		Current.texcoord<t3>.xyz    = terrainState.nightLightTint.rgb;
+		Current.texcoord<t3>.w      = terrainState.nightLightTint.w * lightBlend.z;
+		Current.texcoord<t4>.xyz    = saturate( ( lightColor-shadowColor ) * 0.5 ) * 4.0;
+		Current.texcoord<t4>.w      = 0.0f;                                                     // unused
+	endCode
+end

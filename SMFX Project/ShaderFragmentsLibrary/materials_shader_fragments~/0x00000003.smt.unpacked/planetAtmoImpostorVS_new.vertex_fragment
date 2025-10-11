@@ -1,0 +1,30 @@
+vertexFragment planetAtmoImpostorVS
+	input normal position
+	output -texcoords 2 float4
+
+	declareCode
+		extern uniform float4x3 modelToWorld;
+		extern uniform float4 worldCameraPosition;
+		extern uniform float4 customParams[4];
+	endCode
+
+	code
+		float3    vertPos         = mul( In.position, modelToWorld );
+		float3    camPos          = worldCameraPosition.xyz;
+		float4x4  trans           = { customParams[0],
+		customParams[1],
+		customParams[2],
+		customParams[3] };
+		float4    normal          = float4( Current.normal.xyz, 0 );
+		float4    eyeVec          = float4( normalize( camPos - vertPos ), 0 );
+		float3    lightVec        = normalize( -vertPos );
+		float3    worldNormal     = normalize( mul( normal, modelToWorld ).xyz );
+		float     dpView          = smoothstep( 0.1, 1.0, dot( worldNormal, -eyeVec ) );
+		float     shadow          = saturate( dot( lightVec, worldNormal ) + 1.0 );
+		Current.texcoord<t0>      = mul( eyeVec, trans );
+		Current.texcoord<t1>.x    = saturate( dpView * shadow ) * 2;
+		Current.texcoord<t1>.y    = shadow;
+		Current.texcoord<t1>.z    = 0;            //  unused
+		Current.texcoord<t1>.w    = 0;            //  unused
+	endCode
+end

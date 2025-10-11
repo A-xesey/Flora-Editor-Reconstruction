@@ -1,0 +1,7 @@
+vertexFragment effectBorderClampVF
+	code
+		{
+		clipPos.xy = clamp( clipPos.xy, -1, +1 );
+		}
+	endCode
+end

@@ -1,0 +1,35 @@
+pixelFragment landTradeRouteDecalPS
+	input color1 color position -texcoords 7
+	output color
+
+	declareCode
+		extern uniform float4 foggingCPU;
+
+		extern uniform sampler diffuseMap : register(s0);
+		extern uniform sampler scatterMap : register(s9);
+	endCode
+
+	code
+		// Load up variable
+		float3 shadowColor      = In.color1.xyz;
+		float3 lightColorOffset = In.texcoord<t5>.xyz;
+		float2 uv               = In.texcoord<t0>.xy;
+		float fogStrength       = In.texcoord<t0>.w;
+		float4 normal           = In.texcoord<t1>;
+		float3 lightVector      = In.texcoord<t2>.xyz;
+		float  duskBlend        = In.texcoord<t2>.w;
+		float4 viewDir          = In.texcoord<t3>;
+		float3 nightLightTint   = In.texcoord<t4>.xyz;
+		float  nightLumBlend    = In.texcoord<t4>.w;
+		float4 color            = In.color;
+		float3 npos             = In.texcoord<t6>.xyz;
+		// Calc diffuse color
+		float4 diffuse           = color * tex2D( diffuseMap, uv );
+		// Do the pixel lighting
+		float3 lightColor       = EvaluatePixelLighting( npos.xyz, normal.xyz, lightVector.xyz, diffuse.rgb, shadow, shadowColor, lightColorOffset, duskBlend, nightLumBlend, nightLightTint );
+		Current.color.rgb = lightColor.rgb;
+		Current.color.a   = diffuse.a;
+		float4 scatterColor     = texCUBE( scatterMap, viewDir.xyz );
+		Current.color.rgb       = lerp( lightColor.rgb, scatterColor, fogStrength ) + scatterColor.a * scatterColor.rgb * foggingCPU.w;
+	endCode
+end

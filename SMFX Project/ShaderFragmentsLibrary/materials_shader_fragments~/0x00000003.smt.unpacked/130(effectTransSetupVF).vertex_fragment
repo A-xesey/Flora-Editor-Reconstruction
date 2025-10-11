@@ -1,0 +1,11 @@
+vertexFragment effectTransSetupVF
+	input normal color color1 position
+
+	code
+		half2 uv = Current.color1.rg;
+		half scale = In.normal.w;
+		{
+		Current.texcoord<t0> = Current.color1;
+		}
+	endCode
+end

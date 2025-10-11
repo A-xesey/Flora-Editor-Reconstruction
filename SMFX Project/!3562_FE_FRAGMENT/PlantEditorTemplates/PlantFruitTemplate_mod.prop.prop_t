@@ -7,4 +7,3 @@ key modelPinningType PinningGeometry!PinningNormal
 key modelRigBlockType plant!fruit
 key modelRotationRingYAxis ui_rotateringcreature
 bool modelUseInBaseCollisionCalc false
-bool modelHideDeformHandles false

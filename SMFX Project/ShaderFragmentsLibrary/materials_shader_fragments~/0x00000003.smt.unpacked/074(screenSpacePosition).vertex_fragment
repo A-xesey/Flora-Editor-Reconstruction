@@ -1,0 +1,15 @@
+vertexFragment screenSpacePosition
+	input position
+	output position
+
+	declareCode
+		extern uniform float4 screenInfo;
+	endCode
+
+	code
+		Current.position.xy *= screenInfo.zw; //  * float2(-1, 2);
+		Current.position.xy -= float2(0.5, 0.5);
+		Current.position.xy *= float2(2, -2);
+		Current.position.zw = float2(0, 1);
+	endCode
+end

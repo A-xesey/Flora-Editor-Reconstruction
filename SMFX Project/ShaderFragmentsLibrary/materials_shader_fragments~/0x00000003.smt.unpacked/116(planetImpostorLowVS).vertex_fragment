@@ -1,0 +1,36 @@
+vertexFragment planetImpostorLowVS
+	input normal position
+	output -texcoords 2 float4
+
+	declareCode
+		extern uniform float4 worldCameraPosition;
+		extern uniform float4x3 modelToWorld;
+		extern uniform float4x3 worldToModel;
+		extern uniform float4 customParams[4];
+	endCode
+
+	code
+		// position in model space
+		float3 vertPos = In.position.xyz;
+		// normal in model space
+		float4 normal = float4( normalize( Current.normal.xyz ), 0.0 );
+		// light position in model space
+		float4 lightPos = float4( mul( float4( 0, 0, 0, 1 ), worldToModel ), 1 );
+		// camera position in model space
+		float3 camPos = worldCameraPosition.xyz;
+		camPos = mul( float4( camPos, 1 ), worldToModel ).xyz;
+		// normal vector to camera from vert
+		float4 eyeVec = float4( -normalize( vertPos - camPos ), 0 );
+		// normal vector to light from vert
+		float3 lightVec = normalize( lightPos.xyz - vertPos.xyz );
+		// day/night terminator
+		const float cutoff = 0.2;
+		float terminator = saturate( ( dot( normal.xyz, lightVec ) + cutoff ) / ( 2 * cutoff ) );
+		// create the texture coordinent
+		float3 uvw = normal.xzy;
+		uvw.y = -uvw.y;
+		// load our outputs
+		Current.texcoord<t0> = float4( uvw, terminator );
+		Current.texcoord<t1> = float4( lightVec * 2, 0 );
+	endCode
+end

@@ -1,0 +1,42 @@
+pixelFragment TerrainDecalAbovePS
+	input color1 color position -texcoords 6
+	output color
+	samplers 3
+
+	declareCode
+		extern uniform struct
+		{
+		float4 DecalColorTint;
+		float4 dirScaleU;
+		float4 dirScaleV;
+		} decalState;
+	endCode
+
+	code
+		/////////////////////////////////////////////////////////////////////////////////////
+		// pixel shader Main: DecalAbove
+		/////////////////////////////////////////////////////////////////////////////////////
+		float3 lightColorOffset = In.color.xyz * 2.0f;
+		float3 shadowColor      = In.color1.xyz;
+		float fogStrength       = In.color1.w;
+		float3 lightVector      = In.texcoord<t0>.xyz;
+		float  nightLumBlend    = In.texcoord<t0>.w;
+		float2 faceUV           = In.texcoord<t1>.xy;
+		float2 decalUV          = In.texcoord<t1>.zw;
+		float3 nightLightTint   = In.texcoord<t2>.xyz;
+		float2 lightBlend       = float2( In.color.w, In.texcoord<t2>.w );
+		float3 viewDir          = In.texcoord<t3>.xyz;
+		float heightAlphaScale  = In.texcoord<t4>.x;
+		float sunDrop           = In.texcoord<t4>.y;
+		float3 normal           = In.texcoord<t5>.xyz;
+		float  duskBlend        = In.texcoord<t5>.w;
+		float4 texNormal        = tex2D(Sampler0, faceUV).zyxw * 2.0 - 1.0;
+		float4 decalColor       = tex2D(Sampler1, decalUV);
+		decalColor *= decalState.DecalColorTint;
+		decalColor.rgb = EvaluatePixelLighting( normal.xyz, texNormal.xyz, lightVector.xyz, decalColor.rgb, shadow, shadowColor, lightColorOffset, duskBlend, nightLumBlend, nightLightTint );
+		float4 scatterColor = texCUBE( Sampler2, viewDir );
+		decalColor.rgb = lerp( decalColor.xyz, scatterColor, fogStrength ) + scatterColor.a * scatterColor.rgb * sunDrop;
+		Current.color.rgb = decalColor.rgb;
+		Current.color.a = decalColor.a * heightAlphaScale;
+	endCode
+end

@@ -1,0 +1,17 @@
+vertexFragment applyShadowMapTerrain
+	output -texcoords 1 float4
+
+	declareCode
+		extern uniform struct { float4   mRangeAndStrength; float4   mShadowDir; float4   mNestInfo; float4x4 mWorldToShadowClip; float4x3 mWorldToShadowCamera; } shadowMapInfo;
+	endCode
+
+	code
+		float2 range = shadowMapInfo.mRangeAndStrength.xy;
+		float depth = (mul(landPosition, shadowMapInfo.mWorldToShadowCamera).y - range.x) * range.y;
+		float strength = saturate(dot(normal, shadowMapInfo.mShadowDir.xyz) + shadowMapInfo.mShadowDir.w);
+		Current.texcoord<t0>.xyz =  mul(landPosition, shadowMapInfo.mWorldToShadowClip).xyw;
+		Current.texcoord<t0>.xy /= Current.texcoord<t0>.z;
+		Current.texcoord<t0>.z   = strength;
+		Current.texcoord<t0>.w   = depth;
+	endCode
+end

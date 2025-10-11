@@ -10,4 +10,4 @@ key skinpaintDiffuseTexture skinPaint_texture~!fe_canopy_06__diffuse.rw4
 float skinpaintMaxOcclusion 0.2
 key skinpaintSpecBumpTexture skinPaint_texture~!fe_canopy_06__specBump.rw4
 key skinpaintTintMaskTexture skinPaint_texture~!fe_canopy_06__tintMask.rw4
-bool modelHideDeformHandles false
+

@@ -1,0 +1,5 @@
+vertexFragment TerrainNoFade
+	code
+		float heightAlphaScale = 1.0;
+	endCode
+end

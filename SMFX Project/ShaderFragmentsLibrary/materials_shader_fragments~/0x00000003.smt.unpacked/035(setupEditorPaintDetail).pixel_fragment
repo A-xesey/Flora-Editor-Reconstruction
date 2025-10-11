@@ -1,0 +1,29 @@
+pixelFragment setupEditorPaintDetail
+	input color
+	output color
+
+	declareCode
+		extern uniform float4 editorColors[2];
+
+		const static float kSH_A1 = 2.0 / 3.0;
+		const static float kSH_A2 = 1.0 / 4.0;
+		const static float kSH_A3 = 0;
+		const static float kSH_A4 = -1.0 / 24.0;
+		const static float kDefaultGloss = 0.35;
+		const static float kGlossyMax    = 0.75; // threshold at which glossy maxes out
+		const static float kCelOutlineThreshold        = 0.25;
+		const static float kCelOutlineThresholdRange   = 0.075;
+		const static float kCelStrength                = 0.3;
+		const static float kSpecExponentMaxValue = 60.0;
+		const static bool kSaveInstructions = false;
+	endCode
+
+	code
+		float specE        = editorColors[1].a;
+		float specStrength = editorColors[0].a;
+		float invBumpiness = 1;
+		float gloss        = 0.3;     
+		Current.color.rgb = editorColors[1].rgb * In.color.rgb;
+		Current.color.w = 1;
+	endCode
+end

@@ -1,0 +1,20 @@
+pixelFragment shShowNMap
+	input -texcoords 3
+
+	declareCode
+		float3 ApplyNormalMap(float3 vertNormal, float3 vertDS, float3 nmapNormal)
+		{
+		float3 vn = normalize(vertNormal);
+		float3 dt = normalize(cross(vn, vertDS));
+		float3 ds = cross(dt, vn);
+		nmapNormal = normalize(nmapNormal.r * ds + nmapNormal.g * dt + nmapNormal.b * vn);
+		return nmapNormal;
+		}
+	endCode
+
+	code
+		float3 vertNormal = In.texcoord<t0>.xyz;
+		float3 normal = ApplyNormalMap(vertNormal, vertDS, nmapNormal);
+		Current.color.rgb = 0.5 * nmapNormal + 0.5;
+	endCode
+end

@@ -1,0 +1,16 @@
+pixelFragment applyBakedPaint
+	input color
+	output color
+
+	declareCode
+		extern uniform float4 bakedPaint[2];
+	endCode
+
+	code
+		float3 mixedColor;
+		mixedColor = lerp(diffuseTexture.rgb, bakedPaint[0].rgb, bakedPaint[0].a);
+		mixedColor = lerp(mixedColor,         bakedPaint[1].rgb, bakedPaint[1].a * diffuseTexture.a);
+		Current.color.rgb = mixedColor * In.color.rgb;
+		Current.color.a = In.color.a;
+	endCode
+end

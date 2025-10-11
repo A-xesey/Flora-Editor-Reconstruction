@@ -1,0 +1,8 @@
+vertexFragment TerrainLandToWaterFade
+	code
+		// Used to fade out alpha when close to water surface
+		float waterFadeBegin = waterHeight;
+		float waterFadeEnd = waterHeight-0.1;
+		float heightAlphaScale = saturate( landHeight - waterFadeEnd );
+	endCode
+end

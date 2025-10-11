@@ -1,0 +1,45 @@
+pixelFragment applyShadowMapTerrainNest
+	input -texcoords 1
+
+	declareCode
+		extern uniform struct { float4 mRangeAndStrength; float4 mShadowDir; float4 mNestInfo; } shadowMapInfo ;
+
+		extern uniform sampler shadowMap0 : register(s7);
+		extern uniform sampler shadowMap1 : register(s8);
+		extern uniform sampler lookupMap : register(s10);
+		extern uniform sampler shadowMap2 : register(s11);
+		extern uniform sampler shadowMap3 : register(s12);
+		float ShadowNest(float4 shadowInfo, float4 nestInfo, float sharpness = 10, float bias = 0)
+		{
+		const float pi = 3.14159265;
+		const float4 oneOnC0 = 1.0f / float4(1.0 * pi, 3.0 * pi, -1.0 * pi, -3.0 * pi);
+		const float4 oneOnC1 = 1.0f / float4(5.0 * pi, 7.0 * pi, -5.0 * pi, -7.0 * pi);
+		float4 shadowPos = shadowInfo.xyxy;
+		shadowPos.zw += nestInfo.zw;
+		shadowPos.zw *= nestInfo.xy;
+		float shadowStrength = shadowInfo.z;
+		float lightDistance = saturate(shadowInfo.w);
+		float4 clippedPos = saturate(5.0f * (1 - abs(shadowPos)));
+		float4 shadowScale = clippedPos.xyzw * clippedPos.yxwz;
+		shadowPos = shadowPos * float4(0.5, -0.5, 0.5, -0.5) + 0.5;
+		float4 basisCoeffsZ_0_0 = tex2D(shadowMap0, shadowPos.xy) * 2 - 1;
+		float4 basisCoeffsZ_1_0 = tex2D(shadowMap1, shadowPos.xy) * 2 - 1;
+		float4 basisCoeffsZ_0_1 = tex2D(shadowMap2, shadowPos.zw) * 2 - 1;
+		float4 basisCoeffsZ_1_1 = float4(0, 0, 1, 1);
+		float4 b0Z = lerp(basisCoeffsZ_0_1, basisCoeffsZ_0_0, shadowScale.x);
+		float4 b1Z = lerp(basisCoeffsZ_1_1, basisCoeffsZ_1_0, shadowScale.x);
+		float4 b0D = tex2D(lookupMap, float2(0.5 * lightDistance, 0.25)) * 2 - 1;
+		float4 b1D = tex2D(lookupMap, float2(0.5 * lightDistance, 0.75)) * 2 - 1;
+		float4 diff0 = b0D * b0Z;
+		float4 diff1 = b1D * b1Z;
+		float term = dot(oneOnC0, diff0) + dot(oneOnC1, diff1);
+		float shadow = saturate(1.0f + bias + sharpness * term);
+		shadow = lerp(1, shadow, shadowScale.z * shadowStrength);
+		return shadow;
+		}
+	endCode
+
+	code
+		float shadow = ShadowNest( In.texcoord<t0>, shadowMapInfo.mNestInfo, 100, 0 );
+	endCode
+end

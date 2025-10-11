@@ -1,4 +1,5 @@
-key parent PlantEditorTemplates!PlantFruitTemplate_mod
+key parent PlantEditorTemplates!PlantCapTemplate_mod
+#key parent PlantEditorTemplates!PlantFruitTemplate_mod
 texts blockName
 	(PlantRigblocks!0x00000067) "fe_fruit_stem_01"
 end

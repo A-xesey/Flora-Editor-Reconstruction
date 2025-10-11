@@ -1,0 +1,26 @@
+vertexFragment perVertexFogging
+	output -texcoords 1 float4
+
+	declareCode
+		extern uniform float4 foggingCPU;
+		extern uniform float4 worldCameraPosition;
+		extern uniform float4x4 viewTransform;
+	endCode
+
+	code
+		// fog strength
+		float fogDensity = foggingCPU.y;
+		float fogDistOffset = foggingCPU.x;
+		float term = foggingCPU.z;
+		float3 viewDirRaw = worldPosition.xyz - worldCameraPosition;
+		float dist = length(viewDirRaw);
+		float fogDist = max( dist - fogDistOffset, 0.0 );
+		float fogStrength = 1.0 - exp( fogDensity * fogDist );
+		fogStrength *= term;
+		// world space view
+		float3 viewDir =  viewDirRaw / dist;
+		float3 transDir = mul( -viewDir, viewTransform );
+		Current.texcoord<t0>.xyz = transDir;
+		Current.texcoord<t0>.w = fogStrength;
+	endCode
+end

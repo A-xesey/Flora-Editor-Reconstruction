@@ -1,0 +1,16 @@
+pixelFragment detailZPRDiffuseSplatter
+	output color
+
+	declareCode
+		extern uniform float4 editorColors[2];
+		extern uniform float4 region;
+	endCode
+
+	code
+		Current.color.rgb = editorColors[0].rgb;
+		if(region.y > 0) 
+		Current.color.w = 1.0;
+		else
+		Current.color.w = 0.0;
+	endCode
+end

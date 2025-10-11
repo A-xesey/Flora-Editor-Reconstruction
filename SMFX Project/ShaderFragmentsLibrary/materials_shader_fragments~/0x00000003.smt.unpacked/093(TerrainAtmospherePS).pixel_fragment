@@ -1,0 +1,127 @@
+pixelFragment TerrainAtmospherePS
+	input color position -texcoords 3
+	output color
+	samplers 2
+
+	declareCode
+		half ramp( half min, half max, half value )
+		{
+		return saturate( ( value - min ) / ( max - min ) );
+		}
+		half2 ramp( half2 min, half2 max, half2 value )
+		{
+		return saturate( ( value - min ) / ( max - min ) );
+		}
+		half3 ramp( half3 min, half3 max, half3 value )
+		{
+		return saturate( ( value - min ) / ( max - min ) );
+		}
+		half4 ramp( half4 min, half4 max, half4 value )
+		{
+		return saturate( ( value - min ) / ( max - min ) );
+		}
+		half3 quadFace( half3 pos, half2 uv, half3 up, half3 tangent, half scale )
+		{
+		pos += tangent * scale * (uv.x - 0.5);
+		pos += up * scale * (0.5 - uv.y);
+		return pos;
+		}
+		half3 quadFace( half3 pos, half2 uv, half3 up, half3 tangent, half2 scale )
+		{
+		pos += tangent * scale.x * (uv.x - 0.5);
+		pos += up * scale.y * (0.5 - uv.y);
+		return pos;
+		}
+		half3 cameraFace( half3 pos, half2 uv, half scale, half3x4 cameraToWorldTranspose )
+		{
+		half3 tangent = half3( cameraToWorldTranspose[0][0], cameraToWorldTranspose[1][0], cameraToWorldTranspose[2][0] );
+		half3 up = half3( cameraToWorldTranspose[0][1], cameraToWorldTranspose[1][1], cameraToWorldTranspose[2][1] );
+		return quadFace( pos, uv, up, tangent, scale );
+		}
+		half3 cameraFace( half3 pos, half2 uv, half2 scale, half3x4 cameraToWorldTranspose )
+		{
+		half3 tangent = half3( cameraToWorldTranspose[0][0], cameraToWorldTranspose[1][0], cameraToWorldTranspose[2][0] );
+		half3 up = half3( cameraToWorldTranspose[0][1], cameraToWorldTranspose[1][1], cameraToWorldTranspose[2][1] );
+		return quadFace( pos, uv, up, tangent, scale );
+		}
+		half3 cameraFaceUp( half3 pos, half3 localUp, half2 uv, half scale, half3x4 cameraToWorldTranspose )
+		{
+		half3 tangent = half3( cameraToWorldTranspose[0][0], cameraToWorldTranspose[1][0], cameraToWorldTranspose[2][0] );
+		half3 up = half3( cameraToWorldTranspose[0][1], cameraToWorldTranspose[1][1], cameraToWorldTranspose[2][1] );
+		half dotUp = dot( localUp, up );
+		half dotTangent = dot( localUp, tangent );
+		half3 projUp = normalize( dotUp * up + dotTangent * tangent );
+		half3 projTangent = normalize( -dotTangent * up + dotUp * tangent );
+		return quadFace( pos, uv, projUp, projTangent, scale );
+		}
+		half3 cameraFaceUp( half3 pos, half3 localUp, half2 uv, half2 scale, half3x4 cameraToWorldTranspose )
+		{
+		half3 tangent = half3( cameraToWorldTranspose[0][0], cameraToWorldTranspose[1][0], cameraToWorldTranspose[2][0] );
+		half3 up = half3( cameraToWorldTranspose[0][1], cameraToWorldTranspose[1][1], cameraToWorldTranspose[2][1] );
+		half dotUp = dot( localUp, up );
+		half dotTangent = dot( localUp, tangent );
+		half3 projUp = normalize( dotUp * up + dotTangent * tangent );
+		half3 projTangent = normalize( -dotTangent * up + dotUp * tangent );
+		return quadFace( pos, uv, projUp, projTangent, scale );
+		}
+		void tileUV( half2 uv, half particleId, half time, half speed, half numTiles, out half2 offsetUV, out half blend )
+		{
+		half t = particleId * 255 + time * speed;
+		blend = frac( t );
+		half4 tile = half4( t - blend, t + 1 - blend, uv.y, uv.y );
+		tile /= numTiles;
+		tile.xy = frac( tile.xy );
+		tile.xy += tile.zw;
+		offsetUV = tile.xy;
+		}
+		half3 sunset( half cosSunAngle, half3 nightTint )
+		{
+		half3 white     = half3( 1.0, 1.0, 1.0 ) * 1.3;
+		half3 yellow    = half3( 1.0, 1.0, 0.5 ) * 1.2;
+		half3 orange    = half3( 1.0, 0.7, 0.3 );
+		half3 red       = half3( 1.0, 0.5, 0.5 );
+		half t = ramp( 0.6, 1.0, cosSunAngle );
+		half3 b0 = lerp( yellow, white, t );
+		t = ramp( 0.2, 0.6, cosSunAngle );
+		half3 b1 = lerp( orange, b0, t );
+		t = ramp( -0.2, 0.2, cosSunAngle );
+		half3 b2 = lerp( red, b1, t );
+		t = ramp( -1.0, -0.2, cosSunAngle );
+		half3 b3 = lerp( nightTint, b2, t );
+		return b3;
+		}
+		half3 volumeLightQuad( half3 color, half3 bottomColor, half2 uv, half3 pos, half3 offsetPos, half topBlend, half cosSunAngle, half3 sunDir )
+		{
+		color = lerp( color, color * bottomColor, uv.y * ( 1-topBlend ));
+		half3 n = normalize( offsetPos - pos );
+		half i0 = saturate( dot( sunDir, n )* 1.42 );
+		half i1 = saturate( cosSunAngle );
+		half intensity = lerp( i0, i1, topBlend*topBlend );
+		color = lerp( color, color * intensity, 0.25 );
+		return color;
+		}
+	endCode
+
+	code
+		/////////////////////////////////////////////////////////////////////////////////////
+		// pixel shader Main: Atmosphere
+		/////////////////////////////////////////////////////////////////////////////////////
+		half    scaleHeight     = In.texcoord<t0>.x;
+		half    ascore          = In.texcoord<t0>.y;
+		half    illum           = In.texcoord<t0>.z;
+		half    dpView          = In.texcoord<t0>.w;
+		half3   viewDir         = In.texcoord<t1>.xyz;
+		half    term            = In.texcoord<t1>.w;
+		half3   transDir        = In.texcoord<t2>.xyz;
+		half4 scatterColor = texCUBE( Sampler0, transDir );
+		illum = tex1D( Sampler1, illum ).r;
+		half normal = tex1D( Sampler1, dpView ).g;
+		half opacity = illum * ascore * 2.0;
+		half extNormal = normal * ascore;
+		extNormal *= extNormal;
+		extNormal *= extNormal;
+		normal = min( 1.0, normal + extNormal );
+		Current.color = (scatterColor  * (illum)) + scatterColor*scatterColor.w;
+		Current.color.w = normal * opacity;
+	endCode
+end

@@ -1,0 +1,16 @@
+pixelFragment effectPickFoggedPS
+	output color
+
+	declareCode
+		extern uniform sampler tileMap : register(s0);
+		extern uniform sampler scatterMap : register(s9);
+	endCode
+
+	code
+		half4 tileTex		= tex2D( tileMap, tileUV );
+		half4 diffuse		= tileTex * color;
+		Current.color       = diffuse;
+		half4 fogColor		= texCUBE( scatterMap, viewVector.xyz );
+		Current.color.rgb   = lerp( diffuse.rgb, fogColor.rgb, fogStrength ) + fogColor.rgb * fogColor.a * sunDrop;
+	endCode
+end

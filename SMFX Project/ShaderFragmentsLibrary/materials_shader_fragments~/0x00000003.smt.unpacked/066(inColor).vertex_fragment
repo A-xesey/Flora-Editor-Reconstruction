@@ -1,0 +1,4 @@
+vertexFragment inColor
+	input color
+
+end

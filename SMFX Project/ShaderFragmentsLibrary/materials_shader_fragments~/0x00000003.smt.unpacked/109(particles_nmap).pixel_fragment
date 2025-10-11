@@ -1,0 +1,47 @@
+pixelFragment particles_nmap
+	input color position
+	output color
+	samplers 3
+
+	declareCode
+		extern uniform float4 ambient;
+		extern uniform struct { float4 mDir; float4 mColor; } dirLightsWorld[4];
+		extern uniform float4x3 modelToCamera;
+	endCode
+
+	code
+		half4 texColor = tex2D(Sampler0, In.texcoord0);
+		// compute normal map
+		half4 texNMap = tex2D(Sampler1, In.texcoord0);
+		half3 normal = 2 * texNMap.rgb - 1;
+		// this is really worldToCamera * normal, model tfm identity
+		normal.xy = -normal.xy;
+		normal = mul((float3x3)modelToCamera, normal);
+		normal = -normal;
+		half4 dotNL;
+		dotNL.x = dot(dirLightsWorld[0].mDir.xyz, normal);
+		dotNL.y = dot(dirLightsWorld[1].mDir.xyz, normal);
+		dotNL.z = dot(dirLightsWorld[2].mDir.xyz, normal);
+		dotNL.w = dot(dirLightsWorld[3].mDir.xyz, normal);
+		// this softening intensity by bringing in reverse lighting
+		//  limits the ability to compress the normal map
+		half4 intensity = saturate(dotNL) + (1-texNMap.a) * saturate(-dotNL);
+		Current.color.rgb = ambient.rgb;
+		Current.color.rgb += intensity.x * dirLightsWorld[0].mColor.rgb;
+		Current.color.rgb += intensity.y * dirLightsWorld[1].mColor.rgb;
+		Current.color.rgb += intensity.z * dirLightsWorld[2].mColor.rgb;
+		Current.color.rgb += intensity.w * dirLightsWorld[3].mColor.rgb;
+		// Smaller number means more lighting
+		// Larger number means more diffuse texture
+		// HARDCODED : to be tweaked by Ocean
+		float3 texAttenColor = In.color.rgb * texColor.rgb;
+		Current.color.rgb = lerp( Current.color.rgb * texAttenColor, texAttenColor, 0.5);
+		// This alpha testing code on by default
+		// Eventually we will be able to plug this in from effect script
+		static const float2 noiseDeltas = float2(1/2 , 1/2);
+		float4 noise  = tex2D(Sampler2, In.texcoord0 * noiseDeltas);
+		// hmm.. scaling the source alpha here to reduce artifacts
+		// from noise alpha texture
+		Current.color.a = 2.0 * texColor.a  * In.color.a +  noise.r - 0.5;
+	endCode
+end

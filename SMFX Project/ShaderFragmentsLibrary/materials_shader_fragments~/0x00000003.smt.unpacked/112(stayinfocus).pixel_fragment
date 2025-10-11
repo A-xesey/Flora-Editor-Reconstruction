@@ -1,0 +1,7 @@
+pixelFragment stayinfocus
+	output color1
+
+	code
+		Current.color1= float4(0,0,1,1.0);
+	endCode
+end

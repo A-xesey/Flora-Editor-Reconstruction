@@ -1,0 +1,23 @@
+pixelFragment landTradeRouteDecalPSLow
+	input color position -texcoords 4
+	output color
+
+	declareCode
+		extern uniform sampler diffuseMap : register(s0);
+	endCode
+
+	code
+		// Load up variable
+		float3 lightColor       = In.texcoord<t3>.rgb;
+		float4 color            = Current.color;
+		float3 nightLightTint   = In.texcoord<t2>.xyz;
+		float  nightLumBlend    = In.texcoord<t2>.w;
+		float3 shadowColor      = In.texcoord<t1>.rgb;
+		// Calc diffuse color
+		float4 diffuse          = color * tex2D( diffuseMap, In.texcoord<t0>.xy );
+		lightColor = lightColor * shadow + shadowColor; // shadow from create terrainShadow()
+		Current.color.rgb       = SimpleTerrainPixelLighting( diffuse.rgb, lightColor, nightLightTint, nightLumBlend );
+		Current.color.a         = diffuse.a;
+		Current.color.rgb = diffuse.rgb;
+	endCode
+end

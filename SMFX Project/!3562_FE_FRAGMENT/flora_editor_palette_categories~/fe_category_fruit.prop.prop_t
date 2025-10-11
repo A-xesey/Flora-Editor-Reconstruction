@@ -1,4 +1,5 @@
 key parent palette_config~!TemplatePaletteCategoryParts.prop
+#key paletteCategoryIcon editors_flora~!clue-category.png
 keys paletteCategoryIconList
 	editors_flora~!button-fruit-norm.png
 	editors_flora~!0xffffffff.0xffffffff

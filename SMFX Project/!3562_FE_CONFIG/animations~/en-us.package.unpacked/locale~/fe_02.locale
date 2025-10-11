@@ -1,5 +1,14 @@
 0x00000001 Choose a flora
 0x00000002 Roots
 0x00000003 Flora
-0x00000004 Provides planetary ecosystems with oxygen and serves as a source of food for herbivores.~br~Grow your own custom varieties!
+0x00000004 Flora make planets favorable for life and feed their inhabitants.
+#~br~Steve once gave a functional Flora Editor instead of the Staff of Life...
 0x00000005 Fruits
+0x00000006 You need at least 3 fruit nodes to Save
+#0x00000004 Provides oxygen to the planets and serves as food for creatures.~br~Grow your own plants!
+#0x00000004 Flora make planets favorable for life and feed their inhabitants.~br~Breeding your own flora is strictly forbidden by Galactic Code! (who cares)
+
+##SharedDialogs
+0x10000009 Your current creation cannot be saved for the following reason:~br~~br~You need at least 3 fruit nodes to Save~br~~br~Add at least 3 caps before continue.
+0x10000019 Your current creation cannot be saved for the following reason:~br~~br~You need at least 3 fruit nodes to Save~br~~br~Continue to load and lose changes to the creation you are currently editing?
+0x10000029 Your current creation cannot be saved for the following reason:~br~~br~You need at least 3 fruit nodes to Save~br~~br~Are sure you want to make a new creation and lose your current changes?

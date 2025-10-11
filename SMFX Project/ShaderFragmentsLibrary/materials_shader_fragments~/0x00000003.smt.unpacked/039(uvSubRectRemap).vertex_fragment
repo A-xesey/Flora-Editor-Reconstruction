@@ -1,0 +1,11 @@
+vertexFragment uvSubRectRemap
+	declareCode
+		extern uniform float4 uvSubRect;
+	endCode
+
+	code
+		// bloody Renderware negative Y coordinate ... if tc.y < 0, add one
+		Current.texcoord0.y += 1 - step(0, Current.texcoord0.y);
+		Current.texcoord0.xy = Current.texcoord0.xy * uvSubRect.xy + uvSubRect.zw;
+	endCode
+end

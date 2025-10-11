@@ -1,0 +1,14 @@
+pixelFragment effectPickPS
+	output color
+
+	declareCode
+		extern uniform sampler tileMap : register(s0);
+	endCode
+
+	code
+		half4 tileTex		= tex2D( tileMap, tileUV );
+		half4 diffuse		= tileTex * color;
+		Current.color.rgb   = diffuse.rgb;
+		Current.color.a		= diffuse.a;
+	endCode
+end

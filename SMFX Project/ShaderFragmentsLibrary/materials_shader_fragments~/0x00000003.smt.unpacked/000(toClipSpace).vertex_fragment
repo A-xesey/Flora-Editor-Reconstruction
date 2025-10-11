@@ -1,0 +1,14 @@
+vertexFragment toClipSpace
+	input position
+
+	declareCode
+		extern uniform float4x4 modelToClip;
+		extern uniform float4x3 modelToWorld;
+	endCode
+
+	code
+		float4 worldPosition = float4(mul(Current.position, modelToWorld),1);
+		float4 clipPosition = mul(Current.position, modelToClip);
+		Current.position = clipPosition;
+	endCode
+end

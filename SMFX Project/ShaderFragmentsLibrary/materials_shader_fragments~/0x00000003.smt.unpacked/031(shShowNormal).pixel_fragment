@@ -1,0 +1,8 @@
+pixelFragment shShowNormal
+	input -texcoords 3
+
+	code
+		float3 vertNormal = In.texcoord<t0>.xyz;
+		Current.color.rgb = 0.5 * vertNormal.xyz + 0.5;
+	endCode
+end

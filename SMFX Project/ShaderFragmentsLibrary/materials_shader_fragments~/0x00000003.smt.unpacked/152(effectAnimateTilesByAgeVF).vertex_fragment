@@ -1,0 +1,23 @@
+vertexFragment effectAnimateTilesByAgeVF
+	declareCode
+		extern uniform float4 gameInfo;
+		extern uniform half4 customParams[2];
+	endCode
+
+	code
+		half tileBlend;
+		half2 tileUV;
+		{
+		half id = Current.texcoord<t0>.w;
+		half animBlendRate = customParams[0].x;
+		half stripLength = customParams[0].y;
+		half t = id * 255 + age * animBlendRate;
+		tileBlend = frac( t );
+		half4 tile = half4( t - tileBlend, t + 1 - tileBlend, uv.y, uv.y );
+		tile /= stripLength;
+		tile.xy = frac( tile.xy );
+		tile.xy += tile.zw;
+		tileUV = tile.xy;
+		}
+	endCode
+end

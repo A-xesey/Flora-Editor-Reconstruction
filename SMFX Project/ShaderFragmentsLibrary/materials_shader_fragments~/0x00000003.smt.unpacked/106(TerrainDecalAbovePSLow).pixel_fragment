@@ -1,0 +1,23 @@
+pixelFragment TerrainDecalAbovePSLow
+	input color position -texcoords 4
+	output color
+	samplers 3
+
+	code
+		/////////////////////////////////////////////////////////////////////////////////////
+		// pixel shader Main: DecalAbove
+		/////////////////////////////////////////////////////////////////////////////////////
+		float4 shadowColor       	= In.color;
+		float3 nightLightTint   	= In.texcoord<t0>.rgb;
+		float  nightLumBlend  	    = In.texcoord<t0>.w;
+		float2 decalUV      		= In.texcoord<t1>.zw;
+		float4 lightColor           = In.texcoord<t2>;
+		// get the diffuse color
+		float4 decalColor			= tex2D( Sampler1, decalUV );
+		half4 finalColor			= ( lightColor * shadow + shadowColor ) * decalColor;
+		half nightLum				= dot( finalColor.rgb, half3(0.5,0.5,0.5) );
+		half3 nightColor			= nightLum*nightLightTint;
+		Current.color				= finalColor;
+		Current.color.rgb			= lerp( finalColor.rgb, nightColor, nightLumBlend );
+	endCode
+end

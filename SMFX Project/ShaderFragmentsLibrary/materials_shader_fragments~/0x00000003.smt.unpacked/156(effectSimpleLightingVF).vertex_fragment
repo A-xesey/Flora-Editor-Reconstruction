@@ -1,0 +1,15 @@
+vertexFragment effectSimpleLightingVF
+	declareCode
+		extern uniform struct { float4 mDir; float4 mColor; } dirLightsWorld[4];
+	endCode
+
+	code
+		half3 litcolor;
+		{
+		const half ambient = 0.5;
+		half3 lightingNormal = normalize( quadPos - In.position.xyz );
+		half LdotN = saturate( dot( lightingNormal, dirLightsWorld[0].mDir.xyz ) );
+		litcolor = lerp( color * dirLightsWorld[0].mColor * LdotN, color, ambient );
+		}
+	endCode
+end

@@ -1,0 +1,7 @@
+vertexFragment whiteVertexColor
+	output color
+
+	code
+		Current.color = float4(1, 1, 1, 1);
+	endCode
+end

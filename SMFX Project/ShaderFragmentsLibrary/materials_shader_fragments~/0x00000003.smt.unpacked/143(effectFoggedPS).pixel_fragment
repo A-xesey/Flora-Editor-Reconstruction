@@ -1,0 +1,14 @@
+pixelFragment effectFoggedPS
+	output color
+
+	declareCode
+		extern uniform sampler map : register(s0);
+		extern uniform sampler scatterMap : register(s9);
+	endCode
+
+	code
+		Current.color       = tex2D( map, uv ) * color;
+		half4 fogColor		= texCUBE( scatterMap, viewVector.xyz );
+		Current.color.rgb   = lerp( Current.color.rgb, fogColor.rgb, fogStrength ) + fogColor.rgb * fogColor.a * sunDrop;
+	endCode
+end

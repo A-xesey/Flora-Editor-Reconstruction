@@ -6,7 +6,7 @@ string16 description "FE_leaves_palm_03a"
 key modelMeshHull editor_rigblock~!None
 key modelMeshLOD0 editor_rigblock~!FE_leaves_palm_03a.rw4
 vector3 modelRotationBallHandleOffset (0, -1.75, 0.5)
-key skinpaintDiffuseTexture skinPaint_texture~!FE_leaves_palm_03__diffuse.rw4
+key skinpaintDiffuseTexture skinPaint_texture~!FE_leaves_palms__diffuse.rw4
 key skinpaintSpecBumpTexture skinPaint_texture~!FE_leaves_palm_03__specBump.rw4
 key skinpaintTintMaskTexture skinPaint_texture~!FE_leaves_palm_03__tintMask2.rw4
-bool modelHideDeformHandles false
+

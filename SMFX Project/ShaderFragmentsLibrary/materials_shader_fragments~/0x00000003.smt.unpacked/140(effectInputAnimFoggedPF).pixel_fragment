@@ -1,0 +1,14 @@
+pixelFragment effectInputAnimFoggedPF
+	input color -texcoords 4
+
+	code
+		half4   color           = In.color;
+		half2   tileUV1         = In.texcoord<t0>.xy;
+		half2   tileUV2         = In.texcoord<t0>.zw;
+		half    tileBlend       = In.texcoord<t1>.x;
+		half	fogStrength		= In.texcoord<t1>.y;
+		half2   uv              = In.texcoord<t1>.zw;
+		half4   viewVector      = In.texcoord<t2>;
+		half    sunDrop         = In.texcoord<t3>.x;
+	endCode
+end

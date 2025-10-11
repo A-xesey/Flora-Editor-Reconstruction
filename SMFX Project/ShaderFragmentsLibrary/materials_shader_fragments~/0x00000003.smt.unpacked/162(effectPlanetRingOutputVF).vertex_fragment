@@ -1,0 +1,10 @@
+vertexFragment effectPlanetRingOutputVF
+	output color position -texcoords 1 float4
+
+	code
+		Current.position            = clipPos;
+		Current.color               = color;
+		Current.texcoord<t0>.xy     = uv0;
+		Current.texcoord<t0>.zw     = uv1;
+	endCode
+end

@@ -1,14 +1,14 @@
 key parent palette_config~!TemplatePaletteCategoryPaint.prop
 keys paletteCategoryIconList
-	global_ui~!0x10A375AD.png
-	0xFFFFFFFF!0xFFFFFFFF.0xFFFFFFFF
-	global_ui~!0x9A0464DE.png
-	global_ui~!0x5E00A16E.png
-	global_ui~!0x6276BF51.png
-	0xFFFFFFFF!0xFFFFFFFF.0xFFFFFFFF
-	global_ui~!0x95045CBD.png
-	global_ui~!0x46D95497.png
-	global_ui~!0x10A375AD.png
+	editors_flora~!button-paintcell-norm.png
+	editors_flora~!0xffffffff.0xffffffff
+	editors_flora~!button-paintcell-hl.png
+	editors_flora~!button-paintcell-act.png
+	editors_flora~!button-paintcell-on-norm.png
+	editors_flora~!0xffffffff.0xffffffff
+	editors_flora~!button-paintcell-on-hl.png
+	editors_flora~!button-paintcell-on-act.png
+	editors_flora~!button-paintcell-norm.png
 end
 key paletteCategoryLayoutFile 0x3FCA51EA
 texts paletteCategoryName

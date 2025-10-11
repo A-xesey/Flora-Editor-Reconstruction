@@ -1,0 +1,47 @@
+vertexFragment instancingPosition
+	input texcoord2 texcoord3 texcoord4 texcoord1 position
+	output position
+
+	declareCode
+		// to match skinning convention
+		void TransformPosNormalTangent(
+		float4 row0, float4 row1, float4 row2, // tfmp
+		inout float4 position,
+		inout float3 normal,
+		inout float3 tangent)
+		{
+		// the compiler strips unused elements
+		float4 p = position;
+		position.x = dot(p, row0);
+		position.y = dot(p, row1);
+		position.z = dot(p, row2);
+		float3 n = normal;
+		normal.x = dot(n, row0.xyz);
+		normal.y = dot(n, row1.xyz);
+		normal.z = dot(n, row2.xyz);
+		float3 t = tangent;
+		tangent.x = dot(t, row0.xyz);
+		tangent.y = dot(t, row1.xyz);
+		tangent.z = dot(t, row2.xyz);
+		// normalize
+		normal  = normalize((half3)normal);
+		tangent = normalize((half3)tangent);
+		}
+		void TransformPosNormal(float4 row0, float4 row1, float4 row2, inout float4 position, inout float3 normal)
+		{
+		float3 dummy = 0;
+		TransformPosNormalTangent(row0, row1, row2, position, normal, dummy);
+		}
+		void TransformPos(float4 row0, float4 row1, float4 row2, inout float4 position)
+		{
+		float3 dummy = 0;
+		TransformPosNormalTangent(row0, row1, row2, position, dummy, dummy);
+		}
+	endCode
+
+	code
+		TransformPos(In.texcoord1, In.texcoord2, In.texcoord3,
+		Current.position);
+		In.position = Current.position;
+	endCode
+end

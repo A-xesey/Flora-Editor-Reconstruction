@@ -1,0 +1,20 @@
+vertexFragment effectPickTilesVF
+	declareCode
+		extern uniform float4 gameInfo;
+		extern uniform half4 customParams[2];
+	endCode
+
+	code
+		half2 tileUV;
+		{
+		half id = Current.texcoord<t0>.w;
+		half stripLength = customParams[0].y;
+		half t = id * 255;
+		half2 tile = half2( t, uv.y );
+		tile /= stripLength;
+		tile.x = frac( tile.x );
+		tile.x += tile.y;
+		tileUV = tile.xy;
+		}
+	endCode
+end

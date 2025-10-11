@@ -1,0 +1,28 @@
+pixelFragment rocksVanillaFoggedPS
+	input position -texcoords 5
+	output color
+
+	declareCode
+		extern uniform sampler sourceTex : register(s0);
+		extern uniform sampler scatterMap : register(s9);
+	endCode
+
+	code
+		// Load up variables
+		half2  uv				= In.texcoord<t0>.xy;
+		half4  c1				= In.texcoord<t1>;
+		half4  c2				= In.texcoord<t2>;
+		half3  n1				= In.texcoord<t3>.rgb;
+		half   nightLumBlend	= 1-In.texcoord<t3>.a;
+		// Calc diffuse color
+		half4 diffuse          = tex2D( sourceTex, uv );
+		float4 lightColor = diffuse * c1 + c2;
+		Current.color.rgb = dot( lightColor.rgb, n1 ) + lightColor.rgb * nightLumBlend;
+		Current.color.a = lightColor.a;
+		half    sunDrop         = In.texcoord<t0>.w;
+		half3   viewVector      = In.texcoord<t4>.xyz;
+		half    fogStrength     = In.texcoord<t4>.w;
+		half4   fogColor        = texCUBE( scatterMap, viewVector.xyz );
+		Current.color.rgb       = lerp( Current.color.rgb, fogColor.rgb, fogStrength ) + fogColor.rgb * fogColor.a * sunDrop;
+	endCode
+end

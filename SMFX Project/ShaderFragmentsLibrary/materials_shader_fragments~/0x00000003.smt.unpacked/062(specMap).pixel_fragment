@@ -1,0 +1,8 @@
+pixelFragment specMap
+	input color position
+	output color
+
+	code
+		Current.color = float4(0, 0, 0, 1);
+	endCode
+end

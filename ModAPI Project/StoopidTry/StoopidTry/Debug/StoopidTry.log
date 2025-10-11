@@ -1,0 +1,10 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: каталог Output заканчивается не косой чертой.  Этот экземпляр сборки добавит косую черту, поскольку она необходима для правильного определения каталога Output.
+  stdafx.cpp
+  dllmain.cpp
+  FEListener_BlackWaterFix.cpp
+  FETest.cpp
+C:\Users\DesOne\source\repos\Spore-ModAPI\Projects\TeachStuff\src\StooopidTry\StoopidTry\FEListener_BlackWaterFix.cpp(33,31): warning C4804: <=: небезопасное использование типа "bool" в операции
+  Создание кода...
+  (компиляция исходного файла "/FEListener_BlackWaterFix.cpp")
+  
+  StoopidTry.vcxproj -> C:\ProgramData\SPORE ModAPI Launcher Kit\mLibs\StoopidTry.dll

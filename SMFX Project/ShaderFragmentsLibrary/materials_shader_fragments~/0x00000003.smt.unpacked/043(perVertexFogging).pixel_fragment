@@ -1,0 +1,16 @@
+pixelFragment perVertexFogging
+	input -texcoords 1
+	output color
+
+	declareCode
+		extern uniform float4 foggingCPU;
+
+		extern uniform sampler scatterMap : register(s9);
+	endCode
+
+	code
+		float fogStrength = In.texcoord<t0>.w;
+		float4 scatterColor  = texCUBE( scatterMap, In.texcoord<t0>.xyz );
+		Current.color.rgb = lerp( Current.color.rgb, scatterColor.rgb, fogStrength ) + scatterColor.rgb * scatterColor.a * foggingCPU.w;
+	endCode
+end

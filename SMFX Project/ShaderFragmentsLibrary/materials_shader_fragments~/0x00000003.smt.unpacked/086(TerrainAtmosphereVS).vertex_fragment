@@ -1,0 +1,62 @@
+vertexFragment TerrainAtmosphereVS
+	input texcoord0 position
+	output color position -texcoords 3 float4
+
+	declareCode
+		extern uniform struct
+		{
+		float4 vSunDir;
+		float4 waterColor;
+		float4 innerParms;
+		float4 vCamPos;
+		float4 sphereParms;
+		float4 camParms;
+		float4 illumParms;
+		float4 fogParms;
+		float4 nightLightTint;
+		float4 nightLightColor;
+		float4 duskLightColor;
+		float4 dayLightColor;
+		float4 nightShadowColor;
+		float4 duskShadowColor;
+		float4 dayShadowColor;
+		float4 duskDawnStartEnd;
+		float4x4 viewTransform;
+		} terrainState;
+		extern uniform struct
+		{
+		float4x4 worldViewProjection;
+		float4 QuadFaceUVXform;
+		float4 QuadMorphValue;
+		float4 QuadFaceElemMap;
+		float4 QuadFaceSignMap;
+		float4 QuadFaceXForm[3];
+		} terrainTransform;
+		extern uniform float4 screenInfo;
+	endCode
+
+	code
+		float4 vertScaled =  float4(normal.xyz * ( terrainState.sphereParms.x + terrainState.sphereParms.z ), 1);
+		float4 xfPos = vertScaled;
+		float3 vNormCamToVert = xfPos.xyz - terrainState.vCamPos.xyz;
+		vNormCamToVert = normalize( vNormCamToVert );
+		float illum = dot( terrainState.vSunDir.xyz, normal.xyz ) + terrainState.vSunDir.w - cos( 5 );
+		float dpView = saturate( dot(vNormCamToVert.xyz, normal.xyz ) );
+		float scaleHeight = saturate( (terrainState.camParms.y)/screenInfo.x );
+		float term =  GetInScatterTerminator( normal, terrainState.vSunDir.xyz, terrainState.vSunDir.w );
+		illum = max( terrainState.illumParms.x, illum );
+		illum = min( terrainState.illumParms.y, illum );
+		illum = ( illum - terrainState.illumParms.x ) / ( terrainState.illumParms.y - terrainState.illumParms.x );
+		Current.position            = mul(vertScaled, terrainTransform.worldViewProjection);
+		Current.texcoord<t0>.x      = scaleHeight;
+		// We use to upload the raw atmosphere score, but now we upload the
+		// density that was computed from atmosphere score via a cpu side texture lookup
+		Current.texcoord<t0>.y      = terrainState.fogParms.w;
+		Current.texcoord<t0>.z      = illum;
+		Current.texcoord<t0>.w      = dpView;
+		Current.texcoord<t1>.xyz    = vNormCamToVert.xyz;
+		Current.texcoord<t1>.w      = term;
+		Current.texcoord<t2>.xyz    = mul( -vNormCamToVert.xyz, terrainState.viewTransform );
+		Current.texcoord<t2>.w      = 0.0;      // unused
+	endCode
+end

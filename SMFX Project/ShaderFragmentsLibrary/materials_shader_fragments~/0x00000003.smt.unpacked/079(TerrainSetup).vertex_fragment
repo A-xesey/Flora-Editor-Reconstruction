@@ -1,0 +1,73 @@
+vertexFragment TerrainSetup
+	input color position
+
+	declareCode
+		extern uniform struct
+		{
+		float4 vSunDir;
+		float4 waterColor;
+		float4 innerParms;
+		float4 vCamPos;
+		float4 sphereParms;
+		float4 camParms;
+		float4 illumParms;
+		float4 fogParms;
+		float4 nightLightTint;
+		float4 nightLightColor;
+		float4 duskLightColor;
+		float4 dayLightColor;
+		float4 nightShadowColor;
+		float4 duskShadowColor;
+		float4 dayShadowColor;
+		float4 duskDawnStartEnd;
+		float4x4 viewTransform;
+		} terrainState;
+		extern uniform struct
+		{
+		float4x4 worldViewProjection;
+		float4 QuadFaceUVXform;
+		float4 QuadMorphValue;
+		float4 QuadFaceElemMap;
+		float4 QuadFaceSignMap;
+		float4 QuadFaceXForm[3];
+		} terrainTransform;
+	endCode
+
+	code
+		// since this comes from a color expressed in four unsigned bytes, values will already be in increments of 1.0f / 255.0f.
+		// the previous calculation was really this:
+		// In.color.a * 255.0f * 256.0f * 2.0f / 65536.0f + In.color.r * 255.0f * 2.0f / 65536.0f - 1.0f
+		// better expressed as this:
+		const float c0      = 255.0f * 2.0f / 65536.0f;
+		const float c1      = 256.0f * c0;
+		float parentHeight  = dot( In.position.ar, float2( c1, c0 ) ) - 1;
+		float height        = dot( In.position.gb, float2( c1, c0 ) ) - 1;
+		height              = parentHeight + (height - parentHeight) * terrainTransform.QuadMorphValue.x;
+		float height1       = dot( In.color.gb, float2( c1, c0 ) ) - 1;
+		float seabedHeight = height1 * terrainState.sphereParms.y + terrainState.sphereParms.x;
+		float landHeight   = height * terrainState.sphereParms.y + terrainState.sphereParms.x;
+		float waterHeight  = terrainState.innerParms.w + terrainState.sphereParms.x;
+		float2 uv          = saturate( terrainTransform.QuadFaceUVXform.xy + In.texcoord0.xy * terrainTransform.QuadFaceUVXform.z);
+		// this is 2 instructions
+		float4 normal4 = float4( uv.xy, 1, 1 );
+		// this is 4 instructions
+		float3 normal = float3(
+		dot( normal4, terrainTransform.QuadFaceXForm[0] ),
+		dot( normal4, terrainTransform.QuadFaceXForm[1] ),
+		dot( normal4, terrainTransform.QuadFaceXForm[2] ) );
+		// this is 4 instructions
+		normal = normalize( normal );
+		// currently both land and water are set to the VB height, which is max(waterHeight, landHeight)
+		// this is to avoid shifting coastline problems, and being able to peer under the water's
+		// edge, due to the water alpha'ing out there.
+		// this may change because it has its own problems, namely that the water depth isn't
+		// available in the vertex shader, and the refraction map isn't correct.
+		// however, doing this clamp in the shader causes z-fight issues due to the skirts getting
+		// clamped, and water edge crawling, because only the final morphed height is clamped, not the
+		// parent and destination heights.
+		float4 landPosition  = float4(normal.xyz * landHeight, 1);
+		// float4 waterPosition = float4(normal.xyz * waterHeight, 1);
+		float4 waterPosition = landPosition;
+		float4 seabedPosition = float4(normal.xyz * seabedHeight, 1);
+	endCode
+end

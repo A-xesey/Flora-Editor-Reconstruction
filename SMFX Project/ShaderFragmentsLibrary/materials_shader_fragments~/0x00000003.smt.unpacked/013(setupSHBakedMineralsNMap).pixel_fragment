@@ -1,0 +1,26 @@
+pixelFragment setupSHBakedMineralsNMap
+	samplers 2
+
+	declareCode
+		const static float kSH_A1 = 2.0 / 3.0;
+		const static float kSH_A2 = 1.0 / 4.0;
+		const static float kSH_A3 = 0;
+		const static float kSH_A4 = -1.0 / 24.0;
+		const static float kDefaultGloss = 0.35;
+		const static float kGlossyMax    = 0.75; // threshold at which glossy maxes out
+		const static float kCelOutlineThreshold        = 0.25;
+		const static float kCelOutlineThresholdRange   = 0.075;
+		const static float kCelStrength                = 0.3;
+		const static float kSpecExponentMaxValue = 60.0;
+		const static bool kSaveInstructions = false;
+	endCode
+
+	code
+		float4 bakeInfoMap = tex2D(Sampler<s0>, In.texcoord0);
+		float4 specNMap    = tex2D(Sampler<s1>, In.texcoord0);
+		float3 nmapNormal  = specNMap.rgb * 2 - 0.9985;
+		float specStrength = bakeInfoMap.r;
+		float specE        = bakeInfoMap.g * kSpecExponentMaxValue;
+		float gloss        = bakeInfoMap.b;
+	endCode
+end

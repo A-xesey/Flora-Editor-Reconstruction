@@ -1,0 +1,16 @@
+vertexFragment showNormalMap
+	input normal color
+	output color
+
+	declareCode
+		extern uniform float4x3 modelToWorld;
+	endCode
+
+	code
+		// Impostor Normal Map
+		float3 normal = normalize(mul(float4(Current.normal.xyz, 0), modelToWorld));
+		float3 packedNormal = (normal + float3(1.0, 1.0, 1.0)) * 0.5;
+		Current.color.rgb = packedNormal;   // leave alpha for transparency
+		Current.color.a = 1;
+	endCode
+end

@@ -1,6 +1,0 @@
-#thx Chocice75
-key parent palette_config~!TemplateManifest.prop
-keys validAdditionalManifestGroupIDs
-	cl_paints_EditorKeys~!animations~
-	skinpaints_EditorKeys~!animations~
-end

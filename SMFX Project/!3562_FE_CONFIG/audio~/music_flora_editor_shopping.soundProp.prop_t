@@ -1,5 +1,5 @@
-float gain 0.3
 key musicTemplate patch_base
+float gain 0.3
 uint32 polyphony 1
 keys samples
 	#SpaceboundSunbathing

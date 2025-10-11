@@ -1,0 +1,15 @@
+vertexFragment renderShadowMap
+	input position
+	output -texcoords 1 float1
+
+	declareCode
+		extern uniform float4x4 modelToClip;
+		extern uniform float4x3 modelToCamera;
+		extern uniform float4 rangeAndStrength;
+	endCode
+
+	code
+		Current.texcoord<t0>.x = (mul(Current.position, modelToCamera).z - rangeAndStrength.x) * rangeAndStrength.y;
+		Current.position = mul(Current.position, modelToClip);
+	endCode
+end

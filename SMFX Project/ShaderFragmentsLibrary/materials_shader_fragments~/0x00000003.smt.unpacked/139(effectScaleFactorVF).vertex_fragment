@@ -1,0 +1,12 @@
+vertexFragment effectScaleFactorVF
+	declareCode
+		extern uniform half4 customParams[2];
+	endCode
+
+	code
+		{
+		half scaleFactor = customParams[1].z;
+		scale *= scaleFactor;
+		}
+	endCode
+end

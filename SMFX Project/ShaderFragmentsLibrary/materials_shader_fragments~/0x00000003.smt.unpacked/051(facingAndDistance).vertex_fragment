@@ -1,0 +1,18 @@
+vertexFragment facingAndDistance
+	input normal position
+	output color
+
+	declareCode
+		extern uniform float4x3 modelToCamera;
+		extern uniform float4 customParams[4];
+		extern uniform float4 materialColor;
+	endCode
+
+	code
+		float3 cameraSpaceNormal = mul(Current.normal.xyz, (float3x3)modelToCamera);
+		float3 cameraSpacePosition = mul(In.position, modelToCamera);
+		float angle = saturate((-cameraSpaceNormal.z - customParams[0].x) * customParams[0].y);
+		float dist = clamp((cameraSpacePosition.z - customParams[0].w) / customParams[0].z, 0, 1);
+		Current.color = float4(1.0, 1.0, 1.0, dist * angle * materialColor.a);
+	endCode
+end

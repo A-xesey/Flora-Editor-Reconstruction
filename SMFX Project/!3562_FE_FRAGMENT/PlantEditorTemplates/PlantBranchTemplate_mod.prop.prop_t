@@ -15,4 +15,4 @@ bool modelOrientWhenSnapped true
 key modelPinningType PinningGeometry!PinningNormal
 key modelRigBlockType plant!branch
 #bool modelRotationRingX Y ZAxisAllowHidden false
-
+#bool modelHideRotationHandles true

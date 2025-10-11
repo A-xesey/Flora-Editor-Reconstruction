@@ -1,0 +1,13 @@
+vertexFragment particleLightingBasic
+	input color
+	output color
+
+	declareCode
+		extern uniform float4 ambient;
+		extern uniform struct { float4 mDir; float4 mColor; } dirLightsWorld[4];
+	endCode
+
+	code
+		Current.color.rgb *= (ambient.rgb + dirLightsWorld[0].mColor.rgb);
+	endCode
+end

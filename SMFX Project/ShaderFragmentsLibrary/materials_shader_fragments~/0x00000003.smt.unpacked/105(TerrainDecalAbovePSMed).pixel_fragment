@@ -1,0 +1,46 @@
+pixelFragment TerrainDecalAbovePSMed
+	input color position -texcoords 4
+	output color
+	samplers 3
+
+	declareCode
+		extern uniform struct
+		{
+		float4 DecalColorTint;
+		float4 dirScaleU;
+		float4 dirScaleV;
+		} decalState;
+	endCode
+
+	code
+		/////////////////////////////////////////////////////////////////////////////////////
+		// pixel shader Main: DecalAbove
+		/////////////////////////////////////////////////////////////////////////////////////
+		float3 shadowColor       	= In.color.rgb;
+		float  heightAlphaScale 	= In.color.a;
+		float3 nightLightTint   	= In.texcoord<t0>.rgb;
+		float  nightLumBlend  	    = In.texcoord<t0>.w;
+		float  fogStrength          = In.texcoord<t1>.x;
+		float2 decalUV      		= In.texcoord<t1>.zw;
+		float3 lightColor           = In.texcoord<t2>.rgb;
+		float  lightStrength        = In.texcoord<t2>.a;
+		float3 transDir             = In.texcoord<t3>.xyz;
+		float  sunDrop              = In.texcoord<t3>.w;
+		// get the diffuse color
+		float4 decalColor = tex2D( Sampler1, decalUV );
+		// tint it by the decal tint
+		decalColor *= decalState.DecalColorTint;
+		// calculate lighting
+		half finalLightStrength = lightStrength * shadow;
+		lightColor              *= finalLightStrength;
+		lightColor              += shadowColor;
+		lightColor              *= decalColor.rgb;
+		half  nightLum          = dot( lightColor, half3(0.5,0.5,0.5) );
+		half3 nightColor        = nightLum*nightLightTint;
+		Current.color.rgb       = lerp( lightColor, nightColor, nightLumBlend );
+		Current.color.a         *= decalColor.a * heightAlphaScale;
+		// fogging
+		float4 scatterColor = texCUBE( Sampler2, transDir );
+		Current.color.rgb = lerp( Current.color.rgb, scatterColor.rgb, fogStrength ) + scatterColor.a * scatterColor.rgb * sunDrop;
+	endCode
+end

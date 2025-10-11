@@ -1,0 +1,14 @@
+vertexFragment effectFaceUpOnlyVF
+	input normal position
+
+	code
+		half3 quadPos;
+		{
+		half3 tangent = normalize( cross( npos, In.normal.xyz ) );
+		half3 up = normalize( cross( tangent, npos ) );
+		quadPos = In.position.xyz;
+		quadPos += tangent * scale * (uv.x - 0.5);
+		quadPos += up * scale * (0.5 - uv.y);
+		}
+	endCode
+end

@@ -1,0 +1,71 @@
+pixelFragment TerrainBelowLavaPS
+	input color position -texcoords 5
+	output color
+	samplers 8
+
+	declareCode
+		extern uniform struct { float4x4 pcaBasis0;float4x4 pcaBasis1;float4x4 pcaBasis2;float4x4 pcaBasis3;float4 pcaMean;} pcaTexture;
+
+		// must match pcaTexture struct
+		struct PCAData
+		{
+		float4x4 pcaBasis0;
+		float4x4 pcaBasis1;
+		float4x4 pcaBasis2;
+		float4x4 pcaBasis3;
+		float4   pcaMean;  // move this first, only use basis0/1
+		};
+		float4 PCADecompressTexture(
+		float2 uv0,
+		sampler pcaComponent0,
+		sampler pcaComponent1,
+		PCAData pcaData
+		)
+		{
+		// 14 ps slots + 2 tex slots for one water normal
+		// Convert image data into left singular values (scale from [0,1] to [-1,1])
+		float4 texture0 = tex2D( pcaComponent0, uv0 ) * 2 - 1; // components 0-3
+		float4 texture1 = tex2D( pcaComponent1, uv0 ) * 2 - 1; // components 4-7
+		float4 decompressedTexture =
+		mul( texture0, pcaData.pcaBasis0 ) +
+		mul( texture1, pcaData.pcaBasis1 ) +
+		pcaData.pcaMean;
+		return decompressedTexture / 255.0f;
+		}
+	endCode
+
+	code
+		float   fogStrength      = In.color.w;
+		float2  uv               = In.texcoord<t0>.xy;
+		float   planetRadius     = In.texcoord<t0>.z;
+		float   lavaHeight       = In.texcoord<t0>.w;
+		float   glowAnim         = In.texcoord<t1>.x;
+		float   sunDrop          = In.texcoord<t1>.y;
+		float2  animTexCoordA    = In.texcoord<t2>.xy;
+		float2  animTexCoordB    = In.texcoord<t2>.zw;
+		float3  viewDir          = In.texcoord<t3>.xyz;
+		float3 pcaNormalA        = PCADecompressTexture( animTexCoordA, Sampler4, Sampler6, pcaTexture ).xzy;
+		float3 pcaNormalB        = PCADecompressTexture( animTexCoordB, Sampler4, Sampler6, pcaTexture ).xzy;
+		float normalizedHeight   = tex2D( Sampler1, uv ).x * 2.0 - 1.0;
+		float height             = planetRadius * normalizedHeight;
+		float alpha              = step( height, lavaHeight );
+		float lavaDepth          = saturate( ( lavaHeight - height ) / planetRadius ) - 0.1;
+		float coastRamp          = saturate( 1.0 - lavaDepth * 13 * 1.325 );
+		float3 belowTex          = tex2D( Sampler3, uv );
+		float  cracks            = tex2D( Sampler5, uv * 4 ).a * 2;
+		float3 detail            = tex2D( Sampler5, uv * 4 ) * 0.6;
+		float rampLookup        = 1;                                // Start at white
+		rampLookup              -= ( belowTex.r - 0.4 ) * 2.5;      // Low frequency
+		rampLookup              -= pcaNormalA.x;// * 2.5;              // Mid frequency
+		rampLookup              += pcaNormalB.y;// * 1.75;             // High frequency
+		rampLookup              -= coastRamp; //* coastRamp*0.85;                       // Shallow depths push towards black
+		rampLookup              += cracks * coastRamp;              // Cracks in the shallows
+		rampLookup              += glowAnim;                        // Slow and glow
+		float3 incandescentColor = tex2D( Sampler2, half2( 0, saturate( rampLookup ) ) ).rgb;
+		float3 diffuseColor     = lerp( detail, incandescentColor, incandescentColor.r );
+		float4 scatterColor     = texCUBE( Sampler7, viewDir );
+		Current.color.rgb       = diffuseColor.rgb;
+		Current.color.rgb       = lerp( Current.color.rgb, scatterColor.rgb, fogStrength ) + scatterColor.rgb * scatterColor.a * sunDrop;
+		Current.color.w         = alpha;
+	endCode
+end

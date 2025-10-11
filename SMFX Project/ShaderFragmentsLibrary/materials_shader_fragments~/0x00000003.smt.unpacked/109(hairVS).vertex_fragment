@@ -1,0 +1,17 @@
+vertexFragment hairVS
+	input normal color texcoord0 texcoord1 position
+	output color position -texcoords 2 float4
+
+	declareCode
+		extern uniform float4x3 cameraToWorld;
+		extern uniform float4x3 modelToCamera;
+		extern uniform float4 screenInfo;
+	endCode
+
+	code
+		Current.color = In.color;
+		Current.texcoord<t0> = In.texcoord0;
+		Current.texcoord<t1> = In.texcoord1;
+		Current.color.rgb = float4(1,1,1,1);
+	endCode
+end

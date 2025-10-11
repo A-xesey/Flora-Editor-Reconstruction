@@ -3,4 +3,3 @@ texts blockName
 	(ModRigblocks!0x00000026) "FE_leaf_12"
 end
 key modelMeshLOD0 FloraParts_rigblocks!FE_leaf_04_branch.rw4
-bool modelHideDeformHandles false

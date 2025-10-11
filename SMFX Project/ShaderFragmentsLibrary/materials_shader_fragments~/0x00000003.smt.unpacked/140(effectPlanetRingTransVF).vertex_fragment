@@ -1,0 +1,30 @@
+vertexFragment effectPlanetRingTransVF
+	input texcoord0 position
+
+	declareCode
+		extern uniform float4 gameInfo;
+		extern uniform half4 customParams[2];
+		extern uniform float4x3 worldToModel;
+		extern uniform struct { float4 mDir; float4 mColor; } dirLightsWorld[4];
+	endCode
+
+	code
+		half3 quadPos;
+		half2 uv0;
+		half2 uv1;
+		{
+		half3 sunDir = dirLightsWorld[0].mDir;
+		half3 sunDirModel = mul( half4( sunDir, 1 ), worldToModel );
+		half fade = dot( normalize( In.position.xy ), normalize( sunDirModel.xy ) ) + 0.8;
+		color = half4( 1, 1, 1, fade );
+		half  ring0vel      = customParams[0].x;
+		half  ring1vel      = customParams[0].y;
+		quadPos = In.position.xyz;
+		half2 uv = In.texcoord0.xy;
+		uv0 = uv;
+		uv0.x += gameInfo.x * ring0vel;
+		uv1 = uv;
+		uv1.x += gameInfo.x * ring1vel;
+		}
+	endCode
+end

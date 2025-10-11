@@ -1,0 +1,6 @@
+key parent models!DefaultTemplate.prop
+bboxs modelBoundingBox
+	(-3.4205821, -3.3934741, -0.309425) (3.4205821, 3.44769, -0.203628)
+end
+float modelBoundingRadius 4.8664861
+key modelMeshLOD0 editor_rigblocks~!FERecon_background.rw4

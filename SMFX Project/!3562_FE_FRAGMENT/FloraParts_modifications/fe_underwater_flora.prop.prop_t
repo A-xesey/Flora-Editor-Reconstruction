@@ -9,4 +9,3 @@ vector3 modelRotationBallHandleOffset (0, -5.75, -0.5)
 key skinpaintDiffuseTexture skinPaint_texture~!fe_underwater_flora__diffuse.rw4
 key skinpaintSpecBumpTexture skinPaint_texture~!fe_underwater_flora__specBump.rw4
 key skinpaintTintMaskTexture skinPaint_texture~!fe_underwater_flora__tintMask.rw4
-bool modelHideDeformHandles false

@@ -1,0 +1,14 @@
+pixelFragment applyDiffuseTexture
+	input color -texcoords 1
+	output color
+	samplers 1
+
+	declareCode
+		sampler diffuseTextureSampler : register(s0);
+	endCode
+
+	code
+		float4 diffuseTexture = tex2D(diffuseTextureSampler, In.texcoord<t0>);
+		Current.color *= diffuseTexture;
+	endCode
+end

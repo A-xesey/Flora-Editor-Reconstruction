@@ -1,0 +1,13 @@
+pixelFragment effectPS
+	output color
+
+	declareCode
+		extern uniform sampler map : register(s0);
+	endCode
+
+	code
+		half4 diffuse		= tex2D( map, uv ) * color;
+		Current.color.rgb   = diffuse.rgb;
+		Current.color.a		= diffuse.a;
+	endCode
+end

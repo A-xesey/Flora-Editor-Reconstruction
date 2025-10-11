@@ -1,0 +1,8 @@
+pixelFragment effectInputPickPF
+	input color -texcoords 1
+
+	code
+		half4   color           = In.color;
+		half2   tileUV          = In.texcoord<t0>.xy;
+	endCode
+end

@@ -1,0 +1,34 @@
+vertexFragment applyInteriorVS
+	input normal position
+	output -texcoords 1 float3
+
+	declareCode
+		extern uniform float4x3 worldToCamera;
+		extern uniform float4x3 modelToCamera;
+		extern uniform float4x3 modelToWorld;
+		extern uniform float4x3 cameraToWorld;
+	endCode
+
+	code
+		float uShiftScale = .2;
+		float vShiftScale = .2;
+		float3 mVert = In.position.xyz / In.position.w;
+		float3 camVert = mul(mVert.xyz, worldToCamera);
+		float3 mNorm = In.normal.xyz;
+		float3 wNorm = mul(mNorm, modelToWorld);
+		float3 camNorm = mul(mNorm, modelToCamera);
+		float3 cEyeDir = float3(0, 0, 1);
+		float3 camMRt = mul(float3(-1, 0, 0), modelToCamera);
+		float3 camMUp = mul(float3(0, 0, 1), modelToCamera);
+		camMRt.z *= 0;
+		camMUp.z *= 0;
+		float3 ncamNorm = normalize(camNorm);
+		float3 ncamMRt = normalize(camMRt);
+		float3 ncamMUp = normalize(camMUp);
+		float NdR = dot(ncamMRt, ncamNorm);
+		float NdU = dot(ncamMUp, ncamNorm);
+		float uShift = NdR * uShiftScale;
+		float vShift = NdU * vShiftScale;
+		Current.texcoord<t0> = float4(uShift, vShift, 1, 1);
+	endCode
+end

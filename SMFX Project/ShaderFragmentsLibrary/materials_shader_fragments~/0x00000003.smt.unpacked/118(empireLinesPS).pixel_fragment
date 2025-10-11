@@ -1,0 +1,19 @@
+pixelFragment empireLinesPS
+	input color position -texcoords 1
+	output color
+
+	code
+		const float lengthSlope = 4;
+		float length = In.texcoord<t0>.x;
+		float lengthTrim = In.texcoord<t0>.y;
+		float lengthBlend = 1.0 - (2.0 * abs(length - 0.5));
+		lengthBlend = saturate(lengthSlope * (lengthBlend - lengthTrim));
+		const float widthSlope = 10;
+		float width = In.texcoord<t0>.z;
+		float widthScale = In.texcoord<t0>.w;
+		float widthBlend = 1.0 - (2.0 * abs(width - 0.5));
+		widthBlend = saturate(widthSlope * (widthBlend + widthScale - 1));
+		Current.color = In.color;
+		Current.color.a *= lengthBlend * widthBlend;
+	endCode
+end

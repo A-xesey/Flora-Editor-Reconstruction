@@ -1,6 +1,7 @@
 key parent editor_config~!FloraEditorSetupMod.prop
 
 ##thumb fragments
+#int ThumbnailFramingType 1
 #int32 ThumbnailEffect 0
 #float ThumbnailImageScale 0.7
 #float ThumbnailLowering 0.5
@@ -25,7 +26,7 @@ key parent editor_config~!FloraEditorSetupMod.prop
 #keys editorStartupModel
 	###flora_editorModel~!PaintBuddy1.flr #for Thumbpaint
 	#palette_editorModel~!FE_branch_assemblage_01_branch.flr
-	#palette_editorModel~!FE_branch_assemblage_02-.crt
+	#palette_editorModel~!FE_branch_assemblage_02.crt
 	#building_editorModel~!FE_branch_assemblage_01_mod_branch.flr
 	#building_editorModel~!2.bld #OKEROOP
 	#flora_editorModel~!thumbfrag.flr

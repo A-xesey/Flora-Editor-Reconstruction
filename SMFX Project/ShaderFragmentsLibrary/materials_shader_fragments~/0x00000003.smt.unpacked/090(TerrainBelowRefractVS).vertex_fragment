@@ -1,0 +1,93 @@
+vertexFragment TerrainBelowRefractVS
+	input color texcoord0 position
+	output color position -texcoords 7 float4
+
+	declareCode
+		extern uniform struct
+		{
+		float4 vSunDir;
+		float4 waterColor;
+		float4 innerParms;
+		float4 vCamPos;
+		float4 sphereParms;
+		float4 camParms;
+		float4 illumParms;
+		float4 fogParms;
+		float4 nightLightTint;
+		float4 nightLightColor;
+		float4 duskLightColor;
+		float4 dayLightColor;
+		float4 nightShadowColor;
+		float4 duskShadowColor;
+		float4 dayShadowColor;
+		float4 duskDawnStartEnd;
+		float4x4 viewTransform;
+		} terrainState;
+	endCode
+
+	code
+		half4 vertScaled = seabedPosition;
+		half term =  GetInScatterTerminator( normal, terrainState.vSunDir.xyz, terrainState.vSunDir.w );
+		half3 lightBlend, lightColor, shadowColor;
+		EvaluateVertexLighting(
+		normal.xyz,
+		terrainState.vSunDir.xyz,
+		terrainState.duskDawnStartEnd,
+		terrainState.dayLightColor.xyz,
+		terrainState.dayShadowColor.xyz,
+		terrainState.duskLightColor.xyz,
+		terrainState.duskShadowColor.xyz,
+		terrainState.nightLightColor.xyz,
+		terrainState.nightShadowColor.xyz,
+		lightBlend,
+		lightColor,
+		shadowColor );
+		/////////////////////////////////////////////
+		// this is the seabed positoin
+		half4 xfPos                    = vertScaled;
+		// the normalized seabed position
+		normal.xyz                      = normalize(xfPos.xyz);
+		// the distance to the camera position from the center of the planet in world space
+		half alt                        = length( terrainState.vCamPos.xyz );
+		// the height of the position
+		half pointAlt                   = length( xfPos.xyz );
+		// the camera to position vector
+		half3 vNormCamToVert            = xfPos.xyz - terrainState.vCamPos.xyz;
+		// the distance to the camera position from the position
+		half camDist                    = length( vNormCamToVert );
+		// normalize the camera to position vector
+		vNormCamToVert                  *= 1.0 / camDist;
+		// normal dot eye for fresnel term
+		half NdotE                     = dot( -vNormCamToVert, normal );
+		// fresnel term
+		half  fresnel                   = 1 - NdotE;
+		// water parameters
+		half waterFogMaxDepth           = terrainState.innerParms.y;
+		half scaledDynamicWaterHeight   = terrainState.innerParms.w;
+		half planetRadius               = terrainState.sphereParms.x;
+		half waterRadius                = planetRadius + scaledDynamicWaterHeight;
+		// the water color
+		half4 waterColor                = terrainState.waterColor;
+		// clip position
+		Current.position                = mul( vertScaled, terrainTransform.worldViewProjection );
+		// water color
+		Current.color.rgb               = waterColor.rgb;
+		Current.color.a                 = fresnel;
+		Current.texcoord<t0>.xy         = uv;
+		Current.texcoord<t0>.z          = camDist;
+		Current.texcoord<t0>.w          = terrainState.innerParms.w;
+		Current.texcoord<t1>.xy         = 0.0f;                             // unused
+		Current.texcoord<t1>.z          = planetRadius;
+		Current.texcoord<t1>.w          = terrainState.sphereParms.y;
+		Current.texcoord<t2>.xyz        = terrainState.vSunDir.xyz;
+		Current.texcoord<t2>.w          = waterFogMaxDepth;
+		Current.texcoord<t3>.xyz        = lightColor - shadowColor;
+		Current.texcoord<t3>.w          = lightBlend.x;
+		Current.texcoord<t4>.xyz        = shadowColor;
+		Current.texcoord<t4>.w          = lightBlend.z;
+		Current.texcoord<t5>.rgb        = terrainState.nightLightTint.rgb;
+		Current.texcoord<t5>.a          = terrainState.nightLightTint.a * lightBlend.z;
+		Current.texcoord<t6>.xyz        = normal.xyz;
+		Current.texcoord<t6>.w          = lightBlend.y;
+	endCode
+end

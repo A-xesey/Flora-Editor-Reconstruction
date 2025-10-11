@@ -1,8 +1,0 @@
-key parent editor_config~!FES_CSEM.prop
-float editorSkinResolutionHighQuality 0.111
-float editorSkinResolutionRealtime 0.111
-#default: 0.111
-#thumb_skinpaint: (0.061); 0.021; default
-#model_palette: 0.081; (0.086); 0.091
-#thumb_palette: (0.03102)
-#!0.21 ?0.111

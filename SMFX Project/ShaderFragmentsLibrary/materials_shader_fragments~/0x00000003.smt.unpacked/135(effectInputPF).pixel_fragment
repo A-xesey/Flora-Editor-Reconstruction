@@ -1,0 +1,8 @@
+pixelFragment effectInputPF
+	input color -texcoords 1
+
+	code
+		half4   color           = In.color;
+		half2   uv              = In.texcoord<t0>.xy;
+	endCode
+end

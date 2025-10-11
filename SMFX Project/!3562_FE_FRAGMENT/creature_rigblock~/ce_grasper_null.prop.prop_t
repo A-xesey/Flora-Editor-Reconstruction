@@ -9,5 +9,5 @@ bool modelIsNullBlock true
 key modelMeshLOD0 editor_rigblock~!ce_null_block.rw4
 bool modelOverrideBounds true
 float modelMaxBallConnectorScale 6
-float modelMinBallConnectorScale 0.4
+float modelMinBallConnectorScale 0.2
 bool modelShouldCheckParentlessForValidation false

@@ -1,0 +1,21 @@
+vertexFragment effectFoggingVF
+	declareCode
+		extern uniform float4 foggingCPU;
+		extern uniform float4 sunDir;
+	endCode
+
+	code
+		half fogStrength;
+		half sunDrop;
+		{
+		half dp = dot( npos, sunDir.xyz );
+		half term = ( dp > sunDir.w ) ? 1.0 : max( 0, dp + sunDir.w )/(2 * sunDir.w);
+		half fogDensity = foggingCPU.y;
+		half fogDistOffset = foggingCPU.x;
+		half fogDist = max( cameraDist - fogDistOffset, 0.0 );
+		fogStrength = 1.0 - exp( fogDensity * fogDist );
+		fogStrength *= term;
+		sunDrop = foggingCPU.w;
+		}
+	endCode
+end

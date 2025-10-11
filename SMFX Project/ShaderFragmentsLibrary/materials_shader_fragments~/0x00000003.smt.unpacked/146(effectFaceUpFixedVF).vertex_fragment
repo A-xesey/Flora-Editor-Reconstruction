@@ -1,0 +1,16 @@
+vertexFragment effectFaceUpFixedVF
+	input normal position
+
+	code
+		half3 quadPos;
+		{
+		const half sqrtThird = 0.57735026918962576450914878050196;
+		half3 at = half3( npos.x < sqrtThird ? 1 : 0, npos.y < sqrtThird ? 1 : 0, npos.z < sqrtThird ? 1 : 0 );
+		half3 tangent = normalize( cross( npos, at ) );
+		half3 up = normalize( cross( tangent, npos ) );
+		quadPos = In.position.xyz;
+		quadPos += tangent * scale * (uv.x - 0.5);
+		quadPos += up * scale * (0.5 - uv.y);
+		}
+	endCode
+end

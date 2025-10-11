@@ -1,0 +1,8 @@
+vertexFragment instancingMaterialColor
+	input texcoord2 texcoord3 texcoord4 texcoord1
+
+	code
+		// override constant value for instancing
+		materialColor = In.texcoord4;
+	endCode
+end

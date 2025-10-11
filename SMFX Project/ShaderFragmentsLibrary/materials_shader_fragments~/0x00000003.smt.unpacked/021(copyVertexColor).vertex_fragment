@@ -1,0 +1,5 @@
+vertexFragment copyVertexColor
+	input color
+	output color
+
+end

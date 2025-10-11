@@ -1,0 +1,29 @@
+vertexFragment render_depth_terrain
+	input color texcoord0 position
+	output position -texcoords 1 float1
+
+	declareCode
+		extern uniform float4 renderDepth;
+		extern uniform struct
+		{
+		float4x4 worldViewProjection;
+		float4 QuadFaceUVXform;
+		float4 QuadMorphValue;
+		float4 QuadFaceElemMap;
+		float4 QuadFaceSignMap;
+		float4 QuadFaceXForm[3];
+		} terrainTransform;
+	endCode
+
+	code
+		float4 vCamPos = terrainState.vCamPos;
+		float4 vertScaled =  float4(normal.xyz * landHeight, 1);
+		float4 xfPos = vertScaled;
+		float4 vNormCamToVert = xfPos - vCamPos;
+		vNormCamToVert.w = 0.0;
+		float fdist = length( vNormCamToVert );
+		// OUTPUT
+		Current.texcoord<t0> = clamp(fdist.x, 0.001, renderDepth.x);
+		Current.position = mul(vertScaled, terrainTransform.worldViewProjection);
+	endCode
+end

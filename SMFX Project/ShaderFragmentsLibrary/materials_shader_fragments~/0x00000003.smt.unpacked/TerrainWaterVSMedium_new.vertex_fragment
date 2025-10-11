@@ -1,0 +1,101 @@
+vertexFragment TerrainWaterVSMedium_new
+	input color texcoord0 position
+	output color color1 position -texcoords 7 float4
+
+	declareCode
+		extern uniform struct
+		{
+		float4 vSunDir;
+		float4 waterColor;
+		float4 innerParms;
+		float4 vCamPos;
+		float4 sphereParms;
+		float4 camParms;
+		float4 illumParms;
+		float4 fogParms;
+		float4 nightLightTint;
+		float4 nightLightColor;
+		float4 duskLightColor;
+		float4 dayLightColor;
+		float4 nightShadowColor;
+		float4 duskShadowColor;
+		float4 dayShadowColor;
+		float4 duskDawnStartEnd;
+		float4x4 viewTransform;
+		} terrainState;
+		extern uniform struct
+		{
+		float4x4 worldViewProjection;
+		float4 QuadFaceUVXform;
+		float4 QuadMorphValue;
+		float4 QuadFaceElemMap;
+		float4 QuadFaceSignMap;
+		float4 QuadFaceXForm[3];
+		} terrainTransform;
+		extern uniform float4 gameInfo;
+	endCode
+
+	code
+		const half startDepth       = 7.5;
+		const half waveSpeed        = 1.0 / 16.0;
+		const half foamAmp          = 1.750;
+		const half hfDist           = 1200;
+		const half waterScale       = 10;   
+		const half sinAmp           = 20;   
+		const half2 sinSpeed        = half2( 0.05, 0.09 ) * 2;
+		const half2 animAmp         = 0.25 * 0.5;
+		half4 vertScaled            = waterPosition;
+		half  vertexHeight          = length( vertScaled.xyz );
+		half  cameraHeight          = length( terrainState.vCamPos.xyz );
+		half  planetRadius          = terrainState.sphereParms.x;
+		half  offset                = lerp( 1, 10, saturate( ( cameraHeight - planetRadius - 100.0 )/ 500.0 ) );
+		const half mm[]             = { 0.57735026, 0.60290092, 0.62773043, 0.65094453, 0.67149222, 0.68824714, 0.70014000, 0.70632243 };
+		half3  undistort            = normalize( half3( uv.x - 0.5, uv.y - 0.5, - 0.5 ) );
+		half2 entry                 = 1.0 - abs( uv.xy * 2.0 - 1.0 );
+		entry                       *= 6.999;
+		half2 blend                 = frac( entry );
+		entry                       = floor( entry );
+		half2 minmax                = half2( lerp( mm[entry.x], mm[entry.x+1], blend.x ), lerp( mm[entry.y], mm[entry.y+1], blend.y ) );
+		undistort.xy                += minmax;
+		undistort.xy                /= minmax;
+		half3 binormal              = half3(0,1,0);
+		half3 tangent               = cross( normal.xyz, binormal );
+		binormal                    = cross( tangent, normal.xyz );
+		half4 clipPos               = mul(vertScaled, terrainTransform.worldViewProjection);
+		half3 cameraToVert          = vertScaled - terrainState.vCamPos;
+		half cameraDistance         = length( cameraToVert );
+		half2 animTexCoord          = half2(0,0);
+		animTexCoord                += undistort * waterScale;
+		animTexCoord.xy             += sin( undistort.yx * sinAmp + gameInfo.xx * sinSpeed ) * animAmp;
+		half  fogScale, fogStrength, term;
+		half3 eyeVec;
+		GetTerrainFogStrength( vertScaled.xyz, normal.xyz, ( terrainState.sphereParms.x + terrainState.sphereParms.z ), fogStrength, fogScale, term, eyeVec );
+		half NdotE                  = dot(-eyeVec, normal.xyz);
+		half3 halfVector            = normalize(terrainState.vSunDir - eyeVec);
+		half  fresnel               = 1 - NdotE;
+		half hfFade                 = saturate( cameraDistance / hfDist );
+		half NDotL                  = dot( terrainState.vSunDir, normal );
+		half NDotLSat               = saturate( NDotL );
+		Current.position            = clipPos;
+		Current.color.rgb           = 0;                                
+		Current.color.w             = fogStrength;
+		Current.color1.r            = 0;                                
+		Current.color1.g            = fresnel;
+		Current.color1.b            = 0;                                
+		Current.color1.a            = (1 - hfFade) * 0.95 + 0.05;
+		Current.texcoord<t0>.xy     = uv.xy;
+		Current.texcoord<t0>.zw     = animTexCoord;
+		Current.texcoord<t1>.xyz    = half3( half2( clipPos.x, -clipPos.y ), clipPos.w * 2 );
+		Current.texcoord<t1>.w      = saturate( dot( normal, terrainState.vSunDir ) + 0.95 );
+		Current.texcoord<t2>.xyz    = normal.xyz;
+		Current.texcoord<t2>.w      = ( waterHeight - vertexHeight + offset ) / terrainState.sphereParms.y;
+		Current.texcoord<t3>.xyz    = tangent;
+		Current.texcoord<t3>.w      = terrainState.innerParms.w;        
+		Current.texcoord<t4>.xyz    = binormal;
+		Current.texcoord<t4>.w      = 0;
+		Current.texcoord<t5>.xyz    = mul( -eyeVec, terrainState.viewTransform );
+		Current.texcoord<t5>.w      = 0;        
+		Current.texcoord<t6>.xyz    = -eyeVec;
+		Current.texcoord<t6>.w      = 0;
+	endCode
+end

@@ -5,8 +5,8 @@ bool modelCanBeParentless false
 bool modelHasBallConnector false
 bool modelHasSocketConnector false
 bool modelIsAllowedOutOfBounds true
-float modelMaxScale 7
-float modelMinScale 0.25
+float modelMaxScale 340282346638528860000000000000000000000
+float modelMinScale 0
 float modelMaxBallConnectorScale 3
 key modelMeshLOD0 builtins!box
 key modelMeshLowRes builtins!box
@@ -17,4 +17,3 @@ key modelRigBlockType plant!0xFFFFFFFF
 float modelSellBackFactor 1
 float modelSymmetrySnapDelta 0.03
 bool modelUseDummyBlocks true
-bool modelHideDeformHandles true

@@ -1,0 +1,8 @@
+vertexFragment unpackNormal
+	input normal
+	output normal
+
+	code
+		Current.normal.xyz = Current.normal.xyz * 1.0/127.0 - 1;
+	endCode
+end

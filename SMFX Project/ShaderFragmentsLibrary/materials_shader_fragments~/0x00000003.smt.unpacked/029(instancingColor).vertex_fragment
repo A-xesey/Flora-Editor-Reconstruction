@@ -1,0 +1,8 @@
+vertexFragment instancingColor
+	input texcoord2 texcoord3 texcoord4 color texcoord1
+	output color
+
+	code
+		Current.color *= In.texcoord4;
+	endCode
+end

@@ -1,0 +1,9 @@
+pixelFragment effectPlanetRingInputPF
+	input color -texcoords 1
+
+	code
+		half4   color           = In.color;
+		half2   uv0             = In.texcoord<t0>.xy;
+		half2   uv1             = In.texcoord<t0>.zw;
+	endCode
+end

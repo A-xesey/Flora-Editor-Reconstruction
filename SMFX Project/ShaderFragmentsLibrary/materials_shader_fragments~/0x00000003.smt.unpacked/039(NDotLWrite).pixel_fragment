@@ -1,0 +1,9 @@
+pixelFragment NDotLWrite
+	input position -texcoords 1
+	output color1
+
+	code
+		float NDotL = In.texcoord<t0>;
+		Current.color1 = float4( NDotL , 0, 0, 1);
+	endCode
+end

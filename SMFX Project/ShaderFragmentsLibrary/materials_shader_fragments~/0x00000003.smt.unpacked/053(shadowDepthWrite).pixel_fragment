@@ -1,0 +1,8 @@
+pixelFragment shadowDepthWrite
+	input -texcoords 1
+	output color
+
+	code
+		Current.color = float4(floor(In.texcoord<t0>.x)/256.0f, frac(In.texcoord<t0>.x), 0,  1.0f);
+	endCode
+end

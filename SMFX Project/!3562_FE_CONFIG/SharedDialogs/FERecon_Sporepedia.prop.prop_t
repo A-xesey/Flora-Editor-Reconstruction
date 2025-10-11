@@ -1,0 +1,4 @@
+key parent SharedDialogs!0x5CD172A9
+texts dialogText
+	(fe_02!0x10000019) "You can't save.Continue? (PLACEHOLDER)"
+end

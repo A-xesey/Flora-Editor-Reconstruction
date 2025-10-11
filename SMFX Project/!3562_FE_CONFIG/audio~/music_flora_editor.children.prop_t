@@ -7,3 +7,4 @@ keys addgroups
 	##Ui_tree_loop
 	##interstellar_long
 end
+bool islooped true

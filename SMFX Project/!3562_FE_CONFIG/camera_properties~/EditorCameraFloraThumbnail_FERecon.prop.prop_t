@@ -1,0 +1,12 @@
+key parent MouseTemplate
+string16 description "EditorCameraVehicleThumbnail"
+colorRGBA cameraBackgroundColor (0, 0, 0, 1)
+float cameraFarClip 200
+float cameraInitialFOV 0.2
+float cameraInitialHeading -50 #-66
+float cameraInitialOffsetY 0
+float cameraInitialPitch -15
+float cameraInitialZoom 1 #0.05
+string16 cameraName "EditorCameraVehicleThumbnail"
+float cameraNearClip 0.02
+uint32 cameraType 0x00fcc521

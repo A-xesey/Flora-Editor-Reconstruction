@@ -1,0 +1,9 @@
+vertexFragment landTradeRouteSetupNormalVS
+	input normal position
+
+	code
+		// adjust the normal to lessen the impact of lighting
+		float3 npos = normalize( In.position.xyz );
+		float4 normal = float4( lerp( In.normal.xyz, npos, 0.5 ), In.normal.w );
+	endCode
+end

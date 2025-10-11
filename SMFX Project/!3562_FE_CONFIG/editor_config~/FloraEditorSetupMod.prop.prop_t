@@ -5,7 +5,8 @@ bool editorAllowPublish false
 float editorBoundSize 15
 float editorMaxHeight 15
 float editorMinHeight -4
-key editorCameraUI CSA_EditorCameraFloraUI.prop
+key editorCameraThumbnail EditorCameraFloraThumbnail_FERecon.prop
+key editorCameraUI EditorCameraFloraUI_FERecon.prop
 bool editorSubtractPartsCostOnLoad true
 uint32s editorDefaultSkinPaintScripts
 	hash(skinpaint_florabase_blankMatte)
@@ -15,7 +16,7 @@ end
 
 bool editorDisableAnimations true
 bool editorInitSpine true
-key editorLight FloraEditor
+key editorLight FloraEditor_FERecon
 key editorShadowLight CSA_ShadowLightFloraEditor
 uint32 editorModelTranslationOptions 38
 uint32 editorCurrencyChar 9867
@@ -39,12 +40,13 @@ key editorSaveDirectory 0x90368EA0!0xFFFFFFFF
 key editorSaveExtension 0xFFFFFFFF.flr
 bool editorShowBoneLengthHandles true
 bool editorShowVertebrae true
-key editorSwatchPedestalModel fe_editor_background_sporepedia
+key editorSwatchPedestalModel FEReconBG
 key editorSwatchBackgroundModel animations~
-key editorPedestalModel pe_editor_base_FE
-key editorSwatchCameraUI CSA_EditorCameraFloraUI
+key editorPedestalModel FEReconBG
+key editorSwatchCameraUI EditorCameraFloraUI_FERecon
 key editorSporepediaCanSwitchConfigID FLR_TemplateShopper_CanSwitch
 key editorSporepediaConfigID FLR_TemplateShopper
+key editorTransition EditorTransitions!CSATransition
 bool editorTranslateModelOnSave true
 bool editorUseAnimWorld true
 bool editorUseBoundsForDelete false
@@ -55,7 +57,7 @@ key verbTrayCollection verbtrays!FLORA_VerbTrayCollection
 key verbTrayCollectionSporepediaLargeCard verbtrays!FLORA_VerbTrayCollection
 key verbTrayCollectionSporepediaSmallCard animations~
 
-## CSEM
+## cSPEditorManipulation
 keys editorEnabledManipulators
 	#cSPEditorManipulationPlanarInterpenetration
 	cSPEditorManipulationInterpenetration
@@ -65,6 +67,8 @@ keys editorEnabledManipulators
 	cSPEditorManipulationRotationHandle
 	cSPEditorManipulationDeformHandle
 	#cSPEditorManipulationLimb
+	FloraEditorShowBranchHandles
+	FloraEditorDisableAnimation
 end
 keys editorStartupModel
 	flora_editorModel~!RootFIX.flr
@@ -72,11 +76,11 @@ end
 bool editorUseSymmetry false #true
 key editorNudgeHandleTuningFile HandleTuning!DefaultNudgeHandle
 
-##MUSIC
+## MUSIC
 key editorBackgroundMusicPatch music_flora_editor
-key editorSwatchBackgroundMusicPatch music_flora_editor
+key editorSwatchBackgroundMusicPatch music_flora_editor_shopping
 
-##SR
+## SkinResolution
 float editorSkinResolutionHighQuality 0.111
 float editorSkinResolutionRealtime 0.111
 #default: 0.111

@@ -4,7 +4,6 @@ int32 modelBakeLevel 1
 keys modelEffect
 	fe_cap_fruit_editor
 end
-bool modelHideDeformHandles false
 int32 modelCapabilityFruit 1
 key modelMeshHull editor_rigblock~!None
 key modelMeshLOD0 editor_rigblock~!fe_cap.rw4

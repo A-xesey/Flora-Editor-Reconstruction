@@ -1,0 +1,25 @@
+key parent flora_editorModel~!Template.prop
+float floraImposterScale 3.1148901
+bool modelBakeComplete true
+bboxs modelBoundingBox
+	(-3.1148901, -2.313062, -0.463477) (2.4424541, 2.4708819, 4.4755659)
+end
+float modelBoundingRadius 4.6569042
+int32 modelFloraType 2
+int32s modelMeshAnimSharing
+	0
+	0
+	0
+	0
+	0
+end
+key modelMeshLOD0 0xF68544B5!FE_crystalGreen2_Mp.gmdl
+key modelMeshLOD1 0xF68544B5!FE_crystalGreen2_Mp.gmdl
+key modelMeshLOD2 floraModels_LOD0~!FE_crystalGreen2_Mp.gmdl
+key modelMeshLOD3 floraModels_LOD3~!FE_crystalGreen2_Mp.gmdl
+bool modelPrebakedAssembledContent true
+key modelSprite0 flora_editorModelSpritesSide~!FE_crystalGreen2_Mp.raster
+key modelSprite1 flora_editorModelSpritesTop~!FE_crystalGreen2_Mp.raster
+float obstacleBaseCollisionRadius 1.503822
+float obstacleCanopyCollisionRadius 3.376343
+float obstacleCollisionHeight 5.101809

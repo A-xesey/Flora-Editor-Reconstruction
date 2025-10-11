@@ -1,0 +1,60 @@
+vertexFragment TerrainBelowIceVS
+	input color texcoord0 position
+	output color position -texcoords 6 float4
+
+	declareCode
+		extern uniform struct
+		{
+		float4 vSunDir;
+		float4 waterColor;
+		float4 innerParms;
+		float4 vCamPos;
+		float4 sphereParms;
+		float4 camParms;
+		float4 illumParms;
+		float4 fogParms;
+		float4 nightLightTint;
+		float4 nightLightColor;
+		float4 duskLightColor;
+		float4 dayLightColor;
+		float4 nightShadowColor;
+		float4 duskShadowColor;
+		float4 dayShadowColor;
+		float4 duskDawnStartEnd;
+		float4x4 viewTransform;
+		} terrainState;
+		extern uniform struct
+		{
+		float4x4 worldViewProjection;
+		float4 QuadFaceUVXform;
+		float4 QuadMorphValue;
+		float4 QuadFaceElemMap;
+		float4 QuadFaceSignMap;
+		float4 QuadFaceXForm[3];
+		} terrainTransform;
+	endCode
+
+	code
+		const   float waterScale    = 30;
+		float4 position             = waterPosition;
+		float4 clipPos              = mul( position, terrainTransform.worldViewProjection );
+		float  fogScale, fogStrength, term;
+		float3 eyeVec;
+		GetTerrainFogStrength( position.xyz, normal.xyz, ( terrainState.sphereParms.x + terrainState.sphereParms.z ), fogStrength, fogScale, term, eyeVec );
+		Current.position            = clipPos;
+		Current.color               = 0;                
+		Current.texcoord<t0>.xy     = uv;
+		Current.texcoord<t0>.z      = 1.0 - fogStrength;
+		Current.texcoord<t0>.w      = saturate( dot( normalize( In.position.xyz ), normal ) + 0.95 );
+		Current.texcoord<t1>.xyz    = normal.xyz;
+		Current.texcoord<t1>.w      = fogStrength;
+		Current.texcoord<t2>.xyz    = terrainState.vSunDir.xyz;
+		Current.texcoord<t2>.w      = terrainState.innerParms.w;
+		Current.texcoord<t3>.xyz    = mul( -eyeVec, terrainState.viewTransform );
+		Current.texcoord<t3>.w      = terrainState.sphereParms.y;
+		Current.texcoord<t4>.xy     = uv * waterScale;
+		Current.texcoord<t4>.zw     = uv * terrainState.illumParms.w;
+		Current.texcoord<t5>.xyz    = -eyeVec;
+		Current.texcoord<t5>.w      = 0;    
+	endCode
+end

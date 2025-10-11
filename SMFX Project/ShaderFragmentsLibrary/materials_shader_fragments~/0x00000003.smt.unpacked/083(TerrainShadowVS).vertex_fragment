@@ -1,0 +1,45 @@
+vertexFragment TerrainShadowVS
+	input color texcoord0 position
+	output position -texcoords 1 float1
+
+	declareCode
+		extern uniform struct
+		{
+		float4 vSunDir;
+		float4 waterColor;
+		float4 innerParms;
+		float4 vCamPos;
+		float4 sphereParms;
+		float4 camParms;
+		float4 illumParms;
+		float4 fogParms;
+		float4 nightLightTint;
+		float4 nightLightColor;
+		float4 duskLightColor;
+		float4 dayLightColor;
+		float4 nightShadowColor;
+		float4 duskShadowColor;
+		float4 dayShadowColor;
+		float4 duskDawnStartEnd;
+		float4x4 viewTransform;
+		} terrainState;
+		extern uniform struct
+		{
+		float4x4 worldViewProjection;
+		float4 QuadFaceUVXform;
+		float4 QuadMorphValue;
+		float4 QuadFaceElemMap;
+		float4 QuadFaceSignMap;
+		float4 QuadFaceXForm[3];
+		} terrainTransform;
+		extern uniform struct { float4   mRangeAndStrength; float4   mShadowDir; float4   mNestInfo; float4x4 mWorldToShadowClip; float4x3 mWorldToShadowCamera; } shadowMapInfo;
+	endCode
+
+	code
+		float4 position =  float4(normal.xyz * height, 1);
+		// OUTPUT
+		Current.position = mul(position, terrainTransform.worldViewProjection);
+		float2 range = shadowMapInfo.mRangeAndStrength.xy;
+		Current.texcoord<t0>.x = (mul(position, shadowMapInfo.mWorldToShadowCamera).y - range.x) * range.y;
+	endCode
+end
