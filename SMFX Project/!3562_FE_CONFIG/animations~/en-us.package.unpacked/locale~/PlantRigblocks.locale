@@ -73,7 +73,8 @@
 0x00000064 fe_fruit_01
 0x00000065 fe_fruit_02
 0x00000066 fe_fruit_03
-0x00000067 fe_fruit_stem_01
+0x00000067 Fruit stem
+#0x00000067 fe_fruit_stem_01
 0x00000068 Fruit node
 0x00000069 Fruit node
 0x00000070 Fruit node

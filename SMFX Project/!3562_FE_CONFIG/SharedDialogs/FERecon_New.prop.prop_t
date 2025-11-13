@@ -1,4 +1,4 @@
-key parent SharedDialogs!0x5CD172A9
+key parent SharedDialogs!editor_NoSaveAndContinue
 texts dialogText
 	(fe_02!0x10000029) "You can't save.Continue? (PLACEHOLDER)"
 end

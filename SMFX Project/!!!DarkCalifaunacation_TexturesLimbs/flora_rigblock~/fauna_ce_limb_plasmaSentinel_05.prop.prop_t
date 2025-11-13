@@ -1,0 +1,5 @@
+key parent flora_rigblock~!ce_limb_plasmaSentinel_02.prop
+string8 description "calfMuscular"
+texts blockName
+	(creaturerigblocks_DI9r!0xd508fca9) "limb_plasmaSentinel_05"
+end

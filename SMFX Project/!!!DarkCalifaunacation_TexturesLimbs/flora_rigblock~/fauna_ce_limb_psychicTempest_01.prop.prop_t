@@ -1,0 +1,12 @@
+key parent PlantEditorTemplates!PlantBranchTemplate_MOD
+texts blockName
+	(creaturerigblocks_DI9r!0xee343934) "ToobyTube"
+end
+vector3 modelMaxSocketConnectorOffset (0, -3.75, 0)
+key modelMeshLOD0 editor_rigblocks_DarkCalifaunacation_Limbs!ce_limb_psychicTempest_01.rw4
+key modelMeshLOD1 editor_rigblocks_DarkCalifaunacation_Limbs!ce_limb_psychicTempest_01.rw4
+vector3 modelRotationBallHandleOffset (0, -0.99, 0.05)
+float modelScale 1.5
+key skinpaintDiffuseTexture skinPaint_texture~!ce_limb_psychicTempest_01-symmetric__diffuse.rw4
+key skinpaintSpecBumpTexture skinPaint_texture~!ce_limb_psychicTempest_01-symmetric__specBump.rw4
+key skinpaintTintMaskTexture skinPaint_texture~!fauna_ce_limb_psychicTempest_01-symmetric__tintMask.rw4

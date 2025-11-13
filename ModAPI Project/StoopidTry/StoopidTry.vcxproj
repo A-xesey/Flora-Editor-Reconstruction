@@ -98,7 +98,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FEListener_BlackWaterFix.h">
+    <ClInclude Include="FEBlackWaterFixMsg.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -118,7 +118,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
       </PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="FEListener_BlackWaterFix.cpp">
+    <ClCompile Include="FEBlackWaterFixMsg.cpp">
       <SubType>
       </SubType>
     </ClCompile>

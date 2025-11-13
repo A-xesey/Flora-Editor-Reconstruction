@@ -1,0 +1,6 @@
+key parent palette_config~!TemplatePalettePartsPage.prop
+string16 description "Trunks"
+key paletteCategoryIcon editors_flora~!fe-category-trunk.png
+key palettePageParentCategory flora_editor_palette_categories~!fe_category_trunks
+uint32 palettePageSequenceNumber 400
+int32 palettePageSetId 1

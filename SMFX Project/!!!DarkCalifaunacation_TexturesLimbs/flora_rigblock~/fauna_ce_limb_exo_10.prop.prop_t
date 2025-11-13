@@ -1,0 +1,15 @@
+key parent PlantEditorTemplates!PlantBranchTemplate_mod
+string16 description "calfMuscular"
+texts blockName
+	(creaturerigblocks_DI9r!0x05e68a3e) "calfMuscular (NOT LOCALIZED)"
+end
+vector3 modelMaxSocketConnectorOffset (0, -3.75, 0)
+key modelMeshHull editor_rigblocks~!ce_basic_bone-Hull.rw4
+key modelMeshLOD0 editor_rigblocks_DarkCalifaunacation_Limbs!ce_limb_exo_10.rw4
+vector3 modelMinSocketConnectorOffset (0, -0.035, 0)
+vector3 modelRotation (0, 180, 0)
+vector3 modelRotationBallHandleOffset (0, -0.99, 0.05)
+float modelScale 2.5
+key skinpaintDiffuseTexture skinPaint_texture~!ce_limb_exo_10__diffuse.rw4
+key skinpaintSpecBumpTexture skinPaint_texture~!ce_limb_exo_10__specBump.rw4
+key skinpaintTintMaskTexture skinPaint_texture~!fauna_ce_limb_exo_10__tintMask.rw4

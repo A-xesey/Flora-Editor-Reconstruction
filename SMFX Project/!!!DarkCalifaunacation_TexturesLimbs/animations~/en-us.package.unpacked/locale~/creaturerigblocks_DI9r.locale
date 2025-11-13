@@ -1,0 +1,5665 @@
+# #0FEF2818.prop
+0x0fef2818 movement null (PLACEHOLDER)
+
+# #E083B223.prop
+0xe083b223 Microtech Scanstrip
+
+# #EFFEC701.prop
+0xeffec701 sa_shaman_01 Freeze
+
+# #EFFEC702.prop
+0xeffec702 sa_shaman_03 Summon Swarm
+
+# #EFFEC703.prop
+0xeffec703 sa_shaman_02 Poison Blade
+
+# #EFFEC704.prop
+0xeffec704 sa_warrior_01 Energy Blade
+
+# #EFFEC705.prop
+0xeffec705 sa_diplomat_03 Royal Charm
+
+# #EFFEC706.prop
+0xeffec706 sa_ecologist_04 Health Bonus 2
+
+# #EFFEC707.prop
+0xeffec707 sa_ecologist_01 Recharge 1
+
+# #EFFEC708.prop
+0xeffec708 sa_ecologist_02 Health Bonus 1
+
+# #EFFEC709.prop
+0xeffec709 sa_ecologist_03 Health Regen 2
+
+# #EFFEC710.prop
+0xeffec710 sa_warrior_03 Lightning Sword
+
+# #EFFEC711.prop
+0xeffec711 sa_warrior_04 Pulse Gun
+
+# #EFFEC712.prop
+0xeffec712 sa_trader_03 Stealth
+
+# #EFFEC713.prop
+0xeffec713 sa_trader_02 Hover
+
+# #EFFEC714.prop
+0xeffec714 sa_trader_01 Sprint Burst
+
+# #EFFEC715.prop
+0xeffec715 sa_bard_01 Holo Charm
+
+# #EFFEC716.prop
+0xeffec716 sa_bard_02 Inspiring Song
+
+# #EFFEC717.prop
+0xeffec717 sa_bard_03 Stunning Dance
+
+# #EFFEC718.prop
+0xeffec718 sa_bard_04 Confetti Pose
+
+# #EFFEC719.prop
+0xeffec719 sa_zealot_02 Shield Generator
+
+# #EFFEC720.prop
+0xeffec720 sa_zealot_03 Blast Armor
+
+# #EFFEC721.prop
+0xeffec721 CampFire
+
+# #EFFEC722.prop
+0xeffec722 
+
+# #FACEAAA1.prop
+0xfaceaaa1 MagmaEater
+
+# $.prop
+0x050c5d3b $
+
+# 000ModelTestPart.prop
+0xa6af27d9 Model Test Part
+
+# 0MouthTemplate.prop
+0xc318c16a 
+
+# 1.prop
+0x050c5d2e Windmill
+
+# 10.prop
+0x2076af5a Windmill 2
+
+# 11.prop
+0x2076af5b Easter Egg 3
+
+# 12.prop
+0x2076af58 Badge 3
+
+# 13.prop
+0x2076af59 Statue
+
+# 14.prop
+0x2076af5e ?
+
+# 15.prop
+0x2076af5f ?
+
+# 16.prop
+0x2076af5c Meteor
+
+# 17.prop
+0x2076af5d Badge 5
+
+# 18.prop
+0x2076af52 Meat
+
+# 19.prop
+0x2076af53 Badge 6
+
+# 2.prop
+0x050c5d2d Easter Egg
+
+# 20.prop
+0x1f76ade7 Epicsizer
+
+# 21.prop
+0x1f76ade6 ?
+
+# 22.prop
+0x1f76ade5 Badge 7
+
+# 23.prop
+0x1f76ade4 Tribe Area
+
+# 24.prop
+0x1f76ade3 Space Ship
+
+# 25.prop
+0x1f76ade2 ?
+
+# 26.prop
+0x1f76ade1 Totem Pole
+
+# 27.prop
+0x1f76ade0 Tribe Food Storage
+
+# 28.prop
+0x1f76adef ?
+
+# 29.prop
+0x1f76adee Piece Of Easter Egg
+
+# 3.prop
+0x050c5d2c Easter Egg
+
+# 30.prop
+0x1e76ac74 ?
+
+# 31.prop
+0x1e76ac75 ?
+
+# 32.prop
+0x1e76ac76 ?
+
+# 4.prop
+0x050c5d2b Bones
+
+# 5.prop
+0x050c5d2a Giant Rock
+
+# 6.prop
+0x050c5d29 Badge 1
+
+# 7.prop
+0x050c5d28 Flower
+
+# 8.prop
+0x050c5d27 Spice Station
+
+# 9.prop
+0x050c5d26 Badge 2
+
+# ac_plateChest_01.prop
+0xf0e1c4f3 Alpha Deflector
+
+# ac_plateChest_02.prop
+0xf0e1c4f0 Beta Deflector
+
+# ac_plateChest_03.prop
+0xf0e1c4f1 Gamma Deflector
+
+# ac_plateChest_04.prop
+0xf0e1c4f6 Delta Deflector
+
+# ac_plateChest_bcy_01.prop
+0x0d8bc48a Crosshatched Deflector
+
+# ac_plateChest_bcy_02.prop
+0x0d8bc489 Circuited Deflector
+
+# ac_plateChest_bcy_03.prop
+0x0d8bc488 Gridded Deflector
+
+# ac_plateChest_bcy_04.prop
+0x0d8bc48f Illuminated Deflector
+
+# ac_plateChest_blk_01.prop
+0x774c1c5f Onyx Deflector
+
+# ac_plateChest_blk_02.prop
+0x774c1c5c Obsidian Deflector
+
+# ac_plateChest_blk_03.prop
+0x774c1c5d Shadow Deflector
+
+# ac_plateChest_blk_04.prop
+0x774c1c5a Void Deflector
+
+# ac_plateChest_eff_01.prop
+0x32304aff Reflexive Deflector
+
+# ac_plateChest_eff_02.prop
+0x32304afc Fluorescent Deflector
+
+# ac_plateChest_eff_03.prop
+0x32304afd Shiny Deflector
+
+# ac_plateChest_eff_04.prop
+0x32304afa Luminous Deflector
+
+# ac_plateChest_gra_01.prop
+0xef60e850 Modulating Deflector
+
+# ac_plateChest_gra_02.prop
+0xef60e853 Adjustable Deflector
+
+# ac_plateChest_gra_03.prop
+0xef60e852 Variable Deflector
+
+# ac_plateChest_gra_04.prop
+0xef60e855 Hyperspatial Deflector
+
+# ac_plateChest_wht_01.prop
+0xf45ca041 Pale Deflector
+
+# ac_plateChest_wht_02.prop
+0xf45ca042 Opal Deflector
+
+# ac_plateChest_wht_03.prop
+0xf45ca043 Ivory Deflector
+
+# ac_plateChest_wht_04.prop
+0xf45ca044 Argent Deflector
+
+# ac_plateForearm_01.prop
+0x081bcd6e Alpha Safeguard
+
+# ac_plateForearm_02.prop
+0x081bcd6d Beta Safeguard
+
+# ac_plateForearm_03.prop
+0x081bcd6c Gamma Safeguard
+
+# ac_plateForearm_04.prop
+0x081bcd6b Delta Safeguard
+
+# ac_plateForearm_bcy_01.prop
+0xdde77d0f Crosshatched Safeguard
+
+# ac_plateForearm_bcy_02.prop
+0xdde77d0c Circuited Safeguard
+
+# ac_plateForearm_bcy_03.prop
+0xdde77d0d Gridded Safeguard
+
+# ac_plateForearm_bcy_04.prop
+0xdde77d0a Illuminated Safeguard
+
+# ac_plateForearm_blk_01.prop
+0x09417226 Onyx Safeguard
+
+# ac_plateForearm_blk_02.prop
+0x09417225 Obsidian Safeguard
+
+# ac_plateForearm_blk_03.prop
+0x09417224 Shadow Safeguard
+
+# ac_plateForearm_blk_04.prop
+0x09417223 Void Safeguard
+
+# ac_plateForearm_eff_01.prop
+0xb67e886a Reflexive Safeguard
+
+# ac_plateForearm_eff_02.prop
+0xb67e8869 Fluorescent Safeguard
+
+# ac_plateForearm_eff_03.prop
+0xb67e8868 Shiny Safeguard
+
+# ac_plateForearm_eff_04.prop
+0xb67e886f Luminous Safeguard
+
+# ac_plateForearm_gra_01.prop
+0xc9223669 Modulating Safeguard
+
+# ac_plateForearm_gra_02.prop
+0xc922366a Adjustable Safeguard
+
+# ac_plateForearm_gra_03.prop
+0xc922366b Variable Safeguard
+
+# ac_plateForearm_gra_04.prop
+0xc922366c Hyperspatial Safeguard
+
+# ac_plateForearm_wht_01.prop
+0x9614220c Pale Safeguard
+
+# ac_plateForearm_wht_02.prop
+0x9614220f Opal Safeguard
+
+# ac_plateForearm_wht_03.prop
+0x9614220e Ivory Safeguard
+
+# ac_plateForearm_wht_04.prop
+0x96142209 Argent Safeguard
+
+# ac_plateForehead_01.prop
+0x001b4746 Alpha Barrier
+
+# ac_plateForehead_02.prop
+0x001b4745 Beta Barrier
+
+# ac_plateForehead_03.prop
+0x001b4744 Gamma Barrier
+
+# ac_plateForehead_04.prop
+0x001b4743 Delta Barrier
+
+# ac_plateForehead_bcy_01.prop
+0xe4e4bdc7 Crosshatched Barrier
+
+# ac_plateForehead_bcy_02.prop
+0xe4e4bdc4 Circuited Barrier
+
+# ac_plateForehead_bcy_03.prop
+0xe4e4bdc5 Gridded Barrier
+
+# ac_plateForehead_bcy_04.prop
+0xe4e4bdc2 Illuminated Barrier
+
+# ac_plateForehead_blk_01.prop
+0xc30f1aae Onyx Barrier
+
+# ac_plateForehead_blk_02.prop
+0xc30f1aad Obsidian Barrier
+
+# ac_plateForehead_blk_03.prop
+0xc30f1aac Shadow Barrier
+
+# ac_plateForehead_blk_04.prop
+0xc30f1aab Void Barrier
+
+# ac_plateForehead_eff_01.prop
+0x0af87f72 Reflexive Barrier
+
+# ac_plateForehead_eff_02.prop
+0x0af87f71 Fluorescent Barrier
+
+# ac_plateForehead_eff_03.prop
+0x0af87f70 Shiny Barrier
+
+# ac_plateForehead_eff_04.prop
+0x0af87f77 Luminous Barrier
+
+# ac_plateForehead_gra_01.prop
+0xf09235d1 Modulating Barrier
+
+# ac_plateForehead_gra_02.prop
+0xf09235d2 Adjustable Barrier
+
+# ac_plateForehead_gra_03.prop
+0xf09235d3 Variable Barrier
+
+# ac_plateForehead_gra_04.prop
+0xf09235d4 Hyperspatial Barrier
+
+# ac_plateForehead_wht_01.prop
+0xed3d8824 Pale Barrier
+
+# ac_plateForehead_wht_02.prop
+0xed3d8827 Opal Barrier
+
+# ac_plateForehead_wht_03.prop
+0xed3d8826 Ivory Barrier
+
+# ac_plateForehead_wht_04.prop
+0xed3d8821 Argent Barrier
+
+# ac_plateKnee_01.prop
+0xdd2d5f21 Alpha Guard
+
+# ac_plateKnee_02.prop
+0xdd2d5f22 Beta Guard
+
+# ac_plateKnee_03.prop
+0xdd2d5f23 Gamma Guard
+
+# ac_plateKnee_04.prop
+0xdd2d5f24 Delta Guard
+
+# ac_plateKnee_bcy_01.prop
+0x33015954 Crosshatched Guard
+
+# ac_plateKnee_bcy_02.prop
+0x33015957 Circuited Guard
+
+# ac_plateKnee_bcy_03.prop
+0x33015956 Gridded Guard
+
+# ac_plateKnee_bcy_04.prop
+0x33015951 Illuminated Guard
+
+# ac_plateKnee_blk_01.prop
+0x50057a91 Onyx Guard
+
+# ac_plateKnee_blk_02.prop
+0x50057a92 Obsidian Guard
+
+# ac_plateKnee_blk_03.prop
+0x50057a93 Shadow Guard
+
+# ac_plateKnee_blk_04.prop
+0x50057a94 Void Guard
+
+# ac_plateKnee_eff_01.prop
+0xb7e8fe99 Reflexive Guard
+
+# ac_plateKnee_eff_02.prop
+0xb7e8fe9a Fluorescent Guard
+
+# ac_plateKnee_eff_03.prop
+0xb7e8fe9b Shiny Guard
+
+# ac_plateKnee_eff_04.prop
+0xb7e8fe9c Luminous Guard
+
+# ac_plateKnee_gra_01.prop
+0x0b7697ba Modulating Guard
+
+# ac_plateKnee_gra_02.prop
+0x0b7697b9 Adjustable Guard
+
+# ac_plateKnee_gra_03.prop
+0x0b7697b8 Variable Guard
+
+# ac_plateKnee_gra_04.prop
+0x0b7697bf Hyperspatial Guard
+
+# ac_plateKnee_wht_01.prop
+0x2d7999a7 Pale Guard
+
+# ac_plateKnee_wht_02.prop
+0x2d7999a4 Opal Guard
+
+# ac_plateKnee_wht_03.prop
+0x2d7999a5 Ivory Guard
+
+# ac_plateKnee_wht_04.prop
+0x2d7999a2 Argent Guard
+
+# ac_plateShoulder_01.prop
+0x76015a86 Alpha Pauldron
+
+# ac_plateShoulder_02.prop
+0x76015a85 Beta Pauldron
+
+# ac_plateShoulder_03.prop
+0x76015a84 Gamma Pauldron
+
+# ac_plateShoulder_04.prop
+0x76015a83 Delta Pauldron
+
+# ac_plateShoulder_bcy_01.prop
+0xc88e8107 Crosshatched Pauldron
+
+# ac_plateShoulder_bcy_02.prop
+0xc88e8104 Circuited Pauldron
+
+# ac_plateShoulder_bcy_03.prop
+0xc88e8105 Gridded Pauldron
+
+# ac_plateShoulder_bcy_04.prop
+0xc88e8102 Illuminated Pauldron
+
+# ac_plateShoulder_blk_01.prop
+0xa6b8ddee Onyx Pauldron
+
+# ac_plateShoulder_blk_02.prop
+0xa6b8dded Obsidian Pauldron
+
+# ac_plateShoulder_blk_03.prop
+0xa6b8ddec Shadow Pauldron
+
+# ac_plateShoulder_blk_04.prop
+0xa6b8ddeb Void Pauldron
+
+# ac_plateShoulder_eff_01.prop
+0xeea242b2 Reflexive Pauldron
+
+# ac_plateShoulder_eff_02.prop
+0xeea242b1 Fluorescent Pauldron
+
+# ac_plateShoulder_eff_03.prop
+0xeea242b0 Shiny Pauldron
+
+# ac_plateShoulder_eff_04.prop
+0xeea242b7 Luminous Pauldron
+
+# ac_plateShoulder_gra_01.prop
+0xbd69ad11 Modulating Pauldron
+
+# ac_plateShoulder_gra_02.prop
+0xbd69ad12 Adjustable Pauldron
+
+# ac_plateShoulder_gra_03.prop
+0xbd69ad13 Variable Pauldron
+
+# ac_plateShoulder_gra_04.prop
+0xbd69ad14 Hyperspatial Pauldron
+
+# ac_plateShoulder_wht_01.prop
+0xffa0c564 Pale Pauldron
+
+# ac_plateShoulder_wht_02.prop
+0xffa0c567 Opal Pauldron
+
+# ac_plateShoulder_wht_03.prop
+0xffa0c566 Ivory Pauldron
+
+# ac_plateShoulder_wht_04.prop
+0xffa0c561 Argent Pauldron
+
+# ac_spikeChest_01.prop
+0x546e8225 Alpha Chestplate
+
+# ac_spikeChest_02.prop
+0x546e8226 Beta Chestplate
+
+# ac_spikeChest_03.prop
+0x546e8227 Gamma Chestplate
+
+# ac_spikeChest_04.prop
+0x546e8220 Delta Chestplate
+
+# ac_spikeChest_bcy_01.prop
+0xefd50f50 Crosshatched Chestplate
+
+# ac_spikeChest_bcy_02.prop
+0xefd50f53 Circuited Chestplate
+
+# ac_spikeChest_bcy_03.prop
+0xefd50f52 Gridded Chestplate
+
+# ac_spikeChest_bcy_04.prop
+0xefd50f55 Illuminated Chestplate
+
+# ac_spikeChest_blk_01.prop
+0xd11ab465 Onyx Chestplate
+
+# ac_spikeChest_blk_02.prop
+0xd11ab466 Obsidian Chestplate
+
+# ac_spikeChest_blk_03.prop
+0xd11ab467 Shadow Chestplate
+
+# ac_spikeChest_blk_04.prop
+0xd11ab460 Void Chestplate
+
+# ac_spikeChest_eff_01.prop
+0x99a6079d Reflexive Chestplate
+
+# ac_spikeChest_eff_02.prop
+0x99a6079e Fluorescent Chestplate
+
+# ac_spikeChest_eff_03.prop
+0x99a6079f Shiny Chestplate
+
+# ac_spikeChest_eff_04.prop
+0x99a60798 Luminous Chestplate
+
+# ac_spikeChest_gra_01.prop
+0xbeb2b24e Modulating Chestplate
+
+# ac_spikeChest_gra_02.prop
+0xbeb2b24d Adjustable Chestplate
+
+# ac_spikeChest_gra_03.prop
+0xbeb2b24c Variable Chestplate
+
+# ac_spikeChest_gra_04.prop
+0xbeb2b24b Hyperspatial Chestplate
+
+# ac_spikeChest_wht_01.prop
+0xd5c50ac3 Pale Chestplate
+
+# ac_spikeChest_wht_02.prop
+0xd5c50ac0 Opal Chestplate
+
+# ac_spikeChest_wht_03.prop
+0xd5c50ac1 Ivory Chestplate
+
+# ac_spikeChest_wht_04.prop
+0xd5c50ac6 Argent Chestplate
+
+# ac_spikeForearm_01.prop
+0x8eb200a0 Alpha Protector
+
+# ac_spikeForearm_02.prop
+0x8eb200a3 Beta Protector
+
+# ac_spikeForearm_03.prop
+0x8eb200a2 Gamma Protector
+
+# ac_spikeForearm_04.prop
+0x8eb200a5 Delta Protector
+
+# ac_spikeForearm_bcy_01.prop
+0x47f873dd Crosshatched Protector
+
+# ac_spikeForearm_bcy_02.prop
+0x47f873de Circuited Protector
+
+# ac_spikeForearm_bcy_03.prop
+0x47f873df Gridded Protector
+
+# ac_spikeForearm_bcy_04.prop
+0x47f873d8 Illuminated Protector
+
+# ac_spikeForearm_blk_01.prop
+0xdbc9d40c Onyx Protector
+
+# ac_spikeForearm_blk_02.prop
+0xdbc9d40f Obsidian Protector
+
+# ac_spikeForearm_blk_03.prop
+0xdbc9d40e Shadow Protector
+
+# ac_spikeForearm_blk_04.prop
+0xdbc9d409 Void Protector
+
+# ac_spikeForearm_eff_01.prop
+0x53355a10 Reflexive Protector
+
+# ac_spikeForearm_eff_02.prop
+0x53355a13 Fluorescent Protector
+
+# ac_spikeForearm_eff_03.prop
+0x53355a12 Shiny Protector
+
+# ac_spikeForearm_eff_04.prop
+0x53355a15 Luminous Protector
+
+# ac_spikeForearm_gra_01.prop
+0x9a806727 Modulating Protector
+
+# ac_spikeForearm_gra_02.prop
+0x9a806724 Adjustable Protector
+
+# ac_spikeForearm_gra_03.prop
+0x9a806725 Variable Protector
+
+# ac_spikeForearm_gra_04.prop
+0x9a806722 Hyperspatial Protector
+
+# ac_spikeForearm_wht_01.prop
+0x456a6146 Pale Protector
+
+# ac_spikeForearm_wht_02.prop
+0x456a6145 Opal Protector
+
+# ac_spikeForearm_wht_03.prop
+0x456a6144 Ivory Protector
+
+# ac_spikeForearm_wht_04.prop
+0x456a6143 Argent Protector
+
+# ac_spikeForehead_01.prop
+0xe4af7888 Alpha Resistor
+
+# ac_spikeForehead_02.prop
+0xe4af788b Beta Resistor
+
+# ac_spikeForehead_03.prop
+0xe4af788a Gamma Resistor
+
+# ac_spikeForehead_04.prop
+0xe4af788d Delta Resistor
+
+# ac_spikeForehead_bcy_01.prop
+0xdcf723c5 Crosshatched Resistor
+
+# ac_spikeForehead_bcy_02.prop
+0xdcf723c6 Circuited Resistor
+
+# ac_spikeForehead_bcy_03.prop
+0xdcf723c7 Gridded Resistor
+
+# ac_spikeForehead_bcy_04.prop
+0xdcf723c0 Illuminated Resistor
+
+# ac_spikeForehead_blk_01.prop
+0x1df720a4 Onyx Resistor
+
+# ac_spikeForehead_blk_02.prop
+0x1df720a7 Obsidian Resistor
+
+# ac_spikeForehead_blk_03.prop
+0x1df720a6 Shadow Resistor
+
+# ac_spikeForehead_blk_04.prop
+0x1df720a1 Void Resistor
+
+# ac_spikeForehead_eff_01.prop
+0x4dd8ace8 Reflexive Resistor
+
+# ac_spikeForehead_eff_02.prop
+0x4dd8aceb Fluorescent Resistor
+
+# ac_spikeForehead_eff_03.prop
+0x4dd8acea Shiny Resistor
+
+# ac_spikeForehead_eff_04.prop
+0x4dd8aced Luminous Resistor
+
+# ac_spikeForehead_gra_01.prop
+0x4cda0adf Modulating Resistor
+
+# ac_spikeForehead_gra_02.prop
+0x4cda0adc Adjustable Resistor
+
+# ac_spikeForehead_gra_03.prop
+0x4cda0add Variable Resistor
+
+# ac_spikeForehead_gra_04.prop
+0x4cda0ada Hyperspatial Resistor
+
+# ac_spikeForehead_wht_01.prop
+0x53aae36e Pale Resistor
+
+# ac_spikeForehead_wht_02.prop
+0x53aae36d Opal Resistor
+
+# ac_spikeForehead_wht_03.prop
+0x53aae36c Ivory Resistor
+
+# ac_spikeForehead_wht_04.prop
+0x53aae36b Argent Resistor
+
+# ac_spikeKnee_01.prop
+0xebc4b33f Alpha Greaves
+
+# ac_spikeKnee_02.prop
+0xebc4b33c Beta Greaves
+
+# ac_spikeKnee_03.prop
+0xebc4b33d Gamma Greaves
+
+# ac_spikeKnee_04.prop
+0xebc4b33a Delta Greaves
+
+# ac_spikeKnee_bcy_01.prop
+0x7ba4730e Crosshatched Greaves
+
+# ac_spikeKnee_bcy_02.prop
+0x7ba4730d Circuited Greaves
+
+# ac_spikeKnee_bcy_03.prop
+0x7ba4730c Gridded Greaves
+
+# ac_spikeKnee_bcy_04.prop
+0x7ba4730b Illuminated Greaves
+
+# ac_spikeKnee_blk_01.prop
+0x61296b1b Onyx Greaves
+
+# ac_spikeKnee_blk_02.prop
+0x61296b18 Obsidian Greaves
+
+# ac_spikeKnee_blk_03.prop
+0x61296b19 Shadow Greaves
+
+# ac_spikeKnee_blk_04.prop
+0x61296b1e Void Greaves
+
+# ac_spikeKnee_eff_01.prop
+0xb1548bab Reflexive Greaves
+
+# ac_spikeKnee_eff_02.prop
+0xb1548ba8 Fluorescent Greaves
+
+# ac_spikeKnee_eff_03.prop
+0xb1548ba9 Shiny Greaves
+
+# ac_spikeKnee_eff_04.prop
+0xb1548bae Luminous Greaves
+
+# ac_spikeKnee_gra_01.prop
+0x1cb034ac Modulating Greaves
+
+# ac_spikeKnee_gra_02.prop
+0x1cb034af Adjustable Greaves
+
+# ac_spikeKnee_gra_03.prop
+0x1cb034ae Variable Greaves
+
+# ac_spikeKnee_gra_04.prop
+0x1cb034a9 Hyperspatial Greaves
+
+# ac_spikeKnee_wht_01.prop
+0xcaee0fb5 Pale Greaves
+
+# ac_spikeKnee_wht_02.prop
+0xcaee0fb6 Opal Greaves
+
+# ac_spikeKnee_wht_03.prop
+0xcaee0fb7 Ivory Greaves
+
+# ac_spikeKnee_wht_04.prop
+0xcaee0fb0 Argent Greaves
+
+# ac_spikeShoulder_01.prop
+0xdc7f3d90 Alpha Spaulder
+
+# ac_spikeShoulder_02.prop
+0xdc7f3d93 Beta Spaulder
+
+# ac_spikeShoulder_03.prop
+0xdc7f3d92 Gamma Spaulder
+
+# ac_spikeShoulder_04.prop
+0xdc7f3d95 Delta Spaulder
+
+# ac_spikeShoulder_bcy_01.prop
+0xf633e48d Crosshatched Spaulder
+
+# ac_spikeShoulder_bcy_02.prop
+0xf633e48e Circuited Spaulder
+
+# ac_spikeShoulder_bcy_03.prop
+0xf633e48f Gridded Spaulder
+
+# ac_spikeShoulder_bcy_04.prop
+0xf633e488 Illuminated Spaulder
+
+# ac_spikeShoulder_blk_01.prop
+0x6f0b0f1c Onyx Spaulder
+
+# ac_spikeShoulder_blk_02.prop
+0x6f0b0f1f Obsidian Spaulder
+
+# ac_spikeShoulder_blk_03.prop
+0x6f0b0f1e Shadow Spaulder
+
+# ac_spikeShoulder_blk_04.prop
+0x6f0b0f19 Void Spaulder
+
+# ac_spikeShoulder_eff_01.prop
+0x3a36baa0 Reflexive Spaulder
+
+# ac_spikeShoulder_eff_02.prop
+0x3a36baa3 Fluorescent Spaulder
+
+# ac_spikeShoulder_eff_03.prop
+0x3a36baa2 Shiny Spaulder
+
+# ac_spikeShoulder_eff_04.prop
+0x3a36baa5 Luminous Spaulder
+
+# ac_spikeShoulder_gra_01.prop
+0xfedb1257 Modulating Spaulder
+
+# ac_spikeShoulder_gra_02.prop
+0xfedb1254 Adjustable Spaulder
+
+# ac_spikeShoulder_gra_03.prop
+0xfedb1255 Variable Spaulder
+
+# ac_spikeShoulder_gra_04.prop
+0xfedb1252 Hyperspatial Spaulder
+
+# ac_spikeShoulder_wht_01.prop
+0xa151edd6 Pale Spaulder
+
+# ac_spikeShoulder_wht_02.prop
+0xa151edd5 Opal Spaulder
+
+# ac_spikeShoulder_wht_03.prop
+0xa151edd4 Ivory Spaulder
+
+# ac_spikeShoulder_wht_04.prop
+0xa151edd3 Argent Spaulder
+
+# AlienHead.prop
+0x6e8b2580 
+
+# AO.prop
+0x70772d35 Annoying Orange Mouth
+
+# AO2.prop
+0x409c2a5d Annoying Orange Eye
+
+# AO3.prop
+0x409c2a5c Annoying Orange Eye
+
+# AOA.prop
+0x409c2a0e Annoying Orange Eye
+
+# ap1_ac_glassesSteam_01.prop
+0xf2f9f0d9 Microtech Focus
+
+# ap1_ac_glassesSteam_02.prop
+0xf2f9f0da Snowflake Glasses
+
+# ap1_ac_glassesSteam_03.prop
+0xf2f9f0db Sundance Glasses
+
+# ap1_ac_glassesSteam_04.prop
+0xf2f9f0dc Anti-U Glasses
+
+# ap1_ac_wigbraids_01.prop
+0x70be3d69 Spectral Braid
+
+# ap1_ac_wigbraids_02.prop
+0x70be3d6a Ethereal Braid
+
+# ap1_ac_wigbraids_03.prop
+0x70be3d6b Flamebraids
+
+# ap1_ac_wigbraids_04.prop
+0x70be3d6c Sandybraids
+
+# Bas_Fr_Sh_detailHead_S2_01.prop
+0xa864882e Thermic Wrecker
+
+# Bas_Fr_Sh_detailHead_S3_01.prop
+0xa2eda6c5 Thermic Spike
+
+# Bas_Fr_Sh_grasper_S1_01.prop
+0xd13225e8 Firry Graspurrs
+
+# Bas_Fr_Sh_grasper_S2_01.prop
+0xf6a93955 Bair Hands
+
+# Bas_Fr_Sh_grasper_S3_01.prop
+0xfa45157e Sofft Pawws
+
+# bas_fr_sh_mouth_s1_01.prop
+0xf10ad3fd Serpentear
+
+# bas_fr_sh_mouth_s2_01.prop
+0xeb93f290 Dracondible
+
+# bas_fr_sh_mouth_s3_01.prop
+0xc57d7b67 Wyveriangler
+
+# Bas_Fr_Sh_movement_S2_01.prop
+0x62dda070 SpawSprint
+
+# Bas_Fr_Sh_movement_S3_01.prop
+0xbe0526c7 Cuddleet
+
+# Bas_Fr_Sh_sense_eye_S1_01.prop
+0x1a188188 Thermic Eye
+
+# Bas_Fr_Sh_sense_eye_S2_01.prop
+0xbf905ef5 Telescopeye
+
+# Bas_Fr_Sh_shoulder_S2_01.prop
+0x5927f00b Burning Flare
+
+# Bas_Fr_Sh_shoulder_S3_01.prop
+0x5cc3cc14 Pyretic Spikes
+
+# bbite1.prop
+0x4e017ff4 Bite
+
+# bbite2.prop
+0x4e017ff7 Bite
+
+# bbite3.prop
+0x4e017ff6 Bite
+
+# bbite4.prop
+0x4e017ff1 Bite
+
+# bbite5.prop
+0x4e017ff0 Bite
+
+# BearTrap.prop
+0xfc0b7fe6 BearTrap
+
+# biomuzzle.prop
+0x28fea36a Florend
+
+# biomuzzle2.prop
+0xf2db3fec Biotic Muzzle
+
+# bite10.prop
+0x9d707944 Quick Stab
+
+# bite11.prop
+0x9d707945 Triple Club
+
+# bite12.prop
+0x9d707946 Gorilla Slam
+
+# bite13.prop
+0x9d707947 Body Beatdown
+
+# bite14.prop
+0x9d707940 Superman Strike
+
+# bite15.prop
+0x9d707941 Bloody Strike
+
+# bite6.prop
+0x3a0c593b Double Strike
+
+# bite7.prop
+0x3a0c593a Deep Strike
+
+# bite8.prop
+0x3a0c5935 Tornado Strike
+
+# bite9.prop
+0x3a0c5934 Deep Stab
+
+# Black.prop
+0xde609c02 Black Bump
+
+# blast.prop
+0xce60834d Meteor Striker
+
+# bubble.prop
+0xe49f5c47 Aqua Bubble
+
+# bugarmright.prop
+0x642bf35d limb_test_right
+
+# bugbot.prop
+0x9d80d0a0 Mechlicks
+
+# bugtest.prop
+0xebdb5cad Wiggly Squiggle Arm
+
+# ButtHead.prop
+0xd9d7cd00 ButtHead
+
+# Buzzare.prop
+0x9d29f7ec Buzzare
+
+# carn.prop
+0xf9b6c2e9 Carnivorous
+
+# CatHopper.prop
+0x8a76d539 CatHopper
+
+# ca_chestpieces_01.prop
+0x66de5d54 (PLACEHOLDER)
+
+# ca_chestpieces_02.prop
+0x66de5d57 (PLACEHOLDER)
+
+# ca_chestpieces_03.prop
+0x66de5d56 (PLACEHOLDER)
+
+# ca_chestpieces_04.prop
+0x66de5d51 (PLACEHOLDER)
+
+# ca_details_01.prop
+0x7930b1a0 (PLACEHOLDER)
+
+# ca_details_02.prop
+0x7930b1a3 (PLACEHOLDER)
+
+# ca_details_03.prop
+0x7930b1a2 (PLACEHOLDER)
+
+# ca_details_04.prop
+0x7930b1a5 (PLACEHOLDER)
+
+# ca_details_05.prop
+0x7930b1a4 (PLACEHOLDER)
+
+# ca_hats_01.prop
+0x2c587a2c (PLACEHOLDER)
+
+# ca_hats_02.prop
+0x2c587a2f (PLACEHOLDER)
+
+# ca_hats_03.prop
+0x2c587a2e (PLACEHOLDER)
+
+# ca_hats_04.prop
+0x2c587a29 (PLACEHOLDER)
+
+# ca_hats_05.prop
+0x2c587a28 (PLACEHOLDER)
+
+# ca_masks_01.prop
+0xd85d5bcf (PLACEHOLDER)
+
+# ca_masks_02.prop
+0xd85d5bcc (PLACEHOLDER)
+
+# ca_masks_03.prop
+0xd85d5bcd (PLACEHOLDER)
+
+# ca_shoulders_01.prop
+0xc774461f (PLACEHOLDER)
+
+# ca_shoulders_02.prop
+0xc774461c (PLACEHOLDER)
+
+# ca_shoulders_03.prop
+0xc774461d (PLACEHOLDER)
+
+# ca_symbols_01.prop
+0xd7382ffb (PLACEHOLDER)
+
+# ca_symbols_02.prop
+0xd7382ff8 (PLACEHOLDER)
+
+# ca_symbols_03.prop
+0xd7382ff9 (PLACEHOLDER)
+
+# ca_symbols_04.prop
+0xd7382ffe (PLACEHOLDER)
+
+# ce_cell_mouth_filter_01.prop
+0x3a3c49a5 (PLACEHOLDER)
+
+# ce_cell_mouth_filter_02.prop
+0x3a3c49a6 (PLACEHOLDER)
+
+# ce_cell_mouth_filter_03.prop
+0x3a3c49a7 (PLACEHOLDER)
+
+# ce_cell_mouth_filter_04.prop
+0x3a3c49a0 (PLACEHOLDER)
+
+# ce_cell_mouth_jaw_01.prop
+0xfe534763 (PLACEHOLDER)
+
+# ce_cell_mouth_jaw_02.prop
+0xfe534760 (PLACEHOLDER)
+
+# ce_cell_mouth_jaw_03.prop
+0xfe534761 (PLACEHOLDER)
+
+# ce_cell_mouth_jaw_04.prop
+0xfe534766 (PLACEHOLDER)
+
+# ce_cell_mouth_poker_01.prop
+0x32ac9620 (PLACEHOLDER)
+
+# ce_cell_mouth_poker_02.prop
+0x32ac9623 (PLACEHOLDER)
+
+# ce_cell_mouth_poker_03.prop
+0x32ac9622 (PLACEHOLDER)
+
+# ce_cell_mouth_poker_04.prop
+0x32ac9625 (PLACEHOLDER)
+
+# ce_cell_movement_cilia_01.prop
+0x8de1493f (PLACEHOLDER)
+
+# ce_cell_movement_cilia_02.prop
+0x8de1493c (PLACEHOLDER)
+
+# ce_cell_movement_cilia_03.prop
+0x8de1493d (PLACEHOLDER)
+
+# ce_cell_movement_cilia_04.prop
+0x8de1493a (PLACEHOLDER)
+
+# ce_cell_movement_flagella_01.prop
+0x76ec6f1b (PLACEHOLDER)
+
+# ce_cell_movement_flagella_02.prop
+0x76ec6f18 (PLACEHOLDER)
+
+# ce_cell_movement_flagella_03.prop
+0x76ec6f19 (PLACEHOLDER)
+
+# ce_cell_movement_flagella_04.prop
+0x76ec6f1e (PLACEHOLDER)
+
+# ce_cell_movement_jet_01.prop
+0x30e66572 (PLACEHOLDER)
+
+# ce_cell_movement_jet_02.prop
+0x30e66571 (PLACEHOLDER)
+
+# ce_cell_movement_jet_03.prop
+0x30e66570 (PLACEHOLDER)
+
+# ce_cell_movement_jet_04.prop
+0x30e66577 (PLACEHOLDER)
+
+# ce_cell_sense_eye_01.prop
+0xec3b4b7d Stalk Eye (PLACEHOLDER)
+
+# ce_cell_sense_eye_02.prop
+0xec3b4b7e Beady Eye (PLACEHOLDER)
+
+# ce_cell_sense_eye_03.prop
+0xec3b4b7f Long Eye (PLACEHOLDER)
+
+# ce_cell_sense_eye_04.prop
+0xec3b4b78 Button Eye (PLACEHOLDER)
+
+# ce_cell_weapon_chemical_01.prop
+0xb70894b4 (PLACEHOLDER)
+
+# ce_cell_weapon_chemical_02.prop
+0xb70894b7 (PLACEHOLDER)
+
+# ce_cell_weapon_chemical_03.prop
+0xb70894b6 (PLACEHOLDER)
+
+# ce_cell_weapon_chemical_04.prop
+0xb70894b1 (PLACEHOLDER)
+
+# ce_cell_weapon_electrical_01.prop
+0x4908e576 (PLACEHOLDER)
+
+# ce_cell_weapon_electrical_02.prop
+0x4908e575 (PLACEHOLDER)
+
+# ce_cell_weapon_electrical_03.prop
+0x4908e574 (PLACEHOLDER)
+
+# ce_cell_weapon_electrical_04.prop
+0x4908e573 Electrical 04 (PLACEHOLDER)
+
+# ce_cell_weapon_spike_01.prop
+0x6fac70a2 (PLACEHOLDER)
+
+# ce_cell_weapon_spike_02.prop
+0x6fac70a1 (PLACEHOLDER)
+
+# ce_cell_weapon_spike_03.prop
+0x6fac70a0 (PLACEHOLDER)
+
+# ce_cell_weapon_spike_04.prop
+0x6fac70a7 (PLACEHOLDER)
+
+# ce_chest_boss_06.prop
+0xd5f1371a Antiquark Vest
+
+# ce_chest_gravityTempest_01.prop
+0x358f5e48 TooKool Vest
+
+# ce_chest_medicTempest_01.prop
+0xc6ae0b84 Legmoure
+
+# ce_chest_missileTempest_01.prop
+0x508f1b8a Vestatcuelure
+
+# ce_chest_quantumRavager_01.prop
+0x54fcce79 Turtle Quoise
+
+# ce_chest_shieldedSentinel_01.prop
+0x67f9044c Belmourmount
+
+# ce_chest_supportTempest_01.prop
+0x0297bdcb Cresten Plate
+
+# ce_chest_trapperRavager_01.prop
+0x5c95b6b8 Corblindage
+
+# ce_collar_gravityTempest_01.prop
+0xe2ba849c Photon Force
+
+# ce_collar_psychicTempest_01.prop
+0xa944e387 Ethereal Force
+
+# ce_detailEffect_01.prop
+0x4dfe7702 shieldgenerator_effect
+
+# ce_detailEffect_02.prop
+0x4dfe7701 pulse_gun_glow
+
+# ce_detailEffect_03.prop
+0x4dfe7700 hover_part_effect
+
+# ce_detailEffect_04.prop
+0x4dfe7707 speed_burst_part_effect
+
+# ce_detailEffect_05.prop
+0x4dfe7706 jump_jet_part_effect
+
+# ce_detailEffect_06.prop
+0x4dfe7705 sword_idle_glow
+
+# ce_details_Ahvensaw.prop
+0x461dc8cc An Ahvensaw
+
+# ce_details_axe_01.prop
+0x6df0560f A Few Problems
+
+# ce_details_axe_02.prop
+0x6df0560c Axe
+
+# ce_details_axe_g_01.prop
+0xdb807a79 A Few Problems
+
+# ce_details_axe_g_02.prop
+0xdb807a7a Axe
+
+# ce_details_axe_i_01.prop
+0x0fb128c7 A Few Problems
+
+# ce_details_axe_i_02.prop
+0x0fb128c4 Axe
+
+# ce_details_axe_l_01.prop
+0xdf4ac024 A Few Problems
+
+# ce_details_axe_l_02.prop
+0xdf4ac027 Axe
+
+# ce_details_bfg.prop
+0x4e06c55c Gatling Gun
+
+# ce_details_Blade.prop
+0xcb807771 A Blade
+
+# ce_details_Boregeye.prop
+0xdd9d4f59 Boregeye
+
+# ce_details_bra.prop
+0x4206b236 Darth Breath
+
+# ce_details_Breezah.prop
+0xc46eb8b0 Breezah
+
+# ce_details_Bubble.prop
+0x3357eaef Air Bubble
+
+# ce_details_Bubble_g.prop
+0x69e37c21 Air Bubble
+
+# ce_details_Bubble_i.prop
+0x69e37c2f Air Bubble
+
+# ce_details_Bubble_l.prop
+0x69e37c2a Air Bubble
+
+# ce_details_carm.prop
+0xa8d2d2d2 Cannarm
+
+# ce_details_caxe.prop
+0xb2d2e218 Crystaxe
+
+# ce_details_club_01.prop
+0x7d17da09 Wrong end of the stick
+
+# ce_details_club_02.prop
+0x7d17da0a Club
+
+# ce_details_club_g_01.prop
+0xacef2c83 Wrong end of the stick
+
+# ce_details_club_g_02.prop
+0xacef2c80 Club
+
+# ce_details_club_i_01.prop
+0x3482eefd Wrong end of the stick
+
+# ce_details_club_i_02.prop
+0x3482eefe Club
+
+# ce_details_club_l_01.prop
+0x837deb9a Wrong end of the stick
+
+# ce_details_club_l_02.prop
+0x837deb99 Club
+
+# ce_details_Comet.prop
+0x5a3cbf8f Rainbow Comet 1
+
+# ce_details_Comet2.prop
+0x9ca18e2f Rainbow Comet 2
+
+# ce_details_Comet_g_1.prop
+0xdf1ee195 Rainbow Comet 1
+
+# ce_details_Comet_g_2.prop
+0xdf1ee196 Rainbow Comet 2
+
+# ce_details_Comet_i_1.prop
+0xdf4173d7 Rainbow Comet 1
+
+# ce_details_Comet_i_2.prop
+0xdf4173d4 Rainbow Comet 2
+
+# ce_details_Comet_l_1.prop
+0x1f350c82 Rainbow Comet 1
+
+# ce_details_Comet_l_2.prop
+0x1f350c81 Rainbow Comet 2
+
+# ce_details_crya.prop
+0xa9fdb538 Cryrrangment
+
+# ce_details_cryhorn.prop
+0x2371418c Crystal Spike
+
+# ce_details_crylong.prop
+0xc993bf4d Lonestal
+
+# ce_details_crymail.prop
+0x647341c6 Crymail
+
+# ce_details_curly_01.prop
+0x65074662 Curly Stick
+
+# ce_details_curly_g_01.prop
+0xe8471764 Curly Stick
+
+# ce_details_curly_i_01.prop
+0x3cb8f56e Curly Stick
+
+# ce_details_curly_l_01.prop
+0xe47cd1b9 Curly Stick
+
+# ce_details_dish.prop
+0x337194d1 Sound Observator
+
+# ce_details_Extrenzor.prop
+0x78487de6 An Extenzor
+
+# ce_details_fish_01.prop
+0xb2989633 Caught something (for once)
+
+# ce_details_fish_g_01.prop
+0xa764256d Caught something (for once)
+
+# ce_details_fish_i_01.prop
+0x1fd06373 Caught something (for once)
+
+# ce_details_fish_l_01.prop
+0x780c8728 Caught something (for once)
+
+# ce_details_gathering_01.prop
+0xb4e2e20a Gathering Canes
+
+# ce_details_gathering_g_01.prop
+0xefd1ca7c Gathering Canes
+
+# ce_details_gathering_i_01.prop
+0x77658c56 Gathering Canes
+
+# ce_details_gathering_l_01.prop
+0x7c1032c1 Gathering Canes
+
+# ce_details_golden_02.prop
+0x0a3f083f Axe
+
+# ce_details_golden_1.prop
+0x8b3953de A Few Problems
+
+# ce_details_golden_g_02.prop
+0x05d8559d Axe
+
+# ce_details_golden_g_1.prop
+0x72625cf4 A Few Problems
+
+# ce_details_golden_i_02.prop
+0x2eeb4517 Axe
+
+# ce_details_golden_i_1.prop
+0xb25cb166 A Few Problems
+
+# ce_details_golden_l_02.prop
+0x5f51ae34 Axe
+
+# ce_details_golden_l_1.prop
+0xb255f5a3 A Few Problems
+
+# ce_details_Gunmang.prop
+0x17db9d3a Gunmang
+
+# ce_details_health_01.prop
+0xe7ddb63f Healing Rod
+
+# ce_details_health_g_01.prop
+0xaca6bcc9 Healing Rod
+
+# ce_details_health_i_01.prop
+0x60d6a217 Healing Rod
+
+# ce_details_health_l_01.prop
+0x30703974 Healing Rod
+
+# ce_details_invisible_01.prop
+0x70396878 Invisiblock- invisible in game
+
+# ce_details_invisible_g_01.prop
+0xcd6beb4a Invisiblock- invisible in game
+
+# ce_details_invisible_i_01.prop
+0xce7ab628 Invisiblock- invisible in game
+
+# ce_details_invisible_l_01.prop
+0x763e9273 Invisiblock- invisible in game
+
+# ce_details_Khelm.prop
+0x286d0b00 Kartikeya Helm
+
+# ce_details_mcan.prop
+0x27d4619c Megannon
+
+# ce_details_santenna.prop
+0x17ff2045 Saurantenna
+
+# ce_details_Skeleton2.prop
+0x074a8c72 Rainbow Skeleton part 1
+
+# ce_details_Skeleton3.prop
+0x074a8c73 Rainbow Skeleton part 2
+
+# ce_details_Skeleton_g_2.prop
+0x995434e1 Rainbow Skeleton part 1
+
+# ce_details_Skeleton_g_3.prop
+0x995434e0 Rainbow Skeleton part 2
+
+# ce_details_Skeleton_i_2.prop
+0xd9458f3b Rainbow Skeleton part 1
+
+# ce_details_Skeleton_i_3.prop
+0xd9458f3a Rainbow Skeleton part 2
+
+# ce_details_Skeleton_l_2.prop
+0xd93d4076 Rainbow Skeleton part 1
+
+# ce_details_Skeleton_l_3.prop
+0xd93d4077 Rainbow Skeleton part 2
+
+# ce_details_spear_01.prop
+0x1ff0d2aa Oops
+
+# ce_details_spear_02.prop
+0x1ff0d2a9 Spear
+
+# ce_details_spear_g_01.prop
+0x6a7de0dc Oops
+
+# ce_details_spear_g_02.prop
+0x6a7de0df Spear
+
+# ce_details_spear_i_01.prop
+0xf211a336 Oops
+
+# ce_details_spear_i_02.prop
+0xf211a335 Spear
+
+# ce_details_spear_l_01.prop
+0xf6bc49a1 Oops
+
+# ce_details_spear_l_02.prop
+0xf6bc49a2 Spear
+
+# ce_details_stick_01.prop
+0x20f9da9f Stick it to ya
+
+# ce_details_stick_g_01.prop
+0x4be59de9 Stick it to ya
+
+# ce_details_stick_i_01.prop
+0x80164cb7 Stick it to ya
+
+# ce_details_stick_l_01.prop
+0x4fafe394 Stick it to ya
+
+# ce_details_turret_01.prop
+0xba884d1f Economic Turret
+
+# ce_details_turret_02.prop
+0xba884d1c Religious Turret
+
+# ce_details_turret_03.prop
+0xba884d1d Military Turret
+
+# ce_details_turret_04.prop
+0xba884d1a Colony Turret
+
+# ce_details_turret_05.prop
+0xba884d1b Grox Turret
+
+# ce_details_turret_g_01.prop
+0x0ee39469 Economic Turret
+
+# ce_details_turret_g_02.prop
+0x0ee3946a Religious Turret
+
+# ce_details_turret_g_03.prop
+0x0ee3946b Military Turret
+
+# ce_details_turret_g_04.prop
+0x0ee3946c Colony Turret
+
+# ce_details_turret_g_05.prop
+0x0ee3946d Grox Turret
+
+# ce_details_turret_i_01.prop
+0x43144337 Economic Turret
+
+# ce_details_turret_i_02.prop
+0x43144334 Religious Turret
+
+# ce_details_turret_i_03.prop
+0x43144335 Military Turret
+
+# ce_details_turret_i_04.prop
+0x43144332 Colony Turret
+
+# ce_details_turret_i_05.prop
+0x43144333 Grox Turret
+
+# ce_details_turret_l_01.prop
+0x12adda14 Economic Turret
+
+# ce_details_turret_l_02.prop
+0x12adda17 Religious Turret
+
+# ce_details_turret_l_03.prop
+0x12adda16 Military Turret
+
+# ce_details_turret_l_04.prop
+0x12adda11 Colony Turret
+
+# ce_details_turret_l_05.prop
+0x12adda10 Grox Turret
+
+# ce_details_ugleeth.prop
+0x80c42e11 Ugleeth
+
+# ce_detail_binarySentinel_01.prop
+0x16ab0485 Neutrino Annhilator
+
+# ce_detail_fireRavager_01.prop
+0xe76d247a Fahrenflare
+
+# ce_detail_ghostSentinel_01.prop
+0x7167c4b3 Ethereal Razor
+
+# ce_detail_ghostSentinel_02.prop
+0x7167c4b0 Ethereal Ripper
+
+# ce_detail_ghostSentinel_03.prop
+0x7167c4b1 detail_ghostSentinel_03
+
+# ce_detail_ghostSentinel_04.prop
+0x7167c4b6 Worbranchus
+
+# ce_detail_gravityTempest_01.prop
+0xa2e08e14 Electron Crusher
+
+# ce_detail_gravityTempest_02.prop
+0xa2e08e17 Electron Tentacle
+
+# ce_detail_gravityTempest_03.prop
+0xa2e08e16 Electron Bruiser
+
+# ce_detail_life_01.prop
+0x71e491aa Gre'orn
+
+# ce_detail_life_02.prop
+0x71e491a9 TeeLeef
+
+# ce_detail_life_03.prop
+0x71e491a8 Phototennah
+
+# ce_detail_life_04.prop
+0x71e491af Templist Holder
+
+# ce_detail_missileTempest_01.prop
+0x43718126 Ventask
+
+# ce_detail_plasmaSentinel_01.prop
+0x1e5fe95e Thermic Firecrystal
+
+# ce_detail_plasma_01.prop
+0x2de0bd9e HairoSpyro
+
+# ce_detail_plasma_02.prop
+0x2de0bd9d Rognet
+
+# ce_detail_plasma_03.prop
+0x2de0bd9c Thermic Imposer
+
+# ce_detail_plasma_04.prop
+0x2de0bd9b Pyretic Imposer
+
+# ce_detail_plasma_05.prop
+0x2de0bd9a Cristite
+
+# ce_detail_plasma_06.prop
+0x2de0bd99 detail_plasma_06
+
+# ce_detail_plasma_07.prop
+0x2de0bd98 Rockdeeus
+
+# ce_detail_plasma_08.prop
+0x2de0bd97 Volcanic Pad
+
+# ce_detail_plasma_09.prop
+0x2de0bd96 Molthorn
+
+# ce_detail_plasma_10.prop
+0x2ce0bc2c Red Curvis
+
+# ce_detail_poisonRavager_01.prop
+0x4528070e RoThorsalia
+
+# ce_detail_poisonRavager_02.prop
+0x4528070d Toaf Tounge
+
+# ce_detail_poisonRavager_03.prop
+0x4528070c CacSworg
+
+# ce_detail_poisonRavager_04.prop
+0x4528070b Leafears
+
+# ce_detail_shadowRavager_01.prop
+0x2c65f18e Ethereal Striker
+
+# ce_detail_shadowRavager_02.prop
+0x2c65f18d Ethereal Spur
+
+# ce_detail_shadowRavager_03.prop
+0x2c65f18c Ethereal Gouger
+
+# ce_detail_shroomTempest_01.prop
+0x8ea6607e Fungal Blaster
+
+# ce_detail_spacetime_01.prop
+0x420ee2ff Bluesker
+
+# ce_detail_spacetime_02.prop
+0x420ee2fc Photon Vaporizer
+
+# ce_detail_spacetime_03.prop
+0x420ee2fd Electron Vaporizer
+
+# ce_detail_spacetime_04.prop
+0x420ee2fa Bloo Fasker
+
+# ce_detail_spacetime_05.prop
+0x420ee2fb Electron Resonator
+
+# ce_detail_spacetime_06.prop
+0x420ee2f8 OoohReeo
+
+# ce_detail_spacetime_07.prop
+0x420ee2f9 Electron Nasty
+
+# ce_detail_spacetime_08.prop
+0x420ee2f6 Photon Node
+
+# ce_detail_spacetime_09.prop
+0x420ee2f7 Electron Node
+
+# ce_detail_spacetime_10.prop
+0x430ee451 Blubble Thorn
+
+# ce_detail_spacetime_11.prop
+0x430ee450 AquaPad
+
+# ce_detail_spacetime_12.prop
+0x430ee453 Bluspike
+
+# ce_detail_supernatural_01.prop
+0xac2a0e10 Shareaper
+
+# ce_detail_supernatural_02.prop
+0xac2a0e13 Nightennah
+
+# ce_detail_supernatural_03.prop
+0xac2a0e12 WhichBrows
+
+# ce_detail_supernatural_04.prop
+0xac2a0e15 Darkstool
+
+# ce_detail_supernatural_05.prop
+0xac2a0e14 Darstahcean
+
+# ce_detail_supernatural_06.prop
+0xac2a0e17 Spectral Bludgeon
+
+# ce_detail_supernatural_07.prop
+0xac2a0e16 Sparmer
+
+# ce_detail_supernatural_08.prop
+0xac2a0e19 Shadarmour
+
+# ce_detail_supernatural_09.prop
+0xac2a0e18 Quelee Purple
+
+# ce_detail_supernatural_10.prop
+0xab2a0cbe Viole'met
+
+# ce_detail_supportTempest_01.prop
+0x90ac0737 Brokallranch
+
+# ce_detail_supportTempest_02.prop
+0x90ac0734 Biotic Dendrite
+
+# ce_detail_tech_01.prop
+0xcc92dfac Nanotech Regulator
+
+# ce_detail_tech_02.prop
+0xcc92dfaf Fore-Eyed Plate
+
+# ce_detail_tech_03.prop
+0xcc92dfae SportBolt
+
+# ce_detail_tech_04.prop
+0xcc92dfa9 Microtech Targeter
+
+# ce_detail_tech_05.prop
+0xcc92dfa8 Microtech Override
+
+# ce_detail_tech_06.prop
+0xcc92dfab Microtech Blade
+
+# ce_detail_tech_07.prop
+0xcc92dfaa Microtech Vent
+
+# ce_detail_tech_08.prop
+0xcc92dfa5 Microtech Adaptor
+
+# ce_detail_tech_09.prop
+0xcc92dfa4 Lyting Bolt
+
+# ce_detail_tech_10.prop
+0xcb92de3a Microtech Analyzer
+
+# ce_detail_tech_11.prop
+0xcb92de3b Microtech Generator
+
+# ce_detail_tech_12.prop
+0xcb92de38 Microtech Regulator
+
+# ce_detail_tech_13.prop
+0xcb92de39 Seam Whistle
+
+# ce_detail_tech_14.prop
+0xcb92de3e Nanotech Capacitor
+
+# ce_detail_tech_15.prop
+0xcb92de3f Thorear
+
+# ce_detail_tech_16.prop
+0xcb92de3c HolderPad
+
+# ce_detail_tech_17.prop
+0xcb92de3d Yelthorn
+
+# ce_detail_tech_18.prop
+0xcb92de32 Fakeymour
+
+# ce_detail_timeRavager_01.prop
+0x02644fd1 Electron Appendage
+
+# ce_detail_timeRavager_02.prop
+0x02644fd2 Electron Segment
+
+# ce_detail_treeSentinel_01.prop
+0x05f13990 Biotic Briar
+
+# ce_detail_treeSentinel_02.prop
+0x05f13993 Brancleeas
+
+# ce_detail_treeSentinel_03.prop
+0x05f13992 Biotic Brambles
+
+# ce_detail_voodooTempest_01.prop
+0x6d21dab4 Spectral Antennae
+
+# ce_effect_scrollglow_01.prop
+0x4abd0fc4 Scrolling Lava Texture
+
+# ce_effect_test.prop
+0x6d69a5da Sed Hep ;^;
+
+# ce_effect_zrin_01.prop
+0x87a372f3 Sun Fist Flames
+
+# ce_effect_zrin_02.prop
+0x87a372f0 Not-So-Sun Fist Lightning
+
+# ce_eye_grox.prop
+0xb8289808 Cyborg Eye
+
+# ce_eye_null.prop
+0xe7f82db9 eye null (PLACEHOLDER)
+
+# ce_graspers_robot_1.prop
+0x73ae2222 Clamps
+
+# ce_grasper_beastSentinel_01.prop
+0x01f25c6a Evolved Claw
+
+# ce_grasper_binarySentinel_01.prop
+0xe7601c8a Photon Mitt
+
+# ce_grasper_binarySentinel_02.prop
+0xe7601c89 Neutrino Phalanges
+
+# ce_grasper_cute_01.prop
+0x2a38ba34 ce_grasper_cute_01 (NOT LOCALIZED)
+
+# ce_grasper_cute_02.prop
+0x2a38ba37 ce_grasper_cute_02 (NOT LOCALIZED)
+
+# ce_grasper_cute_03.prop
+0x2a38ba36 ce_grasper_cute_03 (NOT LOCALIZED)
+
+# ce_grasper_cute_04.prop
+0x2a38ba31 ce_grasper_cute_04 (NOT LOCALIZED)
+
+# ce_grasper_cute_05.prop
+0x2a38ba30 ce_grasper_cute_05 (NOT LOCALIZED)
+
+# ce_grasper_cute_06.prop
+0x2a38ba33 ce_grasper_cute_06 (NOT LOCALIZED)
+
+# ce_grasper_cute_07.prop
+0x2a38ba32 ce_grasper_cute_07 (NOT LOCALIZED)
+
+# ce_grasper_cute_08.prop
+0x2a38ba3d ce_grasper_cute_08 (NOT LOCALIZED)
+
+# ce_grasper_energySentinelWeapon_01.prop
+0x9cd247d7 grasper_energySentinelWeapon_01
+
+# ce_grasper_fireRavager_01.prop
+0x00089e53 Pyretic Gripper
+
+# ce_grasper_fireTempest_01.prop
+0xd6710e2b Plasmic Palm
+
+# ce_grasper_ghostSentinelPlasma_02.prop
+0xf00cbf0b Zrin's Recommendation to Wraith
+
+# ce_grasper_ghostSentinelWeapon_02.prop
+0xd954da51 Spectral Claw (Fist)
+
+# ce_grasper_ghostSentinel_01.prop
+0x63df35c6 Ethereal Fist
+
+# ce_grasper_ghostSentinel_02.prop
+0x63df35c5 Spectral Claw
+
+# ce_grasper_gravityTempestWeapon_02.prop
+0xec4103f0 Electron Manipulator (Fist)
+
+# ce_grasper_gravityTempest_01.prop
+0x34589b4f Electron Phalanges
+
+# ce_grasper_gravityTempest_02.prop
+0x34589b4c Electron Manipulator
+
+# ce_grasper_gravityTempest_plasmaSentinel.prop
+0x5795c4bc Andromeda Sun Fist (PLACEHOLDER)
+
+# ce_grasper_horror_01.prop
+0xd30b50c7 ce_grasper_horror_01 (NOT LOCALIZED)
+
+# ce_grasper_horror_02.prop
+0xd30b50c4 ce_grasper_horror_02 (NOT LOCALIZED)
+
+# ce_grasper_horror_03.prop
+0xd30b50c5 ce_grasper_horror_03 (NOT LOCALIZED)
+
+# ce_grasper_horror_04.prop
+0xd30b50c2 ce_grasper_horror_04 (NOT LOCALIZED)
+
+# ce_grasper_lightningTempestWeapon_01.prop
+0x7f0f9a33 Voltaic Claw (Fist)
+
+# ce_grasper_lightningTempest_01.prop
+0xd76e198f Voltaic Claw
+
+# ce_grasper_lightningTempest_plasmaSentinel.prop
+0x34c8abfc Lumin Sun Fist (PLACEHOLDER)
+
+# ce_grasper_lightspeedTempestWeapon_01.prop
+0x5c22f882 Quark Claw (Fist)
+
+# ce_grasper_lightspeedTempest_01.prop
+0xe35d37f6 Quark Claw
+
+# ce_grasper_medicTempest_01.prop
+0xa22919bb Omegatech Extractor
+
+# ce_grasper_plasmaSentinel_01.prop
+0xba00c2bd Thermic Fist
+
+# ce_grasper_plasmaSentinel_02.prop
+0xba00c2be Thermic Gripper
+
+# ce_grasper_plasmaSentinel_03.prop
+0xba00c2bf Zrin's Choice
+
+# ce_grasper_poisonRavager_01.prop
+0xbe36604b Biotic Grasper
+
+# ce_grasper_psychicTempest_01.prop
+0x2719eba4 Ethereal Picker
+
+# ce_grasper_psychicTempest_02.prop
+0x2719eba7 Stygian Claw
+
+# ce_grasper_quantumRavager_01.prop
+0xcf0f494a Quark Fingers
+
+# ce_grasper_shadowRavager_01.prop
+0x1d9d675b Spectral Feeler
+
+# ce_grasper_shadowRavager_02.prop
+0x1d9d6758 Abyssal Extractor
+
+# ce_grasper_shieldedSentinel_01.prop
+0x8f181f67 Nanotech Clasp
+
+# ce_grasper_shroomTempest_01.prop
+0xd8c2adbf Hybridized Mitt
+
+# ce_grasper_supportTempest_01.prop
+0xfb2dc030 Biotic Fingers
+
+# ce_grasper_Tech_03.prop
+0xec68c1dd Picotech Manipulator
+
+# ce_grasper_Tech_04.prop
+0xec68c1da Microtech Hitch-Hand
+
+# ce_grasper_Tech_05.prop
+0xec68c1db Picotech Cyberhand
+
+# ce_grasper_Tech_06.prop
+0xec68c1d8 Omegatech Lifter
+
+# ce_grasper_Tech_07.prop
+0xec68c1d9 Microtech Grabber
+
+# ce_grasper_Tech_08.prop
+0xec68c1d6 Nanotech Clamp
+
+# ce_grasper_Tech_09.prop
+0xec68c1d7 Microtech Pincer
+
+# ce_grasper_Tech_10.prop
+0xed68c3b1 Nanotech Handler
+
+# ce_grasper_Tech_11.prop
+0xed68c3b0 Nanotech Fist
+
+# ce_grasper_Tech_12.prop
+0xed68c3b3 Microtech Claws
+
+# ce_grasper_Tech_13.prop
+0xed68c3b2 Microtech Robohand
+
+# ce_grasper_Tech_14.prop
+0xed68c3b5 Microtech Multi-Handler
+
+# ce_grasper_timeRavager_01.prop
+0x93ae3064 Photon Talon
+
+# ce_grasper_trapperRavager_01.prop
+0xf3f24d7b Microtech Rubbergrip
+
+# ce_grasper_treeSentinelWeapon_02.prop
+0x0217c094 Genespliced Phalanges (Fist)
+
+# ce_grasper_treeSentinel_01.prop
+0x909199f3 Biotic Grip
+
+# ce_grasper_treeSentinel_02.prop
+0x909199f0 Genespliced Phalanges
+
+# ce_grasper_voodooTempestWeapon_01.prop
+0x74bab765 grasper_voodooTempestWeapon_01 
+
+# ce_helmet_boss_01.prop
+0x5539defd Quasar Respirator
+
+# ce_helmet_boss_02.prop
+0x5539defe Baryonic Respirator
+
+# ce_helmet_boss_03.prop
+0x5539deff Darkmatter Respirator
+
+# ce_helmet_boss_04.prop
+0x5539def8 Dimensional Respirator
+
+# ce_helmet_boss_05.prop
+0x5539def9 Spatial Respirator
+
+# ce_helmet_boss_06.prop
+0x5539defa Ambiplasmic Cranium
+
+# ce_helmet_boss_06_bare_v2.prop
+0xec11dbec Molecular Balaclava
+
+# ce_helmet_boss_06_hose.prop
+0x0e81ed8e epiP-ixelF
+
+# ce_helmet_organic_01.prop
+0x2b186d95 Quasar Visor
+
+# ce_helmet_organic_02.prop
+0x2b186d96 Baryonic Visor
+
+# ce_helmet_organic_03.prop
+0x2b186d97 Darkmatter Visor
+
+# ce_helmet_organic_04.prop
+0x2b186d90 Dimensional Visor
+
+# ce_helmet_tech_01.prop
+0xe38f0650 Quasar Starhelm
+
+# ce_helmet_tech_02.prop
+0xe38f0653 Baryonic Starhelm
+
+# ce_helmet_tech_03.prop
+0xe38f0652 Darkmatter Starhelm
+
+# ce_helmet_tech_04.prop
+0xe38f0655 Dimensional Starhelm
+
+# ce_Lavaskull.prop
+0x11601f3d lava Skull
+
+# ce_limb_beastSentinel_01.prop
+0xa342c1ba OverGlowthed
+
+# ce_limb_fireRavager_01.prop
+0x3765f523 Leva Shinn
+
+# ce_limb_fireRavager_02.prop
+0x3765f520 Sharkoal Joint
+
+# ce_limb_fireRavager_03.prop
+0x3765f521 Deebris Limb
+
+# ce_limb_fireRavager_04.prop
+0x3765f526 Eruptshin Limb
+
+# ce_limb_fireTempest_01.prop
+0xbdddb65b Burrnt Limb
+
+# ce_limb_fireTempest_02.prop
+0xbdddb658 Cindurr Limb
+
+# ce_limb_fireTempest_03.prop
+0xbdddb659 Plain Cindurr Limb
+
+# ce_limb_fireTempest_04.prop
+0xbdddb65e Lehar-har Limb
+
+# ce_limb_ghostSentinel_01.prop
+0x6fc57196 Bulkey Nee
+
+# ce_limb_ghostSentinel_02.prop
+0x6fc57195 Spyky Limbnail
+
+# ce_limb_lengthtemplate.prop
+0xec48a2e9 calfMuscular (NOT LOCALIZED)
+
+# ce_limb_medicTempest_01.prop
+0xa452db6b Thinnis Elbow
+
+# ce_limb_medicTempest_02.prop
+0xa452db68 Rowbotoe Lim
+
+# ce_limb_medicTempest_03.prop
+0xa452db69 Dark FrostBytes
+
+# ce_limb_necro_01.prop
+0x06e68b90 ChickenFhigh
+
+# ce_limb_necro_02.prop
+0x06e68b93 ThingrrLicker
+
+# ce_limb_necro_03.prop
+0x06e68b92 UnFunny Bone
+
+# ce_limb_necro_04.prop
+0x06e68b95 Calseeum
+
+# ce_limb_necro_05.prop
+0x06e68b94 Innsekt Leg
+
+# ce_limb_necro_06.prop
+0x06e68b97 SpinShark
+
+# ce_limb_necro_07.prop
+0x06e68b96 Freddy Horse
+
+# ce_limb_necro_08.prop
+0x06e68b99 Pownty End
+
+# ce_limb_necro_09.prop
+0x06e68b98 Shouldurr
+
+# ce_limb_necro_10.prop
+0x05e68a3e Spyky Leg
+
+# ce_limb_necro_11.prop
+0x05e68a3f DewaleBone
+
+# ce_limb_necro_12.prop
+0x05e68a3c ThighTone
+
+# ce_limb_necro_13.prop
+0x05e68a3d TeethPick
+
+# ce_limb_necro_14.prop
+0x05e68a3a Spyke Limb
+
+# ce_limb_paintbuddy_01.prop
+0x05498b9f limb_necro_15
+
+# ce_limb_plasmaSentinel_01.prop
+0xd508fcad Visko Limb
+
+# ce_limb_plasmaSentinel_02.prop
+0xd508fcae SpyroPlastic Limb
+
+# ce_limb_plasmaSentinel_03.prop
+0xd508fcaf Buminated Limb
+
+# ce_limb_plasmaSentinel_04.prop
+0xd508fca8 Mugma Limp
+
+# ce_limb_plasmaSentinel_05.prop
+0xd508fca9 limb_plasmaSentinel_05
+
+# ce_limb_plasmaSentinel_06.prop
+0xd508fcaa limb_plasmaSentinel_06
+
+# ce_limb_poisonRavager_01.prop
+0xb99707bb Woulden Pleg
+
+# ce_limb_poisonRavager_02.prop
+0xb99707b8 Wreeth Limb
+
+# ce_limb_psychicTempest_01.prop
+0xee343934 ToobyTube
+
+# ce_limb_psychicTempest_03.prop
+0xee343936 Fyn Limb
+
+# ce_limb_psychicTempest_04.prop
+0xee343931 DarLimbo
+
+# ce_limb_psychicTempest_05.prop
+0xee343930 BonyBender
+
+# ce_limb_quantumRavager_01.prop
+0x38cdc0da Aqua Docka
+
+# ce_limb_shadowRavager_01.prop
+0xbb97424b Limbarkness
+
+# ce_limb_shadowRavager_02.prop
+0xbb974248 Violent Violet
+
+# ce_limb_shadowRavager_03.prop
+0xbb974249 Apocketlypse Limb
+
+# ce_limb_shieldedSentinel_01.prop
+0x6487beb7 Rustea Arrm
+
+# ce_limb_shieldedSentinel_02.prop
+0x6487beb4 P-bot Bone
+
+# ce_limb_shieldedSentinel_03.prop
+0x6487beb5 WrisChuff
+
+# ce_limb_shroomTempest_01.prop
+0xf58e064f Mannon Vase
+
+# ce_limb_soulRavager_01.prop
+0x71519e2e BowlDown Limb
+
+# ce_limb_supportTempest_01.prop
+0x9d3af5e0 Stumpid Joint
+
+# ce_limb_supportTempest_02.prop
+0x9d3af5e3 BonyBranch
+
+# ce_limb_trapperRavager_01.prop
+0xc33b58eb The Krusty Abs
+
+# ce_limb_trapperRavager_02.prop
+0xc33b58e8 Extenshin
+
+# ce_limb_trapperRavager_03.prop
+0xc33b58e9 Arbotic Krane
+
+# ce_limb_trapperRavager_04.prop
+0xc33b58ee Suspenshin
+
+# ce_limb_treeMelee_01.prop
+0xae17e305 limb treeMelee 01 (PLACEHOLDER)
+
+# ce_limb_treeSentinel_01.prop
+0x4243ad63 Limber!
+
+# ce_limb_voodooTempest_01.prop
+0x16a7f405 GunBone
+
+# ce_mouth_beastSentinel_01.prop
+0x935bbf4d KneeNoggin
+
+# ce_mouth_binarySentinel_01.prop
+0x1cbb54c3 WaterBall
+
+# ce_mouth_binarySentinel_02.prop
+0x1cbb54c0 Orichalapper
+
+# ce_mouth_cyberDragon_01.prop
+0x82370a7c SteelBeak
+
+# ce_mouth_energySentinel_01.prop
+0x84a1b3f2 LunarHelmet
+
+# ce_mouth_fireRavager_01.prop
+0xd15e0784 PetroJaws
+
+# ce_mouth_fireRavager_02.prop
+0xd15e0787 HellHound
+
+# ce_mouth_fireRavager_03.prop
+0xd15e0786 HellLizard
+
+# ce_mouth_fireTempest_01.prop
+0x816eac84 StoneBunny
+
+# ce_mouth_fireTempest_02.prop
+0x816eac87 Porphyrmunch
+
+# ce_mouth_ghostSentinel_01.prop
+0x517ca8ed Formicitrop
+
+# ce_mouth_ghostSentinel_02.prop
+0x517ca8ee Skeltergeist
+
+# ce_mouth_gravityTempest_00.prop
+0xba39b993 Nippers
+
+# ce_mouth_gravityTempest_01.prop
+0xba39b992 Physetefront
+
+# ce_mouth_gravityTempest_02.prop
+0xba39b991 Ufologic Kisser
+
+# ce_mouth_Itzkool.prop
+0x73d8f16c Itzkool
+
+# ce_mouth_lightningRavager_01.prop
+0x2a98882a Shelledsaurian
+
+# ce_mouth_lightningTempest_01.prop
+0xe074f3be MagmaKing
+
+# ce_mouth_lightspeedTempest_01.prop
+0xe87f434d Hydrobigua
+
+# ce_mouth_medicTempest_01.prop
+0x2531f7f6 StuntDroid
+
+# ce_mouth_missileTempest_01.prop
+0xb0a4cb00 VacuumBreath
+
+# ce_mouth_plasmaSentinel_01.prop
+0x6bf40d64 Depressalobe
+
+# ce_mouth_plasmaSentinel_02.prop
+0x6bf40d67 VulcanBreath
+
+# ce_mouth_poisonRavager_01.prop
+0x586aba50 BogBiter
+
+# ce_mouth_poisonRavager_02.prop
+0x586aba53 Horntide
+
+# ce_mouth_psychicTempest_01.prop
+0xc89636a5 Quadrilax
+
+# ce_mouth_psychicTempest_02.prop
+0xc89636a6 Diviniteeth
+
+# ce_mouth_quantumRavager_01.prop
+0x68d85c8f Dovakraw
+
+# ce_mouth_shadowRavager_01.prop
+0x4eb3a3a4 Prognasectum
+
+# ce_mouth_shadowRavager_02.prop
+0x4eb3a3a7 Habsbug Maw
+
+# ce_mouth_shadowskull.prop
+0xa9da988f BioMech Skull
+
+# ce_mouth_shieldedSentinel_01.prop
+0x67192146 MechaSentinel
+
+# ce_mouth_shroomTempest_01.prop
+0x15c63b64 SkyDive
+
+# ce_mouth_soulRavager_00.prop
+0x0e51a48c Spiriteeth
+
+# ce_mouth_soulRavager_01.prop
+0x0e51a48d PyreBite
+
+# ce_mouth_supportTempest_01.prop
+0x40524ee5 PotatoHead
+
+# ce_mouth_supportTempest_01_detail.prop
+0x1f9d8a9b PotatoHead
+
+# ce_mouth_supportTempest_02.prop
+0x40524ee6 SwampBeast
+
+# ce_mouth_supportTempest_02_Plasma.prop
+0x50fcad2f HellBeast
+
+# ce_mouth_supportTempest_02_Quantum.prop
+0x53c72af4 TimeBeast
+
+# ce_mouth_timeRavager_01.prop
+0x33e27e93 SeaStar
+
+# ce_mouth_timeSentinel_01.prop
+0x3f5356bf TimeSentinel 01 (PLACEHOLDER)
+
+# ce_mouth_trapperRavager_01.prop
+0xa141d7da Roboceratops
+
+# ce_mouth_treeSentinel_01.prop
+0xf5553c2e Ligningob
+
+# ce_mouth_treeSentinel_02.prop
+0xf5553c2d TreeSpirit
+
+# ce_mouth_voodooTempest_01.prop
+0x904002c6 Cheladuo
+
+# ce_mouth_weapon_range_liquid_04.prop
+0x6a86a230 Spiteeth
+
+# ce_mouth_willosaur.prop
+0x65def6fa Argofasis
+
+# ce_movement_beastSentinel_01.prop
+0xbbd8519b Biotic Crawler
+
+# ce_movement_binarySentinel_01.prop
+0x7bb8f1b9 Photon Toes
+
+# ce_movement_binarySentinel_02.prop
+0x7bb8f1ba Neutrino Sprinter
+
+# ce_movement_cute_01.prop
+0x81043f5b ce_movement_cute_01 (NOT LOCALIZED)
+
+# ce_movement_cute_02.prop
+0x81043f58 ce_movement_cute_02 (NOT LOCALIZED)
+
+# ce_movement_cute_03.prop
+0x81043f59 ce_movement_cute_03 (NOT LOCALIZED)
+
+# ce_movement_cute_04.prop
+0x81043f5e ce_movement_cute_04 (NOT LOCALIZED)
+
+# ce_movement_cute_05.prop
+0x81043f5f ce_movement_cute_05 (NOT LOCALIZED)
+
+# ce_movement_cute_06.prop
+0x81043f5c ce_movement_cute_06 (NOT LOCALIZED)
+
+# ce_movement_cute_07.prop
+0x81043f5d ce_movement_cute_07 (NOT LOCALIZED)
+
+# ce_movement_cute_08.prop
+0x81043f52 ce_movement_cute_08 (NOT LOCALIZED)
+
+# ce_movement_energySentinel_01.prop
+0x47520ab8 Omegatech Cyberfoot
+
+# ce_movement_fireRavager_01.prop
+0xd79b0cb6 Plasmic Flats
+
+# ce_movement_fireRavager_02.prop
+0xd79b0cb5 Voltaic Firewalker
+
+# ce_movement_fireTempest_01.prop
+0xa0fc82ba Thermic Magmastrider
+
+# ce_movement_fireTempest_02.prop
+0xa0fc82b9 Thermic Stalker
+
+# ce_movement_ghostSentinel_01.prop
+0x5cef512f Ethereal Hornhoof
+
+# ce_movement_gravityTempest_01.prop
+0xa574a150 Photon Sensafoot
+
+# ce_movement_gravityTempest_02.prop
+0xa574a153 Electron Stiletto
+
+# ce_movement_lightningTempest_01.prop
+0xc449a388 Pyretic Walker
+
+# ce_movement_lightspeedTempest_01.prop
+0xf482af0b ce_grasper_lightspeedTempest_01 (PLACEHOLDER)
+
+# ce_movement_medicTempest_01.prop
+0x928a550c Microtech Robofoot
+
+# ce_movement_medicTempest_02.prop
+0x928a550f Picotech Trotter
+
+# ce_movement_missileTempest_01.prop
+0x27a51932 Omegatech Strider
+
+# ce_movement_plasmaSentinel_01.prop
+0xbd8865da Thermic Walker
+
+# ce_movement_poisonRavager_01.prop
+0xc79c6782 Biotic Tendrilfoot
+
+# ce_movement_poisonRavager_02.prop
+0xc79c6781 Biotic Stalker
+
+# ce_movement_quantumRavager_01.prop
+0x1b412671 Quark Stalker
+
+# ce_movement_shadowRavager_01.prop
+0x59eece42 Ethereal Spikehoof
+
+# ce_movement_shadowRavager_02.prop
+0x59eece41 Spectral Kicker
+
+# ce_movement_shieldedSentinel_01.prop
+0x04df9114 Nanotech Mechfoot
+
+# ce_movement_shieldedSentinel_02.prop
+0x04df9117 Microtech Robostrider
+
+# ce_movement_shroomTempest_01.prop
+0x6a2e1522 Evolved Pedal-Pad
+
+# ce_movement_soulRavager_01.prop
+0x42b4c29f Abyssal Spike
+
+# ce_movement_supportTempest_01.prop
+0x8d29ce83 Hybridized Strider
+
+# ce_movement_timeRavager_01.prop
+0xc75a7d25 Draconian Strider
+
+# ce_movement_trapperRavager_01.prop
+0x2c148290 Picotech Mechfoot
+
+# ce_movement_treeSentinel_01.prop
+0x564bf714 Genespliced Strider
+
+# ce_movement_treeSentinel_02.prop
+0x564bf717 Hybridized Roots
+
+# ce_movement_voodooTempest_01.prop
+0x4a9b83b0 Stygian Stalker
+
+# ce_portal_gun.prop
+0x6b913c61 Portal Gun
+
+# ce_rigblock_null.prop
+0xe140a9f7 grasper null (PLACEHOLDER)
+
+# ce_senseEye_beastSentinel_01.prop
+0x260dff69 Star Wright
+
+# ce_senseEye_binarySentinel_01.prop
+0xedf8700f Pure Bluu
+
+# ce_senseEye_binarySentinel_02.prop
+0xedf8700c Aqua Pewpull
+
+# ce_senseEye_fireRavager_01.prop
+0x8139db78 Thermic Ridge-Eye
+
+# ce_senseEye_fireRavager_02.prop
+0x8139db7b Thermic Cave-Eye
+
+# ce_senseEye_fireTempest_01.prop
+0x343db438 FyerrFleye
+
+# ce_senseEye_fireTempest_02.prop
+0x343db43b Voltaic Fire-Glare
+
+# ce_senseEye_ghostSentinel_01.prop
+0xa30d90a1 Ethereal Necro-Eye
+
+# ce_senseEye_ghostSentinel_02.prop
+0xa30d90a2 Doughzed Awf
+
+# ce_senseEye_ghostSentinel_03.prop
+0xa30d90a3 Seered
+
+# ce_senseEye_glowBase_01.prop
+0x85bb5c66 KneeOn Purrpull
+
+# ce_senseEye_glowCoat_01.prop
+0x95b1926c Electron Lumisensor
+
+# ce_senseEye_glowDetail_01.prop
+0x98350caa Mintea Grreen
+
+# ce_senseEye_gravityTempest_01.prop
+0xa81df926 Lady Charmeye
+
+# ce_senseEye_lightningRavager_01.prop
+0x917752e6 Demoan Eye
+
+# ce_senseEye_lightspeedTempest_01.prop
+0xc99cbe51 Electron Seeker-Eye
+
+# ce_senseEye_plasmaSentinel_01.prop
+0x9e7bc4a8 Stoneye
+
+# ce_senseEye_plasmaSentinel_02.prop
+0x9e7bc4ab senseEye_plasmaSentinel_02 (PLACEHOLDER)
+
+# ce_senseEye_poisonRavager_01.prop
+0xcaf518dc Biotic Eye
+
+# ce_senseEye_poisonRavager_02.prop
+0xcaf518df Suspifish Glare
+
+# ce_senseEye_psychicTempest_01.prop
+0x74f8e481 Processed!
+
+# ce_senseEye_psychicTempest_02.prop
+0x74f8e482 I Am Krosseyed
+
+# ce_senseEye_psychicTempest_03.prop
+0x74f8e483 Ayleein Glair
+
+# ce_senseEye_quantumRavager_01.prop
+0x2e28e6b3 Electron Star-Eye
+
+# ce_senseEye_shadowRavager_01.prop
+0x240809c0 Etheral Death-Eye
+
+# ce_senseEye_shadowRavager_02.prop
+0x240809c3 Pupizard
+
+# ce_senseEye_shadowRavager_03.prop
+0x240809c2 Etheral Slit-Eye
+
+# ce_senseEye_shieldedSentinel_01.prop
+0xe6b8bde2 Microtech Lumisensor
+
+# ce_senseEye_soulRavager_01.prop
+0x5dc8ed89 Ethereal Cryptosensor
+
+# ce_senseEye_supportTempest_01.prop
+0x8272ba59 Biotic Spotter
+
+# ce_senseEye_supportTempest_02.prop
+0x8272ba5a Hybridized Eye
+
+# ce_senseEye_timeRavager_01.prop
+0xff5825ef Sheye ShellLie
+
+# ce_senseEye_trapperRavager_01.prop
+0xec104336 Microtech Eye
+
+# ce_senseEye_treeSentinel_01.prop
+0xaa1f1aaa Biotic Endosensor
+
+# ce_senseEye_treeSentinel_02.prop
+0xaa1f1aa9 Oh Miy Ode
+
+# ce_senseEye_voodooTempest_01.prop
+0x1943356a Gressiveye
+
+# ce_sense_Tech_01.prop
+0x8d11d1c1 Microtech Scanner
+
+# ce_sense_Tech_02.prop
+0x8d11d1c2 Microtech Link
+
+# ce_sense_Tech_03.prop
+0x8d11d1c3 Nanotech Scanner
+
+# ce_sense_Tech_04.prop
+0x8d11d1c4 ce_sense_Tech_04
+
+# ce_sense_Tech_05.prop
+0x8d11d1c5 Windough Paneye
+
+# ce_sense_Tech_06.prop
+0x8d11d1c6 Fowerye
+
+# ce_sense_Tech_07.prop
+0x8d11d1c7 Microtech Exoprocessor
+
+# ce_sense_Tech_08.prop
+0x8d11d1c8 Microtech Element
+
+# ce_sense_Tech_09.prop
+0x8d11d1c9 Heagdear
+
+# ce_shoulder_binarySentinel_01.prop
+0x8a128e66 Quark Destroyer
+
+# ce_shoulder_fireTempest_01.prop
+0x95b77b4f Thermic Mauler
+
+# ce_shoulder_psychicTempest_01.prop
+0x6770e910 Hostileye
+
+# ce_shoulder_supportTempest_01.prop
+0x2da76874 Biotic Decimator
+
+# ce_shoulder_treeSentinel_01.prop
+0x5295245f Biotic Engager
+
+# ce_tech_null.prop
+0x6c9e9f40 tech null part(PLACEHOLDER)
+
+# ce_weapon_axe.prop
+0x7e3037d9 Stone Axe
+
+# ce_weapon_beastSentinel_01.prop
+0xacfdebaa Tri-Fang Gauntlet
+
+# ce_weapon_beastSentinel_02.prop
+0xacfdeba9 Double-Fang Gloves
+
+# ce_weapon_beastSentinel_03.prop
+0xacfdeba8 Fanged Knuckle
+
+# ce_weapon_beastSentinel_04.prop
+0xacfdebaf Barbaric Glove
+
+# ce_weapon_beastSentinel_05.prop
+0xacfdebae Primordial Gauntlet
+
+# ce_weapon_binarySentinel_00.prop
+0xde1ad0cb Event Horizon
+
+# ce_weapon_binarySentinel_01.prop
+0xde1ad0ca Buhloo Bluster
+
+# ce_weapon_binarySentinel_02.prop
+0xde1ad0c9 Aqua Plack
+
+# ce_weapon_binarySentinel_03.prop
+0xde1ad0c8 Wata Froosh
+
+# ce_weapon_binarySentinel_04.prop
+0xde1ad0cf weapon_binarySentinel_04 (PLACEHOLDER)
+
+# ce_weapon_binarySentinel_05.prop
+0xde1ad0ce Quantum Transponder
+
+# ce_weapon_binarySentinel_06.prop
+0xde1ad0cd Gravitic Hypernode
+
+# ce_weapon_binarySentinel_07.prop
+0xde1ad0cc Resonator
+
+# ce_weapon_binarySentinel_08.prop
+0xde1ad0c3 Gravitron
+
+# ce_weapon_binarySentinel_09.prop
+0xde1ad0c2 Wormhole Gauntlet
+
+# ce_weapon_bloodRavager_03.prop
+0xc3e9fbf3 Flesh Ripper
+
+# ce_weapon_darkTempest_01.prop
+0x11d9bf8f Magnetic Exploder
+
+# ce_weapon_darkTempest_02.prop
+0x11d9bf8c Pulsethrower
+
+# ce_weapon_darkTempest_03.prop
+0x11d9bf8d No-E Rifle
+
+# ce_weapon_DETempest_01.prop
+0x0189cdbe BanKatana
+
+# ce_weapon_energySentinel_00.prop
+0xa5c89172 Lunar Lance
+
+# ce_weapon_energySentinel_01.prop
+0xa5c89173 Star Sword
+
+# ce_weapon_energySentinel_02.prop
+0xa5c89170 Celestial Cutlass
+
+# ce_weapon_energySentinel_03.prop
+0xa5c89171 Energy Sabre
+
+# ce_weapon_energySentinel_04.prop
+0xa5c89176 Fusion Blade
+
+# ce_weapon_energySentinel_05.prop
+0xa5c89177 Glimmertoil
+
+# ce_weapon_fireRavager_01.prop
+0x9ef3af93 Nova Blaster
+
+# ce_weapon_fireRavager_02.prop
+0x9ef3af90 Forge Cannon
+
+# ce_weapon_fireRavager_03.prop
+0x9ef3af91 Tri-Launcher
+
+# ce_weapon_fireRavager_04.prop
+0x9ef3af96 Flare Launcher
+
+# ce_weapon_fireRavager_05.prop
+0x9ef3af97 Cross Cannon
+
+# ce_weapon_fireTempest_01.prop
+0x29ee716b Pyrocarbonic Containment
+
+# ce_weapon_fireTempest_02.prop
+0x29ee7168 Pyrotechnic Canister
+
+# ce_weapon_fireTempest_03.prop
+0x29ee7169 Pyro Cistern
+
+# ce_weapon_fireTempest_04.prop
+0x29ee716e Exothermic Furnace
+
+# ce_weapon_fireTempest_05.prop
+0x29ee716f Ionic Reactor
+
+# ce_weapon_ghostSentinel_01.prop
+0x6f62dc06 Spectrakinetic Polearm
+
+# ce_weapon_ghostSentinel_02.prop
+0x6f62dc05 Praxis Polearm
+
+# ce_weapon_ghostSentinel_03.prop
+0x6f62dc04 Death Axe
+
+# ce_weapon_ghostSentinel_04.prop
+0x6f62dc03 Abyssall Axe
+
+# ce_weapon_ghostSentinel_04A.prop
+0x5ba058d8 Abyssall Axe [Alpha]
+
+# ce_weapon_ghostSentinel_04B.prop
+0x5ba058db Abyssall Axe [Beta]
+
+# ce_weapon_ghostSentinel_04D.prop
+0x5ba058dd Abyssall Axe [Delta]
+
+# ce_weapon_ghostSentinel_04G.prop
+0x5ba058de Abyssall Axe [Gamma]
+
+# ce_weapon_ghostSentinel_05.prop
+0x6f62dc02 Spectromorphic Polearm
+
+# ce_weapon_gravityTempest_01.prop
+0xcb5f888f Gravitic Javelin
+
+# ce_weapon_gravityTempest_02.prop
+0xcb5f888c Quantum Lance
+
+# ce_weapon_gravityTempest_03.prop
+0xcb5f888d Gravrod
+
+# ce_weapon_gravityTempest_04.prop
+0xcb5f888a Wave Javelin
+
+# ce_weapon_gravityTempest_05.prop
+0xcb5f888b Force Lance
+
+# ce_weapon_lightningRavager_01.prop
+0xa14538e7 Voltage Claw
+
+# ce_weapon_lightningRavager_02.prop
+0xa14538e4 Electro Claw
+
+# ce_weapon_lightningRavager_03.prop
+0xa14538e5 Scythe Claw
+
+# ce_weapon_lightningRavager_04.prop
+0xa14538e2 Galvanic Claw
+
+# ce_weapon_lightningRavager_04A.prop
+0xc1f88ba7 Galvanic Claw [Alpha]
+
+# ce_weapon_lightningRavager_04B.prop
+0xc1f88ba4 Galvanic Claw [Beta]
+
+# ce_weapon_lightningRavager_04D.prop
+0xc1f88ba2 Galvanic Claw [Delta]
+
+# ce_weapon_lightningRavager_04G.prop
+0xc1f88ba1 Galvanic Claw [Gamma]
+
+# ce_weapon_lightningRavager_05.prop
+0xa14538e3 Lightning Talon
+
+# ce_weapon_lightningTempest_01.prop
+0xec4e85cf Electro Trident
+
+# ce_weapon_lightningTempest_02.prop
+0xec4e85cc Shock Scepter
+
+# ce_weapon_lightningTempest_03.prop
+0xec4e85cd Lightning Rod
+
+# ce_weapon_lightningTempest_04.prop
+0xec4e85ca Galvanic Rod
+
+# ce_weapon_lightningTempest_05.prop
+0xec4e85cb Voltaic Trident
+
+# ce_weapon_lightspeedTempest_01.prop
+0x41b27836 Chrono Sniper
+
+# ce_weapon_lightspeedTempest_02.prop
+0x41b27835 Chrono Pistol
+
+# ce_weapon_lightspeedTempest_03.prop
+0x41b27834 Time Blaster
+
+# ce_weapon_lightspeedTempest_04.prop
+0x41b27833 Lightspeed Blaster
+
+# ce_weapon_lightspeedTempest_07.prop
+0x41b27830 Accelerifle
+
+# ce_weapon_medicTempest_01.prop
+0xdd2844fb Nanoray
+
+# ce_weapon_medicTempest_02.prop
+0xdd2844f8 Proton Beam
+
+# ce_weapon_medicTempest_03.prop
+0xdd2844f9 Nanoblaster
+
+# ce_weapon_medicTempest_04.prop
+0xdd2844fe Nanobot Launcher
+
+# ce_weapon_medicTempest_04A.prop
+0x24649bbb Nanobot Launcher [Alpha]
+
+# ce_weapon_medicTempest_04B.prop
+0x24649bb8 Nanobot Launcher [Beta]
+
+# ce_weapon_medicTempest_04D.prop
+0x24649bbe Nanobot Launcher [Delta]
+
+# ce_weapon_medicTempest_04G.prop
+0x24649bbd Nanobot Launcher [Gamma]
+
+# ce_weapon_medicTempest_05.prop
+0xdd2844ff Nanopistol
+
+# ce_weapon_missileTempest_01.prop
+0xfca9f689 Pulse Emitter
+
+# ce_weapon_missileTempest_02.prop
+0xfca9f68a Missile Gun
+
+# ce_weapon_missileTempest_03.prop
+0xfca9f68b Explosive Launcher
+
+# ce_weapon_missileTempest_04.prop
+0xfca9f68c Barrage Rack
+
+# ce_weapon_missileTempest_05.prop
+0xfca9f68d LRM Array
+
+# ce_weapon_naturebindRavager_01.prop
+0x9827d923 weapon naturebindRavager 01 (PLACEHOLDER)
+
+# ce_weapon_plasmaSentinel_00.prop
+0xd9f002fc Thermal Concentrator
+
+# ce_weapon_plasmaSentinel_01.prop
+0xd9f002fd Cestus Mutilator
+
+# ce_weapon_plasmaSentinel_02.prop
+0xd9f002fe Forge Bludgeon
+
+# ce_weapon_plasmaSentinel_03.prop
+0xd9f002ff Sun Gauntlet
+
+# ce_weapon_plasmaSentinel_04.prop
+0xd9f002f8 Plasma Crusher
+
+# ce_weapon_plasmaSentinel_04A.prop
+0x0cd4ac09 Plasma Crusher [Alpha]
+
+# ce_weapon_plasmaSentinel_04B.prop
+0x0cd4ac0a Plasma Crusher [Beta]
+
+# ce_weapon_plasmaSentinel_04D.prop
+0x0cd4ac0c Plasma Crusher [Delta]
+
+# ce_weapon_plasmaSentinel_04G.prop
+0x0cd4ac0f Plasma Crusher [Gamma]
+
+# ce_weapon_plasmaSentinel_05.prop
+0xd9f002f9 Pylectric Glove
+
+# ce_weapon_poisonRavager_01.prop
+0xd63e818b Toxic Flayer
+
+# ce_weapon_poisonRavager_02.prop
+0xd63e8188 Toxic Claw
+
+# ce_weapon_poisonRavager_03.prop
+0xd63e8189 Poison Claw
+
+# ce_weapon_poisonRavager_04.prop
+0xd63e818e Virulent Blade
+
+# ce_weapon_poisonRavager_04A.prop
+0xd265f2eb Virulent Blade [Alpha]
+
+# ce_weapon_poisonRavager_04B.prop
+0xd265f2e8 Virulent Blade [Beta]
+
+# ce_weapon_poisonRavager_04D.prop
+0xd265f2ee Virulent Blade [Delta]
+
+# ce_weapon_poisonRavager_04G.prop
+0xd265f2ed Virulent Blade [Gamma]
+
+# ce_weapon_poisonRavager_05.prop
+0xd63e818f Noxious Slasher
+
+# ce_weapon_psychicTempest_01.prop
+0x3b0705e4 Spectracidal Oculus
+
+# ce_weapon_psychicTempest_02.prop
+0x3b0705e7 Spectre Jewel
+
+# ce_weapon_psychicTempest_03.prop
+0x3b0705e6 Psi Gem
+
+# ce_weapon_psychicTempest_04.prop
+0x3b0705e1 Spectre Gem
+
+# ce_weapon_psychicTempest_05.prop
+0x3b0705e0 Psionic Mirror
+
+# ce_weapon_quantumRavager_01.prop
+0xc228388a Gravitic Scythe
+
+# ce_weapon_quantumRavager_02.prop
+0xc2283889 Euclidean Curve
+
+# ce_weapon_quantumRavager_03.prop
+0xc2283888 Exo-Sickle
+
+# ce_weapon_quantumRavager_04.prop
+0xc228388f Randomness Reaper
+
+# ce_weapon_quantumRavager_04A.prop
+0x3451097c Randomness Reaper [Alpha]
+
+# ce_weapon_quantumRavager_04B.prop
+0x3451097f Randomness Reaper [Beta]
+
+# ce_weapon_quantumRavager_04D.prop
+0x34510979 Randomness Reaper [Delta]
+
+# ce_weapon_quantumRavager_04G.prop
+0x3451097a Randomness Reaper [Gamma]
+
+# ce_weapon_quantumRavager_05.prop
+0xc228388e Quantum Thresher
+
+# ce_weapon_ravager_01.prop
+0x0bf69227 Gladius
+
+# ce_weapon_ravager_02.prop
+0x0bf69224 Scimitar
+
+# ce_weapon_ravager_03.prop
+0x0bf69225 Stiletto
+
+# ce_weapon_ravager_04.prop
+0x0bf69222 Misericord
+
+# ce_weapon_ravager_05.prop
+0x0bf69223 Railgun
+
+# ce_weapon_ravager_06.prop
+0x0bf69220 Autogun
+
+# ce_weapon_ravager_07.prop
+0x0bf69221 Shotgun
+
+# ce_weapon_ravager_08.prop
+0x0bf6922e Handgun
+
+# ce_weapon_ravager_09.prop
+0x0bf6922f Mist Handgun
+
+# ce_weapon_ravager_10.prop
+0x0cf69399 Rain Shotgun
+
+# ce_weapon_ravager_11.prop
+0x0cf69398 Storm Autogun
+
+# ce_weapon_ravager_12.prop
+0x0cf6939b Tidal Railgun
+
+# ce_weapon_ravager_blk_01.prop
+0x9ef9a973 Xyphos
+
+# ce_weapon_ravager_blk_02.prop
+0x9ef9a970 Baselard
+
+# ce_weapon_ravager_blk_03.prop
+0x9ef9a971 Cinquedea
+
+# ce_weapon_ravager_blk_04.prop
+0x9ef9a976 Katzbelger
+
+# ce_weapon_ravager_gra_01.prop
+0xe34a83c4 Ropera
+
+# ce_weapon_ravager_gra_02.prop
+0xe34a83c7 Estoque
+
+# ce_weapon_ravager_gra_03.prop
+0xe34a83c6 Vizcaina
+
+# ce_weapon_ravager_gra_04.prop
+0xe34a83c1 Toledana
+
+# ce_weapon_ravager_wht_01.prop
+0x44f82a5d Kodachi
+
+# ce_weapon_ravager_wht_02.prop
+0x44f82a5e Wakizashi
+
+# ce_weapon_ravager_wht_03.prop
+0x44f82a5f Zhanmadao
+
+# ce_weapon_ravager_wht_04.prop
+0x44f82a58 Jian
+
+# ce_weapon_sentinel_01.prop
+0x1550da83 Alpha Couter
+
+# ce_weapon_sentinel_02.prop
+0x1550da80 Beta Couter
+
+# ce_weapon_sentinel_03.prop
+0x1550da81 Gamma Couter
+
+# ce_weapon_sentinel_04.prop
+0x1550da86 Delta Couter
+
+# ce_weapon_sentinel_blk_01.prop
+0x15daca0f Onyx Couter
+
+# ce_weapon_sentinel_blk_02.prop
+0x15daca0c Obsidian Couter
+
+# ce_weapon_sentinel_blk_03.prop
+0x15daca0d Shadow Couter
+
+# ce_weapon_sentinel_blk_04.prop
+0x15daca0a Void Couter
+
+# ce_weapon_sentinel_blu_01.prop
+0x26b07ce1 Deathwarp Couter
+
+# ce_weapon_sentinel_blu_02.prop
+0x26b07ce2 Spacesoul Couter
+
+# ce_weapon_sentinel_blu_03.prop
+0x26b07ce3 Spiritime Couter
+
+# ce_weapon_sentinel_blu_04.prop
+0x26b07ce4 Necrosingularity Couter
+
+# ce_weapon_sentinel_gra_01.prop
+0x0289ef60 Tarnished Couter
+
+# ce_weapon_sentinel_gra_02.prop
+0x0289ef63 Defiled Couter
+
+# ce_weapon_sentinel_gra_03.prop
+0x0289ef62 Tainted Couter
+
+# ce_weapon_sentinel_gra_04.prop
+0x0289ef65 Disgraced Couter
+
+# ce_weapon_sentinel_wht_01.prop
+0x49eb9b31 Pale Couter
+
+# ce_weapon_sentinel_wht_02.prop
+0x49eb9b32 Opal Couter
+
+# ce_weapon_sentinel_wht_03.prop
+0x49eb9b33 Ivory Couter
+
+# ce_weapon_sentinel_wht_04.prop
+0x49eb9b34 Argent Couter
+
+# ce_weapon_shadowRavager_00.prop
+0x5041fb9a Spear Blade
+
+# ce_weapon_shadowRavager_01.prop
+0x5041fb9b Nefarious Slasher
+
+# ce_weapon_shadowRavager_02.prop
+0x5041fb98 Heartless Impaler
+
+# ce_weapon_shadowRavager_03.prop
+0x5041fb99 Wicked Blade
+
+# ce_weapon_shadowRavager_04.prop
+0x5041fb9e Merciless Dagger
+
+# ce_weapon_shadowRavager_05.prop
+0x5041fb9f Callous Gouger
+
+# ce_weapon_shieldedSentinel_01.prop
+0x4ed5e7a7 Tri-Cannon
+
+# ce_weapon_shieldedSentinel_02.prop
+0x4ed5e7a4 Forceful Emitter
+
+# ce_weapon_shieldedSentinel_03.prop
+0x4ed5e7a5 Cross Repeater
+
+# ce_weapon_shieldedSentinel_04.prop
+0x4ed5e7a2 Muzzle Splay
+
+# ce_weapon_shieldedSentinel_05.prop
+0x4ed5e7a3 SRMG Attachment
+
+# ce_weapon_shroomTempest_01.prop
+0xa26e56ff Brain-Spore Container
+
+# ce_weapon_shroomTempest_02.prop
+0xa26e56fc Neuro-Spore Container
+
+# ce_weapon_shroomTempest_03.prop
+0xa26e56fd Nerve-Spore Container
+
+# ce_weapon_shroomTempest_04.prop
+0xa26e56fa Pathogenic Colonizer
+
+# ce_weapon_shroomTempest_05.prop
+0xa26e56fb Pandemic Incubator
+
+# ce_weapon_soulRavager_00.prop
+0x20fc233f Immaterial Longbow
+
+# ce_weapon_soulRavager_01.prop
+0x20fc233e Soul Destroyer
+
+# ce_weapon_soulRavager_02.prop
+0x20fc233d Phantom Cannon
+
+# ce_weapon_soulRavager_03.prop
+0x20fc233c Spirit Blaster
+
+# ce_weapon_soulRavager_04.prop
+0x20fc233b Umbral Blaster
+
+# ce_weapon_soulRavager_05.prop
+0x20fc233a Dimensional Cannon
+
+# ce_weapon_Spear.prop
+0x53d7616a Single Spear
+
+# ce_weapon_Staff.prop
+0x2f1beb0b Shaman Staff
+
+# ce_weapon_supportTempest_01.prop
+0x801b5170 Regenerating Blaster
+
+# ce_weapon_supportTempest_02.prop
+0x801b5173 Essence Cannon
+
+# ce_weapon_supportTempest_03.prop
+0x801b5172 Rejuvenation Gun
+
+# ce_weapon_supportTempest_04.prop
+0x801b5175 Revitilazing Blaster
+
+# ce_weapon_supportTempest_04A.prop
+0x20013b4e Revitilazing Blaster [Alpha]
+
+# ce_weapon_supportTempest_04B.prop
+0x20013b4d Revitilazing Blaster [Beta]
+
+# ce_weapon_supportTempest_04D.prop
+0x20013b4b Revitilazing Blaster [Delta]
+
+# ce_weapon_supportTempest_04G.prop
+0x20013b48 Revitilazing Blaster [Gamma]
+
+# ce_weapon_supportTempest_05.prop
+0x801b5174 Renewal Cannon
+
+# ce_weapon_Sword.prop
+0x9cab7552 Machete
+
+# ce_weapon_tempest_01.prop
+0x2f74bd0f Crepitation Pistol
+
+# ce_weapon_tempest_02.prop
+0x2f74bd0c Particl Diffusor
+
+# ce_weapon_tempest_03.prop
+0x2f74bd0d Ionic Rifle
+
+# ce_weapon_tempest_04.prop
+0x2f74bd0a Avalauncher
+
+# ce_weapon_tempest_blk_01.prop
+0xdca7298b Gammaray Toaster
+
+# ce_weapon_tempest_blk_02.prop
+0xdca72988 Spectrum Revolver
+
+# ce_weapon_tempest_blk_03.prop
+0xdca72989 Darkmatter Rifle
+
+# ce_weapon_tempest_blk_04.prop
+0xdca7298e E-Bullet Pitcher
+
+# ce_weapon_tempest_blu_01.prop
+0xff35eb05 Deathwarp Cannon
+
+# ce_weapon_tempest_blu_02.prop
+0xff35eb06 Spacesoul Cannon
+
+# ce_weapon_tempest_blu_03.prop
+0xff35eb07 Spiritime Cannon
+
+# ce_weapon_tempest_blu_04.prop
+0xff35eb00 Necrosingularity Cannon
+
+# ce_weapon_tempest_gra_01.prop
+0x6c61307c Flame Spitter
+
+# ce_weapon_tempest_gra_02.prop
+0x6c61307f Shrapnel Spreader
+
+# ce_weapon_tempest_gra_03.prop
+0x6c61307e Assault Heavyshot
+
+# ce_weapon_tempest_gra_04.prop
+0x6c613079 Plasma Longshot
+
+# ce_weapon_tempest_planty_04.prop
+0x5cf6a9c1 Floral Cannon
+
+# ce_weapon_tempest_wht_01.prop
+0x5b2866a5 Bullet Blower
+
+# ce_weapon_tempest_wht_02.prop
+0x5b2866a6 Burning Shortgun
+
+# ce_weapon_tempest_wht_03.prop
+0x5b2866a7 Titanium Slingshot
+
+# ce_weapon_tempest_wht_04.prop
+0x5b2866a0 Nuke Shooter
+
+# ce_weapon_terrorSekt_01.prop
+0xa2c35316 Bladed Warhammer
+
+# ce_weapon_teslaTempest_03.prop
+0xa8c75a66 Tesla Scepter
+
+# ce_weapon_timeRavager_01.prop
+0xa81a74a4 Draconian Scimitar
+
+# ce_weapon_timeRavager_02.prop
+0xa81a74a7 Ruthless Blade
+
+# ce_weapon_timeRavager_03.prop
+0xa81a74a6 Merciless Scimitar
+
+# ce_weapon_timeRavager_04.prop
+0xa81a74a1 Time Kris
+
+# ce_weapon_timeRavager_05.prop
+0xa81a74a0 Chronoblade
+
+# ce_weapon_timeSentinel_01.prop
+0xb85654e2 Time Mallet
+
+# ce_weapon_Torch.prop
+0x706fab7b Torch Mace
+
+# ce_weapon_trapperRavager_00.prop
+0x710c5dba Serrated Talons
+
+# ce_weapon_trapperRavager_01.prop
+0x710c5dbb Mine Activator
+
+# ce_weapon_trapperRavager_02.prop
+0x710c5db8 Turret Activator
+
+# ce_weapon_trapperRavager_03.prop
+0x710c5db9 Grenade Launcher
+
+# ce_weapon_trapperRavager_04.prop
+0x710c5dbe Explosive Emitter
+
+# ce_weapon_trapperRavager_05.prop
+0x710c5dbf RGDS Mk II
+
+# ce_weapon_treeSentinel_01.prop
+0x22451333 Crustarmor Mace
+
+# ce_weapon_treeSentinel_02.prop
+0x22451330 Shattering Mallet
+
+# ce_weapon_treeSentinel_03.prop
+0x22451331 Timberwood Mace
+
+# ce_weapon_treeSentinel_04.prop
+0x22451336 Bloodwood Mallet
+
+# ce_weapon_treeSentinel_05.prop
+0x22451337 Infused Mace
+
+# ce_weapon_voodooTempest_01.prop
+0x924bf8d5 Phantasmal Staff
+
+# ce_weapon_voodooTempest_02.prop
+0x924bf8d6 Spectral Rod
+
+# ce_weapon_voodooTempest_03.prop
+0x924bf8d7 Hexer Rod
+
+# ce_weapon_voodooTempest_04.prop
+0x924bf8d0 Voodoo Staff
+
+# ce_weapon_voodooTempest_05.prop
+0x924bf8d1 Necrotic Scepter
+
+# ce_wing_gravityTempest_01.prop
+0x09261e3a Batbull Fwing
+
+# ce_wing_psychicTempest_01.prop
+0x0aa799bd Ethereal Necrowing
+
+# ce_wing_trapperRavager_01.prop
+0xadfdc252 Netwing
+
+# ce_wing_voodooTempest_01.prop
+0xe6df243e Necrollicopter
+
+# charge1.prop
+0xbb85808e Charge
+
+# charge10.prop
+0xc1295fba Poison Dash
+
+# charge2.prop
+0xbb85808d Charge
+
+# charge3.prop
+0xbb85808c Charge
+
+# charge4.prop
+0xbb85808b Charge
+
+# charge5.prop
+0xbb85808a Charge
+
+# Charge6.prop
+0xbb858089 Fire Charger
+
+# Charge7.prop
+0xbb858088 Ice Skate
+
+# Charge8.prop
+0xbb858087 Blazin' Tasin'
+
+# Charge9.prop
+0xbb858086 Meld Rush
+
+# charm1.prop
+0x096bbf4f Charm
+
+# charm2.prop
+0x096bbf4c Charm
+
+# charm3.prop
+0x096bbf4d Charm
+
+# charm4.prop
+0x096bbf4a Charm
+
+# charm5.prop
+0x096bbf4b Charm
+
+# chomps.prop
+0x9dcbce8f Chomps
+
+# clawgrip.prop
+0x2a9afd48 Space-Claws
+
+# clawgripfire.prop
+0x466e9644 Tri-Clawfire
+
+# cl_mouth_filter_01.prop
+0xa1c47665 (PLACEHOLDER)
+
+# cl_mouth_filter_02.prop
+0xa1c47666 (PLACEHOLDER)
+
+# cl_mouth_filter_03.prop
+0xa1c47667 (PLACEHOLDER)
+
+# cl_mouth_filter_04.prop
+0xa1c47660 (PLACEHOLDER)
+
+# cl_mouth_jaw_01.prop
+0x2494a723 (PLACEHOLDER)
+
+# cl_mouth_jaw_02.prop
+0x2494a720 (PLACEHOLDER)
+
+# cl_mouth_jaw_03.prop
+0x2494a721 (PLACEHOLDER)
+
+# cl_mouth_jaw_04.prop
+0x2494a726 (PLACEHOLDER)
+
+# cl_mouth_poker_01.prop
+0x64028fe0 (PLACEHOLDER)
+
+# cl_mouth_poker_02.prop
+0x64028fe3 (PLACEHOLDER)
+
+# cl_mouth_poker_03.prop
+0x64028fe2 (PLACEHOLDER)
+
+# cl_mouth_poker_04.prop
+0x64028fe5 (PLACEHOLDER)
+
+# cl_movement_cilia_01.prop
+0x2ea86bff (PLACEHOLDER)
+
+# cl_movement_cilia_02.prop
+0x2ea86bfc (PLACEHOLDER)
+
+# cl_movement_cilia_03.prop
+0x2ea86bfd (PLACEHOLDER)
+
+# cl_movement_cilia_04.prop
+0x2ea86bfa (PLACEHOLDER)
+
+# cl_movement_flagella_01.prop
+0x35916fdb (PLACEHOLDER)
+
+# cl_movement_flagella_02.prop
+0x35916fd8 (PLACEHOLDER)
+
+# cl_movement_flagella_03.prop
+0x35916fd9 (PLACEHOLDER)
+
+# cl_movement_flagella_04.prop
+0x35916fde (PLACEHOLDER)
+
+# cl_movement_jet_01.prop
+0x7dd30832 (PLACEHOLDER)
+
+# cl_movement_jet_02.prop
+0x7dd30831 (PLACEHOLDER)
+
+# cl_movement_jet_03.prop
+0x7dd30830 (PLACEHOLDER)
+
+# cl_movement_jet_04.prop
+0x7dd30837 (PLACEHOLDER)
+
+# cl_sense_eye_01.prop
+0x0a4ab03d Stalk Eye (PLACEHOLDER)
+
+# cl_sense_eye_02.prop
+0x0a4ab03e Beady Eye (PLACEHOLDER)
+
+# cl_sense_eye_03.prop
+0x0a4ab03f Long Eye (PLACEHOLDER)
+
+# cl_sense_eye_04.prop
+0x0a4ab038 Button Eye (PLACEHOLDER)
+
+# cl_weapon_spike_01.prop
+0x5ac0a162 (PLACEHOLDER)
+
+# cl_weapon_spike_02.prop
+0x5ac0a161 (PLACEHOLDER)
+
+# cl_weapon_spike_03.prop
+0x5ac0a160 (PLACEHOLDER)
+
+# cl_weapon_spike_04.prop
+0x5ac0a167 (PLACEHOLDER)
+
+# coconut.prop
+0xb95f188a Coconut
+
+# creature.prop
+0x9ea3031a Creature
+
+# creature2.prop
+0xd49de1dc Creature
+
+# crimson.prop
+0x0e3269e0 Crimson Bump
+
+# crockiss.prop
+0x9eb760c6 Lock Jaw
+
+# crysjet.prop
+0xa538da87 Crysjet
+
+# cute.prop
+0xe7850900 Cute
+
+# d'orca.prop
+0x3dc2eaa5 Grob Face
+
+# dance1.prop
+0xe8c82efb Dance
+
+# dance2.prop
+0xe8c82ef8 Dance
+
+# dance3.prop
+0xe8c82ef9 Dance
+
+# dance4.prop
+0xe8c82efe Dance
+
+# dance5.prop
+0xe8c82eff Dance
+
+# dark_green.prop
+0xf041f339 Dark Green Bump
+
+# davo1.prop
+0x6ecf10a6 Grassy Growth (PLACEHOLDER)
+
+# davo2.prop
+0x6ecf10a5 Chastity Leaf (PLACEHOLDER)
+
+# davo3.prop
+0x6ecf10a4 Bark Horn (PLACEHOLDER)
+
+# davo4.prop
+0x6ecf10a3 Blossom (PLACEHOLDER)
+
+# DEeye1.prop
+0x1a334c98 DarkEdge Eye 1
+
+# DEeye2.prop
+0x1a334c9b DarkEdge Spyro Horn Left
+
+# DEeye3.prop
+0x1a334c9a DarkEdge Spyro Horn Right
+
+# DEeye4.prop
+0x1a334c9d Spyro Horns
+
+# DEeye5.prop
+0x1a334c9c Soft Beak (PLACEHOLDER)
+
+# DEeye6.prop
+0x1a334c9f Soft Beak (PLACEHOLDER)
+
+# DEeye7.prop
+0x1a334c9e Soft Beak (PLACEHOLDER)
+
+# DEeye8.prop
+0x1a334c91 Made you look...
+
+# DESkull1.prop
+0xd0324754 DarkEdge Skull
+
+# effect1.prop
+0x73cb328b Yellow Mist
+
+# effect10.prop
+0xd3e090e1 Nothing
+
+# effect11.prop
+0xd3e090e0 Nothing
+
+# effect12.prop
+0xd3e090e3 Smoke Stack
+
+# effect13.prop
+0xd3e090e2 Smoke Spray
+
+# effect14.prop
+0xd3e090e5  Smoke Mist
+
+# effect15.prop
+0xd3e090e4 Nothing
+
+# effect16.prop
+0xd3e090e7 Spawn Birds
+
+# effect17.prop
+0xd3e090e6 Spectral Glow
+
+# effect18.prop
+0xd3e090e9 Large Yellow Mist
+
+# effect19.prop
+0xd3e090e8 Many Flames
+
+# effect2.prop
+0x73cb3288 Smoke 1
+
+# effect20.prop
+0xd0e08c28 Hollow Yellow Orb
+
+# effect21.prop
+0xd0e08c29 Baby Yellow Orb
+
+# effect22.prop
+0xd0e08c2a Circle Pattern Tracer 
+
+# effect23.prop
+0xd0e08c2b Blinking Yellow Spotlight Large
+
+# effect24.prop
+0xd0e08c2c Blinking Red Lights
+
+# effect25.prop
+0xd0e08c2d Neon
+
+# effect26.prop
+0xd0e08c2e Neon
+
+# effect27.prop
+0xd0e08c2f Neon
+
+# effect28.prop
+0xd0e08c20 Rotating Banner Neon 
+
+# effect29.prop
+0xd0e08c21 Nothing
+
+# effect3.prop
+0x73cb3289 Bubbles
+
+# effect30.prop
+0xd1e08d9b Yellow Star Pattern
+
+# effect31.prop
+0xd1e08d9a Far Apart Pink Stars
+
+# effect32.prop
+0xd1e08d99 Nothing
+
+# effect33.prop
+0xd1e08d98 Steam
+
+# effect34.prop
+0xd1e08d9f Mo' Steam
+
+# effect35.prop
+0xd1e08d9e Nothing
+
+# effect36.prop
+0xd1e08d9d Nothing
+
+# effect37.prop
+0xd1e08d9c Nothing
+
+# effect38.prop
+0xd1e08d93 Nothing
+
+# effect39.prop
+0xd1e08d92 Nothing
+
+# effect4.prop
+0x73cb328e Green Mist 
+
+# effect40.prop
+0xd6e095ba Nothing
+
+# effect41.prop
+0xd6e095bb Nothing
+
+# effect42.prop
+0xd6e095b8 Nothing
+
+# effect43.prop
+0xd6e095b9 Nothing
+
+# effect44.prop
+0xd6e095be Nothing
+
+# effect45.prop
+0xd6e095bf Black Smoke
+
+# effect5.prop
+0x73cb328f Confetti
+
+# effect6.prop
+0x73cb328c Rainbow Mist
+
+# effect7.prop
+0x73cb328d Blue-Green Star
+
+# effect8.prop
+0x73cb3282 Far Away Sun
+
+# effect9.prop
+0x73cb3283 Nothing
+
+# effectsGA1.prop
+0xd5b4696e WaterBlast
+
+# effectsGA10.prop
+0xd901f81a pixies
+
+# effectsGA100.prop
+0xb81990de Mini Black Hole
+
+# effectsGA101.prop
+0xb81990df confetti
+
+# effectsGA102.prop
+0xb81990dc fireworks_catherine_wheel
+
+# effectsGA103.prop
+0xb81990dd Polluted Pond 
+
+# effectsGA104.prop
+0xb81990da dustdevils
+
+# effectsGA105.prop
+0xb81990db Waterfall
+
+# effectsGA106.prop
+0xb81990d8 MachineGunImpact
+
+# effectsGA107.prop
+0xb81990d9 CoreMeltdown
+
+# effectsGA108.prop
+0xb81990d6 Glitter sphere
+
+# effectsGA109.prop
+0xb81990d7 Dappled sunlight
+
+# effectsGA11.prop
+0xd901f81b WaterSpout2
+
+# effectsGA110.prop
+0xb91992b1 Green smoke
+
+# effectsGA111.prop
+0xb91992b0 evilfog
+
+# effectsGA112.prop
+0xb91992b3 Holiday Lights, purple
+
+# effectsGA113.prop
+0xb91992b2 Bees
+
+# effectsGA114.prop
+0xb91992b5 Oracle
+
+# effectsGA115.prop
+0xb91992b4 lightning_cloud
+
+# effectsGA116.prop
+0xb91992b7 VanDerGraafGenerator
+
+# effectsGA117.prop
+0xb91992b6 poison_cloud
+
+# effectsGA118.prop
+0xb91992b9 Holiday Lights, green
+
+# effectsGA119.prop
+0xb91992b8 Black smoke
+
+# effectsGA12.prop
+0xd901f818 City Lights
+
+# effectsGA120.prop
+0xb6198df8 spotlight_pink
+
+# effectsGA121.prop
+0xb6198df9 Appearance poof, black
+
+# effectsGA122.prop
+0xb6198dfa White smoke
+
+# effectsGA123.prop
+0xb6198dfb Appearance poof, white
+
+# effectsGA124.prop
+0xb6198dfc Arrow
+
+# effectsGA125.prop
+0xb6198dfd fire1
+
+# effectsGA126.prop
+0xb6198dfe fire2
+
+# effectsGA127.prop
+0xb6198dff NuclearFallout
+
+# effectsGA128.prop
+0xb6198df0 11111111
+
+# effectsGA129.prop
+0xb6198df1 11111111
+
+# effectsGA13.prop
+0xd901f819 Red light
+
+# effectsGA130.prop
+0xb7198f6b 11111111
+
+# effectsGA131.prop
+0xb7198f6a 11111111
+
+# effectsGA132.prop
+0xb7198f69 11111111
+
+# effectsGA133.prop
+0xb7198f68 11111111
+
+# effectsGA134.prop
+0xb7198f6f 11111111
+
+# effectsGA135.prop
+0xb7198f6e 11111111
+
+# effectsGA136.prop
+0xb7198f6d 11111111
+
+# effectsGA137.prop
+0xb7198f6c 11111111
+
+# effectsGA138.prop
+0xb7198f63 11111111
+
+# effectsGA139.prop
+0xb7198f62 11111111
+
+# effectsGA14.prop
+0xd901f81e Black Drapery
+
+# effectsGA140.prop
+0xbc19970a 11111111
+
+# effectsGA141.prop
+0xbc19970b 11111111
+
+# effectsGA142.prop
+0xbc199708 11111111
+
+# effectsGA143.prop
+0xbc199709 11111111
+
+# effectsGA144.prop
+0xbc19970e 11111111
+
+# effectsGA145.prop
+0xbc19970f 11111111
+
+# effectsGA146.prop
+0xbc19970c 11111111
+
+# effectsGA147.prop
+0xbc19970d 11111111
+
+# effectsGA148.prop
+0xbc199702 11111111
+
+# effectsGA149.prop
+0xbc199703 11111111
+
+# effectsGA15.prop
+0xd901f81f Runway Lights
+
+# effectsGA150.prop
+0xbd1998fd 11111111
+
+# effectsGA16.prop
+0xd901f81c snowflurry
+
+# effectsGA17.prop
+0xd901f81d Column 'o Love
+
+# effectsGA18.prop
+0xd901f812 Holiday Lights, white
+
+# effectsGA19.prop
+0xd901f813 ShrapnelBomb
+
+# effectsGA2.prop
+0xd5b4696d fireworks_fan
+
+# effectsGA20.prop
+0xd801f6a7 DNA
+
+# effectsGA21.prop
+0xd801f6a6 Planet
+
+# effectsGA22.prop
+0xd801f6a5 Water Spout 1
+
+# effectsGA23.prop
+0xd801f6a4 DyingEmbers
+
+# effectsGA24.prop
+0xd801f6a3 PolutionLink
+
+# effectsGA25.prop
+0xd801f6a2 sunbeams
+
+# effectsGA26.prop
+0xd801f6a1 Fireflies
+
+# effectsGA27.prop
+0xd801f6a0 Chainlink fence
+
+# effectsGA28.prop
+0xd801f6af Red Drapery
+
+# effectsGA29.prop
+0xd801f6ae bubbles
+
+# effectsGA3.prop
+0xd5b4696c Stained Glass 4
+
+# effectsGA30.prop
+0xd701f534 MachineGunFire
+
+# effectsGA31.prop
+0xd701f535 Barbed Wire fence
+
+# effectsGA32.prop
+0xd701f536 RainCloud
+
+# effectsGA33.prop
+0xd701f537 rainbow
+
+# effectsGA34.prop
+0xd701f530 magic_cloud
+
+# effectsGA35.prop
+0xd701f531 Disco Floor
+
+# effectsGA36.prop
+0xd701f532 Mini Galaxy
+
+# effectsGA37.prop
+0xd701f533 AshStorm
+
+# effectsGA38.prop
+0xd701f53c fog
+
+# effectsGA39.prop
+0xd701f53d magicfog
+
+# effectsGA4.prop
+0xd5b4696b Pixie Fireworks
+
+# effectsGA40.prop
+0xd601f341 Goofy Light
+
+# effectsGA41.prop
+0xd601f340 Silver Screen Marquee
+
+# effectsGA42.prop
+0xd601f343 toronado
+
+# effectsGA43.prop
+0xd601f342 spotlight_blue
+
+# effectsGA44.prop
+0xd601f345 Magic Column
+
+# effectsGA45.prop
+0xd601f344 balloons
+
+# effectsGA46.prop
+0xd601f347 Holiday Lights, blue
+
+# effectsGA47.prop
+0xd601f346 Butterflies
+
+# effectsGA48.prop
+0xd601f349 spotlight_yellow
+
+# effectsGA49.prop
+0xd601f348 rainfall
+
+# effectsGA5.prop
+0xd5b4696a Stained Glass 1
+
+# effectsGA50.prop
+0xd501f1ee Rainfall splash
+
+# effectsGA51.prop
+0xd501f1ef Pond
+
+# effectsGA52.prop
+0xd501f1ec Red smoke
+
+# effectsGA53.prop
+0xd501f1ed Garlands
+
+# effectsGA54.prop
+0xd501f1ea Aurora Sporealis
+
+# effectsGA55.prop
+0xd501f1eb Crowd
+
+# effectsGA56.prop
+0xd501f1e8 Laser battle
+
+# effectsGA57.prop
+0xd501f1e9 BrokenMachinery
+
+# effectsGA58.prop
+0xd501f1e6 searchlight
+
+# effectsGA59.prop
+0xd501f1e7 spotlight_white
+
+# effectsGA6.prop
+0xd5b46969 Stained Glass 3
+
+# effectsGA60.prop
+0xd401f07b Love Bomb
+
+# effectsGA61.prop
+0xd401f07a White Drapery
+
+# effectsGA62.prop
+0xd401f079 Happy fireworks 
+
+# effectsGA63.prop
+0xd401f078 fireworks
+
+# effectsGA64.prop
+0xd401f07f MushroomCloud
+
+# effectsGA65.prop
+0xd401f07e Bubble Bomb
+
+# effectsGA66.prop
+0xd401f07d Holiday Lights, red
+
+# effectsGA67.prop
+0xd401f07c ContinuousLightning
+
+# effectsGA68.prop
+0xd401f073 White light
+
+# effectsGA69.prop
+0xd401f072 Kites
+
+# effectsGA7.prop
+0xd5b46968 Stained Glass 2
+
+# effectsGA70.prop
+0xd301ee88 Yellow smoke
+
+# effectsGA71.prop
+0xd301ee89 Vines
+
+# effectsGA72.prop
+0xd301ee8a MagicLink
+
+# effectsGA73.prop
+0xd301ee8b Pink smoke
+
+# effectsGA74.prop
+0xd301ee8c Disco ball
+
+# effectsGA75.prop
+0xd301ee8d Barbed Wire
+
+# effectsGA76.prop
+0xd301ee8e Will'o'wisps
+
+# effectsGA77.prop
+0xd301ee8f Blue smoke
+
+# effectsGA78.prop
+0xd301ee80 spotlight_purple
+
+# effectsGA79.prop
+0xd301ee81 Atom
+
+# effectsGA8.prop
+0xd5b46967 Spotlight_green
+
+# effectsGA80.prop
+0xd201ed15 Rainbow Row
+
+# effectsGA81.prop
+0xd201ed14 Streamers
+
+# effectsGA82.prop
+0xd201ed17 Glitter Cannon
+
+# effectsGA83.prop
+0xd201ed16 Floral fireworks
+
+# effectsGA84.prop
+0xd201ed11 FireLink
+
+# effectsGA85.prop
+0xd201ed10 Yellow Light
+
+# effectsGA86.prop
+0xd201ed13 Heavenly Portal
+
+# effectsGA87.prop
+0xd201ed12 Blue light
+
+# effectsGA88.prop
+0xd201ed1d Flies
+
+# effectsGA89.prop
+0xd201ed1c Jumping fish
+
+# effectsGA9.prop
+0xd5b46966 Holy Halo
+
+# effectsGA90.prop
+0xd101eba2 Holiday Lights, yellow
+
+# effectsGA91.prop
+0xd101eba3 Purple smoke
+
+# effectsGA92.prop
+0xd101eba0 Snowfall
+
+# effectsGA93.prop
+0xd101eba1 ElectricalLink
+
+# effectsGA94.prop
+0xd101eba6 Spiderwebs
+
+# effectsGA95.prop
+0xd101eba7 Lone Spotlight
+
+# effectsGA96.prop
+0xd101eba4 Evil Portal
+
+# effectsGA97.prop
+0xd101eba5 Continuous fireworks
+
+# effectsGA98.prop
+0xd101ebaa Lightning_strike
+
+# effectsGA99.prop
+0xd101ebab Running lights
+
+# EL_SIG_FireShaman_01.prop
+0xb16c04f1 Detail_Ball
+
+# ep1_hh_blaster.prop
+0x10a38834 ep1_hh_blaster.prop (NOT LOCALIZED)
+
+# EP1_hh_staff1.prop
+0xc3ce19fa ep1_hh_staff1.prop (NOT LOCALIZED)
+
+# EP1_hh_staff3.prop
+0xc3ce19f8 ep1_hh_staff3.prop (NOT LOCALIZED)
+
+# EP1_hh_sword.prop
+0x3b63fb94 ep1_hh_sword.prop (NOT LOCALIZED)
+
+# ep1_hh_swordinflatable.prop
+0x7a657424 ep1_hh_swordinflatable.prop (NOT LOCALIZED)
+
+# ep1_sg_treasure_scepter.prop
+0xad7a7883 ep1_sg_treasure_scepter.prop (NOT LOCALIZED)
+
+# eye1.prop
+0x199baba1 Eye Sight
+
+# eye2.prop
+0x199baba2 Sense
+
+# eye3.prop
+0x199baba3 Ear
+
+# eye4.prop
+0x199baba4 Day Vision
+
+# eye5.prop
+0x199baba5 Night Vision
+
+# feetnew.prop
+0xa75b2229 Longclaw
+
+# fireeye.prop
+0x135f666c FireEyie
+
+# firejet.prop
+0x1f3f2536 Fire Jet
+
+# fireslice.prop
+0x1abb60d1 Fire-Toothed Slicer
+
+# flame.prop
+0x5ecde6e6 Flame
+
+# Flamethrower.prop
+0xa07256d7 FlameThrower
+
+# Foxtopus.prop
+0x0236551d Foxtopus
+
+# fx1.prop
+0x2f8f4388 Jet 1
+
+# fx10.prop
+0x66874f28 White Twinkle Fast
+
+# fx11.prop
+0x66874f29 Yellow Twinkle Fast
+
+# fx12.prop
+0x66874f2a Blue Twinkle Fast
+
+# fx13.prop
+0x66874f2b Pulse Orb
+
+# fx14.prop
+0x66874f2c Green Rings
+
+# fx15.prop
+0x66874f2d Moving Spotlight
+
+# fx16.prop
+0x66874f2e Orange Heat Glow
+
+# fx17.prop
+0x66874f2f Police Lights
+
+# fx18.prop
+0x66874f20 Flashlight
+
+# fx19.prop
+0x66874f21 Bright Orange Headlights
+
+# fx2.prop
+0x2f8f438b Jet 2
+
+# fx20.prop
+0x698753e1 Dual Pink Orbs
+
+# fx21.prop
+0x698753e0 Ring Lights
+
+# fx22.prop
+0x698753e3 Bright Sun Orb
+
+# fx23.prop
+0x698753e2 Fluid Blue Mist
+
+# fx24.prop
+0x698753e5 Yellow Orb
+
+# fx25.prop
+0x698753e4 Yellow Red Orbs
+
+# fx26.prop
+0x698753e7 Glowing Orange Star
+
+# fx27.prop
+0x698753e6 Large Green Trail
+
+# fx28.prop
+0x698753e9 Small Pink Trail
+
+# fx29.prop
+0x698753e8 Large Yellow Trail
+
+# fx3.prop
+0x2f8f438a Jet 3
+
+# fx30.prop
+0x6887520e Large Blue Trail
+
+# fx31.prop
+0x6887520f Small Red Yellow Orb
+
+# fx32.prop
+0x6887520c Large Purple Orb
+
+# fx33.prop
+0x6887520d Large Green Orb
+
+# fx34.prop
+0x6887520a Large Blue Yellow Orb
+
+# fx35.prop
+0x6887520b Triple Green Orbs
+
+# fx36.prop
+0x68875208 Large Blue Glow
+
+# fx37.prop
+0x68875209 Halo Back Burner
+
+# fx38.prop
+0x68875206 Green Yellow Trail
+
+# fx39.prop
+0x68875207 Mega Red Jet
+
+# fx4.prop
+0x2f8f438d Jet 4
+
+# fx40.prop
+0x6b8756c7 Turbo Jet 1
+
+# fx41.prop
+0x6b8756c6 Turbo Jet 2
+
+# fx42.prop
+0x6b8756c5 Red Flame
+
+# fx43.prop
+0x6b8756c4 Red Blue Flame
+
+# fx44.prop
+0x6b8756c3 Warp Jet
+
+# fx45.prop
+0x6b8756c2 Green Flame
+
+# fx46.prop
+0x6b8756c1 Signal Pulse Wide
+
+# fx47.prop
+0x6b8756c0 Yellow Green Pulse
+
+# fx48.prop
+0x6b8756cf Signal Pulse Fast
+
+# fx49.prop
+0x6b8756ce Signal Pulse
+
+# fx5.prop
+0x2f8f438c Orange Twinkle
+
+# fx6.prop
+0x2f8f438f Blue Twinkle
+
+# fx64.prop
+0x6d875a29 Triple Rocket (PLACEHOLDER)
+
+# fx65.prop
+0x6d875a28 Advanced Gun (PLACEHOLDER)
+
+# fx66.prop
+0x6d875a2b 4-Force Gun (PLACEHOLDER)
+
+# fx68.prop
+0x6d875a25 Basic Gun (PLACEHOLDER)
+
+# fx7.prop
+0x2f8f438e Yellow Twinkle
+
+# fx8.prop
+0x2f8f4381 Pink Twinkle
+
+# fx9.prop
+0x2f8f4380 Orange Twinkle Fast
+
+# glide1.prop
+0x3476bd1d Glide
+
+# glide2.prop
+0x3476bd1e Glide
+
+# glide3.prop
+0x3476bd1f Glide
+
+# glide4.prop
+0x3476bd18 Glide
+
+# glide5.prop
+0x3476bd19 Glide
+
+# Glow_saw.prop
+0x86e63418 Glow Saw
+
+# gravity.prop
+0xa0186c0d Power Factory
+
+# green.prop
+0xf73297b2 Green Bump
+
+# groxbot1.prop
+0x2dad8043 Webbed Claws (PLACEHOLDER)
+
+# groxbot3.prop
+0x2dad8041 (PLACEHOLDER)
+
+# groxbot4.prop
+0x2dad8046 (PLACEHOLDER)
+
+# groxbot5.prop
+0x2dad8047 (PLACEHOLDER)
+
+# groxbot6.prop
+0x2dad8044 (PLACEHOLDER)
+
+# Groxeye.prop
+0xafa5683a Grox Eye
+
+# groxPt1.prop
+0xa8779214 Webbed Claws (PLACEHOLDER)
+
+# groxpt3.prop
+0xa8779216 (PLACEHOLDER)
+
+# groxpt4.prop
+0xa8779211 (PLACEHOLDER)
+
+# groxpt5.prop
+0xa8779210 (PLACEHOLDER)
+
+# groxpt6.prop
+0xa8779213 (PLACEHOLDER)
+
+# halfhead.prop
+0xe74b15a4 HalfHead
+
+# handgrasp.prop
+0x5a1247df Will's Saurian Grasp
+
+# headbutt.prop
+0x21029fb8 Cushion
+
+# health1.prop
+0xab5783a8 Health
+
+# health2.prop
+0xab5783ab Health
+
+# health3.prop
+0xab5783aa Health
+
+# health4.prop
+0xab5783ad Health
+
+# health5.prop
+0xab5783ac Health
+
+# herb.prop
+0xbe8866a4 Herbivorous
+
+# horn.prop
+0xd6a0911a Music Horn
+
+# icemouth.prop
+0x3c30871f SkyFreeze Jaws
+
+# invisible_fist.prop
+0x278645cf Invisible Fist
+
+# invisible_footprint.prop
+0x5549bcc6 Invisible Footprint
+
+# invisible_frame.prop
+0xe8866a60 Invisible Frame
+
+# invisible_limb_support.prop
+0xdf9f3201 Invisible Limb Support
+
+# invisible_step.prop
+0x1b09c243 Invisible Step
+
+# invisible_stride.prop
+0xb6a6e32a Invisible Stride
+
+# invisible_track.prop
+0x252b367e Invisible Track
+
+# invisible_walk.prop
+0xf9e82022 Invisible Walk
+
+# jetarm.prop
+0x881d8680 Jet Arm
+
+# Jigsaw.prop
+0xd7fe25f8 Jigsaw Mask Skull
+
+# jump1.prop
+0x3fe1779a Jump
+
+# jump2.prop
+0x3fe17799 Jump
+
+# jump3.prop
+0x3fe17798 Jump
+
+# jump4.prop
+0x3fe1779f Jump
+
+# jump5.prop
+0x3fe1779e Jump
+
+# Kopio 1.prop
+0xea0332b0 Windmill
+
+# Kopio 10.prop
+0x1308cb20 Windmill 2
+
+# Kopio 11.prop
+0x1308cb21 Totem Pole
+
+# Kopio 12.prop
+0x1308cb22 Badge 3
+
+# Kopio 13.prop
+0x1308cb23 Statue
+
+# Kopio 14.prop
+0x1308cb24 ?
+
+# Kopio 15.prop
+0x1308cb25 ?
+
+# Kopio 16.prop
+0x1308cb26 Meteor
+
+# Kopio 17.prop
+0x1308cb27 Badge 5
+
+# Kopio 18.prop
+0x1308cb28 Meat
+
+# Kopio 19.prop
+0x1308cb29 Badge 6
+
+# Kopio 2.prop
+0xea0332b3 Easter Egg
+
+# Kopio 20.prop
+0x1608cff9 Epicsizer
+
+# Kopio 21.prop
+0x1608cff8 ?
+
+# Kopio 22.prop
+0x1608cffb Big One
+
+# Kopio 23.prop
+0x1608cffa Tribe Area
+
+# Kopio 24.prop
+0x1608cffd Space Ship
+
+# Kopio 25.prop
+0x1608cffc ?
+
+# Kopio 26.prop
+0x1608cfff Totem Pole
+
+# Kopio 27.prop
+0x1608cffe Tribe Food Storage
+
+# Kopio 28.prop
+0x1608cff1 ?
+
+# Kopio 29.prop
+0x1608cff0 Piece Of Easter Egg
+
+# Kopio 3.prop
+0xea0332b2 Easter Egg
+
+# Kopio 30.prop
+0x1508ce06 ?
+
+# Kopio 31.prop
+0x1508ce07 ?
+
+# Kopio 32.prop
+0x1508ce04 ?
+
+# Kopio 4.prop
+0xea0332b5 Bones
+
+# Kopio 5.prop
+0xea0332b4 Giant Rock
+
+# Kopio 6.prop
+0xea0332b7 Badge 1
+
+# Kopio 7.prop
+0xea0332b6 Flower
+
+# Kopio 8.prop
+0xea0332b9 Spice Station
+
+# Kopio 9.prop
+0xea0332b8 Badge 2
+
+# lasereye.prop
+0x169275c9 Dino Sighting
+
+# lava.prop
+0x2034592b Lava Bump
+
+# lava2.prop
+0xdd685e83 Magma Bump
+
+# lightningtail.prop
+0x75d23ffb Lightning Tail
+
+# light_blade.prop
+0xc08b11f4 PortaLaunch
+
+# Limb_Fr_Sh_back.prop
+0x2181839c Invisible Bone Omoplatus
+
+# Limb_Fr_Sh_back1.prop
+0x5ae22ea5 Invisible Bone Claviculae
+
+# Limb_Fr_Sh_clump.prop
+0x58c3db12 Invisible Bone Humerus
+
+# Limb_Fr_Sh_clump1.prop
+0xce51dd67 Invisible Bone Cubito
+
+# Limb_Fr_Sh_spike.prop
+0xe857a7bd Invisible Bone Perone
+
+# Limb_Fr_Sh_thigh.prop
+0x82bd9e87 Invisible Bone Femur
+
+# Limb_Fr_Sh_thigh1.prop
+0x57808eb4 Invisible Bone Tibia
+
+# limb_rigid.prop
+0xb4c88bc1 Invisible Bone Carpo
+
+# limb_rigid_large.prop
+0x5a003541 Invisible Bone Metacarpo
+
+# limb_rigid_small.prop
+0xdfc2f289 Invisible Bone Radio
+
+# magma.prop
+0x6c1536c0 Yellow Bump
+
+# magmaskull.prop
+0x51421f13 Magma Skull
+
+# Mammulth.prop
+0x3d5b60ae Mammulth
+
+# mean.prop
+0x9c6c2776 Mean
+
+# Metal.prop
+0x9375c65e Silver Bump
+
+# metalspike.prop
+0x64875f8c BotThorn
+
+# neon_red.prop
+0x31509df9 Neon Red Bump
+
+# neon_yellow.prop
+0x3e86a274 Neon Yellow Bump
+
+# omni.prop
+0xc2663422 Omnivorous
+
+# pawg.prop
+0x5cfa827e Pawg
+
+# pawgfire.prop
+0x8487582a Pawg
+
+# pawgmystic.prop
+0x45b23e8d Pawg
+
+# pitmouth.prop
+0x412cfea9 Pitmouth
+
+# Poisonblade.prop
+0x752bd435 Poison Blade
+
+# poisonclaw.prop
+0x0a671a98 Spoison
+
+# portalgun.prop
+0xd6760587 Tele-Claws
+
+# portalgun2.prop
+0x22cab3b7 PortaLaunch
+
+# pose1.prop
+0x9e9461df Pose
+
+# pose2.prop
+0x9e9461dc Pose
+
+# pose3.prop
+0x9e9461dd Pose
+
+# pose4.prop
+0x9e9461da Pose
+
+# pose5.prop
+0x9e9461db Pose
+
+# purple.prop
+0xb4f6dfd7 Purple Bump
+
+# raccoon.prop
+0x06f93328 Fuzzy Maw
+
+# rainbow.prop
+0x1bdd35e1 Rainbow Bump
+
+# random.prop
+0xb5adadf0 key name="modelMeshLOD0" groupid="#40602600" instanceid="#5B108703" typeid="rw4"/>
+
+# robofin.prop
+0x4c90984c Mechanifin
+
+# robot_1.prop
+0x16bd628f Clamps
+
+# rune.prop
+0x7a9a431d Rune Bump
+
+# sa_bard_01.prop
+0xeb80753d sa_bard_01 Holo Charm (NOT LOCALIZED)
+
+# sa_bard_02.prop
+0xeb80753e sa_bard_02 Inspiring Song (NOT LOCALIZED)
+
+# sa_bard_03.prop
+0xeb80753f sa_bard_03 Stunning Dance(NOT LOCALIZED)
+
+# sa_bard_04.prop
+0xeb807538 sa_bard_04 Confetti Pose (NOT LOCALIZED)
+
+# sa_chestpieces_01.prop
+0x7a070004 (PLACEHOLDER)
+
+# sa_chestpieces_02.prop
+0x7a070007 (PLACEHOLDER)
+
+# sa_chestpieces_03.prop
+0x7a070006 (PLACEHOLDER)
+
+# sa_chestpieces_04.prop
+0x7a070001 (PLACEHOLDER)
+
+# sa_details_01.prop
+0x1bf562d0 (PLACEHOLDER)
+
+# sa_details_02.prop
+0x1bf562d3 (PLACEHOLDER)
+
+# sa_details_03.prop
+0x1bf562d2 (PLACEHOLDER)
+
+# sa_details_04.prop
+0x1bf562d5 (PLACEHOLDER)
+
+# sa_details_05.prop
+0x1bf562d4 (PLACEHOLDER)
+
+# sa_details_eyebot.prop
+0x48955e13 Microtech Instrument
+
+# sa_diplomat_01.prop
+0x7a9cc2c8 sa_diplomat_01 Graceful Waltz (NOT LOCALIZED)
+
+# sa_diplomat_02.prop
+0x7a9cc2cb sa_diplomat_02 Harmonious Song(NOT LOCALIZED)
+
+# sa_diplomat_03.prop
+0x7a9cc2ca sa_diplomat_03 Royal Charm (NOT LOCALIZED)
+
+# sa_diplomat_04.prop
+0x7a9cc2cd sa_diplomat_04 Radiant Pose(NOT LOCALIZED)
+
+# sa_hats_01.prop
+0x68480e7c (PLACEHOLDER)
+
+# sa_hats_02.prop
+0x68480e7f (PLACEHOLDER)
+
+# sa_hats_03.prop
+0x68480e7e (PLACEHOLDER)
+
+# sa_hats_04.prop
+0x68480e79 (PLACEHOLDER)
+
+# sa_hats_05.prop
+0x68480e78 (PLACEHOLDER)
+
+# sa_masks_01.prop
+0x29f8aebf (PLACEHOLDER)
+
+# sa_masks_02.prop
+0x29f8aebc (PLACEHOLDER)
+
+# sa_masks_03.prop
+0x29f8aebd (PLACEHOLDER)
+
+# sa_scientist_01.prop
+0x6181ec28 sa_scientist_01 Recharge 1(NOT LOCALIZED)
+
+# sa_scientist_02.prop
+0x6181ec2b sa_scientist_02 Storage 1(NOT LOCALIZED)
+
+# sa_scientist_03.prop
+0x6181ec2a sa_scientist_03 Recharge 2(NOT LOCALIZED)
+
+# sa_scientist_04.prop
+0x6181ec2d sa_scientist_04 Storage 2(NOT LOCALIZED)
+
+# sa_shaman_01.prop
+0x03ba5d9c sa_shaman_01 Freeze (NOT LOCALIZED)
+
+# sa_shaman_02.prop
+0x03ba5d9f sa_shaman_02 Poison Blade (NOT LOCALIZED)
+
+# sa_shaman_03.prop
+0x03ba5d9e sa_shaman_03 Summon Swarm (NOT LOCALIZED)
+
+# sa_shaman_04.prop
+0x03ba5d99 sa_warrior_01 Energy Blade (NOT LOCALIZED)
+
+# sa_shoulders_01.prop
+0x869fb1cf (PLACEHOLDER)
+
+# sa_shoulders_02.prop
+0x869fb1cc (PLACEHOLDER)
+
+# sa_shoulders_03.prop
+0x869fb1cd (PLACEHOLDER)
+
+# sa_zealot_01.prop
+0xf2102f51 sa_zealot_01 beam armor(NOT LOCALIZED)
+
+# sa_zealot_02.prop
+0xf2102f52 sa_zealot_02 Shield Generator (NOT LOCALIZED)
+
+# sa_zealot_03.prop
+0xf2102f53 sa_zealot_03 Blast Armor(NOT LOCALIZED)
+
+# sa_zealot_04.prop
+0xf2102f54 sa_zealot_04 Absorption Shield(NOT LOCALIZED)
+
+# scepter1.prop
+0x7e6bb52a ep1_sg_treasure_scepter.prop (NOT LOCALIZED)
+
+# scepter2.prop
+0x7e6bb529 ep1_hh_staff3.prop (NOT LOCALIZED)
+
+# scepter3.prop
+0x7e6bb528 ep1_hh_staff1.prop (NOT LOCALIZED)
+
+# Serpus.prop
+0x830263f7 Serpus
+
+# shadowskull.prop
+0xfdaf17a8 Shadow Skull
+
+# ShadowskullS.prop
+0x02a23d0b Shadow Skull
+
+# sing1.prop
+0x29f198a5 Sing
+
+# sing2.prop
+0x29f198a6 Sing
+
+# sing3.prop
+0x29f198a7 Sing
+
+# sing4.prop
+0x29f198a0 Sing
+
+# sing5.prop
+0x29f198a1 Sing
+
+# Skully.prop
+0x71d6b1e9 Skully
+
+# snakemouth.prop
+0x35935de4 Snake Fangs
+
+# snakey.prop
+0xeeb7b60c Spidergrab
+
+# speed1.prop
+0x020c974b Speed
+
+# speed2.prop
+0x020c9748 Speed
+
+# speed3.prop
+0x020c9749 Speed
+
+# speed4.prop
+0x020c974e Speed
+
+# speed5.prop
+0x020c974f Speed
+
+# spikeannon.prop
+0x2c4c4941 Spikeannon Hand
+
+# spikearm.prop
+0x2471dae9 spike Arm
+
+# spit1.prop
+0x172b0cf0 Spit
+
+# spit10.prop
+0x68c55de0 Green Wave 
+
+# spit11.prop
+0x68c55de1 Pink Wave 
+
+# spit12.prop
+0x68c55de2 Purple Wave 
+
+# spit13.prop
+0x68c55de3 White 
+
+# spit14.prop
+0x68c55de4 Yellow Wave
+
+# spit15.prop
+0x68c55de5 Web Slinger
+
+# spit16.prop
+0x68c55de6 Love Bomb
+
+# spit17.prop
+0x68c55de7 Bubble Blaster
+
+# Spit18.prop
+0x68c55de8 SeaMonster Headbutt
+
+# spit19.prop
+0x68c55de9 Anti-Matter Missile
+
+# spit2.prop
+0x172b0cf3 Spit
+
+# spit20.prop
+0x6bc562b9 Cryo Missile
+
+# spit21.prop
+0x6bc562b8 Electro Missile
+
+# spit22.prop
+0x6bc562bb Nuclear Missile
+
+# spit23.prop
+0x6bc562ba Pyro Missile
+
+# spit24.prop
+0x6bc562bd Toxic Barf
+
+# spit25.prop
+0x6bc562bc A-Bomb Missile
+
+# spit26.prop
+0x6bc562bf Red Laser
+
+# spit27.prop
+0x6bc562be Mini Rapid Blaster
+
+# spit28.prop
+0x6bc562b1 Sniper Blaster
+
+# spit29.prop
+0x6bc562b0 Heavy Rapid Blaster
+
+# spit3.prop
+0x172b0cf2 Spit
+
+# spit30.prop
+0x6ac560c6 Purple Laser
+
+# spit31.prop
+0x6ac560c7 Sonic Sphere
+
+# spit32.prop
+0x6ac560c4 Sonic Scream
+
+# spit33.prop
+0x6ac560c5 Pink Glitter Laser
+
+# spit34.prop
+0x6ac560c2 Purple Laser
+
+# spit35.prop
+0x6ac560c3 Blue Spit
+
+# spit36.prop
+0x6ac560c0 White Ball
+
+# spit37.prop
+0x6ac560c1 Purple Laser
+
+# spit38.prop
+0x6ac560ce DustDevil
+
+# spit39.prop
+0x6ac560cf Pink Wave 
+
+# spit4.prop
+0x172b0cf5 Spit
+
+# spit40.prop
+0x6dc5659f Pink Wave 
+
+# spit41.prop
+0x6dc5659e Pink Wave 
+
+# spit42.prop
+0x6dc5659d Pink Wave 
+
+# spit43.prop
+0x6dc5659c Pink Wave 
+
+# spit44.prop
+0x6dc5659b Pink Wave 
+
+# spit45.prop
+0x6dc5659a Pink Wave 
+
+# spit46.prop
+0x6dc56599 Pink Wave 
+
+# spit47.prop
+0x6dc56598 Pink Wave 
+
+# spit48.prop
+0x6dc56597 Pink Wave 
+
+# spit49.prop
+0x6dc56596 Pink Wave 
+
+# spit5.prop
+0x172b0cf4 Spit
+
+# spit50.prop
+0x6cc5642c Pink Wave 
+
+# spit51.prop
+0x6cc5642d Lightning Orb
+
+# spit6.prop
+0x172b0cf7 Radial Heatwave
+
+# spit7.prop
+0x172b0cf6 Radial Freeze
+
+# spit8.prop
+0x172b0cf9  
+
+# spit9.prop
+0x172b0cf8 Blue Wave 
+
+# sprint1.prop
+0x66f663e2 Sprint
+
+# sprint2.prop
+0x66f663e1 Sprint
+
+# sprint3.prop
+0x66f663e0 Sprint
+
+# sprint4.prop
+0x66f663e7 Sprint
+
+# sprint5.prop
+0x66f663e6 Sprint
+
+# sspit1.prop
+0x169f5b93  
+
+# sspit2.prop
+0x169f5b90  
+
+# sspit3.prop
+0x169f5b91  
+
+# sspit4.prop
+0x169f5b96  
+
+# sspit5.prop
+0x169f5b97  
+
+# sstrike1.prop
+0x7b27425f  
+
+# sstrike2.prop
+0x7b27425c  
+
+# sstrike3.prop
+0x7b27425d  
+
+# sstrike4.prop
+0x7b27425a  
+
+# sstrike5.prop
+0x7b27425b  
+
+# stealth1.prop
+0x7523cc3f Stealth
+
+# stealth2.prop
+0x7523cc3c Stealth
+
+# stealth3.prop
+0x7523cc3d Stealth
+
+# stealth4.prop
+0x7523cc3a Stealth
+
+# stealth5.prop
+0x7523cc3b Stealth
+
+# stealth6.prop
+0x7523cc38 Pink Wave 
+
+# stonemaw.prop
+0xc4af3d99 Mag-Maw
+
+# strike1.prop
+0xba81f234 Strike
+
+# strike10.prop
+0xce9047ec  
+
+# strike2.prop
+0xba81f237 Strike
+
+# strike3.prop
+0xba81f236 Strike
+
+# strike4.prop
+0xba81f231 Strike
+
+# strike5.prop
+0xba81f230 Strike
+
+# strike6.prop
+0xba81f233 Hot Head 
+
+# strike7.prop
+0xba81f232 Frost Face
+
+# strike8.prop
+0xba81f23d Zap Noggin 
+
+# strike9.prop
+0xba81f23c Stunning Headbutt 
+
+# sword1.prop
+0x15881cbd ep1_hh_swordinflatable.prop (NOT LOCALIZED)
+
+# sword2.prop
+0x15881cbe ep1_hh_sword.prop (NOT LOCALIZED)
+
+# tan.prop
+0x326cb65e Tan Bump
+
+# ta_chestpieces_01.prop
+0x2c3a0fe7 (PLACEHOLDER)
+
+# ta_chestpieces_02.prop
+0x2c3a0fe4 (PLACEHOLDER)
+
+# ta_chestpieces_03.prop
+0x2c3a0fe5 (PLACEHOLDER)
+
+# ta_chestpieces_04.prop
+0x2c3a0fe2 (PLACEHOLDER)
+
+# ta_details_02.prop
+0x53b7d3c0 (PLACEHOLDER)
+
+# ta_details_05.prop
+0x53b7d3c7 (PLACEHOLDER)
+
+# ta_earring_01.prop
+0xa0c89003 (PLACEHOLDER)
+
+# TA_hairs_01.prop
+0x2a0f54c0 (PLACEHOLDER)
+
+# ta_hairs_02.prop
+0x2a0f54c3 (PLACEHOLDER)
+
+# ta_hairs_03.prop
+0x2a0f54c2 (PLACEHOLDER)
+
+# ta_hairs_04.prop
+0x2a0f54c5 (PLACEHOLDER)
+
+# ta_hats_01.prop
+0xf55a5735 (PLACEHOLDER)
+
+# ta_hats_02.prop
+0xf55a5736 (PLACEHOLDER)
+
+# ta_hats_03.prop
+0xf55a5737 (PLACEHOLDER)
+
+# ta_hats_04.prop
+0xf55a5730 (PLACEHOLDER)
+
+# ta_hats_05.prop
+0xf55a5731 (PLACEHOLDER)
+
+# ta_hats_06.prop
+0xf55a5732 (PLACEHOLDER)
+
+# ta_hats_07.prop
+0xf55a5733 (PLACEHOLDER)
+
+# ta_hats_08.prop
+0xf55a573c (PLACEHOLDER)
+
+# ta_horns_01.prop
+0x1875548f (PLACEHOLDER)
+
+# ta_horns_02.prop
+0x1875548c (PLACEHOLDER)
+
+# ta_horns_03.prop
+0x1875548d (PLACEHOLDER)
+
+# ta_horns_04.prop
+0x1875548a (PLACEHOLDER)
+
+# ta_loincloths_01.prop
+0x75ac87cc (PLACEHOLDER)
+
+# ta_loincloths_02.prop
+0x75ac87cf (PLACEHOLDER)
+
+# ta_loincloths_03.prop
+0x75ac87ce (PLACEHOLDER)
+
+# ta_loincloths_04.prop
+0x75ac87c9 (PLACEHOLDER)
+
+# ta_masks_01.prop
+0x59ef3a70 (PLACEHOLDER)
+
+# ta_masks_02.prop
+0x59ef3a73 (PLACEHOLDER)
+
+# ta_masks_03.prop
+0x59ef3a72 (PLACEHOLDER)
+
+# ta_masks_04.prop
+0x59ef3a75 (PLACEHOLDER)
+
+# ta_masks_05.prop
+0x59ef3a74 (PLACEHOLDER)
+
+# ta_masks_06.prop
+0x59ef3a77 (PLACEHOLDER)
+
+# ta_mustache_01.prop
+0x0d04cdf9 (PLACEHOLDER)
+
+# ta_shoulders_01.prop
+0x41a96424 (PLACEHOLDER)
+
+# ta_shoulders_02.prop
+0x41a96427 (PLACEHOLDER)
+
+# ta_shoulders_03.prop
+0x41a96426 (PLACEHOLDER)
+
+# ta_shoulders_04.prop
+0x41a96421 (PLACEHOLDER)
+
+# ta_shoulders_05.prop
+0x41a96420 (PLACEHOLDER)
+
+# ta_shoulders_06.prop
+0x41a96423 (PLACEHOLDER)
+
+# ta_symbols_01.prop
+0xc75c9618 (PLACEHOLDER)
+
+# ta_symbols_02.prop
+0xc75c961b (PLACEHOLDER)
+
+# ta_symbols_03.prop
+0xc75c961a (PLACEHOLDER)
+
+# ta_symbols_04.prop
+0xc75c961d (PLACEHOLDER)
+
+# ta_symbols_05.prop
+0xc75c961c (PLACEHOLDER)
+
+# ta_symbols_06.prop
+0xc75c961f (PLACEHOLDER)
+
+# ta_symbols_07.prop
+0xc75c961e (PLACEHOLDER)
+
+# ta_symbols_08.prop
+0xc75c9611 (PLACEHOLDER)
+
+# tentacle.prop
+0xd7796c1f Tentacle
+
+# terrapin.prop
+0x40fa7d16 Steel Beak
+
+# Test.prop
+0xbc2c0be9 texture test
+
+# TEST_RACK.prop
+0xcf26e6bd TEST_RACK
+
+# toxicspit.prop
+0x88a8562c Toxic Poison
+
+# toxictelsonhand.prop
+0xef6dc37c Toxigrasper
+
+# trapmouth.prop
+0x1a12d839 Slug Spitter
+
+# vent.prop
+0xc5fd4a38 Vent
+
+# vertebra2.prop
+0xcc248d44 test vertebra 2 (PLACEHOLDER)
+
+# vertebrapart.prop
+0x1bc89b75 Vertabra Attach Part
+
+# voice1.prop
+0xc582d2b2 Amphibian 1
+
+# voice10.prop
+0x9ef1ae06 Herbivorous Beak 2
+
+# voice11.prop
+0x9ef1ae07 Herbivorous Beak 3
+
+# voice12.prop
+0x9ef1ae04 Herbivorous Beak 4
+
+# voice13.prop
+0x9ef1ae05 Fish 1
+
+# voice14.prop
+0x9ef1ae02 Fish 2
+
+# voice15.prop
+0x9ef1ae03 Fish 3
+
+# voice16.prop
+0x9ef1ae00 Fish 4
+
+# voice17.prop
+0x9ef1ae01 Carnivorous Jaw 1
+
+# voice18.prop
+0x9ef1ae0e Carnivorous Jaw 2
+
+# voice19.prop
+0x9ef1ae0f Carnivorous Jaw 3
+
+# voice2.prop
+0xc582d2b1 Amphibian 2
+
+# voice20.prop
+0x9df1ac93 Carnivorous Jaw 4
+
+# voice21.prop
+0x9df1ac92 Herbivorous Jaw 1
+
+# voice22.prop
+0x9df1ac91 Herbivorous Jaw 2
+
+# voice23.prop
+0x9df1ac90 Herbivorous Jaw 3
+
+# voice24.prop
+0x9df1ac97 Herbivorous Jaw 4
+
+# voice25.prop
+0x9df1ac96 Mandible 1
+
+# voice26.prop
+0x9df1ac95 Mandible 2
+
+# voice27.prop
+0x9df1ac94 Mandible 3
+
+# voice28.prop
+0x9df1ac9b Mandible 4
+
+# voice29.prop
+0x9df1ac9a Primate 1
+
+# voice3.prop
+0xc582d2b0 Amphibian 3
+
+# voice30.prop
+0x9cf1ab20 Primate 2
+
+# voice31.prop
+0x9cf1ab21 Primate 3
+
+# voice32.prop
+0x9cf1ab22 Primate 4
+
+# voice33.prop
+0x9cf1ab23 Radial 1
+
+# voice34.prop
+0x9cf1ab24 Radial 2
+
+# voice35.prop
+0x9cf1ab25 Radial 3
+
+# voice36.prop
+0x9cf1ab26 Radial 4
+
+# voice37.prop
+0x9cf1ab27 Snout 1
+
+# voice38.prop
+0x9cf1ab28 Snout 2
+
+# voice39.prop
+0x9cf1ab29 Snout 3
+
+# voice4.prop
+0xc582d2b7 Amphibian 4
+
+# voice40.prop
+0xa3f1b625 Snout 4
+
+# voice5.prop
+0xc582d2b6 Carnivorous Beak 1
+
+# voice6.prop
+0xc582d2b5 Carnivorous Beak 2
+
+# voice7.prop
+0xc582d2b4 Carnivorous Beak 3
+
+# voice8.prop
+0xc582d2bb Carnivorous Beak 4
+
+# voice9.prop
+0xc582d2ba Herbivorous Beak 1
+
+# voodeye.prop
+0xc7dbf028 Voodeye
+
+# voodoo.prop
+0xd3eafc37 Voodead
+
+# warp.prop
+0x6fb157bb Warped Probe
+
+# waterspit.prop
+0x69195cc0 Water Spout
+
+# white.prop
+0xbd77bb98 White Bump
+
+# wingmouth.prop
+0x9e15b511 Wingy
+
+# wing_02.prop
+0x9ae9aae5 Sky Tentacle
+
+# x.prop
+0x050c5d67 Part X
+
+# ce_helmet_boss_06_hose_01.prop
+0x3d790adc epiP-ixelF (Base)
+
+# ce_helmet_boss_06_hose_02.prop
+0x3d790adf epiP-ixelF (Coat)
+
+# ce_helmet_boss_06_hose_03.prop
+0x3d790ade epiP-ixelF (Detail)
+
+
+
+
+############
+
+# DG_ce_weapon_club_01.prop
+0x54748bfb Ethereal Maimer

@@ -40,9 +40,11 @@ key editorSaveDirectory 0x90368EA0!0xFFFFFFFF
 key editorSaveExtension 0xFFFFFFFF.flr
 bool editorShowBoneLengthHandles true
 bool editorShowVertebrae true
-key editorSwatchPedestalModel FEReconBG
+key editorBackgroundModel animations~
 key editorSwatchBackgroundModel animations~
-key editorPedestalModel FEReconBG
+key editorSkyBoxEffect fe_editor_skybox
+key editorPedestalModel FEReconBGDemo
+key editorSwatchPedestalModel FEReconBG
 key editorSwatchCameraUI EditorCameraFloraUI_FERecon
 key editorSporepediaCanSwitchConfigID FLR_TemplateShopper_CanSwitch
 key editorSporepediaConfigID FLR_TemplateShopper
@@ -69,6 +71,7 @@ keys editorEnabledManipulators
 	#cSPEditorManipulationLimb
 	FloraEditorShowBranchHandles
 	FloraEditorDisableAnimation
+	cEditorManipulator_AdvancedCE
 end
 keys editorStartupModel
 	flora_editorModel~!RootFIX.flr

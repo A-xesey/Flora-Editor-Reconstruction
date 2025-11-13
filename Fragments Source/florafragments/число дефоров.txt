@@ -1,0 +1,68 @@
+1 (4) (1)
+FE_flatleaf_01,03,04,06
+
+2 (12) (5)
+fe_branch_02
+fe_branch_05
+
+fe_canopy_01
+fe_canopy_02,10,12
+fe_canopy_03,05
+fe_canopy_04,09
+fe_canopy_06
+
+fe_leaf_04
+
+3 (27) (26)
+fe_branch_01
+fe_branch_03
+
+fe_canopy_07,11
+
+fe_detail_01
+fe_detail_02
+fe_detail_03
+
+fe_trunk_01
+fe_trunk_02
+fe_trunk_03
+
+fe_leaf_01
+fe_leaf_03
+fe_leaf_06
+fe_leaf_09
+fe_leaf_10
+fe_leaf_11
+fe_leaf_12
+fe_leaf_15
+fe_leaf_16
+fe_leaf_17
+fe_leaf_18
+fe_leaf_25
+fe_leaf_27
+fe_leaf_28
+fe_leaf_31
+fe_leaf_34
+fe_leaf_35
+
+4 (14)
+fe_detail_04
+
+fe_leaf_02
+fe_leaf_05
+fe_leaf_07
+fe_leaf_08
+fe_leaf_13
+fe_leaf_14
+fe_leaf_20
+fe_leaf_21
+fe_leaf_22
+fe_leaf_23
+fe_leaf_24
+fe_leaf_26
+fe_leaf_29
+
+1+2+3+4=
+4+12+27+14 = 57
+
+1+5+26+14 = 46

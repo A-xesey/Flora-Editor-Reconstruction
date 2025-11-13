@@ -22,7 +22,7 @@
     <ClInclude Include="FETest.h">
       <Filter>StoopidTry</Filter>
     </ClInclude>
-    <ClInclude Include="FEListener_BlackWaterFix.h">
+    <ClInclude Include="FEBlackWaterFixMsg.h">
       <Filter>StoopidTry</Filter>
     </ClInclude>
   </ItemGroup>
@@ -36,7 +36,7 @@
     <ClCompile Include="FETest.cpp">
       <Filter>StoopidTry</Filter>
     </ClCompile>
-    <ClCompile Include="FEListener_BlackWaterFix.cpp">
+    <ClCompile Include="FEBlackWaterFixMsg.cpp">
       <Filter>StoopidTry</Filter>
     </ClCompile>
   </ItemGroup>

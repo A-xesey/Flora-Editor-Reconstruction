@@ -11,9 +11,9 @@ float modelMaxScale 2
 bool modelHasSocketConnector false
 #vector3 modelMinSocketConnectorOffset (0, 0, 0)
 bool modelUseSkin true
-key modelMeshHull editor_rigblock~!ce_null_block.rw4
-#key modelMeshLOD0 editor_rigblock~!ce_null_block.rw4
-key modelMeshLOD0 editor_rigblock~!ce_vertebra_new.rw4
+key modelMeshHull builtins!missing
+key modelMeshLOD0 builtins!missing
+#key modelMeshLOD0 editor_rigblock~!ce_vertebra_new.rw4
 float modelScale 0.3
 key skinpaintDiffuseTexture skinPaint_texture~!fe_roots_01__diffuse.rw4
 key skinpaintSpecBumpTexture skinPaint_texture~!fe_roots_01__specBump.rw4

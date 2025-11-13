@@ -743,6 +743,7 @@ cl_skinpaint_cell_glassCreases
 fe_skinpaint_floracoat_lizardo
 ce_skinpaint_base_kidRobot
 auto_skinPaint_script~_fe_skinpaint_florabase_morinda
+backgroundSample1
 fe_skinpaint_florabase_giraffe
 button-fruit-act
 FE_BP1_skinpaint_coat_kidRobot
@@ -1100,6 +1101,7 @@ skinpaint_floracoat_banded3
 skinpaint_floracoat_banded2
 FE_ValidFlora
 auto_flora_paint_palette_pages~_FE_BP1_base_page
+common~	0x11c0bde
 auto_skinPaint_script~_FE_BP1_skinpaint_theme_chewtoy
 auto_AssetBrowserConfig_FLR_PlantMedium_Shopper_CanSwitch
 button-branch-norm_3

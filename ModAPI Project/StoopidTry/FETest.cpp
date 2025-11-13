@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "FETest.h"
-#include <Spore\Editors\BakeManager.h>
+
+using namespace Simulator;
 
 FETest::FETest()
 {
@@ -12,7 +13,9 @@ FETest::~FETest()
 }
 void FETest::ParseLine(const ArgScript::Line& line)
 {
-	auto option_bake = line.GetOption("bake", 0);
+	auto option_test = line.GetOption("t", 1);
+	int test1;
+	test1 = mpFormatParser->ParseInt(option_test[0]);
 
 	/*auto option_editor = line.GetOption("e", 2);
 	int editorUI_part1 = 0;
@@ -21,17 +24,11 @@ void FETest::ParseLine(const ArgScript::Line& line)
 	editorUI_part2 = mpFormatParser->ParseInt(option_editor[1]);*/
 
 	/*ResourceKey a;
-	a.groupID = GroupIDs::FloraModels;
-	a.typeID = TypeIDs::flr;
-	a.instanceID = mpFormatParser->ParseUInt(option_bake[0]);*/
+	a.groupID = GroupIDs::CreatureModels;
+	a.typeID = TypeIDs::crt;
+	a.instanceID = mpFormatParser->ParseUInt(option_test[1]);*/
 
-	auto option_delete = line.GetOption("delete", 0);
-	auto option_water = line.GetOption("water", 0);
-
-	//Simulator::cPlanet* planet = Simulator::GetActivePlanet();
-	Simulator::cPlanetRecord* planetRecord = Simulator::GetActivePlanetRecord();
-
-	if (option_bake || option_delete || option_water)// || option_editor)
+	if (option_test)// || option_editor)
 	{
 		/*if (option_editor)
 		{
@@ -191,63 +188,61 @@ void FETest::ParseLine(const ArgScript::Line& line)
 		else
 			App::ConsolePrintF("Error: enter the editor before using this option.");*/
 
-		if (option_bake) ///Plant models loading
+		if (option_test) ///Plant models loading`
 		{
-			//BakeManager.Bake(a, Editors::BakeParameters::BakeParameters(1));
-			//if (planet && planetRecord)
-			if (planetRecord != 0 && planetRecord->mPlantSpecies.size() > 0)
+			if (IsSpaceGame())
 			{
-				eastl::vector<ResourceKey> PlantSpecies = planetRecord->mPlantSpecies;
-				if (PlantSpecies.size() > 0)
+				if (test1 == 0)
 				{
-					for (int i = PlantSpecies.size(); i > 0; --i)
-					{
-						BakeManager.Bake(PlantSpecies[i - 1], Editors::BakeParameters::BakeParameters(1));
-					}
-					/*for (ResourceKey plant : PlantSpecies)
-					{
-						BakeManager.Bake(plant, Editors::BakeParameters::BakeParameters(1));
-					}*/
+					cSpaceToolDataPtr tool;
+					ToolManager.LoadTool({ id("FE_PlantCreate"), 0, 0 }, tool);
+
+					tool->mCurrentAmmoCount = 99;
+					auto inventory = SimulatorSpaceGame.GetPlayerInventory();
+
+					inventory->AddItem(tool.get());
+
+					ToolManager.LoadTool({ id("FE_PlantEdit"), 0, 0 }, tool);
+					tool->mCurrentAmmoCount = 99;
+
+					inventory->AddItem(tool.get());
+
+					ToolManager.LoadTool({ id("CreatureCreate"), 0, 0 }, tool);
+					tool->mCurrentAmmoCount = 99;
+
+					inventory->AddItem(tool.get());
+
+					ToolManager.LoadTool({ id("CreatureEdit"), 0, 0 }, tool);
+					tool->mCurrentAmmoCount = 99;
+
+					inventory->AddItem(tool.get());
 				}
 				else
-					App::ConsolePrintF("There are no plants on this planet.");
-			}
-			else
-				App::ConsolePrintF("Error: enter the planet before using this option.");
-		}
-
-		if (option_water)
-		{
-			//if (planet != 0 && planetRecord != 0)
-			//if (PlanetModel.mpTerrain != 0)
-			if (PlanetModel.Get())
-			{
-				Terrain::DisposeRefractionRTTs();
-				Terrain::CreateRefractionRTTs();
-			}
-			else
-				App::ConsolePrintF("Error: enter the planet before using this option.");
-		}
-
-		if (option_delete) //delete flora
-		{
-			if (Editor.IsActive() && Editor.mEditorName == id("FloraEditorSetup")) {
-					if (Editor.mSaveExtension == id("flr"))
+				{
+					EditorRequestPtr request = new Editors::EditorRequest();
+					request->editorID = id("FloraEditorSetupUFO");
+					/*if (creation != 0)
 					{
-						Editor.mSaveExtension = id("crt");
-						App::ConsolePrintF("DeleteFlora activated: now you can to delete the flora.");
-					}
-					else
-					{
-						Editor.mSaveExtension = id("flr");
-						App::ConsolePrintF("DeleteFlora deactivated: now you can to save the flora.");
-					}
+						request->creationKey.instanceID = creation.instanceID;
+						request->creationKey.typeID = creation.typeID;
+						request->creationKey.groupID = creation.groupID;
+					}*/                                                          
+					request->sporepediaCanSwitch = false;
+					request->allowSporepedia = false;
+					request->hasCreateNewButton = false;
+					request->hasSaveButton = false;
+					request->hasExitButton = false;
+					request->field_3C = true;
+					request->field_3D = true;
+					request->field_64 = true;
+					SimGameModeManager.SubmitEditorRequest(request.get());
+
+				}
 			}
-			else
-				App::ConsolePrintF("Error: enter the flora editor before using this option.");
+			else  App::ConsolePrintF("You need enter to Space Stage before that.");
 		}
 	}
-	else App::ConsolePrintF("You can only write -bake or -delete option.");
+	else App::ConsolePrintF("You can only write -test or -e option.");
 }
 
 const char* FETest::GetDescription(ArgScript::DescriptionMode mode) const
