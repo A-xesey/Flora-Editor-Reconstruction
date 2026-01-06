@@ -98,7 +98,16 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FEReconBakeManager.h" />
+    <ClInclude Include="FEReconEditors.h" />
+    <ClInclude Include="FEReconSpaceGame.h" />
+    <ClInclude Include="FEReconSporepedia.h" />
     <ClInclude Include="FEBlackWaterFixMsg.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="FESpaceToolCreate.h" />
+    <ClInclude Include="FESpaceToolEdit.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -106,6 +115,7 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="FloraRandom.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -122,10 +132,16 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="FESpaceToolCreate.cpp" />
+    <ClCompile Include="FESpaceToolEdit.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="FETest.cpp">
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="FloraRandom.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

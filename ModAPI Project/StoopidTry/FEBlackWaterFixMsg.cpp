@@ -1,6 +1,9 @@
 #include "stdafx.h"
 #include "FEBlackWaterFixMsg.h"
 
+using namespace Simulator;
+using namespace Terrain;
+
 FEBlackWaterFixMsg::FEBlackWaterFixMsg()
 {
 }
@@ -28,18 +31,16 @@ bool FEBlackWaterFixMsg::HandleMessage(uint32_t messageID, void* message)
 {
 	if (messageID == id("BakeManager_BakeSprites"))
 	{
-		Graphics::RenderTargetID* refractBuffers = Terrain::GetRefractionBuffersRenderTargetID();
-		Graphics::RenderTargetID* refractBlur1 = Terrain::GetRefractionBlur1RenderTargetID();
-		Graphics::RenderTargetID* refractBlur2 = Terrain::GetRefractionBlur2RenderTargetID();
-		if (refractBuffers != 0 && refractBlur1 != 0 && refractBlur2 != 0
-			&& ((PlanetModel.mpTerrain == 0 && PlanetModel.mpTerrain2 == 0)
-				|| (PlanetModel.mpTerrain != 0 && PlanetModel.mpTerrain2 != 0
-					&& GameModeManager.GetActiveModeID() == GameModeIDs::kEditorMode)))
-		{
-			Terrain::DisposeRefractionRTTs();
-			Terrain::CreateRefractionRTTs();
-			return true;
-		}
+		if (GetRefractionBuffersRenderTargetID() != nullptr &&
+			GetRefractionBlur1RenderTargetID() != nullptr &&
+			GetRefractionBlur2RenderTargetID() != nullptr)
+			if (GetCurrentContext() != SpaceContext::Planet ||
+				(GameModeManager.GetActiveModeID() < 0x1654C00 || GameModeManager.GetActiveModeID() > 0x1654C10))
+			{
+				DisposeRefractionRTTs();
+				CreateRefractionRTTs();
+				return true;
+			}
 	}
 	// Return true if the message has been handled. Other listeners will receive the message regardless of the return value.
 	return false;

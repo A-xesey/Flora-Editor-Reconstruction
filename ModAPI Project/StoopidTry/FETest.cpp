@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "FETest.h"
+#include "FloraRandom.h"
 
 using namespace Simulator;
 
@@ -11,11 +12,11 @@ FETest::FETest()
 FETest::~FETest()
 {
 }
+
+bool switchs = false;
 void FETest::ParseLine(const ArgScript::Line& line)
 {
-	auto option_test = line.GetOption("t", 1);
-	int test1;
-	test1 = mpFormatParser->ParseInt(option_test[0]);
+	auto option_test = line.HasFlag("t");
 
 	/*auto option_editor = line.GetOption("e", 2);
 	int editorUI_part1 = 0;
@@ -190,56 +191,17 @@ void FETest::ParseLine(const ArgScript::Line& line)
 
 		if (option_test) ///Plant models loading`
 		{
-			if (IsSpaceGame())
+
+			if (Editor.IsActive())
 			{
-				if (test1 == 0)
+				/*if (Editor.field_2A4 != 0)
 				{
-					cSpaceToolDataPtr tool;
-					ToolManager.LoadTool({ id("FE_PlantCreate"), 0, 0 }, tool);
-
-					tool->mCurrentAmmoCount = 99;
-					auto inventory = SimulatorSpaceGame.GetPlayerInventory();
-
-					inventory->AddItem(tool.get());
-
-					ToolManager.LoadTool({ id("FE_PlantEdit"), 0, 0 }, tool);
-					tool->mCurrentAmmoCount = 99;
-
-					inventory->AddItem(tool.get());
-
-					ToolManager.LoadTool({ id("CreatureCreate"), 0, 0 }, tool);
-					tool->mCurrentAmmoCount = 99;
-
-					inventory->AddItem(tool.get());
-
-					ToolManager.LoadTool({ id("CreatureEdit"), 0, 0 }, tool);
-					tool->mCurrentAmmoCount = 99;
-
-					inventory->AddItem(tool.get());
-				}
-				else
-				{
-					EditorRequestPtr request = new Editors::EditorRequest();
-					request->editorID = id("FloraEditorSetupUFO");
-					/*if (creation != 0)
+					for (int i = 0; i < 0x300; i += 4)
 					{
-						request->creationKey.instanceID = creation.instanceID;
-						request->creationKey.typeID = creation.typeID;
-						request->creationKey.groupID = creation.groupID;
-					}*/                                                          
-					request->sporepediaCanSwitch = false;
-					request->allowSporepedia = false;
-					request->hasCreateNewButton = false;
-					request->hasSaveButton = false;
-					request->hasExitButton = false;
-					request->field_3C = true;
-					request->field_3D = true;
-					request->field_64 = true;
-					SimGameModeManager.SubmitEditorRequest(request.get());
-
-				}
+						App::ConsolePrintF("0x%x", *(int*)(Editor.field_2A4 + i));
+					}
+				}*/
 			}
-			else  App::ConsolePrintF("You need enter to Space Stage before that.");
 		}
 	}
 	else App::ConsolePrintF("You can only write -test or -e option.");

@@ -25,6 +25,27 @@
     <ClInclude Include="FEBlackWaterFixMsg.h">
       <Filter>StoopidTry</Filter>
     </ClInclude>
+    <ClInclude Include="FESpaceToolCreate.h">
+      <Filter>StoopidTry</Filter>
+    </ClInclude>
+    <ClInclude Include="FESpaceToolEdit.h">
+      <Filter>StoopidTry</Filter>
+    </ClInclude>
+    <ClInclude Include="FloraRandom.h">
+      <Filter>StoopidTry</Filter>
+    </ClInclude>
+    <ClInclude Include="FEReconEditors.h">
+      <Filter>StoopidTry</Filter>
+    </ClInclude>
+    <ClInclude Include="FEReconSporepedia.h">
+      <Filter>StoopidTry</Filter>
+    </ClInclude>
+    <ClInclude Include="FEReconBakeManager.h">
+      <Filter>StoopidTry</Filter>
+    </ClInclude>
+    <ClInclude Include="FEReconSpaceGame.h">
+      <Filter>StoopidTry</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -37,6 +58,15 @@
       <Filter>StoopidTry</Filter>
     </ClCompile>
     <ClCompile Include="FEBlackWaterFixMsg.cpp">
+      <Filter>StoopidTry</Filter>
+    </ClCompile>
+    <ClCompile Include="FESpaceToolCreate.cpp">
+      <Filter>StoopidTry</Filter>
+    </ClCompile>
+    <ClCompile Include="FESpaceToolEdit.cpp">
+      <Filter>StoopidTry</Filter>
+    </ClCompile>
+    <ClCompile Include="FloraRandom.cpp">
       <Filter>StoopidTry</Filter>
     </ClCompile>
   </ItemGroup>
