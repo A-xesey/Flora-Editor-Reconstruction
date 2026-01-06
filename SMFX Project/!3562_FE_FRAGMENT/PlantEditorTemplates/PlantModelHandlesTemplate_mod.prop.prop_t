@@ -1,28 +1,28 @@
 key parent PlantEditorTemplates!PlantRigblockTemplate_mod.prop
 keys modelHandleKeys
-	DeformAxisUp	#"creature_z"
-	DeformAxisUpB	#"creature_z"
-	Bend	#"creature_z"
-	Bend_vert	#"creature_z"
-	0x5E6F7E87	#"creature_z"
-	tweak_top_bottom	#"creature_z"
-	DeformBoneLength	#"creature_y"
-	DeformAxisForward	#"creature_y"
-	DeformAxisForwardB	#"creature_y"
-	DeformAxisFront	#"creature_y"
-	Stretch	#"creature_y"
-	leaf_bend	#"creature_y"
-	Length	#"creature_y"
-	Invert	#"creature_y"
-	Longer		#"creature y"
-	EyeStretch	#"creature_x"
-	scale_horiz	#"creature_x"
-	DeformAxisBack	#"creature_x"
-	DeformAxisRight	#"creature_x"
-	DeformAxisLeft	#"creature_x"
-	WidthHeight	#"creature_x"
-	tweak_sideways	#"creature_x"
-	tweak_side	#"creature_x"
+	DeformAxisUp
+	DeformAxisUpB
+	Bend
+	Bend_vert
+	0x5E6F7E87
+	tweak_top_bottom
+	DeformBoneLength
+	DeformAxisForward
+	DeformAxisForwardB
+	DeformAxisFront
+	Stretch
+	leaf_bend
+	Length
+	Invert
+	Longer
+	EyeStretch
+	scale_horiz
+	DeformAxisBack
+	DeformAxisRight
+	DeformAxisLeft
+	WidthHeight
+	tweak_sideways
+	tweak_side
 	Flatten	#
 	Thicken	#
 	0x2697A2F2	#

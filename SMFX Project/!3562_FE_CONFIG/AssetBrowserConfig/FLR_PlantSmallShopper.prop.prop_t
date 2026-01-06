@@ -1,0 +1,5 @@
+key parent AssetBrowserConfig!FLR_TemplateShopper.prop
+texts sporepediaConfigCallToActionMessage
+	(fe_02!0x00040010) "placeholder"
+end
+key sporepediaConfigEditorForMakeNew FloraEditorSetupSmall

@@ -1,4 +1,4 @@
-key parent PlantEditorTemplates!PlantBranchTemplate
+key parent PlantEditorTemplates!PlantBranchTemplate_MOD
 texts blockName
 	(PlantRigblocks!0x00000019) "branch 02a"
 end
@@ -6,3 +6,6 @@ string16 description "FE_branch_02a"
 vector3 modelMaxSocketConnectorOffset (0, -3.027, 0)
 key modelMeshLOD0 editor_rigblock~!fe_branch_02a.rw4
 vector3 modelMinSocketConnectorOffset (0, -0.342, 0)
+key skinpaintDiffuseTexture skinPaint_texture~!fe_branch_0a__diffuse.rw4
+key skinpaintSpecBumpTexture skinPaint_texture~!fe_branch_0a__specBump.rw4
+key skinpaintTintMaskTexture skinPaint_texture~!fe_branch_0a__tintMask.rw4

@@ -7,9 +7,9 @@ vector3 modelRotationBallHandleOffset (0, -1.75, -0.75)
 vector3 modelMaxSocketConnectorOffset (0, -4, 0)
 vector3 modelMinSocketConnectorOffset (0, -0.1, 0)
 bool modelHasBallConnector false
+bool modelHasSocketConnector false
 bool modelHasRotationBallHandle true
 bool modelHasRotationRingHandle true
-bool modelHasSocketConnector true
 bool modelOrientToSurfaces true
 bool modelOrientWhenSnapped true
 key modelPinningType PinningGeometry!PinningNormal

@@ -1,1 +1,7 @@
 key parent editor_config~!FloraEditorSetup.prop
+key editorBackgroundMusicPatch music_space_accessories
+key editorBackgroundModel FER_background_UFO
+key editorPedestalModel FER_dais_UFO
+key editorSwatchBackgroundModel FER_background_UFO
+key editorSwatchPedestalModel FER_dais_UFO
+uint32 editorDaisType hash(metal)

@@ -1,7 +1,6 @@
 key parent spacetools~!ToolTemplate.prop
 string16 description "Create Creature"
-int32 spaceToolAmmoUsedPerShot 1
-int32 spaceToolBuyCost 30
+int32 spaceToolBuyCost 75
 key spaceToolContext planet
 texts spaceToolDescription
 	(fe_02!0x3e295ee3) "Create Creature"
@@ -13,19 +12,12 @@ bool spaceToolDisableOn201Ruins false#true
 bool spaceToolDisableOnHomeworld false
 bool spaceToolDisableOnSaveGames false#true
 key spaceToolImageID ufotools~!ferecon_plantnew.png
-int32 spaceToolInitialAmmoCount 10
 texts spaceToolLockedDescription
 	(spacegame_tools!0xa0bb7099) "Requires ~commodity_requirements~"
 end
-int32 spaceToolMaxAmmoCount 99
-int32 spaceToolMaxDiscoveredAmmo 0
 float spaceToolMaxRange -1
-int32 spaceToolMinDiscoveredAmmo 0
 key spaceToolPanelKey SocialConsumablePanel
-key spaceToolStrategy FEReconPlantStrategy#DefaultToolStrategy
+key spaceToolStrategy FEReconPlantStrategyCreate#DefaultToolStrategy
 key spaceToolType special
-int32 spaceToolUseCost 0
-bool spaceToolUsesAmmo true
-bool toolDeselectsAfterUse true
 key toolDiscoverableRarity Common
 bool toolUseOnActivate true

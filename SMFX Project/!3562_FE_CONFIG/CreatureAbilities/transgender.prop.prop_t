@@ -1,0 +1,17 @@
+key parent AbilityTemplates!CreatureAbilityTemplate
+int32 creatureAbilityCategory 3
+texts creatureAbilityDescription
+	"Changes the gender of your creation (including your)"
+end
+texts creatureAbilityName
+	"transgernder"
+end
+texts creatureAbilityRolloverValueDescription
+	"Transition phase ~icon_amount~"#(Abilities!0x064922b7) "Level"
+end
+key verbIconCategory transgender
+key verbIconImageID transgender_icon
+key verbIconLayout 0xCDA510D7
+bool verbIconShowLevel false
+key verbIconStaticLayout 0xCDA510D7
+bool verbIconUseDescription false

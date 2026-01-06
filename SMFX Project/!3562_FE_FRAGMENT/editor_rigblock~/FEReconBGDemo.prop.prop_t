@@ -7,13 +7,17 @@ keys modelEffect
 	#fe_editor_creatures
 	#fe_editor_creatures
 	#fe_editor_creatures
+	fe_editor_heightmockup
+	fe_editor_circles
 end
 transforms modelEffectTransforms
 	-offset (0, 0, 0) -scale 1 -rotateXYZ 0 0 0
+	-offset (0, 0, -0.5) -scale 1 -rotateXYZ 0 0 0
+	-offset (0, 0, -0.5) -scale 1 -rotateXYZ 0 0 0
 	#-offset (0, 12, -0.343071) -scale 1 -rotateXYZ 0 0 0
 	#-offset (12, 0, -0.343071) -scale 1 -rotateXYZ 0 0 90
 	#-offset (-12, 0, -0.343071) -scale 1 -rotateXYZ 0 0 -90
 	#-offset (0, -12, -0.343071) -scale 1 -rotateXYZ 0 0 180
 end
 float modelBoundingRadius 4.8664861
-key modelMeshLOD0 editor_rigblocks~!FERecon_demobackground.rw4
+key modelMeshLOD0 editor_rigblocks~!FERecon_demobackogroundWithoutCircles.rw4#FERecon_demobackground.rw4

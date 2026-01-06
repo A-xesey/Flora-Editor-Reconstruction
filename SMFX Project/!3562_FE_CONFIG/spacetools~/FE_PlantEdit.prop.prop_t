@@ -1,46 +1,34 @@
 key parent spacetools~!ToolTemplate.prop
-string16 description "Edit Creature"
-int32 spaceToolAmmoUsedPerShot 1
-float spaceToolAutoFireRate -1
-int32 spaceToolBuyCost 0
+string16 description "Edit Plant"
+float spaceToolAutoFireRate 0.4
+int32 spaceToolBuyCost 150
 key spaceToolContext planet
 float spaceToolDamageArea 0.5
 texts spaceToolDescription
-	(fe_02!0x0dc3bacb) "Creature Tweeker"
+	(fe_02!0x0dc3bacb) "Plant Tweeker"
 end
 texts spaceToolDetailDescription
-	(fe_02!0x4f4d0bc2) "Select this tool and click a creature on a planet to modify it."
+	(fe_02!0x4f4d0bc2) "Select this tool and click a plant on a plant to modify it."
 end
 bool spaceToolDisableOn201Ruins false#true
 bool spaceToolDisableOnHomeworld false
 bool spaceToolDisableOnSaveGames false#true
 key spaceToolImageID ufotools~!ferecon_plantedit.png
-int32 spaceToolInitialAmmoCount 1
+float spaceToolMaxRange 150
+key spaceToolPanelKey SocialConsumablePanel
+bool spaceToolShowCollectedOrUnlockedText false
+key spaceToolStrategy FEReconPlantStrategyEdit#DefaultProjectile
+key spaceToolType special
 texts spaceToolLockedDescription
 	(spacegame_tools!0xa0bb7099) "Requires ~commodity_requirements~"
 end
-int32 spaceToolMaxAmmoCount 99
-int32 spaceToolMaxDiscoveredAmmo 0
-float spaceToolMaxRange 150
-int32 spaceToolMinDiscoveredAmmo 0
-key spaceToolPanelKey SocialConsumablePanel
-float spaceToolRechargeRate 5
-key spaceToolStrategy FEReconPlantStrategy#DefaultProjectile
-key spaceToolType special
-bool spaceToolUsesAmmo true
-bool toolDeselectsAfterUse true
-key toolDiscoverableRarity Common
-key toolHitCombatantEffectID SG_ufo_creature_edit_hit_target
-key toolHitGroundEffectID SG_ufo_creature_edit_fizzle
+key toolBeamEffectID FER_SG_ufo_plant_edit_beam
+key toolHitCombatantEffectID FER_SG_ufo_plant_edit_HitCombatant
+key toolHitGroundEffectID SG_ufo_abduct_HitGround
+key toolHitWaterEffectID SG_ufo_abduct_HitWater
+key toolMuzzleEffectID FER_SG_ufo_plant_edit_muzzle
 bool toolHitOrientsToTerrain false
-key toolHitWaterEffectID SG_ufo_creature_edit_fizzle
-bool toolIsHoming true
-key toolMuzzleEffectID SG_ufo_creature_edit_muzzle
-bool toolPreventsPlanetExit true
-key toolProjectileEffectID SG_ufo_creature_edit_beam
-float toolProjectileExplosionExpansionRate 5000
-float toolProjectileSpeed 30
-float toolProjectileTimeOut 5
+bool toolPassThroughAll true
 bool toolPicksFlora true
 int32s toolTargetFlags
 	hash(world)

@@ -1,0 +1,29 @@
+key parent CreatureEditorTemplates!CreatureDetailTemplate
+texts blockName
+	(CreatureRigblocks!0x245b71fa) "Chastity Leaf (PLACEHOLDER)"
+end
+key itemUnlockEffect CRG_partUnlock_detail02
+float itemUnlockFindPercentage 0.99
+int32 itemUnlockLevel 2
+int32 modelCapabilityCuteness 2
+int32 modelCapabilityFlaunt 2
+int32 modelCapabilitySocial 6
+int32 modelCapabilityStealth 2
+int32 modelComplexityScore 2
+int32 ModelCapabilityTrans 2
+bboxs modelDefaultChannelsBBox
+	(-0.073664, -0.271577, -0.020721) (0.073664, 0.020274, 0.076866)
+end
+bool modelExtraJiggly true
+float modelMaxScale 1.75
+key modelMeshLOD0 editor_rigblock~!ce_details_flora_02.rw4
+float modelMinScale 0.8
+int32 modelPrice 75
+vector3 modelRotationBallHandleOffset (0, -0.3, 0.25)
+int32 modelRunTimeBoneCount 0
+float modelScale 1.2
+float modelZCorpMinScale 100
+key skinpaintDiffuseTexture skinPaint_texture~!ce_details_flora_02__diffuse.rw4
+bool skinpaintIgnoreParticles true
+key skinpaintSpecBumpTexture skinPaint_texture~!ce_details_flora_02__specBump.rw4
+key skinpaintTintMaskTexture skinPaint_texture~!ce_details_flora_02__tintMask.rw4

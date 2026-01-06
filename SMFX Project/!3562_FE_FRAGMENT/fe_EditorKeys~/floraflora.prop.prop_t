@@ -6,6 +6,9 @@ keys validEditorKeys
 	flora_rigblock~!fe_fruit_01.prop
 	flora_rigblock~!fe_fruit_02.prop
 	flora_rigblock~!fe_fruit_03.prop
+	flora_rigblock~!fe_fruit_01a.prop
+	flora_rigblock~!fe_fruit_02a.prop
+	flora_rigblock~!fe_fruit_03a.prop
 	flora_rigblock~!fe_branch_standard.prop
 	flora_rigblock~!fe_muscle_trunk_01.prop
 	flora_rigblock~!branches_standard.prop
@@ -81,4 +84,11 @@ keys validEditorKeys
 	flora_rigblock~!FE_root_assemblage_16.prop
 	flora_rigblock~!FE_root_assemblage_16.crt
 	flora_rigblock~!FE_root_PaintBuddy.prop
+	flora_rigblock~!fe_root_01a.prop
+	flora_rigblock~!fe_root_02a.prop
+	flora_rigblock~!fe_root_03a.prop
+	flora_rigblock~!fe_root_04a.prop
+	flora_rigblock~!fe_roots_03.prop
+	flora_rigblock~!fe_roots_02.prop
+	flora_rigblock~!fe_roots_01.prop
 end

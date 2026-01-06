@@ -55,23 +55,24 @@ bool editorUseBoundsForDelete false
 bool editorUseShadows true
 bool editorUseSkin true
 bool editorUseSpine true
-key verbTrayCollection verbtrays!FLORA_VerbTrayCollection
-key verbTrayCollectionSporepediaLargeCard verbtrays!FLORA_VerbTrayCollection
-key verbTrayCollectionSporepediaSmallCard animations~
+key verbTrayCollection verbtrays!Ferecon_VerbTrayCollection
+key verbTrayCollectionSporepediaLargeCard verbtrays!SHP_Ferecon_VerbTrayCollection
+key verbTrayCollectionSporepediaSmallCard verbtrays!SHP_Ferecon_SwatchVerbTrayCollectionLarge
 
 ## cSPEditorManipulation
 keys editorEnabledManipulators
 	#cSPEditorManipulationPlanarInterpenetration
 	cSPEditorManipulationInterpenetration
 	cSPEditorManipulationPinning
-	cSPEditorManipulationStackingSimple
+	cSPEditorManipulationStacking#Simple
 	cSPEditorManipulationBoneRotation
 	cSPEditorManipulationRotationHandle
 	cSPEditorManipulationDeformHandle
 	#cSPEditorManipulationLimb
 	FloraEditorShowBranchHandles
 	FloraEditorDisableAnimation
-	cEditorManipulator_AdvancedCE
+	#cEditorManipulator_AdvancedCE
+	cSPEditorManipulationFlourishNoBranchScalingCrash
 end
 keys editorStartupModel
 	flora_editorModel~!RootFIX.flr

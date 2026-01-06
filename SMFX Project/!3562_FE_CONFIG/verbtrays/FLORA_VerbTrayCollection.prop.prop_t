@@ -1,8 +1,0 @@
-key parent verbtrays!0xCC6B406C
-bool verbCollectionAnimateValues true
-key verbCollectionLayoutStyle 0xFEA10E68
-key verbTrayJustification right
-key verbTrayLayout EditorHeaderTray_FE
-keys verbTrays
-	flora_verbtrays
-end

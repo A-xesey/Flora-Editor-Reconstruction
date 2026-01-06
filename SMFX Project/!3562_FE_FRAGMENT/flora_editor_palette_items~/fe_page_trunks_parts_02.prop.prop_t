@@ -21,6 +21,12 @@ int32s palettePagePartItemColumns
 	1
 	2
 	3
+	0
+	1
+	2
+	3
+	0
+	1
 end
 int32s palettePagePartItemRows
 	0
@@ -45,6 +51,12 @@ int32s palettePagePartItemRows
 	5
 	5
 	5
+	6
+	6
+	6
+	6
+	7
+	7
 end
 keys palettePagePartItems
 	flora_rigblock~!fe_branch_standard
@@ -69,5 +81,13 @@ keys palettePagePartItems
 	flora_rigblock~!fe_branch_02
 	flora_rigblock~!fe_branch_03
 	flora_rigblock~!fe_branch_05
+	
+	flora_rigblock~!fe_branch_04a
+	flora_rigblock~!fe_branch_01a
+	flora_rigblock~!fe_branch_02a
+	flora_rigblock~!fe_branch_05a
+	flora_rigblock~!fe_branch_06a
+	flora_rigblock~!fe_branch_07a
+	flora_rigblock~!fe_branch_08a
 end
 key palettePagePartParentPage fe_page_trunks_02

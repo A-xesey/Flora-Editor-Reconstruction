@@ -2,6 +2,12 @@ int32s palettePagePartItemColumns
 	0
 	1
 	2
+	0
+	1
+	2
+	0
+	1
+	2
 	3
 	0
 	1
@@ -29,8 +35,6 @@ int32s palettePagePartItemRows
 	0
 	0
 	0
-	0
-	1
 	1
 	1
 	1
@@ -46,13 +50,27 @@ int32s palettePagePartItemRows
 	4
 	4
 	4
+	5
 	5
 	5
 	5
 	6
 	6
+	6
+	6
+	7
+	7
+	7
+	8
+	8
 end
 keys palettePagePartItems
+	flora_rigblock~!fe_root_01a
+	flora_rigblock~!fe_root_02a
+	flora_rigblock~!fe_root_03a
+	flora_rigblock~!fe_roots_01
+	flora_rigblock~!fe_roots_02
+	flora_rigblock~!fe_roots_03
 	flora_rigblock~!FE_root_assemblage_14
 	flora_rigblock~!FE_root_PaintBuddy
 	flora_rigblock~!FE_root_assemblage_15

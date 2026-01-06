@@ -1,0 +1,25 @@
+key parent AbilityTemplates!CreatureAbilityTemplate
+string16 description "Fruit"
+int32 creatureAbilityCategory 3
+texts creatureAbilityDescription
+	(fe_02!0x04cb5b6c) "Fruit (PLACEHOLDER)"
+end
+texts creatureAbilityName
+	(fe_02!0x04cb5b6d) "Fruit (PLACEHOLDER)"
+end
+texts creatureAbilityRolloverValueDescription
+	(Abilities!0x064922b6) "Level"
+end
+uint32s creatureAbilityRequiredCAPs
+	0x74757266
+	0x66727574
+end
+key verbIconCategory fruit
+key verbIconImageID fruit_icon_small#0x513E800A
+#key verbIconRolloverLevelImageID fruit_icon_small#0x513E800A
+key verbIconLayout CRE_HealthButton#0xCDA510D7
+bool verbIconShowLevel false
+key verbIconStaticLayout CRE_HealthWindow#0xCDA510D7
+bool verbIconUseDescription false
+int32 verbIconTriggerKey -1
+bool verbIconShowRollover false

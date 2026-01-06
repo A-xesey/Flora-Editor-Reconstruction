@@ -1,6 +1,6 @@
 key parent PlantEditorTemplates!PlantLeafTemplate_mod
 texts blockName
-	(PlantRigblocks!0x00000132) "FE_leaf_19"
+	(PlantRigblocks!0x00000145) "FE_leaf_19"
 end
 string16 description "FE_leaf_19"
 key modelMeshHull editor_rigblock~!None

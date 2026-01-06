@@ -3,7 +3,6 @@ texts blockName
 	(PlantRigblocks!0x00000130) "fe_trunk_02"
 end
 string16 description "02: 700-1500"
-bool modelHasSocketConnector true
 vector3 modelMaxSocketConnectorOffset (0, -3.7, 0)
 key modelMeshLOD0 editor_rigblock~!fe_trunk_02.rw4
 vector3 modelMinSocketConnectorOffset (0, -1.4, 0)

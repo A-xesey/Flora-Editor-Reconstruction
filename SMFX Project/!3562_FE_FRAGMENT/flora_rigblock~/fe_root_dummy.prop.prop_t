@@ -8,11 +8,10 @@ end
 string16 description "fe_root_dummy"
 int32 modelCapabilitySpine 1
 float modelMaxScale 2
-bool modelHasSocketConnector false
 #vector3 modelMinSocketConnectorOffset (0, 0, 0)
 bool modelUseSkin true
-key modelMeshHull builtins!missing
-key modelMeshLOD0 builtins!missing
+key modelMeshHull editor_rigblock~!fe_root_dummy_hull.rw4
+key modelMeshLOD0 editor_rigblock~!FE_root_dummy.rw4
 #key modelMeshLOD0 editor_rigblock~!ce_vertebra_new.rw4
 float modelScale 0.3
 key skinpaintDiffuseTexture skinPaint_texture~!fe_roots_01__diffuse.rw4
