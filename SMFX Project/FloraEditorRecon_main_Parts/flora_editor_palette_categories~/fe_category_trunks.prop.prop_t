@@ -1,0 +1,16 @@
+key parent palette_config~!TemplatePaletteCategoryParts.prop
+keys paletteCategoryIconList
+	editors_flora~!button-trunks-norm.png
+	editors_flora~!0x0
+	editors_flora~!button-trunks-hl.png
+	editors_flora~!button-trunks-act.png
+	editors_flora~!button-trunks-on-norm.png
+	editors_flora~!0x0
+	editors_flora~!button-trunks-on-hl.png
+	editors_flora~!button-trunks-on-act.png
+	editors_flora~!button-trunks-norm.png
+end
+texts paletteCategoryName
+	(fe!0x24e2e919) "Trunks"
+end
+uint32 paletteCategorySequenceNumber 200
