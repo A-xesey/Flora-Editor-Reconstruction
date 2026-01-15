@@ -1,9 +1,9 @@
 string16 description "EditorCameraFloraUI"
 float cameraInitialHeading -50
 float cameraInitialOffsetX 1.2
-float cameraInitialOffsetY 3.5
+float cameraInitialOffsetY 4
 float cameraInitialPitch -5.5999999
-float cameraInitialZoom 13
+float cameraInitialZoom 15
 float cameraMaxPitch 55
 float cameraMaxZoomDistance 50
 float cameraMinPitch -75
