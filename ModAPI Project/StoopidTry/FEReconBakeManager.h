@@ -1,7 +1,7 @@
 #pragma once
 #include <Spore\BasicIncludes.h>
 #include <Spore\Editors\BakeManager.h>
-#include "FEBlackWaterFixMsg.h""
+#include "FEBlackWaterFixMsg.h"
 #include "FloraRandom.h"
 
 #define FEReconBakeManagerPtr intrusive_ptr<FEReconBakeManager>
@@ -30,92 +30,11 @@ public:
 	static void AttachDetours();
 };
 
-///fix 3 sec freeze
-//bool SpriteTextureMIPsDirectlyChange()
-//{
-//	App::PropertyList* propList = App::GetAppProperties();
-//	App::Property* prop = 0;
-//
-//	AppProperties.GetProperty(id("FERecon_DirectlyChange"), prop);
-//	bool DirectlyChange;
-//	prop->GetBool(propList, id("FERecon_DirectlyChange"), DirectlyChange);
-//
-//	return DirectlyChange;
-//};
-//
-//int SpriteTextureMIPsProperties(bool Parameters, bool variable)
-//{
-//	App::PropertyList* propList = App::GetAppProperties();
-//	App::Property* prop = 0;
-//	int SpriteTextureMIPsProperties;
-//
-//	if (!Parameters) //textureQuality
-//	{
-//		if (!variable) //NMap
-//		{
-//			AppProperties.GetProperty(id("FERecon_textureQualityNormalMap"), prop);
-//			prop->GetInt32(propList, id("FERecon_textureQualityNormalMap"), SpriteTextureMIPsProperties);
-//		}
-//		else //DMap
-//		{
-//			AppProperties.GetProperty(id("FERecon_textureQualityDiffuseMap"), prop);
-//			prop->GetInt32(propList, id("FERecon_textureQualityDiffuseMap"), SpriteTextureMIPsProperties);
-//		}
-//	}
-//	else //textureDXT
-//	{
-//		if (!variable)  //NMap
-//		{
-//			AppProperties.GetProperty(id("FERecon_textureDXTNormalMap"), prop);
-//			prop->GetInt32(propList, id("FERecon_textureDXTNormalMap"), SpriteTextureMIPsProperties);
-//		}
-//		else  //DMap
-//		{
-//			AppProperties.GetProperty(id("FERecon_textureDXTDiffuseMap"), prop);
-//			prop->GetInt32(propList, id("FERecon_textureDXTDiffuseMap"), SpriteTextureMIPsProperties);
-//		}
-//	}
-//
-//	if (!Parameters && SpriteTextureMIPsProperties != -1 && SpriteTextureMIPsProperties != 4 && SpriteTextureMIPsProperties != 5
-//		&& SpriteTextureMIPsProperties != 6)
-//	{
-//		if (!variable)
-//		{
-//			App::ConsolePrintF("The textureQualityNormalMap value has been reset to avoid crashing the game.\nYou can only use -1, 4, 5 or 6.");
-//			SpriteTextureMIPsProperties = 4;
-//		}
-//		else
-//		{
-//			App::ConsolePrintF("The textureQualityDiffuseMap value has been reset to avoid crashing the game.\nYou can only use -1, 4, 5 or 6.");
-//			SpriteTextureMIPsProperties = 6;
-//		}
-//	}
-//	else if (Parameters && SpriteTextureMIPsProperties > 90)
-//	{
-//		App::ConsolePrintF("The textureDXT value has been reset to avoid totally freezing the game.");
-//		SpriteTextureMIPsProperties = 50;
-//	}
-//	return SpriteTextureMIPsProperties;
-//};
-
+///fix 3 sec freeze during sprites baking
 static_detour(BakeManager_SpriteTextureMIPs, void(int, int, int, int))
 {
 	void detoured(int param_1, int textureQuality, int textureDXT, int param_4)
 	{
-		//if (SpriteTextureMIPsDirectlyChange() == true)
-		//{
-		//	if (textureQuality == 4) //NormalMap
-		//	{
-		//		textureQuality = SpriteTextureMIPsProperties(0, 0);
-		//		textureDXT = SpriteTextureMIPsProperties(1, 0);
-		//	}
-		//	if (textureQuality == 6) //DiffuseMap
-		//	{
-		//		textureQuality = SpriteTextureMIPsProperties(0, 1);
-		//		textureDXT = SpriteTextureMIPsProperties(1, 1);
-		//	}
-		//}
-		//original_function(param_1, textureQuality, textureDXT, param_4);
 		original_function(param_1, textureQuality, 0, param_4);
 		return;
 	}
@@ -130,7 +49,6 @@ static_detour(BakeManager_BakeSprites, void(PropertyList*, Graphics::IModelWorld
 	}
 };
 
-///Baking
 member_detour(cPlantSpeciesManager_CreatePlantItem, cPlantSpeciesManager, cPlantCargoInfo* (const ResourceKey&))
 {
 	cPlantCargoInfo* detoured(const ResourceKey & speciesID)
@@ -141,18 +59,19 @@ member_detour(cPlantSpeciesManager_CreatePlantItem, cPlantSpeciesManager, cPlant
 			ResourceKey plantKey = plantItem->GetItemID();
 			if (plantKey.instanceID != 0 && plantKey.groupID != 0 && plantKey.typeID != 0)
 			{
-				//bool IsBaked = BakeManager.IsBaked(plantKey, false); need to update BakeManager to Release version
-				//if (GetCurrentContext() == SpaceContext::Planet && !IsBaked)
-				PropertyListPtr PlantItemProperty;
-				PropManager.GetPropertyList(plantItem->GetItemID().instanceID, plantItem->GetItemID().groupID, PlantItemProperty);
-				if (PlantItemProperty != nullptr)
+				bool IsBaked = BakeManager.IsBaked(plantKey, false);
+
+				//plant baking
+				//this functions works outside of planets, so i decided to added this check
+				if (GetCurrentContext() == SpaceContext::Planet && !IsBaked)
 				{
 					BakeManager.BakeModel(plantKey, Editors::BakeParameters::BakeParameters(0, 4, 0x609b763));
 
-					/*PropertyListPtr PlantItemProperty;
-					PropManager.GetPropertyList(plantItem->GetItemID().instanceID, plantItem->GetItemID().groupID, PlantItemProperty);*/
+					PropertyListPtr PlantItemProperty;
+					PropManager.GetPropertyList(plantItem->GetItemID().instanceID, plantItem->GetItemID().groupID, PlantItemProperty);
 
-					//if (PlantItemProperty != nullptr)
+					//since didn't find are functions that update plant models, we need to update it during the baking
+					if (PlantItemProperty != nullptr)
 					{
 						float mBaseRadius;
 						float mCanopyRadius;
@@ -162,7 +81,10 @@ member_detour(cPlantSpeciesManager_CreatePlantItem, cPlantSpeciesManager, cPlant
 						Property::GetFloat(PlantItemProperty.get(), 0x0254CF8F, mCanopyRadius);
 						Property::GetFloat(PlantItemProperty.get(), 0x0254CF97, mHeight);
 
-						//if (!IsBaked)
+						
+						//floraimposter initializes only after baking, so we need to we need a temporary solution to the problem
+						//set models to show plant in game
+						if (!IsBaked)
 						{
 							float PseudoFloraImposterScale = (mBaseRadius + mCanopyRadius + mHeight) / 3;
 
@@ -183,13 +105,14 @@ member_detour(cPlantSpeciesManager_CreatePlantItem, cPlantSpeciesManager, cPlant
 
 							plantItem->mFloraImposterScale = PseudoFloraImposterScale;
 						}
-						/*else
+						else
 						{
 							float mFloraImposterScale;
 							Property::GetFloat(PlantItemProperty.get(), 0x04057881, mFloraImposterScale);
 							plantItem->mFloraImposterScale = mFloraImposterScale;
-						}*/
+						}
 
+						//finally, to show the plant in the game
 						plantItem->mAlphaModel = plantKey.instanceID;
 						plantItem->mModelIDLOD0 = plantKey.instanceID;
 						plantItem->mModelIDLOD1 = plantKey.instanceID;
@@ -202,10 +125,12 @@ member_detour(cPlantSpeciesManager_CreatePlantItem, cPlantSpeciesManager, cPlant
 				}
 			}
 		}
+		//replace the missing in the game files plant to another
 		else
 		{
 			ResourceKey newPlant(0, TypeIDs::flr, GroupIDs::FloraModels);
 			cPlanetRecordPtr planetRecord = GetActivePlanetRecord();
+			//this functions works outside of planets, so i decided to added this check
 			if (planetRecord != nullptr && GetCurrentContext() == SpaceContext::Planet)
 			{
 				if (planetRecord->mPlantSpecies.mpBegin != planetRecord->mPlantSpecies.mpEnd)
@@ -249,6 +174,7 @@ member_detour(cPlantSpeciesManager_CreatePlantItem, cPlantSpeciesManager, cPlant
 							{
 								if (gameMode)
 								{
+									//to avoid duplicates in game stages, otherwise it will break planet ecosystem
 									if (!floraRandom->ValidPlant(newPlant, smallPlants)) continue;
 									else if (!floraRandom->ValidPlant(newPlant, mediumPlants)) continue;
 									else if (!floraRandom->ValidPlant(newPlant, largePlants)) continue;

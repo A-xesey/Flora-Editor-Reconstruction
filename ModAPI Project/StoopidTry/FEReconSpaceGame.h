@@ -2,6 +2,7 @@
 #include <Spore\BasicIncludes.h>
 #include "FESpaceToolCreate.h"
 #include "FESpaceToolEdit.h"
+#include "SPGDeactivateActives.h"
 
 #define FEReconSpaceGamePtr intrusive_ptr<FEReconSpaceGame>
 
@@ -35,6 +36,7 @@ member_detour(HandleMessage, cSimulatorSpaceGame, bool(uint32_t, int))
 			{
 				if (0x37aac1d < messageID)
 				{
+					//if creature was not created then return tool back
 					if (messageID == 0x3b092aa || messageID == 0x3c5dbc7)
 					{
 						cPlayerInventoryPtr inventory = SimulatorSpaceGame.GetPlayerInventory();
@@ -43,18 +45,7 @@ member_detour(HandleMessage, cSimulatorSpaceGame, bool(uint32_t, int))
 							size_t cargoSlots = inventory->GetAvailableCargoSlotsCount();
 							if (cargoSlots == 0)
 							{
-								if (inventory->mpActiveCargoItem != nullptr)
-								{
-									inventory->mpActiveCargoItem->mbIsActive = false;
-									inventory->mpActiveCargoItem = nullptr;
-								}
-								if (inventory->mpActiveTool != nullptr) {
-									MessageManager.MessageSend(0x61dae65, inventory->mpActiveTool.get());
-									ToolManager.DeactivateTool(inventory->mpActiveTool.get());
-									inventory->mpActiveTool->mbIsActive = false;
-									inventory->mpActiveTool = nullptr;
-
-								}
+								SPGDeactivateActives::DeactivateActives(inventory.get());
 								cSpaceToolDataPtr pTool;
 								if (messageID == 0x3b092aa)
 									ToolManager.LoadTool({ id("CreatureEdit"),0,0 }, pTool);
@@ -73,6 +64,7 @@ member_detour(HandleMessage, cSimulatorSpaceGame, bool(uint32_t, int))
 					}
 					return false;
 				}
+				//if plant was created then return plant as cargo item
 				if (*(char*)(shit + 0x44) == '\0')
 				{
 					ResourceKey creation = *(ResourceKey*)(shit + 0x18);

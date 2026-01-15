@@ -29,11 +29,16 @@ int FEBlackWaterFixMsg::Release()
 // The method that receives the message. The first thing you should do is checking what ID sent this message...
 bool FEBlackWaterFixMsg::HandleMessage(uint32_t messageID, void* message)
 {
+	//After sprites baking we need to recreate refraction RTT since their indexes (i'm not really sure) used fow sprites
 	if (messageID == id("BakeManager_BakeSprites"))
 	{
+		//we need to check if refractions RTT even exists
 		if (GetRefractionBuffersRenderTargetID() != nullptr &&
 			GetRefractionBlur1RenderTargetID() != nullptr &&
 			GetRefractionBlur2RenderTargetID() != nullptr)
+		{
+			//then we need to check if sprites was baked outside of planet
+			//and in any gameMode except stage and adventure editor: they has planet context so we don't need to considered to them
 			if (GetCurrentContext() != SpaceContext::Planet ||
 				(GameModeManager.GetActiveModeID() < 0x1654C00 || GameModeManager.GetActiveModeID() > 0x1654C10))
 			{
@@ -41,6 +46,7 @@ bool FEBlackWaterFixMsg::HandleMessage(uint32_t messageID, void* message)
 				CreateRefractionRTTs();
 				return true;
 			}
+		}
 	}
 	// Return true if the message has been handled. Other listeners will receive the message regardless of the return value.
 	return false;

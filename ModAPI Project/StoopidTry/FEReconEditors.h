@@ -1,5 +1,6 @@
 #pragma once
 #include <Spore\BasicIncludes.h>
+#include <Spore\Sporepedia\cSPUILargeAssetView.h>
 
 #define FEReconEditorsPtr intrusive_ptr<FEReconEditors>
 
@@ -19,17 +20,25 @@ public:
 	static void AttachDetours();
 };
 
-/// fix freeze after paint mode
 member_detour(Editor_Update, cEditor, void(float, float)) {
 	void detoured(float delta1, float delta2) {
-		auto manipulatorID_fixAnim = eastl::find(Editor.mEnabledManipulators.begin(), Editor.mEnabledManipulators.end(), id("FloraEditorDisableAnimation"));
-		if (Editor.IsMode(Mode::BuildMode) && manipulatorID_fixAnim != Editor.mEnabledManipulators.end())
-			Editor.field_385 = false;
-		/*if (Editor.mEditorName == id("FloraEditorSetup") || Editor.mEditorName == id("FloraEditorSetupSmall")
-			|| Editor.mEditorName == id("FloraEditorSetupMedium") || Editor.mEditorName == id("FloraEditorSetupLarge"))
-			Editor.ComputeCreatureVerbIcons(Editor.mpEditorSkin->GetMesh(1)->mpCreatureData, Editor.mVerbIconTray, Editor.mnDefaultBrainLevel, -1.0f);*/
 
 		original_function(this, delta1, delta2);
+		auto manipulatorID_fixAnim = eastl::find(Editor.mEnabledManipulators.begin(), Editor.mEnabledManipulators.end(), id("FloraEditorDisableAnimation"));
+		if (Editor.IsMode(Mode::BuildMode))
+		{
+			/// fix freeze after paint mode
+			if (manipulatorID_fixAnim != Editor.mEnabledManipulators.end())
+				Editor.field_385 = false;
+
+			//rename editor to add creature abilities verbtrays support
+			if (Editor.mpEditorSkin != nullptr && Editor.mpEditorSkin->GetMesh(1)->mpCreatureData != nullptr && Editor.mVerbIconTray != 0)
+			{
+				if (Editor.mEditorName == id("FloraEditorSetup") || Editor.mEditorName == id("FloraEditorSetupSmall")
+					|| Editor.mEditorName == id("FloraEditorSetupMedium") || Editor.mEditorName == id("FloraEditorSetupLarge"))
+					Editor.mEditorName = id("CreatureEditorSmall");
+			}
+		}
 	}
 };
 
@@ -42,21 +51,23 @@ member_detour(Editor_OnMouseUp, cEditor, bool(MouseButton, float, float, MouseSt
 			{
 				if (part->mBooleanAttributes[kEditorRigblockModelUseSkin])
 				{
+					//we click on limb and we select him
 					if (Editor.mpMovingPart == part)// && mouseState.IsAltDown == 0)
 						Editor.mpSelectedPart = part;
 
+					//click again to deselect the limb
 					if (Editor.mpSelectedPart != nullptr && mouseButton == MouseButton::kMouseButtonLeft)
 						Editor.mpSelectedPart->mUIState.field_1 = true;
 
-					if (Editor.mPreviousSelectedBlock != nullptr && Editor.mPreviousSelectedBlock->mUIState.field_1 == false)
-						Editor.mPreviousSelectedBlock->mUIState.field_1 == true;
+					//tried to fix deselecting...
+					/*if (Editor.mPreviousSelectedBlock != nullptr && Editor.mPreviousSelectedBlock->mUIState.field_1 == false)
+						Editor.mPreviousSelectedBlock->mUIState.field_1 = true;*/
 				}
 			}
 		}
 		return original_function(this, mouseButton, mouseX, mouseY, mouseState);
 	}
 };
-
 
 /// cap count valid
 bool IsEnoughCap()
@@ -81,7 +92,7 @@ bool IsEnoughCap()
 					{
 						for (const EditorRigblockCapability& capabality : part->mCapabilities)
 						{
-							if (capabality.mPropertyID == 0xd00f0ffb)//kModelCapabilityFruit)
+							if (capabality.mPropertyID == kModelCapabilityFruit)
 								capCount += 1;
 						}
 					}
@@ -140,91 +151,102 @@ static_detour(UTFWin_cSPUIMessageBox, bool(UTFWin::MessageBoxCallback*, const Re
 	}
 };
 
-//Capabilities
+///Fruit counter
 static_detour(SP_EditorUitls_ComputeVerbIcons, bool(uint32_t, uint32_t, uint32_t, ModelTypes, int))
 {
 	bool detoured(uint32_t instanceID, uint32_t typeID, uint32_t groupID, ModelTypes modelType, int verbTrayCollection)
 	{
+		//change type to add creature abilities verbtrays support in sporepedia card
 		if (modelType == kPlantLarge || modelType == kPlantMedium || modelType == kPlantSmall)
 			modelType = kCreature;
+
 		return original_function(instanceID, typeID, groupID, modelType, verbTrayCollection);
 	}
 };
 
+//add creature abilities verbtrays support in sporepedia large view
+member_detour(cSPUILargeAssetView_LoadLayout, Sporepedia::cSPUILargeAssetView, void())
+{
+	void detoured()
+	{
+		original_function(this);
 
-/*static_detour(GetPropIDForAbility, uint32_t(uint32_t, int))
+		if (this->field_AB)
+		{
+			if (this->mWinStatsContainer != nullptr && this->mAssetData != nullptr)
+			{
+				if (this->mVerbIcons != 0)
+				{
+					ResourceKey key = this->mAssetData->GetKey();
+					if (key.typeID == TypeIDs::flr)
+					{
+						Editors::cCreatureDataResource* creatureData;
+						bool isload = Editor.LoadCreatureData(&key, &creatureData);
+						if (isload && creatureData != nullptr)
+						{
+							float unk = this->mAssetData->func3Ch();
+							Editor.ComputeCreatureVerbIcons(creatureData, this->mVerbIcons, -1, unk);
+						}
+						creatureData = nullptr;
+					}
+				}
+			}
+		}
+	}
+};
+
+///Fruit capability
+//add fruit capability to show it as verbtray
+static_detour(GetPropIDForAbility, uint32_t(uint32_t, int))
 {
 	uint32_t detoured(uint32_t modelCapability, int lvl)
 	{
 		if (modelCapability == kModelCapabilityFruit)
 			return id("fruit");
+		/*if (modelCapability == id("ModelCapabilityTrans"))
+		{
+			switch (lvl) {
+			case 1:
+				return id("transgender1");
+			case 2:
+				return id("transgender2");
+			case 3:
+				return id("transgender3");
+			case 4:
+				return id("transgender4");
+			case 5:
+				return id("transgender5");
+			default:
+				return id("transgender");
+			}
+		}*/
 		return original_function(modelCapability, lvl);
 	}
-};*/
+};
 
-
-/*static_detour(GetLevelForAbility, float(Simulator::cSpeciesProfile*, uint32_t))
+//get fruits count
+static_detour(GetLevelForAbility, float(Simulator::cSpeciesProfile*, uint32_t))
 {
 	float detoured(Simulator::cSpeciesProfile * profile, uint32_t verbIconCategory)
 	{
 		if (verbIconCategory == id("fruit"))
 			return static_cast<float>(profile->mFruitIndexes.size());
+		/*if (verbIconCategory == id("transgender"))
+			for (auto ability : profile->mPassiveAbilities)
+			{
+				App::ConsolePrintF("meow :3");
+				if (ability->mType == id("transgender"))
+					return static_cast<float>(ability->mSpeedGear);
+			}*/
 		return original_function(profile, verbIconCategory);
 	}
-};*/
-
-
-//uint32_t GetPropIDForAbilityMod(uint32_t modelCapability, int lvl)
-//{
-//	if (modelCapability == kModelCapabilityFruit)
-//		return id("fruit");
-//	if (modelCapability == kModelCapabilityStealth)
-//	{
-//		switch (lvl) {
-//		case 1:
-//			return id("stealth1");
-//		case 2:
-//			return id("stealth2");
-//		case 3:
-//			return id("stealth3");
-//		case 4:
-//			return id("stealth4");
-//		default:
-//			return id("stealth5");
-//		}
-//	}
-//	if (modelCapability == id("ModelCapabilityTrans"))
-//	{
-//		switch (lvl) {
-//		case 1:
-//			return id("transgender1");
-//		case 2:
-//			return id("transgender2");
-//		case 3:
-//			return id("transgender3");
-//		case 4:
-//			return id("transgender4");
-//		default:
-//			return id("transgender5");
-//		}
-//	}
-//	return 0;
-//};
+};
 
 //static_detour(BlockGetAbilities, void(eastl::vector<eastl::intrusive_ptr<int>>*, ResourceKey*, uint32_t))
 //{
 //	void detoured(eastl::vector<eastl::intrusive_ptr<int>>*verbIcons, ResourceKey * part, uint32_t modelMainAbilityList)
 //	{
 //		original_function(verbIcons, part, modelMainAbilityList);
-//		if (verbIcons->mpBegin != verbIcons->mpEnd)
-//		{
-//			for (int i = 0; i < 0x88; i +=4)
-//			{
-//				//App::ConsolePrintF("0x%x", *(int*)(verbIcons->mpBegin->get() + i));
-//				//App::ConsolePrintF("------------------------------------------------------");
-//				App::ConsolePrintF("0x%x", *(int*)(verbIcons->mpBegin->get() + i));
-//			}
-//		}
 //		PropertyListPtr propList;
 //		PropManager.GetPropertyList(part->instanceID, part->groupID, propList);
 //		bool hasAbility = propList->HasProperty(0x51c3e5b4);
@@ -270,10 +292,11 @@ static_detour(SP_EditorUitls_ComputeVerbIcons, bool(uint32_t, uint32_t, uint32_t
 //	}
 //};
 
-//static_detour(UnknownDetour2, void(Editors::EditorRigblock*, vector<int>&, bool)) { // Scaling fix
-//	void detoured(Editors::EditorRigblock * a, vector<int> &b, bool c) {
-//		if (!a->mpParent->mBooleanAttributes[kEditorRigblockModelIsPlantRoot])
-//			return original_function(a, b, c);
+//static_detour(SnapBlockToSocket, void(EditorRigblock*, eastl::vector<EditorRigblockPtr>*, EditorRigblock*))
+//{
+//	void detoured(EditorRigblock* partWithSocket, eastl::vector<EditorRigblockPtr>* parts, EditorRigblock * partToSnap)
+//	{
+//		original_function(partWithSocket, parts, partToSnap);
 //	}
 //};
 
@@ -286,14 +309,16 @@ void FEReconEditors::AttachDetours()
 	//Editor hints
 	EditorUI_SetMessageHint::attach(Address(ModAPI::ChooseAddress(0x005d6a30, 0x005dfd40)));
 	UTFWin_cSPUIMessageBox::attach(GetAddress(UTFWin::cSPUIMessageBox, ShowDialog));
-	//GetPropIDForAbility::attach(Address(ModAPI::ChooseAddress(0x457e80, 0x459840)));
-	//GetLevelForAbility::attach(Address(ModAPI::ChooseAddress(0x5db9b0, 0x5e4de0)));
-	//SP_EditorUitls_ComputeVerbIcons::attach(Address(0x4e5480));
 
-	//UnknownDetour2::attach(Address(ModAPI::ChooseAddress(0x49FF50, 0x4A0530)));
+	//VerbIcons
+	SP_EditorUitls_ComputeVerbIcons::attach(Address(ModAPI::ChooseAddress(0x4df6b0, 0x4e5480)));
+	cSPUILargeAssetView_LoadLayout::attach(Address(ModAPI::ChooseAddress(0x6631c0, 0x66dac0)));
+
+	//Capability
+	GetPropIDForAbility::attach(Address(ModAPI::ChooseAddress(0x457e80, 0x459840)));
+	GetLevelForAbility::attach(Address(ModAPI::ChooseAddress(0x5db9b0, 0x5e4de0)));
+
+	//SnapBlockToSocket::attach(Address(0x4a2eb0));
+	// 
 	//BlockGetAbilities::attach(Address(ModAPI::ChooseAddress(0x598360, 0x59fc40)));
-	//DisplayVehicleCapabilties::attach(Address(0x04e7680));
-	/*DisplayVehicleCapabilties
-	* DisplayToVerbtray
-	*/
 }

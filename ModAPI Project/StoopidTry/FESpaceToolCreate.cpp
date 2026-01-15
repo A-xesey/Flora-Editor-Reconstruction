@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "FESpaceToolCreate.h"
+#include "SPGDeactivateActives.h"
 
 using namespace Simulator;
 
@@ -21,21 +22,7 @@ bool FESpaceToolCreate::WhileFiring(cSpaceToolData* pTool, const Vector3& aimPoi
 		size_t availableCargoSlots = inventory->GetAvailableCargoSlotsCount();
 		if (availableCargoSlots != 0)
 		{
-			if (inventory != nullptr)
-			{
-				if (inventory->mpActiveCargoItem != nullptr)
-				{
-					inventory->mpActiveCargoItem->mbIsActive = false;
-					inventory->mpActiveCargoItem = nullptr;
-				}
-				if (inventory->mpActiveTool != nullptr) {
-					MessageManager.MessageSend(0x61dae65, inventory->mpActiveTool.get());
-					ToolManager.DeactivateTool(inventory->mpActiveTool.get());
-					inventory->mpActiveTool->mbIsActive = false;
-					inventory->mpActiveTool = nullptr;
-
-				}
-			}
+			SPGDeactivateActives::DeactivateActives(inventory.get());
 			EditorRequestPtr editorRequest = new Editors::EditorRequest();
 			editorRequest->editorID = id("FloraEditorSetupUFO");
 			editorRequest->sporepediaCanSwitch = false;

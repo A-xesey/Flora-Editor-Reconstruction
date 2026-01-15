@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "FESpaceToolEdit.h"
+#include "SPGDeactivateActives.h"
 
 FESpaceToolEdit::FESpaceToolEdit()
 {
@@ -56,21 +57,7 @@ bool FESpaceToolEdit::OnHit(cSpaceToolData* pTool, const Vector3& position, Spac
 				if (availableCargoSlots != 0)
 				{
 					beam->mbStopBeam = true;
-					if (inventory != nullptr)
-					{
-						if (inventory->mpActiveCargoItem != nullptr)
-						{
-							inventory->mpActiveCargoItem->mbIsActive = false;
-							inventory->mpActiveCargoItem = nullptr;
-						}
-						if (inventory->mpActiveTool != nullptr) {
-							MessageManager.MessageSend(0x61dae65, inventory->mpActiveTool.get());
-							ToolManager.DeactivateTool(inventory->mpActiveTool.get());
-							inventory->mpActiveTool->mbIsActive = false;
-							inventory->mpActiveTool = nullptr;
-
-						}
-					}
+					SPGDeactivateActives::DeactivateActives(inventory.get());
 					EditorRequestPtr editorRequest = new Editors::EditorRequest();
 					editorRequest->editorID = id("FloraEditorSetupUFO");
 					if (plant.instanceID != 0)

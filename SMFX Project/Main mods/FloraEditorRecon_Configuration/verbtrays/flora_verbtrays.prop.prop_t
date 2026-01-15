@@ -1,0 +1,10 @@
+key parent verbtrays!VHE_VerbTrayTemplate
+bool verbIconShowLevel false
+texts verbTrayDescription
+	(fe_02!0x00000004) "Speed Description(PLACEHOLDER)"
+end
+key verbTrayIconID 0xCEEFB113
+texts verbTrayName
+	(fe_02!0x00000003) "Speed (PLACEHOLDER)"
+end
+bool verbTrayShowVerbIconWhenCollapsed true

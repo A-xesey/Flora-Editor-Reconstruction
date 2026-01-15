@@ -26,25 +26,6 @@ void FloraRandom::ClearFloraList()
 	allFlora.clear();
 }
 
-//bool FloraRandom::ValidPlant(const ResourceKey& key, ModelTypes plantType, const eastl::vector<ResourceKey>& passSamePlants, bool gameMode)
-//{
-//	Simulator::cSpeciesProfile* profile = SpeciesManager.GetSpeciesProfile(key);
-//	if (profile != nullptr && profile->mModelType == plantType)
-//	{
-//		if (gameMode)
-//		{
-//			for (const ResourceKey& plant : passSamePlants)
-//			{
-//				if (key.instanceID == plant.instanceID)
-//					return false;
-//			}
-//		}
-//		return true;
-//	}
-//
-//	return false;
-//}
-
 bool FloraRandom::ValidPlant(const ResourceKey& key, const eastl::vector<ResourceKey>& passSamePlants)
 {
 	for (const ResourceKey& plant : passSamePlants)
@@ -57,7 +38,7 @@ bool FloraRandom::ValidPlant(const ResourceKey& key, const eastl::vector<Resourc
 
 uint32_t FloraRandom::GetRandomFloraName(bool smallSpecies, bool mediumSpecies, bool largeSpecies)
 {
-	if (allFlora.size() != 0)
+	if (allFlora.mpBegin != allFlora.mpEnd)
 	{
 		int rando;
 		if (smallSpecies && mediumSpecies && largeSpecies)
@@ -69,19 +50,20 @@ uint32_t FloraRandom::GetRandomFloraName(bool smallSpecies, bool mediumSpecies, 
 		{
 			eastl::vector<ResourceKey> plants;
 
-			ResourceKey plantType{ 0, TypeIDs::flr, GroupIDs::FloraModels };
 			for (const ResourceKey& key : allFlora)
 			{
-				plantType.instanceID = key.instanceID;
-				Simulator::cSpeciesProfile* profile = SpeciesManager.GetSpeciesProfile(plantType);
+				Simulator::cSpeciesProfile* profile = SpeciesManager.GetSpeciesProfile(key);
 				if (profile != nullptr)
 				{
-					if (profile->mModelType == kPlantSmall && smallSpecies)
-						plants.push_back(plantType);
-					else if (profile->mModelType == kPlantMedium && mediumSpecies)
-						plants.push_back(plantType);
-					else if (profile->mModelType == kPlantLarge && largeSpecies)
-						plants.push_back(plantType);
+					if (profile->mFruits.mpBegin != profile->mFruits.mpEnd)
+					{
+						if (profile->mModelType == kPlantSmall && smallSpecies)
+							plants.push_back(key);
+						else if (profile->mModelType == kPlantMedium && mediumSpecies)
+							plants.push_back(key);
+					}
+					if (profile->mModelType == kPlantLarge && largeSpecies)
+						plants.push_back(key);
 				}
 			}
 			rando = rand(plants.size() - 1);

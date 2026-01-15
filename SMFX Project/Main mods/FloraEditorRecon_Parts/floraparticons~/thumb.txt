@@ -1,0 +1,2 @@
+entereditor flora
+captureIcon "C:\SporeModder FX\Projects\!3562_FE_FRAGMENT\floraparticons2"
