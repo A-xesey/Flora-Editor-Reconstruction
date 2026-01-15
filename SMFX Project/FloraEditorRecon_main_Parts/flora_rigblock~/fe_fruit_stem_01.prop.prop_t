@@ -5,9 +5,10 @@ texts blockName
 end
 string16 description "FE_cap_07a"
 colorRGBA modelColor (0.7727895, 0.8045455, 0.6786166, 1)
-keys modelEffect
-	fe_cap_fruit_editor
+transforms modelEffectTransforms
+	-offset (0, -0.15, 0) -scale 1 -rotateXYZ 0 0 0
 end
+vector3 modelCreatureEffectOffset (0, -0.15, 0)
 int32 modelCapabilityFruit 1
 key modelMeshHull editor_rigblock~!None
 key modelMeshLOD0 editor_rigblock~!fe_fruit_stem_01.rw4

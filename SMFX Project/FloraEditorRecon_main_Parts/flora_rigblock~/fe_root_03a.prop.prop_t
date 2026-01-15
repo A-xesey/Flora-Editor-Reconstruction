@@ -1,4 +1,4 @@
-key parent PlantEditorTemplates!PlantLeafTemplate_mod
+key parent PlantEditorTemplates!PlantRootMeshTemplate_mod
 texts blockName
 	(PlantRigblocks!0x00000039) "fe_root_03a"
 end
