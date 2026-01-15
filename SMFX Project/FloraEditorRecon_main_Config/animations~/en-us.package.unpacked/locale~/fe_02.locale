@@ -1,4 +1,4 @@
-0x00000001 Choose a flora
+0x00000001 Choose a Plant
 
 ##part sections
 0x00000002 Roots
@@ -6,7 +6,7 @@
 
 ##verbicon
 0x00000003 Flora
-0x00000004 Flora make planets favorable for life and feed their inhabitants.
+0x00000004 Flora allows planets to sustain life and feed their inhabitants.
 
 ##shit
 #~br~Steve made mistake once and gave a functional Flora Editor instead of the Staff of Life...
@@ -29,9 +29,9 @@
 
 ##Abilities
 # fruit.prop
-0x04cb5b6a Fruit
-0x04cb5b6d Fruit counter
-0x04cb5b6c bottom text
+0x04cb5b6a Fruits
+0x04cb5b6d Fruit Counter
+0x04cb5b6c Plants with more fruits feed more mouths!
 
 ##Sporepedia
 0x0004000e Choose a Large Plant

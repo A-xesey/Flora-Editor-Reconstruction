@@ -93,7 +93,7 @@
 0x00000079 Creature Perch
 0x00000080 Mabelle (FE_leaf_01)
 0x00000081 Cotylthreedon (FE_leaf_02)
-0x00000082 Curlicute(FE_leaf_03)
+0x00000082 Curlicute (FE_leaf_03)
 0x00000083 Indeciduous (FE_leaf_04)
 0x00000084 Echo-Echo (FE_leaf_05)
 0x00000085 Shrobbery (FE_leaf_06)
@@ -102,7 +102,7 @@
 0x00000088 Panqueque (FE_leaf_09)
 #0x00000088 Branchtenna
 0x00000089 Jurassic (FE_leaf_10)
-0x00000090 Dongleberry(FE_leaf_11)
+0x00000090 Dongleberry (FE_leaf_11)
 0x00000091 Frondly (FE_leaf_12)
 0x00000092 Port o' Bellow (FE_leaf_13)
 0x00000093 Toadstool (FE_leaf_14)
@@ -111,7 +111,7 @@
 #0x00000095 Poke'n'piercer
 #0x00000095 Spinesack
 #0x00000095 Pokey Pod
-0x00000096 Pricklepad(FE_leaf_17)
+0x00000096 Pricklepad (FE_leaf_17)
 0x00000097 Connical (FE_leaf_18)
 0x00000098 Fanfare (FE_leaf_20)
 0x00000099 Treetacean (FE_leaf_21)
@@ -119,13 +119,13 @@
 0x00000101 Tickler (FE_leaf_23)
 0x00000102 Spare (FE_leaf_24)
 0x00000103 Bully Stalk (FE_leaf_25)
-0x00000104 Burl-Esque(FE_leaf_26)
-0x00000105 Prickleberry(FE_leaf_27)
+0x00000104 Burl-Esque (FE_leaf_26)
+0x00000105 Prickleberry (FE_leaf_27)
 0x00000106 Eyebulb (FE_leaf_28)
 #0x00000106 Eyeseeyou
 #0x00000106 Horreye
 0x00000107 Pearasol (FE_leaf_29)
-0x00000108 Brambull(FE_leaf_31)
+0x00000108 Brambull (FE_leaf_31)
 0x00000109 Snapper (FE_leaf_33)
 0x00000110 Paddiole (FE_leaf_34)
 0x00000111 Thumper (FE_leaf_35)
@@ -160,17 +160,18 @@
 0x00000132 fe_leaf_19
 
 # CANOPY #
-0x00000133 fe_canopy_01
-0x00000134 fe_canopy_02
-0x00000135 fe_canopy_03
-0x00000136 fe_canopy_04
-0x00000137 fe_canopy_05
-0x00000138 fe_canopy_06
-0x00000139 fe_canopy_07
-0x00000140 fe_canopy_09
-0x00000141 fe_canopy_10
-0x00000142 fe_canopy_11
-0x00000143 fe_canopy_12
+0x00000133 Fairy Petals (fe_canopy_01)
+0x00000134 Uzumany (fe_canopy_02)
+0x00000135 Misantropic (fe_canopy_03)
+0x00000136 Firecrackers (fe_canopy_04)
+0x00000137 Oasual (fe_canopy_05)
+0x00000138 Meshy (fe_canopy_06)
+0x00000139 Devious Dendrite (fe_canopy_07)
+0x00000140 Bulb Bearer (fe_canopy_09)
+0x00000141 Clawthorne (fe_canopy_10)
+0x00000142 Tassletails (fe_canopy_11)
+#0x00000143 Ravioleaves (fe_canopy_12)
+#0x00000143 Sillypad (fe_canopy_12)
 
 0x00000144 fe_root_04a
 0x00000145 fe_leaf_19
