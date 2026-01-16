@@ -1,0 +1,13 @@
+key parent PlantEditorTemplates!PlantModelHandlesTemplate_mod.prop
+string16 description "unknown plant leaf"
+int32 modelBakeLevel 1
+bool modelHasRotationBallHandle false
+int32 modelNumberOfSnapAxes 4
+bool modelOrientToSurfaces true
+key modelPinningType PinningPhysics!0x05985649
+bool modelRemainUpright true
+bool modelRemainUprightOnTop true
+key modelRigBlockType plant!leaf
+#key modelRotationRingYAxis ui_rotateringcreature
+bool modelUseInBaseCollisionCalc false
+bool modelSnapToParentCenter true
