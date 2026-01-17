@@ -1,7 +1,0 @@
-key parent palette_config~!0x0762FAD0.prop
-string16 description "Detail for EP1"
-key paletteCategoryIcon editors~!0x29563736.png
-key palettePageFilter 1
-key palettePageParentCategory flora_paint_palette_category~!fe_category_detail
-uint32 palettePageSequenceNumber 350
-int32 palettePageSetId hash(ExpansionPack1)

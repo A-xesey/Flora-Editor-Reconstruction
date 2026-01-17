@@ -1,8 +1,0 @@
-key parent AssetBrowserFilter!FloraTemplate.prop
-key browserFilterData PlantMedium
-texts browserFilterName
-	(sporepedia!0x00020010) "Medium"
-end
-bool shoppingCanEditExisting true
-key shoppingEditorTypeOverride floraeditorsetupmedium
-key 0x3D72148C floraeditorsetupmedium

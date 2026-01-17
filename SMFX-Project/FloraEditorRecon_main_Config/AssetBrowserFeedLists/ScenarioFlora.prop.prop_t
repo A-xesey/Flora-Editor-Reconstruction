@@ -1,5 +1,0 @@
-keys feedListCategories
-	Library
-	MyStuff
-end
-bool feedListHideSingleCategoryHeader false

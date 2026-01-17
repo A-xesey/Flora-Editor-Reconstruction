@@ -1,5 +1,0 @@
-key parent CreatureAbilities!transgender
-vector2s creatureAbilityRequiredCAPsMaxValueRange
-	(5, 1000)
-end
-uint32 creatureAbilitySpeedGear 5
