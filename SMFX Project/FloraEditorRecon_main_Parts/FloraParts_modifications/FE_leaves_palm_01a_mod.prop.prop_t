@@ -1,6 +1,0 @@
-key parent flora_rigblock~!fe_leaves_palm_01a
-texts blockName
-	(ModRigblocks!0x00000022) "FE_leaves_palm_01a_mod"
-end
-key modelMeshLOD0 FloraParts_rigblocks!FE_leaves_palm_01a_mod.rw4
-key skinpaintTintMaskTexture skinPaint_texture~!FE_leaves_palm_01__tintMask_mod.rw4

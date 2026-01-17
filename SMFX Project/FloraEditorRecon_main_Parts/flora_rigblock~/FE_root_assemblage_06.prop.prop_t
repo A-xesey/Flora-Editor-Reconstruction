@@ -1,7 +1,0 @@
-texts blockName
-	(PlantRigblocks!0x00000045) "FE_root_assemblage_06"
-end
-string16 description "root_06: 1165 M"
-key modelBlockAssemblyFile flora_editorModel~!FE_root_assemblage_06_branch.flr
-key modelAlternativeStaticModel palette_editorModel~!FE_root_assemblage_06.prop
-key paletteItemType ItemBlockAssembly

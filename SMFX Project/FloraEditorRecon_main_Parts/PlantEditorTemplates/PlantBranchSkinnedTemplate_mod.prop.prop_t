@@ -1,8 +1,0 @@
-key parent PlantEditorTemplates!PlantBranchTemplate_MOD
-string16 description "unknown plant branch skinned"
-key modelRigBlockType plant!branch.skinned
-bool modelUseSkin true
-bool modelHasBallConnector true
-bool modelHasSocketConnector true
-float modelMaxBallConnectorScale 6
-#int32 modelComplexityScore 3f
