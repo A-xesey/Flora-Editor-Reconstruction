@@ -1,6 +1,0 @@
-string16 description "branch assembly test"
-texts blockName
-	(PlantRigblocks!0x00000012) "branch assembly test 02"
-end
-key modelBlockAssemblyFile palette_editorModel~!FE_assembly_branch_02.crt
-key paletteItemType ItemBlockAssembly

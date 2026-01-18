@@ -1,9 +1,0 @@
-key parent PlantEditorTemplates!PlantModelHandlesTemplate_mod.prop
-string16 description "unknown plant fruit"
-colorRGBA modelColor (1, 1, 1, 1)
-bool modelHasRotationBallHandle true
-bool modelOrientToSurfaces true
-key modelPinningType PinningGeometry!PinningNormal
-key modelRigBlockType plant!fruit
-key modelRotationRingYAxis ui_rotateringcreature
-bool modelUseInBaseCollisionCalc false

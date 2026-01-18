@@ -1,4 +1,0 @@
-key parent SharedDialogs!editor_NoSaveAndContinue
-texts dialogText
-	(fe_02!0x10000039) "You can't save.Continue? (PLACEHOLDER)"
-end

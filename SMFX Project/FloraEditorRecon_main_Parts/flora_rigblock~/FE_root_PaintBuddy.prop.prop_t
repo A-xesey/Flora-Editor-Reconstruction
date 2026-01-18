@@ -1,6 +1,0 @@
-texts blockName
-	(PlantRigblocks!0x00000057) "FE_root_PaintBuddy"
-end
-key modelBlockAssemblyFile flora_editorModel~!PaintBuddy1_branch.flr
-key modelAlternativeStaticModel palette_editorModel~!FE_root_PaintBuddy.prop
-key paletteItemType ItemBlockAssembly

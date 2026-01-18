@@ -1,5 +1,0 @@
-key parent HintTemplates!EDI-TemplateError
-bool hintAlwaysShow true
-texts hintText
-	(fe_02!0x00000006) "You have no parts. Add parts before saving."
-end

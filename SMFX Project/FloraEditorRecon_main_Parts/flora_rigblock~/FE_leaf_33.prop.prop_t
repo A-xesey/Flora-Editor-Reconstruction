@@ -1,8 +1,0 @@
-key parent PlantEditorTemplates!PlantLeafTemplate_mod
-texts blockName
-	(PlantRigblocks!0x00000109) "FE_leaf_33"
-end
-string16 description "FE_leaf_33"
-key modelMeshHull editor_rigblock~!None
-key modelMeshLOD0 editor_rigblock~!FE_leaf_33.rw4
-vector3 modelRotationBallHandleOffset (0, -1.75, -0.1)

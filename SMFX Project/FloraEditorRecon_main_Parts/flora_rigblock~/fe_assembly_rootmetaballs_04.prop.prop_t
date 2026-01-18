@@ -1,7 +1,0 @@
-texts blockName
-	(PlantRigblocks!0x00000001) "root Metaballs 04"
-end
-string16 description "root Metaballs 04"
-key modelBlockAssemblyFile flora_editorModel~!FE_assembly_rootMetaballs_04_branch.flr
-key modelAlternativeStaticModel palette_editorModel~!FE_assembly_rootMetaballs_04.prop
-key paletteItemType ItemBlockAssembly

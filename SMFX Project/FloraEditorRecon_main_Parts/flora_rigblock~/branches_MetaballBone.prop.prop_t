@@ -1,9 +1,0 @@
-key parent CreatureEditorTemplates!creatureRigblockTemplate
-texts blockName
-	(PlantRigblocks!0x00000009) "Branch Bone"
-end
-string16 description "Branch Bone"
-int32 modelCapabilityLimb 1
-bool modelHasSocketConnector true
-key modelMeshHull editor_rigblock~!ce_basic_bone-Hull.rw4
-key modelMeshLOD0 editor_rigblock~!fe_branch_standard.rw4

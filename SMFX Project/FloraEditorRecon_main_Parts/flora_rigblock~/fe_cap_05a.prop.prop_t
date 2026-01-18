@@ -1,6 +1,0 @@
-key parent PlantEditorTemplates!PlantCapTemplate_mod
-texts blockName
-	(PlantRigblocks!0x00000072) "fe_cap_05a"
-end
-string16 description "05: 170"
-vector3 modelRotationBallHandleOffset (0, -0.7, 0)

@@ -1,6 +1,0 @@
-string16 description "FE_branch_assemblage_01"
-texts blockName
-	(PlantRigblocks!0x00000027) "FE_branch_assemblage_01"
-end
-key modelBlockAssemblyFile palette_editorModel~!FE_branch_assemblage_01.crt
-key paletteItemType ItemBlockAssembly

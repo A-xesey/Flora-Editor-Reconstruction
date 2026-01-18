@@ -1,7 +1,0 @@
-texts blockName
-	(PlantRigblocks!0x00000008) "three branched root"
-end
-string16 description "three branched root"
-key modelBlockAssemblyFile flora_editorModel~!FE_assembly_roots3_branch_branch.flr
-key modelAlternativeStaticModel palette_editorModel~!FE_assembly_roots3_branch.prop
-key paletteItemType ItemBlockAssembly
