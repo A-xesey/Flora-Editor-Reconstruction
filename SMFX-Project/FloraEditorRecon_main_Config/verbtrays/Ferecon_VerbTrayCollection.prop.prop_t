@@ -6,7 +6,7 @@ key verbIconLayout editorVerbIcon
 key verbTrayJustification right
 key verbTrayLayout 0x16B6EB41
 keys verbTrays
-	EditorHeaderTray!test
+	EditorHeaderTray!flora_header
 	#EditorHeaderTray_FE!flora_verbtrays
 	ferecon_fruit
 end

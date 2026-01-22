@@ -1,39 +1,43 @@
 0x00000001 Choose a Plant
 
-##part sections
+## Part Sections
 0x00000002 Roots
 0x00000005 Fruits
 
-##verbicon
+## VerbIcon
 0x00000003 Flora
 0x00000004 Flora allows planets to sustain life and feed their inhabitants.
+# (placeholder)
+0x000000A1 Large trees provide cover and shade for creatures.
+0x000000A2 Small trees allow planets to sustain life and feed their inhabitants.
+0x000000A3 Shrubs allow planets to sustain life and feed their inhabitants.
 
-##shit
+## shit
 #~br~Steve made mistake once and gave a functional Flora Editor instead of the Staff of Life...
 #0x00000004 Provides oxygen to the planets and serves as food for creatures.~br~Grow your own plants!
 #0x00000004 Flora make planets favorable for life and feed their inhabitants.~br~Breeding your own flora is strictly forbidden by Galactic Code! (who cares)
 
-##SharedDialogs/Hint
+## SharedDialogs/Hint
 0x00000006 You need at least 3 fruit nodes to Save
 0x10000009 Your current creation cannot be saved for the following reason:~br~~br~You need at least 3 fruit nodes to Save~br~~br~Continue to load and lose changes to the creation you are currently editing?
 0x10000019 Your current creation cannot be saved for the following reason:~br~~br~You need at least 3 fruit nodes to Save~br~~br~Continue to load and lose changes to the creation you are currently editing?
 0x10000029 Your current creation cannot be saved for the following reason:~br~~br~You need at least 3 fruit nodes to Save~br~~br~Are sure you want to make a new creation and lose your current changes?
 0x10000039 Your current creation cannot be saved for the following reason:~br~~br~You need at least 3 fruit nodes to Save~br~~br~Are sure you want to exit and lose your current creation?
 
-##SpaceTrading/SpaceTools
+## SpaceTrading/SpaceTools
 0x3e295ee3 Create Plant
 0xd974877a Make a plant and get 5 specimens of it in your cargo hold.
 0x0dc3bacb Plant Tweeker
 0x4f4d0bc2 Select this tool and click a plant on a planet to modify it.
 0x385928de Targeting capability of this weapon is limited to plants.
 
-##Abilities
+## Abilities
 # fruit.prop
 0x04cb5b6a Fruit Node
 0x04cb5b6d Fruit Counter
 0x04cb5b6c Plants with more fruits feed more mouths!
 
-##Sporepedia
+## Sporepedia
 0x0004000e Choose a Large Plant
 0x0004000f Choose a Medium Plant
 0x00040010 Choose a Small Plant

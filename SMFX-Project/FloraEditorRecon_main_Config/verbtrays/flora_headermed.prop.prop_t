@@ -1,0 +1,8 @@
+key parent verbtrays!flora_header
+texts verbTrayDescription
+	(fe_02!0x000000A2) "Flora Description"
+end
+key verbTrayIconID flora_medium
+texts verbTrayName
+	(sporepedia!0x00020010) "Small Tree"
+end

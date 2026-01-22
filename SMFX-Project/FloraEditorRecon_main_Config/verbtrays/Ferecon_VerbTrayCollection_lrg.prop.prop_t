@@ -1,0 +1,5 @@
+key parent verbtrays!Ferecon_VerbTrayCollection
+keys verbTrays
+	EditorHeaderTray!flora_headerlrg
+	ferecon_fruit
+end
