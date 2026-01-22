@@ -8,3 +8,7 @@ end
 
 key editorSporepediaCanSwitchConfigID FLR_PlantMediumShopper_CanSwitch
 key editorSporepediaConfigID FLR_PlantMediumShopper
+
+key verbTrayCollection verbtrays!Ferecon_VerbTrayCollection_med
+#key verbTrayCollectionSporepediaLargeCard verbtrays!SHP_Ferecon_VerbTrayCollection
+#key verbTrayCollectionSporepediaSmallCard verbtrays!SHP_Ferecon_SwatchVerbTrayCollectionLarge

@@ -3,11 +3,11 @@ bool verbIconShowLevel false
 keys verbIcons
 end
 texts verbTrayDescription
-    (Abilities!0x0630d552) "Religious Air Description (PLACEHOLDER)"
+	(fe_02!0x00000004) "Flora Description"
 end
-key verbTrayIconID flora_large
+key verbTrayIconID flora
 texts verbTrayName
-    (Abilities!0x0630d551) "Religious Air (PLACEHOLDER)"
+	(sporepedia!0x0002000f) "Tall Tree"
 end
 bool verbTrayShowVerbIconWhenCollapsed true
 key verbTraySoundKey diet
