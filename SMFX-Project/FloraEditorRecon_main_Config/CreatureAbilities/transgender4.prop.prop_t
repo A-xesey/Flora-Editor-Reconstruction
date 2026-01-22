@@ -1,0 +1,5 @@
+key parent CreatureAbilities!transgender
+vector2s creatureAbilityRequiredCAPsMaxValueRange
+	(4, 4)
+end
+uint32 creatureAbilitySpeedGear 4

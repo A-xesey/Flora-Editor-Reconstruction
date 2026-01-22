@@ -1,0 +1,2 @@
+entereditor flora
+captureIcon "C:\SporeModder FX\Projects\FloraEditorRecon_main_Parts\floraparticons2"

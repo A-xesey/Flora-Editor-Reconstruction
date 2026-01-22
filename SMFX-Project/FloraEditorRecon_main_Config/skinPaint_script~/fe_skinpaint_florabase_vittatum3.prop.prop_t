@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "skinpaint_florabase_vittatum3"
+colorRGBs paintThemeColor1s
+	(0.443137, 0.325490, 0.082353)
+	(0, 0, 0)
+	(0, 0, 0)
+end
+keys paintThemePaints
+	skinpaint_florabase_vittatum3
+	animations~
+	animations~
+end

@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "skinpaint_floradetail_turtle"
+colorRGBs paintThemeColor1s
+	(0, 0, 0)
+	(0, 0, 0)
+	(0.980392, 0.815686, 0.341176)
+end
+keys paintThemePaints
+	animations~
+	animations~
+	skinpaint_floradetail_turtle
+end

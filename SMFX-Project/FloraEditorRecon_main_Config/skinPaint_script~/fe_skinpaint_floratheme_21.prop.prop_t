@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "crystal(Green)1 L"
+colorRGBs paintThemeColor1s
+	(0.694118,0.603922,0.411762)
+	(0.317647,0.443134,0.141176)
+	(0.623529,0.803922,0.368627)
+end
+keys paintThemePaints
+	skinpaint_florabase_valueGradientDark
+	skinpaint_floracoat_toupee
+	skinpaint_floradetail_mantellaTopside
+end

@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "bumpy2 L"
+colorRGBs paintThemeColor1s
+	(0.443137, 0.356863, 0.321569)
+	(0.262745, 0.286275, 0.576471)
+	(0.509804, 0.368627, 0.803922)
+end
+keys paintThemePaints
+	skinpaint_florabase_spotted
+	skinpaint_floracoat_blank
+	skinpaint_floradetail_sideWash
+end

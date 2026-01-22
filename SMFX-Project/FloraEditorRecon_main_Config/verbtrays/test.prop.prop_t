@@ -1,0 +1,13 @@
+key parent verbtrays!CRE_VerbTrayTemplate
+bool verbIconShowLevel false
+keys verbIcons
+end
+texts verbTrayDescription
+    (Abilities!0x0630d552) "Religious Air Description (PLACEHOLDER)"
+end
+key verbTrayIconID flora_large
+texts verbTrayName
+    (Abilities!0x0630d551) "Religious Air (PLACEHOLDER)"
+end
+bool verbTrayShowVerbIconWhenCollapsed true
+key verbTraySoundKey diet

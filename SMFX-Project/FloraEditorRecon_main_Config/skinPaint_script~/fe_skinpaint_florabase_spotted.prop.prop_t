@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "skinpaint_florabase_spotted"
+colorRGBs paintThemeColor1s
+	(0.694117, 0.674510, 0.411765)
+	(0, 0, 0)
+	(0, 0, 0)
+end
+keys paintThemePaints
+	skinpaint_florabase_spotted
+	animations~
+	animations~
+end

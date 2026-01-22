@@ -1,0 +1,33 @@
+key parent CreatureEditorTemplates!CreatureDetailTemplate
+texts blockName
+	(CreatureRigblocks!0x245b71f9) "Grassy Growth (PLACEHOLDER)"
+end
+key itemUnlockEffect CRG_partUnlock_detail
+float itemUnlockFindPercentage 0.99
+int32 itemUnlockLevel 1
+int32 modelCapabilityCuteness 1
+int32 modelCapabilityFlaunt 1
+int32 modelCapabilitySocial 3
+int32 modelCapabilityStealth 1
+int32 modelComplexityScore 2
+int32 ModelCapabilityTrans 1
+bboxs modelDefaultChannelsBBox
+	(-0.091109, -0.189553, -0.009886) (0.036688, 0.027112, 0.076011)
+end
+bool modelExtraJiggly true
+keys modelHandlePlacementTypes
+	DeformAxisForward!PreserveAll
+	DeformAxisUp!IgnoreAxis.xaxis
+end
+float modelMaxScale 1.95
+key modelMeshLOD0 editor_rigblock~!ce_details_flora_01.rw4
+float modelMinScale 0.8
+int32 modelPrice 25
+vector3 modelRotationBallHandleOffset (0, -0.3, 0.2)
+int32 modelRunTimeBoneCount 0
+float modelScale 1.4
+float modelZCorpMinScale 100
+key skinpaintDiffuseTexture skinPaint_texture~!ce_details_flora_01__diffuse.rw4
+bool skinpaintIgnoreParticles true
+key skinpaintSpecBumpTexture skinPaint_texture~!ce_details_flora_01__specBump.rw4
+key skinpaintTintMaskTexture skinPaint_texture~!ce_details_flora_01__tintMask.rw4

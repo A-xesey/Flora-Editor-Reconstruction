@@ -1,0 +1,19 @@
+key musicTemplate music_shopping_base
+keys addgroups
+	#ep1_accessories_editor
+	music_creature_editor
+	music_space_accessories
+	music_tribe_editor
+	music_civ_accessories
+	music_space_accessories
+	music_ufo_editor
+	music_vehc_rel_editor
+	music_vehc_eco_editor
+	music_vehc_editor
+	music_building_editor
+	music_cell_editor
+	music_harvester_editor
+	#SweetHomeworld
+	##Ui_tree_loop
+	##interstellar_long
+end

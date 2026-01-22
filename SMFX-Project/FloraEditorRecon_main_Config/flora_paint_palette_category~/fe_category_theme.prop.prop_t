@@ -1,0 +1,16 @@
+keys paletteCategoryIconList
+	editors_flora~!button-paintbuddy-norm.png
+	editors_flora~!0xffffffff.0xffffffff
+	editors_flora~!button-paintbuddy-hl.png
+	editors_flora~!button-paintbuddy-act.png
+	editors_flora~!button-paintbuddy-on-norm.png
+	editors_flora~!0xffffffff.0xffffffff
+	editors_flora~!button-paintbuddy-on-hl.png
+	editors_flora~!button-paintbuddy-on-act.png
+	editors_flora~!button-paintbuddy-norm.png
+end
+key paletteCategoryLayoutFile editorPaintThemePaletteCategory
+texts paletteCategoryName
+	(ce_paint!0x8c027d87) "Complete Themes"
+end
+uint32 paletteCategorySequenceNumber 200

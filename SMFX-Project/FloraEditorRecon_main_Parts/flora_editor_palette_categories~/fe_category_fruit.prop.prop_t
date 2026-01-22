@@ -1,0 +1,17 @@
+key parent palette_config~!TemplatePaletteCategoryParts.prop
+#key paletteCategoryIcon editors_flora~!clue-category.png
+keys paletteCategoryIconList
+	editors_flora~!button-fruit-norm.png
+	editors_flora~!0x0
+	editors_flora~!button-fruit-hl.png
+	editors_flora~!button-fruit-act.png
+	editors_flora~!button-fruit-on-norm.png
+	editors_flora~!0x0
+	editors_flora~!button-fruit-on-hl.png
+	editors_flora~!button-fruit-on-act.png
+	editors_flora~!button-fruit-norm.png
+end
+texts paletteCategoryName
+	(fe_02!0x00000005) "Fruit"
+end
+uint32 paletteCategorySequenceNumber 400

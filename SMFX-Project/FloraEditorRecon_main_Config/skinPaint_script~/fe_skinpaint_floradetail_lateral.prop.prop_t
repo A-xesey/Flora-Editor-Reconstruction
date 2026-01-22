@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "skinpaint_floradetail_lateral"
+colorRGBs paintThemeColor1s
+	(0, 0, 0)
+	(0, 0, 0)
+	(0.282353, 0.439215, 0.050980)
+end
+keys paintThemePaints
+	animations~
+	animations~
+	skinpaint_floradetail_lateral
+end

@@ -1,0 +1,10 @@
+keys browserFilterChildrenFilters
+	creatures
+	Buildings
+	vehicles
+	flora
+	Scenarios
+end
+texts browserFilterName
+	(sporepedia!0x00020012) "Home"
+end

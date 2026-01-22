@@ -1,0 +1,13 @@
+int32s palettePagePartItemColumns
+	0
+	1
+end
+int32s palettePagePartItemRows
+	0
+	0
+end
+keys palettePagePartItems
+	skinPaint_script~!fe_skinpaint_floradetail_halftoneTopside
+	skinPaint_script~!fe_skinpaint_floradetail_lateral
+end
+key palettePagePartParentPage FE_TextureGroup_Detail_04

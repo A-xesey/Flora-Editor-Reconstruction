@@ -1,0 +1,24 @@
+key parent CreatureEditorTemplates!CreatureDetailTemplate
+texts blockName
+	(CreatureRigblocks!0x245b71fb) "Bark Horn (PLACEHOLDER)"
+end
+int32 modelCapabilityCuteness 1
+int32 modelCapabilityFlaunt 3
+int32 modelCapabilitySocial 9
+int32 modelCapabilityStealth 3
+int32 modelComplexityScore 2
+int32 ModelCapabilityTrans 3
+key modelLeftFile creature_rigblock~!ce_details_flora_03
+float modelMaxScale 1.75
+key modelMeshLOD0 editor_rigblock~!ce_details_flora_03.rw4
+float modelMinScale 0.8
+int32 modelPrice 150
+key modelRightFile creature_rigblock~!ce_details_flora_03-symmetric
+vector3 modelRotationBallHandleOffset (0, -0.4, 0.2)
+int32 modelRunTimeBoneCount 0
+float modelScale 1.1
+float modelZCorpMinScale 100
+key skinpaintDiffuseTexture skinPaint_texture~!ce_details_flora_03__diffuse.rw4
+bool skinpaintIgnoreParticles true
+key skinpaintSpecBumpTexture skinPaint_texture~!ce_details_flora_03__specBump.rw4
+key skinpaintTintMaskTexture skinPaint_texture~!ce_details_flora_03__tintMask.rw4

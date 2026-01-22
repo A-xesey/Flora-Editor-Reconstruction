@@ -1,0 +1,19 @@
+#key parent verbtrays!CRE_VerbTrayTemplate
+key verbIconLayout 0xCDA510D7
+bool verbIconShowLevel true
+keys verbIcons
+	fruit
+end
+texts verbIconValueString
+	(Abilities!0x064922b7) "mph"
+end
+texts verbTrayDescription
+	(fe_02!0x04cb5b6c) "Fruit (PLACEHOLDER)"
+end
+texts verbTrayName
+	(fe_02!0x04cb5b6d) "Fruit (PLACEHOLDER)"
+end
+key verbTrayIconID stats_fruit_icon
+key verbTrayOverrideCategory fruit
+key verbTrayRepresentativeAnimation 0x03FEF312
+key verbTraySoundKey generic

@@ -1,0 +1,13 @@
+key parent PlantEditorTemplates!PlantLeafTemplate_mod
+texts blockName
+	(PlantRigblocks!0x00000141) "fe_canopy_10"
+end
+string16 description "canopy 10: 575"
+key modelMeshHull editor_rigblock~!None
+key modelMeshLOD0 editor_rigblock~!fe_canopy_10.rw4
+vector3 modelRotationBallHandleOffset (0, -1.75, -0.1)
+key skinpaintDiffuseTexture skinPaint_texture~!fe_canopy_10__diffuse.rw4
+float skinpaintMaxOcclusion 0.2
+key skinpaintSpecBumpTexture skinPaint_texture~!fe_canopy_10__specBump.rw4
+key skinpaintTintMaskTexture skinPaint_texture~!fe_canopy_10__tintMask.rw4
+

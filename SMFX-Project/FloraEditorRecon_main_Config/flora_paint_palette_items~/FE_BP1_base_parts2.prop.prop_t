@@ -1,0 +1,10 @@
+int32s palettePagePartItemColumns
+	0
+end
+int32s palettePagePartItemRows
+	0
+end
+keys palettePagePartItems
+	skinPaint_script~!FE_BP1_skinpaint_base_test
+end
+key palettePagePartParentPage FE_BP1_base_page2

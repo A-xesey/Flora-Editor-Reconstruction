@@ -1,0 +1,7 @@
+texts blockName
+	(PlantRigblocks!0x00000005) "root 4 branch"
+end
+string16 description "root 4 branch"
+key modelBlockAssemblyFile flora_editorModel~!FE_assembly_roots4_branch_branch.flr
+key modelAlternativeStaticModel palette_editorModel~!FE_assembly_roots4_branch.prop
+key paletteItemType ItemBlockAssembly

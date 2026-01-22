@@ -1,0 +1,23 @@
+key parent spacetools~!ToolTemplate.prop
+string16 description "Create Creature"
+int32 spaceToolBuyCost 75
+key spaceToolContext planet
+texts spaceToolDescription
+	(fe_02!0x3e295ee3) "Create Creature"
+end
+texts spaceToolDetailDescription
+	(fe_02!0xd974877a) "Make a creature and get 5 specimens of it in your cargo hold."
+end
+bool spaceToolDisableOn201Ruins false#true
+bool spaceToolDisableOnHomeworld false
+bool spaceToolDisableOnSaveGames false#true
+key spaceToolImageID ufotools~!ferecon_plantnew.png
+texts spaceToolLockedDescription
+	(spacegame_tools!0xa0bb7099) "Requires ~commodity_requirements~"
+end
+float spaceToolMaxRange -1
+key spaceToolPanelKey SocialConsumablePanel
+key spaceToolStrategy FEReconPlantStrategyCreate#DefaultToolStrategy
+key spaceToolType special
+key toolDiscoverableRarity Common
+bool toolUseOnActivate true

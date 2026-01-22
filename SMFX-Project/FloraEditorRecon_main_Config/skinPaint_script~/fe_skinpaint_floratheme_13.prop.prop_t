@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "mountains2 L"
+colorRGBs paintThemeColor1s
+	(0.576469,0.525488,0.41960)
+	(0.443135,0.423527,0.203922)
+	(0.803922,0.627451,0.258823)
+end
+keys paintThemePaints
+	skinpaint_florabase_valueGradientDark
+	skinpaint_floracoat_zebra
+	skinpaint_floradetail_blank
+end

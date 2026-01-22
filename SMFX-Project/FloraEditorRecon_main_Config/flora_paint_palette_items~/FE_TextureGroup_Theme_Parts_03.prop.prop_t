@@ -1,0 +1,45 @@
+int32s palettePagePartItemColumns
+	0
+	1
+	2
+	0
+	1
+	2
+	0
+	1
+	2
+	0
+	1
+	2
+end
+int32s palettePagePartItemRows
+	0
+	0
+	0
+	1
+	1
+	1
+	2
+	2
+	2
+	3
+	3
+	3
+end
+keys palettePagePartItems
+	skinPaint_script~!fe_skinpaint_floratheme_sakura
+	skinPaint_script~!fer_skinpaint_floratheme_custom01#fe_skinpaint_floratheme_Applemin
+	skinPaint_script~!fer_skinpaint_floratheme_custom02#fe_skinpaint_floratheme_Mushthorn
+	skinPaint_script~!fe_skinpaint_floratheme_GreenTree
+	skinPaint_script~!fer_skinpaint_floratheme_custom03#fe_skinpaint_floratheme_ST2
+	skinPaint_script~!fer_skinpaint_floratheme_custom04#fe_skinpaint_floratheme_Coral
+	skinPaint_script~!fer_skinpaint_floratheme_custom05#fe_skinpaint_floratheme_Duak
+	skinPaint_script~!fe_skinpaint_floratheme_RedPeas
+	skinPaint_script~!fer_skinpaint_floratheme_custom06#fe_skinpaint_floratheme_Brakerrina
+	skinPaint_script~!fer_skinpaint_floratheme_custom07#fe_skinpaint_floratheme_TreeTree
+	skinPaint_script~!fe_skinpaint_floratheme_Pryannimissimo
+	skinPaint_script~!fer_skinpaint_floratheme_custom08#fe_skinpaint_floratheme_Bereza
+	#skinPaint_script~!fe_skinpaint_floratheme_thumbGREEN
+	#skinPaint_script~!fe_skinpaint_floratheme_thumbWHITE
+end
+key palettePagePartParentPage FE_TextureGroup_Theme_03

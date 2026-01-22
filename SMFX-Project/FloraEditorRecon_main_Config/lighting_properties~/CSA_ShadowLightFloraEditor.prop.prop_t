@@ -1,0 +1,13 @@
+key parent ShadowLightTemplate.prop
+string16 description "parameters for shadow light"
+float farClip 10
+bool flipUpVector false
+float halfHeight 1.2
+float halfWidth 1.25
+vector3 lookDirection (-0.2, -0.2, 1)
+float lookDistance 4.25
+float nearClip 0.1
+bool orthoProjection true
+float shadowDarkness 0.6
+float shadowDepthOffset 0.15
+float zoomVal 2

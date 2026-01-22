@@ -1,0 +1,43 @@
+int32s palettePagePartItemColumns
+	0
+	1
+	2
+	0
+	1
+	2
+	0
+	1
+	2
+	0
+	1
+	2
+end
+int32s palettePagePartItemRows
+	0
+	0
+	0
+	1
+	1
+	1
+	2
+	2
+	2
+	3
+	3
+	3
+end
+keys palettePagePartItems
+	skinPaint_script~!fe_skinpaint_floracoat_granite
+	skinPaint_script~!fe_skinpaint_floracoat_halftone
+	skinPaint_script~!fe_skinpaint_floracoat_platesSmall
+	skinPaint_script~!fe_skinpaint_floracoat_stripesML
+	skinPaint_script~!fe_skinpaint_floracoat_stripesLL
+	skinPaint_script~!fe_skinpaint_floracoat_toupee
+	skinPaint_script~!fe_skinpaint_floracoat_ridgesLateral
+	skinPaint_script~!fe_skinpaint_floracoat_suckers
+	skinPaint_script~!fe_skinpaint_floracoat_platesLarge
+	skinPaint_script~!fe_skinpaint_floracoat_crocodile
+	skinPaint_script~!fe_skinpaint_floracoat_giraffe
+	skinPaint_script~!fe_skinpaint_floracoat_walrus
+end
+key palettePagePartParentPage FE_TextureGroup_Coat_02

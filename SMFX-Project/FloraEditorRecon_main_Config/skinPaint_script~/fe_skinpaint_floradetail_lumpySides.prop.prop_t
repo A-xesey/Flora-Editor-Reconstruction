@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "skinpaint_floradetail_lumpySides"
+colorRGBs paintThemeColor1s
+	(0, 0, 0)
+	(0, 0, 0)
+	(0.803921, 0.752941, 0.149019)
+end
+keys paintThemePaints
+	animations~
+	animations~
+	skinpaint_floradetail_lumpySides
+end

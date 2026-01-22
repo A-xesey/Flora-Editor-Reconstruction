@@ -1,0 +1,12 @@
+key parent PlantEditorTemplates!PlantLeafTemplate_mod
+texts blockName
+	(PlantRigblocks!0x00000123) "FE_flatleaf_01"
+end
+string16 description "flat_01: 200"
+key modelMeshHull editor_rigblock~!None
+key modelMeshLOD0 editor_rigblock~!FE_flatleaf_01.rw4
+vector3 modelRotationBallHandleOffset (0, -1.75, -0.1)
+key skinpaintDiffuseTexture skinPaint_texture~!FE_flatleaf_01__diffuse.rw4
+key skinpaintSpecBumpTexture skinPaint_texture~!FE_flatleaf_01__specBump.rw4
+key skinpaintTintMaskTexture skinPaint_texture~!FE_flatleaf_01__tintMask.rw4
+

@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "skinpaint_floradetail_giraffeTopside"
+colorRGBs paintThemeColor1s
+	(0, 0, 0)
+	(0, 0, 0)
+	(0.749019, 0.509804, 0.035294)
+end
+keys paintThemePaints
+	animations~
+	animations~
+	skinpaint_floradetail_giraffeTopside
+end

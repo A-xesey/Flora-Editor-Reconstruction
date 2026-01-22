@@ -1,0 +1,13 @@
+key parent PlantEditorTemplates!PlantRootMeshTemplate_mod
+texts blockName
+	(PlantRigblocks!0x00000144) "fe_root_04a"
+end
+string16 description "fe_root_04a"
+float modelScale 10.0
+key modelMeshHull editor_rigblock~!fe_root_02a-hull.rw4
+key modelMeshLOD0 editor_rigblock~!fe_root_04a.rw4
+vector3 modelMinSocketConnectorOffset (0, 0, 0.15)
+bool modelUseHullForBBox true
+key skinpaintDiffuseTexture skinPaint_texture~!fe_root_03__diffuse.rw4
+key skinpaintSpecBumpTexture skinPaint_texture~!fe_fruit_03_blind_B.rw4
+key skinpaintTintMaskTexture skinPaint_texture~!fe_fruit_03_blind_M.rw4

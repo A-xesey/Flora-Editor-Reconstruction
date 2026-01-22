@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "rivers3 L"
+colorRGBs paintThemeColor1s
+	(0.694118,0.603922,0.411762)
+	(0.443134,0.266667,0.203922)
+	(0.694118,0.419607,0.317647)
+end
+keys paintThemePaints
+	skinpaint_florabase_morinda
+	skinpaint_floracoat_toupee
+	skinpaint_floradetail_blank
+end

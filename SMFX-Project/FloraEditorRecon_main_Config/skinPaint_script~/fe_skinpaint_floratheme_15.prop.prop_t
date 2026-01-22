@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "rivers1 L"
+colorRGBs paintThemeColor1s
+	(0.282353,0.227448,0.203922)
+	(0.211765,0.282353,0.203922)
+	(0.803922,0.772546,0.368627)
+end
+keys paintThemePaints
+	skinpaint_florabase_auratus
+	skinpaint_floracoat_blank
+	skinpaint_floradetail_sideWash
+end

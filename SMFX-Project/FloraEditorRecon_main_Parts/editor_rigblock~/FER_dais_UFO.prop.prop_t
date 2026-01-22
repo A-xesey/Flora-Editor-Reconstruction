@@ -1,0 +1,7 @@
+key parent models!DefaultTemplate.prop
+bboxs modelBoundingBox
+	(-6.8870039, -7.1688371, -0.7004) (6.8672919, 7.1027541, 0.002641)
+end
+float modelBoundingRadius 9.9656219
+key modelMeshLOD0 editor_rigblock~!FERecon_dais_UFO.rw4#adventure_acc_dais.rw4
+float modelScale 3

@@ -1,0 +1,10 @@
+key parent PlantEditorTemplates!PlantFruitTemplate_mod
+texts blockName
+	(ModRigblocks!0x00000017) "fruit 01"
+end
+key modelMeshHull animations~
+key modelMeshLOD0 FloraParts_rigblocks!Fruit_stinky_01.rw4
+vector3 modelRotationBallHandleOffset (0, -0.5, 0)
+key skinpaintDiffuseTexture skinPaint_texture~!Fruit_stinky_01.rw4
+key skinpaintSpecBumpTexture skinPaint_texture~!fe_fruit_03_blind_B.rw4
+key skinpaintTintMaskTexture skinPaint_texture~!fe_fruit_03_blind_M.rw4
