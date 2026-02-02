@@ -59,18 +59,17 @@ member_detour(cPlantSpeciesManager_CreatePlantItem, cPlantSpeciesManager, cPlant
 			ResourceKey plantKey = plantItem->GetItemID();
 			if (plantKey.instanceID != 0 && plantKey.groupID != 0 && plantKey.typeID != 0)
 			{
-				bool IsBaked = BakeManager.IsBaked(plantKey, false);
-
 				//plant baking
-				//this functions works outside of planets, so i decided to added this check
-				if (GetCurrentContext() == SpaceContext::Planet && !IsBaked)
+				bool IsBakingOrBaked = BakeManager.IsBakingOrBaked(plantKey);
+				//this functions works outside of planets, so i decided to add this check
+				if (GetCurrentContext() == SpaceContext::Planet && !IsBakingOrBaked)
 				{
 					BakeManager.BakeModel(plantKey, Editors::BakeParameters::BakeParameters(0, 4, 0x609b763));
 
 					PropertyListPtr PlantItemProperty;
-					PropManager.GetPropertyList(plantItem->GetItemID().instanceID, plantItem->GetItemID().groupID, PlantItemProperty);
+					PropManager.GetPropertyList(plantKey.instanceID, plantKey.groupID, PlantItemProperty);
 
-					//since didn't find are functions that update plant models, we need to update it during the baking
+					//since I didn't find are functions that update plant models, we need to update it during the baking
 					if (PlantItemProperty != nullptr)
 					{
 						float mBaseRadius;
@@ -81,36 +80,53 @@ member_detour(cPlantSpeciesManager_CreatePlantItem, cPlantSpeciesManager, cPlant
 						Property::GetFloat(PlantItemProperty.get(), 0x0254CF8F, mCanopyRadius);
 						Property::GetFloat(PlantItemProperty.get(), 0x0254CF97, mHeight);
 
-						
-						//floraimposter initializes only after baking, so we need to we need a temporary solution to the problem
-						//set models to show plant in game
-						if (!IsBaked)
+						//always passes the check, so commented out
+						/*bool IsBaked = BakeManager.IsBaked(plantKey, false);
+						set models to show plant in game
+						if (!IsBaked)*/
 						{
-							float PseudoFloraImposterScale = (mBaseRadius + mCanopyRadius + mHeight) / 3;
+							//floraimposter initializes only after baking, so we need a temporary solution to the problem
+							float FloraImposterScaleTemp = (mBaseRadius + mCanopyRadius + mHeight) / 3;
 
-							ResourceKey SetPlantModelLOD0(plantItem->GetItemID().instanceID, TypeIDs::gmdl, 0x40667100);
-							ResourceKey SetPlantModelLOD1(plantItem->GetItemID().instanceID, TypeIDs::gmdl, 0x40666201);
-							ResourceKey SetPlantModelLOD2(plantItem->GetItemID().instanceID, TypeIDs::gmdl, 0x40666202);
-							ResourceKey SetPlantModelLOD3(plantItem->GetItemID().instanceID, TypeIDs::gmdl, 0x40666203);
-							ResourceKey SetPlantSpriteTop(plantItem->GetItemID().instanceID, TypeIDs::raster, 0x40662800);
-							ResourceKey SetPlantSpriteSide(plantItem->GetItemID().instanceID, TypeIDs::raster, 0x40662801);
+							//ConsolePrintF("FloraImposterScaleTemp 1 %f", FloraImposterScaleTemp);
+							//Simulator::cSpeciesProfile* profile = SpeciesManager.GetSpeciesProfile(plantKey);
+							//Vector3 BBoxMax = -profile->mBoundingBox.upper;
+							//Vector3 BBoxMin = profile->mBoundingBox.lower;
+							//if (BBoxMin.x <= BBoxMax.x) BBoxMin.x = BBoxMax.x;
+							//if (BBoxMin.y <= BBoxMax.y) BBoxMin.y = BBoxMax.y;
+							//BBoxMin.z *= 0.5f;
+							////BBoxMax.z *= 2.0f;
+							////if (BBoxMin.z <= BBoxMax.z) BBoxMin.z = BBoxMax.z;
+							//if (BBoxMin.z < BBoxMax.y) BBoxMin.z = BBoxMax.y;
+							//float result = (BBoxMin.x + BBoxMin.y + BBoxMin.z)/6;
+							//FloraImposterScaleTemp = result;
+							//ConsolePrintF("FloraImposterScaleTemp 2 %f", FloraImposterScaleTemp);
 
-							PlantItemProperty->SetProperty(0x00F9EFBB, &Property().SetValueKey(SetPlantModelLOD0));
-							PlantItemProperty->SetProperty(0x00F9EFBC, &Property().SetValueKey(SetPlantModelLOD1));
-							PlantItemProperty->SetProperty(0x00F9EFBD, &Property().SetValueKey(SetPlantModelLOD2));
-							PlantItemProperty->SetProperty(0x00F9EFBE, &Property().SetValueKey(SetPlantModelLOD3));
-							PlantItemProperty->SetProperty(0xD124FCE7, &Property().SetValueKey(SetPlantSpriteTop));
-							PlantItemProperty->SetProperty(0xD124FCE4, &Property().SetValueKey(SetPlantSpriteSide));
-							PlantItemProperty->SetProperty(0x04057881, &Property().SetValueFloat(PseudoFloraImposterScale));
+							ResourceKey PlantModelLOD0(plantKey.instanceID, TypeIDs::gmdl, 0x40667100);
+							ResourceKey PlantModelLOD1(plantKey.instanceID, TypeIDs::gmdl, 0x40666201);
+							ResourceKey PlantModelLOD2(plantKey.instanceID, TypeIDs::gmdl, 0x40666202);
+							ResourceKey PlantModelLOD3(plantKey.instanceID, TypeIDs::gmdl, 0x40666203);
+							ResourceKey PlantSpriteTop(plantKey.instanceID, TypeIDs::raster, 0x40662800);
+							ResourceKey PlantSpriteSide(plantKey.instanceID, TypeIDs::raster, 0x40662801);
 
-							plantItem->mFloraImposterScale = PseudoFloraImposterScale;
+							PlantItemProperty->SetProperty(0x00F9EFBB, &Property().SetValueKey(PlantModelLOD0));
+							PlantItemProperty->SetProperty(0x00F9EFBC, &Property().SetValueKey(PlantModelLOD1));
+							PlantItemProperty->SetProperty(0x00F9EFBD, &Property().SetValueKey(PlantModelLOD2));
+							PlantItemProperty->SetProperty(0x00F9EFBE, &Property().SetValueKey(PlantModelLOD3));
+							PlantItemProperty->SetProperty(0xD124FCE7, &Property().SetValueKey(PlantSpriteTop));
+							PlantItemProperty->SetProperty(0xD124FCE4, &Property().SetValueKey(PlantSpriteSide));
+							PlantItemProperty->SetProperty(0x04057881, &Property().SetValueFloat(FloraImposterScaleTemp));
+
+							plantItem->mFloraImposterScale = FloraImposterScaleTemp;
 						}
-						else
+						//the code never passes it, so it's commented out
+						/*else
 						{
+							ConsolePrintF("Is baked! :D");
 							float mFloraImposterScale;
 							Property::GetFloat(PlantItemProperty.get(), 0x04057881, mFloraImposterScale);
 							plantItem->mFloraImposterScale = mFloraImposterScale;
-						}
+						}*/
 
 						//finally, to show the plant in the game
 						plantItem->mAlphaModel = plantKey.instanceID;
@@ -130,7 +146,7 @@ member_detour(cPlantSpeciesManager_CreatePlantItem, cPlantSpeciesManager, cPlant
 		{
 			ResourceKey newPlant(0, TypeIDs::flr, GroupIDs::FloraModels);
 			cPlanetRecordPtr planetRecord = GetActivePlanetRecord();
-			//this functions works outside of planets, so i decided to added this check
+			//this functions works outside of planets, so i decided to add this check
 			if (planetRecord != nullptr && GetCurrentContext() == SpaceContext::Planet)
 			{
 				if (planetRecord->mPlantSpecies.mpBegin != planetRecord->mPlantSpecies.mpEnd)
@@ -168,7 +184,7 @@ member_detour(cPlantSpeciesManager_CreatePlantItem, cPlantSpeciesManager, cPlant
 						}
 						do
 						{
-							newPlant.instanceID = floraRandom->GetRandomFloraName(smallPlants.size() != tScore, mediumPlants.size() != tScore, largePlants.size() != tScore);
+							newPlant.instanceID = floraRandom->GetRandomFloraName(smallPlants.size() != tScore, mediumPlants.size() != tScore, largePlants.size() != tScore, gameMode);
 							profile = SpeciesManager.GetSpeciesProfile(newPlant);
 							if (profile != nullptr)
 							{

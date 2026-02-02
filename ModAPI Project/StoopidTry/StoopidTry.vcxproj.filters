@@ -49,6 +49,9 @@
     <ClInclude Include="SPGDeactivateActives.h">
       <Filter>StoopidTry</Filter>
     </ClInclude>
+    <ClInclude Include="ModelTypeChanged.h">
+      <Filter>StoopidTry</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -73,6 +76,9 @@
       <Filter>StoopidTry</Filter>
     </ClCompile>
     <ClCompile Include="SPGDeactivateActives.cpp">
+      <Filter>StoopidTry</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelTypeChanged.cpp">
       <Filter>StoopidTry</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,12 +1,12 @@
 key parent skinPaint_script~!TemplateSkinPaintTheme.prop
 string16 description "Ice cream"
 colorRGBs paintThemeColor1s
-    (0.694117,0.513725,0.129412)
-    (0.541176,0.694117,0.317647)
-    (0.905882,0.788235,0.537255)
+    (0.458823, 0.694117, 0.913725)
+    (0.745098, 0.0509803, 0.345098)
+    (0.992156, 1, 0.866666)
 end
 keys paintThemePaints
-	skinpaint_florabase_granite
-	skinpaint_floracoat_turtle
-	skinpaint_floradetail_clydesdale
+	skinpaint_florabase_valueGradientLight
+	skinpaint_floracoat_gooStripe
+	skinpaint_floradetail_polkadot
 end

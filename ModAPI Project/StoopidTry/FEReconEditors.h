@@ -1,38 +1,76 @@
 #pragma once
 #include <Spore\BasicIncludes.h>
 #include <Spore\Sporepedia\cSPUILargeAssetView.h>
+#include <Spore\Sporepedia\AssetViewManager.h>
+#include "ModelTypeChanged.h"
 
 #define FEReconEditorsPtr intrusive_ptr<FEReconEditors>
 
 using namespace App;
 using namespace Editors;
 
+uint32_t EditorPreviousModelType = 0;
+Mode EditorPreviousMode = Mode::PaintMode;
+int EditorTotalTime = 0;
+
+ModelTypeChangedPtr modelTypeChanged;
+
 class FEReconEditors
 {
 public:
 
 	static void Initialize() {
+		modelTypeChanged = new ModelTypeChanged();
+		MessageManager.AddListener(modelTypeChanged.get(), id("Editors_ModelWasChanged"));
 	}
 
 	static void Dispose() {
+		MessageManager.RemoveListener(modelTypeChanged.get(), id("Editors_ModelWasChanged"));
+		modelTypeChanged = nullptr;
 	}
 
 	static void AttachDetours();
 };
 
+//To make work editor configs for each plant type
+static_detour(Editor_ReturnEditorIDByModel, uint32_t(ModelTypes))
+{
+	uint32_t detoured(ModelTypes modelType)
+	{
+		if (modelType == kPlantLarge) return id("FloraEditorSetupLarge");
+		else if (modelType == kPlantMedium) return id("FloraEditorSetupMedium");
+		else if (modelType == kPlantSmall) return id("FloraEditorSetupSmall");
+		else return original_function(modelType);
+	}
+};
+
 member_detour(Editor_Update, cEditor, void(float, float)) {
 	void detoured(float delta1, float delta2) {
-
 		original_function(this, delta1, delta2);
 		auto manipulatorID_fixAnim = eastl::find(Editor.mEnabledManipulators.begin(), Editor.mEnabledManipulators.end(), id("FloraEditorDisableAnimation"));
+		
+		// fix freeze after paint mode
+		if (manipulatorID_fixAnim != Editor.mEnabledManipulators.end() && Editor.mMode != EditorPreviousMode)
+		{
+			if (Editor.mMode != Mode::PaintMode && Editor.mMode != Mode::PlayMode)
+				Editor.field_385 = false;	//mAnimatingCreatureActive
+			EditorPreviousMode = Editor.mMode;
+		}
 		if (Editor.IsMode(Mode::BuildMode))
 		{
-			/// fix freeze after paint mode
-			if (manipulatorID_fixAnim != Editor.mEnabledManipulators.end())
-				Editor.field_385 = false;
+			//add headers for each plant types
+			if (EditorPreviousModelType != Editor.mpEditorModel->mModelType || EditorTotalTime != Editor.field_448 //mnTotalTime
+				&& (Editor.mpEditorModel->mModelType == kPlantLarge
+				|| Editor.mpEditorModel->mModelType == kPlantMedium
+				|| Editor.mpEditorModel->mModelType == kPlantSmall))
+			{
+				EditorPreviousModelType = Editor.mpEditorModel->mModelType;
+				EditorTotalTime = Editor.field_448;
+				MessageManager.MessageSend(id("Editors_ModelWasChanged"), 0);
+			}
 
 			//rename editor to add creature abilities verbtrays support
-			if (Editor.mpEditorSkin != nullptr && Editor.mpEditorSkin->GetMesh(1)->mpCreatureData != nullptr && Editor.mVerbIconTray != 0)
+			if (Editor.mpEditorSkin != nullptr && Editor.mpEditorSkin->GetMesh(1)->mpCreatureData != nullptr && Editor.mVerbIconTray != nullptr)
 			{
 				if (Editor.mEditorName == id("FloraEditorSetup") || Editor.mEditorName == id("FloraEditorSetupSmall")
 					|| Editor.mEditorName == id("FloraEditorSetupMedium") || Editor.mEditorName == id("FloraEditorSetupLarge"))
@@ -45,32 +83,54 @@ member_detour(Editor_Update, cEditor, void(float, float)) {
 /// select limbs
 member_detour(Editor_OnMouseUp, cEditor, bool(MouseButton, float, float, MouseState)) {
 	bool detoured(MouseButton mouseButton, float mouseX, float mouseY, MouseState mouseState) {
-		auto manipulatorID_showLimbs = eastl::find(Editor.mEnabledManipulators.begin(), Editor.mEnabledManipulators.end(), id("FloraEditorShowBranchHandles"));
-		if (Editor.IsMode(Mode::BuildMode) && manipulatorID_showLimbs != Editor.mEnabledManipulators.end()) {
-			for (EditorRigblockPtr part : Editor.GetEditorModel()->mRigblocks)
-			{
-				if (part->mBooleanAttributes[kEditorRigblockModelUseSkin])
-				{
-					//we click on limb and we select him
-					if (Editor.mpMovingPart == part)// && mouseState.IsAltDown == 0)
-						Editor.mpSelectedPart = part;
+		//auto manipulatorID_showLimbs = eastl::find(Editor.mEnabledManipulators.begin(), Editor.mEnabledManipulators.end(), id("FloraEditorShowBranchHandles"));
+		if (Editor.IsMode(Mode::BuildMode) && Editor.mbShowBoneLengthHandles)//&& manipulatorID_showLimbs != Editor.mEnabledManipulators.end()) {
+		{
+			if (Editor.mpMovingPart != nullptr && Editor.mpMovingPart->mBooleanAttributes[kEditorRigblockModelUseSkin])
+				Editor.mpSelectedPart = Editor.mpMovingPart;
 
-					//click again to deselect the limb
-					if (Editor.mpSelectedPart != nullptr && mouseButton == MouseButton::kMouseButtonLeft)
-						Editor.mpSelectedPart->mUIState.field_1 = true;
-
-					//tried to fix deselecting...
-					/*if (Editor.mPreviousSelectedBlock != nullptr && Editor.mPreviousSelectedBlock->mUIState.field_1 == false)
-						Editor.mPreviousSelectedBlock->mUIState.field_1 = true;*/
-				}
-			}
+			if (Editor.mpSelectedPart != nullptr && mouseButton == MouseButton::kMouseButtonLeft)
+				Editor.mpSelectedPart->mUIState.field_1 = true;
+			//for (EditorRigblockPtr part : Editor.GetEditorModel()->mRigblocks)
+			//{
+			//	if (part->mBooleanAttributes[kEditorRigblockModelUseSkin])
+			//	{
+			//		//we click on limb and we select him
+			//		if (Editor.mpMovingPart == part)// && mouseState.IsAltDown == 0)
+			//			Editor.mpSelectedPart = part;
+			//		//click again to deselect the limb
+			//		if (Editor.mpSelectedPart != nullptr && mouseButton == MouseButton::kMouseButtonLeft)
+			//			Editor.mpSelectedPart->mUIState.field_1 = true;
+			//		//tried to fix deselecting...
+			//		/*if (Editor.mPreviousSelectedBlock != nullptr && Editor.mPreviousSelectedBlock->mUIState.field_1 == false)
+			//			Editor.mPreviousSelectedBlock->mUIState.field_1 = true;*/
+			//	}
+			//}
 		}
 		return original_function(this, mouseButton, mouseX, mouseY, mouseState);
 	}
 };
 
-/// cap count valid
-bool IsEnoughCap()
+//member_detour(Editor_OnKeyDown, cEditor, bool(int, KeyModifiers)) {
+//	bool detoured(int virtualKey, KeyModifiers modifiers) {
+//		int key = modifiers.value & (kModifierAltDown | kModifierCtrlDown | kModifierShiftDown);
+//		if (((key == kModifierAltDown) && (this->mbShowBoneLengthHandles != false)) && ((this->mpActivePart != nullptr
+//			|| ((this->mpActiveHandle != nullptr && (this->mpActiveHandle->mpRigblock != nullptr))))))
+//		{
+//			EditorRigblockPtr activePart = this->mpActiveHandle->mpRigblock;
+//			if ((activePart->mBooleanAttributes[0xb]) &&
+//				(uVar34 = *(uint*)&pcVar31->mFlags >> 10,
+//					param_2 = CONCAT13((char)uVar34, (int3)param_2) & 0x1ffffff, (uVar34 & 1) != 0)) {
+//				cSPEditorBlock::ShowAllHandles(pcVar31);
+//				return false;
+//			}
+//		}
+//		return original_function(this, virtualKey, modifiers);
+//	}
+//};
+
+/// fruit count valid
+bool IsEnoughFruits()
 {
 	if (Editor.IsActive())
 	{
@@ -109,7 +169,7 @@ member_detour(EditorUI_SetMessageHint, EditorUI, bool(int))
 {
 	bool detoured(int SPUI_commandID)
 	{
-		if (!IsEnoughCap())
+		if (!IsEnoughFruits())
 		{
 			if (SPUI_commandID == 0x101 || SPUI_commandID == 0x102) //Save button/command or "Save and Exit" button
 			{
@@ -125,7 +185,7 @@ static_detour(UTFWin_cSPUIMessageBox, bool(UTFWin::MessageBoxCallback*, const Re
 {
 	bool detoured(UTFWin::MessageBoxCallback * pcallback, const ResourceKey & key)
 	{
-		if (!IsEnoughCap())
+		if (!IsEnoughFruits())
 		{
 			Editor.mpEditorUI->field_C8 = id("editor_NoSaveAndContinue");
 			ResourceKey key2 = key;
@@ -164,7 +224,6 @@ static_detour(SP_EditorUitls_ComputeVerbIcons, bool(uint32_t, uint32_t, uint32_t
 	}
 };
 
-//add creature abilities verbtrays support in sporepedia large view
 member_detour(cSPUILargeAssetView_LoadLayout, Sporepedia::cSPUILargeAssetView, void())
 {
 	void detoured()
@@ -175,19 +234,77 @@ member_detour(cSPUILargeAssetView_LoadLayout, Sporepedia::cSPUILargeAssetView, v
 		{
 			if (this->mWinStatsContainer != nullptr && this->mAssetData != nullptr)
 			{
-				if (this->mVerbIcons != 0)
+				if (this->mVerbIcons != nullptr)
 				{
 					ResourceKey key = this->mAssetData->GetKey();
 					if (key.typeID == TypeIDs::flr)
 					{
 						Editors::cCreatureDataResource* creatureData;
-						bool isload = Editor.LoadCreatureData(&key, &creatureData);
-						if (isload && creatureData != nullptr)
+						bool isLoaded = Editor.LoadCreatureData(&key, &creatureData);
+						if (isLoaded && creatureData != nullptr)
 						{
+							//add creature abilities verbtrays support in sporepedia large view
 							float unk = this->mAssetData->func3Ch();
-							Editor.ComputeCreatureVerbIcons(creatureData, this->mVerbIcons, -1, unk);
+							Editor.ComputeCreatureVerbIcons(creatureData, this->mVerbIcons.get(), -1, unk);
+
+							//add headers for each plant types
+							if (this->mVerbIcons->mVerbTrays.size() > 0) {
+								for (auto verbTray : this->mVerbIcons->mVerbTrays) {
+									IWindowPtr floraHeader = verbTray->mLayout->FindWindowByID(0x811C9DC5);
+									if (floraHeader != nullptr && verbTray->mWinText != nullptr && verbTray->mRollover != nullptr)
+									{
+										ResourceKey iconKey{ 0, TypeIDs::png, id("VerbIcons") };
+										LocalizedString localHeader;
+										//LocalizedString localDesc;
+										Simulator::cSpeciesProfile* profile = SpeciesManager.GetSpeciesProfile(creatureData->GetResourceKey());
+										App::Property* propHeader = nullptr;
+										App::Property* propDesc = nullptr;
+										if (profile != nullptr)
+										{
+											if (profile->mModelType == kPlantLarge)
+											{
+												localHeader.SetText(id("sporepedia"), 0x0002000F);
+												//localDesc.SetText(id("fe_02"), 0x000000A1);
+												verbTray->mVerbTrayProperties->GetProperty(id("verbTrayNameLarge"), propHeader);
+												verbTray->mVerbTrayProperties->GetProperty(id("verbTrayDescriptionLarge"), propDesc);
+												iconKey.instanceID = id("flora_large");
+											}
+											else if (profile->mModelType == kPlantMedium)
+											{
+												localHeader.SetText(id("sporepedia"), 0x00020010);
+												//localDesc.SetText(id("fe_02"), 0x000000A2);
+												verbTray->mVerbTrayProperties->GetProperty(id("verbTrayNameMedium"), propHeader);
+												verbTray->mVerbTrayProperties->GetProperty(id("verbTrayDescriptionMedium"), propDesc);
+												iconKey.instanceID = id("flora_medium");
+											}
+											else if (profile->mModelType == kPlantSmall)
+											{
+												localHeader.SetText(id("sporepedia"), 0x00020011);
+												//localDesc.SetText(id("fe_02"), 0x000000A3);
+												verbTray->mVerbTrayProperties->GetProperty(id("verbTrayNameSmall"), propHeader);
+												verbTray->mVerbTrayProperties->GetProperty(id("verbTrayDescriptionSmall"), propDesc);
+												iconKey.instanceID = id("flora_small");
+											}
+										}
+										/*IWindowPtr mWinRolloverText = verbTray->mRollover->mLayout.FindWindowByID(0x0331CC0E);
+										IWindowPtr mWinRolloverDesc = verbTray->mRollover->mLayout.FindWindowByID(0x0331CC0F);*/
+										if (iconKey.instanceID != 0 && localHeader.GetText() != nullptr
+											&& propHeader != nullptr && propDesc != nullptr /*&& localDesc.GetText() != nullptr
+											&& mWinRolloverText != nullptr && mWinRolloverDesc != nullptr*/)
+										{
+											verbTray->mVerbTrayProperties->SetProperty(0x04ACEDF4, propHeader);	//verbTrayName
+											verbTray->mVerbTrayProperties->SetProperty(0x04ACEDF9, propDesc);	//verbTrayDescription
+											UTFWin::Image::SetBackgroundByKey(floraHeader.get(), iconKey);
+											verbTray->mWinText->SetCaption(localHeader.GetText());
+											/*mWinRolloverText->SetCaption(localHeader.GetText());
+											mWinRolloverDesc->SetCaption(localDesc.GetText());*/
+										}
+										profile = nullptr;
+									}
+								}
+							}
 						}
-						creatureData = nullptr;
+						creatureData != nullptr;
 					}
 				}
 			}
@@ -303,8 +420,11 @@ static_detour(GetLevelForAbility, float(Simulator::cSpeciesProfile*, uint32_t))
 void FEReconEditors::AttachDetours()
 {
 	//Editor
+	//LocalStringSetText_detour::attach(GetAddress(LocalizedString, SetText));
+	Editor_ReturnEditorIDByModel::attach(Address(ModAPI::ChooseAddress(0x432f00, 0x4333e0)));
 	Editor_Update::attach(GetAddress(cEditor, Update));
 	Editor_OnMouseUp::attach(GetAddress(cEditor, OnMouseUp));
+	//Editor_OnKeyDown::attach(GetAddress(cEditor, OnKeyDown));
 
 	//Editor hints
 	EditorUI_SetMessageHint::attach(Address(ModAPI::ChooseAddress(0x005d6a30, 0x005dfd40)));

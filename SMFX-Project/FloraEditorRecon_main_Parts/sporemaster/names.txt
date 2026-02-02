@@ -32,6 +32,7 @@ auto_flora_rigblock~_FE_root_assemblage_06
 auto_flora_rigblock~_FE_root_assemblage_07
 auto_flora_rigblock~_FE_root_assemblage_08
 auto_flora_rigblock~_FE_root_assemblage_09
+fe_cap_02__tintMask
 ce_details_bump_03__specBump
 editorsPackages~	0x40404000
 FE_Muscle_Fr_Sh_clump1_max
@@ -85,6 +86,8 @@ pe_vertebra1
 pe_vertebra2
 FE_root_assemblage_12_branch
 Muscle_CalfMax
+fe_branch_04a-
+FE_leaves_deciduous_01__tintMaskOld
 auto_editor_muscles~_FE_Muscle_Fr_Sh_thigh1_max
 fe_editor_c
 ce_grasper_null
@@ -97,14 +100,15 @@ fe_branch_01-1
 fe_branch_03__specBump
 demobackground2-14
 FE_leaf_27__specBump
-modelFruitStormed1_B
+fe_fruit_03_blind_B
 fe_edit
 ce_details_armor_02-symmetric
 FE_flatleaf_06__specBump
-modelFruitStormed1_D
+fe_fruit_03_blind_D
 auto_editor_rigblock~_fe_editor_background_sporepedia
 ta_hairs_02__specBump
-modelFruitStormed1_M
+fe_fruit_01Old
+fe_fruit_03_blind_M
 ce_details_bump_03__diffuse
 Fruit_Normal_04-1__diffuse
 foodpile_fruit_02
@@ -115,7 +119,9 @@ PlantBranchSkinnedTemplate_mod
 auto_FloraParts_modifications_fe_fruit_03_super
 ce_details_armor_07-symmetric
 Fruit_Normal_10_P
+auto_FloraParts_modifications_fe_fruit_03_blind
 ta_hairs_02__diffuse
+fe_branch_06a-
 auto_editor_muscles~_FE_Muscle_Fr_Sh_clump1_min
 fe_edtiro
 auto_FloraParts_modifications_cell_flora_clover2_L1
@@ -126,6 +132,7 @@ auto_flora_rigblock~_pe_eye_01
 ce_movement_fin_ventral_03-symmetric__tintMask
 Fruit_Normal_06_Pr
 FE_leaf_29__specBump
+FE_leaves_stalk_01a-
 ta_hairs_02__tintMask
 fe_root_03__tintMask
 branch
@@ -240,10 +247,12 @@ FE_root_assemblage_15_branch
 ta_loincloths_03
 adventure_acc_background
 ta_loincloths_04
+fe_branch_05a-
 flora_editorModel~	0x40666200
 bbbc95c6-2
 palette_editorModel~	0x406b6200
 fe_underwater_flora0
+FE_leaves_stalk_01aOld
 fe_underwater_flora2
 FE_leaf_31__tintMask
 Muscle_limb_plain_bowed_extent
@@ -299,6 +308,7 @@ fe_leaf_04_branch
 FE_leaf_03__specBump
 CreatureRigblocks
 FE_leaf_23__specBump
+FE_leaves_deciduous_01a-
 FE_leaves_palm_04__specBump
 fe_canopy_06__diffuse
 auto_flora_rigblock~_FE_assembly_branch_02
@@ -548,6 +558,7 @@ sporemaster
 FE_leaves_deciduous_02__tintMask
 auto_FloraParts_modifications_Fruit_Normal_08_Proto
 FE_leaf_35__tintMask
+FE_leaves_deciduous_01aOld
 Muscle_ShoulderMin
 Flatten
 FE_leaves_palm_06__diffuse
@@ -559,6 +570,7 @@ PlantEditorTemplates
 FE_leaf_28__specBump
 ta_loincloths_03__tintMask
 fe_root_02__tintMask
+fe_branch_05aOld
 ce_editor_background_sporepedia0
 ce_editor_background_sporepedia1
 FE_leaf_13__tintMask
@@ -600,12 +612,14 @@ auto_flora_rigblock~_FE_leaves_deciduous_01a
 FE_leaf_09__specBump
 FE_leaf_17__specBump
 FE_leaf_28__diffuse
+fe_cap_02__diffuse
 fe_canopy_03__specBump
 fe_trunk_01__diffuse
 PlantRootTemplate
 ta_hairs_02-symmetric
 FE_leaf_08
 FE_leaf_09
+fe_branch_02aOld
 fe_root_dummy_hull
 FE_leaf_04
 auto_flora_rigblock~_fe_cap_01a
@@ -618,6 +632,7 @@ FE_leaf_02
 FE_leaf_03
 Fruit_Normal_05_Pro
 ce_details_bump_02-symmetric
+fe_branch_07aOld
 ce_details_playful_03__tintMask
 auto_flora_rigblock~_fe_branch_06a
 ce_details_armor_07__specBump
@@ -653,6 +668,7 @@ fruit_normal_01-08__diffuse
 FE_flatleaf_05__diffuse
 fe_branch_01a (2)
 auto_PlantEditorTemplates_PlantRigblockTemplate
+fe_branch_07a-
 auto_flora_editor_palette_categories~_fe_category_fruit
 auto_flora_rigblock~_fe_fruit_stem_01
 fe_fruit_stem_leaf-04
@@ -713,6 +729,7 @@ ce_details_feather_03__diffuse
 floraparticons~	0x23ad4c1
 fe_canopy_02-0
 FE_leaves_palm_03a
+fe_branch_04aOld
 fe_leaf_04-0
 auto_flora_editor_palette_categories~_fe_category_roots
 ce_details_hair_03__tintMask
@@ -746,6 +763,7 @@ auto_flora_rigblock~_FE_flatleaf_01
 auto_ce_EditorKeys~_FE_AllValidation
 ce_details_flora_03__diffuse
 auto_editor_muscles~_FE_Group_Fr_Sh_thigh_min_0
+fe_branch_02a-
 Fruit_Normal_10
 FE_leaf_16__tintMask
 ce_weapon_club_04__specBump
@@ -765,6 +783,7 @@ ce_details_bump_01__diffuse
 TemplatePalettePartsPage
 ce_details_armor_06__tintMask
 button-fruit-act
+FE_leaves_palm_08a-
 FE_leaves_palm_05a
 auto_editor_muscles~_FE_Muscle_Fr_Sh_thigh1_min
 fe_leaf_09-2
@@ -781,6 +800,7 @@ FE_leaves_palm_08a0
 fe_canopy_11-0
 generic_morphed_FER
 FER_background_UFO
+fe_fruit_01new
 Fruit_Normal_02-08__diffuse
 auto_flora_rigblock~_FE_assembly_tentacle_02
 fe_category_fruit
@@ -847,6 +867,7 @@ Muscle_FE_muscle_branch_02b
 ce_details_crystal_02
 ce_details_crystal_03
 ce_details_bump_02__specBump
+fe_fruit_02old
 ce_details_crystal_01
 limb_pelvic_small
 ce_details_crystal_04
@@ -863,6 +884,7 @@ ce_mouth_radial_omnivore_02
 ce_mouth_radial_omnivore_04
 FE_leaf_22__diffuse
 auto_PlantEditorTemplates_PlantRigblockTemplate2
+fe_cap_012__tintMask
 w
 ce_mouth_radial_omnivore_04__diffuse
 ce_details_feather_04__tintMask
@@ -1031,7 +1053,7 @@ auto_flora_rigblock~_fe_assembly_roots3_branch
 auto_flora_rigblock~_fe_assembly_rootmetaballs_04
 fe_cap_fruit_editor
 fe_branch_01a
-fe_cap_01__specbump
+fe_cap_01__specBump
 limb_forearm
 FE_leaf_24__tintMask
 FE_flatleaf_05-0
@@ -1055,6 +1077,7 @@ auto_ta_EditorKeys~_FE_AllValidation
 FE_flatleaf_06__tintMask
 Muscle_MiddleLegMin
 ce_details_armor_01__diffuse
+fe_branch_01-
 fe_fruit_03_poison
 Muscle_FE_muscle_branch_06a
 Muscle_FE_muscle_branch_06b
@@ -1079,6 +1102,7 @@ Fruit_Normal_1
 auto_editor_muscles~_FE_Group_Fr_Sh_clump1_max_0
 fe-category-trunk
 ce_details_playful_01__diffuse
+fe_branch_01aOld
 auto_flora_editor_palette_categories~_fe_category_trunks
 button-roots-on-act
 FE_leaf_02__diffuse
@@ -1239,6 +1263,7 @@ fe_branch_06
 fe_branch_05
 fe_branch_04
 fe_root_02a
+fe_leaves_palm_08aOld
 Fruit_Normal_09_P
 button-fruit-norm
 fruit_normal_04-10__diffuse
@@ -1498,6 +1523,7 @@ auto_flora_rigblock~_fe_canopy_07
 auto_flora_rigblock~_fe_canopy_06
 FE_Muscle_Fr_Sh_thigh_max
 ce_details_flora_01__diffuse
+fe_branch_01a-
 FE_leaf_01__tintMask
 FE_leaves_deciduous_02__specBump1
 fe_category_trunks
@@ -1572,7 +1598,9 @@ fe_trunk_02__specBump
 auto_FloraParts_modifications_Fruit_Normal_04_Proto
 fe_canopy_12__diffuse
 fe_page_details_parts
+FE_leaves_palm_08__specBump3
 ce_details_hair_01__specBump
+FE_leaves_palm_08__specBump2
 auto_flora_rigblock~_branches_MetaballBone
 auto_flora_rigblock~_FE_muscle_trunk_01
 ce_details_flora_01__tintMask
@@ -1597,6 +1625,7 @@ FE_root_assemblage_13
 auto_editor_rigblock~_ve_editor_base
 FE_leaf_28
 FE_leaf_29
+fe_cap_02__specBump
 Fruit_Normal_01-08
 ta_hairs_03
 fe_page_fruit_parts
@@ -1677,6 +1706,7 @@ fe_edti
 fe_branch_01__specBump
 fe_edito
 DeformAxisForward
+FE_leaves_deciduous_02a-
 FE_leaves_palm_06__tintMask2
 auto_fe_EditorKeys~_FloraParts_modifications
 auto_flora_rigblock~_FE_root_assemblage_16
@@ -1687,14 +1717,19 @@ auto_flora_rigblock~_FE_root_assemblage_13
 auto_flora_rigblock~_FE_root_assemblage_12
 auto_flora_rigblock~_FE_root_assemblage_11
 auto_flora_rigblock~_FE_root_assemblage_10
+fe_branch_05anew
 FE_assembly_rootMetaballs_01_branch
+fe_leaves_palms_08a
 FE_leaves_palm_02a0
+fe_branch_06aOld
 fe-category-fruit
+FE_leaves_stalk_01aNew
 auto_flora_rigblock~_0x080D75A6
 auto_flora_rigblock~_fe_fruit_03a
 ce_details_feather_03-symmetric
 FE_Group_Fr_Sh_thigh_min_0
 button-trunks-norm
+FE_leaves_deciduous_02aOld
 FE_assembly_roots3_branch_branch
 auto_flora_rigblock~_fe_assembly_limb_01
 Limb_Fr_Sh_spike

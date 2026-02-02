@@ -1,15 +1,21 @@
 key parent editor_config~!FloraEditorSetupMod.prop
 
 ##thumb fragments
-#int ThumbnailFramingType 1
+#int32 ThumbnailFramingType 1
 #int32 ThumbnailEffect 0
 #float ThumbnailImageScale 0.7
 #float ThumbnailLowering 0.5
 #key editorCameraThumbnail EditorCameraGlobalPalette.prop
+
+## thumb paint themse
+#int32 ThumbnailEffect 0
+#key editorCameraThumbnail EditorCameraCreatureThumbnail.prop
 #keys editorStartupModel
-	#flora_editorModel~!PaintBuddy.flr #for Thumbpaint
-	#flora_editorModel~!thumbfrag.flr
+#	flora_editorModel~!PaintBuddy.flr #for Thumbpaint
+#	flora_editorModel~!thumbfrag.flr
 #end
+#float editorSkinResolutionHighQuality 0.061
+#float editorSkinResolutionRealtime 0.061
 ##
 ##Animation
 #bool editorDisableAnimations false

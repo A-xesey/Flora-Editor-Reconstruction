@@ -1,0 +1,30 @@
+vertexShader
+	add skinScaleOff
+
+	group 0x40
+		select skinPosition -hasData skinWeights -elements blendWeights position blendIndices
+		select skinPosition1 -hasData skinWeights -elements position blendIndices
+	end
+
+	group 0x80
+		select instancingPosition -elements texcoord4 position
+	end
+
+	group FEReconFix
+		select renderShadowMapAlphaMask_FERecon -compareData materialParams 5 -exclude 0x800
+	end
+	group 0x800
+		select renderShadowMap_FERecon -exclude FEReconFix
+	end
+
+	add uvSubRectRemap -hasData uvSubRect -elements texcoord0 -exclude 0x80 0x800
+end
+
+pixelShader
+	group FEReconFix
+		select renderShadowMapAlphaMask_FERecon -compareData materialParams 5 -exclude 0x800
+	end
+	group 0x800
+		select renderShadowMap_FERecon -exclude FEReconFix
+	end
+end

@@ -1,0 +1,20 @@
+#used to chage the header in the modAPI version
+key parent verbtrays!VHE_VerbTrayTemplate
+texts verbTrayDescriptionLarge
+	(fe_02!0x000000A1) "Tall Tree Description"
+end
+texts verbTrayDescriptionMedium
+	(fe_02!0x000000A2) "Small Tree Description"
+end
+texts verbTrayDescriptionSmall
+	(fe_02!0x000000A3) "Shrub Description"
+end
+texts verbTrayNameLarge
+	(sporepedia!0x0002000F) "Tall Tree Name"
+end
+texts verbTrayNameMedium
+	(sporepedia!0x00020010) "Small Tree Name"
+end
+texts verbTrayNameSmall
+	(sporepedia!0x00020011) "Shrub Name"
+end

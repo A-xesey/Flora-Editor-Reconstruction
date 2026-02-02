@@ -17,7 +17,7 @@ public:
 	virtual void CreateFloraList();
 	virtual void ClearFloraList();
 	virtual bool ValidPlant(const ResourceKey& key, const eastl::vector<ResourceKey>& passSamePlants);
-	virtual uint32_t GetRandomFloraName(bool smallSpecies, bool mediumSpecies, bool largeSpecies);
+	virtual uint32_t GetRandomFloraName(bool smallSpecies, bool mediumSpecies, bool largeSpecies, bool isGameMode);
 	int AddRef() override;
 	int Release() override;
 	//void* Cast(uint32_t type) const override;

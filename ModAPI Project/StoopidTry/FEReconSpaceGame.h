@@ -52,7 +52,7 @@ member_detour(HandleMessage, cSimulatorSpaceGame, bool(uint32_t, int))
 								if (messageID == 0x3c5dbc7)
 								{
 									ToolManager.LoadTool({ id("CreatureCreate"),0,0 }, pTool);
-									pTool->mCurrentAmmoCount -= 9;
+									pTool->mCurrentAmmoCount = 1;// -= 9;
 								}
 								if (pTool != nullptr)
 								{

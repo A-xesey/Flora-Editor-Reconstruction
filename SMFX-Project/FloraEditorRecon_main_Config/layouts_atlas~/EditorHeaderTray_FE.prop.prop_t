@@ -1,5 +1,5 @@
 keys preloadTextures
 	graphics_atlas~!Editor-01
 	graphics_atlas~!Editor-00
-	FloraEditorVerbIcons!flora
+	VerbIcons!flora
 end

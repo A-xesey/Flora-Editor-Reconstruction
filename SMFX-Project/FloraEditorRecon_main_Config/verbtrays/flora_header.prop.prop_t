@@ -1,13 +1,9 @@
-key parent verbtrays!CRE_VerbTrayTemplate
+key parent verbtrays!FER_HeaderDescTexts
 bool verbIconShowLevel false
-keys verbIcons
-end
 texts verbTrayDescription
 	(fe_02!0x00000004) "Flora Description"
 end
-key verbTrayIconID flora
+key verbTrayIconID 0
 texts verbTrayName
-	(sporepedia!0x0002000f) "Tall Tree"
+	(fe_02!0x00000003) "Flora Name"
 end
-bool verbTrayShowVerbIconWhenCollapsed true
-key verbTraySoundKey diet

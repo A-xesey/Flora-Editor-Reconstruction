@@ -5,6 +5,7 @@ end
 string16 description "FE_leaves_deciduous_02a"
 key modelMeshHull editor_rigblock~!None
 key modelMeshLOD0 editor_rigblock~!FE_leaves_deciduous_02a.rw4
+bool skinpaintIgnoreParticles false
 vector3 modelRotationBallHandleOffset (0, -2.25, 0)
 key skinpaintDiffuseTexture skinPaint_texture~!FE_leaves_deciduous_02__diffuse.rw4
 key skinpaintSpecBumpTexture skinPaint_texture~!FE_leaves_deciduous_02__specBump.rw4
