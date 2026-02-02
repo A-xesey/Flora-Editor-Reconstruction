@@ -1,0 +1,16 @@
+key parent palette_config~!TemplatePaletteCategoryPaint.prop
+keys paletteCategoryIconList
+	editors_flora~!button-paintcell-norm.png
+	editors_flora~!0xffffffff.0xffffffff
+	editors_flora~!button-paintcell-hl.png
+	editors_flora~!button-paintcell-act.png
+	editors_flora~!button-paintcell-on-norm.png
+	editors_flora~!0xffffffff.0xffffffff
+	editors_flora~!button-paintcell-on-hl.png
+	editors_flora~!button-paintcell-on-act.png
+	editors_flora~!button-paintcell-norm.png
+end
+texts paletteCategoryName
+	(cl_paint!0xbd699ecf) "Cell Paint"
+end
+uint32 paletteCategorySequenceNumber 50

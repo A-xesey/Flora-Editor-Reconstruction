@@ -7,6 +7,6 @@ key modelMeshHull fe_fruit_03_blind-Hull.rw4
 key modelMeshLOD0 editor_rigblock~!fe_fruit_01.rw4
 vector3 modelRotationBallHandleOffset (0, -0.5, 0)
 bool skinpaintIgnoreParticles true
-key skinpaintDiffuseTexture skinPaint_texture~!fe_cap_01__diffuse#fe_fruit_01__diffuse.rw4
-key skinpaintSpecBumpTexture skinPaint_texture~!fe_cap_01__specBump.rw4
-key skinpaintTintMaskTexture skinPaint_texture~!fe_cap_01__tintMask.rw4
+key skinpaintDiffuseTexture skinPaint_texture~!fe_cap_02__diffuse.rw4#fe_fruit_01__diffuse.rw4
+key skinpaintSpecBumpTexture skinPaint_texture~!fe_cap_02__specBump.rw4
+key skinpaintTintMaskTexture skinPaint_texture~!fe_cap_02__tintMask.rw4

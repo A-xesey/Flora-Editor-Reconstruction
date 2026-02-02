@@ -6,6 +6,7 @@ string16 description "fruit 02"
 key modelMeshHull fe_fruit_03_blind-Hull.rw4
 key modelMeshLOD0 editor_rigblock~!fe_fruit_02.rw4
 vector3 modelRotationBallHandleOffset (0, -0.55, 0)
-key skinpaintDiffuseTexture skinPaint_texture~!fe_fruit_02__diffuse.rw4
-key skinpaintSpecBumpTexture skinPaint_texture~!fe_fruit_02__specBump.rw4
-key skinpaintTintMaskTexture skinPaint_texture~!fe_fruit_02__tintMask.rw4
+bool skinpaintIgnoreParticles true
+key skinpaintDiffuseTexture skinPaint_texture~!fe_cap_01__diffuse.rw4
+key skinpaintSpecBumpTexture skinPaint_texture~!fe_cap_01__specBump.rw4
+key skinpaintTintMaskTexture skinPaint_texture~!fe_cap_01__tintMask.rw4

@@ -1,9 +1,0 @@
-key parent ui_verbs~!vehicle_VehicleTypeTemplate
-texts creatureAbilityDescription
-	(Abilities!0x0630d554) "Religious Sea Description (PLACEHOLDER)"
-end
-texts creatureAbilityName
-	(Abilities!0x0630d553) "Religious Sea(PLACEHOLDER)"
-end
-key verbIconImageID flora_medium
-key verbIconTrayOverrideImageID flora_medium

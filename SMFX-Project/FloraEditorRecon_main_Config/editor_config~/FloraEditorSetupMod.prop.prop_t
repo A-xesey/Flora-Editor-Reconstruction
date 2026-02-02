@@ -69,8 +69,8 @@ keys editorEnabledManipulators
 	cSPEditorManipulationBoneRotation
 	cSPEditorManipulationRotationHandle
 	cSPEditorManipulationDeformHandle
+	FloraEditorDisableAnimation
 	#cSPEditorManipulationPlanarInterpenetration
-	#FloraEditorDisableAnimation
 	#FloraEditorShowBranchHandles
 	#cSPEditorManipulationLimb
 	#cEditorManipulator_AdvancedCE

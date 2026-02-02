@@ -1,5 +1,7 @@
 0x00000001 Choose a Plant
 
+0x04cea2d2 Speed
+
 ## Part Sections
 0x00000002 Roots
 0x00000005 Fruits
@@ -12,7 +14,7 @@
 0x000000A2 Small trees allow planets to sustain life and feed their inhabitants.
 0x000000A3 Shrubs allow planets to sustain life and feed their inhabitants.
 
-## shit
+## cutted
 #~br~Steve made mistake once and gave a functional Flora Editor instead of the Staff of Life...
 #0x00000004 Provides oxygen to the planets and serves as food for creatures.~br~Grow your own plants!
 #0x00000004 Flora make planets favorable for life and feed their inhabitants.~br~Breeding your own flora is strictly forbidden by Galactic Code! (who cares)
@@ -34,10 +36,10 @@
 ## Abilities
 # fruit.prop
 0x04cb5b6a Fruit Node
-0x04cb5b6d Fruit Counter
+0x04cb5b6d Fruits
 0x04cb5b6c Plants with more fruits feed more mouths!
 
 ## Sporepedia
-0x0004000e Choose a Large Plant
-0x0004000f Choose a Medium Plant
-0x00040010 Choose a Small Plant
+0x0004000e Choose a Tall Plant
+0x0004000f Choose a Small Plant
+0x00040010 Choose a Shrub

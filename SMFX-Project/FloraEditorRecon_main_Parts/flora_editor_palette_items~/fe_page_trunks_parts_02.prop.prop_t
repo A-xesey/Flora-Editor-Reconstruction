@@ -76,21 +76,22 @@ keys palettePagePartItems
 	#
 	flora_rigblock~!FE_branch_assemblage_01
 	flora_rigblock~!FE_branch_assemblage_02
+	#
 	flora_rigblock~!fe_trunk_01
 	flora_rigblock~!fe_trunk_02
-	#
 	flora_rigblock~!fe_trunk_03
 	flora_rigblock~!fe_branch_04
+	#
 	flora_rigblock~!fe_branch_01
 	flora_rigblock~!fe_branch_02
-	#
 	flora_rigblock~!fe_branch_03
 	flora_rigblock~!fe_branch_05
-	
+	#
 	flora_rigblock~!fe_branch_04a
 	flora_rigblock~!fe_branch_01a
 	flora_rigblock~!fe_branch_02a
 	flora_rigblock~!fe_branch_05a
+	#
 	flora_rigblock~!fe_branch_06a
 	flora_rigblock~!fe_branch_07a
 	flora_rigblock~!fe_branch_08a

@@ -1,5 +1,8 @@
 #include "stdafx.h"
 #include "FETest.h"
+#include <Spore\Simulator\SubSystem\cSpeciesRelationshipManager.h>
+
+using namespace Simulator;
 
 FETest::FETest()
 {

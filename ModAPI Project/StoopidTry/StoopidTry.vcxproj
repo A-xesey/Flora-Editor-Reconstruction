@@ -116,6 +116,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="FloraRandom.h" />
+    <ClInclude Include="ModelTypeChanged.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="SPGDeactivateActives.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -143,6 +147,10 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="FloraRandom.cpp" />
+    <ClCompile Include="ModelTypeChanged.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="SPGDeactivateActives.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
