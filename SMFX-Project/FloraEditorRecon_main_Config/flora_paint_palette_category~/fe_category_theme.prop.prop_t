@@ -1,10 +1,10 @@
 keys paletteCategoryIconList
 	editors_flora~!button-paintbuddy-norm.png
-	editors_flora~!0xffffffff.0xffffffff
+	editors_flora~!0x0
 	editors_flora~!button-paintbuddy-hl.png
 	editors_flora~!button-paintbuddy-act.png
 	editors_flora~!button-paintbuddy-on-norm.png
-	editors_flora~!0xffffffff.0xffffffff
+	editors_flora~!0x0
 	editors_flora~!button-paintbuddy-on-hl.png
 	editors_flora~!button-paintbuddy-on-act.png
 	editors_flora~!button-paintbuddy-norm.png

@@ -6,7 +6,7 @@ texts spaceToolDescription
 	(fe_02!0x3e295ee3) "Create Creature"
 end
 texts spaceToolDetailDescription
-	(fe_02!0xd974877a) "Make a creature and get 5 specimens of it in your cargo hold."
+	(fe_02!0xd974877a) "Make a plant and get 5 specimens of it in your cargo hold."
 end
 bool spaceToolDisableOn201Ruins false#true
 bool spaceToolDisableOnHomeworld false
@@ -17,7 +17,7 @@ texts spaceToolLockedDescription
 end
 float spaceToolMaxRange -1
 key spaceToolPanelKey SocialConsumablePanel
-key spaceToolStrategy FEReconPlantStrategyCreate#DefaultToolStrategy
+key spaceToolStrategy FEReconPlantStrategyCreate
 key spaceToolType special
 key toolDiscoverableRarity Common
 bool toolUseOnActivate true
