@@ -1,0 +1,8 @@
+key parent editor_config~!GlobalTemplate.prop
+#
+key editorBackgroundModel animations~
+key editorSkyBoxEffect fe_editor_skybox
+key editorPedestalModel FEReconBGDemo
+
+key editorSwatchBackgroundModel 0x0
+key editorSwatchPedestalModel FEReconBG
