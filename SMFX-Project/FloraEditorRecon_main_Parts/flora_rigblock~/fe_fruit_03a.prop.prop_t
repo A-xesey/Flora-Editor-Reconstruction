@@ -3,6 +3,10 @@ texts blockName
 	(PlantRigblocks!0x00000148) "fruit 03"
 end
 string16 description "fruit 03"
+transforms modelEffectTransforms
+	-offset (0, -0.15, 0) -scale 1 -rotateXYZ 0 0 0
+end
+vector3 modelCreatureEffectOffset (0, -0.15, 0)
 key modelMeshHull fe_fruit_03_blind-Hull.rw4
 key modelMeshLOD0 editor_rigblock~!fe_fruit_03a.rw4
 vector3 modelRotationBallHandleOffset (0, -0.5, 0)

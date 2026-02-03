@@ -6,3 +6,6 @@ string16 description "FE_leaf_33"
 key modelMeshHull editor_rigblock~!None
 key modelMeshLOD0 editor_rigblock~!FE_leaf_33.rw4
 vector3 modelRotationBallHandleOffset (0, -1.75, -0.1)
+key skinpaintDiffuseTexture skinPaint_texture~!FE_leaf_33__diffuse.rw4
+key skinpaintSpecBumpTexture skinPaint_texture~!FE_leaf_33__specBump.rw4
+key skinpaintTintMaskTexture skinPaint_texture~!FE_leaf_33__tintMask.rw4

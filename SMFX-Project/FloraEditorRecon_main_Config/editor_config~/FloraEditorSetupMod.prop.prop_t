@@ -1,4 +1,4 @@
-key parent editor_config~!GlobalTemplate.prop
+key parent editor_config~!FloraEditorSetupBackground.prop.prop_t
 string16 description "Flora Editor Setup"
 string16 editorAssembledContentDirectory "Content/AssembledContent/Plants"
 bool editorAllowPublish false
@@ -40,11 +40,6 @@ key editorSaveDirectory 0x90368EA0!0xFFFFFFFF
 key editorSaveExtension 0xFFFFFFFF.flr
 bool editorShowBoneLengthHandles true
 bool editorShowVertebrae true
-key editorBackgroundModel animations~
-key editorSwatchBackgroundModel animations~
-key editorSkyBoxEffect fe_editor_skybox
-key editorPedestalModel FEReconBGDemo
-key editorSwatchPedestalModel FEReconBG
 key editorSwatchCameraUI EditorCameraFloraUI_FERecon
 key editorSporepediaCanSwitchConfigID FLR_TemplateShopper_CanSwitch
 key editorSporepediaConfigID FLR_TemplateShopper
