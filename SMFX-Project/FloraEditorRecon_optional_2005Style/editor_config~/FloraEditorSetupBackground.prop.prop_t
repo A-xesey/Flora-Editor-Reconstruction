@@ -5,4 +5,4 @@ key editorSkyBoxEffect fe_editor_skybox
 key editorPedestalModel FEReconBGDemo
 
 key editorSwatchBackgroundModel 0x0
-key editorSwatchPedestalModel FEReconBG
+key editorSwatchPedestalModel fe_editor_background_sporepedia

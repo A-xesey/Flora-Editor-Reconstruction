@@ -1,0 +1,51 @@
+animations~	0x0
+editor_rigblocks~	0x40606000
+FERecon_demobackogroundWithoutCircles
+editor_config~	0x40600100
+button-details-on-norm
+button-fruit-hl
+button-fruit-on-norm
+models
+fruit_icon_small
+dbutton-fruit
+button-details-norm
+editor_effects_0~	0x40604300
+editor_effects_2~	0x40604301
+editor_effects_2~	0x40604302
+GlobalTemplate
+button-leaves-act
+button-details-on-act
+fe_editor_heightmockup
+sporemaster
+FEeditor
+fe_editor_skybox
+fruit_icon
+ExpansionPack1
+FEReconBGDemo
+button-fruit-act
+auto_editor_config~_FloraEditorSetupBackground
+Ferecon_demobackground_creature
+FERecon_demobackoground_circles
+button-leaves-on-norm
+button-details-on-hl
+VerbIcons
+button-leaves-norm
+DefaultTemplate
+button-leaves-on-hl
+button-fruit-on-act
+FloraEditorSetupBackground
+button-fruit-norm
+button-details-act
+fe_editor_creatures
+button-details-hl
+fruit_icon_card
+editors_flora~	0x72ee8e31
+button-fruit-on-hl
+auto_editor_rigblock~_FEReconBGDemo
+names
+button-leaves-on-act
+stats_fruit_icon
+FER_HeightMap
+fe_editor_circles
+button-leaves-hl
+fe_editor_background_sporepedia

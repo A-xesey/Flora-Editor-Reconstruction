@@ -10,6 +10,7 @@ keys paletteCategoryIconList
 	editors_flora~!button-paintcell-on-act.png
 	editors_flora~!button-paintcell-norm.png
 end
+key paletteCategoryLayoutFile 0x3FCA51EA
 texts paletteCategoryName
 	(cl_paint!0xbd699ecf) "Cell Paint"
 end

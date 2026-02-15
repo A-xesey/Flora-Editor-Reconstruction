@@ -1,6 +1,6 @@
 keys palettePalettePages
-	cell_paint_palette_category~!CL_TextureGroup_Paint_1
-	cell_paint_palette_category~!CL_TextureGroup_Paint_2
+	cell_paint_palette_pages~!CL_TextureGroup_Paint_1
+	cell_paint_palette_pages~!CL_TextureGroup_Paint_2
 	creature_paint_palette_pages~!CE_TextureGroup_Detail_1
 	creature_paint_palette_pages~!CE_TextureGroup_Detail_2
 	creature_paint_palette_pages~!CE_TextureGroup_Detail_3

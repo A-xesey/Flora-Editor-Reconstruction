@@ -201,6 +201,7 @@ fe_leaf_11-1
 ce_details_armor_04__tintMask
 fe_leaf_11-0
 button-fruit-on-norm
+FE_leaf_33__diffuse
 models
 ce_details_armor_02__diffuse
 FE_Group_Fr_Sh_clump_min_0
@@ -266,6 +267,7 @@ Muscle_mkmidlegSkinny
 auto_flora_editor_palette_pages~_fe_page_leaves_01
 auto_flora_editor_palette_pages~_fe_page_leaves_02
 auto_flora_editor_palette_pages~_fe_page_leaves_03
+FE_leaf_33__tintMask
 FE_leaf_02__tintMask
 fe_fruit_stem_eye
 auto_FloraParts_modifications_limb_plain_bowed
@@ -349,6 +351,7 @@ fe_branch_0a__specBump
 fe_branch_standard
 FE_Group_Fr_Sh_spike_min_0
 auto_editor_muscles~_FE_Muscle_Fr_Sh_back_min
+FE_leaf_33__specBump
 ce_details_crystal_04__specBump
 ce_details_feather_01__specBump
 FE_leaves_palm_04a-0
@@ -1001,7 +1004,7 @@ fe_trunk_03-1
 fe_trunk_03-2
 fe_trunk_03-3
 TemplateManifest
-fe_leaf_12-mod
+FE_leaf_12-mod
 fe_branch_04__tintMask
 button-details-on-hl
 ce_details_bump_03-symmetric

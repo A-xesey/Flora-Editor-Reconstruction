@@ -55,6 +55,7 @@ skn_brush_cuts
 fe_skinpaint_floratheme_RedPeas
 AbilityTemplates
 florashopper
+amb_ed_veh_land_lp
 auto_palette_editorModel~_limb_skinnythigh1
 CE_TextureGroup_Coat_1
 ce_skinpaint_theme_stanford
@@ -224,7 +225,9 @@ FE_BP1_skinpaint_theme_kidRobot
 auto_flora_paint_palette_items~_FE_BP1_base_parts
 FLR_PlantLargeShopper_CanSwitch
 auto_skinPaint_script~_FE_BP1_skinpaint_base_ragdoll
+cloud_4pack_strip
 auto_skinPaint_script~_FE_BP1_skinpaint_theme_toonCritter
+FER_HeaderDescTexts
 ce_skinpaint_base_chewtoy
 CreatureEditorTemplates
 auto_camera_properties~_EditorCameraFloraUI_FERecon
@@ -253,6 +256,7 @@ FE_root_assemblage_09
 FE_TextureGroup_Coat_01
 FE_root_assemblage_08
 medium
+adventure_acc_background
 floraModels_LOD2~	0x40666202
 floraModels_LOD3~	0x40666203
 ce_skinpaint_coat_crocodile
@@ -268,6 +272,7 @@ ce_skinpaint_base_vittatum3
 skinpaint_florabase_granite
 ce_skinpaint_base_vittatum1
 ce_skinpaint_base_vittatum4
+auto_space_commodities~_fe_toolplantedit
 skinpaint_florabase_amphibian
 auto_palette_editorModel~_FE_assembly_branch_01
 auto_palette_editorModel~_FE_assembly_branch_02
@@ -532,6 +537,7 @@ fe_skinpaint_florabase_platesSmall
 auto_skinPaint_script~_fe_skinpaint_floradetail_gooSides
 fe_skinpaint_floracoat_stripesML
 auto_skinPaint_script~_FE_BP1_skinpaint_base_alien_HRG
+fe_editor_heightmockup
 flora_small
 cl_skinpaint_cell_cowLeather
 limb_middlearm
@@ -556,7 +562,7 @@ ce_skinpaint_theme_snazzy
 ce_skinpaint_base_dottie
 FE_BP1_skinpaint_base_skinnedBeast
 FE_BP1_skinpaint_detail_chewToy
-spacetrading~	0x34d97fa
+space_commodities~	0x34d97fa
 skinpaint_floracoat_turtle
 auto_skinPaint_script~_FE_BP1_skinpaint_base_skinnedBeast
 skinpaint_floracoat_stripesLL
@@ -594,6 +600,7 @@ auto_skinPaint_script~_fe_skinpaint_floradetail_sideWash
 music_space_accessories
 ce_skinpaint_coat_kidRobot
 cl_paint
+FER_HeightMapOld
 auto_editor_config~_FloraEditorSetupDefault
 fe_root_03a
 auto_skinPaint_script~_fe_skinpaint_floratheme_sakura
@@ -704,6 +711,7 @@ audio~	0x21407ee
 ce_skinpaint_detail_mantellaUnderside
 ce_skinpaint_theme_fuschia
 auto_editor_config~_FES_SE
+FEeditor
 ce_skinpaint_coat_stripesML
 auto_verbtrays_SHP_Ferecon_VerbTrayCollection
 auto_palette_editorModel~_PaintBuddy1
@@ -801,6 +809,7 @@ skinpaint_florabase_auratus
 FE_BP1_skinpaint_detail_kidRobot
 auto_palette_editorModel~_limb_plain_bowed
 fe_branch_06a
+effectAnimMaterial
 FloraEditorDisableAnimation
 VHE_VerbTrayTemplate
 ce_skinpaint_theme_doubleDots
@@ -866,6 +875,7 @@ cl_mouth_filter_02
 FLR_PlantLargeShopper
 cl_mouth_filter_03
 cl_mouth_filter_04
+auto_editor_config~_FloraEditorSetupBackground
 auto_palette_editorModel~_limb_middlearm
 auto_skinPaint_script~_fe_skinpaint_floradetail_graniteTopside
 music_shopping_base
@@ -929,6 +939,7 @@ ce_skinpaint_coat_banded
 0
 fe_skinpaint_floracoat_melt
 auto_palette_editorModel~_limb_uberlimb_forearm
+auto_flora_paint_palette~_FE_BP1_SKINPAINTS
 FloraEditorSetup0
 ce_skinpaint_coat_ridgesTiger
 PlanMedium
@@ -948,6 +959,7 @@ fe_skinpaint_floratheme_Pryannimissimo
 auto_floraQualityMedium~_0x046170a3
 ce_skinpaint_detail_mantellaJoints
 ce_skinpaint_detail_lumpySides
+FERecon_demobackoground_circles
 auto_floraQualityMedium~_0x046170a7
 auto_flora_paint_palette_pages~_CL_TextureGroup_Paint_2
 auto_flora_paint_palette_pages~_CL_TextureGroup_Paint_1
@@ -1048,10 +1060,12 @@ fe_skinpaint_floracoat_walrus
 fe_skinpaint_floradetail_ridgesTiger
 FE_BP1_themes_parts
 skinpaint_floradetail_meltLimbs
+amb_adventure_acc_lp
 skinpaint_floradetail_giraffe
 auto_layouts_atlas~_MessageBox-ferecon
 ce_skinpaint_coat_fishScales
 fe_skinpaint_floradetail_platesLarge
+FE_BP1_SKINPAINTS
 skinpaint_florabase_snakescales
 Limb_Fr_Sh_thigh1
 ce_skinpaint_coat_pebble
@@ -1104,6 +1118,7 @@ skn_base_amigurumi
 mantella_base_skin
 auto_skinPaint_script~_fe_skinpaint_floratheme_Applemin
 TribeTuning
+FERecon_dais_UFO
 skinpaint_floradetail_banded
 auto_hints~_ferecon-errorinvalidcapcount
 Template0
@@ -1211,6 +1226,7 @@ tooltips
 FERecon_Sporepedia
 FE_BP1_skinpaint_theme_ragdoll
 ce_skinpaint_base_eggshell
+prop_overrides
 auto_lighting_properties~_FloraAmbientOcclusion
 skinpaint_floracoat_pebble
 auto_flora_paint_palette_category~_fe_category_base
@@ -1273,6 +1289,7 @@ button-paintbuddyPT-on-norm
 social
 VehicleEditorVerbIcons
 FE_BP1_skinpaint_detail_Frankenstein
+auto_editor_rigblock~_fe_editor_background
 FE_flatleaf_06
 FE_flatleaf_04
 FE_flatleaf_05
@@ -1356,6 +1373,7 @@ button-details-norm3
 cl_weapon_spike_03
 cl_weapon_spike_02
 cl_weapon_spike_01
+FloraEditorSetupBackground
 ce_skinpaint_coat_zebra
 cl_weapon_spike_04
 skinpaint_florabase_blankShiny
@@ -1372,6 +1390,7 @@ CreatureSkinPaints05
 ce_skinpaint_base_amphibian
 auto_skinPaint_script~_fer_skinpaint_floratheme_custom02
 auto_skinPaint_script~_fer_skinpaint_floratheme_custom03
+auto_editor_rigblock~_FER_background_UFO
 auto_skinPaint_script~_fer_skinpaint_floratheme_custom01
 skinpaint_floracoat_platesLarge
 auto_palette_config~_0TemplatePalettePartsPage
@@ -1486,6 +1505,7 @@ header
 CreatureAndCellSkinPaints
 fe_creatureperch
 button-details-hl
+auto_space_tools~_FE_PlantEdit
 auto_skinPaint_script~_fe_skinpaint_floradetail_lumpySides
 auto_skinPaint_script~_fe_skinpaint_floradetail_amigurumi
 TemplatePaletteCategoryPaint
@@ -1519,9 +1539,11 @@ fe_skinpaint_floratheme_33
 fe_skinpaint_floratheme_32
 fe_skinpaint_floratheme_35
 fe_skinpaint_floratheme_34
+auto_editor_rigblock~_fe_editor_dias
 auto_skinPaint_script~_fe_skinpaint_floratheme_thumbWHITE
 fe_skinpaint_floratheme_36
 flora_medium
+auto_verbtrays_FER_HeaderDescTexts
 fe_skinpaint_floracoat_fishScales
 skinpaint_floracoat_lizardo
 auto_physic~_FloraLarge
@@ -1565,6 +1587,7 @@ fe_skinpaint_floradetail_zebra
 planet
 button-details2
 skinpaint_detail_quilted
+auto_editor_rigblock~_FER_dais_UFO
 skinpaint_floracoat_mantella
 auto_skinPaint_script~_fe_skinpaint_florabase_quilted
 limb_calf.gmdl
@@ -1585,6 +1608,7 @@ skinpaint_floracoat_granite
 arcade_effects_2~    0x40884302
 skinpaint_floracoat_ridgesLateral1
 auto_animations~_ShipAppProperties
+auto_space_tools~_FE_PlantCreate
 auto_AssetBrowserFilter_FloraSmall
 auto_skinPaint_script~_fe_skinpaint_floracoat_banded
 cl_skinpaint_cell_fishScales
@@ -1740,6 +1764,7 @@ auto_fe_paints_EditorKeys~_0x00000001
 skinpaint_floracoat_walrus1
 fe_skinpaint_floradetail_graniteLimbs
 fe_skinpaint_florabase_fishScales
+FER_HeightMap
 ce_skinpaint_coat_blank
 editor_NoSaveAndContinue
 skinpaint_floracoat_melt1
@@ -1759,10 +1784,12 @@ auto_flora_paint_palette_pages~_FE_TextureGroup_Detail_03
 CRE_HealthButton
 fe_roots_01
 fe_roots_02
+fe_editor_circles
 button-fruit-norm2
 fe_roots_03
 screen_effect_glow_by_time_of_day
 message_boxes
+auto_prop_overrides_FERecon_ShipAppProperties
 auto_palette_editorModel~_fe_assembly_rootmetaballs_01
 auto_palette_editorModel~_fe_assembly_rootmetaballs_02
 auto_palette_editorModel~_fe_assembly_rootmetaballs_03
@@ -1835,6 +1862,7 @@ Ferecon_VerbTrayCollection
 ce_skinpaint_detail_halftoneUnderside
 skinpaint_florabase_valueGradientDark
 skinpaint_floracoat_amigurumi
+auto_space_commodities~_fe_toolplantcreate
 fe_skinpaint_floradetail_walrusTopside
 auto_flora_paint_palette_items~_FE_TextureGroup_Base_Parts_02
 auto_flora_paint_palette_items~_FE_TextureGroup_Base_Parts_03
@@ -1908,6 +1936,7 @@ shoppingTemplate
 button-details
 auto_skinPaint_script~_fe_skinpaint_floradetail_giraffeTopside
 DeformAxisForward
+fe_editor_background
 SG_ufo_abduct_HitWater
 auto_skinPaint_script~_FE_BP1_skinpaint_detail_chewToy
 button-branch-act2
@@ -1938,6 +1967,7 @@ auto_palette_editorModel~_limb_chubbythigh
 skinpaint_floracoat_crocodile1
 cSPEditorManipulationDeformHandle
 limb_plain_bowedA1A2E
+fe_editor_dias
 button-trunks-norm
 ce_skinpaint_theme_Frankenstein
 FE_BP1_skinpaint_theme_Frankenstein
@@ -1951,3 +1981,5 @@ fe_skinpaint_floradetail_giraffeLimbs
 auto_skinPaint_script~_fe_skinpaint_floracoat_washShiny
 CreaturePlant
 skinpaint_floradetail_amigurumi
+space_tools~	0x30608F0B
+soundProp    0x02B9F662
