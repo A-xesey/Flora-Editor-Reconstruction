@@ -70,7 +70,7 @@ keys editorEnabledManipulators
 	FloraEditorDisableAnimation
 end
 keys editorStartupModel
-	flora_editorModel~!RootFIX.flr
+	flora_editorModel~!B_Small_00.flr
 end
 bool editorUseSymmetry false #true
 key editorNudgeHandleTuningFile HandleTuning!DefaultNudgeHandle
