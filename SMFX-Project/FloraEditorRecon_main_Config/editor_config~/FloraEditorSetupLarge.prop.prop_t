@@ -6,6 +6,10 @@ keys editorModelTypes
 	PlantSmall
 end
 
+keys editorStartupModel
+	flora_editorModel~!B_Large_00.flr
+end
+
 key editorSporepediaCanSwitchConfigID FLR_PlantLargeShopper_CanSwitch
 key editorSporepediaConfigID FLR_PlantLargeShopper
 
