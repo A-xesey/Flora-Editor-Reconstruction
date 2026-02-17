@@ -1,8 +1,5 @@
 key parent editor_config~!FloraEditorSetup.prop
 
-keys editorModelTypes
-	PlantMedium
-end
 keys editorStartupModel
 	flora_editorModel~!B_Medium_00.flr
 end
