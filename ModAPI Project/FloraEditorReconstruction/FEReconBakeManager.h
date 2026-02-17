@@ -4,8 +4,6 @@
 #include "FEBlackWaterFixMsg.h"
 #include "FloraRandom.h"
 
-#define FEReconBakeManagerPtr intrusive_ptr<FEReconBakeManager>
-
 using namespace App;
 using namespace Simulator;
 

@@ -28,7 +28,7 @@ bool ModelTypeChanged::HandleMessage(uint32_t messageID, void* message)
 	if (messageID == id("Editors_ModelWasChanged") && Editor.IsActive())
 	{
 		if (Editor.mVerbIconTray != nullptr && Editor.mVerbIconTray->mVerbTrays.size() > 0) {
-			for (auto verbTray : Editor.mVerbIconTray->mVerbTrays) {
+			for (const cSPEditorVerbIconTrayPtr& verbTray : Editor.mVerbIconTray->mVerbTrays) {
 				IWindowPtr floraHeader = verbTray->mLayout->FindWindowByID(0x811C9DC5);
 				if (floraHeader != nullptr && verbTray->mWinText != nullptr && verbTray->mRollover != nullptr) {
 					ResourceKey iconKey{ 0, TypeIDs::png, id("VerbIcons") };

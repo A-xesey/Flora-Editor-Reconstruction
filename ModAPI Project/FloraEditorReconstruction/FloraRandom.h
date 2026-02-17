@@ -5,11 +5,11 @@
 #define FloraRandomPtr intrusive_ptr<FloraRandom>
 
 class FloraRandom 
-	//: public Object
-	: public DefaultRefCounted
+	: public Object
+	, public DefaultRefCounted
 {
 public:
-	//static const uint32_t TYPE = id("FloraRandom");
+	static const uint32_t TYPE = id("FloraRandom");
 	
 	FloraRandom();
 	~FloraRandom();
@@ -20,5 +20,5 @@ public:
 	virtual uint32_t GetRandomFloraName(bool smallSpecies, bool mediumSpecies, bool largeSpecies, bool isGameMode);
 	int AddRef() override;
 	int Release() override;
-	//void* Cast(uint32_t type) const override;
+	void* Cast(uint32_t type) const override;
 };

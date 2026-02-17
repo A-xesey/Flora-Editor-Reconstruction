@@ -1,0 +1,6 @@
+key parent models!DefaultTemplate.prop
+bboxs modelBoundingBox
+	(-54.4147263, -54.3073311, -15.1978865) (54.4147224, 54.3073349, 45.0670929)
+end
+float modelBoundingRadius 89.1139297
+key modelMeshLOD0 editor_rigblock~!fe_editor_background_sporepedia.rw4

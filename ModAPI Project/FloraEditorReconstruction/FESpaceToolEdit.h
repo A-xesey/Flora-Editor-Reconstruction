@@ -3,8 +3,6 @@
 #include <Spore\BasicIncludes.h>
 #include <Spore\Simulator\cDefaultBeamTool.h>
 
-#define FESpaceToolEditPtr intrusive_ptr<FESpaceToolEdit>
-
 using namespace Simulator;
 
 class FESpaceToolEdit 

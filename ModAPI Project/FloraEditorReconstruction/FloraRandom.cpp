@@ -140,9 +140,9 @@ int FloraRandom::Release()
 }
 
 // You can extend this function to return any other types your class implements.
-//void* FloraRandom::Cast(uint32_t type) const
-//{
-//	CLASS_CAST(Object);
-//	CLASS_CAST(FloraRandom);
-//	return nullptr;
-//}
+void* FloraRandom::Cast(uint32_t type) const
+{
+	CLASS_CAST(Object);
+	CLASS_CAST(FloraRandom);
+	return nullptr;
+}

@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "FESpaceToolEdit.h"
-#include "SPGDeactivateActives.h"
+//#include "SPGDeactivateActives.h"
 
 FESpaceToolEdit::FESpaceToolEdit()
 {
@@ -57,7 +57,9 @@ bool FESpaceToolEdit::OnHit(cSpaceToolData* pTool, const Vector3& position, Spac
 				if (availableCargoSlots != 0)
 				{
 					beam->mbStopBeam = true;
-					SPGDeactivateActives::DeactivateActives(inventory.get());
+					//SPGDeactivateActives::DeactivateActives(inventory.get());
+					//SP::cSPSimulatorSpaceGame::ClearActiveTool
+					CALL(Address(ModAPI::ChooseAddress(0xfc83d0, 0xff3d30)), void, Args(cPlayerInventory*), Args(inventory.get()));
 					EditorRequestPtr editorRequest = new Editors::EditorRequest();
 					editorRequest->editorID = id("FloraEditorSetupUFO");
 					if (plant.instanceID != 0)

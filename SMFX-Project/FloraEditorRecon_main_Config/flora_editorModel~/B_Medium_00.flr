@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><sporemodel>
+  <formatversion>18</formatversion>
+  <properties>
+    <modeltype>0xB8669EC9</modeltype>
+    <skincolor1>1,1,1</skincolor1>
+    <skincolor2>1,1,1</skincolor2>
+    <skincolor3>1,1,1</skincolor3>
+    <requiredpack>0x00000001</requiredpack>
+  </properties>
+  <blocks count="1">
+    <blockref>
+      <blockid>0x40666000, 0xf80fc958</blockid>
+      <transform>
+        <scale>0.75</scale>
+        <position>0,0,0.6</position>
+        <triangledirection>0,1,0</triangledirection>
+        <trianglepickorigin>0,0,0</trianglepickorigin>
+        <orientation>
+          <row0>1,0,0</row0>
+          <row1>0,1,0</row1>
+          <row2>0,0,1</row2>
+        </orientation>
+      </transform>
+      <snapped>false</snapped>
+    </blockref>
+  </blocks></sporemodel>

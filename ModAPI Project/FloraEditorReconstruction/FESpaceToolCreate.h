@@ -3,8 +3,6 @@
 #include <Spore\BasicIncludes.h>
 #include <Spore\Simulator\cToolStrategy.h>
 
-#define FESpaceToolCreatePtr intrusive_ptr<FESpaceToolCreate>
-
 using namespace Simulator;
 
 class FESpaceToolCreate

@@ -13,7 +13,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{07FC5B61-B575-4207-B464-AFAE6AF3FC19}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>StoopidTry</RootNamespace>
+    <RootNamespace>FloraEditorReconstruction</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -111,16 +111,11 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="FETest.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
     <ClInclude Include="FloraRandom.h" />
     <ClInclude Include="ModelTypeChanged.h">
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="SPGDeactivateActives.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -142,16 +137,11 @@
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="FETest.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
     <ClCompile Include="FloraRandom.cpp" />
     <ClCompile Include="ModelTypeChanged.cpp">
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="SPGDeactivateActives.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

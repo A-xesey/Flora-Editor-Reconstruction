@@ -5,7 +5,7 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="StoopidTry">
+    <Filter Include="FloraEditorReconstruction">
       <UniqueIdentifier>{3880d018-2395-4502-abfe-4b83e0817aab}</UniqueIdentifier>
     </Filter>
     <Filter Include="Internal">
@@ -19,67 +19,55 @@
     <ClInclude Include="stdafx.h">
       <Filter>Internal</Filter>
     </ClInclude>
-    <ClInclude Include="FETest.h">
-      <Filter>StoopidTry</Filter>
-    </ClInclude>
     <ClInclude Include="FEBlackWaterFixMsg.h">
-      <Filter>StoopidTry</Filter>
+      <Filter>FloraEditorReconstruction</Filter>
     </ClInclude>
     <ClInclude Include="FESpaceToolCreate.h">
-      <Filter>StoopidTry</Filter>
+      <Filter>FloraEditorReconstruction</Filter>
     </ClInclude>
     <ClInclude Include="FESpaceToolEdit.h">
-      <Filter>StoopidTry</Filter>
+      <Filter>FloraEditorReconstruction</Filter>
     </ClInclude>
     <ClInclude Include="FloraRandom.h">
-      <Filter>StoopidTry</Filter>
+      <Filter>FloraEditorReconstruction</Filter>
     </ClInclude>
     <ClInclude Include="FEReconEditors.h">
-      <Filter>StoopidTry</Filter>
+      <Filter>FloraEditorReconstruction</Filter>
     </ClInclude>
     <ClInclude Include="FEReconSporepedia.h">
-      <Filter>StoopidTry</Filter>
+      <Filter>FloraEditorReconstruction</Filter>
     </ClInclude>
     <ClInclude Include="FEReconBakeManager.h">
-      <Filter>StoopidTry</Filter>
+      <Filter>FloraEditorReconstruction</Filter>
     </ClInclude>
     <ClInclude Include="FEReconSpaceGame.h">
-      <Filter>StoopidTry</Filter>
-    </ClInclude>
-    <ClInclude Include="SPGDeactivateActives.h">
-      <Filter>StoopidTry</Filter>
+      <Filter>FloraEditorReconstruction</Filter>
     </ClInclude>
     <ClInclude Include="ModelTypeChanged.h">
-      <Filter>StoopidTry</Filter>
+      <Filter>FloraEditorReconstruction</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
-      <Filter>StoopidTry</Filter>
+      <Filter>FloraEditorReconstruction</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>Internal</Filter>
     </ClCompile>
-    <ClCompile Include="FETest.cpp">
-      <Filter>StoopidTry</Filter>
-    </ClCompile>
     <ClCompile Include="FEBlackWaterFixMsg.cpp">
-      <Filter>StoopidTry</Filter>
+      <Filter>FloraEditorReconstruction</Filter>
     </ClCompile>
     <ClCompile Include="FESpaceToolCreate.cpp">
-      <Filter>StoopidTry</Filter>
+      <Filter>FloraEditorReconstruction</Filter>
     </ClCompile>
     <ClCompile Include="FESpaceToolEdit.cpp">
-      <Filter>StoopidTry</Filter>
+      <Filter>FloraEditorReconstruction</Filter>
     </ClCompile>
     <ClCompile Include="FloraRandom.cpp">
-      <Filter>StoopidTry</Filter>
-    </ClCompile>
-    <ClCompile Include="SPGDeactivateActives.cpp">
-      <Filter>StoopidTry</Filter>
+      <Filter>FloraEditorReconstruction</Filter>
     </ClCompile>
     <ClCompile Include="ModelTypeChanged.cpp">
-      <Filter>StoopidTry</Filter>
+      <Filter>FloraEditorReconstruction</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,8 @@
 key parent editor_config~!GlobalTemplate.prop
-#
+
 key editorBackgroundModel 0x0
 key editorSkyBoxEffect fe_editor_dias
+key editorPlayModeExitEffectID fe_editor_part_mode_entry
 key editorPedestalModel fe_editor_background
 
 key editorSwatchBackgroundModel 0x0

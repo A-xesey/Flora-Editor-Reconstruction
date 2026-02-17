@@ -2,9 +2,7 @@
 #include <Spore\BasicIncludes.h>
 #include "FESpaceToolCreate.h"
 #include "FESpaceToolEdit.h"
-#include "SPGDeactivateActives.h"
-
-#define FEReconSpaceGamePtr intrusive_ptr<FEReconSpaceGame>
+//#include "SPGDeactivateActives.h"
 
 using namespace Simulator;
 
@@ -45,7 +43,9 @@ member_detour(HandleMessage, cSimulatorSpaceGame, bool(uint32_t, int))
 							size_t cargoSlots = inventory->GetAvailableCargoSlotsCount();
 							if (cargoSlots == 0)
 							{
-								SPGDeactivateActives::DeactivateActives(inventory.get());
+								//SP::cSPSimulatorSpaceGame::ClearActiveTool
+								CALL(Address(ModAPI::ChooseAddress(0xfc83d0, 0xff3d30)), void, Args(cPlayerInventory*), Args(inventory.get()));
+								//SPGDeactivateActives::DeactivateActives(inventory.get());
 								cSpaceToolDataPtr pTool;
 								if (messageID == 0x3b092aa)
 									ToolManager.LoadTool({ id("CreatureEdit"),0,0 }, pTool);

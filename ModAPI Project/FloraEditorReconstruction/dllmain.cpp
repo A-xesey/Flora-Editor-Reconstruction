@@ -5,7 +5,7 @@
 #include "FEReconSporepedia.h"
 #include "FEReconBakeManager.h"
 #include "FEReconSpaceGame.h"
-#include "FETest.h"
+//#include "FETest.h"
 
 void Initialize()
 {
@@ -13,7 +13,7 @@ void Initialize()
 	FEReconSporepedia::Initialize();
 	FEReconBakeManager::Initialize();
 	FEReconSpaceGame::Initialize();
-	CheatManager.AddCheat("FE", new FETest());
+	//CheatManager.AddCheat("FE", new FETest());
 }
 
 void Dispose()
