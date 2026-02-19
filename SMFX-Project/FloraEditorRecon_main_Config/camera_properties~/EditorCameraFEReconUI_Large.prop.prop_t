@@ -1,6 +1,6 @@
 key parent EditorCameraFEReconUITemplate
 
-float cameraInitialOffsetY 6 #8 #9 #6
-float cameraMaxZoomDistance 75 #50
-float cameraInitialZoom 22.5 #15
-float cameraMinZoomDistance 1.5 #1
+float cameraInitialOffsetY 6
+float cameraMaxZoomDistance 75
+float cameraInitialZoom 22.5
+float cameraMinZoomDistance 1.5
