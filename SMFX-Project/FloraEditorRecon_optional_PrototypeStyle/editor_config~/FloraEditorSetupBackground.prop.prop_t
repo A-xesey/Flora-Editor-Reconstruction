@@ -1,8 +1,0 @@
-key parent editor_config~!GlobalTemplate.prop
-#
-key editorBackgroundModel animations~
-key editorSkyBoxEffect fe_editor_skybox
-key editorPedestalModel pe_editor_base
-
-key editorSwatchBackgroundModel 0x0
-key editorSwatchPedestalModel fe_editor_background_sporepedia

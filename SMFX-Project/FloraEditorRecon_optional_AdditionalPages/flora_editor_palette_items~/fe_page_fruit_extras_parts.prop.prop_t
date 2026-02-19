@@ -1,0 +1,100 @@
+int32s palettePagePartItemColumns
+	0
+	0
+	0
+	
+	0
+	0
+	0
+	
+	0
+	0
+	0
+	
+	1
+	1
+	1
+	
+	1
+	1
+	1
+	
+	1
+	1
+	1
+	
+	2
+	2
+	2
+	
+	2
+	2
+	2
+end
+int32s palettePagePartItemRows
+	0
+	1
+	2
+	
+	3
+	4
+	5
+	
+	6
+	7
+	8
+	
+	0
+	1
+	2
+	
+	3
+	4
+	5
+	
+	6
+	7
+	8
+	
+	0
+	1
+	2
+	
+	3
+	4
+	5
+end
+keys palettePagePartItems
+	FloraParts_modifications!Fruit_Normal_01_Proto
+	FloraParts_modifications!Fruit_Normal_02_Proto
+	FloraParts_modifications!Fruit_Normal_04_Proto
+	#
+	FloraParts_modifications!Fruit_Normal_05_Proto
+	FloraParts_modifications!Fruit_Normal_06_Proto
+	FloraParts_modifications!Fruit_Normal_07_Proto
+	#
+	FloraParts_modifications!Fruit_Normal_08_Proto
+	FloraParts_modifications!Fruit_Normal_09_Proto
+	FloraParts_modifications!Fruit_Normal_10_Proto
+	#
+	FloraParts_modifications!fe_fruit_03_super
+	FloraParts_modifications!fe_fruit_03_poison
+	FloraParts_modifications!Fruit_Super_01
+	#
+	FloraParts_modifications!fe_fruit_03_blind
+	FloraParts_modifications!Fruit_stinky_01
+	FloraParts_modifications!genericfruit_01
+	#
+	FloraParts_modifications!Fruit_Normal_01_LOD1
+	FloraParts_modifications!Fruit_Normal_01
+	FloraParts_modifications!foodpile_fruit_02
+	#
+	FloraParts_modifications!fe_fruit_stem_leaf-04
+	FloraParts_modifications!fe_fruit_stem_leaf
+	FloraParts_modifications!fe_fruit_stem_eye
+	#
+	FloraParts_modifications!cr_nest_dirt_clod
+	FloraParts_modifications!foodpile_seaweed_01
+	FloraParts_modifications!cell_flora_clover2_L1
+end
+key palettePagePartParentPage fe_page_fruit_extras

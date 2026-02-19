@@ -1,6 +1,2 @@
-key parent palette_config~!TemplatePalettePartsPage.prop
-string16 description "Leaves"
-key paletteCategoryIcon editors_flora~!fe-category-leaf.png
+key parent flora_editor_palette_pages~!fe_page_leaves_01.prop
 key palettePageParentCategory creature_editor_palette_categories~!fe_category_leaves
-uint32 palettePageSequenceNumber 100
-int32 palettePageSetId 1

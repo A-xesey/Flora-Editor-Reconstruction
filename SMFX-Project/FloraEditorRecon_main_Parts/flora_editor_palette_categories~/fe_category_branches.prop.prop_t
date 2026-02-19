@@ -1,0 +1,16 @@
+key parent palette_config~!TemplatePaletteCategoryParts.prop
+keys paletteCategoryIconList
+	editors_flora~!button-branches-norm.png
+	editors_flora~!0x0
+	editors_flora~!button-branches-hl.png
+	editors_flora~!button-branches-act.png
+	editors_flora~!button-branches-on-norm.png
+	editors_flora~!0x0
+	editors_flora~!button-branches-on-hl.png
+	editors_flora~!button-branches-on-act.png
+	editors_flora~!button-branches-norm.png
+end
+texts paletteCategoryName
+	(fe_02!0x00000002) "Branches"
+end
+uint32 paletteCategorySequenceNumber 200

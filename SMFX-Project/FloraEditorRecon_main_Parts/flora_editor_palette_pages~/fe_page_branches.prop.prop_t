@@ -1,0 +1,6 @@
+key parent palette_config~!TemplatePalettePartsPage.prop
+string16 description "Branches"
+key paletteCategoryIcon editors_flora~!fe-category-branches.png
+key palettePageParentCategory flora_editor_palette_categories~!fe_category_branches
+uint32 palettePageSequenceNumber 100
+int32 palettePageSetId 1

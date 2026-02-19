@@ -13,4 +13,4 @@ key paletteCategoryLayoutFile editorPaintThemePaletteCategory
 texts paletteCategoryName
 	(ce_paint!0x8c027d87) "Complete Themes"
 end
-uint32 paletteCategorySequenceNumber 200
+uint32 paletteCategorySequenceNumber 100

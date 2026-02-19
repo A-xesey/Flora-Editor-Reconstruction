@@ -1,5 +1,5 @@
 #thx Vainglory
-key parent palette_config~!templatecategorywithsub.prop
+key parent palette_config~!TemplatePalettePartsCategoryWithSubcategories.prop
 keys paletteCategoryIconList
 	ScenarioEditor!EDT_terra_flora-norm.png
 	ScenarioEditor!EDT_terra_flora-norm.png

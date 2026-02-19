@@ -1,4 +1,4 @@
-key parent palette_config~!0x7E35C190.prop
+key parent palette_config~!TemplatePaletteCategoryPartialPaintTheme.prop
 keys paletteCategoryIconList
 	editors_flora~!button-paintbuddyPT-norm.png
 	editors_flora~!0x0
@@ -13,4 +13,4 @@ end
 texts paletteCategoryName
 	(ce_paint!0xf357d3ad) "Partial Themes"
 end
-uint32 paletteCategorySequenceNumber 300
+uint32 paletteCategorySequenceNumber 150

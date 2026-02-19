@@ -1,0 +1,5 @@
+key parent editor_config~!FloraEditorSetup.prop
+
+keys editorModelTypes
+	PlantSmall
+end

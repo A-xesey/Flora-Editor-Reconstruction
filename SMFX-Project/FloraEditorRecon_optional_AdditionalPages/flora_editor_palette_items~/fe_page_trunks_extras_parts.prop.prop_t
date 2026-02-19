@@ -1,0 +1,22 @@
+int32s palettePagePartItemColumns
+	0
+	1
+	2
+	3
+	0
+end
+int32s palettePagePartItemRows
+	0
+	0
+	0
+	0
+	1
+end
+keys palettePagePartItems
+	FloraParts_modifications!fe_leaf_12-mod
+	FloraParts_modifications!fe_leaf_04_branch
+	FloraParts_modifications!fe_underwater_flora
+	FloraParts_modifications!fe_underwater_flora2
+	FloraParts_modifications!FE_leaves_palm_01a_mod
+end
+key palettePagePartParentPage fe_page_trunks_extras

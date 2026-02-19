@@ -1,6 +1,2 @@
-key parent palette_config~!TemplatePalettePartsPage.prop
-string16 description "Fruit"
-key paletteCategoryIcon editors_flora~!fe-category-fruit.png
+key parent flora_editor_palette_pages~!fe_page_fruit.prop
 key palettePageParentCategory creature_editor_palette_categories~!fe_category_fruit
-uint32 palettePageSequenceNumber 100
-int32 palettePageSetId 1

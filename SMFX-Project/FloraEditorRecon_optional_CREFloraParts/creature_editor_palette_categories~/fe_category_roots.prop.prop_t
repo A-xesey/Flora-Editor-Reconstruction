@@ -1,6 +1,0 @@
-key parent palette_config~!templatecategorysub.prop
-key paletteCategoryParentCategory creature_editor_palette_categories~!fe_category_faunafication-creature
-texts paletteCategoryName
-	(fe_02!0x00000002) "Виктор Корнеплод"
-end
-uint32 paletteCategorySequenceNumber 100

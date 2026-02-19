@@ -1,8 +1,0 @@
-keys palettePalettePages
-	flora_paint_palette_pages~!FE_BP1_coats_page
-	flora_paint_palette_pages~!FE_BP1_base_page
-	flora_paint_palette_pages~!FE_BP1_base_page2
-	flora_paint_palette_pages~!FE_BP1_themes_page
-	flora_paint_palette_pages~!FE_BP1_details_page
-	flora_paint_palette_pages~!FE_EP1_details_page
-end

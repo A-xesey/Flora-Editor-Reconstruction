@@ -1,4 +1,0 @@
-keys palettePalettePages
-	cell_paint_palette_category~!CL_TextureGroup_Paint_1
-	cell_paint_palette_category~!CL_TextureGroup_Paint_2
-end

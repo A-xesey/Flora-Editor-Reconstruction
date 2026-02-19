@@ -1,0 +1,5 @@
+keys palettePalettePages
+	flora_editor_palette_pages~!fe_page_trunks_extras
+	flora_editor_palette_pages~!fe_page_branches_extras
+	flora_editor_palette_pages~!fe_page_fruit_extras
+end

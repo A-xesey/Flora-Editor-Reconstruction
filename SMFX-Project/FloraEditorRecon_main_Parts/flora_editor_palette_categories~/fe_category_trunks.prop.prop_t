@@ -13,4 +13,4 @@ end
 texts paletteCategoryName
 	(fe!0x24e2e919) "Trunks"
 end
-uint32 paletteCategorySequenceNumber 200
+uint32 paletteCategorySequenceNumber 100

@@ -1,6 +1,6 @@
-key parent palette_config~!templatecategorysub.prop
+key parent palette_config~!TemplatePalettePartsSubcategory.prop
 key paletteCategoryParentCategory creature_editor_palette_categories~!fe_category_faunafication-creature
 texts paletteCategoryName
 	(fe!0x24e2e919) "Trunks"
 end
-uint32 paletteCategorySequenceNumber 200
+uint32 paletteCategorySequenceNumber 100

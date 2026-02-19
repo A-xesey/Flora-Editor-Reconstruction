@@ -1,0 +1,4 @@
+key parent EditorCameraFEReconThumbnailTemplate
+
+float cameraInitialOffsetY 0
+float cameraInitialZoom 1 #0.05

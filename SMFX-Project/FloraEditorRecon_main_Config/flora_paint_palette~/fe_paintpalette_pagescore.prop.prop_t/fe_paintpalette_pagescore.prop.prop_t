@@ -1,0 +1,23 @@
+keys palettePalettePages
+	flora_paint_palette_pages~!FE_TextureGroup_Theme_01
+	flora_paint_palette_pages~!FE_TextureGroup_Theme_02
+	flora_paint_palette_pages~!FE_TextureGroup_Theme_03
+	flora_paint_palette_pages~!FE_TextureGroup_Detail_01
+	flora_paint_palette_pages~!FE_TextureGroup_Detail_02
+	flora_paint_palette_pages~!FE_TextureGroup_Detail_03
+	flora_paint_palette_pages~!FE_TextureGroup_Detail_04
+	flora_paint_palette_pages~!FE_TextureGroup_Coat_01
+	flora_paint_palette_pages~!FE_TextureGroup_Coat_02
+	flora_paint_palette_pages~!FE_TextureGroup_Coat_03
+	flora_paint_palette_pages~!FE_TextureGroup_Base_01
+	flora_paint_palette_pages~!FE_TextureGroup_Base_02
+	flora_paint_palette_pages~!FE_TextureGroup_Base_03
+
+	## BoosterPack 01 (Creepy and Cute)
+	flora_paint_palette_pages~!FE_BP1_coats_page
+	flora_paint_palette_pages~!FE_BP1_base_page
+	flora_paint_palette_pages~!FE_BP1_base_page2
+	flora_paint_palette_pages~!FE_BP1_themes_page
+	flora_paint_palette_pages~!FE_BP1_details_page
+	flora_paint_palette_pages~!FE_EP1_details_page
+end

@@ -1,0 +1,19 @@
+key parent editor_config~!FloraSmallTemplate_ModelTypes.prop
+
+keys editorStartupModel
+	flora_editorModel~!B_Small_00.flr
+end
+
+## Camera
+key editorCameraThumbnail EditorCameraFEReconThumbnail_Small.prop
+key editorCameraUI EditorCameraFEReconUI_Small.prop
+key editorSwatchCameraUI EditorCameraFEReconUI_Small.prop
+
+## Sporepedia
+key editorSporepediaCanSwitchConfigID FLR_PlantSmallShopper_CanSwitch
+key editorSporepediaConfigID FLR_PlantSmallShopper
+
+## Verbtrays
+key verbTrayCollection verbtrays!Ferecon_VerbTrayCollection
+key verbTrayCollectionSporepediaLargeCard verbtrays!SHP_Ferecon_VerbTrayCollection
+key verbTrayCollectionSporepediaSmallCard verbtrays!SHP_Ferecon_SwatchVerbTrayCollectionLarge

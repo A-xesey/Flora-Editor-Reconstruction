@@ -1,18 +1,2 @@
-key parent editor_config~!FloraEditorSetup.prop
+key parent editor_config~!FloraMediumTemplate.prop
 
-keys editorModelTypes
-	PlantMedium
-	PlantLarge
-	PlantSmall
-end
-
-keys editorStartupModel
-	flora_editorModel~!B_Medium_00.flr
-end
-
-key editorSporepediaCanSwitchConfigID FLR_PlantMediumShopper_CanSwitch
-key editorSporepediaConfigID FLR_PlantMediumShopper
-
-key verbTrayCollection verbtrays!Ferecon_VerbTrayCollection
-key verbTrayCollectionSporepediaLargeCard verbtrays!SHP_Ferecon_VerbTrayCollection
-key verbTrayCollectionSporepediaSmallCard verbtrays!SHP_Ferecon_SwatchVerbTrayCollectionLarge

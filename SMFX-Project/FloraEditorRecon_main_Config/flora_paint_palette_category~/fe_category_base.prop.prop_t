@@ -1,8 +1,8 @@
-key paletteCategoryIcon editors~!0xC92D5717.png
-key paletteCategoryLayoutFile 0x1A43A8E7
+key paletteCategoryIcon editors~!EDT-icon-partialTheme-base.png
+key paletteCategoryLayoutFile EditorPaintPaletteSubCategory
 texts paletteCategoryName
 	(ce_paint!0xe694499c) "Base"
 end
 key paletteCategoryParentCategory flora_paint_palette_category~!fe_category_partial_theme.prop
-uint32 paletteCategorySequenceNumber 100
+uint32 paletteCategorySequenceNumber 200
 uint32 paletteCategorySkinPaintIndex 0

@@ -1,0 +1,118 @@
+int32s palettePagePartItemColumns
+	0
+	1
+	2
+	3
+	0
+	1
+	2
+	3
+	0
+	1
+	2
+	3
+	0
+	1
+	2
+	3
+	0
+	1
+	2
+	3
+	0
+	1
+	2
+	3
+	0
+	1
+	2
+	3
+	0
+	1
+	2
+	0
+	1
+	2
+end
+int32s palettePagePartItemRows
+	0
+	0
+	0
+	0
+	1
+	1
+	1
+	1
+	2
+	2
+	2
+	2
+	3
+	3
+	3
+	3
+	4
+	4
+	4
+	4
+	5
+	5
+	5
+	5
+	6
+	6
+	6
+	6
+	7
+	7
+	7
+	8
+	8
+	8
+end
+keys palettePagePartItems
+	flora_rigblock~!fauna_ce_limb_psychicTempest_01.prop
+	flora_rigblock~!fauna_ce_limb_psychicTempest_03.prop
+	flora_rigblock~!fauna_ce_limb_psychicTempest_04.prop
+	flora_rigblock~!fauna_ce_limb_psychicTempest_05.prop
+	
+	flora_rigblock~!fauna_ce_limb_shadowRavager_01.prop
+	flora_rigblock~!fauna_ce_limb_shadowRavager_02.prop
+	flora_rigblock~!fauna_ce_limb_shadowRavager_03.prop
+	flora_rigblock~!fauna_ce_limb_voodooTempest_01.prop
+	
+	flora_rigblock~!fauna_ce_limb_ghostSentinel_01.prop
+	flora_rigblock~!fauna_ce_limb_ghostSentinel_02.prop
+	flora_rigblock~!fauna_ce_limb_soulRavager_01.prop
+	flora_rigblock~!fauna_ce_limb_quantumRavager_01.prop
+	
+	flora_rigblock~!fauna_ce_limb_fireRavager_01.prop
+	flora_rigblock~!fauna_ce_limb_fireRavager_02.prop
+	flora_rigblock~!fauna_ce_limb_fireRavager_03.prop
+	flora_rigblock~!fauna_ce_limb_fireRavager_04.prop
+	
+	flora_rigblock~!fauna_ce_limb_fireTempest_01.prop
+	flora_rigblock~!fauna_ce_limb_fireTempest_02.prop
+	flora_rigblock~!fauna_ce_limb_fireTempest_03.prop
+	flora_rigblock~!fauna_ce_limb_fireTempest_04.prop
+	
+	flora_rigblock~!fauna_ce_limb_plasmaSentinel_01.prop
+	flora_rigblock~!fauna_ce_limb_plasmaSentinel_02.prop
+	flora_rigblock~!fauna_ce_limb_plasmaSentinel_03.prop
+	flora_rigblock~!fauna_ce_limb_plasmaSentinel_04.prop
+	
+	flora_rigblock~!fauna_ce_limb_trapperRavager_01.prop
+	flora_rigblock~!fauna_ce_limb_trapperRavager_02.prop
+	flora_rigblock~!fauna_ce_limb_trapperRavager_03.prop
+	flora_rigblock~!fauna_ce_limb_trapperRavager_04.prop
+	
+	flora_rigblock~!fauna_ce_limb_medicTempest_01.prop
+	flora_rigblock~!fauna_ce_limb_medicTempest_02.prop
+	flora_rigblock~!fauna_ce_limb_medicTempest_03.prop
+	
+	flora_rigblock~!fauna_ce_limb_shieldedSentinel_01.prop
+	flora_rigblock~!fauna_ce_limb_shieldedSentinel_02.prop
+	flora_rigblock~!fauna_ce_limb_shieldedSentinel_03.prop
+	
+end
+key palettePagePartParentPage fe_page_trunks_dark_califaunacation_02

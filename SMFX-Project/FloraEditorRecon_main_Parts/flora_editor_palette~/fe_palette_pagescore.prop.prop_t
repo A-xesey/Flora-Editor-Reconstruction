@@ -1,8 +1,8 @@
 keys palettePalettePages
-	flora_editor_palette_pages~!fe_page_details
-	flora_editor_palette_pages~!fe_page_fruit
-	flora_editor_palette_pages~!fe_page_roots
-	flora_editor_palette_pages~!fe_page_trunks_02
+	flora_editor_palette_pages~!fe_page_trunks
+	flora_editor_palette_pages~!fe_page_branches
 	flora_editor_palette_pages~!fe_page_leaves_01
 	flora_editor_palette_pages~!fe_page_leaves_02
+	flora_editor_palette_pages~!fe_page_fruit
+	flora_editor_palette_pages~!fe_page_details
 end

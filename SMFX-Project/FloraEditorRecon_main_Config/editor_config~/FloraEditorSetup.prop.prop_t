@@ -1,12 +1,12 @@
-key parent editor_config~!FloraEditorSetupBackground.prop.prop_t
+key parent editor_config~!FloraEditorSetup_CommonBackground.prop.prop_t
 string16 description "Flora Editor Setup"
 string16 editorAssembledContentDirectory "Content/AssembledContent/Plants"
 bool editorAllowPublish false
 float editorBoundSize 15
 float editorMaxHeight 15
 float editorMinHeight -4
-key editorCameraThumbnail EditorCameraFloraThumbnail_FERecon.prop
-key editorCameraUI EditorCameraFloraUI_FERecon.prop
+key editorCameraThumbnail EditorCameraFEReconThumbnail_Medium.prop
+key editorCameraUI EditorCameraFEReconUI_Medium.prop
 bool editorSubtractPartsCostOnLoad true
 uint32s editorDefaultSkinPaintScripts
 	hash(skinpaint_florabase_blankMatte)
@@ -25,6 +25,11 @@ keys editorModelTypes
 	PlantMedium
 	PlantLarge
 end
+keys editorStartupModel
+	flora_editorModel~!B_Small_00.flr
+	flora_editorModel~!B_Medium_00.flr
+	flora_editorModel~!B_Large_00.flr
+end
 texts editorName
 	(fe!0x04d94893) "Plant"
 end
@@ -40,7 +45,7 @@ key editorSaveDirectory 0x90368EA0!0xFFFFFFFF
 key editorSaveExtension 0xFFFFFFFF.flr
 bool editorShowBoneLengthHandles true
 bool editorShowVertebrae true
-key editorSwatchCameraUI EditorCameraFloraUI_FERecon
+key editorSwatchCameraUI EditorCameraFEReconUI_Medium.prop
 key editorSporepediaCanSwitchConfigID FLR_TemplateShopper_CanSwitch
 key editorSporepediaConfigID FLR_TemplateShopper
 key editorTransition EditorTransitions!CSATransition
@@ -69,9 +74,6 @@ keys editorEnabledManipulators
 	#FloraEditorShowBranchHandles
 	#cSPEditorManipulationLimb
 	#cEditorManipulator_AdvancedCE
-end
-keys editorStartupModel
-	flora_editorModel~!B_Small_00.flr
 end
 bool editorUseSymmetry false #true
 key editorNudgeHandleTuningFile HandleTuning!DefaultNudgeHandle
