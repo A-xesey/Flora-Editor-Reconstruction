@@ -26,7 +26,7 @@ bool FESpaceToolCreate::WhileFiring(cSpaceToolData* pTool, const Vector3& aimPoi
 			//SP::cSPSimulatorSpaceGame::ClearActiveTool
 			CALL(Address(ModAPI::ChooseAddress(0xfc83d0, 0xff3d30)), void, Args(cPlayerInventory*), Args(inventory.get()));
 			EditorRequestPtr editorRequest = new Editors::EditorRequest();
-			editorRequest->editorID = id("FloraEditorSetupUFO");
+			editorRequest->editorID = id("FloraEditorSmallUFO");
 			editorRequest->sporepediaCanSwitch = false;
 			editorRequest->allowSporepedia = false;
 			editorRequest->hasCreateNewButton = false;

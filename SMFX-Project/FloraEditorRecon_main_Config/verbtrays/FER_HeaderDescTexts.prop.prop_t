@@ -1,4 +1,4 @@
-#used to chage the header in the modAPI version
+#uses to change the header in the modAPI version
 key parent verbtrays!VHE_VerbTrayTemplate
 texts verbTrayDescriptionLarge
 	(fe_02!0x000000A1) "Tall Tree Description"

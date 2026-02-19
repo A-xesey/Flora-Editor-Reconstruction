@@ -41,14 +41,33 @@ bool FESpaceToolEdit::OnHit(cSpaceToolData* pTool, const Vector3& position, Spac
 			if (gameData != nullptr)
 			{
 				ResourceKey plant;
+				uint32_t editorID = id("FloraEditorSmallUFO");
 				if (object_cast<cGamePlant>(gameData) != nullptr)
 					plant = object_cast<cGamePlant>(gameData)->mSpecies;
-
-				else if (object_cast<cObstacle>(gameData) != nullptr &&
-					(object_cast<cObstacle>(gameData)->mPlantType == cObstacle::kLargeSpecies
-						|| object_cast<cObstacle>(gameData)->mPlantType == cObstacle::kMediumSpecies
-						|| object_cast<cObstacle>(gameData)->mPlantType == cObstacle::kSmallSpecies))
+				else if (object_cast<cObstacle>(gameData) != nullptr)
+				{
 					plant = object_cast<cObstacle>(gameData)->mSpeciesKey;
+					switch (object_cast<cObstacle>(gameData)->mPlantType)
+					{
+						case cObstacle::kLargeSpecies: 
+						{
+							editorID = id("FloraEditorLargeUFO");
+							break;
+						}
+						case cObstacle::kMediumSpecies: 
+						{
+							editorID = id("FloraEditorMediumUFO");
+							break;
+						}
+						case cObstacle::kSmallSpecies:
+						{
+							editorID = id("FloraEditorSmallUFO");
+							break;
+						}
+						default:
+							return true;
+					}
+				}
 				else
 					return true;
 
@@ -61,7 +80,7 @@ bool FESpaceToolEdit::OnHit(cSpaceToolData* pTool, const Vector3& position, Spac
 					//SP::cSPSimulatorSpaceGame::ClearActiveTool
 					CALL(Address(ModAPI::ChooseAddress(0xfc83d0, 0xff3d30)), void, Args(cPlayerInventory*), Args(inventory.get()));
 					EditorRequestPtr editorRequest = new Editors::EditorRequest();
-					editorRequest->editorID = id("FloraEditorSetupUFO");
+					editorRequest->editorID = editorID;
 					if (plant.instanceID != 0)
 					{
 						editorRequest->creationKey.instanceID = plant.instanceID;

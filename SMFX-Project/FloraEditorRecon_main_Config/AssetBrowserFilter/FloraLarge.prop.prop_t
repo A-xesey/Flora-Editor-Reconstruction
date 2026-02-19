@@ -1,9 +1,9 @@
 key parent AssetBrowserFilter!FloraTemplate.prop
 key browserFilterData PlantLarge
-key browserFilterMakeNewEditor floraeditorsetuplarge
+key browserFilterMakeNewEditor floraeditorlarge
 texts browserFilterName
 	(sporepedia!0x0002000f) "Large"
 end
 bool shoppingCanEditExisting true
-key shoppingEditorTypeOverride floraeditorsetuplarge
-key 0x3D72148C floraeditorsetuplarge
+key shoppingEditorTypeOverride floraeditorlarge
+key 0x3D72148C floraeditorlarge

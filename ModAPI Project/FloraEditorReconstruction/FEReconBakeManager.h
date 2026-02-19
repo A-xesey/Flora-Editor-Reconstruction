@@ -221,7 +221,7 @@ member_detour(cPlantSpeciesManager_CreatePlantItem, cPlantSpeciesManager, cPlant
 void FEReconBakeManager::AttachDetours()
 {
 	//Baking system
-	BakeManager_BakeSprites::attach(Address(ModAPI::ChooseAddress(0x00430890, 0x00431340)));
-	BakeManager_SpriteTextureMIPs::attach(Address(ModAPI::ChooseAddress(0x004306c0, 0x00431170)));
+	BakeManager_BakeSprites::attach(Address(ModAPI::ChooseAddress(0x430890, 0x431340)));
+	BakeManager_SpriteTextureMIPs::attach(Address(ModAPI::ChooseAddress(0x4306c0, 0x431170)));
 	cPlantSpeciesManager_CreatePlantItem::attach(GetAddress(Simulator::cPlantSpeciesManager, CreatePlantItem));
 }

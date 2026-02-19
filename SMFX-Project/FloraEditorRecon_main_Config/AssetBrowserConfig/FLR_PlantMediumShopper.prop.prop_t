@@ -2,6 +2,6 @@ key parent AssetBrowserConfig!FLR_TemplateShopper.prop
 texts sporepediaConfigCallToActionMessage
 	(fe_02!0x0004000f) "placeholder"
 end
-key sporepediaConfigEditorForMakeNew FloraEditorSetupMedium
+key sporepediaConfigEditorForMakeNew FloraEditorMedium
 key sporepediaConfigRootFilterID FloraMedium
 key sporepediaConfigSelectedFilterID FloraMedium

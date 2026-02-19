@@ -36,32 +36,17 @@ static_detour(ObjectTemplateDB_GetSaveAreaID, Resource::SaveAreaID(GroupIDs::Nam
 {
 	Resource::SaveAreaID detoured(GroupIDs::Names groupID)
 	{
-		if (groupID == GroupIDs::CreatureModels)
-			return Resource::SaveAreaID::Creatures;
-
-		else if (groupID == GroupIDs::BuildingModels)
-			return Resource::SaveAreaID::Buildings;
-
-		else if (groupID == GroupIDs::VehicleModels)
-			return Resource::SaveAreaID::Vehicles;
-
-		else if (groupID == GroupIDs::UFOModels)
-			return Resource::SaveAreaID::UFOs;
-
-		else if (groupID == GroupIDs::Adventures)
-			return Resource::SaveAreaID::Adventures;
-
-		else if (groupID == GroupIDs::CellModels)
-			return Resource::SaveAreaID::Cells;
-
-		else if (groupID == GroupIDs::CityMusic)
-			return Resource::SaveAreaID::CityMusic;
-
-		else if (groupID == GroupIDs::FloraModels)
-			return Resource::SaveAreaID::Plants;
-
-		else
-			return static_cast<Resource::SaveAreaID>(0);
+		switch (groupID) {
+		case GroupIDs::CreatureModels: return Resource::SaveAreaID::Creatures;
+		case GroupIDs::BuildingModels: return Resource::SaveAreaID::Buildings;
+		case GroupIDs::VehicleModels: return Resource::SaveAreaID::Vehicles;
+		case GroupIDs::UFOModels: return Resource::SaveAreaID::UFOs;
+		case GroupIDs::Adventures: return Resource::SaveAreaID::Adventures;
+		case GroupIDs::CellModels: return Resource::SaveAreaID::Cells;
+		case GroupIDs::CityMusic: return Resource::SaveAreaID::CityMusic;
+		case GroupIDs::FloraModels: return Resource::SaveAreaID::Plants;
+		default: return static_cast<Resource::SaveAreaID>(0);
+		}
 	}
 };
 
@@ -157,6 +142,6 @@ void FEReconSporepedia::AttachDetours()
 {
 	//Sporepedia/Pollinator
 	Sporepedia_IsEditable::attach(GetAddress(cSPAssetDataOTDB, IsEditable));
-	ObjectTemplateDB_GetSaveAreaID::attach(Address(ModAPI::ChooseAddress(0x0055bfa0, 0x00563340)));
+	ObjectTemplateDB_GetSaveAreaID::attach(Address(ModAPI::ChooseAddress(0x55bfa0, 0x563340)));
 	cSPUILargeAssetView_LoadLayout::attach(Address(ModAPI::ChooseAddress(0x6631c0, 0x66dac0)));
 }

@@ -33,9 +33,9 @@ static_detour(Editor_ReturnEditorIDByModel, uint32_t(ModelTypes))
 {
 	uint32_t detoured(ModelTypes modelType)
 	{
-		if (modelType == kPlantLarge) return id("FloraEditorSetupLarge");
-		else if (modelType == kPlantMedium) return id("FloraEditorSetupMedium");
-		else if (modelType == kPlantSmall) return id("FloraEditorSetupSmall");
+		if (modelType == kPlantLarge) return id("FloraEditorLarge");
+		else if (modelType == kPlantMedium) return id("FloraEditorMedium");
+		else if (modelType == kPlantSmall) return id("FloraEditorSmall");
 		else return original_function(modelType);
 	}
 };
@@ -68,8 +68,8 @@ member_detour(Editor_Update, cEditor, void(float, float)) {
 			//rename editor to add creature abilities verbtrays support
 			if (Editor.mpEditorSkin != nullptr && Editor.mpEditorSkin->GetMesh(1)->mpCreatureData != nullptr && Editor.mVerbIconTray != nullptr)
 			{
-				if (Editor.mEditorName == id("FloraEditorSetup") || Editor.mEditorName == id("FloraEditorSetupSmall")
-					|| Editor.mEditorName == id("FloraEditorSetupMedium") || Editor.mEditorName == id("FloraEditorSetupLarge"))
+				if (Editor.mEditorName == id("FloraEditorSetup") || Editor.mEditorName == id("FloraEditorSmall")
+					|| Editor.mEditorName == id("FloraEditorMedium") || Editor.mEditorName == id("FloraEditorLarge"))
 					Editor.mEditorName = id("CreatureEditorSmall");
 			}
 		}
@@ -229,7 +229,7 @@ void FEReconEditors::AttachDetours()
 	Editor_OnMouseUp::attach(GetAddress(cEditor, OnMouseUp));
 
 	//Editor hints
-	EditorUI_SetMessageHint::attach(Address(ModAPI::ChooseAddress(0x005d6a30, 0x005dfd40)));
+	EditorUI_SetMessageHint::attach(Address(ModAPI::ChooseAddress(0x5d6a30, 0x5dfd40)));
 	UTFWin_cSPUIMessageBox::attach(GetAddress(UTFWin::cSPUIMessageBox, ShowDialog));
 
 	//VerbIcons

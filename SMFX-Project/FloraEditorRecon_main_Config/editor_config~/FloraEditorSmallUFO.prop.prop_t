@@ -1,4 +1,4 @@
-key parent editor_config~!FloraEditorSetup.prop
+key parent editor_config~!FloraEditorSmall.prop
 key editorBackgroundMusicPatch music_space_accessories
 key editorPedestalModel FER_background_UFO
 key editorSkyBoxEffect fe_editor_dias_UFO

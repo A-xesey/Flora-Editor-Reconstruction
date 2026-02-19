@@ -1,9 +1,9 @@
 key parent AssetBrowserFilter!FloraTemplate.prop
 key browserFilterData PlantSmall
-key browserFilterMakeNewEditor floraeditorsetupsmall
+key browserFilterMakeNewEditor floraeditorsmall
 texts browserFilterName
 	(sporepedia!0x00020011) "Small"
 end
 bool shoppingCanEditExisting true
-key shoppingEditorTypeOverride floraeditorsetupsmall
-key 0x3D72148C floraeditorsetupsmall
+key shoppingEditorTypeOverride floraeditorsmall
+key 0x3D72148C floraeditorsmall
