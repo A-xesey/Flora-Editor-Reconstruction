@@ -1,4 +1,4 @@
-key parent editor_config~!FloraEditorSetup.prop
+key parent editor_config~!FloraSmallTemplate_ModelTypes.prop
 
 key editorSporepediaCanSwitchConfigID FLR_PlantSmallShopper_CanSwitch
 key editorSporepediaConfigID FLR_PlantSmallShopper
