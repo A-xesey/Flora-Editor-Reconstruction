@@ -1,5 +1,8 @@
-key parent editor_config~!FloraEditorLarge.prop
+key parent editor_config~!FloraLargeTemplate.prop
+
 key editorBackgroundMusicPatch music_space_accessories
 key editorPedestalModel FER_background_UFO
+
 key editorSkyBoxEffect fe_editor_dias_UFO
+key editorPlayModeEntryEffectID 0x0
 key editorPlayModeExitEffectID 0x0

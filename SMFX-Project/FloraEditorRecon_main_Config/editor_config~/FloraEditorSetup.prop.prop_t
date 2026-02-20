@@ -1,4 +1,4 @@
-key parent editor_config~!FloraEditorSetupBackground.prop.prop_t
+key parent editor_config~!FloraEditorSetup_CommonBackground.prop
 string16 description "Flora Editor Setup"
 string16 editorAssembledContentDirectory "Content/AssembledContent/Plants"
 bool editorAllowPublish false
