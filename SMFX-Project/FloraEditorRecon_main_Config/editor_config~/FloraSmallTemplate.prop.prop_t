@@ -1,0 +1,8 @@
+key parent editor_config~!FloraEditorSetup.prop
+
+key editorSporepediaCanSwitchConfigID FLR_PlantSmallShopper_CanSwitch
+key editorSporepediaConfigID FLR_PlantSmallShopper
+
+key verbTrayCollection verbtrays!Ferecon_VerbTrayCollection
+key verbTrayCollectionSporepediaLargeCard verbtrays!SHP_Ferecon_VerbTrayCollection
+key verbTrayCollectionSporepediaSmallCard verbtrays!SHP_Ferecon_SwatchVerbTrayCollectionLarge
