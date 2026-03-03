@@ -83,7 +83,7 @@ member_detour(cPlantSpeciesManager_CreatePlantItem, cPlantSpeciesManager, cPlant
 						set models to show plant in game
 						if (!IsBaked)*/
 						{
-							//floraimposter initializes only after baking, so we need a temporary solution to the problem
+							//floraimposter initializes only after baking, so we need a temporary solution to this problem
 							float FloraImposterScaleTemp = (mBaseRadius + mCanopyRadius + mHeight) / 3;
 
 							//ConsolePrintF("FloraImposterScaleTemp 1 %f", FloraImposterScaleTemp);

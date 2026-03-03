@@ -6,5 +6,5 @@ key verbTrayJustification right
 key verbTrayLayout 0x16B6EB41
 keys verbTrays
 	EditorHeaderTray_FE!flora_header
-	ferecon_fruit
+	#ferecon_fruit
 end
