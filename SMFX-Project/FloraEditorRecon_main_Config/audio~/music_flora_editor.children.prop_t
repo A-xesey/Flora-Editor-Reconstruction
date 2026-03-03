@@ -1,5 +1,1 @@
-key musicTemplate music_shopping_base
-keys addgroups
-	SweetHomeworld
-end
-bool islooped true
+key parentAudio music_shopping_base

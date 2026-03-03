@@ -1,0 +1,6 @@
+key parentAudio patch_editor_base
+float gain 0.5
+uint32 polyphony 1
+keys samples
+	Branching_Out
+end

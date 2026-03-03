@@ -1,4 +1,5 @@
 animations~	0x0
+space_tools~	0x30608F0B
 PaintBuddy1
 fe_skinpaint_florabase_spotted
 FE_BP1_skinpaint_theme_krueger
@@ -233,8 +234,7 @@ auto_flora_paint_palette_items~_FE_BP1_base_parts
 FLR_PlantLargeShopper_CanSwitch
 auto_skinPaint_script~_FE_BP1_skinpaint_base_ragdoll
 cloud_4pack_strip
-auto_skinPaint_script~_FE_BP1_skinpaint_theme_toonCritter
-soundProp	0x02B9F662
+auto_skinPaint_script~_FE_BP1_skinpaint_theme_toonCritter+
 FER_HeaderDescTexts
 ce_skinpaint_base_chewtoy
 CreatureEditorTemplates
