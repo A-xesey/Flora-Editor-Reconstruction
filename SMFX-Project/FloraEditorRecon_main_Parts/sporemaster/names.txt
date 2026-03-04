@@ -753,6 +753,7 @@ ce_weapon_club_01__diffuse
 ce_mouth_radial_omnivore_02__diffuse
 ce_cell_sense_eye_04
 pe_eye_01
+MoveOrientationAndPosition
 ExpansionPack1
 FE_leaf_31__specBump
 auto_flora_rigblock~_FE_flatleaf_06
