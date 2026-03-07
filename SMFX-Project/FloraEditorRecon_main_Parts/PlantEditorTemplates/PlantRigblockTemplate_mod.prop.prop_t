@@ -17,3 +17,8 @@ key modelRigBlockType plant!0xFFFFFFFF
 float modelSellBackFactor 1
 float modelSymmetrySnapDelta 0.03
 bool modelUseDummyBlocks true
+string8 modelSoundMorphX "creature_x"
+string8 modelSoundMorphY "creature_y"
+string8 modelSoundMorphZ "creature_z"
+string8 modelSoundRotation "creature_rotate"
+string8 modelSoundScale "creature_size"

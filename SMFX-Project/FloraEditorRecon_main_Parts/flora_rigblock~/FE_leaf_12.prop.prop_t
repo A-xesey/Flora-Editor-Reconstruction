@@ -10,3 +10,7 @@ key skinpaintDiffuseTexture skinPaint_texture~!FE_leaf_12__diffuse.rw4
 key skinpaintSpecBumpTexture skinPaint_texture~!FE_leaf_12__specBump.rw4
 key skinpaintTintMaskTexture skinPaint_texture~!FE_leaf_12__tintMask.rw4
 
+keys modelHandlePlacementTypes
+	DeformAxisForwardB!PreserveOrientation
+	DeformAxisLeft!IgnoreAxis.zaxis
+end

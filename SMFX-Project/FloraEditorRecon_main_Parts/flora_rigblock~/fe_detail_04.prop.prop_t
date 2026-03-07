@@ -10,3 +10,21 @@ key skinpaintDiffuseTexture skinPaint_texture~!fe_detail_04__diffuse.rw4
 key skinpaintSpecBumpTexture skinPaint_texture~!fe_detail_04__specBump.rw4
 key skinpaintTintMaskTexture skinPaint_texture~!fe_detail_04__tintMask.rw4
 
+keys modelHandleKeys
+	Stretch
+	Thicken
+	tweak_side
+	tweak_top_bottom
+end
+keys modelHandlePlacementTypesTemplate
+	Stretch!PreserveAll
+	Thicken!PreserveOrientation
+	tweak_side!IgnoreAxis.xaxis
+	tweak_top_bottom!IgnoreAxis.zaxis
+end
+string8s modelHandleStretchSounds
+	"creature_y"
+	"creature_z"
+	"creature_x"
+	"creature_z"
+end

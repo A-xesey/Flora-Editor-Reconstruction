@@ -9,3 +9,19 @@ vector3 modelRotationBallHandleOffset (0, -1.75, -0.1)
 key skinpaintDiffuseTexture skinPaint_texture~!FE_leaf_28__diffuse.rw4
 key skinpaintSpecBumpTexture skinPaint_texture~!FE_leaf_28__specBump.rw4
 key skinpaintTintMaskTexture skinPaint_texture~!FE_leaf_28__tintMask.rw4
+
+keys modelHandleKeys
+	Bend
+	EyeStretch
+	Stretch
+end
+keys modelHandlePlacementTypesTemplate
+	Bend!MoveAlongAxis
+	EyeStretch!MoveOrientationAndPosition
+	Stretch!MoveOrientationAndPosition
+end
+string8s modelHandleStretchSounds
+	"creature_z"
+	"creature_y"
+	"creature_y"
+end

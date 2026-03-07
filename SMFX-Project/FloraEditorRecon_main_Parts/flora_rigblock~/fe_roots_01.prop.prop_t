@@ -15,3 +15,8 @@ bool modelUseHullForBBox true
 key skinpaintDiffuseTexture skinPaint_texture~!fe_roots_01__diffuse.rw4
 key skinpaintSpecBumpTexture skinPaint_texture~!fe_roots_01__specBump.rw4
 key skinpaintTintMaskTexture skinPaint_texture~!fe_roots_01__tintMask.rw4
+
+keys modelHandlePlacementTypes
+	DeformAxisLeft!PreserveOrientation
+	DeformAxisUp!PreserveOrientation
+end

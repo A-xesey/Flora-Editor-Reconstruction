@@ -9,3 +9,8 @@ vector3 modelRotationBallHandleOffset (0, -1.75, -0.1)
 key skinpaintDiffuseTexture skinPaint_texture~!FE_leaf_33__diffuse.rw4
 key skinpaintSpecBumpTexture skinPaint_texture~!FE_leaf_33__specBump.rw4
 key skinpaintTintMaskTexture skinPaint_texture~!FE_leaf_33__tintMask.rw4
+
+keys modelHandlePlacementTypes
+	DeformAxisLeft!MoveAlongAxis
+	DeformAxisUpB!IgnoreAxis.xaxis
+end

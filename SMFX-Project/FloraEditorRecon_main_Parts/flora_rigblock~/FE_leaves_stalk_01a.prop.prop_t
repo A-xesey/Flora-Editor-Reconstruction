@@ -11,3 +11,7 @@ key skinpaintDiffuseTexture skinPaint_texture~!FE_leaves_stalk_01__diffuse.rw4
 key skinpaintSpecBumpTexture skinPaint_texture~!FE_leaves_stalk_01__specBump.rw4
 key skinpaintTintMaskTexture skinPaint_texture~!FE_leaves_stalk_01__tintMask.rw4
 
+keys modelHandlePlacementTypes
+	DeformAxisLeft!PreserveAll
+	DeformAxisUp!MoveAlongAxis
+end

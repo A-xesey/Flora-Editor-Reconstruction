@@ -10,4 +10,3 @@ vector3 modelRotationBallHandleOffset (0, -1.75, 1)
 key skinpaintDiffuseTexture skinPaint_texture~!FE_leaves_palm_01__diffuse.rw4
 key skinpaintSpecBumpTexture skinPaint_texture~!FE_leaves_palm_01__specBump.rw4
 key skinpaintTintMaskTexture skinPaint_texture~!FE_leaves_palm_01__tintMask.rw4
-

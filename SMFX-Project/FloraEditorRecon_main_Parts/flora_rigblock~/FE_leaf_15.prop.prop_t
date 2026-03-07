@@ -10,3 +10,18 @@ key skinpaintDiffuseTexture skinPaint_texture~!FE_leaf_15__diffuse.rw4
 key skinpaintSpecBumpTexture skinPaint_texture~!FE_leaf_15__specBump.rw4
 key skinpaintTintMaskTexture skinPaint_texture~!FE_leaf_15__tintMask.rw4
 
+keys modelHandleKeys
+	DeformAxisForward
+	DeformAxisUp
+	0x7C184950
+end
+keys modelHandlePlacementTypesTemplate
+	DeformAxisForward!PreserveAll
+	DeformAxisUp!PreserveOrientation
+	0x7C184950!IgnoreAxis.xaxis
+end
+string8s modelHandleStretchSounds
+	"creature_y"
+	"creature_z"
+	"creature_x"
+end

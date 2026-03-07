@@ -10,3 +10,6 @@ key skinpaintDiffuseTexture skinPaint_texture~!fe_detail_02__diffuse.rw4
 key skinpaintSpecBumpTexture skinPaint_texture~!fe_detail_02__specBump.rw4
 key skinpaintTintMaskTexture skinPaint_texture~!fe_detail_02__tintMask.rw4
 
+keys modelHandlePlacementTypes
+	DeformAxisForward!IgnoreAxis.xaxis
+end

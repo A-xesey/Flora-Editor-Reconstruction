@@ -1,4 +1,4 @@
-key parent PlantEditorTemplates!PlantModelHandlesTemplate_mod.prop
+key parent PlantEditorTemplates!PlantRigblockTemplate_mod.prop
 string16 description "unknown plant fruit"
 colorRGBA modelColor (1, 1, 1, 1)
 bool modelHasRotationBallHandle true

@@ -11,3 +11,6 @@ key skinpaintDiffuseTexture skinPaint_texture~!FE_leaves_deciduous_02__diffuse.r
 key skinpaintSpecBumpTexture skinPaint_texture~!FE_leaves_deciduous_02__specBump.rw4
 key skinpaintTintMaskTexture skinPaint_texture~!FE_leaves_deciduous_02__tintMask.rw4
 
+keys modelHandlePlacementTypes
+	DeformAxisForward!PreserveOrientation
+end

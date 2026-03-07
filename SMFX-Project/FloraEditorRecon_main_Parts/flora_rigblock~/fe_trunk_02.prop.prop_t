@@ -10,3 +10,8 @@ key skinpaintDiffuseTexture skinPaint_texture~!fe_trunk_02__diffuse.rw4
 key skinpaintSpecBumpTexture skinPaint_texture~!fe_trunk_02__specBump.rw4
 key skinpaintTintMaskTexture skinPaint_texture~!fe_trunk_02__tintMask.rw4
 
+keys modelHandlePlacementTypesTemplate
+	DeformAxisForward!PreserveOrientation
+	DeformAxisLeft!PreserveOrientation
+	DeformAxisUp!PreserveOrientation
+end

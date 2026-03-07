@@ -6,3 +6,13 @@ bool modelHasBallConnector true
 bool modelHasSocketConnector true
 float modelMaxBallConnectorScale 6
 #int32 modelComplexityScore 3f
+
+keys modelHandleKeys
+	Longer
+end
+keys modelHandlePlacementTypesTemplate
+	Longer!PreserveOrientation
+end
+string8s modelHandleStretchSounds
+	"creature_y"
+end

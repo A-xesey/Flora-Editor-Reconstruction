@@ -1,4 +1,4 @@
-key parent PlantEditorTemplates!PlantModelHandlesTemplate_mod.prop
+key parent PlantEditorTemplates!PlantRigblockTemplate_mod.prop
 string16 description "unknown plant leaf"
 int32 modelBakeLevel 1
 bool modelHasRotationBallHandle true
@@ -7,3 +7,31 @@ key modelPinningType PinningGeometry!PinningNormal
 key modelRigBlockType plant!leaf
 key modelRotationRingYAxis ui_rotateringcreature
 bool modelUseInBaseCollisionCalc false
+
+keys modelHandleKeys
+	leaf_bend
+	DeformAxisForward
+	DeformAxisForwardB
+	DeformAxisLeft
+	DeformAxisRight
+	DeformAxisUp
+	DeformAxisUpB
+end
+keys modelHandlePlacementTypesTemplate
+	leaf_bend!PreserveOrientation
+	DeformAxisForward!PreserveAll
+	DeformAxisForwardB!MoveOrientationAndPosition
+	DeformAxisLeft!PreserveOrientation
+	DeformAxisRight!PreserveOrientation
+	DeformAxisUp!PreserveOrientation
+	DeformAxisUpB!PreserveAll
+end
+string8s modelHandleStretchSounds
+	"creature_z"#leaf_bend
+	"creature_y"#DeformAxisForward
+	"creature_y"#DeformAxisForwardB
+	"creature_x"#DeformAxisLeft
+	"creature_x"#DeformAxisRight
+	"creature_z"#DeformAxisUp
+	"creature_z"#DeformAxisUpB
+end

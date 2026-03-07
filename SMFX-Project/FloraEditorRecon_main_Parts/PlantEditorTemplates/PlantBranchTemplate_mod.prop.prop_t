@@ -1,4 +1,4 @@
-key parent PlantEditorTemplates!PlantModelHandlesTemplate_mod
+key parent PlantEditorTemplates!PlantRigblockTemplate_mod
 string16 description "unknown plant branch"
 colorRGBA modelColor (1, 1, 1, 1)
 int32 modelBakeLevel 1
@@ -12,3 +12,28 @@ bool modelOrientToSurfaces true
 bool modelOrientWhenSnapped true
 key modelPinningType PinningGeometry!PinningNormal
 key modelRigBlockType plant!branch
+
+keys modelHandleKeys
+	Longer
+	DeformAxisForward
+	DeformBoneLength
+	DeformAxisLeft
+	DeformAxisUp
+	0x5E6F7E87
+end
+keys modelHandlePlacementTypesTemplate
+	Longer!PreserveOrientation
+	DeformAxisForward!PreserveAll
+	DeformBoneLength!PreserveOrientation
+	DeformAxisLeft!PreserveAll
+	DeformAxisUp!PreserveAll
+	0x5E6F7E87!PreserveAll
+end
+string8s modelHandleStretchSounds
+	"creature_y"
+	"creature_y"
+	"creature_y"
+	"creature_x"
+	"creature_z"
+	"creature_z"
+end
