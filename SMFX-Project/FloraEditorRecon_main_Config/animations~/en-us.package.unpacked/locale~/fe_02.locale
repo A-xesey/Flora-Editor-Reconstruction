@@ -3,18 +3,18 @@
 0x04cea2d2 Speed
 
 ## Part Sections
-0x00000002 Roots
+0x00000002 Bases
+0x00000003 Branches
 0x00000005 Fruits
 
 ## VerbIcon
 0x00000003 Flora
 0x00000004 Flora allows planets to sustain life and feed their inhabitants.
-# (placeholder)
 0x000000A1 Large trees provide cover and shade for creatures.
 0x000000A2 Small trees allow planets to sustain life and feed their inhabitants.
 0x000000A3 Shrubs allow planets to sustain life and feed their inhabitants.
 
-## cutted
+## cut
 #~br~Steve made mistake once and gave a functional Flora Editor instead of the Staff of Life...
 #0x00000004 Provides oxygen to the planets and serves as food for creatures.~br~Grow your own plants!
 #0x00000004 Flora make planets favorable for life and feed their inhabitants.~br~Breeding your own flora is strictly forbidden by Galactic Code! (who cares)

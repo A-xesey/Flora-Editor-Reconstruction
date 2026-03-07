@@ -11,6 +11,6 @@ keys paletteCategoryIconList
 	editors_flora~!button-roots-norm.png
 end
 texts paletteCategoryName
-	(fe_02!0x00000002) "Виктор Корнеплод"
+	(fe_02!0x00000002) "Roots"
 end
 uint32 paletteCategorySequenceNumber 100
