@@ -1,6 +1,3 @@
-0x00000001 Choose a Plant
-
-0x04cea2d2 Speed
 
 ## Part Sections
 0x00000002 Bases
@@ -14,17 +11,15 @@
 0x000000A2 Small trees allow planets to sustain life and feed their inhabitants.
 0x000000A3 Shrubs allow planets to sustain life and feed their inhabitants.
 
-## cut
-#~br~Steve made mistake once and gave a functional Flora Editor instead of the Staff of Life...
-#0x00000004 Provides oxygen to the planets and serves as food for creatures.~br~Grow your own plants!
-#0x00000004 Flora make planets favorable for life and feed their inhabitants.~br~Breeding your own flora is strictly forbidden by Galactic Code! (who cares)
-
 ## SharedDialogs/Hint
-0x00000006 You need at least 3 fruit nodes to Save
-0x10000009 Your current creation cannot be saved for the following reason:~br~~br~You need at least 3 fruit nodes to Save~br~~br~Continue to load and lose changes to the creation you are currently editing?
-0x10000019 Your current creation cannot be saved for the following reason:~br~~br~You need at least 3 fruit nodes to Save~br~~br~Continue to load and lose changes to the creation you are currently editing?
-0x10000029 Your current creation cannot be saved for the following reason:~br~~br~You need at least 3 fruit nodes to Save~br~~br~Are sure you want to make a new creation and lose your current changes?
-0x10000039 Your current creation cannot be saved for the following reason:~br~~br~You need at least 3 fruit nodes to Save~br~~br~Are sure you want to exit and lose your current creation?
+# invalid count
+0x62635DD6 You need at least 3 fruit nodes to Save
+
+# invalid position
+0xA3BC8570 At least 3 fruit nodes should be located closer to ground
+
+#invalid position (underground)
+0xFDA57333 Fruit nodes should not be underground
 
 ## SpaceTrading/SpaceTools
 0x3e295ee3 Create Plant
@@ -40,6 +35,6 @@
 0x04cb5b6c Plants with more fruits feed more mouths!
 
 ## Sporepedia
-0x0004000e Choose a Tall Plant
-0x0004000f Choose a Small Plant
-0x00040010 Choose a Shrub
+0xE51EB8EF Choose a Tall Plant
+0x3984733B Choose a Small Plant
+0xD0F7BA37 Choose a Shrub
