@@ -130,7 +130,7 @@ member_detour(cSPUILargeAssetView_LoadLayout, Sporepedia::cSPUILargeAssetView, v
 								}
 							}
 						}
-						creatureData != nullptr;
+						creatureData = nullptr;
 					}
 				}
 			}

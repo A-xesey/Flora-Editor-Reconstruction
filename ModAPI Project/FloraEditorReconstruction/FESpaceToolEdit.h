@@ -14,7 +14,6 @@ public:
 	FESpaceToolEdit();
 	~FESpaceToolEdit();
 
-	virtual bool WhileAiming(cSpaceToolData* pTool, const Vector3& aimPoint, bool showErrors);
 	virtual bool OnHit(cSpaceToolData* pTool, const Vector3& position, SpaceToolHit hitType, int) override;
 
 	int AddRef() override;

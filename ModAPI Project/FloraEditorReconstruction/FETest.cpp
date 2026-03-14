@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "FETest.h"
 
-using namespace Terrain;
-using namespace Graphics;
+using namespace Editors;
+using namespace App;
 
 FETest::FETest()
 {
@@ -14,8 +14,6 @@ FETest::~FETest()
 
 void FETest::ParseLine(const ArgScript::Line& line)
 {
-	App::ConsolePrintF("%i", (PlanetModel.mpTerrain != 0));
-	App::ConsolePrintF("%i", (PlanetModel.mpTerrain2 != 0));
 }
 
 const char* FETest::GetDescription(ArgScript::DescriptionMode mode) const

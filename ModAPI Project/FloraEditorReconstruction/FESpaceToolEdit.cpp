@@ -11,24 +11,6 @@ FESpaceToolEdit::~FESpaceToolEdit()
 {
 }
 
-bool FESpaceToolEdit::WhileAiming(cSpaceToolData* pTool, const Vector3& aimPoint, bool showErrors)
-{
-	bool WhileAiming = cToolStrategy::WhileAiming(pTool, aimPoint, showErrors);
-	
-	eastl::vector<cSpatialObjectPtr> spatialTarget;
-	bool targetFound = GameViewManager.IntersectSphere(aimPoint, pTool->mDamageRadius*10, spatialTarget);
-	if (targetFound)
-	{
-		for (auto target : spatialTarget)
-		{
-			if (object_cast<cGamePlant>(target) == nullptr)
-				return false;
-		}
-	}
-
-	return WhileAiming;
-}
-
 bool FESpaceToolEdit::OnHit(cSpaceToolData* pTool, const Vector3& position, SpaceToolHit hitType, int pSpaceToolStrategy)	//for Edit
 {
 	bool OnHit = cDefaultBeamTool::OnHit(pTool, position, kHitCombatant, pSpaceToolStrategy);
