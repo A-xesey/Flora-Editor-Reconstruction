@@ -2,6 +2,7 @@
 #include "stdafx.h"
 
 #include "FEReconEditors.h"
+#include "FEReconEditorsFruits.h"
 #include "FEReconSporepedia.h"
 #include "FEReconBakeManager.h"
 #include "FEReconSpaceGame.h"
@@ -10,6 +11,7 @@
 void Initialize()
 {
 	FEReconEditors::Initialize();
+	FEReconEditorsFruits::Initialize();
 	FEReconSporepedia::Initialize();
 	FEReconBakeManager::Initialize();
 	FEReconSpaceGame::Initialize();
@@ -20,6 +22,7 @@ void Dispose()
 {
 	// This method is called when the game is closing
 	FEReconEditors::Dispose();
+	FEReconEditorsFruits::Dispose();
 	FEReconSporepedia::Dispose();
 	FEReconBakeManager::Dispose();
 	FEReconSpaceGame::Dispose();
@@ -39,6 +42,7 @@ void Dispose()
 void AttachDetours()
 {
 	FEReconEditors::AttachDetours();
+	FEReconEditorsFruits::AttachDetours();
 	FEReconSporepedia::AttachDetours();
 	FEReconBakeManager::AttachDetours();
 	FEReconSpaceGame::AttachDetours();
