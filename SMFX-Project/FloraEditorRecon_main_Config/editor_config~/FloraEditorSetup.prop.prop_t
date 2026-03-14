@@ -17,7 +17,6 @@ end
 bool editorDisableAnimations true
 bool editorInitSpine true
 key editorLight FloraEditor_FERecon
-key editorShadowLight CSA_ShadowLightFloraEditor
 uint32 editorModelTranslationOptions 38
 uint32 editorCurrencyChar 9867
 keys editorModelTypes
