@@ -1,0 +1,9 @@
+key parent editor_config~!GlobalTemplate.prop
+#
+key editorBackgroundModel animations~
+key editorSkyBoxEffect 0x0
+key editorPlayModeExitEffectID fe_editor_part_mode_entry-deepForest
+key editorPedestalModel fe_editor_background_deepForest
+
+key editorSwatchBackgroundModel 0x0
+key editorSwatchPedestalModel fe_editor_background_sporepedia
