@@ -1,0 +1,5 @@
+key parent editor_config~!FloraLargeTemplate.prop
+
+key editorBackgroundModel fe_editor_background_large
+key editorPlayModeExitEffectID fe_editor_sizeguide_large
+key editorSkyBoxEffect fe_editor_pedestal_large

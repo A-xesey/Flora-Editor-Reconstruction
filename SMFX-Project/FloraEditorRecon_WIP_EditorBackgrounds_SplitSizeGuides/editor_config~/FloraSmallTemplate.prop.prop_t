@@ -1,0 +1,17 @@
+key parent editor_config~!FloraEditorSetup.prop
+
+key editorCameraUI EditorCameraFloraUI_Small.prop
+
+#float editorMaxHeight 15
+#float editorMinHeight -4
+float editorBoundSize 5.2 #2.5 #15
+#float editorFeetBoundSize 2.5
+
+keys editorModelTypes
+	PlantSmall
+	PlantMedium
+	PlantLarge
+end
+
+key editorSporepediaCanSwitchConfigID FLR_PlantSmallShopper_CanSwitch
+key editorSporepediaConfigID FLR_PlantSmallShopper

@@ -1,0 +1,9 @@
+key parent camera_properties~!EditorCameraFloraUI_FERecon.prop
+string16 cameraName "EditorCameraFloraUI_Large"
+
+float cameraInitialOffsetX 5.6 #2.8 #2.4 #1.6
+float cameraInitialOffsetY 4.8 #2.4 #1.6
+
+float cameraInitialZoom 30
+float cameraMaxZoomDistance 40
+float cameraMinZoomDistance 7.5

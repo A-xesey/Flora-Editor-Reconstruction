@@ -1,0 +1,7 @@
+key parent models!DefaultTemplate.prop
+
+bboxs modelBoundingBox
+	(-91.1879578, -90.796875, -11.9248848) (90.9308167, 90.9395828, 100.3598709)
+end
+float modelBoundingRadius 163.2707977
+key modelMeshLOD0 editor_rigblock~!fe_editor_background_large.rw4
