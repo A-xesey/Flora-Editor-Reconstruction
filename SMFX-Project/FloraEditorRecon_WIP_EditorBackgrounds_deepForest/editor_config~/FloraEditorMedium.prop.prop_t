@@ -1,0 +1,5 @@
+key parent editor_config~!FloraMediumTemplate.prop
+
+key editorBackgroundModel fe_editor_underground
+key editorPlayModeExitEffectID fe_editor_part_mode_entry-grove
+key editorPedestalModel fe_editor_background_grove

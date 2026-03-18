@@ -1,0 +1,5 @@
+key parent editor_config~!FloraLargeTemplate.prop
+
+key editorBackgroundModel fe_editor_underground_openField
+key editorPlayModeExitEffectID fe_editor_part_mode_entry-openField
+key editorPedestalModel fe_editor_background_openField

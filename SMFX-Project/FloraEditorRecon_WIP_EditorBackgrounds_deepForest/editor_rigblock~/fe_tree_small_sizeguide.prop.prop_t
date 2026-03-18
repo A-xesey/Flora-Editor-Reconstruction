@@ -1,0 +1,3 @@
+key parent models!DefaultTemplate.prop
+float modelBoundingRadius 8
+key modelMeshLOD0 fe_tree_small_sizeguide.rw4
