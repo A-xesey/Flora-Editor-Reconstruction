@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "skinpaint_florabase_fishScales"
+colorRGBs paintThemeColor1s
+	(0.411765, 0.662745, 0.905882)
+	(0, 0, 0)
+	(0, 0, 0)
+end
+keys paintThemePaints
+	skinpaint_florabase_fishScales
+	animations~
+	animations~
+end

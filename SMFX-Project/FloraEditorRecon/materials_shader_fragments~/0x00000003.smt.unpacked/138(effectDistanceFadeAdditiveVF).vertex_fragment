@@ -1,0 +1,13 @@
+vertexFragment effectDistanceFadeAdditiveVF
+	declareCode
+		extern uniform half4 customParams[2];
+	endCode
+
+	code
+		{
+		half fadeStart          = customParams[1].x;
+		half fadeEnd            = customParams[1].y;
+		color *= saturate( ( fadeEnd - cameraDist ) / ( fadeEnd - fadeStart ) );
+		}
+	endCode
+end

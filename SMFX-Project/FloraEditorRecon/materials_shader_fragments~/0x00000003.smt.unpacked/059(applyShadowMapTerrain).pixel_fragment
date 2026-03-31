@@ -1,0 +1,33 @@
+pixelFragment applyShadowMapTerrain
+	input -texcoords 1
+
+	declareCode
+		extern uniform sampler shadowMap0 : register(s7);
+		extern uniform sampler shadowMap1 : register(s8);
+		extern uniform sampler lookupMap : register(s10);
+		float Shadow(float4 shadowInfo, float sharpness = 10, float bias = 0)
+		{
+		const float pi = 3.14159265;
+		const float4 oneOnC0 = 1.0f / float4(1.1 * pi, 6.0 * pi, -1.1 * pi, -6.0 * pi);
+		float2 shadowPos = shadowInfo.xy;
+		float shadowStrength = shadowInfo.z;
+		float lightDistance = saturate(shadowInfo.w);
+		float shadowClip;
+		float2 clipXY = saturate(3.0f * (1 - abs(shadowPos.xy)));
+		shadowClip = clipXY.x * clipXY.y;
+		shadowPos *= float2(0.5, -0.5);
+		shadowPos += float2(0.5,  0.5);
+		float4 b0Z = tex2D(shadowMap0, shadowPos.xy) * 2 - 1;
+		float4 b0D = tex2D(lookupMap, float2(0.5 * lightDistance, 0.25)) * 2 - 1;
+		float4 diff0 = b0D * b0Z;
+		float term = dot(oneOnC0, diff0);
+		float shadow = saturate(1.0 + bias + sharpness * term);
+		shadow = lerp(1, shadow, shadowClip * shadowStrength);
+		return shadow;
+		}
+	endCode
+
+	code
+		float shadow = Shadow(In.texcoord<t0>, 100, 0);
+	endCode
+end

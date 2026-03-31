@@ -1,0 +1,5 @@
+pixelFragment copyVertexColor
+	input color
+	output color
+
+end

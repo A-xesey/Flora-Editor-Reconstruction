@@ -1,0 +1,60 @@
+pixelFragment TerrainBelowIcePS
+	input color position -texcoords 6
+	output color
+	samplers 7
+
+	declareCode
+		extern uniform float4x4 viewTransform;
+	endCode
+
+	code
+		half2   uv                      = In.texcoord<t0>.xy;
+		half    oneMinusFogStrength     = In.texcoord<t0>.z;
+		half    sunDrop                 = In.texcoord<t0>.w;
+		half3   normal                  = In.texcoord<t1>.xyz;
+		half    fogStrength             = In.texcoord<t1>.w;
+		half3   lightVector             = normalize( In.texcoord<t2>.xyz );
+		half    waterHeight             = In.texcoord<t2>.w;
+		half3   viewDir                 = In.texcoord<t3>.xyz;
+		half2   scaledUV0               = In.texcoord<t4>.xy;
+		half2   scaledUV1               = In.texcoord<t4>.zw;
+		half3   eyeDir                  = In.texcoord<t5>.xyz;
+		// Alpha setup for terrain ice pixel shaders
+		half normalizedHeight           = tex2D( Sampler1, uv ).x * 2.0 - 1.0;
+		half height                     = 100.0 * normalizedHeight;
+		half alpha                      = (height < waterHeight ) ? 1.0 : 0.0;
+		// Noise map evaluation for terrain ice pixel shaders
+		// - Pretend the detail maps are different octaves of noise
+		// - Sum the octaves (with weights) to get a 1D noise value
+		half4 detailFar                 = tex2D( Sampler1,        uv ) - half4( 0.5, 0.0, 0.5, 0.5 );
+		half4 detailMid                 = tex2D( Sampler5, scaledUV0 ) - half4( 0.5, 0.5, 0.5, 0.5 );
+		half4 detailNear                = tex2D( Sampler3, scaledUV1 ) - half4( 0.5, 0.5, 0.5, 0.5 );
+		detailMid.z                     = -detailMid.z;
+		// lookups:
+		//   .x - ice color ramp look
+		//   .y - spec exp
+		//   .z - ice/snow mask
+		half4 lookups;
+		lookups                          = detailFar  * half4(-0.1,  1.0, 1.5, 1.0);
+		lookups                         += detailMid  * half4( 0.0,  1.0, 0.1, 0.1);
+		lookups                         += detailNear * half4( 2.0, -0.1, 0.1, 0.1);
+		lookups                         += 0.5;
+		lookups                         = saturate( lookups );
+		half3 iceColor                  = tex2D( Sampler4, half2( 0.0, lookups.x ) );
+		half3 texNormal                 = tex2D( Sampler0, In.texcoord<t0>.xy ).zyx * 2.0 - 1.0;
+		half3 smoothedNormal            = lerp( texNormal, normal, 0.9 );
+		half  NdL                       = saturate( dot( smoothedNormal, lightVector ) );
+		iceColor                        *= (1 - lookups.z * 0.9);
+		Current.color.rgb               = iceColor;
+		Current.color.a                 = alpha;
+		// cubemap based specular
+		half3 r                         = eyeDir - 2 * dot( eyeDir, smoothedNormal ) * smoothedNormal;
+		r                               = mul( r, viewTransform );
+		float4 specularColor            = texCUBE( Sampler6, r );
+		specularColor.xyz               = specularColor.xyz * specularColor.w;
+		iceColor                        += specularColor * NdL * lookups.z * 3;
+		// fogging
+		float4 scatterColor             = texCUBE( Sampler6, viewDir );
+		Current.color.rgb               = lerp( iceColor.rgb, scatterColor, fogStrength ) + scatterColor.a * scatterColor.rgb * sunDrop;
+	endCode
+end

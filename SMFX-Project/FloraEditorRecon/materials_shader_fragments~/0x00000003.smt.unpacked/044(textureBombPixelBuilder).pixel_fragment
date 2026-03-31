@@ -1,0 +1,50 @@
+pixelFragment textureBombPixelBuilder
+	input color position
+	output color
+	samplers 3
+
+	declareCode
+		extern uniform float4 editorColors[2];
+	endCode
+
+	code
+		half4 baseTex = tex2D(Sampler<s0>, In.texcoord0); // base tex
+		const float scale = 490.0f;
+		const float2 randomPerCell = float2(0.037, 0.118);
+		float2 scaledUV = In.texcoord0 * scale;
+		float2 cell = floor(scaledUV);
+		float2 offset = frac(scaledUV);
+		float2 cell_t, offset_t, randomUV_t;
+		float4 image_t, randomCoords_t;
+		float index;
+		const int NUM_IMAGES_PER_ROW = 4;
+		const float NUM_IMAGES_PER_ROW_INV = 0.25;
+		// method 1: blend the highest alpha splat on this pixel
+		//float4 finalImage = float4(0,0,0,0);
+		float2 uv;
+		for(int i = -1; i <= 0; i++)
+		{
+		for(int j = -1; j <= 0; j++)
+		{
+		cell_t = cell + float2(i, j);
+		offset_t = offset - float2(i, j);
+		randomUV_t = cell_t.xy * randomPerCell;
+		randomCoords_t = tex2D(Sampler<s2>, randomUV_t);
+		index = floor(randomCoords_t.z * NUM_IMAGES_PER_ROW);
+		uv = (offset_t - randomCoords_t.xy) ;
+		uv.x = (saturate(uv.x) + index) * NUM_IMAGES_PER_ROW_INV;
+		image_t = tex2D(Sampler<s1>, uv  );
+		// method 2: blend all splats based on their alpha
+		baseTex.rgb = lerp(baseTex.rgb, image_t.rgb, image_t.a);
+		// uncomment for method 1
+		//if(image_t.a > finalImage.a)
+		//{
+		//finalImage = image_t;
+		//}
+		}
+		}
+		Current.color = baseTex;
+		// uncomment for method 1
+		//Current.color.rgb = lerp(Current.color.rgb, finalImage.rgb, finalImage.a);
+	endCode
+end

@@ -1,0 +1,18 @@
+vertexFragment effectOutputPickFoggedVF
+	output color position -texcoords 2 float4
+
+	declareCode
+		extern uniform float4x4 viewTransform;
+	endCode
+
+	code
+		Current.position            = clipPos;
+		Current.color               = color;
+		Current.texcoord<t0>.xy     = half2( uv.x, tileUV.x );
+		Current.texcoord<t0>.zw     = 0;
+		Current.texcoord<t1>        = 0;
+		Current.texcoord<t0>.z		= fogStrength;
+		Current.texcoord<t0>.w      = sunDrop;
+		Current.texcoord<t1>		= half4( mul( toCamera, viewTransform ).xyz, cameraDist );
+	endCode
+end

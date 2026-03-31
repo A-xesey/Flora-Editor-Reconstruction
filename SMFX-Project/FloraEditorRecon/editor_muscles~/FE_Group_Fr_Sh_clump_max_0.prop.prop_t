@@ -1,0 +1,23 @@
+key parent editor_muscles~!GroupTemplate.prop
+string16 description "Group_Fr_Sh_clump_max_0"
+vector3s muscleOffsets
+	(0, 0, 0.002305)
+	(0, 0, -0.00113)
+	(0, 0, -0.004854)
+	(0, 0, -0.005608)
+	(0, 0, -0.004859)
+end
+floats musclePercentages
+	-0.216983
+	0.07699
+	0.491893
+	0.926573
+	1.242349
+end
+floats muscleRadii
+	0.083333
+	0.238021
+	0.358333
+	0.238021
+	0.083333
+end

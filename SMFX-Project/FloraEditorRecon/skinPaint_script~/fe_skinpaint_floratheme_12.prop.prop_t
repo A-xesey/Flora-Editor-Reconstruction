@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "mountains1 L"
+colorRGBs paintThemeColor1s
+	(0.694118,0.490195,0.411763)
+	(0.803922,0.407843,0.258823)
+	(0.694118,0.572547,0.317647)
+end
+keys paintThemePaints
+	skinpaint_florabase_valueGradientDark
+	skinpaint_floracoat_pebble
+	skinpaint_floradetail_cow
+end

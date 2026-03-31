@@ -1,0 +1,11 @@
+vertexFragment expandAlongNormals
+	input normal
+
+	declareCode
+		extern uniform float4 expandAmount;
+	endCode
+
+	code
+		Current.position.xyz = Current.position.xyz + Current.normal.xyz * expandAmount.x;
+	endCode
+end

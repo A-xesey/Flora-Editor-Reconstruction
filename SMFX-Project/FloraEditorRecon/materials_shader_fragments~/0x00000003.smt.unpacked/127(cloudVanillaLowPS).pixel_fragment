@@ -1,0 +1,24 @@
+pixelFragment cloudVanillaLowPS
+	input color position -texcoords 2
+	output color
+
+	declareCode
+		extern uniform sampler sideMap : register(s0);
+		extern uniform sampler topMap : register(s1);
+	endCode
+
+	code
+		half4   color           = In.color;
+		half2   tileUV1         = In.texcoord<t0>.xy;
+		half2   tileUV2         = In.texcoord<t0>.zw;
+		half    tileAnimBlend   = In.texcoord<t1>.x;
+		half    topBlend        = In.texcoord<t1>.y;
+		half    y               = In.texcoord<t1>.z;
+		half4   topTex      = tex2D( topMap, tileUV1 );
+		half4   sideTex     = tex2D( sideMap, tileUV1 );
+		half4 diffuse          = lerp( sideTex, topTex, topBlend );
+		diffuse                 *= color;
+		Current.color.rgb       = diffuse.rgb;
+		Current.color.a         = diffuse.a;
+	endCode
+end

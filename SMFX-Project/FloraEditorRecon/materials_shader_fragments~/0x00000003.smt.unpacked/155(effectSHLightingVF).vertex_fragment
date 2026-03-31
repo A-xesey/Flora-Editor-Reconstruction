@@ -1,0 +1,22 @@
+vertexFragment effectSHLightingVF
+	declareCode
+		extern uniform half4 shCoeffs[4];
+	endCode
+
+	code
+		half3 litcolor;
+		{
+		const static half kSH_A1 = 2.0 / 3.0;
+		half3 lightingNormal = normalize( quadPos - In.position.xyz );
+		half3 x0 = lightingNormal;
+		half3 shColorDiff = shCoeffs[0];
+		half3 shColor;
+		shColor  = shCoeffs[1].xyz * x0.y;
+		shColor += shCoeffs[2].xyz * x0.z;
+		shColor += shCoeffs[3].xyz * x0.x;
+		shColor *= kSH_A1;
+		shColorDiff += shColor;
+		litcolor = color.rgb * shColorDiff;
+		}
+	endCode
+end

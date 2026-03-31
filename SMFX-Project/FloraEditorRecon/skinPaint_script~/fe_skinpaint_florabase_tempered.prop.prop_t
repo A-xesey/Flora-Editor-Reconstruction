@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "skinpaint_florabase_tempered"
+colorRGBs paintThemeColor1s
+	(0.803921, 0.396078, 0.368627)
+	(0, 0, 0)
+	(0, 0, 0)
+end
+keys paintThemePaints
+	skinpaint_florabase_tempered
+	animations~
+	animations~
+end

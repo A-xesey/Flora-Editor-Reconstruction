@@ -1,0 +1,43 @@
+pixelFragment PCATextureRenderSingle
+	input position -texcoords 1
+	output color
+	samplers 1
+
+	declareCode
+		extern uniform struct { float4x4 pcaBasis0;float4x4 pcaBasis1;float4x4 pcaBasis2;float4x4 pcaBasis3;float4 pcaMean;} pcaTexture;
+
+		// must match pcaTexture struct
+		struct PCAData
+		{
+		float4x4 pcaBasis0;
+		float4x4 pcaBasis1;
+		float4x4 pcaBasis2;
+		float4x4 pcaBasis3;
+		float4   pcaMean;  // move this first, only use basis0/1
+		};
+		float4 PCADecompressTexture(
+		float2 uv0,
+		sampler pcaComponent0,
+		sampler pcaComponent1,
+		PCAData pcaData
+		)
+		{
+		// 14 ps slots + 2 tex slots for one water normal
+		// Convert image data into left singular values (scale from [0,1] to [-1,1])
+		float4 texture0 = tex2D( pcaComponent0, uv0 ) * 2 - 1; // components 0-3
+		float4 texture1 = tex2D( pcaComponent1, uv0 ) * 2 - 1; // components 4-7
+		float4 decompressedTexture =
+		mul( texture0, pcaData.pcaBasis0 ) +
+		mul( texture1, pcaData.pcaBasis1 ) +
+		pcaData.pcaMean;
+		return decompressedTexture / 255.0f;
+		}
+	endCode
+
+	code
+		Current.color = PCADecompressTexture( In.texcoord<t0>,
+		Sampler<s0>,
+		pcaTexture
+		).xzyw;
+	endCode
+end

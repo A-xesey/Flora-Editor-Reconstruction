@@ -1,0 +1,24 @@
+pixelFragment ambOccSplatter
+	input -texcoords 2
+	output color
+	samplers 1
+	texture 0x40002A00!ShadowRTT -minFilter D3DTEXF_POINT -magFilter D3DTEXF_POINT -mipFilter D3DTEXF_POINT -addresses D3DTADDRESS_CLAMP D3DTADDRESS_CLAMP
+
+	code
+		// amboccSplatter
+		float fShadow = 0.0;
+		float4 viewCoords = In.texcoord<t0>;
+		float fDepth = In.texcoord<t1>.z;
+		float4 tcolor1;
+		float d;
+		float ndotl = In.texcoord<t1>.w;
+		tcolor1 = tex2Dproj(Sampler<s0>,  float4(viewCoords.xy, viewCoords.z, viewCoords.w));
+		float shadowDepth = tcolor1.r * 256.0f + tcolor1.g;
+		d = fDepth -  shadowDepth - 0.05;
+		if(d < 0.0 && ndotl > 0)
+		{
+		fShadow = 1.0;
+		}
+		Current.color = float4(fShadow, fShadow, fShadow, fShadow);
+	endCode
+end

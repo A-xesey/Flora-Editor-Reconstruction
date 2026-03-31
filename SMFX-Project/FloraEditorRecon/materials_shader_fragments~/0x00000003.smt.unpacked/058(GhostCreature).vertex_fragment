@@ -1,0 +1,24 @@
+vertexFragment GhostCreature
+	input normal color texcoord0
+	output color -texcoords 4 float2
+
+	declareCode
+		extern uniform float4 frameInfo;
+		extern uniform float4 worldCameraDirection;
+		extern uniform float4 worldCameraPosition;
+	endCode
+
+	code
+		Current.texcoord<t0> = In.texcoord0.xy;
+		float distFromCenter = length(In.position.xyz);
+		Current.texcoord<t1>.xy = In.position.xz * 3.0 + float2(frameInfo.x * 0.6, 0.1  * frameInfo.x);
+		Current.texcoord<t3>.xy = In.position.xz  * 15.0+ float2(frameInfo.x * 0.4, -0.15  * frameInfo.x);
+		float3 vertPos = mul(In.position, modelToWorld).xyz;
+		// these are constants, upload them
+		float3 camPos =  worldCameraPosition.xyz; // depth
+		float4 eyeVec = float4(-normalize(vertPos-camPos),0);
+		float pulse =  ((saturate(1.25 * sin(frameInfo.x * 5.0)) * 0.4 + 0.8)  + (saturate(1.05 * sin(frameInfo.x * 2.1)) * 0.4 + 0.8)) * 0.5;
+		float angle = (1.0f - saturate( dot( eyeVec, worldNormal ))) * pulse ;
+		Current.texcoord<t2> = float2(angle, distFromCenter);
+	endCode
+end

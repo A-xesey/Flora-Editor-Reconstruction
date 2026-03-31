@@ -1,0 +1,8 @@
+vertexFragment effectOffsetClipPosVF
+	code
+		{
+		clipPos.xyz += half3( axis.x, 0, 0 ) * (uv.x - 0.5);
+		clipPos.xyz += half3( 0, axis.y, 0 ) * (0.5 - uv.y);
+		}
+	endCode
+end

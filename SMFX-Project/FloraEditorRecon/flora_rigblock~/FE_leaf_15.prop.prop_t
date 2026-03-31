@@ -1,0 +1,27 @@
+key parent PlantEditorTemplates!PlantLeafTemplate_mod
+texts blockName
+	(PlantRigblocks!0x00000094) "FE_leaf_15"
+end
+string16 description "15: 615"
+key modelMeshHull editor_rigblock~!None
+key modelMeshLOD0 editor_rigblock~!FE_leaf_15.rw4
+vector3 modelRotationBallHandleOffset (0, -1.75, -0.1)
+key skinpaintDiffuseTexture skinPaint_texture~!FE_leaf_15__diffuse.rw4
+key skinpaintSpecBumpTexture skinPaint_texture~!FE_leaf_15__specBump.rw4
+key skinpaintTintMaskTexture skinPaint_texture~!FE_leaf_15__tintMask.rw4
+
+keys modelHandleKeys
+	DeformAxisForward
+	DeformAxisUp
+	0x7C184950
+end
+keys modelHandlePlacementTypesTemplate
+	DeformAxisForward!PreserveAll
+	DeformAxisUp!PreserveOrientation
+	0x7C184950!IgnoreAxis.xaxis
+end
+string8s modelHandleStretchSounds
+	"creature_y"
+	"creature_z"
+	"creature_x"
+end

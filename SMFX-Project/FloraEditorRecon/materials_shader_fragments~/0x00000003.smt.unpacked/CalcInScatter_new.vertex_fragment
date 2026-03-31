@@ -1,0 +1,31 @@
+vertexFragment CalcInScatter
+	declareCode
+		/////////////////////////////////////////////////////////////////////////////////////
+		// Scattering function so the dark side isn't in scatterred
+		/////////////////////////////////////////////////////////////////////////////////////
+		float GetInScatterTerminator( float3 vNorm, float3 vSunDir, float cutoff )
+		{
+		float dp = dot( vNorm, vSunDir );
+		dp = ( dp > cutoff ) ? 1.0 : max( 0, dp + cutoff )/(2 * cutoff);
+		return dp;
+		}
+		/////////////////////////////////////////////////////////////////////////////////////
+		// Scattering function
+		/////////////////////////////////////////////////////////////////////////////////////
+		float4 CalcInScatter(  float fSunDotP, float fNormDist, float brightness,
+		float4 cP1Color, float4 xPhase,
+		float4 cP2Color, float4 yPhase,
+		float4 cP3Color, float4 zPhase)
+		{
+		float4 r_in;
+		// InScatter
+		// in scattered color: phase * (col * dens *inscatter) * fNormDist
+		// phase function evaluation
+		float3 fPhase = (float3(1,1,1) - xPhase*xPhase)/(4 * 3.14159 * pow((float3(1,1,1) + xPhase*xPhase - 2*xPhase*fSunDotP), 1.5));
+		float3 r = fPhase * fNormDist * yPhase;
+		r_in = (r.x * cP1Color + r.y * cP2Color + r.z * cP3Color) * brightness;
+		r_in = saturate(r_in);
+		return r_in;
+		}
+	endCode
+end

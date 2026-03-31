@@ -1,0 +1,6 @@
+key parent palette_config~!0x0762FAD0.prop
+string16 description "Coat"
+key palettePageFilter 1
+key palettePageParentCategory flora_paint_palette_category~!fe_category_coat
+uint32 palettePageSequenceNumber 100
+int32 palettePageSetId 1

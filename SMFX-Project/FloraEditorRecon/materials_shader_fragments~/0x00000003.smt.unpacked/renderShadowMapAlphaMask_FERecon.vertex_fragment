@@ -1,0 +1,16 @@
+vertexFragment renderShadowMapAlphaMask_FERecon
+	input texcoord0 position
+	output -texcoords 1 float4
+
+	declareCode
+		extern uniform float4x4 modelToClip;
+		extern uniform float4x3 modelToCamera;
+		extern uniform float4 rangeAndStrength;
+	endCode
+
+	code
+		Current.texcoord<t0>.xyz = In.texcoord0;
+		Current.texcoord<t0>.w = (mul(Current.position, modelToCamera).z - rangeAndStrength.x) * rangeAndStrength.y;
+		Current.position = mul(Current.position, modelToClip);
+	endCode
+end

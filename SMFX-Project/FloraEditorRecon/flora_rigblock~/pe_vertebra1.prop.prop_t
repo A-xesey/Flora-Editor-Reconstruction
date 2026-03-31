@@ -1,0 +1,11 @@
+key parent PlantEditorTemplates!PlantRigblockTemplate_mod
+string16 description "Vertebra"
+bool modelCanBeParentless true
+int32 modelCapabilitySpine 1
+bool modelIsAllowedOutOfBounds false
+bool modelIsVertebra true
+float modelMaxScale 3
+key modelMeshHull editor_rigblock~!ce_vertebra-Hull.rw4
+key modelMeshLOD0 editor_rigblock~!cl_vertebra.rw4
+float modelMinScale 0.2
+bool modelUseSkin true

@@ -1,0 +1,12 @@
+vertexFragment effectToClipVF
+	declareCode
+		extern uniform float4x4 modelToClip;
+	endCode
+
+	code
+		half4 clipPos;
+		{
+		clipPos = mul( half4( quadPos, 1 ), modelToClip );
+		}
+	endCode
+end

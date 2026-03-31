@@ -1,0 +1,20 @@
+vertexFragment effectScreenSpaceAxisClampedVF
+	declareCode
+		extern uniform half4 cameraParams[1];
+		extern uniform half4 customParams[2];
+	endCode
+
+	code
+		half2 axis;
+		{
+		half screenWidth = cameraParams[0].x;
+		half screenHeight = cameraParams[0].y;
+		half ratio = screenHeight / screenWidth;
+		axis = saturate( 1 - clipPos.z ) * scale;
+		half minScaleRatio = customParams[0].z;
+		half maxScaleRatio = customParams[0].w;
+		axis = clamp( axis, minScaleRatio, maxScaleRatio );
+		axis.x *= ratio;
+		}
+	endCode
+end

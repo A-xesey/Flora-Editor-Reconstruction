@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "BP1 Dottie Base"
+colorRGBs paintThemeColor1s
+	(0.973, 0.749, 0.263)
+	(0, 0, 0)
+	(0, 0, 0)
+end
+keys paintThemePaints
+	FE_BP1_skinpaint_base_dottie
+	animations~
+	animations~
+end

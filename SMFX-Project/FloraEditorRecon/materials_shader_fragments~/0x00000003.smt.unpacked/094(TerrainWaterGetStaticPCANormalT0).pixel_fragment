@@ -1,0 +1,5 @@
+pixelFragment TerrainWaterGetStaticPCANormalT0
+	code
+		half3 pcaNormal = tex2D( Sampler2, In.texcoord<t0>.zw).xzy * 2 - 1;
+	endCode
+end

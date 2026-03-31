@@ -1,0 +1,20 @@
+vertexFragment uvTweak_boxMap
+	input normal position
+
+	declareCode
+		extern uniform float4 uvTweak;
+		extern uniform float4x3 modelToWorld;
+	endCode
+
+	code
+		float3 an = abs(Current.normal.xyz);
+		float3 boxMask =  step(an.yzx, an);   
+		boxMask        *= step(an.zxy, an);   
+		float3 sn = sign(Current.normal.xyz);
+		boxMask.xy *= float2(sn.x, -sn.y);
+		Current.texcoord0.x =  dot(boxMask, Current.position.yxx) * uvTweak.x;
+		boxMask.xyz *= float3(sn.x, -sn.y, sn.z);
+		Current.texcoord0.y = -dot(boxMask, Current.position.zzy) * uvTweak.y;
+		Current.texcoord0.xy *= length(modelToWorld[0]);
+	endCode
+end

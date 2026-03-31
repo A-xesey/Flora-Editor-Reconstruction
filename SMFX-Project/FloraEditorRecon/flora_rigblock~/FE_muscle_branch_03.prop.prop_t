@@ -1,0 +1,13 @@
+key parent PlantEditorTemplates!PlantBranchSkinnedTemplate_mod
+texts blockName
+	(PlantRigblocks!0x00000032) "FE_muscle_branch_03"
+end
+string16 description "fe_muscle_03"
+key modelAlternativeStaticModel palette_editorModel~!FE_muscle_branch_03.prop
+key modelMaxMuscleFile editor_muscles~!Muscle_FE_muscle_branch_03a.prop
+vector3 modelMaxSocketConnectorOffset (0, -3.2550001, 0)
+key modelMeshHull editor_rigblock~!ce_basic_bone-Hull.rw4
+key modelMeshLOD0 editor_rigblock~!fe_branch_standard.rw4
+key modelMinMuscleFile editor_muscles~!Muscle_FE_muscle_branch_03b.prop
+vector3 modelMinSocketConnectorOffset (0, -0.117, 0)
+float modelScale 2

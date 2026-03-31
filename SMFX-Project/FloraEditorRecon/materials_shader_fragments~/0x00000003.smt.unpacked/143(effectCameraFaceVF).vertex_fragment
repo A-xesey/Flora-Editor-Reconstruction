@@ -1,0 +1,18 @@
+vertexFragment effectCameraFaceVF
+	input normal color1 position
+
+	declareCode
+		extern uniform float4 worldCameraDirection;
+	endCode
+
+	code
+		half3 quadPos;
+		{
+		half3 up = normalize( In.normal.xyz );
+		half3 tangent  = -cross( up, worldCameraDirection.xyz );
+		quadPos = In.position.xyz;
+		quadPos += tangent * scale * (uv.x - 0.5);
+		quadPos += up * scale * (0.5 - uv.y);
+		}
+	endCode
+end

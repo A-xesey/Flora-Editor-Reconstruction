@@ -1,0 +1,35 @@
+key parent PlantEditorTemplates!PlantRigblockTemplate_mod.prop
+string16 description "unknown plant leaf"
+int32 modelBakeLevel 1
+bool modelHasRotationBallHandle false
+int32 modelNumberOfSnapAxes 4
+bool modelOrientToSurfaces true
+key modelPinningType PinningPhysics!0x05985649
+bool modelRemainUpright true
+bool modelRemainUprightOnTop true
+key modelRigBlockType plant!root
+#key modelRotationRingYAxis ui_rotateringcreature
+bool modelUseInBaseCollisionCalc false
+bool modelSnapToParentCenter true
+
+keys modelHandleKeys
+	DeformAxisUp
+	DeformAxisFront
+	DeformAxisForward
+	DeformAxisLeft
+	0x50BAEC69
+end
+keys modelHandlePlacementTypesTemplate
+	DeformAxisUp!PreserveAll
+	DeformAxisForward!PreserveAll
+	DeformAxisFront!PreserveAll
+	DeformAxisLeft!PreserveAll
+	0x50BAEC69!PreserveAll
+end
+string8s modelHandleStretchSounds
+	"creature_z"
+	"creature_y"
+	"creature_y"
+	"creature_x"
+	"creature_x"
+end

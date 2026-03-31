@@ -1,0 +1,7 @@
+pixelFragment unPaintableNormalMapSplatter
+	output color
+
+	code
+		Current.color = float4(0.5, 0.5, 1.0, 1.0);
+	endCode
+end

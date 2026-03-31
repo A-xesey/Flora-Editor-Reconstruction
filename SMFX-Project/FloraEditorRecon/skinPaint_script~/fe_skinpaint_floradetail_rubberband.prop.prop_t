@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "skinpaint_floradetail_rubberband"
+colorRGBs paintThemeColor1s
+	(0, 0, 0)
+	(0, 0, 0)
+	(0.309804, 0.266667, 0.027451)
+end
+keys paintThemePaints
+	animations~
+	animations~
+	skinpaint_floradetail_rubberband
+end

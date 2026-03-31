@@ -1,0 +1,12 @@
+key parent PlantEditorTemplates!PlantBranchSkinnedTemplate_mod
+texts blockName
+	(ModRigblocks!0x00000001) "back"
+end
+key modelAlternativeStaticModel palette_editorModel~!Limb_Fr_Sh_back.prop
+key modelMaxMuscleFile editor_muscles~!FE_Muscle_Fr_Sh_back_max.prop
+vector3 modelMaxSocketConnectorOffset (0, -3.2550001, 0)
+key modelMeshHull editor_rigblock~!ce_basic_bone-Hull.rw4
+key modelMeshLOD0 editor_rigblock~!fe_branch_standard.rw4
+key modelMinMuscleFile editor_muscles~!FE_Muscle_Fr_Sh_back_min.prop
+vector3 modelMinSocketConnectorOffset (0, -0.117, 0)
+float modelScale 1.5

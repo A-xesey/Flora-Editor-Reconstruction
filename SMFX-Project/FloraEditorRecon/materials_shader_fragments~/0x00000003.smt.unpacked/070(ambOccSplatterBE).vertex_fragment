@@ -1,0 +1,24 @@
+vertexFragment ambOccSplatterBE
+	input normal texcoord0 position
+	output position -texcoords 2 float4
+
+	declareCode
+		extern uniform float4x3 modelToWorld;
+		extern uniform float4x3 geomToRTT;
+		extern uniform float4x4 geomToRTTViewTrans;
+	endCode
+
+	code
+		float4 viewCoords;
+		float4 tempPos = float4(mul(Current.position, modelToWorld), 1);
+		viewCoords = mul(tempPos , geomToRTTViewTrans);
+		viewCoords.xy = viewCoords.xy * float2(0.5, -0.5) + viewCoords.w * float2(0.5, 0.5);
+		Current.texcoord<t0> = viewCoords;
+		float3 camPos =  mul( Current.position , geomToRTT); // depth
+		float3 camNorm = normalize(mul( In.normal.xyz, geomToRTT));
+		float3 viewVec = normalize(-camPos);
+		float ndotl = dot(camNorm, viewVec);
+		Current.texcoord<t1> = float4(camPos, ndotl);
+		Current.position = float4(((In.texcoord0.x *2) - 1),  ((-In.texcoord0.y * 2) - 1), 0, 1);
+	endCode
+end

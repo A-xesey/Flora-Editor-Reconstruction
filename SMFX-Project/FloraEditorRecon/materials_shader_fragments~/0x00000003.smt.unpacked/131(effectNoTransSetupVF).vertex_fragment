@@ -1,0 +1,8 @@
+vertexFragment effectNoTransSetupVF
+	input normal texcoord0 position
+
+	code
+		half2 uv = In.texcoord0.xy;
+		half scale = In.normal.w;
+	endCode
+end

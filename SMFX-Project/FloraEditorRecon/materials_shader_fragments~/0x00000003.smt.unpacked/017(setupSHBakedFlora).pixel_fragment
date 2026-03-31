@@ -1,0 +1,32 @@
+pixelFragment setupSHBakedFlora
+	output color
+	samplers 1
+
+	declareCode
+		extern uniform float4 materialParams;
+		extern uniform float cameraDistance;
+
+		const static float kSH_A1 = 2.0 / 3.0;
+		const static float kSH_A2 = 1.0 / 4.0;
+		const static float kSH_A3 = 0;
+		const static float kSH_A4 = -1.0 / 24.0;
+		const static float kDefaultGloss = 0.35;
+		const static float kGlossyMax    = 0.75; // threshold at which glossy maxes out
+		const static float kCelOutlineThreshold        = 0.25;
+		const static float kCelOutlineThresholdRange   = 0.075;
+		const static float kCelStrength                = 0.3;
+		const static float kSpecExponentMaxValue = 60.0;
+		const static bool kSaveInstructions = false;
+	endCode
+
+	code
+		float4 specNMap    = tex2D(Sampler<s0>, In.texcoord0);
+		float specE        = materialParams.x;
+		float specStrength = materialParams.y;
+		float gloss        = materialParams.w;    // really, translucency.
+		float multiplier = specNMap.a;
+		multiplier *= saturate((200 - cameraDistance) * (1.0 / (300 - 200)));
+		specStrength *= multiplier;
+		gloss        *= multiplier;
+	endCode
+end

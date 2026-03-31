@@ -1,0 +1,51 @@
+pixelFragment TerrainAboveSynthPSMedium
+	input color1 color position -texcoords 7
+	output color
+	samplers 7
+
+	code
+		const float detailPinch         = 3.0f;
+		const float detailIntensity     = 0.3f;
+		// Load up variable
+		float3 lightColorOffset         = In.color.xyz * 2.0;
+		float3 shadowColor              = In.color1.xyz;
+		float3 lightVector              = In.texcoord<t0>.xyz;
+		float  duskBlend                = In.texcoord<t0>.w;
+		float2 uv                       = In.texcoord<t1>.xy;
+		float fogStrength               = In.texcoord<t1>.w;
+		float4 detailUVs                = In.texcoord<t2>;
+		float3 normal                   = In.texcoord<t3>.xyz;
+		float3 nightLightTint           = In.texcoord<t4>.xyz;
+		float  nightLumBlend            = In.texcoord<t4>.w;
+		float3 transDir                 = In.texcoord<t5>.xyz;
+		float  sunDrop                  = In.texcoord<t5>.w;
+		float3 viewDir                  = In.texcoord<t6>.xyz;
+		// Get the map normal
+		float4 texNormal                = tex2D( Sampler0, uv ).zyxw * 2.0 - 1.0;
+		// Sample the control map
+		float4 simData                  = tex2D( Sampler2, In.texcoord<t1>.xy );
+		// Sample the detail map
+		float4 detail4;
+		detail4.rg = tex2D( Sampler1, detailUVs.xy ).bg;
+		detail4.ba = tex2D( Sampler1, detailUVs.zw ).gr;
+		//@TODO the color map's alpha channel is always 0!??
+		float blend = simData.a;
+		float4 blendFactors = float4(1 - blend, blend, 1 - blend, blend);
+		float detail = dot( detail4, blendFactors );
+		float4 diffuseColor;
+		diffuseColor.rgb = simData.rgb * detail;
+		diffuseColor.w = 1.0f;
+		// on 8400, 2ms in shadows, 2ms in pixel lighting, 3ms elsewhere (7ms total)
+		// bend the light vector towards the planet normal in the dusk region
+		float3 lightColor = EvaluatePixelLighting( normal.xyz, texNormal.xyz, lightVector.xyz, diffuseColor, shadow, shadowColor, lightColorOffset, duskBlend, nightLumBlend, nightLightTint );
+		// detailing
+		float TNdotV = dot( texNormal, -viewDir );
+		lightColor = lerp( lightColor, lightColor * saturate( TNdotV * detailPinch ), detailIntensity );
+		// apply fogging
+		float4 scatterColor = texCUBE( Sampler3, transDir.xyz );
+		Current.color.rgb = lerp( lightColor.rgb, scatterColor, fogStrength );
+		Current.color.rgb += scatterColor.a * scatterColor.rgb * sunDrop;
+		// land should be opaque
+		Current.color.w = 1.0f;
+	endCode
+end

@@ -1,0 +1,60 @@
+vertexFragment TerrainBelowLavaVS
+	input color texcoord0 position
+	output color position -texcoords 4 float4
+
+	declareCode
+		extern uniform struct
+		{
+		float4 vSunDir;
+		float4 waterColor;
+		float4 innerParms;
+		float4 vCamPos;
+		float4 sphereParms;
+		float4 camParms;
+		float4 illumParms;
+		float4 fogParms;
+		float4 nightLightTint;
+		float4 nightLightColor;
+		float4 duskLightColor;
+		float4 dayLightColor;
+		float4 nightShadowColor;
+		float4 duskShadowColor;
+		float4 dayShadowColor;
+		float4 duskDawnStartEnd;
+		float4x4 viewTransform;
+		} terrainState;
+		extern uniform struct
+		{
+		float4x4 worldViewProjection;
+		float4 QuadFaceUVXform;
+		float4 QuadMorphValue;
+		float4 QuadFaceElemMap;
+		float4 QuadFaceSignMap;
+		float4 QuadFaceXForm[3];
+		} terrainTransform;
+		extern uniform float4 gameInfo;
+	endCode
+
+	code
+		float4 vertScaled         =  waterPosition;
+		float4 clipPos            =  mul( vertScaled, terrainTransform.worldViewProjection );
+		float2 animTexCoordA      = uv*5.0;
+		float2 animTexCoordB      = uv*7.0;
+		float  fogScale, fogStrength, term;
+		float3 eyeVec;
+		GetTerrainFogStrength( vertScaled.xyz, normal.xyz, ( terrainState.sphereParms.x + terrainState.sphereParms.z ), fogStrength, fogScale, term, eyeVec );
+		Current.position          = clipPos;
+		Current.color.rgb         = eyeVec.xyz;
+		Current.color.w           = fogStrength;
+		Current.texcoord<t0>.xy   = uv;
+		Current.texcoord<t0>.z    = terrainState.sphereParms.y;
+		Current.texcoord<t0>.w    = terrainState.innerParms.w;
+		Current.texcoord<t1>.x    = sin( gameInfo.y * 0.25 ) * 0.05;
+		Current.texcoord<t1>.y    = saturate( dot( normal, terrainState.vSunDir ) + 0.95 );
+		Current.texcoord<t1>.zw   = 0;
+		Current.texcoord<t2>.xy   = animTexCoordA;
+		Current.texcoord<t2>.zw   = animTexCoordB;
+		Current.texcoord<t3>.xyz  = mul( -eyeVec, terrainState.viewTransform );
+		Current.texcoord<t3>.w    = 0;        
+	endCode
+end

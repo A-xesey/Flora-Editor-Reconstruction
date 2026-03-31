@@ -1,0 +1,32 @@
+pixelFragment TerrainPixelLib
+	declareCode
+		float3 EvaluatePixelLighting( float3 vertNormal, float3 normal, float3 sunDir, float3 diffuse, float shadow, float3 shadowColor, float3 lightColorDelta, float duskBlend, float nightLumBlend, float3 nightTint )
+		{
+		// if you change these, you must change the same constants in TerrainVertexLighting
+		const float bendLightAtDusk = 0.35;
+		const float absAmount       = 0.9;
+		const float satAmount       = 0.2;
+		const float midAmount       = 0.5;
+		const float shadowAmount    = 0.2;
+		sunDir                      = lerp( sunDir, normal, duskBlend * bendLightAtDusk );
+		float NdotL                 = dot( normal, sunDir );
+		float NdotLSat              = saturate( NdotL );
+		float NdotLAbs              = abs( NdotL );
+		float middle                = 1 - NdotLAbs;
+		middle                      *= middle;
+		float finalLightStrength    = NdotLAbs * absAmount + NdotLSat * satAmount + middle * midAmount;
+		finalLightStrength          *= lerp( 1, shadow, shadowAmount );
+		float3 lightColor           = ( shadowColor + lightColorDelta*finalLightStrength ) * diffuse * finalLightStrength;
+		float  nightLum             = dot( lightColor, float3(0.5, 0.5, 0.5));
+		float3 nightColor           = nightLum * nightTint;
+		return lerp( lightColor, nightColor, nightLumBlend );
+		}
+		float3 SimpleTerrainPixelLighting( float3 diffuse, float3 lightColor, float3 nightTint, float nightLumBlend )
+		{
+		lightColor *= diffuse;
+		float  nightLum = dot( lightColor, float3(0.5,0.5,0.5) );
+		float3 nightColor = nightLum*nightTint;
+		return lerp( lightColor, nightColor, nightLumBlend );
+		}
+	endCode
+end

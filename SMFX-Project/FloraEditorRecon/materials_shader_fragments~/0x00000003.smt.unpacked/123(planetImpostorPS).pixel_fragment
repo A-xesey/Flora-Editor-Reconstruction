@@ -1,0 +1,70 @@
+pixelFragment planetImpostorPS
+	input -texcoords 5
+	output color
+	samplers 4
+
+	declareCode
+		extern uniform float4 ambient;
+		extern uniform float4x3 modelToWorld;
+
+		float ScaleRange(float2 inRange, float2 outRange, float val)
+		{
+		float res;
+		res = (val - inRange.x) / (inRange.y - inRange.x);
+		res = (res * (outRange.y - outRange.x)) + outRange.x;
+		return res;
+		}
+	endCode
+
+	code
+		float hazeMix = .7;
+		float emissiveFactor = 1.3;
+		float atmoHazeColorMix = .3;
+		float inversebloomFactor = .3;
+		float specSize = 50;
+		float shininess = .14;
+		float rimIntensity = 4;
+		float rimContrast = 1;
+		float specScatter = 1.55;
+		float nonWaterSpec = .05;
+		//need to order impostor maps properly
+		float3 tCoord = In.texcoord<t0>.xzy;
+		float3 L = In.texcoord<t1>.xyz;
+		float3 camVector = In.texcoord<t2>.xyz;
+		tCoord.y = -tCoord.y;
+		float fogStrength = In.texcoord<t1>.w;
+		float4 diffuseColor = texCUBE(Sampler0, tCoord.xyz);
+		float4 specEmiss = saturate(texCUBE(Sampler1, tCoord.xyz) + nonWaterSpec);
+		float4 normalColor = texCUBE(Sampler2, tCoord.xyz);
+		float contrast  = 1;
+		float3 N = 2 * normalColor.rgb - float3(1,1,1);
+		N = normalize(mul ( N, modelToWorld));
+		float3 vertexNormal = normalize(mul(In.texcoord<t3>.rgb, modelToWorld));
+		float NDotL = dot(N, L);
+		float d = In.texcoord<t4>.x;
+		float3 R = normalize( L - 2 * dot( L, N ) * N );
+		const float cutoff = 0.2;
+		float terminator = saturate((dot(vertexNormal, L) + cutoff) / (2 * cutoff));
+		float  ambientDotOffset = 0.65;
+		float  oneOnOnePlusAmbientDotOffset = 1.0f / (1.0f+ambientDotOffset);
+		float3 ambientTint = float3( 0.7, 0.3, 2.3 ) * 0.5;
+		float  nightLumBlend = 0.0;
+		float  ambientLevel = 0.2;
+		float  ambient = 0.9;
+		float2 dotp;
+		dotp.x = NDotL;
+		dotp.y = (-dotp.x +ambientDotOffset)*oneOnOnePlusAmbientDotOffset;
+		dotp = saturate( dotp );
+		float3 nightLight = dotp.y * diffuseColor;
+		float  nightLum = dot( nightLight, float3(0.3, 0.59, 0.11));
+		ambientTint = lerp( nightLum*ambientTint, nightLight, nightLumBlend);
+		ambientTint *= ambient;
+		Current.color.rgb = ambientTint + diffuseColor.xyz*(dotp.x*terminator + ambientLevel);
+		float emissive = specEmiss.b * emissiveFactor;
+		Current.color.rgb = lerp( Current.color.rgb, diffuseColor, emissive );
+		Current.color.rgb += pow(saturate(dot(camVector, R)), specSize) * terminator * specEmiss.r * float3(1,0.6,0.06);
+		float4 scatterColor = texCUBE( Sampler3, In.texcoord<t4>.xyz ) * terminator;
+		Current.color.rgb = lerp( Current.color.rgb, scatterColor.rgb, fogStrength ) + scatterColor.rgb*scatterColor.a;
+		Current.color.w = 1.0;
+	endCode
+end

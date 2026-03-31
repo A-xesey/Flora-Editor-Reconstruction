@@ -1,0 +1,23 @@
+vertexFragment TerrainDebugVS
+	input color texcoord0 position
+	output position -texcoords 1 float4
+
+	declareCode
+		extern uniform struct
+		{
+		float4x4 worldViewProjection;
+		float4 QuadFaceUVXform;
+		float4 QuadMorphValue;
+		float4 QuadFaceElemMap;
+		float4 QuadFaceSignMap;
+		float4 QuadFaceXForm[3];
+		} terrainTransform;
+	endCode
+
+	code
+		float4 position = float4(normal.xyz * landHeight, 1);
+		Current.texcoord<t0>.xy = uv;
+		Current.texcoord<t0>.zw = float2(0,0);
+		Current.position = mul(position, terrainTransform.worldViewProjection);
+	endCode
+end

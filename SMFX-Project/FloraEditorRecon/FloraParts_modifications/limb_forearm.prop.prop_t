@@ -1,0 +1,12 @@
+key parent PlantEditorTemplates!PlantBranchSkinnedTemplate_mod
+texts blockName
+	(CreatureRigblocks!0xc07d1a70) "ForeArm Bone (PLACEHOLDER)"
+end
+key modelAlternativeStaticModel palette_editorModel~!limb_forearm.prop
+key modelMaxMuscleFile editor_muscles~!Muscle_ForeArmMax.prop
+vector3 modelMaxSocketConnectorOffset (0, -3.2550001, 0)
+key modelMeshHull editor_rigblock~!ce_basic_bone-Hull.rw4
+key modelMeshLOD0 editor_rigblock~!fe_branch_standard.rw4
+key modelMinMuscleFile editor_muscles~!Muscle_ForeArmMin.prop
+vector3 modelMinSocketConnectorOffset (0, -0.117, 0)
+float modelScale 2

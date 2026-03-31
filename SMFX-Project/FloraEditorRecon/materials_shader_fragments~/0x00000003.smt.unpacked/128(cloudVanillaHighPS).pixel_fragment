@@ -1,0 +1,38 @@
+pixelFragment cloudVanillaHighPS
+	input color position -texcoords 3
+	output color
+
+	declareCode
+		extern uniform float4 foggingCPU;
+
+		extern uniform sampler sideMap : register(s0);
+		extern uniform sampler topMap : register(s1);
+		extern uniform sampler scatterMap : register(s9);
+	endCode
+
+	code
+		const half3 lavaGlowColor       = half3( 1, 0.3, 0 );
+		const half  lavaGlowIntensity   = 24.0;
+		half4   color           = In.color;
+		half2   tileUV1         = In.texcoord<t0>.xy;
+		half2   tileUV2         = In.texcoord<t0>.zw;
+		half    tileAnimBlend   = In.texcoord<t1>.x;
+		half    topBlend        = In.texcoord<t1>.y;
+		half    y               = In.texcoord<t1>.z;
+		half4 topTex        = lerp( tex2D( topMap, tileUV1 ), tex2D( topMap, tileUV2 ), tileAnimBlend );
+		half4 sideTex       = lerp( tex2D( sideMap, tileUV1 ), tex2D( sideMap, tileUV2 ), tileAnimBlend );
+		half4 diffuse          = lerp( sideTex, topTex, topBlend );
+		diffuse                 *= color;
+		half    y2              = y * y;
+		half    y4              = y2 * y2;
+		half3   lavaGlow        = y4 * diffuse.a * lavaGlowIntensity;
+		lavaGlow                *= ( 1-topBlend );
+		diffuse.rgb             += lavaGlow * lavaGlowColor;
+		Current.color.rgb       = diffuse.rgb;
+		Current.color.a         = diffuse.a;
+		half4   viewVector      = In.texcoord<t2>;
+		half    fogStrength     = In.texcoord<t1>.w;
+		half4   fogColor        = texCUBE( scatterMap, viewVector.xyz );
+		Current.color.rgb       = lerp( Current.color.rgb, fogColor.rgb, fogStrength ) + fogColor.rgb * fogColor.a * foggingCPU.w;
+	endCode
+end

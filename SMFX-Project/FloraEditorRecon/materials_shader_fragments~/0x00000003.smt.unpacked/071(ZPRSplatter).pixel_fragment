@@ -1,0 +1,26 @@
+pixelFragment ZPRSplatter
+	input color position -texcoords 1
+	output color
+
+	declareCode
+		extern uniform struct { float4 mColor1; float4 mColor2; float4 mParams; } editorColors;
+		extern uniform float4 region;
+
+		sampler diffuseSampler  : register(s0);
+		sampler nmapSpecSampler : register(s1);
+	endCode
+
+	code
+		float specE        = editorColors.mParams.x;
+		float specStrength = editorColors.mParams.y;
+		float invBumpiness = editorColors.mParams.z;
+		float gloss        = editorColors.mParams.w;
+		float4 col1 = tex2D(diffuseSampler, In.texcoord0); // base tex
+		float3 mixedColor = lerp(col1.rgb , editorColors.mColor1.rgb, editorColors.mColor1.w);
+		Current.color.rgb =  lerp(mixedColor, editorColors.mColor2.rgb, col1.w * editorColors.mColor2.w);
+		if(region.x == 0.0) 
+		Current.color.w = 1.0;
+		else
+		Current.color.w = 0.0;
+	endCode
+end

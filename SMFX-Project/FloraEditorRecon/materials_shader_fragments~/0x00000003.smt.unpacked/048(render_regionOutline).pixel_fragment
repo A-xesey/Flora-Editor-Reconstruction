@@ -1,0 +1,11 @@
+pixelFragment render_regionOutline
+	output color
+
+	declareCode
+		extern uniform float4 region;
+	endCode
+
+	code
+		Current.color = float4(region.x / 32 ,0,0,region.x / 32);
+	endCode
+end

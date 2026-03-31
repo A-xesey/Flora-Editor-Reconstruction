@@ -1,0 +1,43 @@
+int32s palettePagePartItemColumns
+	0
+	1
+	2
+	0
+	1
+	2
+	0
+	1
+	2
+	0
+	1
+	2
+end
+int32s palettePagePartItemRows
+	0
+	0
+	0
+	1
+	1
+	1
+	2
+	2
+	2
+	3
+	3
+	3
+end
+keys palettePagePartItems
+	skinPaint_script~!FE_BP1_skinpaint_base_feltStitch
+	skinPaint_script~!FE_BP1_skinpaint_base_ragdoll
+	skinPaint_script~!FE_BP1_skinpaint_base_toonCritter
+	skinPaint_script~!FE_BP1_skinpaint_base_dottie
+	skinPaint_script~!FE_BP1_skinpaint_base_kidRobot
+	skinPaint_script~!FE_BP1_skinpaint_base_pinata
+	skinPaint_script~!FE_BP1_skinpaint_base_skinnedBeast
+	skinPaint_script~!FE_BP1_skinpaint_base_alien_HRG
+	skinPaint_script~!FE_BP1_skinpaint_base_chewtoy
+	skinPaint_script~!FE_BP1_skinpaint_base_armor
+	skinPaint_script~!FE_BP1_skinpaint_base_krueger
+	skinPaint_script~!FE_BP1_skinpaint_base_Frankenstein
+end
+key palettePagePartParentPage FE_BP1_base_page

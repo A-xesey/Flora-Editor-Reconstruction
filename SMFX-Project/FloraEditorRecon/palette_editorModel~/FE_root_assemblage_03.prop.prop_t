@@ -1,0 +1,18 @@
+key parent palette_editorModel~!Template.prop
+bool modelBakeComplete true
+bboxs modelBoundingBox
+	(-2.1285107, -1.7772889, -0.62648) (1.8827901, 1.273061, 3.5229812)
+end
+float modelBoundingRadius 3.9191742
+int32s modelMeshAnimSharing
+	0
+	-1
+	-1
+	-1
+	0
+end
+key modelMeshLOD0 palette_editorModel~!FE_root_assemblage_03.gmdl
+bool modelPrebakedAssembledContent true
+float obstacleBaseCollisionRadius 3.9925668
+float obstacleCanopyCollisionRadius 3.9925668
+float obstacleCollisionHeight 3.1844671

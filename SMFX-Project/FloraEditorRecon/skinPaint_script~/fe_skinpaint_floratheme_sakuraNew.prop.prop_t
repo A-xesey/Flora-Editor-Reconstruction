@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "Sakura"
+colorRGBs paintThemeColor1s
+	(0.521568,0.274509,0.325490)
+	(1,0.752941,0.917647)
+	(1,0.862744,0.917647)
+end
+keys paintThemePaints
+	skinpaint_florabase_valueGradientDark
+	skinpaint_floracoat_blank
+	skinpaint_floradetail_blank
+end

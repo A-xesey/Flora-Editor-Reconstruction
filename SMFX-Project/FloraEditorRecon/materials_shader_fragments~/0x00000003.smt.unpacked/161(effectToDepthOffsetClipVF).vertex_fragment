@@ -1,0 +1,16 @@
+vertexFragment effectToDepthOffsetClipVF
+	declareCode
+		extern uniform float4x4 worldToClip;
+		extern uniform half4 customParams[2];
+	endCode
+
+	code
+		half4 clipPos;
+		{
+		half depthBias = customParams[0].w;
+		clipPos = mul( half4( quadPos, 1 ), worldToClip );
+		half4 depthOffset = half4( 0, 0, depthBias / clipPos.w, 0 );
+		clipPos.xyz += depthOffset;
+		}
+	endCode
+end

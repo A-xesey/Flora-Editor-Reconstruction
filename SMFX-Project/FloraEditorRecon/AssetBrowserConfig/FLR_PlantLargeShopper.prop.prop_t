@@ -1,0 +1,7 @@
+key parent AssetBrowserConfig!FLR_TemplateShopper.prop
+texts sporepediaConfigCallToActionMessage
+	(fe_02!Sporepedia_ChooseLargePlant) "placeholder"
+end
+key sporepediaConfigEditorForMakeNew FloraEditorLarge
+key sporepediaConfigRootFilterID FloraLarge
+key sporepediaConfigSelectedFilterID FloraLarge

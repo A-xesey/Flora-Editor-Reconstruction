@@ -1,0 +1,7 @@
+key parent AssetBrowserConfig!FLR_TemplateShopper.prop
+texts sporepediaConfigCallToActionMessage
+	(fe_02!Sporepedia_ChooseMeidumPlant) "placeholder"
+end
+key sporepediaConfigEditorForMakeNew FloraEditorMedium
+key sporepediaConfigRootFilterID FloraMedium
+key sporepediaConfigSelectedFilterID FloraMedium

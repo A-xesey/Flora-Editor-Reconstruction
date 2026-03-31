@@ -1,0 +1,16 @@
+key parent palette_config~!TemplatePaletteCategoryParts.prop
+keys paletteCategoryIconList
+	editors_flora~!button-details-norm.png
+	editors_flora~!0x0
+	editors_flora~!button-details-hl.png
+	editors_flora~!button-details-act.png
+	editors_flora~!button-details-on-norm.png
+	editors_flora~!0x0
+	editors_flora~!button-details-on-hl.png
+	editors_flora~!button-details-on-act.png
+	editors_flora~!button-details-norm.png
+end
+texts paletteCategoryName
+	(fe!0x5cf1c706) "Details"
+end
+uint32 paletteCategorySequenceNumber 500

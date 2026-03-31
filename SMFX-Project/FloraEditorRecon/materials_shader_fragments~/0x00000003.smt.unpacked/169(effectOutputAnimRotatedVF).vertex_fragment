@@ -1,0 +1,30 @@
+vertexFragment effectOutputAnimRotatedVF
+	output color position -texcoords 2 float4
+
+	declareCode
+		extern uniform float4 gameInfo;
+	endCode
+
+	code
+		half id = gameInfo.x;
+		half stripLength = customParams[0].y;
+		half sine = sin( id );
+		half cosine = cos( id );
+		half2 r1 = half2( uv.x, tileUV.x * stripLength );
+		half2 r2 = half2( uv.y, tileUV.y * stripLength );
+		r1 -= 0.5;
+		r1 = half2( r1.x * cosine + r1.y * sine, r1.x * -sine + r1.y * cosine );
+		r1 += 0.5;
+		r1.y /= stripLength;
+		r2 -= 0.5;
+		r2 = half2( r2.x * cosine + r2.y * sine, r2.x * -sine + r2.y * cosine );
+		r2 += 0.5;
+		r2.y /= stripLength;
+		Current.position               = clipPos;
+		Current.color                  = color;
+		Current.texcoord<t0>        = half4( r1, r2 );
+		Current.texcoord<t1>.x      = tileBlend;
+		Current.texcoord<t1>.y      = 0.0;
+		Current.texcoord<t1>.zw     = uv;
+	endCode
+end

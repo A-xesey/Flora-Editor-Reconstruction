@@ -1,0 +1,18 @@
+vertexFragment shadowDepthWrite
+	input position
+	output -texcoords 1 float3
+
+	declareCode
+		extern uniform float4x3 modelToCamera;
+	endCode
+
+	code
+		float3 camPos = mul( Current.position, modelToCamera);
+		// NOTE: compiler bug on NVIDIA cards: clamp(x, 0, ...) here compiles
+		// to a mov_sat instruction. The max_limit is just dropped. (no, doesn't
+		// make a difference whether it's 256 or not.)
+		//Current.texcoord<t0> = clamp(camPos.z, 0.001, 256);
+		// in fact, because we write to 0-1 texture below, we can just ignore the clamp.
+		Current.texcoord<t0> = camPos.z;
+	endCode
+end

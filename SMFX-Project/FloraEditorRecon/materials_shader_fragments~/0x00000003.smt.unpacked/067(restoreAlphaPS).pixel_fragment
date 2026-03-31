@@ -1,0 +1,8 @@
+pixelFragment restoreAlphaPS
+	input color
+	output color
+
+	code
+		Current.color.a = In.color.a;
+	endCode
+end

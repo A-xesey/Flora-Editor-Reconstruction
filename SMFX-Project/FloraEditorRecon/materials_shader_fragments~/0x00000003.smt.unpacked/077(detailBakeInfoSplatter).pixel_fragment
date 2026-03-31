@@ -1,0 +1,19 @@
+pixelFragment detailBakeInfoSplatter
+	output color
+
+	declareCode
+		extern uniform float4 editorColors[2];
+	endCode
+
+	code
+		float specE        = editorColors[1].a;
+		float specStrength = editorColors[0].a;
+		float invBumpiness = 1;
+		float gloss        = 0.3;     
+		const float kSpecExponentMaxValue = 60.0f;
+		Current.color.r =  specStrength;
+		Current.color.g = specE / kSpecExponentMaxValue;
+		Current.color.b = gloss;
+		Current.color.a = 1.0f;// free for future use
+	endCode
+end

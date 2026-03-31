@@ -1,0 +1,15 @@
+key parent PlantEditorTemplates!PlantBranchSkinnedTemplate_mod
+texts blockName
+	(PlantRigblocks!0x00000010) "branches_standard"
+end
+string16 description "standard"
+key modelMaxMuscleFile editor_muscles~!Muscle_muscle_plant.prop
+vector3 modelMaxSocketConnectorOffset (0, -0.895, 0)
+key modelMeshHull editor_rigblock~!ce_basic_bone-Hull.rw4
+key modelMeshLOD0 editor_rigblock~!fe_branch_standard.rw4
+key modelMinMuscleFile editor_muscles~!Muscle_muscle_plant.prop
+vector3 modelMinSocketConnectorOffset (0, -0.145, 0)
+bool modelHideDeformHandles true
+bool modelHideRotationHandles true
+#bool modelHasRotationBallHandle false
+#bool modelHasRotationRingHandle false

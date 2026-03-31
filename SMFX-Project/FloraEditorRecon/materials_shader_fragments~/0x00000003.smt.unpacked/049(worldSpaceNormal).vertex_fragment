@@ -1,0 +1,13 @@
+vertexFragment worldSpaceNormal
+	input normal
+	output normal
+
+	declareCode
+		extern uniform float4x3 modelToWorld;
+	endCode
+
+	code
+		float3 worldNormal  = mul(Current.normal.xyz, (float3x3)modelToWorld);
+		worldNormal  = normalize(worldNormal);
+	endCode
+end

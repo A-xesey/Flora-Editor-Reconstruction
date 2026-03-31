@@ -1,0 +1,9 @@
+key parent verbtrays!FER_HeaderDescTexts
+bool verbIconShowLevel false
+texts verbTrayDescription
+	(fe_02!0x00000004) "Flora Description"
+end
+key verbTrayIconID 0
+texts verbTrayName
+	(fe_02!0x00000003) "Flora Name"
+end

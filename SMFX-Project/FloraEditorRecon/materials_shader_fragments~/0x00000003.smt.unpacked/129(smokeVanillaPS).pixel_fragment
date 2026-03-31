@@ -1,0 +1,33 @@
+pixelFragment smokeVanillaPS
+	input color position -texcoords 2
+	output color
+
+	declareCode
+		extern uniform float4 foggingCPU;
+
+		extern uniform sampler sideMap : register(s0);
+		extern uniform sampler topMap : register(s1);
+		extern uniform sampler scatterMap : register(s9);
+	endCode
+
+	code
+		// Load up variables
+		half4   color           = In.color;
+		half2   uv              = In.texcoord<t0>.xy;
+		half    topBlend        = In.texcoord<t0>.z;
+		// select smoke tiles
+		half4   topTex          = tex2D( topMap, uv );
+		half4   sideTex         = tex2D( sideMap, uv );
+		// blend the side and top maps
+		half4 diffuse           = lerp( sideTex, topTex, topBlend );
+		// calculate the diffuse color
+		diffuse                 *= color;
+		// write our outputs
+		Current.color.rgb       = diffuse.rgb;
+		Current.color.a         = diffuse.a;
+		half4   viewVector      = In.texcoord<t1>;
+		half    fogStrength     = In.texcoord<t0>.w;
+		half4   fogColor        = texCUBE( scatterMap, viewVector.xyz );
+		Current.color.rgb       = lerp( Current.color.rgb, fogColor.rgb, fogStrength ) + fogColor.rgb + fogColor.a * foggingCPU.w;
+	endCode
+end

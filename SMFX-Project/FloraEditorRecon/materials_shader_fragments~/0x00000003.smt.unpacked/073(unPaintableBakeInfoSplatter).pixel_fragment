@@ -1,0 +1,7 @@
+pixelFragment unPaintableBakeInfoSplatter
+	output color
+
+	code
+		Current.color = float4(0, 1, 0, 1); // non-zero specE is crucial
+	endCode
+end

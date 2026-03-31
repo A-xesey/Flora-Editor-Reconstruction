@@ -1,0 +1,11 @@
+vertexFragment highlightsVS
+	output color
+
+	declareCode
+		extern uniform float4 objectTypeColor;
+	endCode
+
+	code
+		Current.color = objectTypeColor;
+	endCode
+end

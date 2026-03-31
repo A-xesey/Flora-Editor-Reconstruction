@@ -1,0 +1,16 @@
+vertexFragment effectScreenSpaceAxisVF
+	declareCode
+		extern uniform half4 cameraParams[1];
+	endCode
+
+	code
+		half2 axis;
+		{
+		half screenWidth = cameraParams[0].x;
+		half screenHeight = cameraParams[0].y;
+		half ratio = screenHeight / screenWidth;
+		axis = saturate( 1 - clipPos.z ) * scale;
+		axis.x *= ratio;
+		}
+	endCode
+end

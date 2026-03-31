@@ -1,0 +1,19 @@
+pixelFragment GhostCreature
+	input color -texcoords 4
+	output color
+	samplers 1
+	texture 0x7A305113 -minFilter D3DTEXF_LINEAR -magFilter D3DTEXF_LINEAR -mipFilter D3DTEXF_LINEAR -addresses D3DTADDRESS_WRAP D3DTADDRESS_WRAP
+
+	code
+		const half lines1Amount = 0.225;
+		const half lines2Amount = 0.25;
+		const half3 tintColor = half3(0.73, 0.85, 1.4);
+		const half opaqueMultiplier = 2.5;
+		float4 lines = tex2D(Sampler<s0>, In.texcoord<t3> ) * lines1Amount;
+		lines  += tex2D(Sampler<s0>, In.texcoord<t1> ) * lines2Amount + In.texcoord<t2>.xxxx   ;
+		Current.color.rgb = lines.rgb;
+		Current.color.w = lines.w;
+		Current.color.rgb *= tintColor;
+		Current.color.w *= opaqueMultiplier ;
+	endCode
+end

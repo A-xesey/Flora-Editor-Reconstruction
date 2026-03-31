@@ -1,0 +1,11 @@
+pixelFragment effectInputPickFoggedPF
+	input color -texcoords 2
+
+	code
+		half4   color           = In.color;
+		half2   tileUV          = In.texcoord<t0>.xy;
+		half	fogStrength		= In.texcoord<t0>.z;
+		half    sunDrop         = In.texcoord<t0>.w;
+		half4   viewVector      = In.texcoord<t1>;
+	endCode
+end

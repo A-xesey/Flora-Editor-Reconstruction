@@ -1,0 +1,6 @@
+string16 description "FE_branch_assemblage_02"
+texts blockName
+	(PlantRigblocks!0x00000028) "FE_branch_assemblage_02"
+end
+key modelBlockAssemblyFile palette_editorModel~!FE_branch_assemblage_02.crt
+key paletteItemType ItemBlockAssembly

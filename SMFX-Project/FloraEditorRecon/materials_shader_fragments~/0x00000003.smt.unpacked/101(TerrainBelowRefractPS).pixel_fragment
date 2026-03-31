@@ -1,0 +1,40 @@
+pixelFragment TerrainBelowRefractPS
+	input color position -texcoords 7
+	output color
+	samplers 3
+
+	code
+		const half waterDepthLevel      = 60;
+		const half waterDepthBrightness = 0.333;
+		half3 waterColor                = In.color.rgb;
+		half  fresnel                   = In.color.a;
+		half2 uv                        = In.texcoord<t0>.xy;
+		half  camDist                   = In.texcoord<t0>.z;
+		half  waterHeight               = In.texcoord<t0>.w;
+		half  planetRadius              = In.texcoord<t1>.z;
+		half  heightScale               = In.texcoord<t1>.w;
+		half3 lightVector               = In.texcoord<t2>.xyz;
+		half  waterFogMaxDepth          = In.texcoord<t2>.w;
+		half3 lightColorOffset          = In.texcoord<t3>.xyz;
+		half3 shadowColor               = In.texcoord<t4>.xyz;
+		half2 lightBlend                = half2(In.texcoord<t3>.w, In.texcoord<t4>.w);
+		half3 nightLightTint            = In.texcoord<t5>.xyz;
+		half  nightLumBlend             = In.texcoord<t5>.w;
+		half3 normal                    = In.texcoord<t6>.xyz;
+		half  duskBlend                 = In.texcoord<t6>.w;
+		half3 texNormal                 = tex2D(Sampler0, uv).zyx * 2.0 - 1.0;
+		half3 diffuseColor              = tex2D(Sampler2, uv * (1.0 - 1/256.0) + (0.5/256.0));
+		texNormal                       *= shadow * 0.4 + 0.6;
+		diffuseColor                    = EvaluatePixelLighting( normal.xyz, texNormal.xyz, lightVector.xyz, diffuseColor, 1.0, shadowColor, lightColorOffset, duskBlend, nightLumBlend, nightLightTint );
+		// apply depth fog
+		half height                     = tex2D( Sampler1, uv).x * 2.0 - 1.0;
+		half heightVal                  = height * heightScale;
+		half waterDepth                 = waterHeight - heightVal;
+		half waterDepthCue              = 1 - saturate( waterDepth / waterDepthLevel );
+		half3 waterBottom = dot( diffuseColor, half3( waterDepthBrightness, waterDepthBrightness, waterDepthBrightness ) ) * waterColor;
+		diffuseColor = lerp( waterBottom, diffuseColor.rgb, waterDepthCue );
+		diffuseColor = lerp( diffuseColor.rgb, waterColor, saturate( waterDepth * 0.5 / 100 + fresnel*fresnel * 0.7 ) );
+		Current.color.xyz               = diffuseColor;
+		Current.color.a                 = 0.0f;
+	endCode
+end

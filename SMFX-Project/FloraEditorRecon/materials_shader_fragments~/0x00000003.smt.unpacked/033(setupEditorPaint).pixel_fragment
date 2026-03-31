@@ -1,0 +1,33 @@
+pixelFragment setupEditorPaint
+	input color
+	output color
+	samplers 1
+
+	declareCode
+		extern uniform struct { float4 mColor1; float4 mColor2; float4 mParams; } editorColors;
+
+		const static float kSH_A1 = 2.0 / 3.0;
+		const static float kSH_A2 = 1.0 / 4.0;
+		const static float kSH_A3 = 0;
+		const static float kSH_A4 = -1.0 / 24.0;
+		const static float kDefaultGloss = 0.35;
+		const static float kGlossyMax    = 0.75; // threshold at which glossy maxes out
+		const static float kCelOutlineThreshold        = 0.25;
+		const static float kCelOutlineThresholdRange   = 0.075;
+		const static float kCelStrength                = 0.3;
+		const static float kSpecExponentMaxValue = 60.0;
+		const static bool kSaveInstructions = false;
+	endCode
+
+	code
+		float specE        = editorColors.mParams.x;
+		float specStrength = editorColors.mParams.y;
+		float invBumpiness = editorColors.mParams.z;
+		float gloss        = editorColors.mParams.w;
+		float3 mixedColor;
+		mixedColor = lerp(diffuseTexture.rgb, editorColors.mColor1.rgb, editorColors.mColor1.a);
+		mixedColor = lerp(mixedColor,         editorColors.mColor2.rgb, editorColors.mColor2.a * diffuseTexture.a);
+		Current.color.rgb = mixedColor * In.color.rgb;
+		Current.color.a = In.color.a;
+	endCode
+end

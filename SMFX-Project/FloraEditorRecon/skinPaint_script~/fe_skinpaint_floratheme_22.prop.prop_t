@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "crystal(Green)3 L"
+colorRGBs paintThemeColor1s
+	(0.447059,0.576469,0.262741)
+	(0.576469,0.349020,0.262741)
+	(0.803922,0.662742,0.368627)
+end
+keys paintThemePaints
+	skinpaint_florabase_platesSmall
+	skinpaint_floracoat_toupee
+	skinpaint_floradetail_gooTopside
+end

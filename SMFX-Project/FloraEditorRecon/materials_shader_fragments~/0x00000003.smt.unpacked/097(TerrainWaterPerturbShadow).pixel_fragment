@@ -1,0 +1,6 @@
+pixelFragment TerrainWaterPerturbShadow
+	code
+		pcaNormal.xyz *= In.color1.a;
+		In.texcoord0.xy += pcaNormal.xy * 0.025f;
+	endCode
+end

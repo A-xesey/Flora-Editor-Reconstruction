@@ -1,0 +1,18 @@
+pixelFragment unPaintableDiffuseSplatter
+	input -texcoords 1
+	output color
+
+	declareCode
+		extern uniform float4 region;
+
+		sampler diffuseSampler  : register(s0);
+	endCode
+
+	code
+		Current.color = tex2D(diffuseSampler, In.texcoord0); // base tex
+		if(region.y > 0) 
+		Current.color.w = 1.0;
+		else
+		Current.color.w = 0.0;
+	endCode
+end

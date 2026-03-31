@@ -1,0 +1,15 @@
+pixelFragment TerrainDebugPS
+	input position -texcoords 1
+	output color
+	samplers 1
+
+	declareCode
+		extern uniform float4 mousePosition;
+	endCode
+
+	code
+		Current.color.rgb = tex2D( Sampler0, In.texcoord<t0> );
+		Current.color.rgb = frac(tex2D( Sampler0, In.texcoord<t0> ) * (1 + 49 * floor(saturate(mousePosition.w))));
+		Current.color.w = 1;
+	endCode
+end

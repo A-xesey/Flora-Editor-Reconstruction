@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "skinpaint_florabase_snakescales"
+colorRGBs paintThemeColor1s
+	(0.901961, 0.858823, 0.615686)
+	(0, 0, 0)
+	(0, 0, 0)
+end
+keys paintThemePaints
+	skinpaint_florabase_snakescales
+	animations~
+	animations~
+end

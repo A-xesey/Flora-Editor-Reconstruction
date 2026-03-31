@@ -1,0 +1,16 @@
+pixelFragment render_depth
+	input -texcoords 1
+	output color
+
+	declareCode
+		extern uniform float4 renderDepth;
+	endCode
+
+	code
+		float depth = saturate(In.texcoord<t0>.x / renderDepth.x);
+		float focalPlane = renderDepth.y;
+		float depthFalloff = renderDepth.z;
+		float focalDepth = clamp(abs(depth - focalPlane) * depthFalloff , 0.01, 0.999);
+		Current.color = float4(floor(depth * 256.0) / 256.0, frac(depth * 256.0), focalDepth,  1);
+	endCode
+end

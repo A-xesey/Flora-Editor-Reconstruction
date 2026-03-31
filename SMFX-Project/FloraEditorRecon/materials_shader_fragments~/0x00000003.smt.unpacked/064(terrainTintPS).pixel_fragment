@@ -1,0 +1,19 @@
+pixelFragment terrainTintPS
+	input color -texcoords 1
+	output color
+	samplers 1
+
+	declareCode
+		extern uniform float4 terrainTint;
+		extern uniform float4 deadTerrainTint;
+	endCode
+
+	code
+		Current.color.rgb *=  terrainTint.rgb * Current.color.a + (1 - Current.color.a) * deadTerrainTint.rgb;
+		float detailCamFactor = In.texcoord<t0>.z;
+		float4 detailColor = tex2D(Sampler<s0>, In.texcoord<t0>.xy);
+		detailColor.rgb = (detailColor.rgb - .5) * 0.5; // readjusting lighten/darken pivot.  photoshop can't store negative values...
+		Current.color.rgb += detailColor.rgb * detailCamFactor;
+		Current.color.a = In.color.a;
+	endCode
+end

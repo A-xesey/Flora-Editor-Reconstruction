@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "Strange tree"
+colorRGBs paintThemeColor1s
+	(0.360784,0.203921,0.443137)
+	(0.184313,0.215686,0.576470)
+	(0.803921,0.149019,0.270588)
+end
+keys paintThemePaints
+	skinpaint_florabase_marble
+	skinpaint_floracoat_washShiny
+	skinpaint_floradetail_gooTopside
+end

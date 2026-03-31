@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "Rag Doll Coat"
+colorRGBs paintThemeColor1s
+	(0, 0, 0)
+	(0.463, 0.694, 0.129)
+	(0, 0, 0)
+end
+keys paintThemePaints
+	animations~
+	FE_BP1_skinpaint_coat_ragdoll
+	animations~
+end

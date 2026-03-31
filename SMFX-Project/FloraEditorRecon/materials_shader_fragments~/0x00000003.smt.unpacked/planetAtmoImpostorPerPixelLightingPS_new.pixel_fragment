@@ -1,0 +1,22 @@
+pixelFragment planetAtmoImpostorPerPixelLightingPS
+	input -texcoords 2
+	output color
+	samplers 1
+
+	declareCode
+		extern uniform float4 ambient;
+		extern uniform float4x3 modelToCamera;
+		extern uniform float4x3 modelToWorld;
+	endCode
+
+	code
+		float4 tCoord         = In.texcoord<t0>.xyzw;
+		float alpha           = In.texcoord<t1>.x;
+		float shadow          = In.texcoord<t1>.y;
+		float4 scatterColor   = texCUBE( Sampler0, tCoord.xyz );
+		//@TODO if we simply turned the model off when we have a zero atmosphere planet, we wouldn't need to do this.
+		float  hackOff        = dot( scatterColor, scatterColor ) > 0 ? 1 : 0;
+		Current.color.rgb     = scatterColor * shadow + scatterColor * scatterColor.a;
+		Current.color.a       = alpha * hackOff;
+	endCode
+end

@@ -1,0 +1,9 @@
+vertexFragment unpackNormalTangent
+	input normal tangent
+	output normal tangent
+
+	code
+		Current.normal.xyz  = Current.normal.xyz  * 1.0/127.0 - 1;
+		Current.tangent.xyz = Current.tangent.xyz * 1.0/127.0 - 1;
+	endCode
+end

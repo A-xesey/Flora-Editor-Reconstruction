@@ -1,0 +1,218 @@
+vertexFragment grassVanillaVS
+	input normal color color1 tangent position
+	output position -texcoords 4 float4
+
+	declareCode
+		extern uniform float4 customParams[2];
+		extern uniform float4 worldCameraPosition;
+		extern uniform float4 gameInfo;
+		extern uniform float4x4 worldToClip;
+		extern uniform float4x3 cameraToWorld;
+		extern uniform struct
+		{
+			float4 vSunDir;
+			float4 nightLightTint;
+			float4 nightLightColor;
+			float4 duskLightColor;
+			float4 dayLightColor;
+			float4 nightShadowColor;
+			float4 duskShadowColor;
+			float4 dayShadowColor;
+			float4 duskDawnStartEnd;
+		} terrainLighting;
+		extern uniform float4 tramp[8];
+
+		half grassTrample( half3 pos, half tilt, half vari, half scale, int numTramp, float4 tramp[8] )
+		{
+		// calculate the min and max angles
+		half maxAngle = 85.0 * 3.1415926 / 180.0 - tilt + vari;
+		half minAngle = 45.0 * 3.1415926 / 180.0 - tilt + vari;
+		// get the squared length of the grass position
+		half grassLength = scale * 0.5;                    // scale = In.normal.w * size
+		half grassLength2 = grassLength * grassLength;
+		// the initial angle is just the random variance
+		half theta = vari;
+		// check every creature (up to 8)
+		for( int i=0; i<numTramp; ++i )
+		{
+		// get the distance vector to the creature
+		half3  dist    = pos - tramp[i].xyz;
+		// calculate the distance squared
+		half   d2      = dot( dist, dist );
+		// calculate the squared radius
+		half   r2      = tramp[i].w;
+		// calculate the angle based on creature vs grass height
+		half angle = r2 > grassLength2 ? maxAngle : minAngle;
+		angle = lerp( minAngle, maxAngle, saturate( r2 - grassLength2 ) );
+		// the angle goes from 0 to 90 deg inside the radius
+		theta = max( (r2 - d2) * angle / r2, theta );
+		}
+		return theta;
+		}
+		// the incomming color should be "In.color * 2"
+		void grassColorAndFade( half id, half startFade, half endFade, half cameraDistance, half2 uv, in out half4 color, out half fade )
+		{
+		// fade out term
+		fade = saturate( (endFade - cameraDistance) / (endFade - startFade) );
+		// use the paritcle id to generate some "noise"
+		half rfade = id * 0.5 + 0.5;                                            // id = Current.texcoord<t0>.w
+		// add some noise to the transition
+		fade *= rfade;
+		// fade out alpha
+		color.a *= fade;
+		color.rgb *= 0.6f;
+		}
+		// the incomming color should be "In.color * 2"
+		void grassColorFadeAndAO( half id, half startFade, half endFade, half cameraDistance, half2 uv, in out half4 color, out half fade )
+		{
+		// tweakables
+		const half aoLevel = 0.5f;
+		// fade out term
+		fade = saturate( (endFade - cameraDistance) / (endFade - startFade) );
+		// use the paritcle id to generate some "noise"
+		half rfade = id * 0.5 + 0.5;                                            // id = Current.texcoord<t0>.w
+		// add some noise to the transition
+		fade *= rfade;
+		// fade out alpha
+		color.a *= fade;
+		// calculate a squared height value
+		half uvHeight2 = 1.25 - uv.y*uv.y;
+		// fake AO
+		half3 aoTerm = color.rgb * uvHeight2;
+		// blend color and AO
+		color.rgb = lerp( color.rgb, aoTerm, aoLevel * fade );
+		}
+		half grassFadeScale( half scaled, half fade, half cameraDistance, half startScale, half endScale, half scaleFactor )
+		{
+		// 1 -> scaleFactor
+		scaled *= lerp( 1, scaleFactor, saturate( (cameraDistance - startScale) / (endScale - startScale) ) );
+		// change the size based on the fade
+		scaled *= ( fade * 0.5 + 0.5 );
+		// return the value
+		return scaled;
+		}
+		void grassLighting( half3 pos, out half3 lightColor, out half3 lightBlend )
+		{
+		// Stock terrain lighting
+		half3 shadowColor;
+		half3 npos = normalize( pos );
+		EvaluateVertexLighting(
+		npos.xyz,
+		terrainLighting.vSunDir.xyz,
+		terrainLighting.duskDawnStartEnd,
+		terrainLighting.dayLightColor.xyz,
+		terrainLighting.dayShadowColor.xyz,
+		terrainLighting.duskLightColor.xyz,
+		terrainLighting.duskShadowColor.xyz,
+		terrainLighting.nightLightColor.xyz,
+		terrainLighting.nightShadowColor.xyz,
+		lightBlend,
+		lightColor,
+		shadowColor );
+		lightColor = TerrainVertexLighting( terrainLighting.vSunDir.xyz, npos, shadowColor, lightColor, lightBlend );
+		}
+		void grassLightingLow( half3 pos, out half3 lightColor, out half3 lightBlend )
+		{
+		// Stock terrain lighting
+		half3 shadowColor;
+		half3 npos = normalize( pos );
+		EvaluateVertexLighting(
+		npos.xyz,
+		terrainLighting.vSunDir.xyz,
+		terrainLighting.duskDawnStartEnd,
+		terrainLighting.dayLightColor.xyz,
+		terrainLighting.dayShadowColor.xyz,
+		terrainLighting.duskLightColor.xyz,
+		terrainLighting.duskShadowColor.xyz,
+		terrainLighting.nightLightColor.xyz,
+		terrainLighting.nightShadowColor.xyz,
+		lightBlend,
+		lightColor,
+		shadowColor );
+		lightColor = TerrainVertexLightingLow( terrainLighting.vSunDir.xyz, npos, shadowColor, lightColor, lightBlend );
+		}
+		half2 grassAnimate( half4 pos, half2 uv, half sinTime )
+		{
+		// tweakable
+		const half wave = 0.1f;
+		// animate the uv
+		uv.x += sin( sinTime + 10 * pos.w ) * ( 1 - uv.y ) * wave;
+		return uv;
+		}
+		half4 grassPositionRotated( half4 pos, half3 normal, half3 tangent, half2 uv, half theta, half scaled )
+		{
+		// calculate the rotated normal
+		half3 at = cross( normal, tangent );
+		normal = normal * cos( theta ) + at * sin( theta );
+		// move to the right location
+		pos.xyz += tangent * scaled * (uv.x - 0.5);
+		pos.xyz += normal * scaled * (1 - uv.y);
+		pos.w = 1;
+		return pos;
+		}
+		half4 grassPosition( half4 pos, half3 normal, half3 tangent, half2 uv, half scaled )
+		{
+		// move to the right location
+		pos.xyz += tangent * scaled * (uv.x - 0.5);
+		pos.xyz += normal * scaled * (1 - uv.y);
+		pos.w = 1;
+		return pos;
+		}
+		half grassCell( half id, half v )
+		{
+		int cell = floor( id * 7.999 );
+		v += cell;
+		v /= 8;
+		return v;
+		}
+	endCode
+
+	code
+		// tuneables
+		const half size            = 1.5f;
+		// custom parameters
+		half startFade      = customParams[0].x;
+		half endFade        = customParams[0].y;
+		half tilt           = customParams[0].z * 3.1415926 / 180.0;
+		half startScale     = customParams[1].x;
+		half endScale       = customParams[1].y;
+		half scaleFactor    = customParams[1].z;
+		// load texcoord 0 with our texcoords that come in color1
+		Current.texcoord<t0> = Current.color1;
+		// aliases
+		half scale = In.normal.w;
+		half id = Current.texcoord<t0>.w;
+		half2 uv = Current.texcoord<t0>.xy;
+		// calculate the distance from the camera
+		half cameraDistance = length( Current.position.xyz - worldCameraPosition );
+		// start with the size that was sent up in the vertex
+		half scaled = In.normal.w * size;
+		// 20 degrees of variance
+		half vari = id * tilt;
+		// start at 0 to 20 degrees of tilt
+		half theta = vari;
+		// trample the grass
+		theta = grassTrample( In.position.xyz, tilt, vari, scaled, 8, tramp );
+		// calculate the color and fade values
+		half4 color = Current.color.rgba * 2;
+		half fade;
+		grassColorFadeAndAO( Current.texcoord<t0>.w, startFade, endFade, cameraDistance, uv, color, fade );
+		// fade the grass scale
+		scaled = grassFadeScale( scaled, fade, cameraDistance, startScale, endScale, scaleFactor );
+		// animate the grass
+		uv = grassAnimate( In.position, uv, gameInfo.x );
+		// calculate the lighting
+		half3 lightColor = half3(1,1,1);
+		half3 lightBlend = half3(1,1,1);
+		grassLighting( In.position.xyz, lightColor, lightBlend );
+		// calculate the night light blend
+		half nightLumBlend	= terrainLighting.nightLightTint.a * lightBlend.z;
+		// output
+		Current.position            = grassPositionRotated( In.position, In.normal.xyz, In.tangent.xyz, uv, theta, scaled );
+		Current.texcoord<t0>.y      = grassCell( id, Current.texcoord<t0>.y );
+		Current.texcoord<t1>		= float4( color.rgb * fade * lightColor.rgb, color.a );
+		Current.texcoord<t2>		= float4( color.rgb * ( 1 - fade ) * lightColor.rgb, 0 );
+		Current.texcoord<t3>.rgb	= terrainLighting.nightLightTint.rgb * nightLumBlend * 0.5;
+		Current.texcoord<t3>.a		= nightLumBlend;
+	endCode
+end

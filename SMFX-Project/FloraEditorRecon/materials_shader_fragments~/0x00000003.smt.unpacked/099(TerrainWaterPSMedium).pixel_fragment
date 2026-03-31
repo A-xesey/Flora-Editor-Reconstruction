@@ -1,0 +1,83 @@
+pixelFragment TerrainWaterPSMedium
+	input color1 color position -texcoords 7
+	output color
+	samplers 7
+
+	declareCode
+		extern uniform struct { float4 mDir; float4 mColor; } dirLightsWorld[4];
+		extern uniform float4x4 viewTransform;
+		extern uniform struct
+		{
+		float4 vSunDir;
+		float4 waterColor;
+		float4 innerParms;
+		float4 vCamPos;
+		float4 sphereParms;
+		float4 camParms;
+		float4 illumParms;
+		float4 fogParms;
+		float4 nightLightTint;
+		float4 nightLightColor;
+		float4 duskLightColor;
+		float4 dayLightColor;
+		float4 nightShadowColor;
+		float4 duskShadowColor;
+		float4 dayShadowColor;
+		float4 duskDawnStartEnd;
+		float4x4 viewTransform;
+		} terrainState;
+	endCode
+
+	code
+		const half foamThickness    = 50;
+		const half depthScale       = 0.75;
+		const half specularAmp      = 3.0;
+		const half shallowColorAmp  = 1.25;
+		const half alphaScale		= 100;
+		const half normalStrength   = 1.5;
+		const half absAmount        = 0.9;
+		const half satAmount        = 0.25;
+		const half midAmount        = 0.5;
+		half   fogStrength          = In.color.a;
+		half   fresnel              = In.color1.g;
+		half   hfFade               = In.color1.a;
+		half2  uv                   = In.texcoord<t0>.xy;
+		half2  screenPos            = In.texcoord<t1>.xy / In.texcoord<t1>.z + 0.5;
+		half   sunDrop              = In.texcoord<t1>.w;
+		half3  normal               = In.texcoord<t2>.xyz;
+		half   vertexAbove          = In.texcoord<t2>.w;
+		half3  tangent              = In.texcoord<t3>.xyz;
+		half   waterHeight          = In.texcoord<t3>.w;
+		half3  binormal             = In.texcoord<t4>.xyz;
+		half3  viewDir              = In.texcoord<t5>.xyz;
+		half3  eyeDir               = In.texcoord<t6>.xyz;
+		half2  scaledUV             = uv * 16; 
+		half2  uv5                  = uv * 5;
+		half   normalizedHeight     = tex2D( Sampler0, uv ).x * 2.0 - 1.0;
+		half   waterDepth           = saturate( waterHeight / 100.0f - normalizedHeight );
+		half	waterAlpha2         = min( waterDepth, max( vertexAbove, 0 ) ) * alphaScale;
+		screenPos.xy                += pcaNormal.xy * waterDepth * fresnel * 0.4;
+		half4 refractColor          = tex2D( Sampler5, screenPos.xy );
+		half3 bumpNormal            = mul( half4( pcaNormal * hfFade * normalStrength, 1 ), half4x3( tangent, binormal, half3( 0, 0, 0 ), normal ) );
+		half3 NDotE                 = dot( eyeDir, bumpNormal );
+		half3 viewDirReflected      = eyeDir - 2 * NDotE * bumpNormal;
+		viewDirReflected            = mul( viewDirReflected, viewTransform ); 
+		half3 waterColor            = terrainState.waterColor;
+		waterColor                  = lerp( refractColor.rgb, waterColor, saturate( fresnel - 0.5 ) );
+		half NDotL                  = dot( dirLightsWorld[0].mDir, bumpNormal );
+		half NDotLSat               = saturate( NDotL );
+		half NDotLAbs               = abs( NDotL );
+		half middle                 = 1 - NDotLAbs;
+		middle                      *= middle;
+		half finalLightStrength     = NDotLAbs * absAmount + NDotLSat * satAmount + middle * midAmount;
+		waterColor                  = waterColor * finalLightStrength;
+		half4 specularColor         = texCUBE( Sampler4, viewDirReflected );
+		specularColor.xyz           = specularColor.rgb * specularColor.a * NDotLSat * specularAmp;
+		Current.color.rgb           = waterColor;
+		float4 scatterColor         = texCUBE( Sampler4, viewDir );
+		Current.color.rgb           = lerp( waterColor.rgb, scatterColor, fogStrength );
+		Current.color.rgb           += scatterColor.rgb * scatterColor.a * sunDrop;
+		Current.color.rgb			= lerp( Current.color.rgb, refractColor.rgb, refractColor.a * 0.5f );
+		Current.color.a             = waterAlpha2;
+	endCode
+end

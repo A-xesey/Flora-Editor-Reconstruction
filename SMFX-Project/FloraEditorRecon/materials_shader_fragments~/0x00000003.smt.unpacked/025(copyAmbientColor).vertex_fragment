@@ -1,0 +1,11 @@
+vertexFragment copyAmbientColor
+	output color
+
+	declareCode
+		extern uniform float4 ambient;
+	endCode
+
+	code
+		Current.color = ambient;
+	endCode
+end

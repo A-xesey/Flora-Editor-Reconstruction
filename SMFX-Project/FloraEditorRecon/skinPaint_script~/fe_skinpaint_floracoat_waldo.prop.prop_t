@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "skinpaint_floracoat_waldo"
+colorRGBs paintThemeColor1s
+	(0, 0, 0)
+	(0.149019, 0.149019, 0.886274)
+	(0, 0, 0)
+end
+keys paintThemePaints
+	animations~
+	skinpaint_floracoat_waldo
+	animations~
+end

@@ -1,0 +1,10 @@
+pixelFragment nationalBoundariesPS
+	input color -texcoords 1
+	output color
+	samplers 1
+	texture 0x1BBBB722 -minFilter D3DTEXF_LINEAR -magFilter D3DTEXF_LINEAR -mipFilter D3DTEXF_LINEAR -addresses D3DTADDRESS_WRAP D3DTADDRESS_CLAMP
+
+	code
+		Current.color = In.color * tex2D(Sampler<s0>, In.texcoord<t0>.xy);
+	endCode
+end

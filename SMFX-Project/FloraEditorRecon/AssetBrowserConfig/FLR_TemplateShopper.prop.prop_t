@@ -1,0 +1,7 @@
+key parent AssetBrowserConfig!EDI_TemplateShopper.prop
+texts sporepediaConfigCallToActionMessage
+	(sporepedia!0x00040001) "placeholder"
+end
+key sporepediaConfigEditorForMakeNew FloraEditorSetup
+key sporepediaConfigRootFilterID flora
+key sporepediaConfigSelectedFilterID flora

@@ -1,0 +1,35 @@
+pixelFragment smokeVanillaAnimPS
+	input color position -texcoords 3
+	output color
+
+	declareCode
+		extern uniform float4 foggingCPU;
+
+		extern uniform sampler sideMap : register(s0);
+		extern uniform sampler topMap : register(s1);
+		extern uniform sampler scatterMap : register(s9);
+	endCode
+
+	code
+		// Load up variables
+		half4   color           = In.color;
+		half2   tileUV1         = In.texcoord<t0>.xy;
+		half2   tileUV2         = In.texcoord<t0>.zw;
+		half    topBlend        = In.texcoord<t1>.x;
+		half    tileAnimBlend   = In.texcoord<t1>.y;
+		// smoothly blend between cloud tiles
+		half4 topTex        = lerp( tex2D( topMap, tileUV1 ), tex2D( topMap, tileUV2 ), tileAnimBlend );
+		half4 sideTex       = lerp( tex2D( sideMap, tileUV1 ), tex2D( sideMap, tileUV2 ), tileAnimBlend );
+		// blend the side and top maps
+		half4 diffuse           = lerp( sideTex, topTex, topBlend );
+		// calculate the diffuse color
+		diffuse                 *= color;
+		// write our outputs
+		Current.color.rgb       = diffuse.rgb;
+		Current.color.a         = diffuse.a;
+		half4   viewVector      = In.texcoord<t2>;
+		half    fogStrength     = In.texcoord<t1>.z;
+		half4   fogColor        = texCUBE( scatterMap, viewVector.xyz );
+		Current.color.rgb       = lerp( Current.color.rgb, fogColor.rgb, fogStrength ) + fogColor.rgb * fogColor.a * foggingCPU.w;
+	endCode
+end

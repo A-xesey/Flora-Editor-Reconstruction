@@ -1,0 +1,12 @@
+vertexFragment splatterUV0
+	input texcoord0
+	output position -texcoords 1 float2
+
+	code
+		//splatter
+		Current.position = float4(((In.texcoord0.x * 2) - 1), ((-In.texcoord0.y * 2) - 1), 0, 1);
+		// this is auto-filled from In.texcoord0 in the fragment setup -- we leave it
+		// that way because uvTweak may run before us.
+		// Current.texcoord<t0> = In.texcoord0;
+	endCode
+end

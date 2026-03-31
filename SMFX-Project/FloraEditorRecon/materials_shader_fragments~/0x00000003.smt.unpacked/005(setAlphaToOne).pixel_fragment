@@ -1,0 +1,5 @@
+pixelFragment setAlphaToOne
+	code
+		Current.color.a = 1;
+	endCode
+end

@@ -1,0 +1,18 @@
+vertexFragment zDissolveAlphaTest
+	input color position
+	output color
+
+	declareCode
+		extern uniform float4x3 modelToCamera;
+	endCode
+
+	code
+		// Ocean tuned fade values:
+		// eventually these will come through effects script
+		const float zFadeStart = 10.0;
+		const float zFadeRange = 100.0;
+		float3 camPos = mul(In.position, modelToCamera);
+		//Current.color.a *= 1 - smoothstep(0, 1, (camPos.z - zFadeStart) / zFadeRange); // Hermite interpolation
+		Current.color.a *= lerp(1, 0, (camPos.z - zFadeStart) / zFadeRange); // Linear interpolation
+	endCode
+end

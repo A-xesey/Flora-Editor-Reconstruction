@@ -1,0 +1,3 @@
+key parent models!DefaultTemplate.prop
+float modelBoundingRadius 8
+key modelMeshLOD0 fe_grass_far_model.rw4

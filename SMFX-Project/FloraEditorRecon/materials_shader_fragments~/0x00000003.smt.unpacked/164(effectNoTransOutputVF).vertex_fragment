@@ -1,0 +1,8 @@
+vertexFragment effectNoTransOutputVF
+	output color position -texcoords 1 float2
+
+	code
+		Current.position            = clipPos;
+		Current.color               = color;
+	endCode
+end

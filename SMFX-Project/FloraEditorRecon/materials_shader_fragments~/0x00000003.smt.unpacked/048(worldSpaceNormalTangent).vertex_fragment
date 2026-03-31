@@ -1,0 +1,15 @@
+vertexFragment worldSpaceNormalTangent
+	input normal tangent
+	output normal tangent
+
+	declareCode
+		extern uniform float4x3 modelToWorld;
+	endCode
+
+	code
+		float3 worldNormal  = mul(Current.normal.xyz, (float3x3)modelToWorld);
+		worldNormal  = normalize(worldNormal);
+		float3 worldTangent = mul(Current.tangent.xyz, (float3x3)modelToWorld);
+		worldTangent  = normalize(worldTangent);
+	endCode
+end

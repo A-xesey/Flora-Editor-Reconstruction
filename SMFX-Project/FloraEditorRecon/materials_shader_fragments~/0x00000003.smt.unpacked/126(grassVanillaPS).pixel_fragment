@@ -1,0 +1,25 @@
+pixelFragment grassVanillaPS
+	input position -texcoords 4
+	output color
+
+	declareCode
+		extern uniform sampler sourceTex : register(s0);
+	endCode
+
+	code
+		// Load up variables
+		half2  uv				= In.texcoord<t0>.xy;
+		half4  c1				= In.texcoord<t1>;
+		half4  c2				= In.texcoord<t2>;
+		half3  n1				= In.texcoord<t3>.rgb;
+		half   nightLumBlend	= 1-In.texcoord<t3>.a;
+		// Calc diffuse color
+		half4 diffuse          = tex2D( sourceTex, uv );
+		diffuse.a *= (diffuse.a > 0.3);
+		float4 lightColor = diffuse * c1 + c2;
+		Current.color.rgb = dot( lightColor.rgb, n1 ) + lightColor.rgb * nightLumBlend;  // dot here ?
+		Current.color.a = lightColor.a;  // add of c2 could push alpha above texture ?
+		// clip in the hope that shadow calcs are skipped for zero alpha pixels
+		clip(Current.color.a - 64.5f/255.0f);
+	endCode
+end

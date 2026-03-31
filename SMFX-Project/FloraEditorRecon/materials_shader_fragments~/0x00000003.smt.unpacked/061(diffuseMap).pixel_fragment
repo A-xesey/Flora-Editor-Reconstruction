@@ -1,0 +1,10 @@
+pixelFragment diffuseMap
+	input color position -texcoords 1
+	output color
+	samplers 1
+
+	code
+		Current.color = tex2D(Sampler0, In.texcoord0);
+		Current.color.a = In.color.a * step(In.color.a * .5, Current.color.a); 
+	endCode
+end

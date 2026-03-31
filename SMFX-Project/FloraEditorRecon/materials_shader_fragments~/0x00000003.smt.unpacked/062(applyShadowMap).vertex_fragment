@@ -1,0 +1,19 @@
+vertexFragment applyShadowMap
+	output -texcoords 1 float4
+
+	declareCode
+		extern uniform float4x3 modelToWorld;
+		extern uniform struct { float4   mRangeAndStrength; float4   mShadowDir; float4   mNestInfo; float4x4 mWorldToShadowClip; float4x3 mWorldToShadowCamera; } shadowMapInfo;
+	endCode
+
+	code
+		float2 range = shadowMapInfo.mRangeAndStrength.xy;
+		float4 worldPosition1 = float4(mul(Current.position, modelToWorld), 1); // instancing must set to identity
+		float  shadowDepth    = (mul(worldPosition1, shadowMapInfo.mWorldToShadowCamera).y - range.x) * range.y;
+		float  shadowStrength = shadowMapInfo.mRangeAndStrength.z;
+		Current.texcoord<t0>.xyz =  mul(worldPosition1, shadowMapInfo.mWorldToShadowClip).xyw;
+		Current.texcoord<t0>.xy /= Current.texcoord<t0>.z;
+		Current.texcoord<t0>.z   = shadowStrength;
+		Current.texcoord<t0>.w   = shadowDepth;
+	endCode
+end

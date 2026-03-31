@@ -1,0 +1,22 @@
+vertexFragment effectFaceUpOrientCameraVF
+	input normal color1 position
+
+	declareCode
+		extern uniform float3x4 cameraToWorldTranspose;
+	endCode
+
+	code
+		half3 quadPos;
+		{
+		half3 at = half3( cameraToWorldTranspose[0][2], cameraToWorldTranspose[1][2], cameraToWorldTranspose[2][2] );
+		half3 tangent = In.normal.xyz;
+		half3 up = cross( tangent, npos );
+		half3 face = cross( up, tangent );
+		tangent = normalize( cross( face, at ) );
+		up = normalize( cross( tangent, face ) );
+		quadPos = In.position.xyz;
+		quadPos += tangent * scale * (uv.x - 0.5);
+		quadPos += up * scale * (0.5 - uv.y);
+		}
+	endCode
+end

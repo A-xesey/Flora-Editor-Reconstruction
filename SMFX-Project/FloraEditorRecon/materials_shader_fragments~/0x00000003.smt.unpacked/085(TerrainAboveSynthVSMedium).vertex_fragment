@@ -1,0 +1,80 @@
+vertexFragment TerrainAboveSynthVSMedium
+	input color texcoord0 position
+	output color color1 position -texcoords 7 float4
+
+	declareCode
+		extern uniform struct
+		{
+		float4 vSunDir;
+		float4 waterColor;
+		float4 innerParms;
+		float4 vCamPos;
+		float4 sphereParms;
+		float4 camParms;
+		float4 illumParms;
+		float4 fogParms;
+		float4 nightLightTint;
+		float4 nightLightColor;
+		float4 duskLightColor;
+		float4 dayLightColor;
+		float4 nightShadowColor;
+		float4 duskShadowColor;
+		float4 dayShadowColor;
+		float4 duskDawnStartEnd;
+		float4x4 viewTransform;
+		} terrainState;
+		extern uniform struct
+		{
+		float4x4 worldViewProjection;
+		float4 QuadFaceUVXform;
+		float4 QuadMorphValue;
+		float4 QuadFaceElemMap;
+		float4 QuadFaceSignMap;
+		float4 QuadFaceXForm[3];
+		} terrainTransform;
+	endCode
+
+	code
+		const   float aboveScale    = 67;
+		float4 position =  landPosition;
+		float4 clipPos = mul(position, terrainTransform.worldViewProjection);
+		float  fogScale, fogStrength, term;
+		float4 eyeVec;
+		GetTerrainFogStrength( position.xyz, normal.xyz, ( terrainState.sphereParms.x + terrainState.sphereParms.z ), fogStrength, fogScale, term, eyeVec );
+		float3 lightBlend, lightColor, shadowColor;
+		EvaluateVertexLighting(
+		normal.xyz,
+		terrainState.vSunDir.xyz,
+		terrainState.duskDawnStartEnd,
+		terrainState.dayLightColor.xyz,
+		terrainState.dayShadowColor.xyz,
+		terrainState.duskLightColor.xyz,
+		terrainState.duskShadowColor.xyz,
+		terrainState.nightLightColor.xyz,
+		terrainState.nightShadowColor.xyz,
+		lightBlend,
+		lightColor,
+		shadowColor );
+		// OUTPUT
+		Current.color.xyz               = (lightColor-shadowColor) * 0.5;
+		Current.color.w                 = lightBlend.x;
+		Current.color1.xyz              = shadowColor;
+		Current.color1.w                = lightBlend.z;
+		Current.position                = clipPos;
+		Current.texcoord<t0>.xyz        = terrainState.vSunDir.xyz;
+		Current.texcoord<t0>.w          = lightBlend.y;
+		Current.texcoord<t1>.xy         = uv;
+		Current.texcoord<t1>.z          = 0;                
+		Current.texcoord<t1>.w          = fogStrength;
+		Current.texcoord<t2>.xy         = uv * aboveScale;
+		Current.texcoord<t2>.zw         = uv * terrainState.illumParms.w;
+		Current.texcoord<t3>.xyz        = normal.xyz;
+		Current.texcoord<t3>.w          = 0.0f;
+		Current.texcoord<t4>            = terrainState.nightLightTint;
+		Current.texcoord<t4>.w          *= lightBlend.z;
+		Current.texcoord<t5>.xyz        = mul( -eyeVec, terrainState.viewTransform );
+		Current.texcoord<t5>.w          = saturate( dot( normal, terrainState.vSunDir.xyz ) + 0.95 );
+		Current.texcoord<t6>.xyz        = eyeVec;
+		Current.texcoord<t6>.w          = 0;
+	endCode
+end

@@ -1,0 +1,12 @@
+pixelFragment cellPrototypePS
+	input color -texcoords 1
+	output color
+	samplers 1
+
+	code
+		Current.color.a += tex2D(Sampler<s0>, In.texcoord<t0>.xy).r;
+		//debug visualization of ramp texcoords:
+		//Current.color.a = 1;
+		//Current.color.rgb = In.texcoord<t0>.xyz;
+	endCode
+end

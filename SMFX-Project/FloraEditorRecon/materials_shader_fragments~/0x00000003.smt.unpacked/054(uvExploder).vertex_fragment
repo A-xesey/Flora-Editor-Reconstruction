@@ -1,0 +1,31 @@
+vertexFragment uvExploder
+	input texcoord0 position
+	output position
+
+	declareCode
+		extern uniform float pulse;
+		extern uniform float4x4 modelToClip;
+		extern uniform float4 mousePosition;
+	endCode
+
+	code
+		{
+		const bool kExplodeNormals = false;
+		float t = saturate(mousePosition.w); // saturate(sin(gameInfo.x) * 0.5 + 0.5);
+		if (!kExplodeNormals)
+		{
+		float2 pos0 = In.texcoord0.xy;
+		pos0.y = -pos0.y;
+		pos0 = 2 * pos0 - float2(1, 1);
+		pos0.x *= 0.75;
+		float4 pos1 = float4(pos0, 0, 1);
+		float4 pos2 = Current.position; //mul(In.position, modelToClip);
+		Current.position = lerp(pos1, pos2, t);
+		}
+		else
+		{
+		Current.position += Current.normal * t * 5;
+		}
+		}
+	endCode
+end

@@ -1,0 +1,33 @@
+vertexFragment shLightingDiff4Apply
+	input color
+	output color
+
+	declareCode
+		extern uniform float4 shCoeffs[4];
+
+		const static float kSH_A1 = 2.0 / 3.0;
+		const static float kSH_A2 = 1.0 / 4.0;
+		const static float kSH_A3 = 0;
+		const static float kSH_A4 = -1.0 / 24.0;
+		const static float kDefaultGloss = 0.35;
+		const static float kGlossyMax    = 0.75; // threshold at which glossy maxes out
+		const static float kCelOutlineThreshold        = 0.25;
+		const static float kCelOutlineThresholdRange   = 0.075;
+		const static float kCelStrength                = 0.3;
+		const static float kSpecExponentMaxValue = 60.0;
+		const static bool kSaveInstructions = false;
+	endCode
+
+	code
+		float3 normal = worldNormal;
+		float3 x0 = normal;
+		float3 shColorDiff = shCoeffs[0];
+		float3 shColor;
+		shColor  = shCoeffs[1].xyz * x0.y;
+		shColor += shCoeffs[2].xyz * x0.z;
+		shColor += shCoeffs[3].xyz * x0.x;
+		shColor *= kSH_A1;
+		shColorDiff += shColor;
+		Current.color.rgb *= shColorDiff;
+	endCode
+end

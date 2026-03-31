@@ -1,0 +1,16 @@
+pixelFragment renderShadowMap
+	input -texcoords 1
+	output color
+
+	declareCode
+		float4 EncodeDepth(float depth)
+		{
+		return float4(depth, frac(depth * 256), depth, 1);
+		}
+	endCode
+
+	code
+		float depth = saturate(In.texcoord<t0>.x);
+		Current.color = EncodeDepth(depth);
+	endCode
+end

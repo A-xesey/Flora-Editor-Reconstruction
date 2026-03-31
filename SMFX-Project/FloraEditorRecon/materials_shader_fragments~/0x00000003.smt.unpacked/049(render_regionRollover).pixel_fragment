@@ -1,0 +1,15 @@
+pixelFragment render_regionRollover
+	output color
+
+	declareCode
+		extern uniform float4 region;
+		extern uniform float4 rolloverRegion;
+	endCode
+
+	code
+		if(region.x == rolloverRegion.x || rolloverRegion.x == -1)
+		Current.color = float4(region.x / 32 ,0,0,region.x / 32);
+		else
+		Current.color = float4(0,0,0,0);
+	endCode
+end

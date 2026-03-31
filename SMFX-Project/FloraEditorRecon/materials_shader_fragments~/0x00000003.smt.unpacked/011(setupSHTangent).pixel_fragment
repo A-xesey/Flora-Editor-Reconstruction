@@ -1,0 +1,7 @@
+pixelFragment setupSHTangent
+	input -texcoords 1
+
+	code
+		float3 vertDS = In.texcoord<t0>.xyz;
+	endCode
+end

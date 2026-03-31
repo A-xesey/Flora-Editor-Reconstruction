@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "Alien HRG Coat"
+colorRGBs paintThemeColor1s
+	(0, 0, 0)
+	(0.6336, 0.6083, 0.5478)
+	(0, 0, 0)
+end
+keys paintThemePaints
+	animations~
+	FE_BP1_skinpaint_coat_alien_HRG
+	animations~
+end

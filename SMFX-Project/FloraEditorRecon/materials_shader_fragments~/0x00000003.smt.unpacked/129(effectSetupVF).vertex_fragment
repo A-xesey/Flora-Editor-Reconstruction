@@ -1,0 +1,17 @@
+vertexFragment effectSetupVF
+	input color position
+
+	declareCode
+		extern uniform float4 worldCameraPosition;
+	endCode
+
+	code
+		half age = In.position.w;
+		half4 color = In.color;
+		half3 cameraPos = worldCameraPosition;
+		half3 toCamera = cameraPos - In.position.xyz;
+		half3 npos = normalize( In.position.xyz );
+		half cameraDist = length( toCamera );
+		half3 toCamNormal = toCamera / cameraDist;
+	endCode
+end

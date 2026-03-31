@@ -1,0 +1,7 @@
+texts blockName
+	(PlantRigblocks!0x00000006) "fe_assembly_limb_01"
+end
+string16 description "Ambidextrous Limbus"
+key editorCameraThumbnail 0xDC0598FA
+key modelBlockAssemblyFile palette_editorModel~!assemblyArm1.crt
+key paletteItemType ItemBlockAssembly

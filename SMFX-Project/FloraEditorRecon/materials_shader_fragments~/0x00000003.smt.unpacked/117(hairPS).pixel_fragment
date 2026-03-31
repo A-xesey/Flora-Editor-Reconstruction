@@ -1,0 +1,14 @@
+pixelFragment hairPS
+	input color position -texcoords 2
+	output color
+	samplers 3
+
+	code
+		float hairBrightness = 1.2;
+		float3 skinColor = tex2D(Sampler<s0>,In.texcoord<t1>);
+		float4 strandColor = tex2D(Sampler<s1>, In.texcoord<t0>);
+		float3 baseColor = skinColor * strandColor.rgb * hairBrightness;
+		Current.color.a = strandColor.a;
+		Current.color.rgb = baseColor;
+	endCode
+end

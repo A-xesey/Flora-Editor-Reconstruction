@@ -1,0 +1,11 @@
+pixelFragment applyInteriorPS
+	input -texcoords 1
+	output color
+	samplers 1
+
+	code
+		float2 orig = In.texcoord0;
+		float2 tCoord = float2(orig.x + In.texcoord<t0>.x, orig.y + In.texcoord<t0>.y);
+		Current.color = tex2D(Sampler0, tCoord);
+	endCode
+end

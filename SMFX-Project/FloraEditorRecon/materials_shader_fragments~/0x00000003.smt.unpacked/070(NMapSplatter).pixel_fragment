@@ -1,0 +1,17 @@
+pixelFragment NMapSplatter
+	input -texcoords 1
+	output color
+
+	declareCode
+		sampler diffuseSampler  : register(s0);
+		sampler nmapSpecSampler : register(s1);
+	endCode
+
+	code
+		float4 nmapSpec = tex2D(nmapSpecSampler, In.texcoord0); // nmap- rgb, spec - a BASE
+		Current.color.rgb =  nmapSpec.rgb;
+		Current.color.w = 1.0;
+		// the alpha here will get replaced with ambient occlusion map later
+		// spec strength is in r channel of the second texture
+	endCode
+end

@@ -1,0 +1,76 @@
+vertexFragment TerrainDecalAboveVSLow
+	input color texcoord0 position
+	output color position -texcoords 3 float4
+
+	declareCode
+		extern uniform struct
+		{
+		float4 vSunDir;
+		float4 waterColor;
+		float4 innerParms;
+		float4 vCamPos;
+		float4 sphereParms;
+		float4 camParms;
+		float4 illumParms;
+		float4 fogParms;
+		float4 nightLightTint;
+		float4 nightLightColor;
+		float4 duskLightColor;
+		float4 dayLightColor;
+		float4 nightShadowColor;
+		float4 duskShadowColor;
+		float4 dayShadowColor;
+		float4 duskDawnStartEnd;
+		float4x4 viewTransform;
+		} terrainState;
+		extern uniform struct
+		{
+		float4x4 worldViewProjection;
+		float4 QuadFaceUVXform;
+		float4 QuadMorphValue;
+		float4 QuadFaceElemMap;
+		float4 QuadFaceSignMap;
+		float4 QuadFaceXForm[3];
+		} terrainTransform;
+		extern uniform struct
+		{
+		float4 DecalColorTint;
+		float4 dirScaleU;
+		float4 dirScaleV;
+		} decalState;
+	endCode
+
+	code
+		float4 position = waterPosition;
+		float4 clipPos = mul(position, terrainTransform.worldViewProjection);
+		float3 lightBlend, lightColor, shadowColor;
+		EvaluateVertexLighting(
+		normal.xyz,
+		terrainState.vSunDir.xyz,
+		terrainState.duskDawnStartEnd,
+		terrainState.dayLightColor.xyz,
+		terrainState.dayShadowColor.xyz,
+		terrainState.duskLightColor.xyz,
+		terrainState.duskShadowColor.xyz,
+		terrainState.nightLightColor.xyz,
+		terrainState.nightShadowColor.xyz,
+		lightBlend,
+		lightColor,
+		shadowColor );
+		float2 decalUV = float2
+		(
+		dot(decalState.dirScaleU, position),
+		dot(decalState.dirScaleV, position)
+		);
+		Current.position            = clipPos;
+		Current.color.rgb           = shadowColor;
+		Current.color.a             = heightAlphaScale;
+		Current.color				*= decalState.DecalColorTint;
+		Current.texcoord<t0>        = terrainState.nightLightTint;
+		Current.texcoord<t0>.w      *= lightBlend.z;
+		Current.texcoord<t1>.xy     = 0;			
+		Current.texcoord<t1>.zw     = decalUV;
+		Current.texcoord<t2>.rgb    = (lightColor-shadowColor) * decalState.DecalColorTint.rgb * abs( dot( normal.xyz, terrainState.vSunDir.xyz ) );
+		Current.texcoord<t2>.a      = 0;
+	endCode
+end

@@ -1,0 +1,14 @@
+vertexFragment uvTweak_projectYZ
+	input position
+
+	declareCode
+		extern uniform float4 uvTweak;
+		extern uniform float4x3 modelToWorld;
+	endCode
+
+	code
+		Current.texcoord0.xy = Current.position.yz * uvTweak.xy + uvTweak.zw;
+		Current.texcoord0.y = 1 - Current.texcoord0.y;
+		Current.texcoord0.xy *= length(modelToWorld[0]);
+	endCode
+end

@@ -1,0 +1,42 @@
+vertexFragment empireLinesVS
+	input normal color texcoord0 texcoord1 position
+	output color position -texcoords 1 float4
+
+	declareCode
+		extern uniform float4x3 modelToCamera;
+		extern uniform float4 screenInfo;
+		extern uniform float4 materialColor;
+
+		half RangeListEval(half4 domain, half val, half4 range)
+		{
+		half4 g = val > domain;
+		half4 le = 1-g;
+		half4 lm = g * le.yzww;
+		half4 hm = g.xxyz * le;
+		half ld = dot( lm, domain );
+		half hd = dot( hm, domain );
+		half lr = dot( lm, range );
+		half hr = dot( hm, range );
+		half t = saturate(( val - ld ) / ( hd - ld ));
+		return lerp(lr, hr, t);
+		}
+	endCode
+
+	code
+		float3 camPos = mul(Current.position, modelToCamera);
+		half4 lineAlphaDistances = half4(0, 10, 60, 100);
+		half4 lineAlphaScale = half4(0.3, 0.7, 0.7, 1);
+		half4 lineSizeDistances = half4(0, 10, 40, 100);
+		half4 lineWidthScale = half4(0.05, 0.25, 0.5, 1.1);
+		half4 lineLengthTrim = half4(0.0, 0.3, 0.7, 0);
+		Current.texcoord<t0>.x = In.texcoord0.x;  //  length
+		Current.texcoord<t0>.y = RangeListEval(lineSizeDistances, camPos.z, lineLengthTrim);
+		Current.texcoord<t0>.y /= In.texcoord1.y;
+		Current.texcoord<t0>.z = In.texcoord0.y;  //  width
+		Current.texcoord<t0>.w = 1 - (In.texcoord1.x * 0.75);
+		Current.texcoord<t0>.w += ((In.texcoord0.x - 0.5) * 0.5);  // taper width along length
+		Current.texcoord<t0>.w *= RangeListEval(lineSizeDistances, camPos.z, lineWidthScale);
+		Current.color = materialColor * In.color;
+		Current.color.a *= RangeListEval(lineAlphaDistances, camPos.z, lineAlphaScale);
+	endCode
+end

@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "skinpaint_detail_uniform"
+colorRGBs paintThemeColor1s
+	(0, 0, 0)
+	(0, 0, 0)
+	(0.905882, 0.288235, 0.237255)
+end
+keys paintThemePaints
+	animations~
+	animations~
+	FE_EP1_skinpaint_detail_uniform
+end

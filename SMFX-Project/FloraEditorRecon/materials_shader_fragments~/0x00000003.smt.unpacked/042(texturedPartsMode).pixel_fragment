@@ -1,0 +1,15 @@
+pixelFragment texturedPartsMode
+	input color
+	output color
+
+	declareCode
+		extern uniform float4 tintParams;
+	endCode
+
+	code
+		const float t = 0.35;
+		float blend = min(1, Current.color.a + 1.0 - tintParams.a);
+		Current.color.rgb = Current.color.rgb * blend + (shColorDiff.rgb * (1 - t) + shColorSpec.rgb * t) * tintParams.rgb * (1.0 - Current.color.a) ;
+		Current.color.a = 1.0;
+	endCode
+end

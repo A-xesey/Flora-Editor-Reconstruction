@@ -1,0 +1,8 @@
+key parent PlantEditorTemplates!PlantRigblockTemplate_mod
+texts blockName
+	(PlantRigblocks!0x00000074) "pe_eye_01"
+end
+string16 description "fruit 01"
+key modelMeshHull editor_rigblock~!None
+key modelMeshLOD0 editor_rigblock~!pe_eye_01.rw4
+vector3 modelRotationBallHandleOffset (0, -0.5, 0)

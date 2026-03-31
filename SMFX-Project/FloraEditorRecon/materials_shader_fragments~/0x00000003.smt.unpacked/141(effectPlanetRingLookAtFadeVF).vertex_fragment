@@ -1,0 +1,10 @@
+vertexFragment effectPlanetRingLookAtFadeVF
+	declareCode
+		extern uniform float3x4 cameraToWorldTranspose;
+	endCode
+
+	code
+		half3 cameraDir = half3( cameraToWorldTranspose[0][2], cameraToWorldTranspose[1][2], cameraToWorldTranspose[2][2] );
+		color.a *= dot(npos , cameraDir) * 0.5 + 0.5 ;
+	endCode
+end

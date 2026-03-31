@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "skinpaint_floracoat_mantella"
+colorRGBs paintThemeColor1s
+	(0, 0, 0)
+	(0.341176, 0.360784, 0.576470)
+	(0, 0, 0)
+end
+keys paintThemePaints
+	animations~
+	skinpaint_floracoat_mantella
+	animations~
+end

@@ -1,0 +1,8 @@
+pixelFragment BakeInfoSplatter_window
+	input -texcoords 1
+	output color
+
+	code
+		Current.color = float4(0,1,0,1); // identity bakeInfo map
+	endCode
+end

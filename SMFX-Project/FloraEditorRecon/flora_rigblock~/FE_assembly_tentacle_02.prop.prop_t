@@ -1,0 +1,6 @@
+string16 description "Tentacle branch 02"
+texts blockName
+	(PlantRigblocks!0x00000015) "Tentacle branch 02"
+end
+key modelBlockAssemblyFile palette_editorModel~!FE_assembly_tentacle_02.crt
+key paletteItemType ItemBlockAssembly

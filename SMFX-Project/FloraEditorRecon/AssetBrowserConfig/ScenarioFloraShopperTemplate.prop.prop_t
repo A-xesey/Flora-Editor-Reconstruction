@@ -1,0 +1,6 @@
+key parent AssetBrowserConfig!EP1_ShoppingTemplate.prop
+texts sporepediaConfigCallToActionMessage
+	(sporepediaEP1!0x072925b5) "placeholder flora"
+end
+bool sporepediaConfigEnableMakeNewButton true
+key sporepediaConfigFeedListID ScenarioFlora

@@ -1,0 +1,6 @@
+key parent palette_config~!TemplatePaletteSkinPaintTheme.prop
+string16 description "Theme"
+key paletteCategoryIcon editors~!0xA7698987.png
+key palettePageParentCategory flora_paint_palette_category~!fe_category_theme
+uint32 palettePageSequenceNumber 100
+int32 palettePageSetId 1

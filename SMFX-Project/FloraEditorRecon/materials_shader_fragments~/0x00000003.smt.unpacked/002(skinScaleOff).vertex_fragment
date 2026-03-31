@@ -1,0 +1,5 @@
+vertexFragment skinScaleOff
+	declareCode
+		static const bool nonUniformScale = (false);
+	endCode
+end

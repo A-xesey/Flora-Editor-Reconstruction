@@ -1,0 +1,11 @@
+pixelFragment depthWrite
+	input position -texcoords 1
+	output color1
+
+	code
+		float DOFdepth = In.texcoord<t0>.x;
+		float depthRange = DOFParams.y;
+		float focalPlane = DOFParams.x;
+		Current.color1 = float4(abs((DOFdepth  - focalPlane)/ depthRange), 0, 0, 1);
+	endCode
+end

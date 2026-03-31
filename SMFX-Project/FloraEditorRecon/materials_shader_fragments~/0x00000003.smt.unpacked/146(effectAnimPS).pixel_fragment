@@ -1,0 +1,14 @@
+pixelFragment effectAnimPS
+	output color
+
+	declareCode
+		extern uniform sampler tileMap : register(s0);
+	endCode
+
+	code
+		half4 tileTex		= lerp( tex2D( tileMap, tileUV1 ), tex2D( tileMap, tileUV2 ), tileBlend );
+		half4 diffuse		= tileTex * color;
+		Current.color.rgb   = diffuse.rgb;
+		Current.color.a		= diffuse.a;
+	endCode
+end

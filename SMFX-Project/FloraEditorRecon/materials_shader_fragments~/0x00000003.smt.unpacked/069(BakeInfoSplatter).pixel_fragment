@@ -1,0 +1,26 @@
+pixelFragment BakeInfoSplatter
+	input color position -texcoords 1
+	output color
+
+	declareCode
+		extern uniform struct { float4 mColor1; float4 mColor2; float4 mParams; } editorColors;
+
+		sampler diffuseSampler  : register(s0);
+		sampler nmapSpecSampler : register(s1);
+	endCode
+
+	code
+		float specE        = editorColors.mParams.x;
+		float specStrength = editorColors.mParams.y;
+		float invBumpiness = editorColors.mParams.z;
+		float gloss        = editorColors.mParams.w;
+		float4 specNMap = tex2D(nmapSpecSampler, In.texcoord0); // nmap- rgb, spec - a BASE
+		const float kSpecExponentMaxValue = 60.0f;
+		specStrength *= specNMap.a;
+		gloss        *= specNMap.a;
+		Current.color.r = specStrength;
+		Current.color.g = specE / kSpecExponentMaxValue;
+		Current.color.b = gloss;
+		Current.color.a = 1.0f;
+	endCode
+end

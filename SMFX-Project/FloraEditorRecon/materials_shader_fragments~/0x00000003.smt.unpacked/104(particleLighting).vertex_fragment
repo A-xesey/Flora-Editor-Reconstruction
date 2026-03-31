@@ -1,0 +1,12 @@
+vertexFragment particleLighting
+	input color
+	output color
+
+	declareCode
+		extern uniform float4 lightingInfoCoeffs[1];
+	endCode
+
+	code
+		Current.color.rgb *= lightingInfoCoeffs[0].rgb;
+	endCode
+end

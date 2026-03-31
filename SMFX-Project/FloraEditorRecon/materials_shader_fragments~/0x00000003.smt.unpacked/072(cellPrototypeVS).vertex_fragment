@@ -1,0 +1,18 @@
+vertexFragment cellPrototypeVS
+	input normal tangent position
+	output color position -texcoords 1 float4
+
+	declareCode
+		extern uniform float4x3 worldToCamera;
+		extern uniform float4 cellStage;
+	endCode
+
+	code
+		float3 ncamNormal = normalize(mul(float4(Current.normal.xyz, 0), worldToCamera).xyz);
+		// cellStage.x ranges from 0 at the earliest stage of cell game
+		// to 1 at the final stage of cell game -- this determines which
+		// column of the alpha ramp texture to use.
+		// ncamNormal.z is the dot product of the vertex normal and the camera ray
+		Current.texcoord<t0> = float4(cellStage.x, saturate(ncamNormal.z + 1), 0, 0);
+	endCode
+end

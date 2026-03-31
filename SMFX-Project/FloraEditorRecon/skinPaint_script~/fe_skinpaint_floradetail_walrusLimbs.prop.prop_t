@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "skinpaint_floradetail_walrusLimbs"
+colorRGBs paintThemeColor1s
+	(0, 0, 0)
+	(0, 0, 0)
+	(0.694117, 0.223529, 0.309804)
+end
+keys paintThemePaints
+	animations~
+	animations~
+	skinpaint_floradetail_walrusLimbs
+end

@@ -1,0 +1,10 @@
+vertexFragment effectNoTransVF
+	input texcoord0 position
+
+	code
+		half3 quadPos;
+		{
+		quadPos = In.position.xyz;
+		}
+	endCode
+end

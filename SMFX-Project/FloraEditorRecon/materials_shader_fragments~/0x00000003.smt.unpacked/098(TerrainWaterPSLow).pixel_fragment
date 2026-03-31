@@ -1,0 +1,37 @@
+pixelFragment TerrainWaterPSLow
+	input color position -texcoords 5
+	output color
+	samplers 7
+
+	declareCode
+		extern uniform float4 gameInfo;
+	endCode
+
+	code
+		const half  depthScale				= 0.75;
+		const half  alphaScale				= 5000;
+		half2       uv                      = In.texcoord<t0>.xy;
+		half2       sinuv                   = In.texcoord<t0>.zw;
+		half3       reflection              = In.texcoord<t1>.xyz;
+		half        normalizedWaterHeight   = In.texcoord<t2>.x;
+		half        sinTime                 = In.texcoord<t2>.y;
+		half        vertexAbove             = In.texcoord<t2>.z;
+		half2       uv0                     = In.texcoord<t3>.xy;
+		half2       uv1                     = In.texcoord<t3>.zw;
+		half2       screenPos               = In.texcoord<t4>.xy / In.texcoord<t4>.z + 0.5;
+		half        normalizedHeight        = tex2D( Sampler0, uv ).x * 2.0 - 1.0;
+		half        waterDepth              = saturate( normalizedWaterHeight - normalizedHeight );
+		screenPos.xy                        += sinuv;
+		half4       refractColor            = tex2D( Sampler5, screenPos.xy );
+		half3       waterColor              = refractColor.rgb;
+		half		waterAlpha2				= min( waterDepth, max( vertexAbove, 0 ) ) * alphaScale;
+		half4       specularColor           = texCUBE( Sampler4, reflection );
+		waterColor.rgb                      += specularColor.rgb * specularColor.w;
+		half        waterSurface0           = tex2D( Sampler3, uv0 ).r;
+		half        waterSurface1           = tex2D( Sampler3, uv1 ).g;
+		half        fade                    = lerp( waterSurface0, waterSurface1, sinTime );
+		waterColor.rgb                      = lerp( waterColor, waterColor * fade, 0.5 );
+		Current.color.rgb                   = waterColor.rgb;
+		Current.color.a                     = waterAlpha2;
+	endCode
+end

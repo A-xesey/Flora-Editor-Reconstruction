@@ -1,0 +1,84 @@
+pixelFragment shLightingSpec_BakedFlora
+	input color -texcoords 3
+	output color
+
+	declareCode
+		extern uniform float4 materialColor;
+		extern uniform float4 shCoeffs[16];
+		extern uniform struct { float4 mDir; float4 mColor; } dirLightsWorld[1];
+		extern uniform float4 worldCameraDirection;
+
+		float3 SHLightingGlossy16
+		(
+		float3 colorIn,
+		float3 normal,
+		float3 shColorDiff,
+		float3 shColorSpec,
+		float  glossyStrength,
+		float  specE         = 1,
+		float  specStrength  = 0,
+		bool   translucency  = false
+		)
+		{
+		float3 x0;
+		float3 reflectedNormal = reflect(worldCameraDirection, normal);
+		if (translucency)
+		{
+		x0 = -normal;
+		}
+		else
+		{
+		x0 = reflectedNormal;
+		}
+		float3 x1 = x0 * x0;
+		float3 x2 = x0 * x0.yzx;
+		float3 k0 = x0.yzx * float3( (5 * x1.z - 1),
+		(5 * x1.z - 3),
+		(5 * x1.z - 1) );
+		shColorSpec += shCoeffs[11].xyz * k0.x;
+		shColorSpec += shCoeffs[12].xyz * k0.y;
+		shColorSpec += shCoeffs[13].xyz * k0.z;
+		if (!kSaveInstructions)
+		{
+		float3 k1 = x0.yzx * float3( (3 * x1.x - x1.y),
+		(x1.x - x1.y),
+		(x1.x - 3 * x1.y) );
+		shColorSpec += shCoeffs[ 9].xyz * k1.x;
+		shColorSpec += shCoeffs[14].xyz * k1.y;
+		shColorSpec += shCoeffs[15].xyz * k1.z;
+		shColorSpec += shCoeffs[10].xyz * x1.x * x0.z;
+		}
+		if (translucency)
+		{
+		shColorSpec *= glossyStrength;
+		colorIn *= (shColorSpec + shColorDiff);
+		}
+		else
+		{
+		float s = glossyStrength;
+		colorIn *= lerp( shColorDiff, shColorSpec, s );
+		}
+		float nDotR = saturate(dot(reflectedNormal, dirLightsWorld[0].mDir));
+		float spec1 = pow(nDotR, specE);
+		float nDotL = dot(normal, dirLightsWorld[0].mDir);
+		float rDotL = dot(reflectedNormal, dirLightsWorld[0].mDir);
+		float spec2 = lit(nDotL, rDotL, specE).z;
+		colorIn += spec1 * specStrength * dirLightsWorld[0].mColor;
+		return colorIn;
+		}
+	endCode
+
+	code
+		float shadowAdjust = 0.1 + 0.80 * (shadow > 0.80);
+		specStrength *= shadowAdjust;
+		specE *= shadowAdjust;
+		float3 vertNormal    = In.texcoord<t0>.xyz;
+		float4 shColorDiffVS = In.texcoord<t1>;
+		float4 shColorSpecVS = In.texcoord<t2>;
+		clip(Current.color.a - In.color.a * 0.5);
+		Current.color.a = In.color.a;
+		Current.color.rgb = SHLightingGlossy16(Current.color.rgb, normalize(vertNormal), shColorDiffVS, shColorSpecVS, gloss, specE, specStrength, true);
+		float3 noColor = dot(Current.color.rgb, float3(0.2, 0.5, 0.3));
+		Current.color.rgb = lerp (noColor, Current.color.rgb, materialColor.r);
+	endCode
+end

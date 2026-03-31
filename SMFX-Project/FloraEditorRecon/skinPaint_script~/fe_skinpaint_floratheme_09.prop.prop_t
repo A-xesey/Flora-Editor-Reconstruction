@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "bumpyGranite(scallops)1 L"
+colorRGBs paintThemeColor1s
+	(0.345097,0.443134,0.203922)
+	(0.803922,0.627451,0.258823)
+	(0.576469,0.235293,0.105879)
+end
+keys paintThemePaints
+	skinpaint_florabase_amphibian
+	skinpaint_floracoat_washShiny
+	skinpaint_floradetail_sideWash
+end

@@ -1,0 +1,32 @@
+vertexFragment planetImpostorVS
+	input normal position
+	output -texcoords 5 float4
+
+	declareCode
+		extern uniform float4x3 modelToWorld;
+		extern uniform float4 customParams[4];
+		extern uniform float4 worldCameraPosition;
+	endCode
+
+	code
+		Current.texcoord<t0>.xyz = normalize(Current.normal.xyz);
+		Current.texcoord<t0>.w = 1;
+		float4 pLightPos = float4(0,0,0,1);
+		float3 vertPos = mul(In.position, modelToWorld);
+		float3 camPos =  worldCameraPosition.xyz; // depth
+		float4x4 trans = { customParams[0],
+		customParams[1],
+		customParams[2],
+		customParams[3] };
+		float4 eyeVec = float4(-normalize(vertPos-camPos),0);
+		float4 normal = float4(Current.normal.xyz, 0.0);
+		float3 worldNormal = normalize( mul( normal, modelToWorld ).xyz );
+		float fogStrength = 1.0f - saturate( dot( eyeVec, worldNormal ) );
+		fogStrength *= 0.5;
+		float3 lightVec = pLightPos - vertPos;
+		Current.texcoord<t1> = float4(normalize(lightVec),fogStrength);
+		Current.texcoord<t2> = -eyeVec;
+		Current.texcoord<t3> = normalize(In.position);
+		Current.texcoord<t4> = mul( eyeVec, trans );
+	endCode
+end

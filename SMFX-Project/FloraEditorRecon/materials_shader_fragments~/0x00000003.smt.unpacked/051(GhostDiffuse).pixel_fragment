@@ -1,0 +1,11 @@
+pixelFragment GhostDiffuse
+	input -texcoords 1
+	output color
+	samplers 2
+
+	code
+		Current.color = tex2D(Sampler<s0>, In.texcoord0);
+		float4 nMap = tex2D(Sampler<s1>, In.texcoord0) ;
+		Current.color += nMap * 0.0001;
+	endCode
+end

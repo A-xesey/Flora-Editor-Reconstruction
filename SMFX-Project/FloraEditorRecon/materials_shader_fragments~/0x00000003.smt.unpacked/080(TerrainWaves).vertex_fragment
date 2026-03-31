@@ -1,0 +1,51 @@
+vertexFragment TerrainWaves
+	declareCode
+		extern uniform struct
+		{
+		float4 vSunDir;
+		float4 waterColor;
+		float4 innerParms;
+		float4 vCamPos;
+		float4 sphereParms;
+		float4 camParms;
+		float4 illumParms;
+		float4 fogParms;
+		float4 nightLightTint;
+		float4 nightLightColor;
+		float4 duskLightColor;
+		float4 dayLightColor;
+		float4 nightShadowColor;
+		float4 duskShadowColor;
+		float4 dayShadowColor;
+		float4 duskDawnStartEnd;
+		float4x4 viewTransform;
+		} terrainState;
+		extern uniform float4 gameInfo;
+
+		float WaveTerm(float3 waterPosition) // need to pass in waterdepth so waves can be faded at coast
+		{
+		float4 phases = float4(2.3, 0.4, 0.2, -1.4);
+		phases *= gameInfo.x;
+		waterPosition *= 500; // approx scale from before
+		float4 xPos = float4((waterPosition.x / 2.0), (waterPosition.x / 15.0), (waterPosition.x / 35.0), (waterPosition.x / 5) );
+		float4 yPos = float4((waterPosition.y / 2.0), (waterPosition.y / 25.0), (waterPosition.y / 28.0), (waterPosition.y / 8) );
+		float4 sinTerms = sin(xPos + phases);
+		sinTerms += sin(yPos + phases);
+		const float4 amps = float4(0.1, 0.75, 0.4, 0.3);
+		float waveTerm = dot(sinTerms, amps);
+		return waveTerm;
+		}
+	endCode
+
+	code
+		const float kStartDepth = 10;
+		const float kEndDepth   = 20;
+		float waveScale = saturate((waterHeight - seabedHeight - kStartDepth) * (1.0 / (kEndDepth - kStartDepth)));
+		float startFade = waterHeight + 200;
+		float endFade = waterHeight + 250;
+		waveScale *= 1 - saturate( ( terrainState.camParms.x - startFade ) / ( endFade - startFade ) );
+		float wave = WaveTerm(normal.xyz);
+		float waterLandPlusWaves = landHeight + wave * waveScale;
+		//@TODO turning off the deep water waves until I can sort out the problems with them
+	endCode
+end

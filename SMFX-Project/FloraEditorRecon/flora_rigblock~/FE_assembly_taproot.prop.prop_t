@@ -1,0 +1,7 @@
+string16 description "tap root"
+texts blockName
+	(PlantRigblocks!0x00000013) "tap root"
+end
+key modelBlockAssemblyFile flora_editorModel~!FE_assembly_taproot_branch.flr
+key modelAlternativeStaticModel palette_editorModel~!FE_assembly_taproot.prop
+key paletteItemType ItemBlockAssembly

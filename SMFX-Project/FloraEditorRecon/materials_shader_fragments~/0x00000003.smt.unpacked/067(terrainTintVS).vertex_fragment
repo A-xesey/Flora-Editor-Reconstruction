@@ -1,0 +1,16 @@
+vertexFragment terrainTintVS
+	input position
+	output -texcoords 1 float3
+
+	declareCode
+		extern uniform float4x3 modelToCamera;
+		extern uniform float4 terrainTint;
+	endCode
+
+	code
+		float3 camPos = mul( Current.position, modelToCamera);
+		const float detailDist = 40000;
+		camPos.z = 1 - clamp(camPos.z / detailDist, .6, 1);
+		Current.texcoord<t0> = float3(In.texcoord0.xy * terrainTint.w, camPos.z);
+	endCode
+end

@@ -1,0 +1,43 @@
+int32s palettePagePartItemColumns
+	0
+	1
+	2
+	0
+	1
+	2
+	0
+	1
+	2
+	0
+	1
+	2
+end
+int32s palettePagePartItemRows
+	0
+	0
+	0
+	1
+	1
+	1
+	2
+	2
+	2
+	3
+	3
+	3
+end
+keys palettePagePartItems
+	skinPaint_script~!fe_skinpaint_florabase_bark
+	skinPaint_script~!fe_skinpaint_florabase_morinda
+	skinPaint_script~!fe_skinpaint_florabase_granite
+	skinPaint_script~!fe_skinpaint_florabase_vittatum2
+	skinPaint_script~!fe_skinpaint_florabase_vittatum3
+	skinPaint_script~!fe_skinpaint_florabase_longFur
+	skinPaint_script~!fe_skinpaint_florabase_quilted
+	skinPaint_script~!fe_skinpaint_florabase_fishScales
+	skinPaint_script~!fe_skinpaint_florabase_banded
+	skinPaint_script~!fe_skinpaint_florabase_vgcats
+	skinPaint_script~!fe_skinpaint_florabase_rubberband
+	skinPaint_script~!fe_skinpaint_florabase_tempered
+end
+key palettePagePartParentPage FE_TextureGroup_Base_03

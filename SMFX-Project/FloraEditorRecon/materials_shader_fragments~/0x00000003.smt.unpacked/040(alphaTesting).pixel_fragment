@@ -1,0 +1,12 @@
+pixelFragment alphaTesting
+	input color position -texcoords 1
+	output color
+	samplers 1
+	texture 0x4D324A4E -minFilter D3DTEXF_LINEAR -magFilter D3DTEXF_LINEAR -mipFilter D3DTEXF_LINEAR -addresses D3DTADDRESS_WRAP D3DTADDRESS_CLAMP
+
+	code
+		const float2 noiseDeltas = float2(1/8, 1/8);
+		float4 noise  = tex2D(Sampler<s0>, In.texcoord<t0> * noiseDeltas);
+		Current.color.a =  2.0 * Current.color.a +   noise.r - 0.5;
+	endCode
+end

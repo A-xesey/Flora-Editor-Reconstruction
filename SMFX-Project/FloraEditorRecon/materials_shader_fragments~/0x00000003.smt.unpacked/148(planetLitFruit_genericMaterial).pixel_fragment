@@ -1,0 +1,10 @@
+pixelFragment planetLitFruit_genericMaterial
+	input color -texcoords 1
+	output color
+	samplers 1
+
+	code
+		half4 baseTex = tex2D(Sampler<s0>, In.texcoord0.xy);
+		Current.color *= baseTex;
+	endCode
+end

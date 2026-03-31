@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "volcano2 L"
+colorRGBs paintThemeColor1s
+	(0.231373,0.203922,0.282353)
+	(0.443135,0.223527,0.141176)
+	(0.803922,0.560782,0.0392158)
+end
+keys paintThemePaints
+	skinpaint_florabase_auratus
+	skinpaint_floracoat_washMatte
+	skinpaint_floradetail_blank
+end

@@ -1,0 +1,14 @@
+pixelFragment terrainTintPSLow
+	input color
+	output color
+
+	declareCode
+		extern uniform float4 terrainTint;
+		extern uniform float4 deadTerrainTint;
+	endCode
+
+	code
+		Current.color.rgb *= deadTerrainTint.rgb; 
+		Current.color.a = In.color.a;
+	endCode
+end

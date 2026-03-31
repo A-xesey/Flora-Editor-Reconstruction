@@ -25,8 +25,15 @@ member_detour(EditorUI_Load, EditorUI, bool(cEditor*, uint32_t, uint32_t, bool))
 		if (res && Editor.mSaveExtension == TypeIDs::flr)
 		{
 			IWindowPtr TypeChooser = Editor.mpEditorUI->mSharedUI.FindWindowByID(0xD0353720);
-			if (TypeChooser != nullptr)
-				TypeChooser->SetVisible(saveChanges);
+			if (TypeChooser != nullptr) {
+				if (Editor.mpPropList != nullptr && Editor.mpPropList->HasProperty(id("alwaysShowTypeChooser")))
+				{
+					bool alwaysShowTypeChooser;
+					Property::GetBool(Editor.mpPropList.get(), id("alwaysShowTypeChooser"), alwaysShowTypeChooser);
+					TypeChooser->SetVisible(alwaysShowTypeChooser);
+				}
+				else TypeChooser->SetVisible(saveChanges);
+			}
 		}
 		return res;
 	}

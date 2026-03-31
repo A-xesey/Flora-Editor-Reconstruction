@@ -1,0 +1,87 @@
+vertexFragment TerrainWaterVSLow
+	input color texcoord0 position
+	output color position -texcoords 5 float4
+
+	declareCode
+		extern uniform struct
+		{
+		float4 vSunDir;
+		float4 waterColor;
+		float4 innerParms;
+		float4 vCamPos;
+		float4 sphereParms;
+		float4 camParms;
+		float4 illumParms;
+		float4 fogParms;
+		float4 nightLightTint;
+		float4 nightLightColor;
+		float4 duskLightColor;
+		float4 dayLightColor;
+		float4 nightShadowColor;
+		float4 duskShadowColor;
+		float4 dayShadowColor;
+		float4 duskDawnStartEnd;
+		float4x4 viewTransform;
+		} terrainState;
+		extern uniform struct
+		{
+		float4x4 worldViewProjection;
+		float4 QuadFaceUVXform;
+		float4 QuadMorphValue;
+		float4 QuadFaceElemMap;
+		float4 QuadFaceSignMap;
+		float4 QuadFaceXForm[3];
+		} terrainTransform;
+		extern uniform float4 frameInfo;
+		extern uniform float4 minWater[2];
+	endCode
+
+	code
+		const half absAmount        = 0.5; 
+		const half satAmount        = 1.0; 
+		const half midAmount        = 0.5; 
+		const half sinAmp           = 300;
+		const half2 sinSpeed        = half2( 5, 9 ) * 0.4;
+		const half2 animAmp         = 0.25 * 0.075;
+		half  gameTime              = minWater[0].x;
+		half  sinTime               = minWater[0].y;
+		half  crossFade             = minWater[0].z;
+		half  fullFade              = minWater[0].w;
+		half2 speed0                = minWater[1].xy;
+		half2 speed1                = minWater[1].zw;
+		half4 vertScaled            = waterPosition;
+		half3 viewDir               = vertScaled.xyz - terrainState.vCamPos.xyz;
+		half  viewDist              = length( viewDir );
+		half  vertexHeight          = length( vertScaled.xyz );
+		half  cameraHeight          = length( terrainState.vCamPos.xyz );
+		half  planetRadius          = terrainState.sphereParms.x;
+		half  offset                = lerp( 1, 10, saturate( ( cameraHeight - planetRadius - 100.0 ) / 500.0 ) );
+		half3 tangent               = cross( normal, half3( 0, 0, 1 ) );
+		half3 binormal              = cross( tangent, normal );
+		half2  sinuv                = sin( uv.xy * sinAmp + gameTime * sinSpeed ) * animAmp;
+		half start = 400;
+		half end = 100;
+		sinuv *= saturate( ( viewDist - start ) / ( end - start ) );
+		normal                      += tangent * sinuv.x + binormal * sinuv.y;
+		half4 clipPos               = mul( vertScaled, terrainTransform.worldViewProjection );
+		half NdotE                  = dot( viewDir, normal.xyz );
+		half3 r                     = viewDir - 2 * NdotE * normal;
+		r                           = mul( -r, terrainState.viewTransform );
+		half normHeight             = terrainState.innerParms.w / terrainState.sphereParms.y;
+		Current.position            = clipPos;
+		Current.color               = 0;
+		Current.color.a             = 0;                
+		Current.texcoord<t0>.xy     = uv.xy;
+		Current.texcoord<t0>.zw     = sinuv * 0.254;
+		Current.texcoord<t1>.xyz    = r;
+		Current.texcoord<t1>.w      = 0;                
+		Current.texcoord<t2>.x      = normHeight;
+		Current.texcoord<t2>.y      = crossFade;        
+		Current.texcoord<t2>.z      = ( waterHeight - vertexHeight + offset ) / terrainState.sphereParms.y;
+		Current.texcoord<t2>.w      = 0;
+		Current.texcoord<t3>.xy     = uv.xy * 3 + speed0; 
+		Current.texcoord<t3>.zw     = uv.yx * 4 + speed1; 
+		Current.texcoord<t4>.xyz    = half3( half2( clipPos.x, -clipPos.y ), clipPos.w * 2 );
+		Current.texcoord<t4>.w      = 0;                
+	endCode
+end

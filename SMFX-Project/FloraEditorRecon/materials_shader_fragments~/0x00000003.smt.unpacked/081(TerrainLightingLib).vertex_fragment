@@ -1,0 +1,58 @@
+vertexFragment TerrainLightingLib
+	declareCode
+		void EvaluateVertexLighting(
+		float3 normal,
+		float3 sunDir,
+		float4 duskDawnStartEnd,
+		float3 dayLightColor,
+		float3 dayShadowColor,
+		float3 duskLightColor,
+		float3 duskShadowColor,
+		float3 nightLightColor,
+		float3 nightShadowColor,
+		out float3 lightBlend,
+		out float3 lightColor,
+		out float3 shadowColor )
+		{
+		float ndl = dot( normal.xyz, sunDir );
+		// day and night
+		lightBlend.xy = saturate( float2( ndl, -ndl ) * duskDawnStartEnd.xy + duskDawnStartEnd.zw );
+		// move night to the z component
+		lightBlend.z = lightBlend.y;
+		// dusk is whats left between day and night
+		lightBlend.y = 1.0f - max( lightBlend.x, lightBlend.z );
+		// calculated the blended colors
+		lightColor    = lightBlend.x*dayLightColor.xyz
+		+ lightBlend.y*duskLightColor.xyz
+		+ lightBlend.z*nightLightColor.xyz;
+		shadowColor   = lightBlend.x*dayShadowColor.xyz
+		+ lightBlend.y*duskShadowColor.xyz
+		+ lightBlend.z*nightShadowColor.xyz;
+		}
+		float3 TerrainVertexLighting( float3 sunDir, float3 normal, float3 shadowColor, float3 lightColor, float3 lightBlend )
+		{
+		// if you change these, you must change the same ones in EvaluatePixelLighting
+		const float bendLightAtDusk = 0.35;
+		const float absAmount       = 0.9;
+		const float satAmount       = 0.2;
+		const float midAmount       = 0.5;
+		const float shadowAmount    = 0.2;
+		sunDir                      = lerp( sunDir, normal, lightBlend.y * bendLightAtDusk );
+		float NdotL                 = dot( normal, sunDir );
+		float NdotLSat              = saturate( NdotL );
+		float NdotLAbs              = abs( NdotL );
+		float middle                = 1 - NdotLAbs;
+		middle                      *= middle;
+		float finalLightStrength    = NdotLAbs * absAmount + NdotLSat * satAmount + middle * midAmount;
+		float3 finalLightColor      = lerp( shadowColor, lightColor, finalLightStrength ) * finalLightStrength;
+		return finalLightColor;
+		}
+		float3 TerrainVertexLightingLow( float3 sunDir, float3 normal, float3 shadowColor, float3 lightColor, float3 lightBlend )
+		{
+		const float detailTextureCoeff  = 0.9;      // Because the land is multiplied by a detail map which ends up darkening it, we adjust here with an empirically derived constant
+		float finalLightStrength        = abs( dot( sunDir, normal ) );
+		float3 finalLightColor          = lerp( shadowColor, lightColor, finalLightStrength ) * detailTextureCoeff;
+		return finalLightColor;
+		}
+	endCode
+end

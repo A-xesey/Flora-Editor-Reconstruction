@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "skinpaint_floracoat_ridgesLateral"
+colorRGBs paintThemeColor1s
+	(0, 0, 0)
+	(0.325490, 0.172549, 0.050980)
+	(0, 0, 0)
+end
+keys paintThemePaints
+	animations~
+	skinpaint_floracoat_ridgesLateral
+	animations~
+end

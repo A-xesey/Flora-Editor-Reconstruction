@@ -1,0 +1,174 @@
+vertexFragment planetImpostorCloudVS
+	input normal color color1 position
+	output color position -texcoords 2 float4
+
+	declareCode
+		extern uniform float4 gameInfo;
+		extern uniform float4x4 worldToClip;
+		extern uniform float3x4 cameraToWorldTranspose;
+		extern uniform float4 patchLocation;
+		extern uniform float4 customParams[1];
+
+		half ramp( half min, half max, half value )
+		{
+		return saturate( ( value - min ) / ( max - min ) );
+		}
+		half2 ramp( half2 min, half2 max, half2 value )
+		{
+		return saturate( ( value - min ) / ( max - min ) );
+		}
+		half3 ramp( half3 min, half3 max, half3 value )
+		{
+		return saturate( ( value - min ) / ( max - min ) );
+		}
+		half4 ramp( half4 min, half4 max, half4 value )
+		{
+		return saturate( ( value - min ) / ( max - min ) );
+		}
+		half3 quadFace( half3 pos, half2 uv, half3 up, half3 tangent, half scale )
+		{
+		pos += tangent * scale * (uv.x - 0.5);
+		pos += up * scale * (0.5 - uv.y);
+		return pos;
+		}
+		half3 quadFace( half3 pos, half2 uv, half3 up, half3 tangent, half2 scale )
+		{
+		pos += tangent * scale.x * (uv.x - 0.5);
+		pos += up * scale.y * (0.5 - uv.y);
+		return pos;
+		}
+		half3 cameraFace( half3 pos, half2 uv, half scale, half3x4 cameraToWorldTranspose )
+		{
+		half3 tangent = half3( cameraToWorldTranspose[0][0], cameraToWorldTranspose[1][0], cameraToWorldTranspose[2][0] );
+		half3 up = half3( cameraToWorldTranspose[0][1], cameraToWorldTranspose[1][1], cameraToWorldTranspose[2][1] );
+		return quadFace( pos, uv, up, tangent, scale );
+		}
+		half3 cameraFace( half3 pos, half2 uv, half2 scale, half3x4 cameraToWorldTranspose )
+		{
+		half3 tangent = half3( cameraToWorldTranspose[0][0], cameraToWorldTranspose[1][0], cameraToWorldTranspose[2][0] );
+		half3 up = half3( cameraToWorldTranspose[0][1], cameraToWorldTranspose[1][1], cameraToWorldTranspose[2][1] );
+		return quadFace( pos, uv, up, tangent, scale );
+		}
+		half3 cameraFaceUp( half3 pos, half3 localUp, half2 uv, half scale, half3x4 cameraToWorldTranspose )
+		{
+		half3 tangent = half3( cameraToWorldTranspose[0][0], cameraToWorldTranspose[1][0], cameraToWorldTranspose[2][0] );
+		half3 up = half3( cameraToWorldTranspose[0][1], cameraToWorldTranspose[1][1], cameraToWorldTranspose[2][1] );
+		half dotUp = dot( localUp, up );
+		half dotTangent = dot( localUp, tangent );
+		half3 projUp = normalize( dotUp * up + dotTangent * tangent );
+		half3 projTangent = normalize( -dotTangent * up + dotUp * tangent );
+		return quadFace( pos, uv, projUp, projTangent, scale );
+		}
+		half3 cameraFaceUp( half3 pos, half3 localUp, half2 uv, half2 scale, half3x4 cameraToWorldTranspose )
+		{
+		half3 tangent = half3( cameraToWorldTranspose[0][0], cameraToWorldTranspose[1][0], cameraToWorldTranspose[2][0] );
+		half3 up = half3( cameraToWorldTranspose[0][1], cameraToWorldTranspose[1][1], cameraToWorldTranspose[2][1] );
+		half dotUp = dot( localUp, up );
+		half dotTangent = dot( localUp, tangent );
+		half3 projUp = normalize( dotUp * up + dotTangent * tangent );
+		half3 projTangent = normalize( -dotTangent * up + dotUp * tangent );
+		return quadFace( pos, uv, projUp, projTangent, scale );
+		}
+		void tileUV( half2 uv, half particleId, half time, half speed, half numTiles, out half2 offsetUV, out half blend )
+		{
+		half t = particleId * 255 + time * speed;
+		blend = frac( t );
+		half4 tile = half4( t - blend, t + 1 - blend, uv.y, uv.y );
+		tile /= numTiles;
+		tile.xy = frac( tile.xy );
+		tile.xy += tile.zw;
+		offsetUV = tile.xy;
+		}
+		half3 sunset( half cosSunAngle, half3 nightTint )
+		{
+		half3 white     = half3( 1.0, 1.0, 1.0 ) * 1.3;
+		half3 yellow    = half3( 1.0, 1.0, 0.5 ) * 1.2;
+		half3 orange    = half3( 1.0, 0.7, 0.3 );
+		half3 red       = half3( 1.0, 0.5, 0.5 );
+		half t = ramp( 0.6, 1.0, cosSunAngle );
+		half3 b0 = lerp( yellow, white, t );
+		t = ramp( 0.2, 0.6, cosSunAngle );
+		half3 b1 = lerp( orange, b0, t );
+		t = ramp( -0.2, 0.2, cosSunAngle );
+		half3 b2 = lerp( red, b1, t );
+		t = ramp( -1.0, -0.2, cosSunAngle );
+		half3 b3 = lerp( nightTint, b2, t );
+		return b3;
+		}
+		half3 volumeLightQuad( half3 color, half3 bottomColor, half2 uv, half3 pos, half3 offsetPos, half topBlend, half cosSunAngle, half3 sunDir )
+		{
+		color = lerp( color, color * bottomColor, uv.y * ( 1-topBlend ));
+		half3 n = normalize( offsetPos - pos );
+		half i0 = saturate( dot( sunDir, n )* 1.42 );
+		half i1 = saturate( cosSunAngle );
+		half intensity = lerp( i0, i1, topBlend*topBlend );
+		color = lerp( color, color * intensity, 0.25 );
+		return color;
+		}
+	endCode
+
+	code
+		const half3 nightLightTint  = half3( 0.43, 0.49, 1.0 );
+		const half3 dayLightTint    = half3( 1, 1, 1 ) * 1.5;
+		const half  bottomScale     = 0.5;
+		const half  daySideBias     = 0.25;
+		// get the animblend speed
+		half animBlendRate = customParams[0].x;
+		// get the strip length
+		half stripLength = customParams[0].y;
+		// our texcoords come in color1
+		Current.texcoord<t0> = Current.color1;
+		// get the uv
+		half2 uv = Current.texcoord<t0>.xy;
+		// get the particle id
+		half2 id = Current.texcoord<t0>.zw;
+		// get the input vertex color
+		half4 color = In.color;
+		// get the camera position
+		half3 cameraPos = half3( cameraToWorldTranspose[0][3], cameraToWorldTranspose[1][3], cameraToWorldTranspose[2][3] );
+		// get the vector to the camera
+		half3 toCamera = cameraPos - In.position.xyz;
+		// calculate the distance from the camera
+		half cameraDist = length( toCamera );
+		// get the normalized to camera vector
+		half3 toCamNormal = toCamera / cameraDist;
+		// calculate the planet normal
+		half3 npos = normalize( In.position.xyz - patchLocation.xyz );
+		// modifiy the position to avoid z-buffer problems
+		half3 pos = In.position.xyz;
+		// get the amount to scale the particle by
+		half scale = In.normal.w * 2;
+		// move to the right location
+		half4 hPos = half4( cameraFaceUp( pos.xyz, npos, uv, scale, cameraToWorldTranspose ), 1 );
+		// calculate the top blend
+		half topBlend = saturate( dot( npos, toCamNormal  ) );
+		// calculate which tile(s) to use
+		half2 tile;
+		half tileAnimBlend;
+		tileUV( uv, id.y, gameInfo.x, animBlendRate, stripLength, tile, tileAnimBlend );
+		// get the sun direction
+		half3 sunDir = normalize( -patchLocation.xyz );
+		// create a color based on sun angle
+		half cosSunAngle = dot( npos.xyz, sunDir );
+		// tint the color based on which side of the planet it is on
+		color.rgb *= lerp( nightLightTint, dayLightTint, saturate( cosSunAngle + daySideBias ) );
+		// blend between a gray and night color depending on where we are on the planet
+		half3 bottomColor = color.rgb * bottomScale;
+		// get the difference between the offset position and input position
+		half3 deltaPos      = hPos.xyz - In.position.xyz;
+		// get that as a normal
+		half3 deltaNormal   = normalize( deltaPos );
+		// dot that value with the normalized position to determin where the outside points of the quad are
+		// we scale this value by 1 / cos(45) to get full sun on the top of the quad at noon
+		half outside = saturate( dot( deltaNormal, npos ) * 1.42 );
+		// blend in the bottom color
+		color.rgb = lerp( bottomColor, color.rgb, outside );
+		// load the output
+		Current.position            = mul( hPos, worldToClip );
+		Current.position.z          -= 0.001 * Current.position.w * topBlend;
+		Current.color               = color;
+		Current.texcoord<t0>        = half4( uv.x, tile.x, uv.x, tile.y );
+		Current.texcoord<t1>.xy     = half2( tileAnimBlend, topBlend );
+		Current.texcoord<t1>.zw     = half2( 0, 0 );
+	endCode
+end

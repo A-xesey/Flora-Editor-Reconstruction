@@ -1,0 +1,125 @@
+pixelFragment mNoise2DTestFrag
+	input position -texcoords 1
+	output color
+	samplers 1
+
+	declareCode
+		extern uniform float4 gameInfo;
+
+		/* This is a random number generator based
+		on the Blum Blum Shub algorithm. It is
+		considered cryptographically secure and
+		reletively cheap. Given the nth value in
+		a sequence and the key M, it will return
+		the next element in the sequence. The random
+		numbers in the sequency have a max value of M - 1.
+		Ideally M = p*q where p and q are prime numbers
+		*/
+		float  BBSRandomNumber( float  n, float M ) { return fmod( n * n, M ); }
+		float2 BBSRandomNumber( float2 n, float M ) { return fmod( n * n, M ); }
+		float3 BBSRandomNumber( float3 n, float M ) { return fmod( n * n, M ); }
+		float4 BBSRandomNumber( float4 n, float M ) { return fmod( n * n, M ); }
+		// This function hashing both z and z + 1.
+		// The ramp allows you to jump to a more interesting scale.
+		float2 mNoiseHash( int z, int ramp, float modulus )
+		{
+		float2 n = fmod( z * ramp + float2( 0, ramp ), modulus );
+		return BBSRandomNumber( n, modulus );
+		}
+		float2 mNoiseHash( int z, float2 hash, int ramp, float modulus )
+		{
+		float2 n = hash + fmod( z * ramp + float2( 0, ramp ), modulus );
+		return BBSRandomNumber( n, modulus );
+		}
+		float mNoise( float2 pos )
+		{
+		const float modulus = 61;	// modulus in random hash
+		int2 intArg;
+		float2 fracArg = modf( pos, intArg );
+		//start with y and y+1 terms and run through hash function
+		float2 hash = mNoiseHash( intArg.y, 7, modulus );
+		// add x and x+1 terms and run through hash again
+		hash = mNoiseHash( intArg.x, hash, 0, modulus );
+		/*
+		TEMP xs, ys, zs, ws;
+		MUL xs,hash,.5;
+		FRC xs,xs;
+		SGE xs,xs,.49999;
+		MUL ys,hash,.25;
+		FRC ys,ys;
+		SGE ys,ys,.49999;
+		TEMP g, gx, gy;
+		ADD g, fracArg.xxyy, {0,-1,0,-1};
+		LRP gx, xs, -g.xyxy, g.xyxy;
+		LRP gy, ys, -g.zzww, g.zzww;
+		ADD g, gx, gy;
+		TEMP ncomp;
+		LRP ncomp.xy, fade.x, g.ywyw, g.xzxz;
+		LRP ncomp.x,  fade.y, ncomp.y, ncomp.x;
+		TEMP noise;
+		MAD noise.x, ncomp.x, .5, .5;
+		*/
+		return 0;
+		}
+		float mNoise( float2 pos, sampler mNoiseSampler )
+		{
+		const float modulus = 61;
+		return tex2D( mNoiseSampler, pos / modulus ).x * 2 - 1;
+		}
+		float mNoise( float3 pos, sampler mNoiseSampler )
+		{
+		const float modulus = 61;	// modulus in random hash
+		// integer and fractional components of input, and fade blend function
+		int intArg;
+		float fracArg = modf( pos.z, intArg ); //seperating integral and fractional part
+		// hash z and z+1 for noise offset. Including a small mutually
+		// prime multiplier improved the visual quality of the hash near
+		// 0. This is because 0^2, 1^2, 2^2 are well under the hash
+		// modulus and close enough to appear correlated.
+		// So 3*(z+1) = 3*z + 3
+		float2 hash = mNoiseHash( intArg, 3, modulus ) / modulus ;	// hashing n and adjusting frequency to 1
+		float2 p = pos.xy / modulus;								//adjusting frequncy to 1
+		// lookup noise and blend slices
+		float4 g = float4(
+		tex2D( mNoiseSampler, float2( p.x, p.y + hash.x ) ).xy * 2 - 1,
+		tex2D( mNoiseSampler, float2( p.x, p.y + hash.y ) ).xy * 2 - 1 );
+		return lerp(
+		g.x + g.y * fracArg,
+		g.z + g.w * ( fracArg - 1 ),
+		smoothstep( 0, 1, fracArg )
+		);
+		}
+		float Turbulence( float2 pos, sampler mNoiseSampler, int octaves = 3, float lacunarity = 2.0, float gain = 0.5 )
+		{
+		float sum = 0;
+		float freq = 1.0;
+		float amp = 1.0;
+		for( int i = 0; i < octaves; i++ )
+		{
+		sum += mNoise( pos * freq, mNoiseSampler ) * amp;
+		freq *= lacunarity;
+		amp *= gain;
+		}
+		return sum;
+		}
+		float Turbulence( float3 pos, sampler mNoiseSampler, int octaves = 3, float lacunarity = 2.0, float gain = 0.5 )
+		{
+		float sum = 0;
+		float freq = 1.0;
+		float amp = 1.0;
+		for( int i = 0; i < octaves; i++ )
+		{
+		sum += mNoise( pos * freq, mNoiseSampler ) * amp;
+		freq *= lacunarity;
+		amp *= gain;
+		}
+		return sum;
+		}
+	endCode
+
+	code
+		float2 pos = In.texcoord0.xy;
+		float fNoise = abs( Turbulence( float2( pos.x, fmod( gameInfo.x, 61 ) * 2 - pos.y ), Sampler<s0>, 5 ) * .5 + .5 );
+		Current.color = fNoise;
+	endCode
+end

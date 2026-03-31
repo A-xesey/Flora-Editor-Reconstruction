@@ -1,0 +1,127 @@
+pixelFragment shLightingSpec_BakedMineralsNormalMap
+	input color -texcoords 3
+	output color
+
+	declareCode
+		extern uniform float4 shCoeffs[16];
+		extern uniform struct { float4 mDir; float4 mColor; } dirLightsWorld[1];
+		extern uniform float4 worldCameraDirection;
+		extern uniform float4 sunDirAndCelStrength;
+
+		const static bool diffuseUsesNmap = true;
+		const static bool glossyUsesNmap  = true;
+		const static bool useDiffuseMap   = true;     // don't apply diffuse map (make is easier to see underlying lighting)
+		const static bool forceDiffuse    = false;    // only show diffuse, no glossy
+		const static bool specHighlight   = (true);  // takes 6 slots
+		const static bool diffuseBoost    = false;   // actually saves instructions
+		const static bool diffuseBoost2   = false;
+		static const bool kUseSH5 = 0;
+		float3 ApplyNormalMap(float3 vertNormal, float3 vertDS, float3 nmapNormal)
+		{
+		float3 vn = normalize(vertNormal);
+		float3 dt = normalize(cross(vn, vertDS));
+		float3 ds = cross(dt, vn);
+		nmapNormal = normalize(nmapNormal.r * ds + nmapNormal.g * dt + nmapNormal.b * vn);
+		return nmapNormal;
+		}
+		float3 SHLightingNMap
+		(
+		float3 colorIn,
+		float3 normal,
+		float3 shColorDiffVS,
+		float3 shColorSpecVS,
+		float  glossyStrength,
+		float  specE         = 1,
+		float  specStrength  = 0,
+		bool   translucency  = false
+		)
+		{
+		float3 reflectedNormal;
+		if (translucency)
+		reflectedNormal = -normal;
+		else
+		reflectedNormal = reflect(worldCameraDirection, normal);
+		float3 x0 = normal;
+		if (diffuseBoost2)
+		x0 = reflectedNormal;
+		float3 shColorDiff = shCoeffs[0];
+		float3 shColorSpec = shCoeffs[0];
+		float3 shColor;
+		shColor  = shCoeffs[1].xyz * x0.y;
+		shColor += shCoeffs[2].xyz * x0.z;
+		shColor += shCoeffs[3].xyz * x0.x;
+		shColorSpec += shColor;
+		shColor *= kSH_A1;
+		shColorDiff += shColor;
+		if (diffuseBoost)
+		{
+		if (glossyUsesNmap)
+		x0 = reflectedNormal;
+		}
+		float3 x1 = x0 * x0;
+		float3 x2 = x0 * x0.yzx;
+		shColor  = shCoeffs[4].xyz  * x2.x;  // x * y
+		shColor += shCoeffs[5].xyz  * x2.y;  // y * z
+		shColor += shCoeffs[6].xyz  * (3 * x1.z - 1);
+		shColor += shCoeffs[7].xyz  * x2.z;  // z * x
+		shColor += shCoeffs[8].xyz  * (x1.x - x1.y);
+		shColorSpec += shColor;
+		shColor *= kSH_A2;
+		shColorDiff += shColor;
+		shColorSpec = shColorSpecVS;
+		if (!diffuseBoost || glossyUsesNmap)
+		{
+		x0 = reflectedNormal;
+		x1 = x0 * x0;
+		x2 = x0 * x0.yzx;
+		}
+		shColor  = shCoeffs[ 9].xyz * (3 * x1.x - x1.y) * x0.y;
+		shColor += shCoeffs[10].xyz * x1.x * x0.z;
+		shColor += shCoeffs[11].xyz * (5 * x1.z - 1) * x0.y;
+		shColor += shCoeffs[12].xyz * (5 * x1.z - 3) * x0.z;
+		shColor += shCoeffs[13].xyz * (5 * x1.z - 1) * x0.x;
+		shColor += shCoeffs[14].xyz * (x1.x - x1.y) * x0.z;
+		shColor += shCoeffs[15].xyz * (x1.x - 3 * x1.y) * x0.x;
+		shColorSpec += shColor;
+		if (!diffuseUsesNmap)
+		shColorDiff = shColorDiffVS;
+		float s;
+		if (forceDiffuse)
+		s = 0;
+		else
+		s = glossyStrength;
+		if (translucency)
+		{
+		shColorSpec *= s;
+		}
+		else
+		{
+		shColorDiff *= 1 - s;
+		shColorSpec *= s;
+		}
+		if (useDiffuseMap)
+		colorIn *= shColorDiff + shColorSpec;
+		else
+		colorIn =  shColorDiff + shColorSpec;
+		float nDotR = saturate(dot(reflectedNormal, dirLightsWorld[0].mDir));
+		float spec1 = pow(nDotR, specE);
+		float nDotL = dot(normal, dirLightsWorld[0].mDir);
+		float rDotL = dot(reflectedNormal, dirLightsWorld[0].mDir);
+		float spec2 = lit(nDotL, rDotL, specE).z;
+		if (specHighlight)
+		colorIn += spec1 * specStrength * dirLightsWorld[0].mColor;
+		return colorIn;
+		}
+	endCode
+
+	code
+		float shadowAdjust = 0.1 + 0.80 * (shadow > 0.80);
+		specStrength *= shadowAdjust;
+		specE *= shadowAdjust;
+		float3 vertNormal    = In.texcoord<t0>.xyz;
+		float4 shColorDiffVS = In.texcoord<t1>;
+		float4 shColorSpecVS = In.texcoord<t2>;
+		float3 bumpNormal = ApplyNormalMap(vertNormal, vertDS, nmapNormal);
+		Current.color.rgb = SHLightingNMap(Current.color.rgb, bumpNormal, shColorDiffVS, shColorSpecVS, gloss, specE, specStrength);
+	endCode
+end

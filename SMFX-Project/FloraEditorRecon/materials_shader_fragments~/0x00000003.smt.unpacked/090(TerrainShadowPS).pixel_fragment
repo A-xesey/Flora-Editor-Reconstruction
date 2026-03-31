@@ -1,0 +1,8 @@
+pixelFragment TerrainShadowPS
+	input position -texcoords 1
+	output color
+
+	code
+		Current.color = saturate( In.texcoord<t0>.x );
+	endCode
+end

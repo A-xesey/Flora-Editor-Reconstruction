@@ -1,0 +1,5 @@
+key parent flora_rigblock~!FE_leaf_04
+texts blockName
+	(ModRigblocks!0x00000026) "FE_leaf_12"
+end
+key modelMeshLOD0 FloraParts_rigblocks!FE_leaf_04_branch.rw4

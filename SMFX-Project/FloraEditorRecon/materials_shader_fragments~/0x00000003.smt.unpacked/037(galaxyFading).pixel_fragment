@@ -1,0 +1,7 @@
+pixelFragment galaxyFading
+	input color position
+
+	code
+		Current.color = Current.color * In.color.a;
+	endCode
+end

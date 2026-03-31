@@ -1,0 +1,11 @@
+key parent PlantEditorTemplates!PlantLeafTemplate_mod
+texts blockName
+	(PlantRigblocks!0x00000108) "FE_leaf_31"
+end
+string16 description "31: 1000"
+key modelMeshHull editor_rigblock~!None
+key modelMeshLOD0 editor_rigblock~!FE_leaf_31.rw4
+vector3 modelRotationBallHandleOffset (0, -1.75, -0.1)
+key skinpaintDiffuseTexture skinPaint_texture~!FE_leaf_31__diffuse.rw4
+key skinpaintSpecBumpTexture skinPaint_texture~!FE_leaf_31__specBump.rw4
+key skinpaintTintMaskTexture skinPaint_texture~!FE_leaf_31__tintMask.rw4

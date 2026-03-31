@@ -1,0 +1,6 @@
+key parent models!DefaultTemplate.prop
+bboxs modelDefaultBoundingBox
+	(-1.274855, -0.13877, -0.045979) (1.2891591, 0.026344, 2.906662)
+end
+float modelDefaultBoundingRadius 3.1827459
+key modelMeshLOD0 fe_treegrow_trunk.rw4

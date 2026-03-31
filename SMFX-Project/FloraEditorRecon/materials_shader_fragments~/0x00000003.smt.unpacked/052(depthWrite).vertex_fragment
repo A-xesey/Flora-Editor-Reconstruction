@@ -1,0 +1,13 @@
+vertexFragment depthWrite
+	input color position
+	output -texcoords 1 float1
+
+	declareCode
+		extern uniform float4x3 modelToCamera;
+	endCode
+
+	code
+		float3 camPos = mul(In.position, modelToCamera).xyz;
+		Current.texcoord<t0> = camPos.z;
+	endCode
+end

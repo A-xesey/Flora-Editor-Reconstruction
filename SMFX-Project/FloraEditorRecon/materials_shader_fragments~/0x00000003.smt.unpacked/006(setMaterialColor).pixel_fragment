@@ -1,0 +1,9 @@
+pixelFragment setMaterialColor
+	declareCode
+		extern uniform float4 materialColor;
+	endCode
+
+	code
+		Current.color = materialColor;
+	endCode
+end

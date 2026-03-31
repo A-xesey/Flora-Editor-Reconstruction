@@ -1,0 +1,44 @@
+# MUSCLES #
+0x00000001 Limb_Fr_Sh_back
+0x00000002 Limb_Fr_Sh_back1
+0x00000003 Limb_Fr_Sh_clump
+0x00000004 Limb_Fr_Sh_clump1
+0x00000005 Limb_Fr_Sh_spike
+0x00000006 Limb_Fr_Sh_thigh
+0x00000007 Limb_Fr_Sh_thigh1
+0x00000008 Limb_rigid
+0x00000009 Limb_rigid_large
+0x00000010 Limb_rigid_small
+
+# FRUITS #
+0x00000011 Coconut (fruit)
+0x00000012 Fruit (poison)
+0x00000013 Fruit (super)
+0x00000014 Fruit (RED)
+0x00000015 Fruit (pile)
+0x00000016 Fruit
+0x00000017 Fruit (stinky)
+0x00000018 Fruit (super-duper)
+0x00000019 Fruit (generic)
+0x00000020 Fruit (BLU)
+0x00000021 Fruit (LOD)
+
+# LEAVES #
+0x00000022 FE_leaves_palm_01a_mod
+0x00000023 Cutielower
+
+0x00000024 Hiddenus Fruti
+0x00000025 Grabbfruit
+0x00000026 Mr. Stickins
+0x00000027 Floter
+0x00000028 Gentleman's Coif
+
+0x00000029 Proto fruit 01
+0x00000030 Proto fruit 02
+0x00000031 Proto fruit 04
+0x00000032 Proto fruit 05
+0x00000033 Proto fruit 06
+0x00000034 Proto fruit 07
+0x00000035 Proto fruit 08
+0x00000036 Proto fruit 09
+0x00000037 Proto fruit 10

@@ -1,0 +1,12 @@
+key parent skinPaint_script~!TemplateSkinPaintTheme.prop
+string16 description "skinpaint_floradetail_cow"
+colorRGBs paintThemeColor1s
+	(0, 0, 0)
+	(0, 0, 0)
+	(1, 0.980392, 0.729412)
+end
+keys paintThemePaints
+	animations~
+	animations~
+	skinpaint_floradetail_cow
+end

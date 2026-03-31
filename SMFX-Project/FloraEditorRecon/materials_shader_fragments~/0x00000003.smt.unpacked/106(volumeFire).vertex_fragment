@@ -1,0 +1,14 @@
+vertexFragment volumeFire
+	input texcoord0
+	output -texcoords 2 float3
+
+	declareCode
+		extern uniform float4 screenInfo;
+		extern uniform float4x3 worldToPatch;
+	endCode
+
+	code
+		Current.texcoord<t0> = In.texcoord0.xyz;
+		Current.texcoord<t1> = mul(In.position, worldToPatch);
+	endCode
+end
