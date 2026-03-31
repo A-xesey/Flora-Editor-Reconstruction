@@ -2,11 +2,13 @@ key parent editor_config~!FloraEditorSetup_CommonBackground.prop
 string16 description "Flora Editor Setup"
 string16 editorAssembledContentDirectory "Content/AssembledContent/Plants"
 bool editorAllowPublish false
-float editorBoundSize 15
-float editorMaxHeight 15
-float editorMinHeight -4
+float editorHandleScale 12
+float editorBoundSize 20
+float editorMaxHeight 18.5
+float editorMinHeight -1.9
 key editorCameraThumbnail EditorCameraFloraThumbnail_FERecon.prop
 key editorCameraUI EditorCameraFloraUI_FERecon.prop
+key editorSwatchCameraUI EditorCameraFloraUI_FERecon
 bool editorSubtractPartsCostOnLoad true
 uint32s editorDefaultSkinPaintScripts
 	hash(skinpaint_florabase_blankMatte)
@@ -39,7 +41,6 @@ key editorSaveDirectory 0x90368EA0!0xFFFFFFFF
 key editorSaveExtension 0xFFFFFFFF.flr
 bool editorShowBoneLengthHandles true
 bool editorShowVertebrae true
-key editorSwatchCameraUI EditorCameraFloraUI_FERecon
 key editorSporepediaCanSwitchConfigID FLR_TemplateShopper_CanSwitch
 key editorSporepediaConfigID FLR_TemplateShopper
 key editorTransition EditorTransitions!CSATransition

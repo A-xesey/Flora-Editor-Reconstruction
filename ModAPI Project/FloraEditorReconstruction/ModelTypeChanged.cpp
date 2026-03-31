@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "ModelTypeChanged.h"
+#include "HasGAProp.h"
 
 ModelTypeChanged::ModelTypeChanged()
 {
@@ -76,10 +77,13 @@ bool ModelTypeChanged::HandleMessage(uint32_t messageID, void* message)
 						
 						/*mWinRolloverText->SetCaption(localHeader.GetText());
 						mWinRolloverDesc->SetCaption(localDesc.GetText());*/
+
+						ChangeBounds(Editor.mpEditorModel->mModelType);
 						return true;
 					}
 					propHeader = nullptr;
 					propDesc = nullptr;
+					break;
 				}
 			}
 		}

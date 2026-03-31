@@ -4,7 +4,7 @@ colorRGBA modelColor (0.7727895, 0.8045455, 0.6786166, 1)
 bool modelCanBeParentless false
 bool modelHasBallConnector false
 bool modelHasSocketConnector false
-bool modelIsAllowedOutOfBounds true
+bool modelIsAllowedOutOfBounds false
 float modelMaxScale 340282346638528860000000000000000000000
 float modelMinScale 0
 float modelMaxBallConnectorScale 3

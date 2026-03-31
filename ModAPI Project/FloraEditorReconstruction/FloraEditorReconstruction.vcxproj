@@ -101,6 +101,9 @@
     <ClInclude Include="FEReconBakeManager.h" />
     <ClInclude Include="FEReconEditors.h" />
     <ClInclude Include="FEReconEditorsFruits.h" />
+    <ClInclude Include="FEReconEditorsHandles.h" />
+    <ClInclude Include="FEReconEditorsHotKeys.h" />
+    <ClInclude Include="FEReconEditorsLimbs.h" />
     <ClInclude Include="FEReconSpaceGame.h" />
     <ClInclude Include="FEReconSporepedia.h" />
     <ClInclude Include="FEBlackWaterFixMsg.h">
@@ -113,6 +116,7 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="FloraRandom.h" />
+    <ClInclude Include="HasGAProp.h" />
     <ClInclude Include="ModelTypeChanged.h">
       <SubType>
       </SubType>

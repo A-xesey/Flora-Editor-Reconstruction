@@ -35,7 +35,7 @@ void FloraRandom::CreateFloraList()
 			cAssetMetadataPtr metadata = object_cast<Pollinator::cAssetMetadata>(keyObject);
 			if (metadata != nullptr)
 			{
-				if (metadata->mTags.mpBegin != metadata->mTags.mpEnd)
+				if (!metadata->mTags.empty())
 				{
 					for (auto tag : metadata->mTags)
 					{
@@ -79,7 +79,7 @@ uint32_t FloraRandom::GetRandomFloraName(bool smallSpecies, bool mediumSpecies, 
 	else
 		randomFloraList = allFlora;
 
-	if (randomFloraList.mpBegin != randomFloraList.mpEnd)
+	if (!randomFloraList.empty())
 	{
 		int rando;
 		if (smallSpecies && mediumSpecies && largeSpecies)
@@ -98,7 +98,7 @@ uint32_t FloraRandom::GetRandomFloraName(bool smallSpecies, bool mediumSpecies, 
 				{
 					if (isGameMode)
 					{
-						if (profile->mFruits.mpBegin != profile->mFruits.mpEnd)
+						if (!profile->mFruits.empty())
 						{
 							if (profile->mModelType == kPlantSmall && smallSpecies)
 								plants.push_back(key);

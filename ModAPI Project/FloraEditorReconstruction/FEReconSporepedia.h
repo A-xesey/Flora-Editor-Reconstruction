@@ -8,11 +8,9 @@ class FEReconSporepedia
 {
 public:
 
-	static void Initialize() {
-	}
+	static void Initialize() {}
 
-	static void Dispose() {
-	}
+	static void Dispose() {}
 
 	static void AttachDetours();
 };
@@ -24,10 +22,14 @@ virtual_detour(Sporepedia_IsEditable, cSPAssetDataOTDB, IAssetData, bool())
 {
 	bool detoured()
 	{
-		if (this->mIsViewableLarge && this->mIsPlayable)
-			return this->mIsEditable = true;
-		else
-			return this->mIsEditable = false;
+		bool res = original_function(this);
+		if (!res) {
+			if (this->mIsViewableLarge && this->mIsPlayable)
+				return this->mIsEditable = true;
+			else
+				return this->mIsEditable = false;
+		}
+		return res;
 	}
 };
 
@@ -45,7 +47,7 @@ static_detour(ObjectTemplateDB_GetSaveAreaID, Resource::SaveAreaID(GroupIDs::Nam
 		case GroupIDs::CellModels: return Resource::SaveAreaID::Cells;
 		case GroupIDs::CityMusic: return Resource::SaveAreaID::CityMusic;
 		case GroupIDs::FloraModels: return Resource::SaveAreaID::Plants;
-		default: return static_cast<Resource::SaveAreaID>(0);
+		default: return original_function(groupID);
 		}
 	}
 };
@@ -125,6 +127,8 @@ member_detour(cSPUILargeAssetView_LoadLayout, Sporepedia::cSPUILargeAssetView, v
 											/*mWinRolloverText->SetCaption(localHeader.GetText());
 											mWinRolloverDesc->SetCaption(localDesc.GetText());*/
 										}
+										propHeader = nullptr;
+										propDesc = nullptr;
 										profile = nullptr;
 									}
 								}

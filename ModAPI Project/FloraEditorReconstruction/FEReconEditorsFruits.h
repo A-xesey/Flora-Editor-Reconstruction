@@ -124,7 +124,8 @@ member_detour(cStringDetokenizer_TranslateToken, cStringDetokenizer, bool(const 
 {
 	bool detoured(const char16_t* pToken, eastl::string16 * translatedValue) {
 		bool res = original_function(this, pToken, translatedValue);
-		if (res && Editor.IsActive() && id(pToken) == id("generic0")) {
+		if (res && Editor.IsActive() && id(pToken) == id("generic0")
+			&& Editor.mSaveExtension == TypeIDs::flr) {
 			eFruitState state = GetFruitState();
 			if (state != kFruitStateValid) {
 				LocalizedString fruitLoc;

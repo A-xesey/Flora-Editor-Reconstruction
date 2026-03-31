@@ -15,6 +15,7 @@ fe_root_01__tintMask
 fe_fruit_03__specBump
 FE_flatleaf_01-0
 FE_root_assemblage_04_branch
+PreserveAll
 auto_cap_EditorKeys_1~_FE_AllValidation
 ce_details_armor_03__diffuse
 FE_leaves_palms__diffuse0
@@ -298,6 +299,7 @@ Fruit_Normal_04_Pro
 ce_details_hair_01__diffuse
 auto_editor_rigblock~_FloraBack
 ce_details_feather_01
+Lenght
 button-details-norm
 Fruit_Normal_10_Proto
 ce_weapon_range_liquid_02
@@ -460,6 +462,7 @@ fe_canopy_04__tintMask
 ce_details_playful_01__tintMask
 fe_canopy_05__specBump
 PlantLeafTemplate
+FERecon_LimbBehaviour
 limb_calf
 FE_leaves_palm_02__specBump
 Limb_Fr_Sh_back1
@@ -672,6 +675,7 @@ FE_flatleaf_05__diffuse
 fe_branch_01a (2)
 auto_PlantEditorTemplates_PlantRigblockTemplate
 fe_branch_07a-
+fe_branch_01 ? ?????
 auto_flora_editor_palette_categories~_fe_category_fruit
 auto_flora_rigblock~_fe_fruit_stem_01
 fe_fruit_stem_leaf-04
@@ -896,6 +900,7 @@ fe_fruit_02a
 ce_details_crystal_01__tintMask
 fe_canopy_06__tintMask
 ce_grasper_bird_01-symmetric__specBump
+IgnoreAxis
 ce_grasper_insect_01
 auto_editor_muscles~_FE_Group_Fr_Sh_thigh_max_0
 g
@@ -1082,6 +1087,7 @@ FE_flatleaf_06__tintMask
 Muscle_MiddleLegMin
 ce_details_armor_01__diffuse
 fe_branch_01-
+auto_flora_rigblock~_FERecon_LimbBehaviour
 fe_fruit_03_poison
 Muscle_FE_muscle_branch_06a
 Muscle_FE_muscle_branch_06b
@@ -1422,6 +1428,7 @@ auto_flora_rigblock~_fe_trunk_03
 arcade_effects_2~    0x40884302
 FE_leaves_palm_03__specBump
 fe_trunk_02__diffuse
+MoveAlongAxis
 fe_root_03a0
 fe_assembly_limb_01
 FER_dais_UFO
@@ -1539,6 +1546,7 @@ FE_leaf_08__diffuse
 ce_movement_fin_ventral_01-symmetric
 fe_page_fruit_parts_02
 fe_trunk_01__tintMask
+DeformForwardB
 FERecon_demobackground_willosaurus
 FE_leaves_palm_08__diffuse
 FE_root_assemblage_10_branch
