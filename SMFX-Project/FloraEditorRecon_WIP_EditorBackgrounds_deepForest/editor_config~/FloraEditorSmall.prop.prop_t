@@ -1,5 +1,6 @@
 key parent editor_config~!FloraSmallTemplate.prop
 
+key editorSkyBoxEffect 0x0
 key editorBackgroundModel fe_editor_underground
 key editorPlayModeExitEffectID fe_editor_part_mode_entry-deepForest
 key editorPedestalModel fe_editor_background_deepForest
