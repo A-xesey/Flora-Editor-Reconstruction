@@ -49,6 +49,18 @@
     <ClInclude Include="FEReconEditorsFruits.h">
       <Filter>FloraEditorReconstruction</Filter>
     </ClInclude>
+    <ClInclude Include="FEReconEditorsHandles.h">
+      <Filter>FloraEditorReconstruction</Filter>
+    </ClInclude>
+    <ClInclude Include="FEReconEditorsLimbs.h">
+      <Filter>FloraEditorReconstruction</Filter>
+    </ClInclude>
+    <ClInclude Include="FEReconEditorsHotKeys.h">
+      <Filter>FloraEditorReconstruction</Filter>
+    </ClInclude>
+    <ClInclude Include="HasGAProp.h">
+      <Filter>FloraEditorReconstruction</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">

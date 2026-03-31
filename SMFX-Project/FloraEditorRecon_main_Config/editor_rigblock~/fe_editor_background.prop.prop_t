@@ -4,11 +4,12 @@ keys modelEffect
     fe_editor_circles
 end
 transforms modelEffectTransforms
-    -offset (0, 0, -0.5) -scale 1 -rotateXYZ 0 0 0
-    -offset (0, 0, -0.5) -scale 1 -rotateXYZ 0 0 0
+    -offset (0, 0, -0.9) -scale 1 -rotateXYZ 0 0 0
+    -offset (0, 0, -0.9) -scale 1 -rotateXYZ 0 0 0
 end
 bboxs modelBoundingBox
 	(-54.4147263, -54.3073311, -15.1978865) (54.4147224, 54.3073349, 45.0670929)
 end
+vector3 modelOffset (0, 0, -0.4)
 float modelBoundingRadius 89.1139297
 key modelMeshLOD0 editor_rigblock~!fe_editor_background.rw4

@@ -4,8 +4,8 @@ keys modelEffect
 	fe_editor_circles
 end
 transforms modelEffectTransforms
-	-offset (0, 0, -0.5) -scale 1 -rotateXYZ 0 0 0
-	-offset (0, 0, -0.5) -scale 1 -rotateXYZ 0 0 0
+	-offset (0, 0, -0.9) -scale 1 -rotateXYZ 0 0 0
+	-offset (0, 0, -0.9) -scale 1 -rotateXYZ 0 0 0
 end
-vector3 modelOffset (0, 0, -0.293994)
+vector3 modelOffset (0, 0, -0.693994)
 float modelScale 3
