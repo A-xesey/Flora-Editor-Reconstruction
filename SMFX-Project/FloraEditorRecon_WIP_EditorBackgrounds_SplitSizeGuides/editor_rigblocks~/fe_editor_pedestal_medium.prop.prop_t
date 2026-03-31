@@ -1,0 +1,3 @@
+key parent models!DefaultTemplate.prop
+float modelBoundingRadius 8
+key modelMeshLOD0 editor_rigblock~!fe_editor_pedestal_medium.rw4
