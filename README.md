@@ -1,21 +1,64 @@
 # Flora-Editor-Reconstruction
-This mod is an attempt to reconstruction the Flora Editor and make it usable.
-  * All fragments available on the editor pages are available, with the exception of their arrows for deformation.
-  * Added and reconstructed skinpaint for Flora Editor.
+This mod makes flora editor and plants in game usable and adds extra features:
+**Editor:**
+* Fix freezing after entered paint mode and then back to build mode;
+* Adds header by each plant type;
+* Fruit counter (**required [Spore UI Fixer Framework](https://github.com/Valla-Chan/Valla_SporeUIFixerFramework/releases) mod by [Valla-Chan]**);
+* Fruit validation check;
+* Hotkeys;
+* Limb selecting and resizing rigblock-limbs;
+* Background by each plant type;
+* Music by Delta Unit!
+* Fixing shadow in paint mode;
 
-# How to enter the editor and work in the editor
-First, you need to add the following codes to the game Config folder.
- * In the Properties.txt file: property FragmentCompilation  0x05fb85a3           bool
- * In the ConfigManager.txt file: boolProp FragmentCompilation true
- Thanks to this, plants will be displayed correctly in coloring mode and on the creation thumbnail, and the game will also correctly save their sprites.
-After that you need to go to the editor. This command can be entered in the game shortcut, in Steam properties, etc:
- -state:FloraEditor
+**Sporepedia:**
+* Deleting plants;
+* Editing plant by pressing editing button.
 
-You can also get to the flora editor by going to some other editor, for example, the creature editor, and then open the sporopedia in the editor and double-click on any plant to get to the flora editor.
- 
-In order to change the length of the trunks, you need to add two connected trunks on top of the body, then, holding down the "Ctrl" button, raise the first trunk above the body until the trunks disappear. Then do any action (for example, add a fragment or change the color of a plant) and cancel it. After this, you will be free to deform the trunks as you wish, with the exception of the first joint of the first trunk. Otherwise, the game will crash.
+**Game:**
+* Tools to editing/creating plants in Space Stage;
+* Baking plants;
+* Replacing non-existing plants to existing;
+* Black water fix.
+* Fix plants randomizer (randomizer core and player plants instead only players);
+* Adding bump-channel support; 
 
-# Notes
+There are probably something else, but i'm already forget about that. ( . x .' )
+
+**WARNING: Mod can't complicated with mods that:**
+* **Fully changes flora editor;**
+* **Uses custom shader fragments.**
+**If you find out that some graphical mods uncomplitable with another mod, please report it!** (maybe I can fix that but i'm not sure)
+
+# For fully mod working you need:
+**Editor: to edit files in Config folder**
+
+There are bug with plants in paint mode and it thumbnails, where are plants totally black and parts out of place. To fix that, you need to write code below:
+* In the Properties.txt file: property FragmentCompilation  0x05fb85a3           bool
+* In the ConfigManager.txt file: boolProp FragmentCompilation true
+
+**Game: to update database**
+
+For plants randomizer fixing you need to update your game database. For that I recommend to download [FixTags](https://github.com/A-xesey/FixTags/releases/) mod and use cheat "updateDatabase".
+
+# Editor features
+* To select limbs you need to... click on it, yes-
+* Ctrl + Q will show up the type chooser window, where you can choose the plant type (small, medium or large);
+* Shift + F will change building/flora parts movement behaviour to vehicle and back if you pressed it again;
+
+There a fruit validation check:
+* You need to add at least 3 fruit nodes to save the plant;
+* Fruits shouldn't be too close to the grounds or undergrounds;
+* At least 3 fruits should be closer to ground (for small plant type);
+
+# Optional components
+* **Additional pages:** Adds additional pages on flora editor: one by each section (except Bases and Details);
+* **Flora parts to Creature Editor:** Adds flora parts to creature editor as a separate section;
+* **High-quality plant models:** Increase plants baking for High Player Model Quality option and quality of core-plant models;
+* **2006-style background:** Changes editor background in every plant editors to background which was inspired by plant background from Spore artbook. Also changes editor music to "Homeworld, Sweet Homeworld";
+* **Pre-release background:** Changes editor background in every plant editors  to background from pre-release version of the game;
+
+# Notes (Mostly for player without modAPI)
   * In new games or in the space stage, you may come across player plants, but their models are not preloaded into the game. To fix this, you need to download plant models by viewing them in the sporopedia and re-enter the game.
   * If you don't add the "gaprop" tag to your plants, then add a couple of fruits to them so that during your play in the creature and tribe stages you can collect fruits from them.
   * The size of the fruit fragment determines the size of the fruit itself in the game.
@@ -29,7 +72,10 @@ In order to change the length of the trunks, you need to add two connected trunk
 2. For editors, there are variables that determine how many polygons will be rendered for the body. After being picked up, these variables no longer work on the trunks, and they are rendered in a better quality, which is why the game may stutter, and a huge number of such trunks can lead to the disappearance of all the trunks of the plant. To fix this a little, you need to lower the quality of shadows and lighting and increase the Graphic Cache Size.
 
 # Special Thanks
-  * rob55rod: It all started with his mod "Branching Evolution"
-  * emd: For the article "Tutorial: Creating custom shaders for Spore", thanks to which, using the "FragmentCompilation" variable, I was able to accidentally fix this editor.
-  * 0keponline: Thanks to his PNG-creation decompiler, I was able to reconstruct the fragments more accurately.
-  * Old community Spore Wiki -ru: I thank them for always being there for me (including 0kepOnline).
+* [emd4600]: For the article "Tutorial: Creating custom shaders for Spore", thanks to which, using the "FragmentCompilation" variable, I was able to accidentally fix this editor and started to development the mod.
+* [Splitwirez]: conributor, based of his "Branching Evolution" mod I started to development my own;
+* [plencka]: gaves access to her own version of flora editor mod;
+* [VanillaCold]: for ideas;
+* [TheDeltaUnit]: conributor, made a music "Branching Out" for flora editor;
+* [Valla-chan]: contributor;
+* [0KepOnline]: Thanks to his PNG-creation decompiler, I was able to reconstruct the fragments more accurately before pre-release game leaking.
