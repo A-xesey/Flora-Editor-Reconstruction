@@ -1,8 +1,6 @@
-key parent editor_config~!GlobalTemplate.prop
+key parent editor_config~!FloraMediumTemplate.prop
 
 key editorBackgroundModel 0x0
 key editorSkyBoxEffect fe_editor_skybox
 key editorPedestalModel FEReconBGDemo
 key editorPlayModeExitEffectID 0x0
-key editorSwatchBackgroundModel 0x0
-key editorSwatchPedestalModel fe_editor_background_sporepedia

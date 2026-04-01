@@ -1,0 +1,6 @@
+key parent editor_config~!FloraSmallTemplate.prop
+
+key editorSkyBoxEffect fe_editor_skybox
+key editorBackgroundModel animations~
+key editorPlayModeExitEffectID 0x0
+key editorPedestalModel pe_editor_base
