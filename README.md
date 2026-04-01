@@ -10,6 +10,9 @@ This mod makes flora editor and plants in game usable and adds extra features:
 * Background by each plant type;
 * Music by Delta Unit!
 * Fixing shadow in paint mode;
+* Parts names by @Valla-Chan
+* reconstructions of fe_leaf_19 and fe_leaf_33 by Valla-chan;
+* Adds parts from demo-version of the game (fe_leaves);
 
 **Sporepedia:**
 * Deleting plants;
@@ -73,9 +76,9 @@ There a fruit validation check:
 
 # Special Thanks
 * [emd4600](https://github.com/emd4600): For the article "Tutorial: Creating custom shaders for Spore", thanks to which, using the "FragmentCompilation" variable, I was able to accidentally fix this editor and started to development the mod.
-* [Splitwirez](https://github.com/Splitwirez): conributor, based of his "Branching Evolution" mod I started to development my own;
+* [Splitwirez](https://github.com/Splitwirez): conributor, gave ideas for editor. The mod was based of his "Branching Evolution" mod;
 * [Auntie Owl](https://github.com/plencka): gaves access to her own version of flora editor mod;
 * [VanillaCold](https://github.com/VanillaCold): for ideas;
 * [Delta Unit](https://github.com/TheDeltaUnit): conributor, made a music "Branching Out" for flora editor;
-* [Valla-chan](https://github.com/Valla-chan): contributor;
+* [Valla-chan](https://github.com/Valla-chan): contributor, adds names, part and background effects for main flora editor;
 * [0KepOnline](https://github.com/0KepOnline): Thanks to his PNG-creation decompiler, I was able to reconstruct the fragments more accurately before pre-release game leaking.
