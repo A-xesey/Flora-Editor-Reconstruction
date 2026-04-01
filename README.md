@@ -72,10 +72,10 @@ There a fruit validation check:
 2. For editors, there are variables that determine how many polygons will be rendered for the body. After being picked up, these variables no longer work on the trunks, and they are rendered in a better quality, which is why the game may stutter, and a huge number of such trunks can lead to the disappearance of all the trunks of the plant. To fix this a little, you need to lower the quality of shadows and lighting and increase the Graphic Cache Size.
 
 # Special Thanks
-* [emd4600]: For the article "Tutorial: Creating custom shaders for Spore", thanks to which, using the "FragmentCompilation" variable, I was able to accidentally fix this editor and started to development the mod.
-* [Splitwirez]: conributor, based of his "Branching Evolution" mod I started to development my own;
-* [plencka]: gaves access to her own version of flora editor mod;
-* [VanillaCold]: for ideas;
-* [TheDeltaUnit]: conributor, made a music "Branching Out" for flora editor;
-* [Valla-chan]: contributor;
-* [0KepOnline]: Thanks to his PNG-creation decompiler, I was able to reconstruct the fragments more accurately before pre-release game leaking.
+* [emd4600](https://github.com/emd4600): For the article "Tutorial: Creating custom shaders for Spore", thanks to which, using the "FragmentCompilation" variable, I was able to accidentally fix this editor and started to development the mod.
+* [Splitwirez](https://github.com/Splitwirez): conributor, based of his "Branching Evolution" mod I started to development my own;
+* [Auntie Owl](https://github.com/plencka): gaves access to her own version of flora editor mod;
+* [VanillaCold](https://github.com/VanillaCold): for ideas;
+* [Delta Unit](https://github.com/TheDeltaUnit): conributor, made a music "Branching Out" for flora editor;
+* [Valla-chan](https://github.com/Valla-chan): contributor;
+* [0KepOnline](https://github.com/0KepOnline): Thanks to his PNG-creation decompiler, I was able to reconstruct the fragments more accurately before pre-release game leaking.
