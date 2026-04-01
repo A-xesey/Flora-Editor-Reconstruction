@@ -3,7 +3,7 @@ This mod makes flora editor and plants in game usable and adds extra features:
 **Editor:**
 * Fix freezing after entered paint mode and then back to build mode;
 * Adds header by each plant type;
-* Fruit counter (**required [Spore UI Fixer Framework](https://github.com/Valla-Chan/Valla_SporeUIFixerFramework/releases) mod by [Valla-Chan]**);
+* Fruit counter (**requires [Spore UI Fixer Framework](https://github.com/Valla-Chan/Valla_SporeUIFixerFramework/releases) mod by @Valla-Chan**);
 * Fruit validation check;
 * Hotkeys;
 * Limb selecting and resizing rigblock-limbs;
