@@ -2,6 +2,7 @@
 
 This mod makes flora editor and plants in game usable and adds extra features:
 **Editor:**
+* Adds parts from pre-release version;
 * Fix freezing after entered paint mode and then back to build mode;
 * Adds header by each plant type;
 * Fruit counter (**requires [Spore UI Fixer Framework](https://github.com/Valla-Chan/Valla_SporeUIFixerFramework/releases) mod by @Valla-Chan**);
@@ -35,14 +36,12 @@ There are probably something else, but i'm already forget about that. ( . x .' )
 **If you find out that some graphical mods uncomplitable with another mod, please report it!** (maybe I can fix that but i'm not sure)
 
 # For fully mod working you need:
-**Editor: to edit files in Config folder**
-
+**To edit files in Config folder**
 There are bug with plants in paint mode and it thumbnails, where are plants totally black and parts out of place. To fix that, you need to write code below:
 * In the Properties.txt file: property FragmentCompilation  0x05fb85a3           bool
 * In the ConfigManager.txt file: boolProp FragmentCompilation true
 
-**Game: to update database**
-
+**To update database**
 For plants randomizer fixing you need to update your game database. For that I recommend to download [FixTags](https://github.com/A-xesey/FixTags/releases/) mod and use cheat "updateDatabase".
 
 # Editor features
