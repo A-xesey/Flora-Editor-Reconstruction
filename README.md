@@ -1,4 +1,4 @@
-<img src="https://github.com/user-attachments/assets/f6cf2c13-38f9-41f8-ba92-6c9204ac11c6" width="900" height="900" align="center"/>
+<img src="FloraEditorReconstruction-Icon.svg" width="900" height="900" align="center"/>
 
 This mod makes flora editor and plants in game usable and adds extra features:
 **Editor:**
