@@ -1,0 +1,38 @@
+## Part Sections
+0x00000002 Podstawy
+0x00000003 Gałęzie
+0x00000005 Owoce
+
+## VerbIcon
+0x00000004 Rośliny pozwalają planetom podtrzymywać życie i zapewniają pożywienie.
+0x000000A1 Duże drzewa zapewniają schronienie i cień dla istot.
+0x000000A2 Małe drzewa pozwalają planetom podtrzymywać życie i zapewniają pożywienie.
+0x000000A3 Krzewy pozwalają planetom podtrzymywać życie i zapewniają pożywienie.
+
+## SharedDialogs/Hint
+# invalid count
+0x62635DD6 Potrzebujesz co najmniej 3 węzłów owoców, aby zapisać roślinę
+
+# invalid position
+0xA3BC8570 Co najmniej 3 węzły owoców powinny znajdować się bliżej ziemi
+
+#invalid position (underground)
+0xFDA57333 Węzły owoców są zbyt blisko ziemi lub pod nią
+
+## SpaceTrading/SpaceTools
+0x3e295ee3 Stwórz Roślinę
+0xd974877a Stwórz roślinę i zbierz pięć jej okazów do swojego ładunku.
+0x0dc3bacb Modyfikator Roślin
+0x4f4d0bc2 Wybierz to narzędzie i kliknij roślinę na planecie, aby ją zmodyfikować.
+0x385928de Możliwość celowania tej broni jest ograniczona do roślin.
+
+## Abilities
+# fruit.prop
+0x04cb5b6a Węzeł Owocu
+0x04cb5b6d Owoce
+0x04cb5b6c Rośliny z większą ilością owoców karmią więcej gęb!
+
+## Sporepedia
+0xE51EB8EF Wybierz Wysoką Roślinę
+0x3984733B Wybierz Małą Roślinę
+0xD0F7BA37 Wybierz Krzew

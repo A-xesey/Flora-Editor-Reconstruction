@@ -1,0 +1,40 @@
+
+## Part Sections
+0x00000002 Rungot
+0x00000003 Oksat
+0x00000005 Hedelmät
+
+## VerbIcon
+0x00000003 Kasvi
+0x00000004 Kasvit auttavat planeettoja ylläpitämään elämää ja ruokkimaan otuksia.
+0x000000A1 Suuret puut tuovat turvaa ja varjoa otuksille.
+0x000000A2 Keskikokoiset kasvit tuottavat hedelmiä, joita kasvinsyöjäotukset voivat syödä, täydentäen planeetan ekosysteemiä.
+0x000000A3 Pienet kasvit eli pensaat rehevöittävät maaperää ja luovat ravintoa pienille otuksille.
+
+## SharedDialogs/Hint
+# invalid count
+0x62635DD6 Tarvitset vähintään kolme hedelmänoodia tallentaaksesi kasvin.
+
+# invalid position
+0xA3BC8570 Vähintään kolmen hedelmänoodin täytyy sijaita lähellä maanpintaa.
+
+#invalid position (underground)
+0xFDA57333 Osa hedelmänoodeista sijaitsee liian lähellä maanpintaa tai ovat sen alla.
+
+## SpaceTrading/SpaceTools
+0x3e295ee3 Luo kasvi
+0xd974877a Luo kasvi ja kerää viisi näytettä siitä ruumaasi.
+0x0dc3bacb Kasvimuokkain
+0x4f4d0bc2 Valitse tämä työkalu ja paina kasvia planeetan pinnalla muokataksesi sitä.
+0x385928de Tätä asetta voi käyttää vain kasveihin.
+
+## Abilities
+# fruit.prop
+0x04cb5b6a Hedelmänoodi
+0x04cb5b6d Hedelmät
+0x04cb5b6c Kasvit, joilla on enemmän hedelmiä, ruokkivat enemmän suita!
+
+## Sporepedia
+0xE51EB8EF Valitse korkea kasvi
+0x3984733B Valitse pieni kasvi
+0xD0F7BA37 Valitse pensas
