@@ -2,7 +2,8 @@ key parentAudio music_shopping_base
 keys addgroups
 	music_group
 end
-float fadeout 3.3
+float fadein 7#8#1.25
+float fadeout 0.45
 keys addgroups
 	Branching_Out
 end

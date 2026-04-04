@@ -2,7 +2,8 @@ key parentAudio music_shopping_base
 keys addgroups
 	music_group
 end
-float fadeout 3.3
+float fadein 6#1.25
+float fadeout 0.5
 keys addgroups
 	SweetHomeworld
 end

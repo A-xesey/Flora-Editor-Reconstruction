@@ -2,9 +2,9 @@ key parentAudio patch_editor_base
 keys addgroups
 	music_group
 end
-float fadeout 3.3
-float gain 0.5
-uint32 polyphony 1
+float fadein 5#1.25
+float fadeout 2.5#0.45
+float gain 0.45
 keys samples
 	Branching_Out
 end

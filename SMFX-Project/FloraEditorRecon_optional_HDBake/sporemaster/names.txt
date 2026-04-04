@@ -1,0 +1,4 @@
+flora_editorModelSpritesSideNormal~	0x40662c01
+flora_editorModelSpritesTopNormal~	0x40662c00
+flora_editorModelSpritesSide~	0x40662801
+flora_editorModelSpritesTop~	0x40662800
