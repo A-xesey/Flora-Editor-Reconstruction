@@ -75,10 +75,11 @@ There a fruit validation check:
 2. For editors, there are variables that determine how many polygons will be rendered for the body. After being picked up, these variables no longer work on the trunks, and they are rendered in a better quality, which is why the game may stutter, and a huge number of such trunks can lead to the disappearance of all the trunks of the plant. To fix this a little, you need to lower the quality of shadows and lighting and increase the Graphic Cache Size.
 
 # Special Thanks
-* [emd4600](https://github.com/emd4600): For the article "Tutorial: Creating custom shaders for Spore", thanks to which, using the "FragmentCompilation" variable, I was able to accidentally fix this editor and started to development the mod.
-* [Splitwirez](https://github.com/Splitwirez): conributor, gave ideas for editor. The mod was based of his "Branching Evolution" mod;
-* [Auntie Owl](https://github.com/plencka): gaves access to her own version of flora editor mod;
-* [VanillaCold](https://github.com/VanillaCold): for ideas;
-* [Delta Unit](https://github.com/TheDeltaUnit): conributor, made a music "Branching Out" for flora editor;
-* [Valla-chan](https://github.com/Valla-chan): contributor, adds names, part and background effects for main flora editor;
-* [0KepOnline](https://github.com/0KepOnline): Thanks help this logo for mod and thanks for his PNG-creation decompiler, I was able to reconstruct the fragments more accurately before pre-release game leaking.
+* @emd4600: For the article "Tutorial: Creating custom shaders for Spore", thanks to which, using the "FragmentCompilation" variable, I was able to accidentally fix this editor and started to development the mod.
+* @Splitwirez: conributor, gave ideas for editor. The mod was based of his "Branching Evolution" mod;
+* @plencka (Auntie Owl): gaves access to her own version of flora editor mod and for translating the mod into Polish;
+* @Tenderi4 (Liskomato): for translating the mod into Finnish;
+* @VanillaCold: for ideas;
+* @TheDeltaUnit: conributor, made a music "Branching Out" for flora editor and tested the mod;
+* @Valla-chan: contributor, adds names, part and background effects for main flora editor;
+* @0KepOnline: Thanks help this logo for mod and thanks for his PNG-creation decompiler, I was able to reconstruct the fragments more accurately before pre-release game leaking.
