@@ -80,6 +80,6 @@ There a fruit validation check:
 * [Auntie Owl](https://github.com/plencka): gaves access to her own version of flora editor mod and for translating the mod into Polish;
 * [Liskomato](https://github.com/Tenderi4): for translating the mod into Finnish;
 * [VanillaCold](https://github.com/VanillaCold): for ideas;
-* [Delta Unit](https://github.com/TheDeltaUnit): conributor, made a music "Branching Out" for flora editor and tested the mod;
+* [Delta Unit](https://github.com/TheDeltaUnit): conributor, adds some names, made a music "Branching Out" for flora editor and tested the mod;
 * [Valla-chan](https://github.com/Valla-chan): contributor, adds names, part and background effects for main flora editor;
 * [0KepOnline](https://github.com/0KepOnline): Thanks help this logo for mod and thanks for his PNG-creation decompiler, I was able to reconstruct the fragments more accurately before pre-release game leaking.
