@@ -1,6 +1,9 @@
 <img src="FloraEditorReconstruction.svg" width="900" height="900" align="center"/>
 
+# ![Icon](README-LeafVerbIcon.svg) Flora Editor Reconstruction
+
 This mod makes flora editor and plants in game usable and adds extra features:
+
 **Editor:**
 * Adds parts from pre-release version;
 * Fix freezing after entered paint mode and then back to build mode;
@@ -12,9 +15,9 @@ This mod makes flora editor and plants in game usable and adds extra features:
 * Background by each plant type;
 * Music by Delta Unit!
 * Fixing shadow in paint mode;
-* Parts names by @Valla-Chan
-* reconstructions of fe_leaf_19 and fe_leaf_33 by Valla-chan;
-* Adds parts from demo-version of the game (fe_leaves);
+* Parts names by Valla-Chan;
+* Reconstructions of fe_leaf_19 and fe_leaf_33 by Valla-chan;
+* Adds parts from demo-version of the game (fe_leaves).
 
 **Sporepedia:**
 * Deleting plants;
@@ -24,9 +27,9 @@ This mod makes flora editor and plants in game usable and adds extra features:
 * Tools to editing/creating plants in Space Stage;
 * Baking plants;
 * Replacing non-existing plants to existing;
-* Black water fix.
+* Black water fix;
 * Fix plants randomizer (randomizer core and player plants instead only players);
-* Adding bump-channel support; 
+* Adding bump-channel support.
 
 There are probably something else, but i'm already forget about that. ( . x .' )
 
