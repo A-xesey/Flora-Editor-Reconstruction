@@ -1,6 +1,8 @@
 #pragma once
 #include <Spore\BasicIncludes.h>
 
+extern bool showLog;
+
 using namespace App;
 using namespace Editors;
 
@@ -24,12 +26,18 @@ member_detour(Editor_OnMouseUp, cEditor, bool(MouseButton, float, float, MouseSt
 		{
 			//we click on limb and we select him
 			if (Editor.mpMovingPart != nullptr && Editor.mpMovingPart->mBooleanAttributes[kEditorRigblockModelUseSkin])
+			{
+				if (showLog) ConsolePrintF("Editor_OnMouseUp: moved block was selected");
 				Editor.mpSelectedPart = Editor.mpMovingPart;
+			}
 
 			//click again to deselect the limb
 			if (Editor.mpSelectedPart != nullptr && mouseButton == MouseButton::kMouseButtonLeft
 				&& Editor.mpSelectedPart->mBooleanAttributes[kEditorRigblockModelUseSkin])
+			{
+				if (showLog) ConsolePrintF("Editor_OnMouseUp: selected block was... unselected");
 				Editor.mpSelectedPart->mUIState.field_1 = true;
+			}
 			/*if (Editor.mPreviousSelectedBlock != nullptr
 				&& Editor.mpSelectedPart->mBooleanAttributes[kEditorRigblockModelUseSkin])
 				Editor.mPreviousSelectedBlock->mUIState.field_1 = true;*/
@@ -46,6 +54,7 @@ void SwitchAttributes(EditorRigblock* block, bool value)
 		block->mBooleanAttributes[kEditorRigblockModelHasBallConnector] = value;
 		block->mBooleanAttributes[kEditorRigblockModelHasSocketConnector] = value;
 		block->mBooleanAttributes[0xb] = value;	//kEditorRigblockModelHasSocketAndBallConnector
+		if (showLog) ConsolePrintF("SwitchAttributes changed block flags");
 	}
 }
 

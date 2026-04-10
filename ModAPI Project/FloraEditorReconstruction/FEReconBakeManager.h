@@ -4,6 +4,8 @@
 #include "FEBlackWaterFixMsg.h"
 #include "FloraRandom.h"
 
+extern bool showLog;
+
 using namespace App;
 using namespace Simulator;
 
@@ -62,12 +64,14 @@ member_detour(cPlantSpeciesManager_CreatePlantItem, cPlantSpeciesManager, cPlant
 				//this functions works outside of planets, so i decided to add this check
 				if (GetCurrentContext() == SpaceContext::Planet && !IsBakingOrBaked)
 				{
+					if (showLog) ConsolePrintF("==== cPlantSpeciesManager_CreatePlantItem ====\nBaking plants");
 					BakeManager.BakeModel(plantKey, Editors::BakeParameters::BakeParameters(0, 4, 0x609b763));
 
 					PropertyListPtr PlantItemProperty;
 					PropManager.GetPropertyList(plantKey.instanceID, plantKey.groupID, PlantItemProperty);
 
 					//since I didn't find are functions that update plant models, we need to update it during the baking
+					if (showLog) ConsolePrintF("PlantItemProperty (exists?) %i", PlantItemProperty != nullptr);
 					if (PlantItemProperty != nullptr)
 					{
 						float mBaseRadius;
@@ -135,6 +139,7 @@ member_detour(cPlantSpeciesManager_CreatePlantItem, cPlantSpeciesManager, cPlant
 						plantItem->mBaseRadius = mBaseRadius;
 						plantItem->mCanopyRadius = mCanopyRadius;
 						plantItem->mHeight = mHeight;
+						if (showLog) ConsolePrintF("plant baked");
 					}
 				}
 			}
@@ -142,73 +147,74 @@ member_detour(cPlantSpeciesManager_CreatePlantItem, cPlantSpeciesManager, cPlant
 		//replace the missing in the game files plant to another
 		else
 		{
+			if (showLog) ConsolePrintF("==== cPlantSpeciesManager_CreatePlantItem ====\nReplacing missing plants");
 			ResourceKey newPlant(0, TypeIDs::flr, GroupIDs::FloraModels);
 			cPlanetRecordPtr planetRecord = GetActivePlanetRecord();
 			//this functions works outside of planets, so i decided to add this check
-			if (planetRecord != nullptr && GetCurrentContext() == SpaceContext::Planet)
-			{
-				if (planetRecord->mPlantSpecies.mpBegin != planetRecord->mPlantSpecies.mpEnd)
+			if (planetRecord != nullptr && GetCurrentContext() == SpaceContext::Planet
+				&& !planetRecord->mPlantSpecies.empty()) {
+				size_t OriginalSize = planetRecord->mPlantSpecies.size();
+				eastl::vector<ResourceKey> smallPlants;
+				eastl::vector<ResourceKey> mediumPlants;
+				eastl::vector<ResourceKey> largePlants;
+				cSpeciesProfile* profile = nullptr;
+				for (const ResourceKey& plant : planetRecord->mPlantSpecies)	//pass missing plants
 				{
-					int OriginalSize = planetRecord->mPlantSpecies.size();
-					eastl::vector<ResourceKey> smallPlants;
-					eastl::vector<ResourceKey> mediumPlants;
-					eastl::vector<ResourceKey> largePlants;
-					cSpeciesProfile* profile = nullptr;
-					for (const ResourceKey& plant : planetRecord->mPlantSpecies)	//pass missing plants
+					if (ResourceManager.GetResource(plant))
 					{
-						if (ResourceManager.GetResource(plant))
+						profile = SpeciesManager.GetSpeciesProfile(plant);
+						if (profile != nullptr)
 						{
-							profile = SpeciesManager.GetSpeciesProfile(plant);
-							if (profile != nullptr)
-							{
-								if (profile->mModelType == kPlantSmall)
-									smallPlants.push_back(plant);
-								else if (profile->mModelType == kPlantMedium)
-									mediumPlants.push_back(plant);
-								else if (profile->mModelType == kPlantLarge)
-									largePlants.push_back(plant);
-							}
+							if (profile->mModelType == kPlantSmall)
+								smallPlants.push_back(plant);
+							else if (profile->mModelType == kPlantMedium)
+								mediumPlants.push_back(plant);
+							else if (profile->mModelType == kPlantLarge)
+								largePlants.push_back(plant);
 						}
 					}
-					if (smallPlants.size() + mediumPlants.size() + largePlants.size() != OriginalSize)	//replace missing plants to another
-					{
-						floraRandom->CreateFloraList();
-						int tScore = 3;
-						bool gameMode = false;
-						if (GameModeManager.GetActiveModeID() != GameModeIDs::kScenarioMode)	//check if gameMode is game Stage
-						{
-							tScore = TerraformingManager.GetTScore(planetRecord.get());
-							gameMode = true;
-						}
-						do
-						{
-							newPlant.instanceID = floraRandom->GetRandomFloraName(smallPlants.size() != tScore, mediumPlants.size() != tScore, largePlants.size() != tScore, gameMode);
-							profile = SpeciesManager.GetSpeciesProfile(newPlant);
-							if (profile != nullptr)
-							{
-								if (gameMode)
-								{
-									//to avoid duplicates in game stages, otherwise it will break planet ecosystem
-									if (!floraRandom->ValidPlant(newPlant, smallPlants)) continue;
-									else if (!floraRandom->ValidPlant(newPlant, mediumPlants)) continue;
-									else if (!floraRandom->ValidPlant(newPlant, largePlants)) continue;
-								}
-								if (profile->mModelType == kPlantSmall)
-									smallPlants.push_back(newPlant);
-								else if (profile->mModelType == kPlantMedium)
-									mediumPlants.push_back(newPlant);
-								else if (profile->mModelType == kPlantLarge)
-									largePlants.push_back(newPlant);
-							}
-						} while (smallPlants.size() + mediumPlants.size() + largePlants.size() != OriginalSize);
-						floraRandom->ClearFloraList();
-					}
-					profile = nullptr;
-					planetRecord->mPlantSpecies.clear();
-					planetRecord->mPlantSpecies.insert(planetRecord->mPlantSpecies.mpBegin, smallPlants.mpBegin, smallPlants.mpEnd);
-					planetRecord->mPlantSpecies.insert(planetRecord->mPlantSpecies.mpBegin, mediumPlants.mpBegin, mediumPlants.mpEnd);
-					planetRecord->mPlantSpecies.insert(planetRecord->mPlantSpecies.mpBegin, largePlants.mpBegin, largePlants.mpEnd);
 				}
+				if (smallPlants.size() + mediumPlants.size() + largePlants.size() != OriginalSize)	//replace missing plants to another
+				{
+					floraRandom->CreateFloraList();
+					int tScore = 3;
+					bool gameMode = false;
+					if (GameModeManager.GetActiveModeID() != GameModeIDs::kScenarioMode)	//check if gameMode is game Stage
+					{
+						tScore = TerraformingManager.GetTScore(planetRecord.get());
+						gameMode = true;
+					}
+					if (showLog) ConsolePrintF("plant list was changed. Replacing missing plants to another...\ngameMode: %i", gameMode);
+					do
+					{
+						newPlant.instanceID = floraRandom->GetRandomFloraName(smallPlants.size() != tScore, mediumPlants.size() != tScore, largePlants.size() != tScore, gameMode);
+						profile = SpeciesManager.GetSpeciesProfile(newPlant);
+						if (profile != nullptr)
+						{
+							if (gameMode)
+							{
+								//to avoid duplicates in game stages, otherwise it will break planet ecosystem
+								if (!floraRandom->ValidPlant(newPlant, smallPlants)) continue;
+								else if (!floraRandom->ValidPlant(newPlant, mediumPlants)) continue;
+								else if (!floraRandom->ValidPlant(newPlant, largePlants)) continue;
+							}
+							if (profile->mModelType == kPlantSmall)
+								smallPlants.push_back(newPlant);
+							else if (profile->mModelType == kPlantMedium)
+								mediumPlants.push_back(newPlant);
+							else if (profile->mModelType == kPlantLarge)
+								largePlants.push_back(newPlant);
+						}
+						else if (showLog) ConsolePrintF("plant profile does not exists");
+					} while (smallPlants.size() + mediumPlants.size() + largePlants.size() != OriginalSize);
+					floraRandom->ClearFloraList();
+				}
+				profile = nullptr;
+				planetRecord->mPlantSpecies.clear();
+				planetRecord->mPlantSpecies.insert(planetRecord->mPlantSpecies.mpBegin, smallPlants.mpBegin, smallPlants.mpEnd);
+				planetRecord->mPlantSpecies.insert(planetRecord->mPlantSpecies.mpBegin, mediumPlants.mpBegin, mediumPlants.mpEnd);
+				planetRecord->mPlantSpecies.insert(planetRecord->mPlantSpecies.mpBegin, largePlants.mpBegin, largePlants.mpEnd);
+				if (showLog) ConsolePrintF("plant list replaced and sorted");
 			}
 			newPlant.instanceID = id("FE_bumpy1_Sp");	//to avoid game crashing
 			plantItem = original_function(this, newPlant);

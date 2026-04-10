@@ -1,13 +1,19 @@
 #pragma once
 #include <Spore\BasicIncludes.h>
 
+extern bool showLog;
+
+using namespace App;
+
 inline bool HasGAProp()
 {
 	IWindowPtr tagsWin = Editor.mpEditorNamePanel->mpLayout->FindWindowByID(0x5415e48);
+	if (showLog) ConsolePrintF("HasGAProp: tagsWin (exists?)", tagsWin != nullptr);
 	if (tagsWin != nullptr) {
 		eastl::string16 tags = u"";
 		tags = tagsWin->GetCaption();
 		tags.make_lower();
+		if (showLog) ConsolePrintF("HasGAProp: tags (%ls)", tags);
 		if (tags.find(u"gaprop") != eastl::string16::npos)
 			return true;
 	}
@@ -24,8 +30,10 @@ inline void ChangeBounds(uint32_t uModelType)
 		else if (uModelType == kPlantSmall)
 			editorID = id("FloraEditorSmall");
 	}
+	if (showLog) ConsolePrintF("==== ChangeBounds ====\neditorID: 0x%x", editorID);
 
 	PropManager.GetPropertyList(editorID, 0x40600100, editorProp);
+	if (showLog) ConsolePrintF("editorProp (exists?): %i", editorProp != nullptr);
 	if (editorProp != nullptr)
 	{
 		bool boundsChanged = false;
@@ -50,9 +58,11 @@ inline void ChangeBounds(uint32_t uModelType)
 			Editor.mpEditorModel->mMinHeight = editorMinHeight;
 			boundsChanged = true;
 		}
+		if (showLog) ConsolePrintF("boundsChanged: %i", boundsChanged);
 		if (boundsChanged) {
 			cEditorResourcePtr editorRes = new Editors::cEditorResource();
 			Editor.mpEditorModel->Save(editorRes.get());
+			if (showLog) ConsolePrintF("editorRes (exists?): %i", editorRes != nullptr);
 			if (editorRes != nullptr)
 			{
 				//SP::cSPEditorModelValidity::TestBounds
@@ -64,12 +74,11 @@ inline void ChangeBounds(uint32_t uModelType)
 					Args(editorRes.get(), /*&Editor.mModelValidity*/ &Editor.field_48)
 				))
 				{
-					//App::ConsolePrintF("test bounds passed");
+					if (showLog) ConsolePrintF("SP::cSPEditorModelValidity::TestBounds completed");
 					Editor.field_48 = Editor.field_48 & 0xfffffeff;
 					/*Editor.mModelValidity[Editors::kValidityOutOfBounds] = false;*/
 				}
-				/*else
-					App::ConsolePrintF("no.");*/
+				else if (showLog) ConsolePrintF("SP::cSPEditorModelValidity::TestBounds failed");
 			}
 			//App::ConsolePrintF("kValidityOutOfBounds (editor) %i", /*Editor.mModelValidity[Editors::kValidityOutOfBounds]*/ Editor.field_48 & 0x100 == true);
 		}

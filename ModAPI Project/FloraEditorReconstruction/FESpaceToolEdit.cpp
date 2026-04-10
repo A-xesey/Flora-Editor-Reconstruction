@@ -1,6 +1,9 @@
 #include "stdafx.h"
 #include "FESpaceToolEdit.h"
-//#include "SPGDeactivateActives.h"
+
+extern bool showLog;
+
+using namespace App;
 
 FESpaceToolEdit::FESpaceToolEdit()
 {
@@ -14,21 +17,29 @@ FESpaceToolEdit::~FESpaceToolEdit()
 bool FESpaceToolEdit::OnHit(cSpaceToolData* pTool, const Vector3& position, SpaceToolHit hitType, int pSpaceToolStrategy)	//for Edit
 {
 	bool OnHit = cDefaultBeamTool::OnHit(pTool, position, kHitCombatant, pSpaceToolStrategy);
+	if (showLog) ConsolePrintF("==== FESpaceToolEdit_OnHit ====\noriginal functions: %i", OnHit);
 	if (OnHit)
 	{
 		auto beam = pTool->mpBeam;
+		if (showLog) ConsolePrintF("beam (exists?): %i", beam != nullptr);
 		if (beam != nullptr)
 		{
 			cGameDataPtr gameData = beam->mpTargetedCombatant;
+			if (showLog) ConsolePrintF("gameData (exists?): %i", gameData != nullptr);
 			if (gameData != nullptr)
 			{
 				ResourceKey plant;
 				uint32_t editorID = id("FloraEditorSmallUFO");
 				if (object_cast<cGamePlant>(gameData) != nullptr)
+				{
+					if (showLog) ConsolePrintF("plant is cGamePlant");
 					plant = object_cast<cGamePlant>(gameData)->mSpecies;
+				}
 				else if (object_cast<cObstacle>(gameData) != nullptr)
 				{
+					if (showLog) ConsolePrintF("plant is cObstacle");
 					plant = object_cast<cObstacle>(gameData)->mSpeciesKey;
+					if (showLog) ConsolePrintF("mPlantType: %i", object_cast<cObstacle>(gameData)->mPlantType);
 					switch (object_cast<cObstacle>(gameData)->mPlantType)
 					{
 						case cObstacle::kLargeSpecies: 
@@ -55,6 +66,7 @@ bool FESpaceToolEdit::OnHit(cSpaceToolData* pTool, const Vector3& position, Spac
 
 				cPlayerInventoryPtr inventory = SimulatorSpaceGame.GetPlayerInventory();
 				size_t availableCargoSlots = inventory->GetAvailableCargoSlotsCount();
+				if (showLog) ConsolePrintF("availableCargoSlots: %i", availableCargoSlots);
 				if (availableCargoSlots != 0)
 				{
 					beam->mbStopBeam = true;
@@ -79,6 +91,7 @@ bool FESpaceToolEdit::OnHit(cSpaceToolData* pTool, const Vector3& position, Spac
 					editorRequest->field_3D = true;
 					editorRequest->field_64 = true;
 					SimGameModeManager.SubmitEditorRequest(editorRequest.get());
+					if (showLog) ConsolePrintF("editor request was submited");
 				}
 				else
 					pTool->ShowEventLog(pTool, id("FullInventory"));

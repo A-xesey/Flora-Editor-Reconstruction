@@ -67,6 +67,7 @@ member_detour(cSPUILargeAssetView_LoadLayout, Sporepedia::cSPUILargeAssetView, v
 					ResourceKey key = this->mAssetData->GetKey();
 					if (key.typeID == TypeIDs::flr)
 					{
+						if (showLog) ConsolePrintF("==== cSPUILargeAssetView_LoadLayout ====\nkey is plant");
 						Editors::cCreatureDataResource* creatureData;
 						bool isLoaded = Editor.LoadCreatureData(&key, &creatureData);
 						if (isLoaded && creatureData != nullptr)
@@ -74,7 +75,7 @@ member_detour(cSPUILargeAssetView_LoadLayout, Sporepedia::cSPUILargeAssetView, v
 							//add creature abilities verbtrays support in sporepedia large view
 							float unk = this->mAssetData->func3Ch();
 							Editor.ComputeCreatureVerbIcons(creatureData, this->mVerbIcons.get(), -1, unk);
-
+							
 							//add headers for each plant types
 							if (this->mVerbIcons->mVerbTrays.size() > 0) {
 								for (const cSPEditorVerbIconTrayPtr& verbTray : this->mVerbIcons->mVerbTrays) {
@@ -113,7 +114,9 @@ member_detour(cSPUILargeAssetView_LoadLayout, Sporepedia::cSPUILargeAssetView, v
 												verbTray->mVerbTrayProperties->GetProperty(id("verbTrayDescriptionSmall"), propDesc);
 												iconKey.instanceID = id("flora_small");
 											}
+											if (showLog) ConsolePrintF("floar header was changed\nlocalHeader: %ls\niconKey ID: 0x%x", localHeader.GetText(), iconKey.instanceID);
 										}
+										else if (showLog) ConsolePrintF("profile does not exists");
 										/*IWindowPtr mWinRolloverText = verbTray->mRollover->mLayout.FindWindowByID(0x0331CC0E);
 										IWindowPtr mWinRolloverDesc = verbTray->mRollover->mLayout.FindWindowByID(0x0331CC0F);*/
 										if (iconKey.instanceID != 0 && localHeader.GetText() != nullptr
@@ -126,14 +129,17 @@ member_detour(cSPUILargeAssetView_LoadLayout, Sporepedia::cSPUILargeAssetView, v
 											verbTray->mWinText->SetCaption(localHeader.GetText());
 											/*mWinRolloverText->SetCaption(localHeader.GetText());
 											mWinRolloverDesc->SetCaption(localDesc.GetText());*/
+											if (showLog) ConsolePrintF("floar header was changed");
 										}
+										else if (showLog) ConsolePrintF("floar header was not changed");
 										propHeader = nullptr;
 										propDesc = nullptr;
 										profile = nullptr;
+										break;
 									}
 								}
 							}
-						}
+						} else if (showLog) ConsolePrintF("creatureData does not exists");
 						creatureData = nullptr;
 					}
 				}

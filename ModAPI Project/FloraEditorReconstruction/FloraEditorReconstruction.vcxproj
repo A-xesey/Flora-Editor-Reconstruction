@@ -115,6 +115,7 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="FETest.h" />
     <ClInclude Include="FloraRandom.h" />
     <ClInclude Include="HasGAProp.h" />
     <ClInclude Include="ModelTypeChanged.h">
@@ -142,6 +143,7 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="FETest.cpp" />
     <ClCompile Include="FloraRandom.cpp" />
     <ClCompile Include="ModelTypeChanged.cpp">
       <SubType>

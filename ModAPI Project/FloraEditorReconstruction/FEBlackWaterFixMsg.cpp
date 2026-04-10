@@ -1,8 +1,11 @@
 #include "stdafx.h"
 #include "FEBlackWaterFixMsg.h"
 
+extern bool showLog;
+
 using namespace Simulator;
 using namespace Terrain;
+using namespace App;
 
 FEBlackWaterFixMsg::FEBlackWaterFixMsg()
 {
@@ -30,23 +33,28 @@ int FEBlackWaterFixMsg::Release()
 bool FEBlackWaterFixMsg::HandleMessage(uint32_t messageID, void* message)
 {
 	//After sprites baking we need to recreate refraction RTT since their indexes (i'm not really sure) used fow sprites
+	if (showLog) ConsolePrintF("==== FEBlackWaterFixMsg_HandleMessage ====");
 	if (messageID == id("BakeManager_BakeSprites"))
 	{
+		if (showLog) ConsolePrintF("valid message");
 		//we need to check if refractions RTT even exists
 		if (GetRefractionBuffersRenderTargetID() != nullptr &&
 			GetRefractionBlur1RenderTargetID() != nullptr &&
 			GetRefractionBlur2RenderTargetID() != nullptr)
 		{
+			if (showLog) ConsolePrintF("Refraction RTTs exists");
 			//then we need to check if sprites was baked outside of planet
 			//and in any gameMode except stage and adventure editor: they has planet context so we don't need to considered to them
 			if (GetCurrentContext() != SpaceContext::Planet ||
 				(GameModeManager.GetActiveModeID() < 0x1654C00 || GameModeManager.GetActiveModeID() > 0x1654C10))
 			{
+				if (showLog) ConsolePrintF("RefractionRTTs was recreated");
 				DisposeRefractionRTTs();
 				CreateRefractionRTTs();
 				return true;
-			}
+			} else if (showLog) ConsolePrintF("RefractionRTTs was not recreated");
 		}
+		else if (showLog) ConsolePrintF("RefractionRTTs does not exists");
 	}
 	// Return true if the message has been handled. Other listeners will receive the message regardless of the return value.
 	return false;

@@ -1,6 +1,10 @@
 #include "stdafx.h"
 #include "FloraRandom.h"
 
+extern bool showLog;
+
+using namespace App;
+
 eastl::vector<ResourceKey> allFlora;
 eastl::vector<ResourceKey> allValidFlora;
 
@@ -22,6 +26,7 @@ void FloraRandom::CreateFloraList()
 	filter.typeID = 0x2D5C9AF;	//summary
 
 	ResourceManager.GetResourceKeyList(allFlora, &filter);
+	if (showLog) ConsolePrintF("FloraRandom_CreateFloraList: allFlora (is empty?) %i", allFlora.empty());
 
 	//a big check if creation has gaprop
 	for (const ResourceKey& key : allFlora)
@@ -63,12 +68,16 @@ void FloraRandom::ClearFloraList()
 //for game stages, to avoid ecosystem collaps
 bool FloraRandom::ValidPlant(const ResourceKey& key, const eastl::vector<ResourceKey>& passSamePlants)
 {
+	bool res = true;
 	for (const ResourceKey& plant : passSamePlants)
 	{
-		if (key.instanceID == plant.instanceID)
-			return false;
+		if (key.instanceID == plant.instanceID) {
+			res = false;
+			break;
+		}
 	}
-	return true;
+	if (showLog) ConsolePrintF("FloraRandom_ValidPlant: result is %i", res);
+	return res;
 }
 
 uint32_t FloraRandom::GetRandomFloraName(bool smallSpecies, bool mediumSpecies, bool largeSpecies, bool isGameMode)
@@ -79,16 +88,19 @@ uint32_t FloraRandom::GetRandomFloraName(bool smallSpecies, bool mediumSpecies, 
 	else
 		randomFloraList = allFlora;
 
+	if (showLog) ConsolePrintF("==== FloraRandom_GetRandomFloraName ====\nrandomFloraList (is empty?): %i", randomFloraList.empty());
 	if (!randomFloraList.empty())
 	{
 		int rando;
 		if (smallSpecies && mediumSpecies && largeSpecies)
 		{
+			if (showLog) ConsolePrintF("full randomization");
 			rando = rand(randomFloraList.size() - 1);
 			return randomFloraList[rando].instanceID;
 		}
 		else
 		{
+			if (showLog) ConsolePrintF("randomization by plant type");
 			eastl::vector<ResourceKey> plants;
 
 			for (const ResourceKey& key : randomFloraList)

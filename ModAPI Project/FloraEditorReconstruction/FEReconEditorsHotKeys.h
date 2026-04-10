@@ -22,17 +22,20 @@ member_detour(EditorUI_Load, EditorUI, bool(cEditor*, uint32_t, uint32_t, bool))
 	bool detoured(cEditor * pEditor, uint32_t instanceID, uint32_t groupID, bool editorModelForceSaveover)
 	{
 		bool res = original_function(this, pEditor, instanceID, groupID, editorModelForceSaveover);
+		if (showLog) ConsolePrintF("==== EditorUI_Load ====\noriginal_function: %i");
 		if (res && Editor.mSaveExtension == TypeIDs::flr)
 		{
 			IWindowPtr TypeChooser = Editor.mpEditorUI->mSharedUI.FindWindowByID(0xD0353720);
 			if (TypeChooser != nullptr) {
 				if (Editor.mpPropList != nullptr && Editor.mpPropList->HasProperty(id("alwaysShowTypeChooser")))
 				{
+					if (showLog) ConsolePrintF("alwaysShowTypeChooser exists and used for TypeChooser->SetVisible");
 					bool alwaysShowTypeChooser;
 					Property::GetBool(Editor.mpPropList.get(), id("alwaysShowTypeChooser"), alwaysShowTypeChooser);
 					TypeChooser->SetVisible(alwaysShowTypeChooser);
 				}
 				else TypeChooser->SetVisible(saveChanges);
+				if (showLog) ConsolePrintF("saveChanges: %i");
 			}
 		}
 		return res;
@@ -80,6 +83,7 @@ member_detour(Editor_OnKeyDown, cEditor, bool(int, KeyModifiers))
 				if (TypeChooser != nullptr) {
 					TypeChooser->SetVisible(!TypeChooser->IsVisible());
 					saveChanges = TypeChooser->IsVisible();
+					if (showLog) ConsolePrintF("Editor_OnKeyDown: saveChanges: %i", saveChanges);
 				}
 			}
 			if (virtualKey == 'F' && modifiers.IsShiftDown) {

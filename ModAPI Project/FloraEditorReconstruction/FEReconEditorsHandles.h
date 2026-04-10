@@ -1,6 +1,8 @@
 #pragma once
 #include <Spore\BasicIncludes.h>
 
+extern bool showLog;
+
 using namespace App;
 using namespace Editors;
 
@@ -49,6 +51,7 @@ member_detour(EditorRigblock_SetHandleScale, EditorRigblock, void())
 			float editorHandleScale;
 			Property::GetFloat(Editor.mpPropList.get(), id("editorHandleScale"), editorHandleScale);
 
+			if (showLog) ConsolePrintF("==== EditorRigblock_SetHandleScale ====\neditorHandleScale: %f", editorHandleScale);
 			if (this->mpEditorModel != nullptr) {
 				float resizeHandles = editorHandleScale * 0.5f;
 				if (!this->mMorphHandles.empty())
@@ -56,16 +59,23 @@ member_detour(EditorRigblock_SetHandleScale, EditorRigblock, void())
 					for (const EditorBaseHandlePtr& handle : this->mMorphHandles)
 						//handle->SetScale(resizeHandles);
 						HandleSetScale(handle.get(), resizeHandles);
+					if (showLog) ConsolePrintF("mMorphHandles size was changed");
 				}
 				if (this->mpRotationBallHandle != nullptr)
+				{
 					//this->mpRotationBallHandle->SetScale(resizeHandles * 0.16666f);
 					RingSetScale(this->mpRotationBallHandle.get(), resizeHandles * 0.16666f);
+					if (showLog) ConsolePrintF("mpRotationBallHandle size was changed");
+				}
 
 				for (int i = 0; i < 3; i++)
 				{
 					if (this->mAxisHandles[i] != nullptr)
+					{
 						RingSetScale(this->mAxisHandles[i].get(), resizeHandles * 0.5f);
 						//this->mAxisHandles[i]->SetScale(resizeHandles * 0.5f);
+						if (showLog) ConsolePrintF("mAxisHandles (index: %i) size was changed", i);
+					}
 				}
 			}
 		}
@@ -105,6 +115,7 @@ member_detour(cSPEditorHandleRotationRing_GetRadius, cSPEditorHandleRotationRing
 	{
 		float res = original_function(this);
 		if (Editor.mpPropList != nullptr && Editor.mpPropList->HasProperty(id("editorHandleScale"))) {
+			//if (showLog) ConsolePrintF("cSPEditorHandleRotationRing_GetRadius: editorHandleScale exists");
 			float editorHandleScale;
 			Property::GetFloat(Editor.mpPropList.get(), id("editorHandleScale"), editorHandleScale);
 			float magic = 3.5f - ((editorHandleScale / 4) * 0.5f);
@@ -116,6 +127,7 @@ member_detour(cSPEditorHandleRotationRing_GetRadius, cSPEditorHandleRotationRing
 				}
 			}
 			else res = this->mDistanceFromBoundingBox * this->mpRigblock->size;
+			//if (showLog) ConsolePrintF("cSPEditorHandleRotationRing_GetRadius: original_function (changed): %f", res);
 		}
 		return res;
 	}
@@ -127,6 +139,7 @@ member_detour(cSPEditorHandleRotationRing_GetHandleTime, cSPEditorHandleRotation
 	{
 		float res = original_function(this);
 		if (Editor.mpPropList != nullptr && Editor.mpPropList->HasProperty(id("editorHandleScale"))) {
+			//if (showLog) ConsolePrintF("cSPEditorHandleRotationRing_GetHandleTime: editorHandleScale exists");
 			float editorHandleScale;
 			Property::GetFloat(Editor.mpPropList.get(), id("editorHandleScale"), editorHandleScale);
 
@@ -149,7 +162,7 @@ member_detour(cSPEditorHandleRotationRing_GetHandleTime, cSPEditorHandleRotation
 				);
 				res = (fEnd - fStart) * res * 0.333f * (1.0f / modelBoundsSize) * 0.85714287f + fStart;
 			}
-			return res;
+			//if (showLog) ConsolePrintF("cSPEditorHandleRotationRing_GetHandleTime: original_function (changed): %f", res);
 		}
 		return res;
 	}

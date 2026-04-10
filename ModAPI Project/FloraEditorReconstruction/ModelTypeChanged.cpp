@@ -2,10 +2,13 @@
 #include "ModelTypeChanged.h"
 #include "HasGAProp.h"
 
+extern bool showLog;
+
+using namespace App;
+
 ModelTypeChanged::ModelTypeChanged()
 {
 }
-
 
 ModelTypeChanged::~ModelTypeChanged()
 {
@@ -28,6 +31,7 @@ bool ModelTypeChanged::HandleMessage(uint32_t messageID, void* message)
 {
 	if (messageID == id("Editors_ModelWasChanged") && Editor.IsActive())
 	{
+		if (showLog) ConsolePrintF("==== ModelTypeChanged::HandleMessage ====");
 		if (Editor.mVerbIconTray != nullptr && Editor.mVerbIconTray->mVerbTrays.size() > 0) {
 			for (const cSPEditorVerbIconTrayPtr& verbTray : Editor.mVerbIconTray->mVerbTrays) {
 				IWindowPtr floraHeader = verbTray->mLayout->FindWindowByID(0x811C9DC5);
@@ -35,8 +39,8 @@ bool ModelTypeChanged::HandleMessage(uint32_t messageID, void* message)
 					ResourceKey iconKey{ 0, TypeIDs::png, id("VerbIcons") };
 					LocalizedString localHeader;
 					//LocalizedString localDesc;
-					App::Property* propHeader = nullptr;
-					App::Property* propDesc = nullptr;
+					Property* propHeader = nullptr;
+					Property* propDesc = nullptr;
 					if (Editor.mpEditorModel != nullptr)
 					{
 						if (Editor.mpEditorModel->mModelType == kPlantLarge)
@@ -63,7 +67,9 @@ bool ModelTypeChanged::HandleMessage(uint32_t messageID, void* message)
 							verbTray->mVerbTrayProperties->GetProperty(id("verbTrayDescriptionSmall"), propDesc);
 							iconKey.instanceID = id("flora_small");
 						}
+						if (showLog) ConsolePrintF("floar header was changed\nlocalHeader: %ls\niconKey ID: 0x%x", localHeader.GetText(), iconKey.instanceID);
 					}
+					else if (showLog) ConsolePrintF("mpEditorModel does not exists");
 					/*IWindowPtr mWinRolloverText = verbTray->mRollover->mLayout.FindWindowByID(0x0331CC0E);
 					IWindowPtr mWinRolloverDesc = verbTray->mRollover->mLayout.FindWindowByID(0x0331CC0F);*/
 					if (iconKey.instanceID != 0 && localHeader.GetText() != nullptr
@@ -78,9 +84,11 @@ bool ModelTypeChanged::HandleMessage(uint32_t messageID, void* message)
 						/*mWinRolloverText->SetCaption(localHeader.GetText());
 						mWinRolloverDesc->SetCaption(localDesc.GetText());*/
 
+						if (showLog) ConsolePrintF("floar header was changed");
 						ChangeBounds(Editor.mpEditorModel->mModelType);
 						return true;
 					}
+					else if (showLog) ConsolePrintF("floar header was not changed");
 					propHeader = nullptr;
 					propDesc = nullptr;
 					break;

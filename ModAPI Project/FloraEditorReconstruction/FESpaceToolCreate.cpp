@@ -1,8 +1,10 @@
 #include "stdafx.h"
 #include "FESpaceToolCreate.h"
-//#include "SPGDeactivateActives.h"
+
+extern bool showLog;
 
 using namespace Simulator;
+using namespace App;
 
 FESpaceToolCreate::FESpaceToolCreate()
 {
@@ -16,10 +18,12 @@ FESpaceToolCreate::~FESpaceToolCreate()
 bool FESpaceToolCreate::WhileFiring(cSpaceToolData* pTool, const Vector3& aimPoint, int pSpaceToolStrategy)	//for New
 {
 	bool WhileFiring = cToolStrategy::WhileFiring(pTool, aimPoint, pSpaceToolStrategy);
+	if (showLog) ConsolePrintF("==== FESpaceToolCreate_WhileFiring ====\noriginal function: %i", WhileFiring);
 	if (WhileFiring)
 	{
 		cPlayerInventoryPtr inventory = SimulatorSpaceGame.GetPlayerInventory();
 		size_t availableCargoSlots = inventory->GetAvailableCargoSlotsCount();
+		if (showLog) ConsolePrintF("availableCargoSlots: %i", availableCargoSlots);
 		if (availableCargoSlots != 0)
 		{
 			//SPGDeactivateActives::DeactivateActives(inventory.get());
@@ -36,6 +40,7 @@ bool FESpaceToolCreate::WhileFiring(cSpaceToolData* pTool, const Vector3& aimPoi
 			editorRequest->field_3D = true;
 			editorRequest->field_64 = true;
 			SimGameModeManager.SubmitEditorRequest(editorRequest.get());
+			if (showLog) ConsolePrintF("editor request was submited");
 		}
 		else
 			pTool->ShowEventLog(pTool, id("FullInventory"));

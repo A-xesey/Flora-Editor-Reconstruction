@@ -2,7 +2,6 @@
 #include <Spore\BasicIncludes.h>
 #include "FESpaceToolCreate.h"
 #include "FESpaceToolEdit.h"
-//#include "SPGDeactivateActives.h"
 
 using namespace Simulator;
 
@@ -37,10 +36,12 @@ member_detour(HandleMessage, cSimulatorSpaceGame, bool(uint32_t, int))
 					//if creature was not created then return tool back
 					if (messageID == 0x3b092aa || messageID == 0x3c5dbc7)
 					{
+						if (showLog) ConsolePrintF("cSimulatorSpaceGame_HandleMessage: Creature tool");
 						cPlayerInventoryPtr inventory = SimulatorSpaceGame.GetPlayerInventory();
 						if (inventory != nullptr)
 						{
 							size_t cargoSlots = inventory->GetAvailableCargoSlotsCount();
+							if (showLog) ConsolePrintF("cSimulatorSpaceGame_HandleMessage: cargoSlots is %i", cargoSlots);
 							if (cargoSlots == 0)
 							{
 								//SP::cSPSimulatorSpaceGame::ClearActiveTool
@@ -56,9 +57,11 @@ member_detour(HandleMessage, cSimulatorSpaceGame, bool(uint32_t, int))
 								}
 								if (pTool != nullptr)
 								{
+									if (showLog) ConsolePrintF("cSimulatorSpaceGame_HandleMessage: pTool exists");
 									pTool->ShowEventLog(pTool.get(), id("FullInventory"));
 									inventory->AddItem(pTool.get());
 								}
+								else if  (showLog) ConsolePrintF("cSimulatorSpaceGame_HandleMessage: pTool does not exists");
 							}
 						}
 					}
@@ -67,16 +70,19 @@ member_detour(HandleMessage, cSimulatorSpaceGame, bool(uint32_t, int))
 				//if plant was created then return plant as cargo item
 				if (*(char*)(shit + 0x44) == '\0')
 				{
+					if (showLog) ConsolePrintF("cSimulatorSpaceGame_HandleMessage: Plant tool");
 					ResourceKey creation = *(ResourceKey*)(shit + 0x18);
 					if (creation.instanceID != 0 && creation.groupID == GroupIDs::FloraModels && creation.typeID == TypeIDs::flr)
 					{
+						if (showLog) ConsolePrintF("cSimulatorSpaceGame_HandleMessage: Plant Key exists");
 						cPlantCargoInfoPtr plantCargo = PlantSpeciesManager.CreatePlantItem(creation);
 						cPlayerInventoryPtr inventory = SimulatorSpaceGame.GetPlayerInventory();
 						if (plantCargo != nullptr && inventory != nullptr)
 						{
+							if (showLog) ConsolePrintF("cSimulatorSpaceGame_HandleMessage: plant cargo was created");
 							plantCargo->mItemCount = 5;
 							inventory->AddItem(plantCargo.get());
-						}
+						} else if (showLog) ConsolePrintF("cSimulatorSpaceGame_HandleMessage: plant item or player inventory does not exists");
 					}
 				}
 			}

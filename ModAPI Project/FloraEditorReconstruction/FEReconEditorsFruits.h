@@ -1,9 +1,10 @@
 #pragma once
 #include <Spore\BasicIncludes.h>
 
+extern bool showLog;
+
 using namespace App;
 using namespace Editors;
-
 
 class FEReconEditorsFruits
 {
@@ -13,6 +14,7 @@ public:
 		//adds fruit counter
 		PropertyListPtr VerbTrayCollectionProp;
 		PropManager.GetPropertyList(id("Ferecon_VerbTrayCollection"), id("verbtrays"), VerbTrayCollectionProp);
+		if (showLog) ConsolePrintF("==== Ferecon_VerbTrayCollection ====\nVerbTrayCollectionProp (exists?): %i", VerbTrayCollectionProp != nullptr);
 		if (VerbTrayCollectionProp != nullptr) {
 			VerbTrayCollectionProp->RemoveProperty(0x04AA3838);
 			ResourceKey header = { id("flora_header"), 0, id("EditorHeaderTray_FE") };
@@ -106,10 +108,12 @@ member_detour(EditorUI_SetMessageHint, EditorUI, bool(int))
 	bool detoured(int SPUI_commandID)
 	{
 		eFruitState state = GetFruitState();
+		if (showLog) ConsolePrintF("==== EditorUI_SetMessageHint ====\nfruit state: %i", state);
 		if (state != kFruitStateValid) {
 			if (SPUI_commandID == 0x101 || SPUI_commandID == 0x102) //Save button/command or "Save and Exit" button
 			{
 				uint32_t hintID = GetHintByFruitState(state);
+				if (showLog) ConsolePrintF("hintID: 0x%x", hintID);
 				if (hintID != 0)
 					HintManager.ShowHint(hintID);
 				return original_function(this, 0);
@@ -124,19 +128,26 @@ member_detour(cStringDetokenizer_TranslateToken, cStringDetokenizer, bool(const 
 {
 	bool detoured(const char16_t* pToken, eastl::string16 * translatedValue) {
 		bool res = original_function(this, pToken, translatedValue);
-		if (res && Editor.IsActive() && id(pToken) == id("generic0")
-			&& Editor.mSaveExtension == TypeIDs::flr) {
+		if (showLog) ConsolePrintF("==== cStringDetokenizer_TranslateToken ====\noriginal functions: %i", res);
+		if (res && Editor.IsActive() && id(pToken) == id("generic0") && Editor.mSaveExtension == TypeIDs::flr) {
 			eFruitState state = GetFruitState();
+			if (showLog) ConsolePrintF("fruit state: %i", state);
+
 			if (state != kFruitStateValid) {
 				LocalizedString fruitLoc;
 				uint32_t instanceID = GetHintByFruitState(state);
+				if (showLog) ConsolePrintF("instanceID: 0x%x", instanceID);
+
 				if (instanceID != 0) {
-					fruitLoc.SetText(id("fe_02"), instanceID);
+					fruitLoc.SetText(id("fe_02"), instanceID - 1);
+					if (showLog) ConsolePrintF("fruit locale: %ls", fruitLoc.GetText());
+
 					if (fruitLoc.GetText() != u"")
 						translatedValue->assign(fruitLoc.GetText());
 				}
 			}
 		}
+		else if (showLog) ConsolePrintF("all conditions was failed");
 		return res;
 	}
 };
@@ -147,6 +158,7 @@ static_detour(UTFWin_cSPUIMessageBox, bool(UTFWin::MessageBoxCallback*, const Re
 	bool detoured(UTFWin::MessageBoxCallback * pcallback, const ResourceKey & key)
 	{
 		eFruitState state = GetFruitState();
+		if (showLog) ConsolePrintF("==== UTFWin_cSPUIMessageBox ====\nfruit state: %i", state);
 		if (state != kFruitStateValid)
 		{
 			Editor.mpEditorUI->field_C8 = id("editor_NoSaveAndContinue");
@@ -167,6 +179,7 @@ static_detour(UTFWin_cSPUIMessageBox, bool(UTFWin::MessageBoxCallback*, const Re
 				|| key.instanceID == id("Editor_SaveNewAndContinueExit_ForceSaveOver"))
 				key2.instanceID = id("Editor_NoSaveAndContinueExit");
 
+			if (showLog) ConsolePrintF("returned message box");
 			return original_function(pcallback, key2);
 		}
 		return original_function(pcallback, key);
