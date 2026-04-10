@@ -11,13 +11,13 @@
 
 ## SharedDialogs/Hint
 # invalid count
-0x62635DD6 Potrzebujesz co najmniej 3 węzłów owoców, aby zapisać roślinę
+0x62635DD5 Potrzebujesz co najmniej 3 węzłów owoców, aby zapisać roślinę
 
 # invalid position
-0xA3BC8570 Co najmniej 3 węzły owoców powinny znajdować się bliżej ziemi
+0xA3BC856F Co najmniej 3 węzły owoców powinny znajdować się bliżej ziemi
 
 #invalid position (underground)
-0xFDA57333 Węzły owoców są zbyt blisko ziemi lub pod nią
+0xFDA57332 Węzły owoców są zbyt blisko ziemi lub pod nią
 
 ## SpaceTrading/SpaceTools
 0x3e295ee3 Stwórz Roślinę

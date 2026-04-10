@@ -13,13 +13,13 @@
 
 ## SharedDialogs/Hint
 # invalid count
-0x62635DD6 Tarvitset vähintään kolme hedelmänoodia tallentaaksesi kasvin.
+0x62635DD5 Tarvitset vähintään kolme hedelmänoodia tallentaaksesi kasvin.
 
 # invalid position
-0xA3BC8570 Vähintään kolmen hedelmänoodin täytyy sijaita lähellä maanpintaa.
+0xA3BC856F Vähintään kolmen hedelmänoodin täytyy sijaita lähellä maanpintaa.
 
 #invalid position (underground)
-0xFDA57333 Osa hedelmänoodeista sijaitsee liian lähellä maanpintaa tai ovat sen alla.
+0xFDA57332 Osa hedelmänoodeista sijaitsee liian lähellä maanpintaa tai ovat sen alla.
 
 ## SpaceTrading/SpaceTools
 0x3e295ee3 Luo kasvi

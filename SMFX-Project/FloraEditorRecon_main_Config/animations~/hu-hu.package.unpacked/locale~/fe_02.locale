@@ -1,0 +1,40 @@
+
+## Part Sections
+0x00000002 Tönkök
+0x00000003 Ágak
+0x00000005 Gyümölcsök
+
+## VerbIcon
+0x00000003 Növény
+0x00000004 A növényvilág lehetővé teszi a bolygók számára, hogy fenntartsák az életet és táplálják lakóikat.
+0x000000A1 A nagy fák menedéket és árnyékot nyújtanak a lényeknek.
+0x000000A2 A kis fák lehetővé teszik a bolygók számára az élet fenntartását és lakóik táplálását.
+0x000000A3 A cserjék lehetővé teszik a bolygók számára az élet fenntartását és lakóik táplálását.
+
+## SharedDialogs/Hint
+# invalid count
+0x62635DD5 Legalább 3 gyümölcscsomópontra van szükséged a mentéshez
+
+# invalid position
+0xA3BC856F Legalább 3 gyümölcscsomópontnak közelebb kell lennie a talajhoz
+
+#invalid position (underground)
+0xFDA57332 A gyümölcscsomók túl közel vannak a talajhoz vagy a föld alatt vannak
+
+## SpaceTrading/SpaceTools
+0x3e295ee3 Növény Készítés
+0xd974877a Készíts egy növényt, és gyűjts össze belőle öt példányt a rakteredbe.
+0x0dc3bacb Növény Módosító
+0x4f4d0bc2 Válaszd ki ezt az eszközt, és kattints egy növényre egy bolygón a módosításához.
+0x385928de Ennek a fegyvernek a célzási képessége a növényekre korlátozódik.
+
+## Abilities
+# fruit.prop
+0x04cb5b6a Gyümölcscsomópont
+0x04cb5b6d Gyümölcsök
+0x04cb5b6c A több gyümölcsöt termelő növények több szájat etetnek!
+
+## Sporepedia
+0xE51EB8EF Válassz egy nagy fát
+0x3984733B Válassz egy kis fát
+0xD0F7BA37 Válassz egy cserjét

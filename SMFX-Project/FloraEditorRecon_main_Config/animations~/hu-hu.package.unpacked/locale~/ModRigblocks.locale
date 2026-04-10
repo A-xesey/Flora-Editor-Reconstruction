@@ -1,0 +1,44 @@
+# MUSCLES #
+0x00000001 Limb_Fr_Sh_back
+0x00000002 Limb_Fr_Sh_back1
+0x00000003 Limb_Fr_Sh_clump
+0x00000004 Limb_Fr_Sh_clump1
+0x00000005 Limb_Fr_Sh_spike
+0x00000006 Limb_Fr_Sh_thigh
+0x00000007 Limb_Fr_Sh_thigh1
+0x00000008 Limb_rigid
+0x00000009 Limb_rigid_large
+0x00000010 Limb_rigid_small
+
+# FRUITS #
+0x00000011 Kókusz (gyümölcs)
+0x00000012 Gyümölcs (méreg)
+0x00000013 Gyümölcs (szuper)
+0x00000014 Gyümölcs (RED)
+0x00000015 Gyümölcs (halom)
+0x00000016 Gyümölcs
+0x00000017 Gyümölcs (bűzös)
+0x00000018 Gyümölcs (szuper-duper)
+0x00000019 Gyümölcs (általános)
+0x00000020 Gyümölcs (BLU)
+0x00000021 Gyümölcs (LOD)
+
+# LEAVES #
+0x00000022 FE_leaves_palm_01a_mod
+0x00000023 Cukivirág
+
+0x00000024 Rejtettusz Termésusz
+0x00000025 Ragadtermés
+0x00000026 Gallyas úrfi
+0x00000027 Lebegő
+0x00000028 Úriember parókája
+
+0x00000029 Proto-gyümölcs 01
+0x00000030 Proto-gyümölcs 02
+0x00000031 Proto-gyümölcs 04
+0x00000032 Proto-gyümölcs 05
+0x00000033 Proto-gyümölcs 06
+0x00000034 Proto-gyümölcs 07
+0x00000035 Proto-gyümölcs 08
+0x00000036 Proto-gyümölcs 09
+0x00000037 Proto-gyümölcs 10

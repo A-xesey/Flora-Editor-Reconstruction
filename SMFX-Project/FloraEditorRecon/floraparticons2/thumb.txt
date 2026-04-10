@@ -1,2 +1,0 @@
-entereditor flora
-captureIcon "C:\Users\DesOne\Documents\GitHub\Flora-Editor-Reconstruction\SMFX-Project\FloraEditorRecon_main_Parts\floraparticons2"

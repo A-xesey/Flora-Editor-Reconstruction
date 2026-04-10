@@ -13,13 +13,13 @@
 
 ## SharedDialogs/Hint
 # invalid count
-0x62635DD6 You need at least 3 fruit nodes to Save
+0x62635DD5 You need at least 3 fruit nodes to Save
 
 # invalid position
-0xA3BC8570 At least 3 fruit nodes should be located closer to ground
+0xA3BC856F At least 3 fruit nodes should be located closer to ground
 
 #invalid position (underground)
-0xFDA57333 Fruit nodes too close to ground or underground
+0xFDA57332 Fruit nodes too close to ground or underground
 
 ## SpaceTrading/SpaceTools
 0x3e295ee3 Create Plant

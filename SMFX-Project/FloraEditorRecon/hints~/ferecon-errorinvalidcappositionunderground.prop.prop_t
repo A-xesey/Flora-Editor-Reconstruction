@@ -1,5 +1,5 @@
 key parent HintTemplates!EDI-TemplateError
 bool hintAlwaysShow true
 texts hintText
-	(fe_02!ferecon-errorinvalidcappositionunderground) "You have no parts. Add parts before saving."
+	(fe_02!0xFDA57332) "You have no parts. Add parts before saving."
 end
