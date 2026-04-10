@@ -82,6 +82,7 @@ There a fruit validation check:
 * [Splitwirez](https://github.com/Splitwirez): conributor, gave ideas for editor. The mod was based of his "Branching Evolution" mod;
 * [Auntie Owl](https://github.com/plencka): gaves access to her own version of flora editor mod and for translating the mod into Polish;
 * [Liskomato](https://github.com/Tenderi4): for translating the mod into Finnish;
+* [Gemini-HUN](https://github.com/Gemini-HUN): for translating the mod into Hungarian;
 * [VanillaCold](https://github.com/VanillaCold): for ideas;
 * [Delta Unit](https://github.com/TheDeltaUnit): conributor, adds some names, made a music "Branching Out" for flora editor and tested the mod;
 * [Valla-chan](https://github.com/Valla-chan): contributor, adds names, part and background effects for main flora editor;
