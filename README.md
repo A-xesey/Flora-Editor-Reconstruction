@@ -1,4 +1,4 @@
-<img src="FloraEditorReconstruction.svg" height="900" align="center"/>
+<img src="FloraEditorReconstruction.svg" width="900" align="center"/>
 
 # ![Icon](README-LeafVerbIcon.svg) Flora Editor Reconstruction
 
