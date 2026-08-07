@@ -44,7 +44,7 @@ There are bug with plants in paint mode and it thumbnails, where are plants tota
 * In the Properties.txt file: property FragmentCompilation  0x05fb85a3           bool
 * In the ConfigManager.txt file: boolProp FragmentCompilation true
 
-**To update database**
+**To update database (for versions after v2 and before v2.11)**
 For plants randomizer fixing you need to update your game database. For that I recommend to download [FixTags](https://github.com/A-xesey/FixTags/releases/) mod and use cheat "updateDatabase".
 
 # Editor features
