@@ -1,7 +1,0 @@
-pixelFragment solidWhite
-	output color
-
-	code
-		Current.color = 1;
-	endCode
-end

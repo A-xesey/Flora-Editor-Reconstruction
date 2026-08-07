@@ -1,5 +1,0 @@
-pixelFragment shLightingFloraLow
-	code
-		clip(Current.color.a - In.color.a * 0.5);
-	endCode
-end

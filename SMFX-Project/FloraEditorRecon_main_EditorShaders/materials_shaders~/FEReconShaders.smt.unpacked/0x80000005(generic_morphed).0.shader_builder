@@ -121,7 +121,7 @@ pixelShader
 		select shLightingSpec_BakedCreaturesNormalMap -compareData materialParams 7 -elements tangent -require 0x100
 		select shLightingSpec_BakedCreatures -compareData materialParams 7 -require 0x100
 		select shLightingSpec_BakedFloraNormalMap_FERecon -compareData materialParams 5 -elements tangent -require 0x100
-		select shLightingSpec_BakedFlora_FERecon -compareData materialParams 5 -require 0x100
+		select shLightingSpec_BakedFlora -compareData materialParams 5 -require 0x100
 		select shLightingSpec_BakedMineralsNormalMap -compareData materialParams 1 -elements tangent -require 0x100
 		select shLightingSpec_BakedMinerals -compareData materialParams 1 -require 0x100
 		select shLightingSpec_BakedMinerals -array materialParams -require 0x100

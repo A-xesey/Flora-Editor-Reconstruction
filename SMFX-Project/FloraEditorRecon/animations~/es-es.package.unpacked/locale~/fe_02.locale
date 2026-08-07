@@ -1,0 +1,40 @@
+
+## Part Sections
+0x00000002 Bases
+0x00000003 Ramas
+0x00000005 Frutas
+
+## VerbIcon
+0x00000003 Flora
+0x00000004 La flora permite a los planetas sustentar la vida y alimentar a sus habitantes.
+0x000000A1 Los árboles altos proporcionan refugio y sombra a las criaturas.
+0x000000A2 Los árboles pequeños permiten a los planetas sustentar la vida y alimentar a sus habitantes.
+0x000000A3 Los arbustos permiten a los planetas sustentar la vida y alimentar a sus habitantes.
+
+## SharedDialogs/Hint
+# invalid count
+0x62635DD5 Tu creación necesita al menos 3 nodos de fruta.
+
+# invalid position
+0xA3BC856F Al menos 3 nodos de fruta deben estar más cerca del suelo.
+
+#invalid position (underground)
+0xFDA57332 Hay nodos de fruta demasiado cerca de o por debajo del suelo.
+
+## SpaceTrading/SpaceTools
+0x3e295ee3 Crear planta
+0xd974877a Haz una planta y recoge cinco especímenes de ella en tu bodega de carga.
+0x0dc3bacb Retocador de plantas
+0x4f4d0bc2 Selecciona esta herramienta y haz clic en una planta de un planeta para modificarla.
+0x385928de Esta arma solo se puede emplear contra plantas.
+
+## Abilities
+# fruit.prop
+0x04cb5b6a Nodo de fruta
+0x04cb5b6d Frutas
+0x04cb5b6c ¡Las plantas con más frutas alimentan más bocas!
+
+## Sporepedia
+0xE51EB8EF Elige una planta alta
+0x3984733B Elige una planta pequeña
+0xD0F7BA37 Elige un arbusto

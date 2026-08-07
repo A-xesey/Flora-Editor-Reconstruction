@@ -40,7 +40,7 @@
     <ClInclude Include="FEReconBakeManager.h">
       <Filter>FloraEditorReconstruction</Filter>
     </ClInclude>
-    <ClInclude Include="FEReconSpaceGame.h">
+    <ClInclude Include="FEReconGame.h">
       <Filter>FloraEditorReconstruction</Filter>
     </ClInclude>
     <ClInclude Include="ModelTypeChanged.h">
@@ -61,7 +61,10 @@
     <ClInclude Include="HasGAProp.h">
       <Filter>FloraEditorReconstruction</Filter>
     </ClInclude>
-    <ClInclude Include="FETest.h">
+    <ClInclude Include="FEReconCheats.h">
+      <Filter>FloraEditorReconstruction</Filter>
+    </ClInclude>
+    <ClInclude Include="FEReconAnotherModification.h">
       <Filter>FloraEditorReconstruction</Filter>
     </ClInclude>
   </ItemGroup>
@@ -87,7 +90,7 @@
     <ClCompile Include="ModelTypeChanged.cpp">
       <Filter>FloraEditorReconstruction</Filter>
     </ClCompile>
-    <ClCompile Include="FETest.cpp">
+    <ClCompile Include="FEReconCheats.cpp">
       <Filter>FloraEditorReconstruction</Filter>
     </ClCompile>
   </ItemGroup>

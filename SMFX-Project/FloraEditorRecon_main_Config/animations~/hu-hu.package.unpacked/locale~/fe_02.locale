@@ -7,9 +7,9 @@
 ## VerbIcon
 0x00000003 Növény
 0x00000004 A növényvilág lehetővé teszi a bolygók számára, hogy fenntartsák az életet és táplálják lakóikat.
-0x000000A1 A nagy fák menedéket és árnyékot nyújtanak a lényeknek.
-0x000000A2 A kis fák lehetővé teszik a bolygók számára az élet fenntartását és lakóik táplálását.
-0x000000A3 A cserjék lehetővé teszik a bolygók számára az élet fenntartását és lakóik táplálását.
+0x000000A1 A nagy növények menedéket és árnyékot nyújtanak a lényeknek.
+0x000000A2 A kis növények lehetővé teszik a bolygók számára az élet fenntartását és lakóik táplálását.
+0x000000A3 A közepes növények lehetővé teszik a bolygók számára az élet fenntartását és lakóik táplálását.
 
 ## SharedDialogs/Hint
 # invalid count
@@ -35,6 +35,6 @@
 0x04cb5b6c A több gyümölcsöt termelő növények több szájat etetnek!
 
 ## Sporepedia
-0xE51EB8EF Válassz egy nagy fát
-0x3984733B Válassz egy kis fát
-0xD0F7BA37 Válassz egy cserjét
+0xE51EB8EF Válassz egy Nagy Növényt
+0x3984733B Válassz egy Kis Növényt
+0xD0F7BA37 Válassz egy Közepes Növényt

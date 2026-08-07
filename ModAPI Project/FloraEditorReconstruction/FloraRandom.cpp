@@ -5,109 +5,85 @@ extern bool showLog;
 
 using namespace App;
 
-eastl::vector<ResourceKey> allFlora;
-eastl::vector<ResourceKey> allValidFlora;
+RandomNumberGenerator randomGen;
 
-FloraRandom::FloraRandom()
+vector<ResourceKey> allFlora;
+vector<ResourceKey> allValidFlora;
+
+bool CreateFloraList()
 {
-}
+	DatabasePtr data = Resource::Paths::GetSaveArea(Resource::SaveAreaID::Cache);
+	if (data != nullptr) {
+		Resource::StandardFileFilter filter;
+		filter.groupID = GroupIDs::FloraModels;
 
-
-FloraRandom::~FloraRandom()
-{
-}
-
-void FloraRandom::CreateFloraList()
-{
-	Resource::StandardFileFilter filter;
-	filter.groupID = GroupIDs::FloraModels;
-
-	//creations can't be show up in the sporepedia if it don't have the summary file, so we so used it
-	filter.typeID = 0x2D5C9AF;	//summary
-
-	ResourceManager.GetResourceKeyList(allFlora, &filter);
-	if (showLog) ConsolePrintF("FloraRandom_CreateFloraList: allFlora (is empty?) %i", allFlora.empty());
-
-	//a big check if creation has gaprop
-	for (const ResourceKey& key : allFlora)
-	{
-		ResourceKey newKey(key.instanceID, TypeIDs::pollen_metadata, key.groupID);
-		ResourceObjectPtr keyObject;
-		ResourceManager.GetResource(newKey, &keyObject);
-		if (keyObject != nullptr)
-		{
-			bool hasGAProp = false;
-			cAssetMetadataPtr metadata = object_cast<Pollinator::cAssetMetadata>(keyObject);
-			if (metadata != nullptr)
-			{
-				if (!metadata->mTags.empty())
-				{
-					for (auto tag : metadata->mTags)
-					{
-						if (tag == u"gaprop")
-						{
-							hasGAProp = true;
-							break;
-						}
-					}
+		//creations can't be show up in the sporepedia if it don't have the summary file, so we will use this type
+		filter.typeID = 0x2D5C9AF;	//summary
+		data->GetKeyList(allFlora, &filter);
+		
+		//has creation a gaprop?
+		for (const ResourceKey& key : allFlora) {
+			cAssetMetadataPtr metadata;
+			if (Pollinator::GetMetadata(key.instanceID, key.groupID, metadata)) {
+				bool hasGAProp = false;
+				if (!metadata->mTags.empty()) {
+					auto gaprop = find(metadata->mTags.begin(), metadata->mTags.end(), u"gaprop");
+					if (gaprop != metadata->mTags.end())
+						hasGAProp = true;
+					gaprop = nullptr;
 				}
-				if (!hasGAProp)
-					allValidFlora.push_back(key);
+				if (!hasGAProp) allValidFlora.push_back(key);
 			}
 		}
+		if (showLog) ConsolePrintF("FloraRandom_CreateFloraList: allFlora (is empty?) %i\n size is %i\n allValidFlora size %i", allFlora.empty(), allFlora.size(), allValidFlora.size());
+		return true;
 	}
+	return false;
 }
 
-//tbh i'm not sure if we need it...
-void FloraRandom::ClearFloraList()
+void ClearFloraList()
 {
-	allFlora.clear();
-	allValidFlora.clear();
+	allFlora.clear(); allFlora.resize(0);
+	allValidFlora.clear(); allValidFlora.resize(0);
 }
 
 //for game stages, to avoid ecosystem collaps
-bool FloraRandom::ValidPlant(const ResourceKey& key, const eastl::vector<ResourceKey>& passSamePlants)
+bool ValidPlant(const ResourceKey& key, const vector<ResourceKey>& plantList)
 {
 	bool res = true;
-	for (const ResourceKey& plant : passSamePlants)
+	if (find(plantList.begin(), plantList.end(), key) != plantList.end()) res = false;
+	/*for (const ResourceKey& plant : plantList)
 	{
 		if (key.instanceID == plant.instanceID) {
 			res = false;
 			break;
 		}
-	}
+	}*/
 	if (showLog) ConsolePrintF("FloraRandom_ValidPlant: result is %i", res);
 	return res;
 }
 
-uint32_t FloraRandom::GetRandomFloraName(bool smallSpecies, bool mediumSpecies, bool largeSpecies, bool isGameMode)
+uint32_t GetRandomFloraName(bool smallSpecies, bool mediumSpecies, bool largeSpecies, bool isGameMode)
 {
-	eastl::vector<ResourceKey> randomFloraList;
-	if (isGameMode)
-		randomFloraList = allValidFlora;
-	else
-		randomFloraList = allFlora;
+	vector<ResourceKey> randomFloraList;
+	if (isGameMode) randomFloraList = allValidFlora;
+	else randomFloraList = allFlora;
 
 	if (showLog) ConsolePrintF("==== FloraRandom_GetRandomFloraName ====\nrandomFloraList (is empty?): %i", randomFloraList.empty());
-	if (!randomFloraList.empty())
-	{
+	if (!randomFloraList.empty()) {
 		int rando;
-		if (smallSpecies && mediumSpecies && largeSpecies)
-		{
+		if (smallSpecies && mediumSpecies && largeSpecies) {
 			if (showLog) ConsolePrintF("full randomization");
-			rando = rand(randomFloraList.size() - 1);
+			rando = randomGen.RandomInt(randomFloraList.size());
 			return randomFloraList[rando].instanceID;
 		}
-		else
-		{
+		else {
 			if (showLog) ConsolePrintF("randomization by plant type");
-			eastl::vector<ResourceKey> plants;
+			vector<ResourceKey> plants;
 
-			for (const ResourceKey& key : randomFloraList)
-			{
+			for (const ResourceKey& key : randomFloraList) {
 				Simulator::cSpeciesProfile* profile = SpeciesManager.GetSpeciesProfile(key);
-				if (profile != nullptr)
-				{
+				if (profile != nullptr) {
 					if (isGameMode)
 					{
 						if (!profile->mFruits.empty())
@@ -132,29 +108,9 @@ uint32_t FloraRandom::GetRandomFloraName(bool smallSpecies, bool mediumSpecies, 
 				}
 				profile = nullptr;
 			}
-			rando = rand(plants.size() - 1);
+			rando = randomGen.RandomInt(plants.size());
 			return plants[rando].instanceID;
 		}
 	}
 	return 0;
-}
-
-// For internal use, do not modify.
-int FloraRandom::AddRef()
-{
-	return DefaultRefCounted::AddRef();
-}
-
-// For internal use, do not modify.
-int FloraRandom::Release()
-{
-	return DefaultRefCounted::Release();
-}
-
-// You can extend this function to return any other types your class implements.
-void* FloraRandom::Cast(uint32_t type) const
-{
-	CLASS_CAST(Object);
-	CLASS_CAST(FloraRandom);
-	return nullptr;
 }

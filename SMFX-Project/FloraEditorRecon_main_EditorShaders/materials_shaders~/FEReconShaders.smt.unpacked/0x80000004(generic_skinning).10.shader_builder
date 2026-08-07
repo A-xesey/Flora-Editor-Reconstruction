@@ -11,10 +11,10 @@ vertexShader
 	end
 
 	group FEReconFix
-		select renderShadowMapAlphaMask_FERecon -compareData materialParams 5 -exclude 0x800
+		select renderShadowMapAlphaMask -compareData materialParams 5 -exclude 0x800
 	end
 	group 0x800
-		select renderShadowMap_FERecon -exclude FEReconFix
+		select renderShadowMap -exclude FEReconFix
 	end
 
 	add uvSubRectRemap -hasData uvSubRect -elements texcoord0 -exclude 0x80 0x800
@@ -22,9 +22,9 @@ end
 
 pixelShader
 	group FEReconFix
-		select renderShadowMapAlphaMask_FERecon -compareData materialParams 5 -exclude 0x800
+		select applyShadowMap -compareData materialParams 5 -exclude 0x800
 	end
 	group 0x800
-		select renderShadowMap_FERecon -exclude FEReconFix
+		select renderShadowMapAlphaMask -exclude FEReconFix
 	end
 end

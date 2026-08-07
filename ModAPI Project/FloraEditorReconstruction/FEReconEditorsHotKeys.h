@@ -45,7 +45,7 @@ member_detour(EditorUI_Load, EditorUI, bool(cEditor*, uint32_t, uint32_t, bool))
 int GetManipulatorIndex(const uint32_t& find)
 {
 	if (!Editor.mEnabledManipulators.empty()) {
-		for (int index = 0; index < Editor.mEnabledManipulators.size(); index++) {
+		for (eastl_size_t index = 0; index < Editor.mEnabledManipulators.size(); index++) {
 			if (Editor.mEnabledManipulators[index] == find) return index;
 		}
 	}

@@ -1,7 +1,0 @@
-pixelFragment applyMask
-	output color
-
-	code
-		Current.color = (0,0,0,0);
-	endCode
-end

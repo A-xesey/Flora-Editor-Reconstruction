@@ -117,65 +117,67 @@ static_detour(cSPEditorModelValidity_TestBounds, bool(cEditorResource*, /*bitset
 {
 	bool detoured(cEditorResource * pEditorResource, /*bitset<128>*/int* pFlags)
 	{
-		if (pEditorResource != nullptr &&
-			(pEditorResource->mProperties.mModelType == kPlantLarge
-			|| pEditorResource->mProperties.mModelType == kPlantMedium
-			|| pEditorResource->mProperties.mModelType == kPlantSmall)
-			&& HasGAProp() && Editor.mSaveExtension == TypeIDs::flr)
+		if (pEditorResource != nullptr && Editor.IsActive())
 		{
-			if (showLog) ConsolePrintF("==== cSPEditorModelValidity_TestBounds ====");
-			PropertyListPtr pEditorPropList;
-			PropManager.GetPropertyList(id("FloraEditorLarge"), 0x40600100, pEditorPropList);
-			if (pEditorPropList == nullptr)
+			if (HasGAProp() && Editor.mSaveExtension == TypeIDs::flr &&
+				(pEditorResource->mProperties.mModelType == kPlantLarge ||
+					pEditorResource->mProperties.mModelType == kPlantMedium ||
+					pEditorResource->mProperties.mModelType == kPlantSmall))
 			{
-				if (showLog) ConsolePrintF("pEditorPropList is null");
-				if (pFlags != nullptr) pFlags[kValidityOutOfBounds] = true;
-				return false;
-			}
-
-			float modelBoundSize;
-			float modelMaxHeight;
-			float modelMinHeight;
-			Property::GetFloat(pEditorPropList.get(), 0x700db77d, modelBoundSize);
-			Property::GetFloat(pEditorPropList.get(), 0x2704959d, modelMaxHeight);
-			Property::GetFloat(pEditorPropList.get(), 0x44c7f29f, modelMinHeight);
-
-			for (const cEditorResourceBlock& block : pEditorResource->mBlocks) {
-				PropertyListPtr pBlockPropList = BakeManager.GetBlockPropertyList(block.instanceID, block.groupID);
-				if (pBlockPropList == nullptr) {
-					if (showLog) ConsolePrintF("pBlockPropList is null");
-					if (pFlags != nullptr) /*pFlags[kValidityOutOfBounds] = true;*/
-						*pFlags = *pFlags | 0x100;
+				if (showLog) ConsolePrintF("==== cSPEditorModelValidity_TestBounds ====");
+				PropertyListPtr pEditorPropList;
+				PropManager.GetPropertyList(id("FloraEditorLarge"), 0x40600100, pEditorPropList);
+				if (pEditorPropList == nullptr)
+				{
+					if (showLog) ConsolePrintF("pEditorPropList is null");
+					if (pFlags != nullptr) pFlags[kValidityOutOfBounds] = true;
 					return false;
 				}
-				else {
-					bool modelAllowedOut;
-					Property::GetBool(pBlockPropList.get(), 0x538a895, modelAllowedOut);
-					if (modelAllowedOut == false) {
-						if ((modelMaxHeight < block.position.z) ||
-							(block.position.z < modelMinHeight)) {
-							if (modelMaxHeight < block.position.z)
-								if (showLog) ConsolePrintF("block height is higher than max height");
+
+				float modelBoundSize;
+				float modelMaxHeight;
+				float modelMinHeight;
+				Property::GetFloat(pEditorPropList.get(), 0x700db77d, modelBoundSize);
+				Property::GetFloat(pEditorPropList.get(), 0x2704959d, modelMaxHeight);
+				Property::GetFloat(pEditorPropList.get(), 0x44c7f29f, modelMinHeight);
+
+				for (const cEditorResourceBlock& block : pEditorResource->mBlocks) {
+					PropertyListPtr pBlockPropList = BakeManager.GetBlockPropertyList(block.instanceID, block.groupID);
+					if (pBlockPropList == nullptr) {
+						if (showLog) ConsolePrintF("pBlockPropList is null");
+						if (pFlags != nullptr) /*pFlags[kValidityOutOfBounds] = true;*/
+							*pFlags = *pFlags | 0x100;
+						return false;
+					}
+					else {
+						bool modelAllowedOut;
+						Property::GetBool(pBlockPropList.get(), 0x538a895, modelAllowedOut);
+						if (modelAllowedOut == false) {
+							if ((modelMaxHeight < block.position.z) ||
+								(block.position.z < modelMinHeight)) {
+								if (modelMaxHeight < block.position.z)
+									if (showLog) ConsolePrintF("block height is higher than max height");
 								if (block.position.z < modelMinHeight)
 									if (showLog) ConsolePrintF("block height is lower than min height");
-									if (pFlags != nullptr) /*pFlags[kValidityOutOfBounds] = true;*/
-										*pFlags = *pFlags | 0x100;
-							return false;
-						}
-						float blockRadius = sqrt(block.position.x * block.position.x + block.position.y * block.position.y);
-						if (modelBoundSize / 2.0f < blockRadius) {
-							if (showLog) ConsolePrintF("blockRadius bigger than modelBoundSize/2");
-							if (pFlags != nullptr) /*pFlags[kValidityOutOfBounds] = true;*/
-								*pFlags = *pFlags | 0x100;
-							return false;
+								if (pFlags != nullptr) /*pFlags[kValidityOutOfBounds] = true;*/
+									*pFlags = *pFlags | 0x100;
+								return false;
+							}
+							float blockRadius = sqrt(block.position.x * block.position.x + block.position.y * block.position.y);
+							if (modelBoundSize / 2.0f < blockRadius) {
+								if (showLog) ConsolePrintF("blockRadius bigger than modelBoundSize/2");
+								if (pFlags != nullptr) /*pFlags[kValidityOutOfBounds] = true;*/
+									*pFlags = *pFlags | 0x100;
+								return false;
+							}
 						}
 					}
 				}
+				if (showLog) ConsolePrintF("test was passed");
+				if (pFlags != nullptr) /*pFlags[kValidityOutOfBounds] = false;*/
+					*pFlags = *pFlags & 0xfffffeff;
+				return true;
 			}
-			if (showLog) ConsolePrintF("test was passed");
-			if (pFlags != nullptr) /*pFlags[kValidityOutOfBounds] = false;*/
-				*pFlags = *pFlags & 0xfffffeff;
-			return true;
 		}
 		return original_function(pEditorResource, pFlags);
 	}

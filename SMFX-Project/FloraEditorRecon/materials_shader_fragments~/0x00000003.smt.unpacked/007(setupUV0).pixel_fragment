@@ -1,5 +1,0 @@
-pixelFragment setupUV0
-	input -texcoords 1
-	samplers 1
-
-end

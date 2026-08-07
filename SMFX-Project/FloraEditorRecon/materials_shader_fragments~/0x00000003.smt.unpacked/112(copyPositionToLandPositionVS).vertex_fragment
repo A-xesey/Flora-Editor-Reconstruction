@@ -1,5 +1,0 @@
-vertexFragment copyPositionToLandPositionVS
-	code
-		float4 landPosition = float4( In.position.xyz, 1 );
-	endCode
-end

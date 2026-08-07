@@ -1,5 +1,0 @@
-vertexFragment effectLightingToColorVF
-	code
-		color.rgb = litcolor;
-	endCode
-end

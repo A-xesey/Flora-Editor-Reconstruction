@@ -1,8 +1,0 @@
-vertexFragment setupSHTangent
-	input tangent
-	output -texcoords 1 float3
-
-	code
-		Current.texcoord<t0>.xyz = worldTangent;
-	endCode
-end

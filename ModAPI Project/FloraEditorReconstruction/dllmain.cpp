@@ -4,16 +4,18 @@
 #include "FEReconEditors.h"
 #include "FEReconSporepedia.h"
 #include "FEReconBakeManager.h"
-#include "FEReconSpaceGame.h"
-#include "FETest.h"
+#include "FEReconGame.h"
+#include "FEReconAnotherModification.h"
+#include "FEReconCheats.h"
 
 void Initialize()
 {
 	FEReconEditors::Initialize();
 	FEReconSporepedia::Initialize();
 	FEReconBakeManager::Initialize();
-	FEReconSpaceGame::Initialize();
-	CheatManager.AddCheat("FERLog", new FETest());
+	FEReconGame::Initialize();
+	FEReconAnotherModification::Initialize();
+	CheatManager.AddCheat("FERecon", new FEReconCheats());
 }
 
 void Dispose()
@@ -22,7 +24,8 @@ void Dispose()
 	FEReconEditors::Dispose();
 	FEReconSporepedia::Dispose();
 	FEReconBakeManager::Dispose();
-	FEReconSpaceGame::Dispose();
+	FEReconGame::Dispose();
+	FEReconAnotherModification::Dispose();
 }
 
 ////for thumbs
@@ -41,7 +44,8 @@ void AttachDetours()
 	FEReconEditors::AttachDetours();
 	FEReconSporepedia::AttachDetours();
 	FEReconBakeManager::AttachDetours();
-	FEReconSpaceGame::AttachDetours();
+	FEReconGame::AttachDetours();
+	FEReconAnotherModification::AttachDetours();
 
 	//for thumbnails
 	//Thumbnail_cImportExport_SavePNG::attach(GetAddress(App::Thumbnail_cImportExport, SavePNG));

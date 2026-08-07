@@ -10,19 +10,16 @@ using namespace App;
 using namespace Simulator;
 
 FEBlackWaterFixMsgPtr messageBakeSprites;
-FloraRandomPtr floraRandom;
 
 class FEReconBakeManager
 {
 public:
 	static void Initialize() {
-		floraRandom = new FloraRandom();
 		messageBakeSprites = new FEBlackWaterFixMsg();
 		MessageManager.AddListener(messageBakeSprites.get(), id("BakeManager_BakeSprites"));
 	}
 
 	static void Dispose() {
-		floraRandom = nullptr;
 		MessageManager.RemoveListener(messageBakeSprites.get(), id("BakeManager_BakeSprites"));
 		messageBakeSprites = nullptr;
 	}
@@ -176,7 +173,7 @@ member_detour(cPlantSpeciesManager_CreatePlantItem, cPlantSpeciesManager, cPlant
 				}
 				if (smallPlants.size() + mediumPlants.size() + largePlants.size() != OriginalSize)	//replace missing plants to another
 				{
-					floraRandom->CreateFloraList();
+					CreateFloraList();
 					int tScore = 3;
 					bool gameMode = false;
 					if (GameModeManager.GetActiveModeID() != GameModeIDs::kScenarioMode)	//check if gameMode is game Stage
@@ -187,16 +184,16 @@ member_detour(cPlantSpeciesManager_CreatePlantItem, cPlantSpeciesManager, cPlant
 					if (showLog) ConsolePrintF("plant list was changed. Replacing missing plants to another...\ngameMode: %i", gameMode);
 					do
 					{
-						newPlant.instanceID = floraRandom->GetRandomFloraName(smallPlants.size() != tScore, mediumPlants.size() != tScore, largePlants.size() != tScore, gameMode);
+						newPlant.instanceID = GetRandomFloraName(smallPlants.size() != tScore, mediumPlants.size() != tScore, largePlants.size() != tScore, gameMode);
 						profile = SpeciesManager.GetSpeciesProfile(newPlant);
 						if (profile != nullptr)
 						{
 							if (gameMode)
 							{
 								//to avoid duplicates in game stages, otherwise it will break planet ecosystem
-								if (!floraRandom->ValidPlant(newPlant, smallPlants)) continue;
-								else if (!floraRandom->ValidPlant(newPlant, mediumPlants)) continue;
-								else if (!floraRandom->ValidPlant(newPlant, largePlants)) continue;
+								if (!ValidPlant(newPlant, smallPlants)) continue;
+								else if (!ValidPlant(newPlant, mediumPlants)) continue;
+								else if (!ValidPlant(newPlant, largePlants)) continue;
 							}
 							if (profile->mModelType == kPlantSmall)
 								smallPlants.push_back(newPlant);
@@ -207,10 +204,10 @@ member_detour(cPlantSpeciesManager_CreatePlantItem, cPlantSpeciesManager, cPlant
 						}
 						else if (showLog) ConsolePrintF("plant profile does not exists");
 					} while (smallPlants.size() + mediumPlants.size() + largePlants.size() != OriginalSize);
-					floraRandom->ClearFloraList();
+					ClearFloraList();
 				}
 				profile = nullptr;
-				planetRecord->mPlantSpecies.clear();
+				planetRecord->mPlantSpecies.clear(); planetRecord->mPlantSpecies.resize(0);
 				planetRecord->mPlantSpecies.insert(planetRecord->mPlantSpecies.mpBegin, smallPlants.mpBegin, smallPlants.mpEnd);
 				planetRecord->mPlantSpecies.insert(planetRecord->mPlantSpecies.mpBegin, mediumPlants.mpBegin, mediumPlants.mpEnd);
 				planetRecord->mPlantSpecies.insert(planetRecord->mPlantSpecies.mpBegin, largePlants.mpBegin, largePlants.mpEnd);

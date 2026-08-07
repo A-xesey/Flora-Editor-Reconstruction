@@ -1,5 +1,0 @@
-pixelFragment applyShadowMapNull
-	code
-		float shadow = 1;
-	endCode
-end

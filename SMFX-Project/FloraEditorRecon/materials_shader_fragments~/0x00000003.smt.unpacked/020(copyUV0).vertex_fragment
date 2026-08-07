@@ -1,5 +1,0 @@
-vertexFragment copyUV0
-	input texcoord0
-	output -texcoords 1 float3
-
-end
